@@ -1,7 +1,7 @@
 ---
-title: Diary
+title: Multicasting in Rust
 date: 2019-05-16 15:04:24
-tags: Diary
+tags: Rust,ipv4,ipv6,multicast,udp
 ---
 
 # Multicasting in Rust
