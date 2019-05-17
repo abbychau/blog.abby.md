@@ -32,139 +32,103 @@ Whenever you need to deliver the same data to many destinations. Multicast addre
 ## Multicasting in Rust
 - There is a sender and a receiver (like UDP), but the desitination IP address being sent to is a [multicast address](https://en.wikipedia.org/wiki/Multicast_address).
 
-### Steps
 
-1. If you want to both send and receive multicast packets, you will need to create two sockets
-    - one for outbound multicast packets, and one for inbound
-    
-2. Include `socket2`
-    - `socket2 = { version = "0.3.4", features = ["reuseport"] }`
-    
-3. Add `extern crate socket2;` to your `lib.rs` or `main.rs` 
+|  D类地址            |  用途                            | 
+|-----|-----|
+| 224.0.0.1                    |  在一个子网上的所有主机         |
+| 224.0.0.2                    |  在一个子网上的所有路由器         |
+| 224.0.0.4                    |  所有DVMRP协议的路由器             |
+| 224.0.0.5                    |  所有开放最短路径优先（OSPF）路由器   |         
+| 224.0.0.6                    |  所有OSPF指定路由器               |
+| 224.0.0.9                    |  所有RIPv2路由器                  |
+| 224.0.0.13                   |  所有PIM协议路由器                 |
+| 224.0.0.0-224.0.0.255        |  保留作本地使用，做管理和维护任务     |     
+| 239.0.0.0-239.255.255.255    |  留用做管理使用                    |
 
-```Rust
-#[macro_use]
-extern crate lazy_static;
-extern crate socket2;
 
-use std::net::{IpAddr, Ipv4Addr, Ipv6Addr, SocketAddr};
+## Coding Example
 
-pub const PORT: u16 = 7645;
+This example is using the `std::net::UdpSocket`
 
-lazy_static! {
-    pub static ref IPV4: IpAddr = Ipv4Addr::new(224, 0, 0, 123).into();
-    pub static ref IPV6: IpAddr = Ipv6Addr::new(0xFF02, 0, 0, 0, 0, 0, 0, 0x0123).into();
-}
-```
-
-4. Test address to see if they are in multicast
+#### Server
 
 ```Rust
-#[test]
-fn test_ipv4_multicast() {
-    assert!(IPV4.is_multicast());
-}
+use std::net::UdpSocket;
+use std::net::Ipv4Addr;
 
-#[test]
-fn test_ipv6_multicast() {
-    assert!(IPV6.is_multicast());
-}
-```
+fn main() {
+    let mut socket = UdpSocket::bind("0.0.0.0:8888").unwrap();
+    let mut buf = [0u8; 65535];
+    let multi_addr = Ipv4Addr::new(234, 2, 2, 2);
+    let inter = Ipv4Addr::new(0,0,0,0);
+    socket.join_multicast_v4(&multi_addr,&inter);
 
-Then we make a test client:
-
-```Rust
-use std::sync::{Arc, Barrier};
-use std::sync::atomic::{AtomicBool, Ordering};
-use std::thread::{self, JoinHandle};
-
-fn multicast_listener(
-    response: &'static str,
-    client_done: Arc<AtomicBool>,
-    addr: SocketAddr,
-) -> JoinHandle<()> {
-    // A barrier to not start the client test code until after the server is running
-    let server_barrier = Arc::new(Barrier::new(2));
-    let client_barrier = Arc::clone(&server_barrier);
-
-    let join_handle = std::thread::Builder::new()
-        .name(format!("{}:server", response))
-        .spawn(move || {
-            // socket creation will go here...
-
-            server_barrier.wait();
-            println!("{}:server: is ready", response);
-
-            // We'll be looping until the client indicates it is done.
-            while !client_done.load(std::sync::atomic::Ordering::Relaxed) {
-                // test receive and response code will go here...
-            }
-
-            println!("{}:server: client is done", response);
-        })
-        .unwrap();
-
-    client_barrier.wait();
-    join_handle
-}
-
-/// This will guarantee we always tell the server to stop
-struct NotifyServer(Arc<AtomicBool>);
-impl Drop for NotifyServer {
-    fn drop(&mut self) {
-        self.0.store(true, Ordering::Relaxed);
+    loop {
+        let (amt, src) = socket.recv_from(&mut buf).unwrap();
+        println!("received {} bytes from {:?}", amt, src);
     }
 }
+```
 
-/// Our generic test over different IPs
-fn test_multicast(test: &'static str, addr: IpAddr) {
-    assert!(addr.is_multicast());
-    let addr = SocketAddr::new(addr, PORT);
+#### Client
 
-    let client_done = Arc::new(AtomicBool::new(false));
-    NotifyServer(Arc::clone(&client_done));
+```Rust
+use std::net::UdpSocket;
+use std::thread;
 
-    multicast_listener(test, client_done, addr);
+fn main() {
+    let socket = UdpSocket::bind("0.0.0.0:9999").unwrap();
+    let buf = [1u8; 15000];
+    let mut count = 1473;
+    socket.send_to(&buf[0..count], "234.2.2.2:8888").unwrap();
 
-    // client test code send and receive code after here
-    println!("{}:client: running", test);
-}
-
-#[test]
-fn test_ipv4_multicast() {
-    test_multicast("ipv4", *IPV4);
-}
-
-#[test]
-fn test_ipv6_multicast() {
-    test_multicast("ipv6", *IPV6);
+    thread::sleep_ms(1000);
 }
 ```
 
-5. Real listener
+
+
+## Example 2
+
+`std::net::UdpSocket` is actually not providing all options from `libc`. `socket2` provide them.
+
+Let's have a look on [this example](https://github.com/bluejekyll/multicast-example/blob/master/src/lib.rs).
+
+We will use these : `use socket2::{Domain, Protocol, SockAddr, Socket, Type};`.
+
+#### Step 1: Bind
+
 ```Rust
-use std::io;
-use std::time::Duration;
-
-use socket2::{Domain, Protocol, SockAddr, Socket, Type};
-
-// this will be common for all our sockets
-fn new_socket(addr: &SocketAddr) -> io::Result<Socket> {
-    let domain = if addr.is_ipv4() {
-        Domain::ipv4()
-    } else {
-        Domain::ipv6()
-    };
-
-    let socket = Socket::new(domain, Type::dgram(), Some(Protocol::udp()))?;
-
-    // we're going to use read timeouts so that we don't hang waiting for packets
-    socket.set_read_timeout(Some(Duration::from_millis(100)))?;
-
-    Ok(socket)
+#[cfg(unix)]
+fn bind_multicast(socket: &Socket, addr: &SocketAddr) -> io::Result<()> {
+    socket.bind(&socket2::SockAddr::from(*addr))
 }
+```
 
-fn join_multicast(addr: SocketAddr) -> io::Result<Socket> {
+The binding method is different from Windows and *nix, that, in Windows, 
+
+https://docs.microsoft.com/zh-tw/windows/desktop/api/winsock/nf-winsock-bind mentions:
+
+> For multicast operations, the preferred method is to call the bind function to associate a socket with a local IP address and then join the multicast group. Although this order of operations is not mandatory, it is strongly recommended. So a multicast application would first select an IPv4 or IPv6 address on the local computer, the wildcard IPv4 address (INADDR_ANY), or the wildcard IPv6 address (in6addr_any). The the multicast application would then call the bind function with this address in the in the sa_data member of the name parameter to associate the local IP address with the socket. If a wildcard address was specified, then Windows will select the local IP address to use. After the bind function completes, an application would then join the multicast group of interest. For more information on how to join a multicast group, see the section on Multicast Programming. This socket can then be used to receive multicast packets from the multicast group using the recv, recvfrom, WSARecv, WSARecvEx, WSARecvFrom, or WSARecvMsg functions.
+
+In short, we need a `INADDR_ANY`.
+
+```Rust
+#[cfg(windows)]
+fn bind_multicast(socket: &Socket, addr: &SocketAddr) -> io::Result<()> {
+    let addr = match *addr {
+        SocketAddr::V4(addr) => SocketAddr::new(Ipv4Addr::new(0, 0, 0, 0).into(), addr.port()),
+        SocketAddr::V6(addr) => {
+            SocketAddr::new(Ipv6Addr::new(0, 0, 0, 0, 0, 0, 0, 0).into(), addr.port())
+        }
+    };
+    socket.bind(&socket2::SockAddr::from(addr))
+}
+```
+#### Step 2: Join
+
+```Rust
+fn join_multicast(addr: SocketAddr) -> io::Result<UdpSocket> {
     let ip_addr = addr.ip();
 
     let socket = new_socket(&addr)?;
@@ -183,7 +147,151 @@ fn join_multicast(addr: SocketAddr) -> io::Result<Socket> {
     };
 
     // bind us to the socket address.
-    socket.bind(&SockAddr::from(addr))?;
-    Ok(socket)
+    bind_multicast(&socket, &addr)?;
+
+    // convert to standard sockets
+    Ok(socket.into_udp_socket())
 }
 ```
+
+#### Step 3: Listener and Sender
+
+``` Rust
+fn multicast_listener(
+    response: &'static str,
+    client_done: Arc<AtomicBool>,
+    addr: SocketAddr,
+) -> JoinHandle<()> {
+    // A barrier to not start the client test code until after the server is running
+    let server_barrier = Arc::new(Barrier::new(2));
+    let client_barrier = Arc::clone(&server_barrier);
+
+    let join_handle = std::thread::Builder::new()
+        .name(format!("{}:server", response))
+        .spawn(move || {
+            // socket creation will go here...
+            let listener = join_multicast(addr).expect("failed to create listener");
+            println!("{}:server: joined: {}", response, addr);
+
+            server_barrier.wait();
+            println!("{}:server: is ready", response);
+
+            // We'll be looping until the client indicates it is done.
+            while !client_done.load(std::sync::atomic::Ordering::Relaxed) {
+                // test receive and response code will go here...
+                let mut buf = [0u8; 64]; // receive buffer
+
+                // we're assuming failures were timeouts, the client_done loop will stop us
+                match listener.recv_from(&mut buf) {
+                    Ok((len, remote_addr)) => {
+                        let data = &buf[..len];
+
+                        println!(
+                            "{}:server: got data: {} from: {}",
+                            response,
+                            String::from_utf8_lossy(data),
+                            remote_addr
+                        );
+
+                        // create a socket to send the response
+                        let responder = new_socket(&remote_addr)
+                            .expect("failed to create responder")
+                            .into_udp_socket();
+
+                        // we send the response that was set at the method beginning
+                        responder
+                            .send_to(response.as_bytes(), &remote_addr)
+                            .expect("failed to respond");
+
+                        println!("{}:server: sent response to: {}", response, remote_addr);
+                    }
+                    Err(err) => {
+                        println!("{}:server: got an error: {}", response, err);
+                    }
+                }
+            }
+
+            println!("{}:server: client is done", response);
+        })
+        .unwrap();
+
+    client_barrier.wait();
+    join_handle
+}
+```
+
+```Rust
+fn new_sender(addr: &SocketAddr) -> io::Result<UdpSocket> {
+    let socket = new_socket(addr)?;
+
+    if addr.is_ipv4() {
+        socket.set_multicast_if_v4(&Ipv4Addr::new(0, 0, 0, 0))?;
+
+        socket.bind(&SockAddr::from(SocketAddr::new(
+            Ipv4Addr::new(0, 0, 0, 0).into(),
+            0,
+        )))?;
+    } else {
+        // *WARNING* THIS IS SPECIFIC TO THE AUTHORS COMPUTER
+        //   find the index of your IPv6 interface you'd like to test with.
+        socket.set_multicast_if_v6(5)?;
+
+        socket.bind(&SockAddr::from(SocketAddr::new(
+            Ipv6Addr::new(0, 0, 0, 0, 0, 0, 0, 0).into(),
+            0,
+        )))?;
+    }
+
+    // convert to standard sockets...
+    Ok(socket.into_udp_socket())
+}
+```
+
+
+#### Step 4: Using Listener and Sender
+
+```Rust
+fn test_multicast(test: &'static str, addr: IpAddr) {
+    assert!(addr.is_multicast());
+    let addr = SocketAddr::new(addr, PORT);
+
+    let client_done = Arc::new(AtomicBool::new(false));
+    let notify = NotifyServer(Arc::clone(&client_done));
+
+    multicast_listener(test, client_done, addr);
+
+    // client test code send and receive code after here
+    println!("{}:client: running", test);
+
+    let message = b"Hello from client!";
+
+    // create the sending socket
+    let socket = new_sender(&addr).expect("could not create sender!");
+    socket.send_to(message, &addr).expect("could not send_to!");
+
+    let mut buf = [0u8; 64]; // receive buffer
+
+    match socket.recv_from(&mut buf) {
+        Ok((len, remote_addr)) => {
+            let data = &buf[..len];
+            let response = String::from_utf8_lossy(data);
+
+            println!("{}:client: got data: {}", test, response);
+
+            // verify it's what we expected
+            assert_eq!(test, response);
+        }
+        Err(err) => {
+            println!("{}:client: had a problem: {}", test, err);
+            assert!(false);
+        }
+    }
+
+    // make sure we don't notify the server until the end of the client test
+    drop(notify);
+}
+```
+
+## Conclusion
+
+Comparing to C++ clients and servers. std libraries in Rust is much simpler, but to write codes with greater control, Rust is quite verbose but still very readable in comparison.
