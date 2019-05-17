@@ -7,18 +7,18 @@
   
   <title>Multicasting in Rust | abby::blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Multicasting in RustWhat is multicasting?Multicast is in parallel with concepts unicast, broadcast and anycast.  unicast: single source to single target (TCP or UDP) broadcast: many sources to many ta">
+  <meta name="description" content="What is multicasting?Multicast is in parallel with concepts unicast, broadcast and anycast.  unicast: single source to single target (TCP or UDP) broadcast: many sources to many targets on a single ne">
 <meta name="keywords" content="Rust,ipv4,ipv6,multicast,udp">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Multicasting in Rust">
 <meta property="og:url" content="https://blog.abby.md/2019/05/16/multicasting-in-rust/index.html">
 <meta property="og:site_name" content="abby::blog">
-<meta property="og:description" content="Multicasting in RustWhat is multicasting?Multicast is in parallel with concepts unicast, broadcast and anycast.  unicast: single source to single target (TCP or UDP) broadcast: many sources to many ta">
+<meta property="og:description" content="What is multicasting?Multicast is in parallel with concepts unicast, broadcast and anycast.  unicast: single source to single target (TCP or UDP) broadcast: many sources to many targets on a single ne">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-17T00:20:46.594Z">
+<meta property="og:updated_time" content="2019-05-17T00:23:42.411Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Multicasting in Rust">
-<meta name="twitter:description" content="Multicasting in RustWhat is multicasting?Multicast is in parallel with concepts unicast, broadcast and anycast.  unicast: single source to single target (TCP or UDP) broadcast: many sources to many ta">
+<meta name="twitter:description" content="What is multicasting?Multicast is in parallel with concepts unicast, broadcast and anycast.  unicast: single source to single target (TCP or UDP) broadcast: many sources to many targets on a single ne">
   
     <link rel="alternate" href="/atom.xml" title="abby::blog" type="application/atom+xml">
   
@@ -91,7 +91,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Multicasting-in-Rust"><a href="#Multicasting-in-Rust" class="headerlink" title="Multicasting in Rust"></a>Multicasting in Rust</h1><h2 id="What-is-multicasting"><a href="#What-is-multicasting" class="headerlink" title="What is multicasting?"></a>What is multicasting?</h2><p>Multicast is in parallel with concepts <code>unicast</code>, <code>broadcast</code> and <code>anycast</code>.</p>
+        <h2 id="What-is-multicasting"><a href="#What-is-multicasting" class="headerlink" title="What is multicasting?"></a>What is multicasting?</h2><p>Multicast is in parallel with concepts <code>unicast</code>, <code>broadcast</code> and <code>anycast</code>.</p>
 <ul>
 <li><code>unicast</code>: single source to single target (TCP or UDP)</li>
 <li><code>broadcast</code>: many sources to many targets on a <strong>single network</strong> (UDP)</li>
@@ -107,7 +107,7 @@
 <li>This is to help prevent floods of multicast traffic hitting the Internet.</li>
 </ul>
 <h2 id="When-should-you-use-multicasting"><a href="#When-should-you-use-multicasting" class="headerlink" title="When should you use multicasting?"></a>When should you use multicasting?</h2><p>Whenever you need to deliver the same data to many destinations. Multicast addresses usually look like an obvious range like <code>224.0.0.251</code> (v4) or <code>FACE::FB</code> (v6) .</p>
-<h2 id="Multicasting-in-Rust-1"><a href="#Multicasting-in-Rust-1" class="headerlink" title="Multicasting in Rust"></a>Multicasting in Rust</h2><ul>
+<h2 id="Multicasting-in-Rust"><a href="#Multicasting-in-Rust" class="headerlink" title="Multicasting in Rust"></a>Multicasting in Rust</h2><ul>
 <li>There is a sender and a receiver (like UDP), but the desitination IP address being sent to is a <a href="https://en.wikipedia.org/wiki/Multicast_address" target="_blank" rel="noopener">multicast address</a>.</li>
 </ul>
 <table>
@@ -179,7 +179,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.abby.md/2019/05/16/multicasting-in-rust/" data-id="cjvrc7y8t0000evosnlcs8esr" class="article-share-link">Share</a>
+      <a data-url="https://blog.abby.md/2019/05/16/multicasting-in-rust/" data-id="cjvrt1dak0003bcostc8nkal0" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Rust-ipv4-ipv6-multicast-udp/">Rust,ipv4,ipv6,multicast,udp</a></li></ul>
@@ -188,6 +188,20 @@
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/2019/05/17/How-does-nom-work/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          How does nom v.5 work?
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
   
 </article>
 
@@ -202,7 +216,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Rust-ipv4-ipv6-multicast-udp/">Rust,ipv4,ipv6,multicast,udp</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Rust-ipv4-ipv6-multicast-udp/">Rust,ipv4,ipv6,multicast,udp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nom-Rust-parser-json-nom5/">nom,Rust,parser,json,nom5</a></li></ul>
     </div>
   </div>
 
@@ -212,7 +226,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Rust-ipv4-ipv6-multicast-udp/" style="font-size: 10px;">Rust,ipv4,ipv6,multicast,udp</a>
+      <a href="/tags/Rust-ipv4-ipv6-multicast-udp/" style="font-size: 10px;">Rust,ipv4,ipv6,multicast,udp</a> <a href="/tags/nom-Rust-parser-json-nom5/" style="font-size: 10px;">nom,Rust,parser,json,nom5</a>
     </div>
   </div>
 
@@ -232,6 +246,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/05/17/How-does-nom-work/">How does nom v.5 work?</a>
+          </li>
         
           <li>
             <a href="/2019/05/16/multicasting-in-rust/">Multicasting in Rust</a>

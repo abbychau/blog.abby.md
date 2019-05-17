@@ -4,8 +4,6 @@ date: 2019-05-16 15:04:24
 tags: Rust,ipv4,ipv6,multicast,udp
 ---
 
-# Multicasting in Rust
-
 ## What is multicasting?
 
 Multicast is in parallel with concepts `unicast`, `broadcast` and `anycast`.
