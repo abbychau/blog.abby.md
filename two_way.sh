@@ -1,4 +1,3 @@
-hexo render
 hexo generate
 hexo deploy
 git add .
