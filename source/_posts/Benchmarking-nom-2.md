@@ -1,6 +1,7 @@
 ---
 title: Benchmarking nom 2
 date: 2019-05-20 10:08:27
+categories: Rust
 tags:
 - Rust
 - Parser

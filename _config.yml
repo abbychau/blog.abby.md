@@ -75,19 +75,7 @@ pagination_dir: page
 ## Themes: https://hexo.io/themes/
 # theme: landscape
 theme: next
-scheme: Pisces
 
-menu:
-  home: /
-  archives: /archives
-  categories: /categories
-
-social:
-  GitHub: https://github.com/abbychau
-  Twitter: https://twitter.com/abbychau
-  # Weibo: your-weibo-url
-  # DouBan: your-douban-url
-  ZhiHu: https://www.zhihu.com/people/abbychau
 
 highlight_theme: normal
 
