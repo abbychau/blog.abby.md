@@ -3,15 +3,15 @@ IF YOU DON'T FILL OUT THE FOLLOWING INFORMATION WE MIGHT CLOSE YOUR ISSUE WITHOU
 如果你不填充下面的内容，我们可能会直接关闭你的 issue。
 
 If you want to fast resolve your issue, WRITE IT IN ENGLISH, please. Not all contributors/collaborators know Chinese language and Google translate can't always give true translates on issues. Thanks!
-You may delete this recomendations and use template which is placed below. 
+You may delete this recomendations and use template which is placed below.
 -->
 
 ### I agree and want to create new issue <!-- (我确认我已经查看了) -->
 
 <!-- Check all with "x" (使用 "x" 选择) -->
 - [] Yes, I was on [Hexo Docs page](https://hexo.io/docs/), especially on [Templates](https://hexo.io/docs/templates.html), [Variables](https://hexo.io/docs/variables.html), [Helpers](https://hexo.io/docs/helpers.html) and [Troubleshooting](https://hexo.io/docs/troubleshooting.html).
-- [] Yes, I was on [NexT Documentation Site](http://theme-next.iissnan.com/).
-- [] And yes, I already searched for current [issues](https://github.com/iissnan/hexo-theme-next/issues?utf8=%E2%9C%93&q=is%3Aissue) and this is not help to me.
+- [] Yes, I was on [NexT Documentation Site](http://theme-next.org).
+- [] And yes, I already searched for current [issues](https://github.com/theme-next/hexo-theme-next/issues?utf8=%E2%9C%93&q=is%3Aissue) and this is not help to me.
 
 ***
 
@@ -29,8 +29,20 @@ You may delete this recomendations and use template which is placed below.
 * Link to demo site with this issue: N/A
 * Link(s) to source code or any usefull link(s): N/A
 
+### Node.js and NPM Information
+<!-- Paste info from `node -v && npm -v`  (粘貼信息 `node -v && npm -v`) -->
+```
+
+```
+
 ### Hexo Information
 <!-- Paste info from `hexo -v`  (粘貼信息 `hexo -v`) -->
+```
+
+```
+
+### Package dependencies Information
+<!-- Paste info from `cat package.json`  (粘貼信息 `cat package.json`) -->
 ```
 
 ```
@@ -42,7 +54,7 @@ You may delete this recomendations and use template which is placed below.
 ```
 [] Latest Master branch.
 [] Latest Release version.
-[] Old version - 
+[] Old version -
 ```
 
 **NexT Scheme:**

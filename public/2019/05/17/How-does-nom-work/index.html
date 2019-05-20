@@ -38,10 +38,6 @@
 
 
 
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
-
 
 
 
@@ -50,28 +46,25 @@
 
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+<link href="/css/main.css?v=6.0.0" rel="stylesheet" type="text/css">
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.0">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.0">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.0">
 
 
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="Rust,nom,parser,json,">
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.0" color="#222">
 
 
 
+
+
+  <meta name="keywords" content="Hexo, NexT">
 
 
 
@@ -79,18 +72,21 @@
 
 
 
-<meta name="description" content="What is nom?nom is a parser combinators library written in Rust. Its goal is to provide tools to build safe parsers without compromising the speed or memory consumption. To that end, it uses extensive">
-<meta name="keywords" content="Rust,nom,parser,json">
-<meta property="og:type" content="article">
-<meta property="og:title" content="How does nom v.5 work?">
-<meta property="og:url" content="https://blog.abby.md/2019/05/17/How-does-nom-work/index.html">
+
+
+
+<meta name="description" content="Nico’s Blog A Java Programmer’s sharing">
+<meta name="keywords" content="Programming,abbychau,blog,PHP,Rust">
+<meta property="og:type" content="website">
+<meta property="og:title" content="External Links">
+<meta property="og:url" content="https://blog.abby.md/External-Links/index.html">
 <meta property="og:site_name" content="abby::blog">
-<meta property="og:description" content="What is nom?nom is a parser combinators library written in Rust. Its goal is to provide tools to build safe parsers without compromising the speed or memory consumption. To that end, it uses extensive">
+<meta property="og:description" content="Nico’s Blog A Java Programmer’s sharing">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-19T23:52:12.572Z">
+<meta property="og:updated_time" content="2019-05-20T00:11:31.777Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="How does nom v.5 work?">
-<meta name="twitter:description" content="What is nom?nom is a parser combinators library written in Rust. Its goal is to provide tools to build safe parsers without compromising the speed or memory consumption. To that end, it uses extensive">
+<meta name="twitter:title" content="External Links">
+<meta name="twitter:description" content="Nico’s Blog A Java Programmer’s sharing">
 
 
 
@@ -99,9 +95,11 @@
   var CONFIG = {
     root: '/',
     scheme: 'Muse',
-    version: '5.1.4',
+    version: '6.0.0',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
@@ -120,7 +118,7 @@
 
 
 
-  <link rel="canonical" href="https://blog.abby.md/2019/05/17/How-does-nom-work/">
+  <link rel="canonical" href="https://blog.abby.md/External-Links/">
 
 
 
@@ -149,7 +147,7 @@
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
+      <div class="header-inner"> <div class="site-brand-wrapper">
   <div class="site-meta ">
     
 
@@ -262,9 +260,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-17T09:24:58+09:00">
-                2019-05-17
-              </time>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-17T09:24:58+09:00">2019-05-17</time>
             
 
             
@@ -554,6 +550,8 @@
   <span class="author" itemprop="copyrightHolder">Abby Chau</span>
 
   
+
+  
 </div>
 
 
@@ -565,7 +563,7 @@
 
 
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Muse</a> v6.0.0</div>
 
 
 
@@ -609,7 +607,9 @@
 
 
 
-  
+
+
+
 
 
 
@@ -629,16 +629,6 @@
 
   
   
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
     <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   
 
@@ -647,18 +637,13 @@
     <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
   
 
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
 
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.0"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.0"></script>
 
 
 
@@ -666,15 +651,15 @@
   
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.0"></script>
 
 
 
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.0"></script>
 
 
 
