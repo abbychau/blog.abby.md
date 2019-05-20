@@ -1,7 +1,12 @@
 ---
 title: Multicasting in Rust
 date: 2019-05-16 15:04:24
-tags: Rust,ipv4,ipv6,multicast,udp
+tags: 
+- Rust,
+- ipv4,
+- ipv6,
+- multicast
+- udp
 ---
 
 ## What is multicasting?

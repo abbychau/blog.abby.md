@@ -73,7 +73,25 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+# theme: landscape
+theme: next
+
+menu:
+  home: /
+  archives: /archives
+  categories: /categories
+
+social:
+  GitHub: https://github.com/abbychau
+  Twitter: https://twitter.com/abbychau
+  # Weibo: your-weibo-url
+  # DouBan: your-douban-url
+  ZhiHu: https://www.zhihu.com/people/abbychau
+
+highlight_theme: normal
+
+avatar: https://www.gravatar.com/avatar/17623b699060c78823d7d6c95d1de7ec
+
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
