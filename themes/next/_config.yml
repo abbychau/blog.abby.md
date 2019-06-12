@@ -97,6 +97,8 @@ menu:
   #sitemap: /sitemap.xml || sitemap
   #commonweal: /404/ || heartbeat
   links: /external-links/ || link
+  projects: /projects/ || projects
+  
 
 # Enable/Disable menu icons.
 menu_icons:
