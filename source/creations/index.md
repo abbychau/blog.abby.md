@@ -4,7 +4,7 @@ date: 2019-06-14 22:16:43
 ---
 # Creations
 
-# Music
+## Music
 
 [Flower1](/music/flower1.mp3)
 [LOL rerendered](/music/LOL.mpr)
@@ -14,5 +14,5 @@ date: 2019-06-14 22:16:43
 
 [My SoundCloud](https://soundcloud.com/abbychau)
 
-# Paintings
+## Paintings
 

@@ -97,7 +97,7 @@ menu:
   #sitemap: /sitemap.xml || sitemap
   #commonweal: /404/ || heartbeat
   links: /links/ || link
-  projects: /projects/ || laptop-code
+  projects: /projects/ || cube
   creations: /creations/ || paint-brush
 
 
