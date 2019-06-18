@@ -128,7 +128,7 @@ scheme: Gemini
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, globe icon will be loaded.
 social:
   GitHub: https://github.com/abbychau || github
-  # E-Mail: mailto:yourname@gmail.com || envelope
+  E-Mail: mailto:i@abby.md || envelope
   # Google: https://plus.google.com/yourname || google
   SoundCloud: https://soundcloud.com/abbychau || soundcloud
   Twitter: https://twitter.com/abbychau || twitter
@@ -138,7 +138,7 @@ social:
   YouTube: https://youtube.com/abbychau || youtube
   Instagram: https://instagram.com/abbychau2000 || instagram
   # Skype: skype:yourname?call|chat || skype
-  ZhiHu: https://www.zhihu.com/people/abbychau || zhihu
+  ZhiHu: https://www.zhihu.com/people/abbychau || question
 
 social_icons:
   enable: true
