@@ -33,9 +33,9 @@ I tried the `_mm_pause` from `SSE2` as well, but it does not make any different.
 Although `_mm_pause` is designed for spinlock, but the point is CPU will not switch P-State and S-State just for a few nono-seconds. It is simply not the right way.
 
 # Tool Age
-Keep trying the trival ways will never proceed more (although it practically solved the system problem of 100% cpu usage in my program and my program is not required to be very performant too), so I stepped back and rethink about my first solution.
+Keep trying the trival ways will never proceed more (although it practically solved the system problem of 100% cpu usage in my program and my program is not required to be very performant too), so I stepped back and rethought about my first solution.
 
-The first solution is actually do less checking and force the cpu to sleep, so that it does not waste too much energy to do useless checkings which are 99%(roughly) predictable.
+The first solution was actually doing less checking and forcing the cpu to sleep, so that it does not waste too much energy to do useless checkings which are 99%(roughly) predictable.
 
 What I really want to punish are the collided conflicts, because they are very likely to be blocked again if the CPU checks in the next cycle. At this time, sleeping is better than checking.
 
@@ -46,11 +46,13 @@ So I make the spinlock to be a swing-back one.
 This works exactly as expected. The cpu usage lowered and the through-put is able to pass all the tests.
 
 # Futures
-I then find that the CPU usage is high for future queues. I found that that there is a kind of hybrid lock used for future queues. 
+However, I then found that the CPU usage is high for future queues. That, there is a kind of hybrid lock used for future queues. 
 
 Therefore, I removed all the Spin before going to `parking_lot::Mutex::new(VecDeque::new())`. [link](https://github.com/abbychau/multiqueue2/commit/f311c7c02c392a656df85d662f8b3c1048536457)
 
-It increases the low level context switches much but indeed lowed the CPU usage. By the nature of this heavy switch comparing to the light weight spinlock, the through-put of future queues becomes just 1/10 of the normal queue.
+It increases the number of low level context switches very much but indeed lowed the CPU usage. By the nature of this heavy switch comparing to the light weight spinlock, the through-put of future queues becomes just 1/10 of the normal queue.
+
+And this experiment also taught me the performance ratio between `parking_lot` mutexes and native spins.
 
 # No Silver Bullet
 I really would like to come up with an equation for people to set the `try_spins` precisely, but it is very complicated because it includes all the envirnment information like CPU frequency, number of consumers, rate of feeding, etc.
@@ -58,5 +60,7 @@ I really would like to come up with an equation for people to set the `try_spins
 So I can just left it to the user.
 
 {% ghcode https://github.com/abbychau/multiqueue2/blob/master/src/multiqueue.rs 1099 1125 %}
+
+I would like to investigate and develop a clear equation for concurrency hybrid lock, but it seems to be a bit long and I may have it later in a Paper form.
 
 Feel free to leave issues or comments.
