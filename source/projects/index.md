@@ -17,7 +17,6 @@ date: 2019-06-12 12:39:07
 - Empire Conquest (Cocos2d-x)
 - uploadstation.com
 - vpndirect.com
-- 
 
 # Fulltime Maintenance before
 - MTR Mobile (iOS / Android app)
@@ -35,17 +34,16 @@ date: 2019-06-12 12:39:07
 - diesel_cli_ext (Rust)
 - Order Book Array (Swoole)
 - Typecho AppStore (PHP)
-- hackish
 
 # Contributed to
-- Visual Studio Code
-- Ratel
-- Noise
+- Visual Studio Code (TypeScript)
+- Ratel (Java / Netty / gRPC)
+- Noise (Rust Crate)
 - RustPrimer (Book)
 - smart-contract-rs (Rust Crate)
 - style2paints (OpenCV / Python3 / Keras)
 - PaintsChainer (OpenCV / Python3 / Chainer)
-- Mail (stlewis/Mail)
+- Mail
 - Hifone
 
 [My Github page](https://github.com/abbychau)
