@@ -3,28 +3,29 @@ title: Projects
 date: 2019-06-12 12:39:07
 ---
 
-# Own Projects
-- Real Forum
-- Real Blog
-- Endless Choice
-- Exchange Hub
+# Owned Projects
+- Real Forum (Federated Discussion Board)
+- Real Blog (Federated Blog)
+- Endless Choice (UGC story telling)
+- Exchange Hub (Global crypto tracker)
+- Pays Network (BTC/ETH Wallet/Exchange w/ interest)
 - Multiqueue2 (Rust Crate)
 - Konran 8 Rounds (Web / iOS / Android)
 - Bitcoin Dice (Web / Bitcoind)
 
 # Fulltime Developed and Downed
-- Otea.com
+- Otea.com (Full-Stack)
 - Empire Conquest (Cocos2d-x)
-- uploadstation.com
-- vpndirect.com
+- uploadstation.com (JavaScript)
+- vpndirect.com (Full-Stack / Paypal API)
 
-# Fulltime Maintenance before
+# Fulltime Maintenance / Supervision
 - MTR Mobile (iOS / Android app)
 - MTR Tourist (iOS / Android app)
 - MTR NextTrain (iOS / Android app)
 - MTR.com.hk (PHP + Oracle)
 
-# Toys Projects
+# Toy Projects
 - BMS Dropper (Unity)
 - Unity City Generator (Unity)
 - Windows Webcam Capture (Windows Desktop app)
@@ -38,9 +39,9 @@ date: 2019-06-12 12:39:07
 # Contributed to
 - Visual Studio Code (TypeScript)
 - Ratel (Java / Netty / gRPC)
-- Noise (Rust Crate)
+- Noise (Rust Crate / Kademlia)
 - RustPrimer (Book)
-- smart-contract-rs (Rust Crate)
+- smart-contract-rs (Smart Contracts / Rust Crate)
 - style2paints (OpenCV / Python3 / Keras)
 - PaintsChainer (OpenCV / Python3 / Chainer)
 - Mail
