@@ -20,7 +20,7 @@ date: 2019-06-12 12:39:07
 - vpndirect.com (Full-Stack / Paypal API)
 
 # Fulltime Maintenance / Supervision
-- MTR Mobile (iOS / Android app)
+- MTR Mobile (iOS / Android app , v5 to v11)
 - MTR Tourist (iOS / Android app)
 - MTR NextTrain (iOS / Android app)
 - MTR.com.hk (PHP + Oracle)
