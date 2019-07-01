@@ -25,6 +25,7 @@
   {% endif %}
   <link rel="stylesheet" media="all" href="{{ Han_uri }}">
 {% endif %}
+  <link rel="manifest" href="/manifest.json">
 
 
 {# #238, Disable Baidu tranformation #}
