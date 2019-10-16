@@ -77,18 +77,18 @@
 
 
 
-<meta name="description" content="Sharing different computer parts">
+<meta name="description" content="CreationsMusicFlower1LOL rerenderedSecond Run Midi Remix (midi version)Second Run Midi Remix (mp3 version)Saber Wing Cure My SoundCloud Paintings">
 <meta name="keywords" content="Programming,abbychau,blog,PHP,Rust">
 <meta property="og:type" content="website">
-<meta property="og:title" content="All Categories">
-<meta property="og:url" content="https://blog.abby.md/categories/index.html">
+<meta property="og:title" content="creations">
+<meta property="og:url" content="https://blog.abby.md/creations/index.html">
 <meta property="og:site_name" content="abby::blog">
-<meta property="og:description" content="Sharing different computer parts">
+<meta property="og:description" content="CreationsMusicFlower1LOL rerenderedSecond Run Midi Remix (midi version)Second Run Midi Remix (mp3 version)Saber Wing Cure My SoundCloud Paintings">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-19T23:58:12.319Z">
+<meta property="og:updated_time" content="2019-06-17T02:24:16.520Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="All Categories">
-<meta name="twitter:description" content="Sharing different computer parts">
+<meta name="twitter:title" content="creations">
+<meta name="twitter:description" content="CreationsMusicFlower1LOL rerenderedSecond Run Midi Remix (midi version)Second Run Midi Remix (mp3 version)Saber Wing Cure My SoundCloud Paintings">
 
 
 
@@ -120,7 +120,7 @@
 
 
 
-  <link rel="canonical" href="https://blog.abby.md/categories/">
+  <link rel="canonical" href="https://blog.abby.md/creations/">
 
 
 
@@ -383,7 +383,7 @@
 <p>And this experiment also taught me the performance ratio between <code>parking_lot</code> mutexes and native spins.</p>
 <h1 id="No-Silver-Bullet"><a href="#No-Silver-Bullet" class="headerlink" title="No Silver Bullet"></a>No Silver Bullet</h1><p>I really would like to come up with an equation for people to set the <code>try_spins</code> precisely, but it is very complicated because it includes all the envirnment information like CPU frequency, number of consumers, rate of feeding, etc.</p>
 <p>So I can just left it to the user.</p>
-<figure class="highlight rs"><figcaption><span>multiqueue.rs</span><a href="https://github.com/abbychau/multiqueue2/blob/master/src/multiqueue.rs" target="_blank" rel="noopener">link</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1099</span><br><span class="line">1100</span><br><span class="line">1101</span><br><span class="line">1102</span><br><span class="line">1103</span><br><span class="line">1104</span><br><span class="line">1105</span><br><span class="line">1106</span><br><span class="line">1107</span><br><span class="line">1108</span><br><span class="line">1109</span><br><span class="line">1110</span><br><span class="line">1111</span><br><span class="line">1112</span><br><span class="line">1113</span><br><span class="line">1114</span><br><span class="line">1115</span><br><span class="line">1116</span><br><span class="line">1117</span><br><span class="line">1118</span><br><span class="line">1119</span><br><span class="line">1120</span><br><span class="line">1121</span><br><span class="line">1122</span><br><span class="line">1123</span><br><span class="line">1124</span><br><span class="line">1125</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/// Usage: futures_multiqueue_with(`capacity`,`try_spins`,`yield_spins`)</span></span><br><span class="line"><span class="comment">/// `capacity` is the maximum item to be allowed in queue; when it is full, `Err(Full&#123;...&#125;)` will be emitted</span></span><br><span class="line"><span class="comment">/// `try_spins` is a performant, low latency blocking wait for lightweight conflict solving, lower this number when your CPU usage is high.</span></span><br><span class="line"><span class="comment">/// `yield_spins` is still busy but slowered by `yield()`, this number can be small.</span></span><br><span class="line"><span class="comment">///</span></span><br><span class="line"><span class="comment">/// `futures_multiqueue_with(1000,0,0)` is possible, which  will turn this hybrid-lock into a kernal lock.</span></span><br><span class="line"><span class="comment">/// Feel free to test different setting that matches your system.</span></span><br><span class="line"><span class="keyword">pub</span> <span class="function"><span class="keyword">fn</span> <span class="title">futures_multiqueue_with</span></span>&lt;RW: QueueRW&lt;T&gt;, T&gt;(</span><br><span class="line">    capacity: Index,</span><br><span class="line">    try_spins: <span class="built_in">usize</span>,</span><br><span class="line">    yield_spins: <span class="built_in">usize</span>,</span><br><span class="line">) -&gt; (FutInnerSend&lt;RW, T&gt;, FutInnerRecv&lt;RW, T&gt;) &#123;</span><br><span class="line">    <span class="keyword">let</span> cons_arc = Arc::new(FutWait::with_spins(try_spins, yield_spins));</span><br><span class="line">    <span class="keyword">let</span> prod_arc = Arc::new(FutWait::with_spins(try_spins, yield_spins));</span><br><span class="line">    <span class="keyword">let</span> (tx, rx) = MultiQueue::new_internal(capacity, cons_arc.clone());</span><br><span class="line">    <span class="keyword">let</span> ftx = FutInnerSend &#123;</span><br><span class="line">        writer: tx,</span><br><span class="line">        wait: cons_arc.clone(),</span><br><span class="line">        prod_wait: prod_arc.clone(),</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">let</span> rtx = FutInnerRecv &#123;</span><br><span class="line">        reader: rx,</span><br><span class="line">        wait: cons_arc.clone(),</span><br><span class="line">        prod_wait: prod_arc.clone(),</span><br><span class="line">    &#125;;</span><br><span class="line">    (ftx, rtx)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight rs"><figcaption><span>multiqueue.rs</span><a href="https://github.com/abbychau/multiqueue2/blob/master/src/multiqueue.rs" target="_blank" rel="noopener">link</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1099</span><br><span class="line">1100</span><br><span class="line">1101</span><br><span class="line">1102</span><br><span class="line">1103</span><br><span class="line">1104</span><br><span class="line">1105</span><br><span class="line">1106</span><br><span class="line">1107</span><br><span class="line">1108</span><br><span class="line">1109</span><br><span class="line">1110</span><br><span class="line">1111</span><br><span class="line">1112</span><br><span class="line">1113</span><br><span class="line">1114</span><br><span class="line">1115</span><br><span class="line">1116</span><br><span class="line">1117</span><br><span class="line">1118</span><br><span class="line">1119</span><br><span class="line">1120</span><br><span class="line">1121</span><br><span class="line">1122</span><br><span class="line">1123</span><br><span class="line">1124</span><br><span class="line">1125</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">unsafe</span> <span class="keyword">impl</span>&lt;RW: QueueRW&lt;T&gt;, T&gt; <span class="built_in">Send</span> <span class="keyword">for</span> FutInnerSend&lt;RW, T&gt; &#123;&#125;</span><br><span class="line"><span class="keyword">unsafe</span> <span class="keyword">impl</span>&lt;RW: QueueRW&lt;T&gt;, T&gt; <span class="built_in">Send</span> <span class="keyword">for</span> FutInnerRecv&lt;RW, T&gt; &#123;&#125;</span><br><span class="line"><span class="keyword">unsafe</span> <span class="keyword">impl</span>&lt;RW: QueueRW&lt;T&gt;, R, F: <span class="built_in">FnMut</span>(&amp;T) -&gt; R, T&gt; <span class="built_in">Send</span> <span class="keyword">for</span> FutInnerUniRecv&lt;RW, R, F, T&gt; &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/// Usage: futures_multiqueue(`capacity`)</span></span><br><span class="line"><span class="comment">/// This is equivalent to `futures_multiqueue_with(capacity,50,20)`.</span></span><br><span class="line"><span class="keyword">pub</span> <span class="function"><span class="keyword">fn</span> <span class="title">futures_multiqueue</span></span>&lt;RW: QueueRW&lt;T&gt;, T&gt;(</span><br><span class="line">    capacity: Index,</span><br><span class="line">) -&gt; (FutInnerSend&lt;RW, T&gt;, FutInnerRecv&lt;RW, T&gt;) &#123;</span><br><span class="line">    <span class="keyword">let</span> cons_arc = Arc::new(FutWait::new());</span><br><span class="line">    <span class="keyword">let</span> prod_arc = Arc::new(FutWait::new());</span><br><span class="line">    <span class="keyword">let</span> (tx, rx) = MultiQueue::new_internal(capacity, cons_arc.clone());</span><br><span class="line">    <span class="keyword">let</span> ftx = FutInnerSend &#123;</span><br><span class="line">        writer: tx,</span><br><span class="line">        wait: cons_arc.clone(),</span><br><span class="line">        prod_wait: prod_arc.clone(),</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">let</span> rtx = FutInnerRecv &#123;</span><br><span class="line">        reader: rx,</span><br><span class="line">        wait: cons_arc.clone(),</span><br><span class="line">        prod_wait: prod_arc.clone(),</span><br><span class="line">    &#125;;</span><br><span class="line">    (ftx, rtx)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/// Usage: futures_multiqueue_with(`capacity`,`try_spins`,`yield_spins`)</span></span><br><span class="line"><span class="comment">/// `capacity` is the maximum item to be allowed in queue; when it is full, `Err(Full&#123;...&#125;)` will be emitted</span></span><br></pre></td></tr></table></figure>
 <p>I would like to investigate and develop a clear equation for concurrency hybrid lock, but it seems to be a bit long and I may have it later in a Paper form.</p>
 <p>Feel free to leave issues or comments.</p>
 
@@ -433,6 +433,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/23/sns-pull-push/" rel="prev" title="SNS Pull Mode and Push Mode">
+                SNS Pull Mode and Push Mode <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -521,7 +525,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -543,7 +547,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">29</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -849,7 +853,7 @@
   
 
 <script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js?t=1561950539708')
+  navigator.serviceWorker.register('/sw.js?t=1571201520401')
     .then(function () {console.log('ServiceWorker Register Successfully.')})
     .catch(function (e) {console.error(e)});
 }

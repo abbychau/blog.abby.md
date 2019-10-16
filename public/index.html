@@ -77,18 +77,18 @@
 
 
 
-<meta name="description" content="Sharing different computer parts">
+<meta name="description" content="CreationsMusicFlower1LOL rerenderedSecond Run Midi Remix (midi version)Second Run Midi Remix (mp3 version)Saber Wing Cure My SoundCloud Paintings">
 <meta name="keywords" content="Programming,abbychau,blog,PHP,Rust">
 <meta property="og:type" content="website">
-<meta property="og:title" content="All Categories">
-<meta property="og:url" content="https://blog.abby.md/categories/index.html">
+<meta property="og:title" content="creations">
+<meta property="og:url" content="https://blog.abby.md/creations/index.html">
 <meta property="og:site_name" content="abby::blog">
-<meta property="og:description" content="Sharing different computer parts">
+<meta property="og:description" content="CreationsMusicFlower1LOL rerenderedSecond Run Midi Remix (midi version)Second Run Midi Remix (mp3 version)Saber Wing Cure My SoundCloud Paintings">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-19T23:58:12.319Z">
+<meta property="og:updated_time" content="2019-06-17T02:24:16.520Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="All Categories">
-<meta name="twitter:description" content="Sharing different computer parts">
+<meta name="twitter:title" content="creations">
+<meta name="twitter:description" content="CreationsMusicFlower1LOL rerenderedSecond Run Midi Remix (midi version)Second Run Midi Remix (mp3 version)Saber Wing Cure My SoundCloud Paintings">
 
 
 
@@ -120,7 +120,7 @@
 
 
 
-  <link rel="canonical" href="https://blog.abby.md/categories/">
+  <link rel="canonical" href="https://blog.abby.md/creations/">
 
 
 
@@ -286,6 +286,289 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.abby.md/2019/10/16/standalone-eventually-consistent-kv-store/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Abby Chau">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://www.gravatar.com/avatar/17623b699060c78823d7d6c95d1de7ec">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="abby::blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/10/16/standalone-eventually-consistent-kv-store/" itemprop="url">Development Story on a Standalone Eventually Consistent KV-Store</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-16T09:10:49+09:00">2019-10-16</time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/10/16/standalone-eventually-consistent-kv-store/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/10/16/standalone-eventually-consistent-kv-store/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong>Hint: If you are looking for Key-value store for your arbitrary values. This won’t suit your case.</strong></p>
+<h1 id="Story"><a href="#Story" class="headerlink" title="Story"></a>Story</h1><p>I am in development of my own social networking site. After some careful consideration, I decided to use MySQL, but in a NoSQL way, like MongoDB.</p>
+<p>The reason is straight-forward as I want scalibility. </p>
+<p>Of course mysql can do very good scale by setting up MGM, SQL nodes, and data nodes. However, there are some problems:</p>
+<ol>
+<li><p>The overhead of cluster is very high when the scale is small that we need 5 servers to serve the capacity of the data volume less than 2 servers.</p>
+</li>
+<li><p>Network is busy for synchronizing and query. And the speed is limited by the synchronizing speed.</p>
+</li>
+<li><p>MySQL cluster is based on memory which with is with Maximum capacity. </p>
+</li>
+</ol>
+<p>There are many more points for MySQL cluster is not suitable for most of the business cases, so please search around if you are interested. This is not the core of this article.</p>
+<p>Then, <strong>why not MongoDB?</strong>, because making structure can make better use of disk space and this ease the backend development too. I don’t think that NoSQL is only for unstructured data. Besides, MySQL provides JSON type as well.</p>
+<h1 id="So-we-have-a-relation-problem"><a href="#So-we-have-a-relation-problem" class="headerlink" title="So we have a relation problem"></a>So we have a relation problem</h1><p>In SaaS (or whatever aaS you named) like AWS DynamoDB. AWS charges you 100bytes per item of storage to account for indexes, which is very inefficient, and thus expensive (even though it is linear). Not mentioning you need usually two or more for each function.</p>
+<p>The functionality for MongoDB is limited as well. (<a href="https://www.tutorialspoint.com/mongodb/mongodb_indexing_limitations.htm" target="_blank" rel="noopener">link</a>)</p>
+<p>And, MySQL will force you to do partitioning in order to continue scaling, which is not easy for business logics.</p>
+<h1 id="Core-of-the-problem"><a href="#Core-of-the-problem" class="headerlink" title="Core of the problem"></a>Core of the problem</h1><p>The core of the problem is indexing.<br>Or in another word, index is prohibiting the growth of a single server because the memroy of a single server is limited.</p>
+<h1 id="Let’s-try-to-make-index-efficient"><a href="#Let’s-try-to-make-index-efficient" class="headerlink" title="Let’s try to make index efficient"></a>Let’s try to make index efficient</h1><p>For all of the business logic in the real world, the number is not existing unsigned 32bit. And even for some extreme case like “View count of Gangnam Style”, the count can be handled by 64bit.</p>
+<p>unsigned 64 bit integer is even large enough for relationship counts.</p>
+<p>If we assign 32GB of ram of the computer. 32GB/64bit= <code>INT_MAX of 32bit integer</code>. I would think that this is enough for storing relations for most global scale applications.</p>
+<p>So in my mind, the architecture of database is just as simple as “NoSQL Store” + “Index Store”. We seperate the main problem, indexing, to another server and make the store efficient.</p>
+<h1 id="Nature-of-Index"><a href="#Nature-of-Index" class="headerlink" title="Nature of Index"></a>Nature of Index</h1><p>The structure of index is very simple and fixed; which is <code>u64 -&gt; [u64;n]</code>.<br>So we usually invest too much overhead to handle arbitrary datatypes, serializations, data formating, byte-network-transport interfacings, etc.</p>
+<p>My idea is to make a server taking in an integer and return a list of integer immediately.</p>
+<h1 id="Journey-of-constructing-a-data-structure"><a href="#Journey-of-constructing-a-data-structure" class="headerlink" title="Journey of constructing a data-structure"></a>Journey of constructing a data-structure</h1><p>Data structure is the bread and butter of a store. </p>
+<p>Let’s start with Hashmap, which is a very simple in-memory internal store. </p>
+<p>Take <code>Hashmap&lt;u64, Vec&lt;u64&gt;&gt;</code> as an example.</p>
+<p>…to be continued…</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.abby.md/2019/07/23/sns-pull-push/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Abby Chau">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://www.gravatar.com/avatar/17623b699060c78823d7d6c95d1de7ec">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="abby::blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/07/23/sns-pull-push/" itemprop="url">SNS Pull Mode and Push Mode</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-23T15:11:38+09:00">2019-07-23</time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/07/23/sns-pull-push/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/07/23/sns-pull-push/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>坑</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://blog.abby.md/2019/06/06/multiqueue2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -388,7 +671,7 @@
 <p>And this experiment also taught me the performance ratio between <code>parking_lot</code> mutexes and native spins.</p>
 <h1 id="No-Silver-Bullet"><a href="#No-Silver-Bullet" class="headerlink" title="No Silver Bullet"></a>No Silver Bullet</h1><p>I really would like to come up with an equation for people to set the <code>try_spins</code> precisely, but it is very complicated because it includes all the envirnment information like CPU frequency, number of consumers, rate of feeding, etc.</p>
 <p>So I can just left it to the user.</p>
-<figure class="highlight rs"><figcaption><span>multiqueue.rs</span><a href="https://github.com/abbychau/multiqueue2/blob/master/src/multiqueue.rs" target="_blank" rel="noopener">link</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1099</span><br><span class="line">1100</span><br><span class="line">1101</span><br><span class="line">1102</span><br><span class="line">1103</span><br><span class="line">1104</span><br><span class="line">1105</span><br><span class="line">1106</span><br><span class="line">1107</span><br><span class="line">1108</span><br><span class="line">1109</span><br><span class="line">1110</span><br><span class="line">1111</span><br><span class="line">1112</span><br><span class="line">1113</span><br><span class="line">1114</span><br><span class="line">1115</span><br><span class="line">1116</span><br><span class="line">1117</span><br><span class="line">1118</span><br><span class="line">1119</span><br><span class="line">1120</span><br><span class="line">1121</span><br><span class="line">1122</span><br><span class="line">1123</span><br><span class="line">1124</span><br><span class="line">1125</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/// Usage: futures_multiqueue_with(`capacity`,`try_spins`,`yield_spins`)</span></span><br><span class="line"><span class="comment">/// `capacity` is the maximum item to be allowed in queue; when it is full, `Err(Full&#123;...&#125;)` will be emitted</span></span><br><span class="line"><span class="comment">/// `try_spins` is a performant, low latency blocking wait for lightweight conflict solving, lower this number when your CPU usage is high.</span></span><br><span class="line"><span class="comment">/// `yield_spins` is still busy but slowered by `yield()`, this number can be small.</span></span><br><span class="line"><span class="comment">///</span></span><br><span class="line"><span class="comment">/// `futures_multiqueue_with(1000,0,0)` is possible, which  will turn this hybrid-lock into a kernal lock.</span></span><br><span class="line"><span class="comment">/// Feel free to test different setting that matches your system.</span></span><br><span class="line"><span class="keyword">pub</span> <span class="function"><span class="keyword">fn</span> <span class="title">futures_multiqueue_with</span></span>&lt;RW: QueueRW&lt;T&gt;, T&gt;(</span><br><span class="line">    capacity: Index,</span><br><span class="line">    try_spins: <span class="built_in">usize</span>,</span><br><span class="line">    yield_spins: <span class="built_in">usize</span>,</span><br><span class="line">) -&gt; (FutInnerSend&lt;RW, T&gt;, FutInnerRecv&lt;RW, T&gt;) &#123;</span><br><span class="line">    <span class="keyword">let</span> cons_arc = Arc::new(FutWait::with_spins(try_spins, yield_spins));</span><br><span class="line">    <span class="keyword">let</span> prod_arc = Arc::new(FutWait::with_spins(try_spins, yield_spins));</span><br><span class="line">    <span class="keyword">let</span> (tx, rx) = MultiQueue::new_internal(capacity, cons_arc.clone());</span><br><span class="line">    <span class="keyword">let</span> ftx = FutInnerSend &#123;</span><br><span class="line">        writer: tx,</span><br><span class="line">        wait: cons_arc.clone(),</span><br><span class="line">        prod_wait: prod_arc.clone(),</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">let</span> rtx = FutInnerRecv &#123;</span><br><span class="line">        reader: rx,</span><br><span class="line">        wait: cons_arc.clone(),</span><br><span class="line">        prod_wait: prod_arc.clone(),</span><br><span class="line">    &#125;;</span><br><span class="line">    (ftx, rtx)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight rs"><figcaption><span>multiqueue.rs</span><a href="https://github.com/abbychau/multiqueue2/blob/master/src/multiqueue.rs" target="_blank" rel="noopener">link</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1099</span><br><span class="line">1100</span><br><span class="line">1101</span><br><span class="line">1102</span><br><span class="line">1103</span><br><span class="line">1104</span><br><span class="line">1105</span><br><span class="line">1106</span><br><span class="line">1107</span><br><span class="line">1108</span><br><span class="line">1109</span><br><span class="line">1110</span><br><span class="line">1111</span><br><span class="line">1112</span><br><span class="line">1113</span><br><span class="line">1114</span><br><span class="line">1115</span><br><span class="line">1116</span><br><span class="line">1117</span><br><span class="line">1118</span><br><span class="line">1119</span><br><span class="line">1120</span><br><span class="line">1121</span><br><span class="line">1122</span><br><span class="line">1123</span><br><span class="line">1124</span><br><span class="line">1125</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">unsafe</span> <span class="keyword">impl</span>&lt;RW: QueueRW&lt;T&gt;, T&gt; <span class="built_in">Send</span> <span class="keyword">for</span> FutInnerSend&lt;RW, T&gt; &#123;&#125;</span><br><span class="line"><span class="keyword">unsafe</span> <span class="keyword">impl</span>&lt;RW: QueueRW&lt;T&gt;, T&gt; <span class="built_in">Send</span> <span class="keyword">for</span> FutInnerRecv&lt;RW, T&gt; &#123;&#125;</span><br><span class="line"><span class="keyword">unsafe</span> <span class="keyword">impl</span>&lt;RW: QueueRW&lt;T&gt;, R, F: <span class="built_in">FnMut</span>(&amp;T) -&gt; R, T&gt; <span class="built_in">Send</span> <span class="keyword">for</span> FutInnerUniRecv&lt;RW, R, F, T&gt; &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/// Usage: futures_multiqueue(`capacity`)</span></span><br><span class="line"><span class="comment">/// This is equivalent to `futures_multiqueue_with(capacity,50,20)`.</span></span><br><span class="line"><span class="keyword">pub</span> <span class="function"><span class="keyword">fn</span> <span class="title">futures_multiqueue</span></span>&lt;RW: QueueRW&lt;T&gt;, T&gt;(</span><br><span class="line">    capacity: Index,</span><br><span class="line">) -&gt; (FutInnerSend&lt;RW, T&gt;, FutInnerRecv&lt;RW, T&gt;) &#123;</span><br><span class="line">    <span class="keyword">let</span> cons_arc = Arc::new(FutWait::new());</span><br><span class="line">    <span class="keyword">let</span> prod_arc = Arc::new(FutWait::new());</span><br><span class="line">    <span class="keyword">let</span> (tx, rx) = MultiQueue::new_internal(capacity, cons_arc.clone());</span><br><span class="line">    <span class="keyword">let</span> ftx = FutInnerSend &#123;</span><br><span class="line">        writer: tx,</span><br><span class="line">        wait: cons_arc.clone(),</span><br><span class="line">        prod_wait: prod_arc.clone(),</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">let</span> rtx = FutInnerRecv &#123;</span><br><span class="line">        reader: rx,</span><br><span class="line">        wait: cons_arc.clone(),</span><br><span class="line">        prod_wait: prod_arc.clone(),</span><br><span class="line">    &#125;;</span><br><span class="line">    (ftx, rtx)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/// Usage: futures_multiqueue_with(`capacity`,`try_spins`,`yield_spins`)</span></span><br><span class="line"><span class="comment">/// `capacity` is the maximum item to be allowed in queue; when it is full, `Err(Full&#123;...&#125;)` will be emitted</span></span><br></pre></td></tr></table></figure>
 <p>I would like to investigate and develop a clear equation for concurrency hybrid lock, but it seems to be a bit long and I may have it later in a Paper form.</p>
 <p>Feel free to leave issues or comments.</p>
 
@@ -1343,7 +1626,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1365,7 +1648,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">29</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -1639,7 +1922,7 @@
   
 
 <script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js?t=1561950539708')
+  navigator.serviceWorker.register('/sw.js?t=1571201520401')
     .then(function () {console.log('ServiceWorker Register Successfully.')})
     .catch(function (e) {console.error(e)});
 }
