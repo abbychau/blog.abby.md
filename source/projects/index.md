@@ -12,12 +12,14 @@ date: 2019-06-12 12:39:07
 - Multiqueue2 (Rust Crate)
 - Konran 8 Rounds (Web / iOS / Android)
 - Bitcoin Dice (Web / Bitcoind)
+- [usize-kv](https://github.com/abbychau/usize-kv)
 
 # Fulltime Developed and Downed
 - Otea.com (Full-Stack)
 - Empire Conquest (Cocos2d-x)
-- uploadstation.com (JavaScript)
-- vpndirect.com (Full-Stack / Paypal API)
+- uploadstation.com (Hadoop / MySQL Cluster / Java / PHP)
+- vpndirect.com (Paypal / PHP)
+- debit.co.jp (Rust / gRPC)
 
 # Fulltime Maintenance / Supervision
 - MTR Mobile (iOS / Android app , v5 to v11)
@@ -25,13 +27,14 @@ date: 2019-06-12 12:39:07
 - MTR NextTrain (iOS / Android app)
 - MTR.com.hk (PHP + Oracle)
 
-# Toy Projects
+# Unity Toys
 - BMS Dropper (Unity)
 - Unity City Generator (Unity)
+
+# Toys / Small Repos
 - Windows Webcam Capture (Windows Desktop app)
 - Novalty (Android app)
-
-# Smaller Repos
+- hackish (PHP)
 - diesel_cli_ext (Rust)
 - Order Book Array (Swoole)
 - Typecho AppStore (PHP)
@@ -44,7 +47,7 @@ date: 2019-06-12 12:39:07
 - smart-contract-rs (Smart Contracts / Rust Crate)
 - style2paints (OpenCV / Python3 / Keras)
 - PaintsChainer (OpenCV / Python3 / Chainer)
-- Mail
-- Hifone
+- Mail (PHP Packagist)
+- Hifone (Laravel)
 
 [My Github page](https://github.com/abbychau)
