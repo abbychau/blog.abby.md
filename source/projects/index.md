@@ -4,13 +4,13 @@ date: 2019-06-12 12:39:07
 ---
 
 # Owned Projects
-- Real Forum (Federated Discussion Board)
-- Real Blog (Federated Blog)
-- Endless Choice (UGC story telling)
-- Exchange Hub (Global crypto tracker)
-- Pays Network (BTC/ETH Wallet/Exchange w/ interest)
+- [Real Forum](https://realforum.zkiz.com) (Federated Discussion Board)
+- [Real Blog](https://realblog.zkiz.com) (Federated Blog)
+- [Endless Choice](https://ec.abby.md) (UGC story telling)
+- Exchange Hub (Member only, Global crypto tracker)
+- Pays Network (Member only, BTC/ETH Wallet/Exchange w/ interest)
 - Multiqueue2 (Rust Crate)
-- Konran 8 Rounds (Web / iOS / Android)
+- [Konran 8 Rounds](http://konran.zkiz.com/) (Web / iOS / Android)
 - Bitcoin Dice (Web / Bitcoind)
 - [usize-kv](https://github.com/abbychau/usize-kv)
 
@@ -20,21 +20,20 @@ date: 2019-06-12 12:39:07
 - uploadstation.com (Hadoop / MySQL Cluster / Java / PHP)
 - vpndirect.com (Paypal / PHP)
 - debit.co.jp (Rust / gRPC)
+- MTR Tourist (iOS / Android app)
 
 # Fulltime Maintenance / Supervision
-- MTR Mobile (iOS / Android app , v5 to v11)
-- MTR Tourist (iOS / Android app)
+- MTR Mobile ([iOS](https://itunes.apple.com/hk/app/mtr-mobile/id369295276?mt=8) / [Android](https://play.google.com/store/apps/details?id=com.mtr.mtrmobile&hl=en) app , v5 to v11)
 - MTR NextTrain (iOS / Android app)
-- MTR.com.hk (PHP + Oracle)
+- [MTR.com.hk](https://www.mtr.com.hk/) (PHP + Oracle)
 
 # Unity Toys
-- BMS Dropper (Unity)
-- Unity City Generator (Unity)
+- [BMS Dropper](https://github.com/abbychau/BMS-Dropper) (Unity)
+- [Unity City Generator](https://github.com/abbychau/Unity_City_Generator) (Unity)
 
 # Toys / Small Repos
 - Windows Webcam Capture (Windows Desktop app)
 - Novalty (Android app)
-- hackish (PHP)
 - diesel_cli_ext (Rust)
 - Order Book Array (Swoole)
 - Typecho AppStore (PHP)

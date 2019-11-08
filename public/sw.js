@@ -24,15 +24,15 @@ var precacheUrls = [];
 
   precacheUrls.push('/');
 
-  precacheUrls.push('/2019/10/16/standalone-eventually-consistent-kv-store/');
+  precacheUrls.push('/2019/05/20/Benchmarking-nom-2/');
 
-  precacheUrls.push('/2019/07/23/sns-pull-push/');
-
-  precacheUrls.push('/2019/06/06/multiqueue2/');
+  precacheUrls.push('/2019/05/17/How-does-nom-work/');
 
   precacheUrls.push('/2019/05/24/Mio-Based-Coroutine-Libs/');
 
-  precacheUrls.push('/2019/05/20/Benchmarking-nom-2/');
+  precacheUrls.push('/2019/05/20/benchmarking-nom/');
+
+  precacheUrls.push('/2019/06/06/multiqueue2/');
 
 toolbox.precache(precacheUrls);
 toolbox.options = {"networkTimeoutSeconds":5};
