@@ -37,10 +37,10 @@ And, MySQL will force you to do partitioning in order to continue scaling, which
 
 # Core of the problem
 The core of the problem is indexing.
-Or in another word, index is prohibiting the growth of a single server because the memroy of a single server is limited.
+Or in another word, index is prohibiting the growth of a single server because the memory of a single server is limited.
 
 # Let's try to make index efficient
-For all of the business logic in the real world, the number is not existing unsigned 32bit. And even for some extreme case like "View count of Gangnam Style", the count can be handled by 64bit.
+For all of the business logic in the real world, the number is not exceeding unsigned 32bit. And even for some extreme case like "View count of Gangnam Style", the count can be handled by 64bit.
 
 unsigned 64 bit integer is even large enough for relationship counts.
 
@@ -62,3 +62,7 @@ Let's start with Hashmap, which is a very simple in-memory internal store.
 Take `Hashmap<u64, Vec<u64>>` as an example.
 
 ...to be continued...
+
+# Hash Functions
+
+https://github.com/JesperAxelsson/rust-intmap

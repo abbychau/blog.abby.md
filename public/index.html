@@ -286,6 +286,141 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.abby.md/2019/11/20/export-facebook-friends-id/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Abby Chau">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://www.gravatar.com/avatar/17623b699060c78823d7d6c95d1de7ec">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="abby::blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/11/20/export-facebook-friends-id/" itemprop="url">Export Facebook Friends list</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-20T18:00:27+09:00">2019-11-20</time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/11/20/export-facebook-friends-id/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/20/export-facebook-friends-id/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Facebook removed API to get your friend list.<br>Now:</p>
+<ol>
+<li>Go to your logged in facebook.com</li>
+<li>request token: <code>document.getElementsByName(&#39;fb_dtsg&#39;)[0].value</code></li>
+<li>your uid: <code>https://findmyfbid.in/</code></li>
+<li><a href="https://www.facebook.com/ajax/typeahead/first_degree.php?__a=1&amp;filter%5B0%5D=user&amp;lazy=0&amp;viewer=`your" target="_blank" rel="noopener">https://www.facebook.com/ajax/typeahead/first_degree.php?__a=1&amp;filter%5B0%5D=user&amp;lazy=0&amp;viewer=`your</a> uid<code>&amp;token=v7&amp;stale_ok=0&amp;options%5B0%5D=friends_only&amp;options%5B1%5D=nm&amp;fb_dtsg=</code>request token`</li>
+</ol>
+<p>Do you share your request token to anyone.</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://blog.abby.md/2019/10/16/standalone-eventually-consistent-kv-store/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -382,8 +517,8 @@
 <h1 id="So-we-have-a-relation-problem"><a href="#So-we-have-a-relation-problem" class="headerlink" title="So we have a relation problem"></a>So we have a relation problem</h1><p>In SaaS (or whatever aaS you named) like AWS DynamoDB. AWS charges you 100bytes per item of storage to account for indexes, which is very inefficient, and thus expensive (even though it is linear). Not mentioning you need usually two or more for each function.</p>
 <p>The functionality for MongoDB is limited as well. (<a href="https://www.tutorialspoint.com/mongodb/mongodb_indexing_limitations.htm" target="_blank" rel="noopener">link</a>)</p>
 <p>And, MySQL will force you to do partitioning in order to continue scaling, which is not easy for business logics.</p>
-<h1 id="Core-of-the-problem"><a href="#Core-of-the-problem" class="headerlink" title="Core of the problem"></a>Core of the problem</h1><p>The core of the problem is indexing.<br>Or in another word, index is prohibiting the growth of a single server because the memroy of a single server is limited.</p>
-<h1 id="Let’s-try-to-make-index-efficient"><a href="#Let’s-try-to-make-index-efficient" class="headerlink" title="Let’s try to make index efficient"></a>Let’s try to make index efficient</h1><p>For all of the business logic in the real world, the number is not existing unsigned 32bit. And even for some extreme case like “View count of Gangnam Style”, the count can be handled by 64bit.</p>
+<h1 id="Core-of-the-problem"><a href="#Core-of-the-problem" class="headerlink" title="Core of the problem"></a>Core of the problem</h1><p>The core of the problem is indexing.<br>Or in another word, index is prohibiting the growth of a single server because the memory of a single server is limited.</p>
+<h1 id="Let’s-try-to-make-index-efficient"><a href="#Let’s-try-to-make-index-efficient" class="headerlink" title="Let’s try to make index efficient"></a>Let’s try to make index efficient</h1><p>For all of the business logic in the real world, the number is not exceeding unsigned 32bit. And even for some extreme case like “View count of Gangnam Style”, the count can be handled by 64bit.</p>
 <p>unsigned 64 bit integer is even large enough for relationship counts.</p>
 <p>If we assign 32GB of ram of the computer. 32GB/64bit= <code>INT_MAX of 32bit integer</code>. I would think that this is enough for storing relations for most global scale applications.</p>
 <p>So in my mind, the architecture of database is just as simple as “NoSQL Store” + “Index Store”. We seperate the main problem, indexing, to another server and make the store efficient.</p>
@@ -393,6 +528,7 @@
 <p>Let’s start with Hashmap, which is a very simple in-memory internal store. </p>
 <p>Take <code>Hashmap&lt;u64, Vec&lt;u64&gt;&gt;</code> as an example.</p>
 <p>…to be continued…</p>
+<h1 id="Hash-Functions"><a href="#Hash-Functions" class="headerlink" title="Hash Functions"></a>Hash Functions</h1><p><a href="https://github.com/JesperAxelsson/rust-intmap" target="_blank" rel="noopener">https://github.com/JesperAxelsson/rust-intmap</a></p>
 
           
         
@@ -1626,7 +1762,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1648,7 +1784,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">32</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -1922,7 +2058,7 @@
   
 
 <script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js?t=1571201520401')
+  navigator.serviceWorker.register('/sw.js?t=1574240732448')
     .then(function () {console.log('ServiceWorker Register Successfully.')})
     .catch(function (e) {console.error(e)});
 }
