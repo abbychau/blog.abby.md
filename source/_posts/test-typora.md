@@ -26,3 +26,6 @@ tags:
 試完之後, 因為要輸入`asset_img`, 所以還是用回vscode 好了。用typora 的話, 還是用圖床直接取後絶對路徑比較好。
 
 <div class="note warning">note warning</div>
+{% note info no-icon %}
+large
+{% endnote %}
