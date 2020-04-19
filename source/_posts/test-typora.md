@@ -1,6 +1,8 @@
 ---
 title: 測試Typora
 date: 2020-04-19 19:07:07
+categories:
+- Hexo
 tags:
 - Git
 - Typora
@@ -29,3 +31,4 @@ tags:
 {% note info no-icon %}
 large
 {% endnote %}
+

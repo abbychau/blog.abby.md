@@ -1,6 +1,8 @@
 ---
 title: Export Facebook Friends list
 date: 2019-11-20 18:00:27
+categories:
+- SNS
 tags:
 - facebook
 - api

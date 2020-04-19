@@ -1,6 +1,7 @@
 ---
 title: The things I tested on a broadcast queue - multiqueue2
 date: 2019-06-06 18:02:21
+categories: Rust
 tags:
 - multiqueue
 - queue

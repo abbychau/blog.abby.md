@@ -1,6 +1,9 @@
 ---
 title: Development Story on a Standalone Eventually Consistent KV-Store
 date: 2019-10-16 09:10:49
+categories:
+- Rust
+- Key-Value Store
 tags: 
 - key-value
 - Database

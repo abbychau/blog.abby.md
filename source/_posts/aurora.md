@@ -1,6 +1,8 @@
 ---
 title: 北極光
 date: 2019-06-17 21:45:46
+categories:
+- Music
 tags:
 - 盧巧音
 - 音樂
