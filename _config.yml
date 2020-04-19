@@ -92,7 +92,7 @@ avatar: https://www.gravatar.com/avatar/17623b699060c78823d7d6c95d1de7ec
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/abbychau/blog.abby.md
+  repo: git@github.com:abbychau/blog.abby.md.git
   branch: gh-pages
 
 pwa:
