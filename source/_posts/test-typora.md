@@ -17,6 +17,8 @@ tags:
 
 圖片方面, 有直接設定個imgur 的Client ID, 但想了想, 還是留在本地比較好吧? 項目真大過10GB 再移動也未遲。
 
-![Tifa Lockhart | Final Fantasy Wiki | Fandom](./test-typora/Tifa_Lockhart_from_FFVII_Remake_render.png)
+{% asset_img Tifa_Lockhart_from_FFVII_Remake_render.png Tifa %}
+
+![2020-04-19T202838](2020-04-19T202838.png)
 
 "我有被成功上傳嗎?"
