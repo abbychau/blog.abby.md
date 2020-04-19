@@ -19,6 +19,10 @@ tags:
 
 {% asset_img Tifa_Lockhart_from_FFVII_Remake_render.png Tifa %}
 
-![2020-04-19T202838](2020-04-19T202838.png)
+{% asset_img 2020-04-19T202838.png Xi %}
 
 "我有被成功上傳嗎?"
+
+試完之後, 因為要輸入`asset_img`, 所以還是用回vscode 好了。用typora 的話, 還是用圖床直接取後絶對路徑比較好。
+
+<div class="note warning">note warning</div>
