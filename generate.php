@@ -2,7 +2,7 @@
 
 <?php
 include("./vendor/autoload.php");
-$Parsedown = new Parsedown();
+// $Parsedown = new Parsedown();
 use Symfony\Component\Yaml\Yaml;
 
 function process($file){
@@ -12,11 +12,9 @@ function process($file){
         if(trim($line) == "---"){
             if(++$mc==2){
                 $_txt=implode("\n",$ytxt);
-                // print_r(Yaml::parse($_txt));
                 $data=Yaml::parse($_txt);
                 $data['path']=$file;
                 if(is_numeric($data['date'])){
-                    // echo $data['date'];
                     $data['date'] = date("Y-m-d",$data['date']);
                 }
                 return $data;
