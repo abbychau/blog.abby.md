@@ -1,5 +1,4 @@
 <html>
-
 <head>
     <style>
         body {
@@ -18,7 +17,7 @@
         body>div {
             position: fixed;
         }
-        img{max-width: 100%;}
+        img{max-width: 90%;}
     </style>
     <link rel="icon" type="image/png"
         href="https://d2v9k5u4v94ulw.cloudfront.net/assets/images/2191294/original/e01cdc83-7764-49d6-9176-4695d37133b7?1522307876" />
@@ -37,7 +36,7 @@
             str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3')
 
 
-            return marked(str);
+            return marked(str,{gfm: true,breaks: false});
         }
         $(document).ready(function () {
             if (window.location.hash) {
