@@ -4,6 +4,8 @@
 include("./vendor/autoload.php");
 // $Parsedown = new Parsedown();
 use Symfony\Component\Yaml\Yaml;
+use WyriHaximus\HtmlCompress\Factory;
+
 
 function process($file){
     $txt=file_get_contents($file);
@@ -62,5 +64,8 @@ foreach($store as $v){
 }
 $template = file_get_contents('template.htm');
 $template = str_replace("{{list}}",$list,$template);
-file_put_contents("index.htm",$template);
+$parser = Factory::constructSmallest();
+$compressedHtml = $parser->compress($template);
+
+file_put_contents("index.htm",$compressedHtml);
 

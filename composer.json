@@ -2,6 +2,7 @@
     "require": {
         "erusev/parsedown": "^1.7",
         "symfony/yaml": "^5.3",
-        "league/html-to-markdown": "^5.0"
+        "league/html-to-markdown": "^5.0",
+        "wyrihaximus/html-compress": "^4.1"
     }
 }

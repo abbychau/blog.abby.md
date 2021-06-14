@@ -31,20 +31,13 @@
     <script>
         function myMarked(str){
             
-            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>')
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
 
-            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3')
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
 
 
             return marked(str,{gfm: true,breaks: true});
-        }
-        $(document).ready(function () {
-            if (window.location.hash) {
-                var hash = window.location.hash.substring(1); //Puts hash in variable, and removes the # character
-                go(hash);
-            } else {
-            }
-        })
+        };
         function go(url) {
             $.get(url, function (data) {
                 var arr = data.split("\n");
@@ -54,33 +47,40 @@
                     if (line.trim() == "---") {
                         ++mc;
                         continue;
-                    }
+                    };
                     if (mc < 2) {
                         yamlText += line + "\n";
                     } else {
                         contentText += line + "\n";
                     }
-                }
-                var meta;
-
+                };
                 try {
-                    meta = YAML.parse(yamlText);
+                    var meta = YAML.parse(yamlText);
                     $("#m").html(meta.title);
                     $("#date").html(meta.date);
                     $("#tags").html("Tags: " + JSON.stringify(meta.categories??[]) + ", " + JSON.stringify(meta.tags??[]) + "<hr />");
                     $("#content").html(myMarked(contentText));
+                    document.title = meta.title;
                 } catch (e) {
-                    console.log(e)
-                    console.log(yamlText)
+                    console.log(e);
+                    console.log(yamlText);
                     $("#date").html(yamlText);
                     $("#content").html(myMarked(data));
-                }
-                document.title = meta.title;
-                history.pushState({}, meta.title, "#" + url);
+                };
+                
+                history.pushState({}, document.title, "#" + url);
 
                 hljs.highlightAll();
             })
-        }</script>
+        };
+        $(document).ready(function () {
+            if (window.location.hash) {
+                var hash = window.location.hash.substring(1); //Puts hash in variable, and removes the # character
+                go(hash);
+            } else {
+            }
+        })
+        </script>
 </head>
 
 <body>
