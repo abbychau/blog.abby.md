@@ -36,7 +36,7 @@
             str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3')
 
 
-            return marked(str,{gfm: true,breaks: false});
+            return marked(str,{gfm: true,breaks: true});
         }
         $(document).ready(function () {
             if (window.location.hash) {
