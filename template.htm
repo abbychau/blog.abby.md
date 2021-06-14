@@ -8,13 +8,13 @@
             margin: 10px;
             font-family: consolas, monospace;
         }
-
         a {
             color: #a9dc76;
             cursor: pointer
         }
         .hljs{font-family: consolas,monospace;}
         body>div {
+            word-break: break-all;
             position: fixed;
         }
         img{max-width: 90%;}
@@ -58,7 +58,7 @@
                     var meta = YAML.parse(yamlText);
                     $("#m").html(meta.title);
                     $("#date").html(meta.date);
-                    $("#tags").html("Tags: " + JSON.stringify(meta.categories??[]) + ", " + JSON.stringify(meta.tags??[]) + "<hr />");
+                    $("#tags").html("Tags: " + JSON.stringify(meta.categories??[]) + ", " + JSON.stringify(meta.tags??[]));
                     $("#content").html(myMarked(contentText));
                     document.title = meta.title;
                 } catch (e) {
@@ -89,13 +89,13 @@
         style="width: 200px; top:50px;height: calc(100vh - 60px);overflow-y: scroll; overflow-x:hidden;font-size:13px;">
         {{list}}</div>
     <div
-        style="right:10px;top:50px;width: calc(100vw - 240px);height: calc(100vh - 60px);overflow-y: scroll;font-size:13pt">
+        style="right:10px;top:50px;width: calc(100vw - 250px);height: calc(100vh - 60px);padding:0 .7em 0 .7em; overflow-y: scroll;font-size:13pt">
 
 
         <h1 id="m"></h1>
         <div id="date" style='font-size: 9pt;'></div>
-        <div style='font-size: 9pt;' id="tags"></div>
-        <div id="content">
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags"></div>
+        <div id="content" style='word-break: break-all;'>
             <h1>Welcome!</h1>
 
         </div>
