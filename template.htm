@@ -29,6 +29,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
 
     <script>
+        function myMarked(str){
+            
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>')
+
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3')
+
+
+            return marked(str);
+        }
         $(document).ready(function () {
             if (window.location.hash) {
                 var hash = window.location.hash.substring(1); //Puts hash in variable, and removes the # character
@@ -58,13 +67,13 @@
                     meta = YAML.parse(yamlText);
                     $("#m").html(meta.title);
                     $("#date").html(meta.date);
-                    $("#tags").html("Tags: " + JSON.stringify(meta.categories) + ", " + JSON.stringify(meta.tags) + "<hr />");
-                    $("#content").html(marked(contentText));
+                    $("#tags").html("Tags: " + JSON.stringify(meta.categories??[]) + ", " + JSON.stringify(meta.tags??[]) + "<hr />");
+                    $("#content").html(myMarked(contentText));
                 } catch (e) {
                     console.log(e)
                     console.log(yamlText)
                     $("#date").html(yamlText);
-                    $("#content").html(marked(data));
+                    $("#content").html(myMarked(data));
                 }
                 document.title = meta.title;
                 history.pushState({}, meta.title, "#" + url);
