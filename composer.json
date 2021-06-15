@@ -1,4 +1,6 @@
 {
+    "name":"abbychau/blog.abby.md",
+    "description": "My Blog lor",
     "require": {
         "erusev/parsedown": "^1.7",
         "symfony/yaml": "^5.3",
