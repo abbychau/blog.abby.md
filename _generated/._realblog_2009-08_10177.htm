@@ -1,0 +1,104 @@
+<html>
+
+<head>
+    <title>Abby's Archive</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <style>
+        /* for all screens */
+        #info {
+            display: none;
+        }
+
+        /* only when orientation is in portrait mode */
+        @media all and (orientation:portrait) {
+            #info {
+                color: red;
+                display: inline;
+                font-size: 20px
+            }
+        }
+
+
+        body {
+            background-color: #2c292d;
+            color: #fdf9f3;
+            padding: 1em;
+            margin: 0;
+            font-family: consolas, monospace;
+        }
+
+        a {
+            color: #a9dc76;
+            cursor: pointer
+        }
+
+        .hljs {
+            font-family: consolas, monospace;
+        }
+
+        body>div {
+            word-break: break-all;
+            position: fixed;
+        }
+
+        img {
+            max-width: 90%;
+        }
+    </style>
+    <link rel="icon" type="image/png"
+        href="https://d2v9k5u4v94ulw.cloudfront.net/assets/images/2191294/original/e01cdc83-7764-49d6-9176-4695d37133b7?1522307876" />
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+
+    <script>
+        function myMarked(str) {
+
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+
+
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            myMarked($('#article').html())
+        })
+    </script>
+</head>
+
+<body>
+    
+    <div id='article' style='padding:0 15px 10px 10px'>
+        <h1 id="subject">編程的原則</h1>
+        <div id="date" style='font-size: 9pt;'>2009-08-10</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags">"實務電腦"</div>
+        <div id="content" style='word-break: break-all;'><p>所發佈的主要是電腦程式，下面是我對編程的一些話：<br />
+我不是完美主義者，但對編程總有一些原則．．．  </p>
+<p>－用盡量少行數的”寫法”去寫<br />
+我看到在同一份工作上，不少人都因為邏輯不夠敏捷只花了很多行數在分隔區塊，處理變數格式的工作上．．．  </p>
+<p>－只用”必要”設立的變數<br />
+我看到在同一份工作上，不少人都因為邏輯不夠清淅，為每個區塊寫了不同的記憶體位置但卻存有同樣或只有微少差異的變數．．．  </p>
+<p>－只用內部資料調用<br />
+這個一方面是我比較懶去動手載入，另一方面就是為了更快的速度，雖然功能擴張比較麻煩，但我一直超求的是完美的速度。<br />
+既然多一個text 我都不會去考慮，更何況是這個呢．．．  </p>
+<p>－只用靜態載入的基本視窗控件<br />
+非標準控件實在對軟件的獨立性、記憶體佔用和大小做成太大的負面影響，真的有需要用到的話，我是會自己在程式內部重新寫一個的  </p>
+<p>－只用8bit 的文字<br />
+這個可以令字串調用時減少50%的記憶體佔用  </p>
+<p>看了上面的五點，有編程經驗的會覺得：自找麻煩<br />
+但是，在我每一件的作品中，我都會覺得它是一件藝術品，<br />
+在邏輯上完美：一件不會在任何情況下出錯的藝術品<br />
+在結構上完美：在同一個功能上，不會有任何其他人甚至本人出產的替代品，因為它是一件佔用最少空間、佔最少記憶體的藝術品<br />
+在介面上完美：不會有不實的地方出現，因為它是一件在其功能上佔用最少的桌面空間的藝術品  </p>
+<p>有一個很重要的結論，真正有需要的話，我真的想不到有任何原因不去用我自己的軟件  </p></div>
+        <div id="permalink" style='word-break: break-all;'>{{paramlink}}</div>
+        
+    </div>
+</body>
+
+</html>

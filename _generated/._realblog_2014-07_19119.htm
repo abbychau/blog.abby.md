@@ -1,0 +1,114 @@
+<html>
+
+<head>
+    <title>Abby's Archive</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <style>
+        /* for all screens */
+        #info {
+            display: none;
+        }
+
+        /* only when orientation is in portrait mode */
+        @media all and (orientation:portrait) {
+            #info {
+                color: red;
+                display: inline;
+                font-size: 20px
+            }
+        }
+
+
+        body {
+            background-color: #2c292d;
+            color: #fdf9f3;
+            padding: 1em;
+            margin: 0;
+            font-family: consolas, monospace;
+        }
+
+        a {
+            color: #a9dc76;
+            cursor: pointer
+        }
+
+        .hljs {
+            font-family: consolas, monospace;
+        }
+
+        body>div {
+            word-break: break-all;
+            position: fixed;
+        }
+
+        img {
+            max-width: 90%;
+        }
+    </style>
+    <link rel="icon" type="image/png"
+        href="https://d2v9k5u4v94ulw.cloudfront.net/assets/images/2191294/original/e01cdc83-7764-49d6-9176-4695d37133b7?1522307876" />
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+
+    <script>
+        function myMarked(str) {
+
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+
+
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            myMarked($('#article').html())
+        })
+    </script>
+</head>
+
+<body>
+    
+    <div id='article' style='padding:0 15px 10px 10px'>
+        <h1 id="subject">[隅田川夏戀歌]好難聽啊! 聽住咁多先orz</h1>
+        <div id="date" style='font-size: 9pt;'>2014-07-06</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags">"日常生活"</div>
+        <div id="content" style='word-break: break-all;'><p><span style="font-family:Verdana,san-serif;">くちびる慣れない紅さして貴方が待つ日本橋へ<br />
+<span style="color:red;">ku chibiru nare nai kurenai~ sashite a . nata ga . matsu nihonbashi he<br />
+</span>お姉様譲りお古の浴衣少し丈が短すぎて<br />
+<span style="color:red;">o ne e . samayu . zuri o ko no . yukata su . koshi ta . ke ga mijikasu gite<br />
+</span>淡い絞り夕顔の模様<br />
+<span style="color:red;">awai~ shibori yuugao no . moyou<br />
+</span>「よく似合うよ」と言いながらも貴方笑いこらえてる<br />
+<span style="color:red;">yoku niau~ yo to ii nagaramo a.nata wa.rai koraeteru<br />
+</span><br />
+<span style="color:red;"><br />
+</span>人の波右左避けながら歩く貴方の後ろ<br />
+<span style="color:red;">nin no nami migihidari sake ~ nagara aruku . anata no ushiro<br />
+</span>まるで雀みたいにチョコマカついてく私忘れないで<br />
+<span style="color:red;">marude suzume. mitaini choko.maka tsuiteku. watashi wasure naide<br />
+</span>貴方時計見て心配ばかり<br />
+<span style="color:red;">anata~ tokei mi.te shinpai bakari<br />
+</span>浅草で買った飴色の髪飾りに気がついて<br />
+<span style="color:red;">asakusa de~~ katta ameiro. no kamikaza rinikiga tsuite<br />
+</span><br />
+<span style="color:red;"><br />
+</span>先行く貴方の後ろ姿どうにも詰まらぬ私の隣<br />
+<span style="color:red;">senkou ku anata no ushirosugata dounimo tsuma ranu wa.tashi no tonari<br />
+</span>膨れっ面でカラコロカラコロ足早に一尺一寸近づいて<br />
+<span style="color:red;">fukure tsu men de karakorokarakoro ashibaya ni ichi. shaku ichi. chikai ite<br />
+</span>ユラリユラリと走る地下鉄に揺られて不意に背中押されて<br />
+<span style="color:red;">yurariyurari to hashiru chikatetsu ni yura rete fui ni senaka osa rete<br />
+</span>思わず腕につかまり嬉し恥かしこのままでいきましょ隅田川<br />
+<span style="color:red;">omowazu ude nitsukamari ureshi hazuka shiko.nomamadeiki~ masho sumidagawa </span><span style="color:#ff0000;"><br />
+</span></span></p></div>
+        <div id="permalink" style='word-break: break-all;'>{{paramlink}}</div>
+        
+    </div>
+</body>
+
+</html>

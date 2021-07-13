@@ -1,0 +1,12 @@
+<p>separated:</p>
+<table class="table table-bordered" style="border-spacing: 3px;border-collapse: separate;"><tbody><tr><td>  
+</td><td>  
+</td></tr><tr><td>  
+</td><td>  
+</td></tr></tbody></table>
+<p>collapsed:</p>
+<table class="table table-bordered"><tbody><tr><td>  
+</td><td>  
+</td></tr><tr><td>  
+</td><td>  
+</td></tr></tbody></table>

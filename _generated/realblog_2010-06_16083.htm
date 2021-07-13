@@ -1,0 +1,102 @@
+<html>
+
+<head>
+    <title>Abby's Archive</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <style>
+        /* for all screens */
+        #info {
+            display: none;
+        }
+
+        /* only when orientation is in portrait mode */
+        @media all and (orientation:portrait) {
+            #info {
+                color: red;
+                display: inline;
+                font-size: 20px
+            }
+        }
+
+
+        body {
+            background-color: #2c292d;
+            color: #fdf9f3;
+            padding: 1em;
+            margin: 0;
+            font-family: consolas, monospace;
+        }
+
+        a {
+            color: #a9dc76;
+            cursor: pointer
+        }
+
+        .hljs {
+            font-family: consolas, monospace;
+        }
+
+        img {
+            max-width: 90%;
+        }
+    </style>
+    <link rel="icon" type="image/png"
+        href="https://d2v9k5u4v94ulw.cloudfront.net/assets/images/2191294/original/e01cdc83-7764-49d6-9176-4695d37133b7?1522307876" />
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+
+    <script>
+        function myMarked(str) {
+
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+
+
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            myMarked($('#article').html())
+        })
+    </script>
+</head>
+
+<body>
+    
+    <div id='article' style='padding:0 15px 10px 10px'>
+        <h1 id="subject">原來天使也會累</h1>
+        <div id="date" style='font-size: 9pt;'>2010-06-15</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags">"文bug流暢"</div>
+        <div id="content" style='word-break: break-all;'><p><span class="Apple-style-span" style="font-family: Arial; font-size: 13px; line-height: 19px; "> 她和他是青梅竹馬。只不過，一直都是他小心地呵護著她。<br />
+<font color="#000000"> 他大她三歲。在學校時，不同年級，不同系，但他的體貼卻無處不在，他並不是天天都來找她，但電話每晚臨睡前卻總會響起，說一些天冷了，記得加衣服、晚上別在被窩裡看書的話。</font>  </p>
+<p><font color="#000000"> 所有的人都知道她有一個為她甘願付出的男友。</font>  </p>
+<p><font color="#000000"> 她嘴裡不說，心裡卻是自得的。他在</font><a href="http://www.duwenzhang.com/wenzhang/xiaoyuanwenzhang/"><font color="#000000">校園</font></a><font color="#000000">裡並非默默無聞之輩，長相俊朗，才氣逼人，是多少</font><a href="http://www.duwenzhang.com/huati/nvhai/index1.html"><font color="#000000">女孩</font></a><font color="#000000">子</font><a href="http://www.duwenzhang.com/huati/anlian/index1.html"><font color="#000000">暗戀</font></a><font color="#000000">的對象，這樣的一個人，卻獨獨對她用情至深。</font>  </p>
+<p><font color="#000000"> 她知道他的好，但她是</font><a href="http://www.duwenzhang.com/huati/fumu/index1.html"><font color="#000000">父母</font></a><font color="#000000">寵壞的</font><a href="http://www.duwenzhang.com/huati/haizi/index1.html"><font color="#000000">孩子</font></a><font color="#000000">，他就像是她父母的接力棒，父母不在身邊時接著寵她，所以，她撒嬌，任性，有時候蠻不講理。</font>  </p>
+<p><font color="#000000"> 每次他們吵架，他生氣走開，但最後回頭的總是他。他說，丫頭，我們和好吧。</font>  </p>
+<p><font color="#000000"> 她的心裡湧出淚來，其實她是那麼害怕</font><a href="http://www.duwenzhang.com/huati/shiqu/index1.html"><font color="#000000">失去</font></a><font color="#000000">他。</font>  </p>
+<p><font color="#000000"> 有人說，兩個相愛的人之間發生了矛盾，第一個轉身的就是他們</font><a href="http://www.duwenzhang.com/huati/ganqing/index1.html"><font color="#000000">感情</font></a><font color="#000000">上的</font><a href="http://www.duwenzhang.com/huati/tianshi/index1.html"><font color="#000000">天使</font></a><font color="#000000">。她想，他就是那個天使吧。</font>  </p>
+<p><font color="#000000"> 相繼走出校園，他們選擇了</font><a href="http://www.duwenzhang.com/wenzhang/shenghuosuibi/"><font color="#000000">生活</font></a><font color="#000000">在一起。她是玲瓏剔透的女孩子，生活的瑣碎讓她不勝其煩，他主動承擔了大部分的家務，照顧她，一如既往地寵著她。</font>  </p>
+<p><font color="#000000"> </font><strong><font color="#000000">但她卻覺得，他開始干預她的生活了。某次她下班和男同事喝酒，深夜才回去，他大為震怒，是夜睡到了另一個房間。</font></strong>  </p>
+<p><font color="#000000"> 幾天後的夜裡，他主動擁住了她，說對不起。</font>  </p>
+<p><font color="#000000"> </font><strong><font color="#000000">他們的爭吵不斷，但每次都是他轉身說對不起，雖然她覺得</font></strong><a href="http://www.duwenzhang.com/huati/dengdai/index1.html"><strong><font color="#000000">等待</font></strong></a><strong><font color="#000000">他轉身的</font></strong><a href="http://www.duwenzhang.com/huati/shijian/index1.html"><strong><font color="#000000">時間</font></strong></a><strong><font color="#000000">越來越長。</font></strong>  </p>
+<p><font color="#000000"> 後來有一次，他們為一件小事爭吵後，他走出了她的房間。</font>  </p>
+<p><font color="#000000"> 一天，兩天，三天，她等待著他轉身。</font>  </p>
+<p><font color="#000000"> 一個星期後，她耐不住這種等待的</font><a href="http://www.duwenzhang.com/huati/tongku/index1.html"><font color="#000000">痛苦</font></a><font color="#000000">，決定到外地幾天，她想，當她回來的時候，一切都會煙消雲散了。</font>  </p>
+<p><font color="#000000"> 當她回來時，她驚懼地發現，房間裡已經沒有了他的痕跡。他已辭職，去了外地。</font>  </p>
+<p><font color="#000000"> 她沒有想到他會採取這種決絕的方式。她知道自己是深愛著他的，那麼多的爭吵都是因為自己任性，不懂得</font><a href="http://www.duwenzhang.com/huati/zhenxi/index1.html"><font color="#000000">珍惜</font></a><font color="#000000">。而他，不是一直</font><a href="http://www.duwenzhang.com/huati/baorong/index1.html"><font color="#000000">包容</font></a><font color="#000000">著她，扮演著感情的天使嗎?。很久以後，她把這件痛心的往事講給</font><a href="http://www.duwenzhang.com/huati/pengyou/index1.html"><font color="#000000">朋友</font></a><font color="#000000">聽，仍然不明白為什麼他會忽然離去。朋友聽了，忽然說：為什麼你不轉身呢?</font>  </p>
+<p><font color="#000000"> 那一剎那，她淚流滿面，多麼簡單的一句話，可是當初為什麼她沒有轉身呢?</font>  </p>
+<p><font color="#000000"> </font><a href="http://www.duwenzhang.com/huati/meihao/index1.html"><strong><font color="#000000">美好</font></strong></a><strong><font color="#000000">的</font></strong><a href="http://www.duwenzhang.com/wenzhang/aiqingwenzhang/"><strong><font color="#000000">愛情</font></strong></a><strong><font color="#000000">大抵如此，總會有無數次的轉身，那個最先轉身的人是他們愛情的天使。</font></strong><font color="#000000">但假如每一次轉身的都是同一個人，天使也會倦怠。</font>  </p>
+<p>//我是這麼認為的, 他們兩人之中在每一次磨擦中都沒有妥善安置, 單單只靠時間這支藥, 面對問題連正面溝通都沒有, 可說連朋友都談不上  </p>
+<p>//最先轉身的人是天使, 只有當他轉身時是拿起勇氣來面對問題<br />
+</span>  </p></div>
+        <div id="permalink" style='word-break: break-all;padding:2em 0 2em 0'><a href="https://blog.abby.md/_generated/realblog_2010-06_16083.htm">Permalink of this blog</a></div>
+        
+    </div>
+</body>
+
+</html>

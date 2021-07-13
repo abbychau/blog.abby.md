@@ -1,0 +1,4 @@
+<p>在rb 底部加入...</p>
+<p>&lt;script&gt;</p>
+<p>$(&quot;*&quot;).css(&quot;color&quot;, &quot;#0F0&quot;)</p>
+<div> .css("background-color", "#000")</div><div> .css("font-family", "courier");</div><div>&lt;/script&gt;</div><div> </div><div>吧</div>

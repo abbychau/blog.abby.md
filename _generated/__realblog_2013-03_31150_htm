@@ -1,0 +1,30 @@
+<pre><code>&lt;pre class="prettyprint"&gt;// 可變動的陣列
+// ---------------------------------------------------------------
+
+/// 建立陣列
+let arr = Array.create 4 "hello"
+arr.[1] &lt;- "world"
+arr.[3] &lt;- "don"
+
+/// 使用陣列物件的執行個體方法，計算陣列的長度
+let arrLength = arr.Length        
+
+// 使用切割標記法擷取子陣列
+let front = arr.[0..2]
+
+// 更多集合
+// ---------------------------------------------------------------
+
+/// 內含整數索引鍵和字串值的字典
+let lookupTable = dict [ (1, "One"); (2, "Two") ]
+
+let oneString = lookupTable.[1]
+
+// 如需其他通用資料結構，請參閱:
+//   System.Collections.Generic
+//   Microsoft.FSharp.Collections
+//   Microsoft.FSharp.Collections.Seq
+//   Microsoft.FSharp.Collections.Set
+//   Microsoft.FSharp.Collections.Map</code></pre>
+<p>唯一要說的是這句 let arr = Array.create 4 &quot;hello&quot;<br />
+let arr=Array.create 4 &quot;hello&quot; 的結果會建立[&quot;hello&quot;;&quot;hello&quot;;&quot;hello&quot;;&quot;hello&quot;]</p>

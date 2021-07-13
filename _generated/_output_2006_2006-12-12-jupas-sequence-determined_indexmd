@@ -1,0 +1,138 @@
+<table>
+<thead>
+<tr>
+<th>Priority</th>
+<th style="text-align: left;">Course</th>
+<th style="text-align: left;">Institution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td style="text-align: left;">1169 BBA (Hons) Electronic Commerce </td>
+<td style="text-align: left;"><a href="http://www.cityu.edu.hk/admo/">City University of H K</a></td>
+</tr>
+<tr>
+<td>2</td>
+<td style="text-align: left;">3703 BEng (Hons) in Electronic &amp; Information Engineering </td>
+<td style="text-align: left;"><a href="http://www.polyu.edu.hk/">The H K Polytechnic University</a></td>
+</tr>
+<tr>
+<td>3</td>
+<td style="text-align: left;">6999 BEng in Mechanical Engineering / BEng in Mechanical Engineering (Building Services Engineering) </td>
+<td style="text-align: left;"><a href="http://www.hku.hk/admission/ug.htm">The University of Hong Kong</a></td>
+</tr>
+<tr>
+<td>4</td>
+<td style="text-align: left;">5426 BEng Computer Science (Information Engineering) </td>
+<td style="text-align: left;"><a href="http://www.ab.ust.hk/arr">The Hong Kong University of Science and Technology</a></td>
+</tr>
+<tr>
+<td>5</td>
+<td style="text-align: left;">1121 BBA (Hons) Financial Engineering </td>
+<td style="text-align: left;"><a href="http://www.cityu.edu.hk/admo/">City University of H K</a></td>
+</tr>
+<tr>
+<td>6</td>
+<td style="text-align: left;">5816 BBA Information Systems </td>
+<td style="text-align: left;"><a href="http://www.ab.ust.hk/arr">The Hong Kong University of Science and Technology</a></td>
+</tr>
+<tr>
+<td>7</td>
+<td style="text-align: left;">3519 BSc (Hons) in Internet &amp; Multimedia Technologies </td>
+<td style="text-align: left;"><a href="http://www.polyu.edu.hk/">The H K Polytechnic University</a></td>
+</tr>
+<tr>
+<td>8</td>
+<td style="text-align: left;">5464 BEng Computer Engineering </td>
+<td style="text-align: left;"><a href="http://www.ab.ust.hk/arr">The Hong Kong University of Science and Technology</a></td>
+</tr>
+<tr>
+<td>9</td>
+<td style="text-align: left;">1585 BEng (Hons) Electronic and Communication Engineering </td>
+<td style="text-align: left;"><a href="http://www.cityu.edu.hk/admo/">City University of H K</a></td>
+</tr>
+<tr>
+<td>10</td>
+<td style="text-align: left;">2266 BBA (Hons) Information Systems Management </td>
+<td style="text-align: left;"><a href="http://www.hkbu.edu.hk/~ar/admissions/jupas.htm">Hong Kong Baptist University</a></td>
+</tr>
+<tr>
+<td>11</td>
+<td style="text-align: left;">1092 BBA (Hons) Information Systems </td>
+<td style="text-align: left;"><a href="http://www.cityu.edu.hk/admo/">City University of H K</a></td>
+</tr>
+<tr>
+<td>12</td>
+<td style="text-align: left;">3698 BEng (Hons) in Industrial &amp; Systems Engineering </td>
+<td style="text-align: left;"><a href="http://www.polyu.edu.hk/">The H K Polytechnic University</a></td>
+</tr>
+<tr>
+<td>13</td>
+<td style="text-align: left;">1614 BEng (Hons) Mechatronic Engineering </td>
+<td style="text-align: left;"><a href="http://www.cityu.edu.hk/admo/">City University of H K</a></td>
+</tr>
+<tr>
+<td>14</td>
+<td style="text-align: left;">5529 BEng Electronic Engineering (Information and Communication Engineering) </td>
+<td style="text-align: left;"><a href="http://www.ab.ust.hk/arr">The Hong Kong University of Science and Technology</a></td>
+</tr>
+<tr>
+<td>15</td>
+<td style="text-align: left;">3600 BSc (Hons) in Biomedical Engineering </td>
+<td style="text-align: left;"><a href="http://www.polyu.edu.hk/">The H K Polytechnic University</a></td>
+</tr>
+<tr>
+<td>16</td>
+<td style="text-align: left;">3428 BEng (Hons) Scheme in Integrated Product Development </td>
+<td style="text-align: left;"><a href="http://www.polyu.edu.hk/">The H K Polytechnic University</a></td>
+</tr>
+<tr>
+<td>17</td>
+<td style="text-align: left;">2448 BSc (Hons) Computing Studies (Information Systems) </td>
+<td style="text-align: left;"><a href="http://www.hkbu.edu.hk/~ar/admissions/jupas.htm">Hong Kong Baptist University</a></td>
+</tr>
+<tr>
+<td>18</td>
+<td style="text-align: left;">1755 BEng (Hons) Electronic and Communication Engineering (Business Intelligence Minor) </td>
+<td style="text-align: left;"><a href="http://www.cityu.edu.hk/admo/">City University of H K</a></td>
+</tr>
+<tr>
+<td>19</td>
+<td style="text-align: left;">6793 Bachelor of Business Administration (Information Systems) </td>
+<td style="text-align: left;"><a href="http://www.hku.hk/admission/ug.htm">The University of Hong Kong</a></td>
+</tr>
+<tr>
+<td>20</td>
+<td style="text-align: left;">1250 BA (Hons) English for Professional Communication </td>
+<td style="text-align: left;"><a href="http://www.cityu.edu.hk/admo/">City University of H K</a></td>
+</tr>
+<tr>
+<td>21</td>
+<td style="text-align: left;">2474 BSc (Hons) Physics - Physics with Computer Science </td>
+<td style="text-align: left;"><a href="http://www.hkbu.edu.hk/~ar/admissions/jupas.htm">Hong Kong Baptist University</a></td>
+</tr>
+<tr>
+<td>22</td>
+<td style="text-align: left;">1597 BEng (Hons) Information Engineering </td>
+<td style="text-align: left;"><a href="http://www.cityu.edu.hk/admo/">City University of H K</a></td>
+</tr>
+<tr>
+<td>23</td>
+<td style="text-align: left;">1157 BBA (Hons) Accountancy and Management Information Systems </td>
+<td style="text-align: left;"><a href="http://www.cityu.edu.hk/admo/">City University of H K</a></td>
+</tr>
+<tr>
+<td>24</td>
+<td style="text-align: left;">6987 Bachelor of Engineering in Computer Science </td>
+<td style="text-align: left;"><a href="http://www.hku.hk/admission/ug.htm">The University of Hong Kong</a></td>
+</tr>
+<tr>
+<td>25</td>
+<td style="text-align: left;">3569 BA (Hons) in Design </td>
+<td style="text-align: left;"><a href="http://www.polyu.edu.hk/">The H K Polytechnic University</a></td>
+</tr>
+</tbody>
+</table>
+<p>ngng....打夠廿五個la</p>
+<p><a href="http://photo.xanga.com/abbychau/5349a94818408/photo.html"><img src="images/z66271826.jpg" alt="Set356_02" /></a></p>

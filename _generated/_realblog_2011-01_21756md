@@ -1,0 +1,21 @@
+<p>Large js codings that calls other files may affect the smoothness of page loading. Large delay on client side is occured so often.</p>
+<p>Asynchronized javascript loading is doubtlessly a valid and strong trend to go.</p>
+<p>However, many existing synchronized loading methoding methods are not seem to be modified such as the commonly used google adsense.</p>
+<p>Let's take adsense as an example. unlike other services that only loaded once in a loading session, adsense has its uniqueness of loading 3 times per session, it makes the situation much complex by the following reasons.</p>
+<p>eg. &lt;div id=&quot;ads1&quot;&gt;&lt;/div&gt;<br />
+...<br />
+&lt;script&gt;load(&quot;ads1&quot;);load(&quot;ads2&quot;);load(&quot;ads3&quot;);&lt;/script&gt;</p>
+<p>1. identifying iframes to load its ads<br />
+2. methods for user to reuse the same code without parameter settings.<br />
+3. modern template have different ads on different modules and a global calling with static parameters may stucks</p>
+<p>I am going to propose a solution</p>
+<p>Due to the speed of computers and mobile devices increased, I supposed that queries for DOMs is possible for a single global calling.</p>
+<p>eg. &lt;div class=&quot;google_ads&quot; rel=&quot;UNIQUE_ID&quot;&gt;&lt;/div&gt;<br />
+or. &lt;div id=&quot;google_ads|UNIQUE_ID&quot;&gt;&lt;/div&gt;<br />
+etc...<br />
+&lt;script type=&quot;text/javascript&quot; src=&quot;<a href="http://...../load.js&amp;gt;&amp;lt;/script&amp;gt">http://...../load.js&amp;gt;&amp;lt;/script&amp;gt</a>;<br />
+inside (jquery syntax)<br />
+$('.google_ads').each(function(){ insert($(this).attr('rel')); }<br />
+neat and fine</p>
+<p>moreover, I want to complain that the current synchronized loading are buggy that making other iframes drawing inside the wrong advertisement boxes.</p>
+<p>That's it.</p>

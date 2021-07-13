@@ -1,0 +1,97 @@
+<html>
+
+<head>
+    <title>Abby's Archive</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <style>
+        /* for all screens */
+        #info {
+            display: none;
+        }
+
+        /* only when orientation is in portrait mode */
+        @media all and (orientation:portrait) {
+            #info {
+                color: red;
+                display: inline;
+                font-size: 20px
+            }
+        }
+
+
+        body {
+            background-color: #2c292d;
+            color: #fdf9f3;
+            padding: 1em;
+            margin: 0;
+            font-family: consolas, monospace;
+        }
+
+        a {
+            color: #a9dc76;
+            cursor: pointer
+        }
+
+        .hljs {
+            font-family: consolas, monospace;
+        }
+
+        body>div {
+            word-break: break-all;
+            position: fixed;
+        }
+
+        img {
+            max-width: 90%;
+        }
+    </style>
+    <link rel="icon" type="image/png"
+        href="https://d2v9k5u4v94ulw.cloudfront.net/assets/images/2191294/original/e01cdc83-7764-49d6-9176-4695d37133b7?1522307876" />
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+
+    <script>
+        function myMarked(str) {
+
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+
+
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            myMarked($('#article').html())
+        })
+    </script>
+</head>
+
+<body>
+    
+    <div id='article' style='padding:0 15px 10px 10px'>
+        <h1 id="subject">真三國無雙6 monster hunter tri-3g</h1>
+        <div id="date" style='font-size: 9pt;'>2012-03-17</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags">"遊戲"</div>
+        <div id="content" style='word-break: break-all;'><p>真三國無雙6 :</p>
+<p>玩真三到第四代左右時, 已經覺得它無法再有寸進, 怎麼打, 快感也會一點一滴用光時. KT 在推出第6代竟有大量好評, 令我不得不嘗試。</p>
+<p>最好玩的地方在於大量的武器, 遊玩的重心再也不在於武將, 而在於武器。武將的作用就在於第定武器的EX 技。當然EX 技是十分強大, 但轉換武器可以發動第殊技, 多種的有趣的接技令到戰鬥變得好玩多了。</p>
+<p>不用鍛鍊同一個武將, 劇情會強行令你使用特定的將領也令到遊戲過程變得合理而不重覆。</p>
+<p>每個武將獨有的EX 技也是這集原創的, 令我印象最深的是黃蓋的EX, 手持碎錘才可以EX 的黃蓋, 玩起來就玩打格鬥遊戲, 在攻擊的第三次可以用儲力第五次後進入EX , 黃蓋是一個連自己一起移動投技, 而黃蓋的無雙則是一招單體投技, 在混戰中很難發揮作用, 但可以利用EX 把敵人帶離戰場, 再在下一次EX 看準機會發動無雙Cancel EX, 令敵將命中這招幾近秒殺的無雙。</p>
+<p>換武器的特殊技也是每種不同, 在宣傳片中趙雲用雙腿鎖著一名士兵在轉圈的就是長槍的轉換技。而扇子則是可應為在單挑普通武將中最可怕的, 它會CC 一個範圍中的人一段十分長的時間, 長到令你足以換為另一把武器再換扇子, 一整個 loop 。</p>
+<p>真三6 確是一雙很爽的遊戲。</p>
+<p>monster hunter tri-3g :</p>
+<p>完全是為了這遊戲買3ds 的。一些片段:</p>
+<p>玩時裝束是上位爆鎚一套, 炮術王, 防禦性能+2, stamina 急速回復, 自動防禦, G位土砂龍銃, 這樣可以做出全遊戲第二強的龍擊炮, (因為還沒有打到可做LV5炮的怪獸)</p>
+<p>即使在炮擊非常不給力的2/2g 時代, 我已經十分喜歡炮擊, 因為它令遊戲給得很單純, 怪獸的肉質, 武器的會心率, 攻擊力, 斬味, 通通都不用管, 也不用像弩一樣要準備子彈。雖然攻擊稍差, 但還是足以在合理時間內殺死怪獸, &quot;比起要在村子裡做一些無建設性的動作, 還不如快快重新進入戰鬥吧。&quot; 我是這麼想的。</p>
+<p>到p3 這代, 自擋在換彈時發動, 令到這種純炮的力量提高到一個無與倫比的地步, 而在這時, 不知是好是壞, 我已經習慣了自動防禦, 發現我上了自動防禦的癮不是因為我發現不能隨意換彈, 而是發現我不能隨意走動。不在不防禦時換彈這個易改, 可是自動防禦最原本, 最重要的是, 可以令你在準備怪獸攻擊時保持防禦姿勢。那個時候你可以放開盾牌, 回復耐力, 以及更快的移動到有利的位置, 作為一個10點的技能,如果他可以填珠發動的話, 它不會是一個普通的A技(1/1 3/2 5/3), 而應是一個(1/1)的, 會心為你提高的只是10%/20%/30%*0.25 的攻擊優勢, 而自動防禦能夠則能夠提供幾乎和會心一樣所有戰鬥都合用的戰鬥靈活度。因些在這代我還是有在用自動防禦。</p></div>
+        <div id="permalink" style='word-break: break-all;'>{{paramlink}}</div>
+        
+    </div>
+</body>
+
+</html>

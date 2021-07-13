@@ -1,0 +1,154 @@
+<html>
+
+<head>
+    <title>Abby's Archive</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <style>
+        /* for all screens */
+        #info {
+            display: none;
+        }
+
+        /* only when orientation is in portrait mode */
+        @media all and (orientation:portrait) {
+            #info {
+                color: red;
+                display: inline;
+                font-size: 20px
+            }
+        }
+
+
+        body {
+            background-color: #2c292d;
+            color: #fdf9f3;
+            padding: 1em;
+            margin: 0;
+            font-family: consolas, monospace;
+        }
+
+        a {
+            color: #a9dc76;
+            cursor: pointer
+        }
+
+        .hljs {
+            font-family: consolas, monospace;
+        }
+
+        img {
+            max-width: 90%;
+        }
+    </style>
+    <link rel="icon" type="image/png"
+        href="https://d2v9k5u4v94ulw.cloudfront.net/assets/images/2191294/original/e01cdc83-7764-49d6-9176-4695d37133b7?1522307876" />
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+
+    <script>
+        function myMarked(str) {
+
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+
+
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            myMarked($('#article').html())
+        })
+    </script>
+</head>
+
+<body>
+    
+    <div id='article' style='padding:0 15px 10px 10px'>
+        <h1 id="subject">[pop'n]凛として咲く花の如く　－－　歌詞</h1>
+        <div id="date" style='font-size: 9pt;'>2010-12-21</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags">"日常生活"</div>
+        <div id="content" style='word-break: break-all;'><p><embed allowscriptaccess="never" flashvars="config=http://pic.wretch.cc/icon/mp3player-no-auto.xml&file=http://f6.wretch.yimg.com/tailsqq/24/1155684413.mp3&autostart=false" height="20" src="http://l.yimg.com/wretch.yimg.com/photos/serv/video/video_player/BGMusicPlayer.swf" type="application/x-shockwave-flash" width="400"></embed><br />
+作詞：あさき<br />
+作曲：TOMOSUKE<br />
+編集：TOMOSUKE<br />
+演唱：紅色リトマス  </p>
+<p>凛(りん)として咲（さ）く花（はな）の如（ごと）く  </p>
+<p>春(はる)深(ふか)く夢(ゆめ)の輪郭(りんかく)を<br />
+ぼかして 行(い)き過(す)ぎて 舞(ま)い戻(もど)る<br />
+花(はな)びらは仕草(しぐさ)を追(お)いかけ<br />
+薄(うす)明(あ)かりの下(した)で 密(ひそ)やか  </p>
+<p>つまさきであやす月(つき)の兎(うさぎ)は踊(おど)り<br />
+星(ほし)の間(あいだ)を飛(と)びまわる<br />
+口笛(くちぶえ)吹(ふ)き  </p>
+<p>飛沫(しぶき) あがる<br />
+わたし 駆(か)ける<br />
+追(お)いかける星(ほし)は<br />
+まわる まわる ちいさなつぼみ  </p>
+<p>さいて さいて 月(つき)にお願(ねが)い<br />
+おだやかな影(かげ)に薄化粧(うすげしょう)  </p>
+<p>しらずしらず えいや！と投(な)げた<br />
+つぼみは 行方(ゆくえ)知(し)れず のまま  </p>
+<p>見下(みお)ろして小(ちい)さくなった雲(くも)の間(あいだ)に<br />
+芽(め)を出(だ)した線香花火(せんこうはなび)<br />
+つぶらな夢(ゆめ)  </p>
+<p>飛沫(しぶき) あがる<br />
+火花(ひばな) 翔(かけ)る<br />
+問(と)いかけた星(ほし)は<br />
+かわる がわる 顔(かお)を変(か)えた  </p>
+<p>さいて さいて くるりとまわる<br />
+舞(まい)姫(ひめ)の如(ごと)く たまゆらに<br />
+思(おも)い思(おも)いに動(うご)く影(かげ)と<br />
+背中(せなか)を合(あ)わせて (ああ)  </p>
+<p>走(はし)る！  </p>
+<p>弧(こ)を描(えが)き<br />
+影(かげ)は延(の)びる<br />
+陽炎(かげろう)の先(さき)に<br />
+さいた あった！ まあるい花(はな)が  </p>
+<p>さいた さいた<br />
+星(ほし)の破片(かけら)が<br />
+月(つき)の裏側(うらがわ)で泣(な)いていた  </p>
+<p>気(き)づかぬうちに 隠(かく)れていた兎(うさぎ)も<br />
+また弧(こ) 描(えが)く  </p>
+<p>さいて さいて 月(つき)にお願(ねが)い<br />
+おだやかな影(かげ)に薄化粧(うすげしょう)<br />
+しらずしらず えいや！と投(な)げた<br />
+つぼみは 行方(ゆくえ)知(し)れず  </p>
+<p>さいて さいた 風(かぜ)に揺(ゆ)られて<br />
+おだやかな坂(さか)は 薄化粧(うすげしょう)<br />
+下駄(げた)鳴(な)らして口笛(くちぶえ)合(あ)わせ<br />
+凛(りん)として はんなりのこころ  </p>
+<p>－－－－－－－－－－－－－－－－－－  </p>
+<p>中文翻譯：  </p>
+<p>像花一般的凜然綻放  </p>
+<p>春天深深的夢的輪廓，來回舞動著<br />
+在寂靜的黎明下追趕著花瓣  </p>
+<p>月兔用腳尖跳舞，吹著口哨在眾星間來回穿梭著<br />
+我奔跑在揚起的水花中<br />
+追趕著迴轉啊迴轉，星星般的小小花蕾  </p>
+<p>開花吧、開花吧，向被陰影蒙上淡淡妝容的月兒祈禱著<br />
+不明白、不明白呀，永夜中的花蕾怎麼不見了  </p>
+<p>從小小的雲的縫隙中向下俯視，圓圓的線香花火般的夢萌芽著<br />
+向在水花、火燄中飛翔的星星詢問<br />
+改變著、改變著，容顏改變了  </p>
+<p>開花著、開花著，舞姬般發出聲響的玉石迅速迴轉著<br />
+想念著、想念著的那個身影和我的合而為一，就這樣走吧  </p>
+<p>在陽炎之前，描繪著長長身影的弧線<br />
+開花了、有了啊，那朵圓圓的小花  </p>
+<p>開花了、開花了，星星的碎片在月亮的背面哭泣著<br />
+卻沒有注意到，月兔仍舊躲起來偷偷地描繪著身影唷  </p>
+<p>開花吧、開花吧，向被陰影蒙上淡淡妝容的月兒祈禱著<br />
+不明白、不明白呀，長夜中的花蕾怎麼不見了  </p>
+<p>開花吧、開花吧，蒙上了淡淡妝容的平靜的山坡上微風輕輕吹拂著<br />
+腳下的木屐聲和口哨合而為一<br />
+凜凜清明的心</p></div>
+        <div id="permalink" style='word-break: break-all;padding:2em 0 2em 0'><a href="https://blog.abby.md/_generated/realblog_2010-12_20394.htm">Permalink of this blog</a></div>
+        
+    </div>
+</body>
+
+</html>

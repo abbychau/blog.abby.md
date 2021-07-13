@@ -1,0 +1,140 @@
+<html>
+
+<head>
+    <title>Abby's Archive</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <style>
+        /* for all screens */
+        #info {
+            display: none;
+        }
+
+        /* only when orientation is in portrait mode */
+        @media all and (orientation:portrait) {
+            #info {
+                color: red;
+                display: inline;
+                font-size: 20px
+            }
+        }
+
+
+        body {
+            background-color: #2c292d;
+            color: #fdf9f3;
+            padding: 1em;
+            margin: 0;
+            font-family: consolas, monospace;
+        }
+
+        a {
+            color: #a9dc76;
+            cursor: pointer
+        }
+
+        .hljs {
+            font-family: consolas, monospace;
+        }
+
+        body>div {
+            word-break: break-all;
+            position: fixed;
+        }
+
+        img {
+            max-width: 90%;
+        }
+    </style>
+    <link rel="icon" type="image/png"
+        href="https://d2v9k5u4v94ulw.cloudfront.net/assets/images/2191294/original/e01cdc83-7764-49d6-9176-4695d37133b7?1522307876" />
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+
+    <script>
+        function myMarked(str) {
+
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+
+
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            myMarked($('#article').html())
+        })
+    </script>
+</head>
+
+<body>
+    
+    <div id='article' style='padding:0 15px 10px 10px'>
+        <h1 id="subject">Svelte 推坑文</h1>
+        <div id="date" style='font-size: 9pt;'>2021-03-17</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags">"遊藝"</div>
+        <div id="content" style='word-break: break-all;'><p>我想如果有在五年內寫過前端的，或多或少都會有留意過或者有用React.js 或者 Vue 和 Angular。</p>
+<p>但我還是希望可以推這個東西。</p>
+<p>對比框架是個很玄學的事情。但我還是希望這篇文是sound 的。</p>
+<p>背景：後端工程師，但同時在工作上應用過React 和Vue，但不Trivial 的個人項目中應用過Svelte。為Google Blocky 寫過Svelte 的Binding Example。</p>
+<p>（可能就是所謂的越是本職越不敢/不想寫吧，就寫寫前端好了）</p>
+<p>比如 ： Svelte 的第一句</p>
+<blockquote>
+<p>All code is buggy. It stands to reason, therefore, that the more code you have to write the buggier your apps will be.
+（所有代碼都是錯誤的。 因此，有理由說，你越寫越buggy。）</p>
+</blockquote>
+<p>我就認為是過份的簡化和沒有指導意義的。</p>
+<p>但Svelte舉的例子卻是挺實用的：</p>
+<pre><code class="language-javascript">import React, { useState } from 'react';
+
+export default () =&gt; {
+  const [a, setA] = useState(1);
+  const [b, setB] = useState(2);
+
+  function handleChangeA(event) {
+    setA(+event.target.value);
+  }
+
+  function handleChangeB(event) {
+    setB(+event.target.value);
+  }
+
+  return (
+    &lt;div&gt;
+      &lt;input type="number" value={a} onChange={handleChangeA}/&gt;
+      &lt;input type="number" value={b} onChange={handleChangeB}/&gt;
+
+      &lt;p&gt;{a} + {b} = {a + b}&lt;/p&gt;
+    &lt;/div&gt;
+  );
+};</code></pre>
+<pre><code class="language-javascript">&lt;template&gt;
+  &lt;div&gt;
+    &lt;input type="number" v-model.number="a"&gt;
+    &lt;input type="number" v-model.number="b"&gt;
+
+    &lt;p&gt;{{a}} + {{b}} = {{a + b}}&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+  export default {
+    data: function() {
+      return {
+        a: 1,
+        b: 2
+      };
+    }
+  };
+&lt;/script&gt;</code></pre>
+<p>看起來Vue 比起 React 短了不少，但主要問題還是在於State Binding 是wire 至一個object 的指者key 中的 ( <code>&lt;function T&gt;.&lt;var&gt;</code> 和 <code>&lt;object T&gt;.data</code> ) </p></div>
+        <div id="permalink" style='word-break: break-all;'>{{paramlink}}</div>
+        
+    </div>
+</body>
+
+</html>

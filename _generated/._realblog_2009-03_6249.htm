@@ -1,0 +1,95 @@
+<html>
+
+<head>
+    <title>Abby's Archive</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <style>
+        /* for all screens */
+        #info {
+            display: none;
+        }
+
+        /* only when orientation is in portrait mode */
+        @media all and (orientation:portrait) {
+            #info {
+                color: red;
+                display: inline;
+                font-size: 20px
+            }
+        }
+
+
+        body {
+            background-color: #2c292d;
+            color: #fdf9f3;
+            padding: 1em;
+            margin: 0;
+            font-family: consolas, monospace;
+        }
+
+        a {
+            color: #a9dc76;
+            cursor: pointer
+        }
+
+        .hljs {
+            font-family: consolas, monospace;
+        }
+
+        body>div {
+            word-break: break-all;
+            position: fixed;
+        }
+
+        img {
+            max-width: 90%;
+        }
+    </style>
+    <link rel="icon" type="image/png"
+        href="https://d2v9k5u4v94ulw.cloudfront.net/assets/images/2191294/original/e01cdc83-7764-49d6-9176-4695d37133b7?1522307876" />
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+
+    <script>
+        function myMarked(str) {
+
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+
+
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            myMarked($('#article').html())
+        })
+    </script>
+</head>
+
+<body>
+    
+    <div id='article' style='padding:0 15px 10px 10px'>
+        <h1 id="subject">以有崖隨無崖</h1>
+        <div id="date" style='font-size: 9pt;'>2009-03-03</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags">"日常生活"</div>
+        <div id="content" style='word-break: break-all;'><p>在我心中, &quot;以有崖隨無崖, 殆已&quot;, &quot;莊子&quot;, &quot;逹文西&quot; 和&quot;維基百科&quot; 這四件事是不可分割的  </p>
+<p>以有崖隨無崖, 殆已,<br />
+對這句道家古訓, 一直只是認為我終有一日會可以追隨到這個無崖, 或者至少,<br />
+可以看這這個無崖到底有多寬闊  </p>
+<p>到今日, 我仿佛慢慢看到終點, 這個看起來跟本不應該存在的終點<br />
+我慢慢理解得到, 殆已裡面殆的程度  </p>
+<p>我一直將這個無崖當作一個終點, 而跑到這個終點的人, 在我心中第一時間出現的是文藝復興時期的達文西<br />
+如果我一直羡慕成吉思汗這麼闊廣的精神, 那麼達文西就是我一直追尋的智慧境界<br />
+在文藝復興時期或許還可以出現逹文西, 但以現在來說, 就這個不應存在的終點, 對於人們來說已經不是殆的程度, 而是&quot;沒可能&quot;, &quot;無意義&quot;, &quot;低價值&quot;  </p>
+<p>因為, 現在追求這個終點的, 決不會是一個人, 只會是維基百科  </p></div>
+        <div id="permalink" style='word-break: break-all;'>{{paramlink}}</div>
+        
+    </div>
+</body>
+
+</html>

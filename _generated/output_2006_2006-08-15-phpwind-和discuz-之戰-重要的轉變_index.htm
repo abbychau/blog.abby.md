@@ -1,0 +1,111 @@
+<html>
+
+<head>
+    <title>Abby's Archive</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <style>
+        /* for all screens */
+        #info {
+            display: none;
+        }
+
+        /* only when orientation is in portrait mode */
+        @media all and (orientation:portrait) {
+            #info {
+                color: red;
+                display: inline;
+                font-size: 20px
+            }
+        }
+
+
+        body {
+            background-color: #2c292d;
+            color: #fdf9f3;
+            padding: 1em;
+            margin: 0;
+            font-family: consolas, monospace;
+        }
+
+        a {
+            color: #a9dc76;
+            cursor: pointer
+        }
+
+        .hljs {
+            font-family: consolas, monospace;
+        }
+
+        img {
+            max-width: 90%;
+        }
+    </style>
+    <link rel="icon" type="image/png"
+        href="https://d2v9k5u4v94ulw.cloudfront.net/assets/images/2191294/original/e01cdc83-7764-49d6-9176-4695d37133b7?1522307876" />
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+
+    <script>
+        function myMarked(str) {
+
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+
+
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            myMarked($('#article').html())
+        })
+    </script>
+</head>
+
+<body>
+    
+    <div id='article' style='padding:0 15px 10px 10px'>
+        <h1 id="subject">PHPwind 和Discuz 之戰....重要的轉變</h1>
+        <div id="date" style='font-size: 9pt;'>2006-08-15</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags">["電腦和網際網路"]</div>
+        <div id="content" style='word-break: break-all;'><p>Discuz 的勢頭一直都蓋著phpwind...</p>
+<p>但這幾個星期, 一直沉默的phpwind 帶起了一次漂亮的反擊!</p>
+<p>第一波: discuz 一直在報導有甚麼大網轉用dz 了....</p>
+<p>一向低調的phpwind 方面也開始跟起上來...用它的網頭還不少的</p>
+<p>pw 在加強新用戶的信心</p>
+<p>對於加強新用戶的信心, pw 的聯盟也起了作用,</p>
+<p>看到用pw有那些站...心裡也有個譜</p>
+<p>第二波: dz 的dz5 rc2 版的預設版面實在太弱....</p>
+<p>即使一直被引為笑柄的pw 預設版面也只是不過不失, 但dz5rc2 的真可謂醜陋</p>
+<p>初學者的取向dz 也取不了便宜了</p>
+<p>第三波: verycms2 的推出, 我真的萬萬想不到pw 的手腳那麼快</p>
+<p>cms1 還推出不久, cms2 就公測了....</p>
+<p>需然版面還是為人所笑, 但其實我還是很喜歡的...</p>
+<p>看dz 的ss5 久久不出TC 版...我也暈了</p>
+<p>第四波: 死守4.3.2....雖然有無數人都在等用pw5...</p>
+<p>但我認為pw 的團隊真是比專業還要專業...</p>
+<p>有些時候就是這樣, pw4.3.2 已經接近完美...推出pw5 是好是壞就連開發者本身都難以計算</p>
+<p>pw 的插件和修改群都遠遠比dz 的少,</p>
+<p>死守4.3.2 可以增加可用的插件數, 務求在這方面追上dz4/dz5,</p>
+<p>反觀dz5, 這個版本的查詢雖然還在dz4 的水平,</p>
+<p>但排定的緩衝工作不難看見比dz4 還要多...</p>
+<p>這令dz5 十分之冗贅</p>
+<p>第五波: pw lxshop 已經推出了, 除了加強社區的功能,</p>
+<p>還切切實實的補完了商店的缺口,</p>
+<p>所有xs+ss+dz 做到的pwb+lxs+pw 都做到了...甚至是超額完成</p>
+<p>不怕說pwb 的功能比xs 的不可以說更好, 但對於大部分人, pwb 的用法更合用</p>
+<p>xs+ss 所做成的boke show...不錯是個新的念頭.</p>
+<p>質量還算不錯...但大多數用戶...要blog 的都在xanga/space..又有幾個來你這show...</p>
+<p>加上圖片/影音等功能, 你的主機真的大大大大大也不可能夠用</p>
+<p>pw 這五連擊雖然還不能趕上dz 的頭上,</p>
+<p>但打成平手還是可以說出口的</p></div>
+        <div id="permalink" style='word-break: break-all;padding:2em 0 2em 0'><a href="https://blog.abby.md/_generated/output_2006_2006-08-15-phpwind-和discuz-之戰-重要的轉變_index.htm">Permalink of this blog</a></div>
+        
+    </div>
+</body>
+
+</html>

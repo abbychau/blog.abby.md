@@ -1,0 +1,156 @@
+<html>
+
+<head>
+    <title>Abby's Archive</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <style>
+        /* for all screens */
+        #info {
+            display: none;
+        }
+
+        /* only when orientation is in portrait mode */
+        @media all and (orientation:portrait) {
+            #info {
+                color: red;
+                display: inline;
+                font-size: 20px
+            }
+        }
+
+
+        body {
+            background-color: #2c292d;
+            color: #fdf9f3;
+            padding: 1em;
+            margin: 0;
+            font-family: consolas, monospace;
+        }
+
+        a {
+            color: #a9dc76;
+            cursor: pointer
+        }
+
+        .hljs {
+            font-family: consolas, monospace;
+        }
+
+        body>div {
+            word-break: break-all;
+            position: fixed;
+        }
+
+        img {
+            max-width: 90%;
+        }
+    </style>
+    <link rel="icon" type="image/png"
+        href="https://d2v9k5u4v94ulw.cloudfront.net/assets/images/2191294/original/e01cdc83-7764-49d6-9176-4695d37133b7?1522307876" />
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+
+    <script>
+        function myMarked(str) {
+
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+
+
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            myMarked($('#article').html())
+        })
+    </script>
+</head>
+
+<body>
+    
+    <div id='article' style='padding:0 15px 10px 10px'>
+        <h1 id="subject">最優秀音頻播放器重新評選(本物評論)</h1>
+        <div id="date" style='font-size: 9pt;'>2009-05-14</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags">"實務電腦"</div>
+        <div id="content" style='word-break: break-all;'><ul>
+<li>Foobar2000 - <a href="http://www.foobar2000.org/">http://www.foobar2000.org/</a>  </li>
+<li>Winamp - <a href="http://www.winamp.com/">http://www.winamp.com/</a>  </li>
+<li>AIMP - <a href="http://www.aimp.ru/">http://www.aimp.ru/</a>  </li>
+<li>XMPlay - <a href="http://www.un4seen.com/">http://www.un4seen.com/</a>  </li>
+<li>musikCube - <a href="http://www.musikcube.com/">http://www.musikcube.com/</a>  </li>
+<li>Spider Player - <a href="http://spider-player.com/">http://spider-player.com/</a>  </li>
+<li>TTPlayer - <a href="http://www.ttplayer.com/">http://www.ttplayer.com/</a>  </li>
+<li>CoolPlayer - <a href="http://coolplayer.sourceforge.net/">http://coolplayer.sourceforge.net/</a>  </li>
+<li>1by1 - <a href="http://mpesch3.de1.cc/1by1.html">http://mpesch3.de1.cc/1by1.html</a>  </li>
+<li>Billy - <a href="http://www.sheepfriends.com/?page=billy">http://www.sheepfriends.com/?page=billy</a>  </li>
+<li>Evil Player - <a href="http://www.hakeem.gigahost.dk/index.php">http://www.hakeem.gigahost.dk/index.php</a>  </li>
+<li>VUPlayer - <a href="http://www.vuplayer.com/vuplayer.php">http://www.vuplayer.com/vuplayer.php</a>  </li>
+<li>Soprano - <a href="http://kimero.com.ar/pro/soprano.html">http://kimero.com.ar/pro/soprano.html</a>  </li>
+<li>Xion - <a href="http://xion.r2.com.au/">http://xion.r2.com.au/</a>  </li>
+<li>QuickPlayer - <a href="http://www.ctuser.net/details.php?software/applications/quickplayer">http://www.ctuser.net/details.php?software...ons/quickplayer</a>  </li>
+<li>RainbowPlayer - <a href="http://www.nanocodesoft.com/rainbowplayer.htm">http://www.nanocodesoft.com/rainbowplayer.htm</a>  </li>
+<li>ALSong - <a href="http://www.altools.com/ALTools/ALSong.aspx">http://www.altools.com/ALTools/ALSong.aspx</a>  </li>
+<li>Pulse MP - <a href="http://www.orcave.com/pulse/">http://www.orcave.com/pulse/</a>  </li>
+<li>wxMusik - <a href="http://musik.berlios.de/">http://musik.berlios.de/</a>  </li>
+</ul>
+<p>把它們<strong>全部</strong>都試完了! 得出的結果和以前有沒有分別呢?  </p>
+<p>評一個播放器好不好, 很多號稱專業的評論都是從音質著手,<br />
+常見的是說那個一播放器播出來清楚, 哪一個矇, 哪一個有細節, 哪一個有動態, 哪一個清脆, 哪一個和暖等等<br />
+然後會拿出一些音樂CD 來比較一下分別  </p>
+<p>作為研究音訊多年的人, 我想我也應該寫一篇<br />
+事實上一個播放器也只是用來執行API 的更高階程式, 要分別音質事實上只能從其Audio Library 上分別<br />
+比如說在Jackbin 大說的最差mp3 播放&quot;KMPlayer&quot;, 的確預設的很差, 但如果裝上in_mpg123.dll 之後就會和其他用上mpg123 的播放器有<strong>同等</strong>質量, 因為播放器是是&quot;指令傳送器&quot;, 它並不參與混放  </p>
+<p>現在流行的Audio Library 有下面幾個<br />
+mpg123 mpeg 解碼器, 速度快, 公認數法質量最好的開源library<br />
+BASS mp3/ogg 解碼器, 體積少, 商用收費(不開源), 成像評價很好<br />
+GStreamer(MAD) 速度慢, 質量高, 有評價說比mpg123 還好一點<br />
+Tuniac 新開發的套件(開源), 全32-bit 浮點算法, 成像完整<br />
+mpglib 品質和mpg123 <strong>一樣</strong><br />
+Fraunhofer IIS 格式標準, 但速度比MAD 還要慢  </p>
+<p>基本上用上上面所提及的library 來開發的media player 品質都會不錯<br />
+當然也有比較一般的解碼, 但差得都不遠  </p>
+<p>來到這裡, 上面的播放器都很好  </p>
+<p>第二影響品質的地方在於Equalizer, 一把eq 打開, 碼率不足的mp3 馬上會嚴重失真<br />
+調用library 就連中小學生都會(當然也不是每一個), EQ 的處理就是考驗編寫員功力的第一重關卡<br />
+一個好的Player, EQ 的bands 要夠多, 只有Bands 夠, 調較的時候才會平滑而不會在即使碼率足的時候也會出現晶體化的情形<br />
+EQ 的編寫頗為費心的, 從Realplayer 中免費版3bands EQ, 收費版10bands EQ 中可以看出, 但事實上, 一個播放器要用到EQ 的話, 差不多10bands 是合理的  </p>
+<p>來到這裡, 大部分都很好, 除了其中幾個沒有配備EQ 的之外  </p>
+<p>EQ 的原理是把信號做一次Fourier Transform 之後將所選的spectrum 加減後再Anti-Transform, 實時播放<br />
+可以知道, 把一band 的水平個別提高是會出現Spectrum quantization, 和Digital Signal 的quantization 有所不同, 因此很多高質素的軟件都會做出linear 甚至2/3 次多項式的平滑  </p>
+<p>到這裡Coolplayer 以下的都站不住腳了  </p>
+<p>做完EQ 之後, 基本上一個可用的播放器就告成, 但更有要求的會追求Interpolation 的算法<br />
+所有數碼音樂(包括CD) 都是Sampling of analog signals(類比取樣)<br />
+既然是取樣就不能是無限取樣, 今天大部分的取樣都是每秒44100次, 在mp3 壓縮後自然實用數目也會不足<br />
+那麼取樣之間的填補也是player 的工作了, 因為分別不明顯, 多player 會使用ramp 型(即是不作出改變), 原因就是: 能力不夠, 甚至有很多編寫的人不知道要處理interpolation, 任由晶體化出現<br />
+因此, interploation 是考驗大師的課題了  </p>
+<p>同一時間dithering 和ramping 也是處理晶體化的方法, 但由於所用的的算法非常的自由,<br />
+而得出結果也差不遠, 所以我也不太願意去冒險評價大師們了  </p>
+<p>到這裡, 除了Winamp, foobar, ALSong 和 XMPlay 之後都沒有了  </p>
+<p>就今日, 多就是利用到liner, Hermite, 也有專家會用到高位元sinc 來作出修補<br />
+<a href="http://blog.chinson.idv.tw/2006/07/linear-interpolation-sinc.html">http://blog.chinson.idv.tw/2006/07/linear-interpolation-sinc.html</a><br />
+<a href="http://kevincg.wordpress.com/2006/02/21/hermite%E7%9A%84%E6%9B%B2%E7%B7%9A%E9%81%9E%E8%A3%9C%E6%BC%94%E7%AE%97%E6%B3%95hermite-curve-interpolation/">http://kevincg.wordpress.com/2006/02/21/hermite%E7%9A%84%E6%9B%B2%E7%B7%9A%E9%81%9E%E8%A3%9C%E6%BC%94%E7%AE%97%E6%B3%95hermite-curve-interpolation/</a><br />
+其中Sinc 的無限函數電腦計起來最為複雜, 所以用起來要有效率, 播放器編寫員還要學習cpu 的一點引用(如MMX, 3DNow!)  </p>
+<p>走到這一步的, 看來只有Foobar 和XMPlay<br />
+那麼那講一下它們的來歷吧,<br />
+Foobar2k 受眾廣, 我提供一下連結就好: <a href="http://zh.wikipedia.org/wiki/Foobar2000">http://zh.wikipedia.org/wiki/Foobar2000</a><br />
+XMPlay: 由開發BASS Library 的公司Un4seen 開發的播放器, 外觀簡而<strong>陋</strong>, 支持換Skin 但介面操作不友好, 但功能比想像中齊全:<strong>- Auto AMP - DSP</strong> <strong>- Interpolation resampling(二級) / pan resampling</strong>  </p>
+<ul>
+<li><strong>全sf2 支援</strong>(GM/GS/XG) <strong>- ASIO/DirectSound</strong>, 請到Un4seen.com 下載  </li>
+</ul>
+<p>作為一個最好的播放器還要配合很多plugins, Foobar2k 的plug-ins 的確多很令人咋舌, 支援得到的格式可比以前winamp2, 但其中一個還算很有人氣的格式卻被XMPlay 比下去了 - MIDI.  </p>
+<p>在上面支持midi 的播放器還不少, 但可以用到custom sf2 的就只有Foobar, XMPlay, Spider Player, AIMP2<br />
+而Foobar 對sf2 的支持是透過foo_midi 插件的, 但可惜這個插件非常不成熟, 成像差還會掉音  </p>
+<p>XMPlay 在處理純Midi 輸出的時候還是不及Timidity++, 但比起foo_midi, XMPlay和 Spider Player處理起來就完美多了, 但Spider Player 是based on BASS 的, 那就不用評價了, 透過sinc interpolation + dithering + ramping 來re-render soundfont 輸出是十分之令人感動的一件事<br />
+XMPlay 可以把這個工作實時處理實在是很強大, 作為一個免費程式, <strong>這種處理有點</strong>及得上一個上千港幣的DAW 了  </p>
+<p>其實要播得更好更有趣, 我大概打開一個DAW 會更快樂, 寫這麼多就只為了認清一下真相  </p></div>
+        <div id="permalink" style='word-break: break-all;'>{{paramlink}}</div>
+        
+    </div>
+</body>
+
+</html>

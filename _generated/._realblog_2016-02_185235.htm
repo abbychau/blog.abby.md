@@ -1,0 +1,99 @@
+<html>
+
+<head>
+    <title>Abby's Archive</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <style>
+        /* for all screens */
+        #info {
+            display: none;
+        }
+
+        /* only when orientation is in portrait mode */
+        @media all and (orientation:portrait) {
+            #info {
+                color: red;
+                display: inline;
+                font-size: 20px
+            }
+        }
+
+
+        body {
+            background-color: #2c292d;
+            color: #fdf9f3;
+            padding: 1em;
+            margin: 0;
+            font-family: consolas, monospace;
+        }
+
+        a {
+            color: #a9dc76;
+            cursor: pointer
+        }
+
+        .hljs {
+            font-family: consolas, monospace;
+        }
+
+        body>div {
+            word-break: break-all;
+            position: fixed;
+        }
+
+        img {
+            max-width: 90%;
+        }
+    </style>
+    <link rel="icon" type="image/png"
+        href="https://d2v9k5u4v94ulw.cloudfront.net/assets/images/2191294/original/e01cdc83-7764-49d6-9176-4695d37133b7?1522307876" />
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+
+    <script>
+        function myMarked(str) {
+
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+
+
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            myMarked($('#article').html())
+        })
+    </script>
+</head>
+
+<body>
+    
+    <div id='article' style='padding:0 15px 10px 10px'>
+        <h1 id="subject">PHP7 Upgrade</h1>
+        <div id="date" style='font-size: 9pt;'>2016-02-12</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags">"程式設計"</div>
+        <div id="content" style='word-break: break-all;'><p>把mysql_ 的function 棄用而完全轉為wrapper 已經是很多很多年前的事了。</p>
+<p>直到PHP7的升級才迫得我去一直過做一次。</p>
+<p>事實上在一年前的某個星期已經完成了40%的工作, 但這次的升級有很多意想不到的事。</p>
+<p>PHP7 除了在opcache 情況下執行速度以倍數快了之外和有幾個function 移除之外。最致命的是compile extension 時很多底層的C 記憶體常數都換了。</p>
+<p>這導致ZKIZ 一直依賴的分詞(基於C)和PHPRedis(基於C)都無法使用了。</p>
+<p>不兼度的擴展和十分分散的古老代碼令升級的工作量大增, 前後足足花了近三天的時間去修正代碼。</p>
+<p>PHPRedis 的官方Github 甚至還沒有對於PHP7的make 作出升級兼容。這對我使用的網絡API 和數據庫的緩衝都有了致命的影響，在顧及負載和長期使用的情況下，我選擇了即時制作Redis 的存取Class。</p>
+<p>在眾多的阻礙下，我一度萌生退回PHP5.6的想法，但幸好我當時是覺得退回也不是不費精力的，而一度進入Flow 狀的本人竟又在Production 馬上動起來，首先當然是馬上在Redis的官網查看，把現存官方有記錄的class 看一次，而對使用Redis經驗告訴我，Predis作為緩衝類會有性能問題，而Ｃ系的在PHP7下卻會有建置問題，依存Framework 的會讓我拆解邏輯十分費時和精力，沒有Recommend符號的Class 幾乎都有明顯bug...bug..bug 沒有所謂啊! 反正我會fix, 我甚至不要unit test, 我只要馬上能理解的就可以了。我看到: PHP Redis implementation / wrapper ，名字雖長，但那老實在低調的氣質在那wrapper 中完完全全地發放著。</p>
+<p>它只有一個指令, 就叫cmd... 甚麼hashstore, set, get, array, serialize 等等都沒有包裝。如我所願, 它就是把socket 層包裝好給我傳command 而已。我改寫了set 和get, 加入了expire, exists, del 等, 不下5 分鐘就成功了。</p>
+<p>算是回避了PHPRedis 不能建置的問題。也相信這個socket 傳送在PHP7下會保證到運作性能。而在一日後的測試中, 發現它在opcache 下的表現和PHPRedis 的PHP擴展幾乎一樣。</p>
+<p>然後到分詞, 我用的是一個名氣甚低的國產分詞器, 對於分詞器, 用PHP 來實作我還是對性能上缺乏信心, 但在15分鐘的尋找下, 發現他在幾天上的Github master 上已經作出workaround 了。中間經過不少迷茫的時期, 有試過把舊的.so 加載, 也有試過自行跟據錯誤試著修正建置流程, 但靠master tree 還是有驚無險地把make 跑完。</p>
+<p>然後系統勉強重新上線了, 接種而來的是早預期到的新Runtime error/warning/notice, 整合7年以來的deprecated function 實在不是一時三刻的事。crontab 中包含的永遠才是重中之重。因為連我也不能馬上推算運行失敗後有沒有人會察覺, 然後造成不必要的除錯困擾。</p>
+<p>然後因為錯誤實在太多, 優先解決的當然就是出現最多而最可見的。然後就是一連幾個小時對著神聖的 tail -f *.error.log 來修。這從每秒鐘都要用ctrl-c 停止來debug 到幾乎看不到404以外的問題。中間的過程實在十分漫長卻十分有快感, 我十分感謝大量的流量為我這debug 的過程帶來的重大幫助, 我想這是在任何一間企業都無法建立的升級環境。</p>
+<p>在這一天做了幾乎一年份的issue和patch，畢生難忘。</p></div>
+        <div id="permalink" style='word-break: break-all;'>{{paramlink}}</div>
+        
+    </div>
+</body>
+
+</html>

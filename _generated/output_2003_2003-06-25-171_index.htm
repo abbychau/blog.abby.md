@@ -1,0 +1,89 @@
+<html>
+
+<head>
+    <title>Abby's Archive</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <style>
+        /* for all screens */
+        #info {
+            display: none;
+        }
+
+        /* only when orientation is in portrait mode */
+        @media all and (orientation:portrait) {
+            #info {
+                color: red;
+                display: inline;
+                font-size: 20px
+            }
+        }
+
+
+        body {
+            background-color: #2c292d;
+            color: #fdf9f3;
+            padding: 1em;
+            margin: 0;
+            font-family: consolas, monospace;
+        }
+
+        a {
+            color: #a9dc76;
+            cursor: pointer
+        }
+
+        .hljs {
+            font-family: consolas, monospace;
+        }
+
+        img {
+            max-width: 90%;
+        }
+    </style>
+    <link rel="icon" type="image/png"
+        href="https://d2v9k5u4v94ulw.cloudfront.net/assets/images/2191294/original/e01cdc83-7764-49d6-9176-4695d37133b7?1522307876" />
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+
+    <script>
+        function myMarked(str) {
+
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+
+
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            myMarked($('#article').html())
+        })
+    </script>
+</head>
+
+<body>
+    
+    <div id='article' style='padding:0 15px 10px 10px'>
+        <h1 id="subject"></h1>
+        <div id="date" style='font-size: 9pt;'>2003-06-25</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags">["未分類"]</div>
+        <div id="content" style='word-break: break-all;'><p><strong>Here's a sample entry to show you some of the basics <img src="images/smiley1.gif" alt="" /></strong> </p>
+<p><strong>Adding New Entries</strong> - to add a new entry to your site, just click the &quot;<strong>New Weblog Entry</strong>&quot; link above (it's right under the &quot;search all xanga&quot; bar). When you click the link, your little xTools Editor window will pop up. Just type your entry into the xTools window and click &quot;Submit&quot; to add it to your site.</p>
+<p><strong>Editing Your Entries</strong> - to make edits, click the little &quot;edit it&quot; link at the bottom of your entry. (Note: if you don't see this link, it means you're not signed into your Xanga site. When you sign into your site, you should see this link after each of your entries.) When you click the link, your little xTools Editor window will pop up showing your current entry. Make any edits you want in that window and then click &quot;submit&quot; to publish the edited entry to your site.</p>
+<p><strong>Public vs. Private Entries</strong> - this entry is currently <em>private</em>, which means only you can see it. You can make each of your entries &quot;public&quot; (for anyone to read) or &quot;private&quot; (for your eyes only) when you first write them or anytime you &quot;edit&quot; them. You can also flip this setting back and forth by clicking the little &quot;Public/Private Entry&quot; link at the bottom of each entry.</p>
+<p><strong>Adding Links and Images</strong> - to add links and images to your entries, just click the little &quot;Add Link&quot; or &quot;Add Image&quot; links inside your xTools Editor window. The specific steps that happen next depend upon the type of browser and computer you're using (<a href="http://www.xanga.com/About/publish-opinions.asp?item=53#top2">click here see a detailed description</a>), but they should be pretty easy to follow no matter what you're using <img src="images/smiley1.gif" alt="" />.</p>
+<p><strong>Some Editing Tricks</strong> - if you're using an Internet Explorer browser, you can use standard keyboard shortcuts when writing or editing your entries (e.g. <strong>Ctrl-b for bold</strong>, <em>Ctrl-i for italics</em>, Ctrl-u for underline). You can also use standard keyboard shortcuts to cut and paste: ctrl-c to cut and ctrl-v to paste. (Sorry, Netscape and some other browsers may not support these features, yet.)</p>
+<p><strong>More Things to Try</strong> - there are lots of great ways to use and customize your weblog. Visit our <a href="http://www.xanga.com/about/publish-opinions.asp?item=30">Getting Started</a> section for more ideas.</p>
+<p><strong>Good luck and have fun with your weblog!</strong></p>
+<p>P.S. Don't forget to install your <a href="http://www.xanga.com/about/xangabuttons.asp"><strong>xTools Browser Button</strong></a>; it takes only a few seconds to install, it lets you publish anytime, from anywhere on the Web... and it's free!</p></div>
+        <div id="permalink" style='word-break: break-all;padding:2em 0 2em 0'><a href="https://blog.abby.md/_generated/output_2003_2003-06-25-171_index.htm">Permalink of this blog</a></div>
+        
+    </div>
+</body>
+
+</html>

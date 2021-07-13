@@ -1,0 +1,342 @@
+<html>
+
+<head>
+    <title>Abby's Archive</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <style>
+        /* for all screens */
+        #info {
+            display: none;
+        }
+
+        /* only when orientation is in portrait mode */
+        @media all and (orientation:portrait) {
+            #info {
+                color: red;
+                display: inline;
+                font-size: 20px
+            }
+        }
+
+
+        body {
+            background-color: #2c292d;
+            color: #fdf9f3;
+            padding: 1em;
+            margin: 0;
+            font-family: consolas, monospace;
+        }
+
+        a {
+            color: #a9dc76;
+            cursor: pointer
+        }
+
+        .hljs {
+            font-family: consolas, monospace;
+        }
+
+        body>div {
+            word-break: break-all;
+            position: fixed;
+        }
+
+        img {
+            max-width: 90%;
+        }
+    </style>
+    <link rel="icon" type="image/png"
+        href="https://d2v9k5u4v94ulw.cloudfront.net/assets/images/2191294/original/e01cdc83-7764-49d6-9176-4695d37133b7?1522307876" />
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+
+    <script>
+        function myMarked(str) {
+
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+
+
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            myMarked($('#article').html())
+        })
+    </script>
+</head>
+
+<body>
+    
+    <div id='article' style='padding:0 15px 10px 10px'>
+        <h1 id="subject">draft</h1>
+        <div id="date" style='font-size: 9pt;'>2020-09-23</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags">"遊藝"</div>
+        <div id="content" style='word-break: break-all;'><p>Nico  13:16:07
+规范太强了，除非魔改源码
+Nico  13:16:14
+大哥什么时候开始课程
+Dull  13:16:59
+&quot; Nico 13:16:07
+规范太强了，除非魔改源码 &quot;
+這5000星都是血汗換回來的（還要後續投資xD
+Nico  13:17:15
+嗯嗯
+Dull  13:18:44
+&quot; Nico 13:16:14
+大哥什么时候开始课程 &quot;
+我看了大約20分鐘。然後被人叫了去看機廳閉幕xD
+Nico  13:24:55
+从今天开始一起学xD
+Dull  13:48:50
+最近工作開始忙了orz... 需求每天都加orz
+Dull  13:48:55
+哭啊
+Nico  13:49:11
+我一直都忙，每天晚上10点多下班
+Nico  13:49:12
+唉
+Nico  13:49:24
+要坚强
+Dull  13:50:34
+(如果不加需求就可以划出一隻ratel 了 xD
+Nico  14:44:08
+肝就对了
+Dull  16:01:34
+早安
+Nico  16:35:41
+大哥早
+Nico  11:28:07
+大哥早
+Dull  13:09:06
+Nico 早安
+Nico  16:03:10
+大哥中午好
+Nico  17:11:08
+大哥下午好
+Nico  17:11:12
+要用电脑做什么
+Dull  17:16:01
+我找我另一個朋友試了xD
+Dull  17:16:47
+試內網穿透下載檔案而已...發覺挺多坑的XD
+Dull  17:17:31
+（回公司忘了上Q
+Nico  17:20:18
+自己写的那个吗？
+Dull  17:20:33
+自己寫的太監了
+Nico  17:21:03
+用的哪个开源的
+Dull  17:21:09
+我小看了這東西的工作量... 而且外面已經有人寫了一大堆
+Dull  17:22:16
+試了好多個
+Nico  17:23:26
+我也有兴趣搞一个玩玩了
+Dull  17:27:50
+nps frp sakurafps lanproxy goproxy sork spike
+Dull  17:28:19
+要兼容所有tcp 應用太難了
+Dull  17:28:48
+我現在想是不是寫個動態的https 反向代理就可以滿足了
+Nico  17:28:55
+支持掉原生的tcp协议不行吗
+Dull  17:29:09
+本來我也是這麼想
+Nico  17:29:10
+inputStream收到什么流就转发出去xD
+Dull  17:29:18
+應用用起來好多問題
+Dull  17:30:23
+我一開始就是入頻和出頻接起來。。。然後連大檔案下載了第一個dataframe 就停了，連除錯就除不了
+Nico  17:30:37
+最后找到错误了吗
+Dull  17:32:03
+找不到，我看其他人的實現都是http 和tcp 分開造, 自己包了一層，順面可以處理加密
+Dull  17:32:39
+<a href="https://github.com/fatedier/frp">https://github.com/fatedier/frp</a>
+這是大哥
+Dull  17:32:45
+老大哥
+Nico  17:41:23
+分开写可能是方便扩展吧
+Nico  17:41:27
+我之后自己写个体验下
+Dull  17:41:35
+嗯。
+Nico  17:41:38
+&quot; Dull 17:32:39
+<a href="https://github.com/fatedier/frp">https://github.com/fatedier/frp</a>
+這是大哥 &quot;
+好多star
+Dull  17:41:46
+也很依賴語言
+Nico  17:42:02
+go的话写着应该很爽
+Nico  17:42:04
+我先用java搞一个
+Dull  17:43:16
+go 爽也不是因為chan
+Nico  17:43:28
+go语法简洁
+Dull  17:43:32
+而是因為1.7 加了原生context
+Nico  17:43:48
+context目前我感触还不是太深
+Nico  17:43:54
+可能没用go写过http server
+Nico  17:44:08
+或者多协程通讯
+Dull  17:46:28
+frp 的proxy 的基礎模組就是用了context.Context , 三百行就寫完了... (讀不讀得懂是一回事xD
+Dull  17:48:49
+在讀這個 <a href="https://draveness.me/golang/docs/part3-runtime/ch06-concurrency/golang-context/">https://draveness.me/golang/docs/part3-runtime/ch06-concurrency/golang-context/</a>
+Nico  17:49:09
+太强了Orz
+Dull  17:58:32
+FRP距離第一個commit 都已經5年了，見證著go 的成長xD
+Nico  17:59:06
+感动。。
+Dull  18:00:09
+靠第一版的寫法和我的怎麼這麼像
+Dull  18:00:58
+io.Copy(to.TcpConn, from.TcpConn) &lt;&lt;&lt; XD
+Dull  18:05:04
+<a href="https://github.com/fatedier/frp/tree/7030d16e80770ab1c7c280dfabb4f4985ce1926b">https://github.com/fatedier/frp/tree/7030d16e80770ab1c7c280dfabb4f4985ce1926b</a>
+Nico  18:16:32
+哈哈
+Nico  18:16:38
+估计后来也发现了坑
+Dull  18:34:20
+本想寫一個來發個幣</p>
+<p>作為外網機，掛了這個東西可以挖礦
+轉發需求+0.001 <em> n </em> k
+轉發數據，每10KB +0.001 <em> n </em> k + s
+n是協議（tcp, 域名反代，udp, 檔案服務,3389等等)倍率
+k是地區(中國日本美國等等)倍率
+根據每15分鐘的區塊統計得知市場供求, 動態調整下次的價錢和倍率</p>
+<p>s 是穩定度紅利，同一ip 連續成功完成合約越多就越高（有上限)</p>
+<p>內網機可以向外網機投幣得到驗證用token 協議的失效時間</p>
+<p>Nico  18:35:40
+最终可以换钱吗
+Dull  18:35:57
+這個能成就可以真正地把家用機數據中心化了
+Dull  18:36:36
+幣本來就是鏈上的，要先用錢買，或者活動派發
+Nico  18:39:25
+根据使用内网穿透工具时长来分币吗
+Dull  18:40:26
+內網的人要消耗幣才能用
+有IP 和流量的人可以用來掛著賺幣
+Dull  18:42:08
+中間用DHT 發怖節點和健康度
+Dull  18:42:17
+就像BT 一樣
+Dull  18:45:17
+強吧?
+Dull  18:45:41
+(明明自己寫不出來xD
+Nico  18:45:55
+商业化xD
+Dull  18:46:12
+這叫共產化
+Dull  18:46:16
+wwwwwww
+Nico  18:46:32
+再定时推个广告啥的xD
+Dull  18:46:56
+我賣點幣當工資就可以
+Nico  18:47:11
+说搞就搞
+Dull  18:47:29
+&quot; Nico 18:46:32
+再定时推个广告啥的xD &quot;
+客戶端廣告，不就是ubuntu 嗎xD
+Nico  18:47:52
+推日志文件里
+Dull  18:48:22
+也行
+Dull  18:49:49
+&quot;你的網絡有問題嗎？可能是網線有問題。淘寶五鑽老店，專營十年網線 <a href="http://shop312324444.taobao.com/">http://shop312324444.taobao.com/</a>&quot; xD
+Nico  18:50:49
+日志名字叫，如果您感觉好用，想要支持我们，请看这里xd
+Dull  18:52:30
+打開log 後…
+&quot;還在Debug嗎？久坐可致不育。三甲教授常駐的蒲田醫院: <a href="https://ccc.net">https://ccc.net</a>&quot;
+Dull  18:53:34
+打廣告: 1幣/節點 (逃
+Dull  18:59:46
+其實我覺得拿著frp 去改也不是不行，就怕自己能力不夠
+Nico  19:00:30
+golang还是很好改的，不过要花点时间去摸熟frp
+Dull  19:02:08
+<a href="https://github.com/faynwol/SakuraFrp">https://github.com/faynwol/SakuraFrp</a> 他們就有改過
+Nico  19:03:20
+都是大佬Orz
+Dull  19:04:40
+他有在賣，估計有點收入
+[图片]
+Nico  19:05:22
+Orz
+Dull  19:06:21
+他說以前認識機房圈的人，
+[图片]</p>
+<p>一開始就一堆DC
+Dull  19:06:34
+但畢竟還是資本主義 :/
+Nico  19:07:39
+这估计改了好久吧，连控制台都有了
+Dull  19:07:41
+這個共產才好
+Dull  19:07:48
+嗯，好久了
+Nico  19:09:54
+内网穿透上升到共产和资本主义论~
+Dull  19:11:26
+因為通過固定機房的利潤是很有限的，因為成本高
+Dull  19:11:52
+先被商人吃一大口了
+Dull  19:12:26
+調用本來就沒有用的外網ip 和外網帶寬才是革命
+Dull  19:12:49
+靠。。。我說這麼多要留下來放上白皮書
+Nico  19:13:02
+鼓动大家去部署N个结点，通过服务发现注册到中心服务器
+Nico  19:13:06
+大家都可以相互用~
+Nico  19:13:43
+独立部署的开发者会以时长获得币，使用者也会根据使用时长消耗币
+Dull  19:13:48
+中心服务器會掛啊…DHT 就可以
+Dull  19:14:46
+不過一開始用註冊方法是比較容易實現
+Nico  19:16:04
+中心服务器就是用来收集外部节点信息的
+Nico  19:16:09
+搞个etcd集群就好了
+Dull  19:16:14
+而且中心服务器有機會作弊或者被黑掉
+Dull  19:16:49
+機件再好都是有信任問題
+Nico  19:17:29
+那怎么做结点发现呢
+Dull  19:45:28
+上面說了啊
+Dull  19:45:31
+DHT
+Nico  19:45:50
+ic
+Dull  19:46:10
+和torrent 爬蟲一樣<img src="https://cdn0.zkiz.com/file/realblog/user_files/4/5f6b29633023eimage-1600858490160.png" alt="file" /></p></div>
+        <div id="permalink" style='word-break: break-all;'>{{paramlink}}</div>
+        
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+<pre><code>&lt;pre class="prettyprint"&gt;
+// 功能清單
+// ---------------------------------------------------------------/
+// 空白清單
+let listA = [ ]           /// 有 3 個整數的清單
+let listB = [ 1; 2; 3 ]     /// 有 3 個整數的清單，注意 :: 是指 'cons' 作業
+let listC = 1 :: [2; 3]    /// 使用遞迴函式計算整數清單的總和
+let rec 
+SumList xs =    match xs with    | []    -&gt; 0    | y::ys -&gt; y + SumList ys/// 清單的總和
+let listD = SumList [1; 2; 3]  /// 介於 1 到 10 (含) 之間的整數清單
+let oneToTen = [1..10]/// 前 10 個整數的平方
+let squaresOfOneToTen = [ for x in 0..10 -&gt; x*x ]</code></pre>
+<p>List 是F# 最重要特點之一, 可以將數值快速運數及整合, 會用python 或matlab 的人會比較有認識</p>
+<p>上面有用過一個寫法&quot; match .. with | &quot;</p>
+<p>這是個foreach loop, 意思是xs 作為List 中其中的一個element,</p>
+<p>| 是switch 式, 用作處理不同的情況</p>
+<p>-&gt; 是return的意味, y::ys -&gt; y + SumList ys 意思是把y 從List 中抽取出來, 再來和餘下的List Element 加起來</p>

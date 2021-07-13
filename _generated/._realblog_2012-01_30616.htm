@@ -1,0 +1,226 @@
+<html>
+
+<head>
+    <title>Abby's Archive</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <style>
+        /* for all screens */
+        #info {
+            display: none;
+        }
+
+        /* only when orientation is in portrait mode */
+        @media all and (orientation:portrait) {
+            #info {
+                color: red;
+                display: inline;
+                font-size: 20px
+            }
+        }
+
+
+        body {
+            background-color: #2c292d;
+            color: #fdf9f3;
+            padding: 1em;
+            margin: 0;
+            font-family: consolas, monospace;
+        }
+
+        a {
+            color: #a9dc76;
+            cursor: pointer
+        }
+
+        .hljs {
+            font-family: consolas, monospace;
+        }
+
+        body>div {
+            word-break: break-all;
+            position: fixed;
+        }
+
+        img {
+            max-width: 90%;
+        }
+    </style>
+    <link rel="icon" type="image/png"
+        href="https://d2v9k5u4v94ulw.cloudfront.net/assets/images/2191294/original/e01cdc83-7764-49d6-9176-4695d37133b7?1522307876" />
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+
+    <script>
+        function myMarked(str) {
+
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+
+
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            myMarked($('#article').html())
+        })
+    </script>
+</head>
+
+<body>
+    
+    <div id='article' style='padding:0 15px 10px 10px'>
+        <h1 id="subject">つよがり</h1>
+        <div id="date" style='font-size: 9pt;'>2012-01-16</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags">"日常生活"</div>
+        <div id="content" style='word-break: break-all;'><table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse; -webkit-border-horizontal-spacing: 0px; -webkit-border-vertical-spacing: 0px; color: rgb(68, 68, 68); font-family: arial; font-size: 12px; line-height: 20px; text-align: left; "> <tbody> <tr> <td colspan="2" style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0cm; padding-right: 1.4pt; padding-bottom: 0cm; padding-left: 1.4pt; background-color: transparent; border-top-color: rgb(153, 204, 255); border-right-color: rgb(153, 204, 255); border-bottom-color: rgb(153, 204, 255); border-left-color: rgb(153, 204, 255); border-top-width: 1.5pt; border-right-width: 1.5pt; border-bottom-width: 1.5pt; border-left-width: 1.5pt; border-top-style: dashed; border-right-style: dashed; border-bottom-style: dashed; border-left-style: dashed; border-image: initial; " width="627"><span style="color: rgb(0, 0, 0); "><span lang="EN-US" style="font-family: Arial; ">TV</span><span lang="JA" style="font-family: 'MS Mincho'; ">アニメショー</span><span lang="JA" style="font-family: 新細明體; ">「べるぜバブ」EDテーマ </span><span lang="JA" style="font-family: 'MS Mincho'; ">つよがり</span><span lang="EN-US" style="font-family: Arial; "> </span></span>
+
+ </td> </tr> <tr> <td rowspan="11" style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0cm; padding-right: 1.4pt; padding-bottom: 0cm; padding-left: 1.4pt; border-bottom-color: rgb(153, 204, 255); border-bottom-width: 1.5pt; border-bottom-style: dashed; border-left-color: rgb(153, 204, 255); border-left-width: 1.5pt; border-left-style: dashed; background-color: transparent; border-top-color: rgb(236, 233, 216); border-top-width: initial; border-top-style: initial; border-right-color: rgb(153, 204, 255); border-right-width: 1.5pt; border-right-style: dashed; " width="317"><span style="color: rgb(0, 0, 0); "> ![](http://www.shokotan.jp/blog_sys2/mt-static//FileUpload/pics/release/SRCL7617-8mini.jpg)</span>
+
+ </td> <td style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0cm; padding-right: 1.4pt; padding-bottom: 0cm; padding-left: 1.4pt; border-bottom-color: rgb(153, 204, 255); border-bottom-width: 1.5pt; border-bottom-style: dashed; border-left-color: rgb(236, 233, 216); border-left-width: initial; border-left-style: initial; background-color: transparent; border-top-color: rgb(236, 233, 216); border-top-width: initial; border-top-style: initial; border-right-color: rgb(153, 204, 255); border-right-width: 1.5pt; border-right-style: dashed; " width="310"><span style="color: rgb(0, 0, 0); "><span lang="JA" style="font-family: 新細明體; ">アーティスト：</span><span lang="JA" style="font-family: 新細明體; ">中川翔子</span></span>
+
+ </td> </tr> <tr> <td style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0cm; padding-right: 1.4pt; padding-bottom: 0cm; padding-left: 1.4pt; border-bottom-color: rgb(153, 204, 255); border-bottom-width: 1.5pt; border-bottom-style: dashed; border-left-color: rgb(236, 233, 216); border-left-width: initial; border-left-style: initial; background-color: transparent; border-top-color: rgb(236, 233, 216); border-top-width: initial; border-top-style: initial; border-right-color: rgb(153, 204, 255); border-right-width: 1.5pt; border-right-style: dashed; " width="310"><span style="color: rgb(0, 0, 0); "><span style="font-family: 新細明體; ">作詞：</span><span style="font-family: 新細明體; ">しほり</span></span>
+
+ </td> </tr> <tr> <td style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0cm; padding-right: 1.4pt; padding-bottom: 0cm; padding-left: 1.4pt; border-bottom-color: rgb(153, 204, 255); border-bottom-width: 1.5pt; border-bottom-style: dashed; border-left-color: rgb(236, 233, 216); border-left-width: initial; border-left-style: initial; background-color: transparent; border-top-color: rgb(236, 233, 216); border-top-width: initial; border-top-style: initial; border-right-color: rgb(153, 204, 255); border-right-width: 1.5pt; border-right-style: dashed; " width="310"><span style="color: rgb(0, 0, 0); "><span style="font-family: 新細明體; ">作曲：</span><span style="font-family: 新細明體; ">しほり</span></span>
+
+ </td> </tr> <tr> <td style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0cm; padding-right: 1.4pt; padding-bottom: 0cm; padding-left: 1.4pt; border-bottom-color: rgb(153, 204, 255); border-bottom-width: 1.5pt; border-bottom-style: dashed; border-left-color: rgb(236, 233, 216); border-left-width: initial; border-left-style: initial; background-color: transparent; border-top-color: rgb(236, 233, 216); border-top-width: initial; border-top-style: initial; border-right-color: rgb(153, 204, 255); border-right-width: 1.5pt; border-right-style: dashed; " width="310"><span style="color: rgb(0, 0, 0); "><span style="font-family: 新細明體; ">編曲：</span><span style="font-family: 新細明體; ">太田雅友</span></span>
+
+ </td> </tr> <tr> <td style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0cm; padding-right: 1.4pt; padding-bottom: 0cm; padding-left: 1.4pt; border-bottom-color: rgb(153, 204, 255); border-bottom-width: 1.5pt; border-bottom-style: dashed; border-left-color: rgb(236, 233, 216); border-left-width: initial; border-left-style: initial; background-color: transparent; border-top-color: rgb(236, 233, 216); border-top-width: initial; border-top-style: initial; border-right-color: rgb(153, 204, 255); border-right-width: 1.5pt; border-right-style: dashed; " width="310"><span lang="EN-US" style="font-family: Arial; color: red; ">1.</span><span style="font-family: 新細明體; color: red; ">つよがり</span>
+
+ </td> </tr> <tr> <td style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0cm; padding-right: 1.4pt; padding-bottom: 0cm; padding-left: 1.4pt; border-bottom-color: rgb(153, 204, 255); border-bottom-width: 1.5pt; border-bottom-style: dashed; border-left-color: rgb(236, 233, 216); border-left-width: initial; border-left-style: initial; background-color: transparent; border-top-color: rgb(236, 233, 216); border-top-width: initial; border-top-style: initial; border-right-color: rgb(153, 204, 255); border-right-width: 1.5pt; border-right-style: dashed; " width="310"><span style="color: rgb(0, 0, 0); "><span lang="EN-US" style="font-family: Arial; ">2.</span><span style="font-family: 新細明體; ">星屑ロマンス</span></span>
+
+ </td> </tr> <tr> <td style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0cm; padding-right: 1.4pt; padding-bottom: 0cm; padding-left: 1.4pt; border-bottom-color: rgb(153, 204, 255); border-bottom-width: 1.5pt; border-bottom-style: dashed; border-left-color: rgb(236, 233, 216); border-left-width: initial; border-left-style: initial; background-color: transparent; border-top-color: rgb(236, 233, 216); border-top-width: initial; border-top-style: initial; border-right-color: rgb(153, 204, 255); border-right-width: 1.5pt; border-right-style: dashed; " width="310"><span style="color: rgb(0, 0, 0); "><span lang="EN-US" style="font-family: Arial; ">3.</span><span lang="EN-US" style="font-family: Arial; ">Dangerous wild,you are!</span></span>
+
+ </td> </tr> <tr> <td style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0cm; padding-right: 1.4pt; padding-bottom: 0cm; padding-left: 1.4pt; border-bottom-color: rgb(153, 204, 255); border-bottom-width: 1.5pt; border-bottom-style: dashed; border-left-color: rgb(236, 233, 216); border-left-width: initial; border-left-style: initial; background-color: transparent; border-top-color: rgb(236, 233, 216); border-top-width: initial; border-top-style: initial; border-right-color: rgb(153, 204, 255); border-right-width: 1.5pt; border-right-style: dashed; " width="310"><span style="color: rgb(0, 0, 0); "><span lang="EN-US" style="font-family: Arial; ">4.</span><span lang="JA" style="font-family: 新細明體; ">つよがり</span><span lang="EN-US" style="font-family: Arial; "> -Instrumental-</span></span>
+
+ </td> </tr> <tr> <td style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0cm; padding-right: 1.4pt; padding-bottom: 0cm; padding-left: 1.4pt; border-bottom-color: rgb(153, 204, 255); border-bottom-width: 1.5pt; border-bottom-style: dashed; border-left-color: rgb(236, 233, 216); border-left-width: initial; border-left-style: initial; background-color: transparent; border-top-color: rgb(236, 233, 216); border-top-width: initial; border-top-style: initial; border-right-color: rgb(153, 204, 255); border-right-width: 1.5pt; border-right-style: dashed; " width="310"><span style="color: rgb(0, 0, 0); "><span lang="EN-US" style="font-family: 'MS Mincho'; ">5.</span><span lang="JA" style="font-family: 新細明體; ">星屑ロマンス</span><span lang="EN-US" style="font-family: Arial; "> -Instrumental-</span></span>
+
+ </td> </tr> <tr> <td style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0cm; padding-right: 1.4pt; padding-bottom: 0cm; padding-left: 1.4pt; border-bottom-color: rgb(153, 204, 255); border-bottom-width: 1.5pt; border-bottom-style: dashed; border-left-color: rgb(236, 233, 216); border-left-width: initial; border-left-style: initial; background-color: transparent; border-top-color: rgb(236, 233, 216); border-top-width: initial; border-top-style: initial; border-right-color: rgb(153, 204, 255); border-right-width: 1.5pt; border-right-style: dashed; " width="310"><span style="color: rgb(0, 0, 0); "><span lang="EN-US" style="font-family: 'MS Mincho'; ">6.</span><span lang="EN-US" style="font-family: Arial; ">Dangerous wild,you are! -Instrumental-</span></span>
+
+ </td> </tr> <tr> <td style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0cm; padding-right: 1.4pt; padding-bottom: 0cm; padding-left: 1.4pt; border-bottom-color: rgb(153, 204, 255); border-bottom-width: 1.5pt; border-bottom-style: dashed; border-left-color: rgb(236, 233, 216); border-left-width: initial; border-left-style: initial; background-color: transparent; border-top-color: rgb(236, 233, 216); border-top-width: initial; border-top-style: initial; border-right-color: rgb(153, 204, 255); border-right-width: 1.5pt; border-right-style: dashed; " width="310"><span style="color: rgb(0, 0, 0); "><span lang="JA" style="font-family: 'MS Mincho'; ">ソング紹介</span><span lang="JA" style="font-family: 新細明體; ">：歌名雖為「逞強」</span><span style="font-family: 新細明體; ">但曲風與歌詞卻是非常光明正向，努力的邁向明日。</span></span>
+
+ </td> </tr> <tr> <td style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0cm; padding-right: 1.4pt; padding-bottom: 0cm; padding-left: 1.4pt; border-bottom-color: rgb(153, 204, 255); border-bottom-width: 1.5pt; border-bottom-style: dashed; border-left-color: rgb(153, 204, 255); border-left-width: 1.5pt; border-left-style: dashed; background-color: transparent; border-top-color: rgb(236, 233, 216); border-top-width: initial; border-top-style: initial; border-right-color: rgb(153, 204, 255); border-right-width: 1.5pt; border-right-style: dashed; " valign="top" width="317"><font color="#000000" face="新細明體" size="2">つよがり</font>
+
+<font color="#000000" face="新細明體" size="2">ひとつ ふたつ足りないものを  
+ 数えるのはもうやめた  
+ 昨日までの冴えない僕に  
+ 今日でサヨナラしたいよ  
+
+ 守るようで守られて  
+ いつからか強くなる  
+ 手と手繋ぐぬくもりが  
+ 绝え間なくチカラくれる  
+
+ 強がりだよ でも决めたんだ  
+ 追いかけるまぶしい明日に  
+ いつかの僕ら映して  
+ 届くようにと願う  
+
+ 読めない展開泣きたい時も  
+ 弱虫に負けそうな日も  
+ ぐっと 前を見据えたら  
+ 何度だってまた歩き出そう  
+
+ ひとつ ふたつ気づきはじめた  
+ ありふれた日々の中で  
+ 見える景色自分しだいで  
+ 少しずつ変わっていく  
+
+ 出会い 别れくりかえし  
+ 続いてくこの道で  
+ 手と手ふたり取り合った  
+ 奇跡が背中押すんだ  
+
+ 迷いながら でも信じたい  
+ 僕ら強くなれるはずと  
+ 「大丈夫」そう 言い聞かせて  
+ 君に笑颜見せた  
+
+ 肝心なコト言えない時も  
+ 悔しいキモチ耐えた日も  
+ きっと いつかの僕らが  
+ 今日の僕ら誇れるだろう  
+
+ 強がりだよ でも君となら  
+ どこまでも進んでゆける  
+ いつかの僕ら目指して  
+ 届くようにと願う  
+
+ 冷たい雨に打たれた時も  
+ 本当はくじけそうな日も  
+ ぐっと 前を見据えたら  
+ 何度だってまた歩き出そう  
+ </font>
+
+<span lang="EN-US" style="font-family: 新細明體; font-size: 10pt; "><span style="color: rgb(0, 0, 0); "> </span></span>
+
+ </td> <td style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0cm; padding-right: 1.4pt; padding-bottom: 0cm; padding-left: 1.4pt; border-bottom-color: rgb(153, 204, 255); border-bottom-width: 1.5pt; border-bottom-style: dashed; border-left-color: rgb(236, 233, 216); border-left-width: initial; border-left-style: initial; background-color: transparent; border-top-color: rgb(236, 233, 216); border-top-width: initial; border-top-style: initial; border-right-color: rgb(153, 204, 255); border-right-width: 1.5pt; border-right-style: dashed; " valign="top" width="310"><font color="#000000" face="新細明體" size="2">逞強</font>
+
+<font color="#000000" face="新細明體" size="2">一、兩個不足的事情  
+ 已經不想再數了  
+ 想向昨天還意志消成的我  
+ 說再見  
+
+ 看似守護實則被守護  
+ 何時才能變得堅強  
+ 雙手緊繫的溫暖  
+ 不斷賦予我力量  
+
+ 總是在逞強 但我已決定  
+ 追逐閃耀的明日  
+ 祈求哪天能  
+ 照映到我們  
+
+ 開始難以理解的哭泣那時也好  
+ 還是輸給軟弱的那一天  
+ 都要聚睛凝神的向前看  
+ 無論多少次都能再度邁出步伐  
+
+ 在習以為常的日常中  
+ 察覺到有一兩件事  
+ 看見的景色因自己而  
+ 逐漸改變  
+
+ 在這條街道上  
+ 重複著邂逅、分離  
+ 彼此手牽手  
+ 奇蹟正推著我們  
+
+ 雖迷網 但仍堅信  
+ 我們能變得堅強  
+ 告訴自己「沒問題的」  
+ 讓你看到我的笑容  
+
+ 即使有無法說出重要的事時  
+ 也有忍受著後悔心情的日子  
+ 總有天我們必能  
+ 向今日的我們誇耀  
+
+ 總是在逞強 但若是與你  
+ 不管到哪都能前行  
+ 祈求我們的目標  
+ 總有天能傳達出去  
+
+ 縱有被冰冷的雨淋溼時  
+ 也有受挫沮喪的日子  
+ 只要聚睛凝神的向前看  
+ 無論多少次都能再度邁出步伐  
+ </font>
+
+<span lang="EN-US" style="font-family: 新細明體; font-size: 10pt; "><span style="color: rgb(0, 0, 0); "> </span></span>
+
+ </td> </tr></tbody></table>
+<p><span style="color: rgb(0, 0, 0); "> 原</span><strong>歌詞轉載: <a href="http://hujiharasakura.pixnet.net/blog/">http://hujiharasakura.pixnet.net/blog/</a></strong></p>
+<p>中日對得有點不正, 看到有點地方也想改改, 還有中詞好像還可以改呢</p>
+<p>這首歌最近被我loop 死了, 太強太強了, 到了一個地步聽到想嘔吐關掉了又想打開再聽&gt;&lt;</p>
+<p><embed height="33" src="http://www.xiami.com/widget/0_1770225423/singlePlayer.swf" type="application/x-shockwave-flash" width="257" wmode="transparent"></embed></p></div>
+        <div id="permalink" style='word-break: break-all;'>{{paramlink}}</div>
+        
+    </div>
+</body>
+
+</html>

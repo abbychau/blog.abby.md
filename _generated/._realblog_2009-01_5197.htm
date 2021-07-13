@@ -1,0 +1,102 @@
+<html>
+
+<head>
+    <title>Abby's Archive</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <style>
+        /* for all screens */
+        #info {
+            display: none;
+        }
+
+        /* only when orientation is in portrait mode */
+        @media all and (orientation:portrait) {
+            #info {
+                color: red;
+                display: inline;
+                font-size: 20px
+            }
+        }
+
+
+        body {
+            background-color: #2c292d;
+            color: #fdf9f3;
+            padding: 1em;
+            margin: 0;
+            font-family: consolas, monospace;
+        }
+
+        a {
+            color: #a9dc76;
+            cursor: pointer
+        }
+
+        .hljs {
+            font-family: consolas, monospace;
+        }
+
+        body>div {
+            word-break: break-all;
+            position: fixed;
+        }
+
+        img {
+            max-width: 90%;
+        }
+    </style>
+    <link rel="icon" type="image/png"
+        href="https://d2v9k5u4v94ulw.cloudfront.net/assets/images/2191294/original/e01cdc83-7764-49d6-9176-4695d37133b7?1522307876" />
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+
+    <script>
+        function myMarked(str) {
+
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+
+
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            myMarked($('#article').html())
+        })
+    </script>
+</head>
+
+<body>
+    
+    <div id='article' style='padding:0 15px 10px 10px'>
+        <h1 id="subject">Artweaver</h1>
+        <div id="date" style='font-size: 9pt;'>2009-01-14</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags">"好物推介"</div>
+        <div id="content" style='word-break: break-all;'><p>這是一個真的在萬花叢中自己找來的軟體  </p>
+<p>先說出名字吧..Artweaver 0.5  </p>
+<p>這是一個自然筆觸向的繪圖軟件  </p>
+<p>要說出這個軟件的特點真的可以又簡單又準確  </p>
+<ol>
+<li><strong>Photoshop 的介面</strong>  </li>
+<li><strong>Painter 的筆觸分類</strong><br />
+而且相似程度逹到90% 以上, 強大的功能之餘, 開啟也十分快速, 通常只要<strong>幾秒</strong>  </li>
+</ol>
+<p>給上一張圖大家就明白<br />
+<img src="http://abby.zkiz.com/awg.png" alt="" />  </p>
+<p>功能上是painter 的用戶都應該會了解, 不是的話也和Sai 等等也不多,<br />
+但重點是photoshop 的操作方法!!<br />
+雖然我對這個軟體的評價很高,<br />
+不過如果用不到自然筆觸軟體的話, 我想這個軟體你大概淺嚐也可以, 看看能不能感受到它帶來的樂趣  </p>
+<p>評價為&quot;現代下品神器&quot; (8/10)<br />
+原因: 介面優良, 功能齊全, 啟動迅速, <span style="text-decoration: underline;"><strong>免費</strong></span>  </p></div>
+        <div id="permalink" style='word-break: break-all;'>{{paramlink}}</div>
+        
+    </div>
+</body>
+
+</html>

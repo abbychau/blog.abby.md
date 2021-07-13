@@ -1,0 +1,95 @@
+<html>
+
+<head>
+    <title>Abby's Archive</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <style>
+        /* for all screens */
+        #info {
+            display: none;
+        }
+
+        /* only when orientation is in portrait mode */
+        @media all and (orientation:portrait) {
+            #info {
+                color: red;
+                display: inline;
+                font-size: 20px
+            }
+        }
+
+
+        body {
+            background-color: #2c292d;
+            color: #fdf9f3;
+            padding: 1em;
+            margin: 0;
+            font-family: consolas, monospace;
+        }
+
+        a {
+            color: #a9dc76;
+            cursor: pointer
+        }
+
+        .hljs {
+            font-family: consolas, monospace;
+        }
+
+        img {
+            max-width: 90%;
+        }
+    </style>
+    <link rel="icon" type="image/png"
+        href="https://d2v9k5u4v94ulw.cloudfront.net/assets/images/2191294/original/e01cdc83-7764-49d6-9176-4695d37133b7?1522307876" />
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+
+    <script>
+        function myMarked(str) {
+
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+
+
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            myMarked($('#article').html())
+        })
+    </script>
+</head>
+
+<body>
+    
+    <div id='article' style='padding:0 15px 10px 10px'>
+        <h1 id="subject">最近</h1>
+        <div id="date" style='font-size: 9pt;'>2013-07-22</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags">"日常生活"</div>
+        <div id="content" style='word-break: break-all;'><p>最近:<br />
+常玩的電子遊戲? Dance Evolution Arcade, RIFT<br />
+常聽的歌? 相川七瀨-恋心Acoustic ver.<br />
+讀過的書? 北京師大的公開課: 從愛因斯坦到霍金的宇宙<br />
+看過的影片? 請左youtube 搜&quot;炊飯器&quot;<br />
+新增的知識? 見兩點前<br />
+新增的技能? Unity3d 入門<br />
+完成的作品? <a href="https://soundcloud.com/abby-chau-yu-hoi/veua6ay802dn">https://soundcloud.com/abby-chau-yu-hoi/veua6ay802dn</a> <a href="https://www.facebook.com/photo.php?fbid=10151689249418965&amp;set=a.10150619310178965.412213.505933964&amp;type=1&amp;theater">https://www.facebook.com/photo.php?fbid=10151689249418965&amp;set=a.10150619310178965.412213.505933964&amp;type=1&amp;theater</a><br />
+奇怪的習慣? 睡很大<br />
+工作和學業的走勢? 平<br />
+感受到的社會走勢? AR 和VR 的開始起步發展, 會進入有穩健商業模式的時代<br />
+發現了的好食品/飲品? M記巨無霸餐同魚柳包餐...<br />
+美術體驗? 看了幾個繪畫流派的畫, 有時間會再研究<br />
+得意於? N/A<br />
+失意於? 又被一直在意的人避開了</p></div>
+        <div id="permalink" style='word-break: break-all;padding:2em 0 2em 0'><a href="https://blog.abby.md/_generated/realblog_2013-07_67726.htm">Permalink of this blog</a></div>
+        
+    </div>
+</body>
+
+</html>

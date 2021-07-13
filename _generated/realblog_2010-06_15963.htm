@@ -1,0 +1,106 @@
+<html>
+
+<head>
+    <title>Abby's Archive</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <style>
+        /* for all screens */
+        #info {
+            display: none;
+        }
+
+        /* only when orientation is in portrait mode */
+        @media all and (orientation:portrait) {
+            #info {
+                color: red;
+                display: inline;
+                font-size: 20px
+            }
+        }
+
+
+        body {
+            background-color: #2c292d;
+            color: #fdf9f3;
+            padding: 1em;
+            margin: 0;
+            font-family: consolas, monospace;
+        }
+
+        a {
+            color: #a9dc76;
+            cursor: pointer
+        }
+
+        .hljs {
+            font-family: consolas, monospace;
+        }
+
+        img {
+            max-width: 90%;
+        }
+    </style>
+    <link rel="icon" type="image/png"
+        href="https://d2v9k5u4v94ulw.cloudfront.net/assets/images/2191294/original/e01cdc83-7764-49d6-9176-4695d37133b7?1522307876" />
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+
+    <script>
+        function myMarked(str) {
+
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+
+
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            myMarked($('#article').html())
+        })
+    </script>
+</head>
+
+<body>
+    
+    <div id='article' style='padding:0 15px 10px 10px'>
+        <h1 id="subject">手紙 ～拝啓 十五の君へ～</h1>
+        <div id="date" style='font-size: 9pt;'>2010-06-12</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags">"歌曲"</div>
+        <div id="content" style='word-break: break-all;'><p>日中学校全体合唱 『手紙 ～拝啓 十五の君へ～』  </p>
+<p><span style="font-size: 10px; ">敬啟，這封信给十五歲的你   </p>
+<p>敬啟 正在讀著此信的你在何處，在做些什麼呢？<br />
+十五歲的我，懷著煩惱的種子，無法對誰傾訴 。<br />
+若這是封寫給未來自己的信，應該能誠實地坦露一切 。  </p>
+<p>此刻，像快輸了、像快哭了、像快消失了的我，<br />
+該相信誰的話往前才好呢？<br />
+僅存的心幾經割裂而支離破碎；<br />
+在無盡的苦痛裡，我仍活在此刻，我仍活在此刻 。  </p>
+<p>敬啟 謝謝！我有話想對十五歲的你說。<br />
+自己究竟為何得向著某處前進，只要不停追問終能見到答案。<br />
+存著巨浪的青春之海即便艱難，也請將夢想之舟開往明日的埠岸 。  </p>
+<p>此刻，絕不能輸、絕不能哭、像快消失了的時候，<br />
+只要相信自己的聲音往前就好；<br />
+即便已是成大人的我，也總有帶著傷心而難以入眠的夜晚；<br />
+但我仍活在苦澀又甘甜的此刻。  </p>
+<p>正因人生的一切都賦與意義，喔～請別畏懼去培育你的夢想 ！  </p>
+<p>此刻，像快輸了、像快哭了、像快消失了的我，<br />
+該相信誰的話往前才好呢？   </p>
+<p>啊，絕不能輸、絕不能哭、像快消失的時候，<br />
+只要相信自己的聲音往前就好；<br />
+無論哪個時代總不免有悲傷，但請展開笑顏活在此刻往前，活在此刻往前吧。  </p>
+<p>敬啟 由衷盼望正讀著此信的你能夠幸福！</span>  </p>
+<hr />
+<p><span style="font-size: 10px; ">只是閱讀歌詞, 已經令我感動落淚</span>  </p>
+<p><embed height="300" loop="true" menu="true" play="true" pluginspage="http://www.macromedia.com/go/getflashplayer" src="http://www.youtube.com/v/mhWyphI3sGc" type="application/x-shockwave-flash" width="400"></embed></p></div>
+        <div id="permalink" style='word-break: break-all;padding:2em 0 2em 0'><a href="https://blog.abby.md/_generated/realblog_2010-06_15963.htm">Permalink of this blog</a></div>
+        
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,124 @@
+<html>
+
+<head>
+    <title>Abby's Archive</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <style>
+        /* for all screens */
+        #info {
+            display: none;
+        }
+
+        /* only when orientation is in portrait mode */
+        @media all and (orientation:portrait) {
+            #info {
+                color: red;
+                display: inline;
+                font-size: 20px
+            }
+        }
+
+
+        body {
+            background-color: #2c292d;
+            color: #fdf9f3;
+            padding: 1em;
+            margin: 0;
+            font-family: consolas, monospace;
+        }
+
+        a {
+            color: #a9dc76;
+            cursor: pointer
+        }
+
+        .hljs {
+            font-family: consolas, monospace;
+        }
+
+        body>div {
+            word-break: break-all;
+            position: fixed;
+        }
+
+        img {
+            max-width: 90%;
+        }
+    </style>
+    <link rel="icon" type="image/png"
+        href="https://d2v9k5u4v94ulw.cloudfront.net/assets/images/2191294/original/e01cdc83-7764-49d6-9176-4695d37133b7?1522307876" />
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+
+    <script>
+        function myMarked(str) {
+
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+
+
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            myMarked($('#article').html())
+        })
+    </script>
+</head>
+
+<body>
+    
+    <div id='article' style='padding:0 15px 10px 10px'>
+        <h1 id="subject">電車男形像解釋</h1>
+        <div id="date" style='font-size: 9pt;'>2009-04-02</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags">"社評"</div>
+        <div id="content" style='word-break: break-all;'><p>以電車男(或其他包括男女的可能分類)去歸納一個人是一種文化暴力, 這種暴力對此種裝扮的批評達到一個無理的地步  </p>
+<p><span style="font-size: 19px;"><strong>這純粹是從外觀和裝扮來說</strong></span>  </p>
+<p>我對電車男的裝扮其實是持讚賞的態度的, 但也因為太大的群眾壓力, 導致不敢去這樣的裝扮  </p>
+<p>先具體的說說這種裝束, 有不整齊的頭髮, 背包, 球鞋, 束著上衣的長褲,  </p>
+<p>以下不是創造理由, 而是真的從自身的希望出發去解釋, 因為本身的直覺也覺得這樣的裝扮是合理的  </p>
+<p><span style="font-size: 16px;"><u><strong>不整齊的頭髮:</strong> </u></span><br />
+睡覺後會重新變亂、頭髮不影響行動能力、髮型上的分別其實不是本質上的, 只是煙霧,<br />
+實在是難以跟其他人解釋它有本身的價值去照料  </p>
+<p><u><strong><span style="font-size: 16px;">背包:</span></strong></u><br />
+出門總有隨身的物品, 帶一個袋出門的話就有三個常見的袋:手挽、斜揹、背揹<br />
+本質來說手挽是最差的選擇, 因為所有力量都集中在手上, 單點受力最為失衡, 難以長時間背負重物<br />
+斜揹袋介乎兩者之間, 把受力點轉移到肩膀, 但因為只在一邊, 所以受力不平衡, 負重物易不適及難以跑動<br />
+背揹克服以上所有缺點, 把受力點轉移到兩肩, 受力點和支點的距離也是最短, 可以輕易背負重物, 也空出了兩手, 也可以平穩地跑動, 但取物較為麻煩, 適合搭配衣褲袋使用<br />
+如果了解了三者的分別, 實在難以跟其他人解釋為甚麼要用手挽袋或者斜揹袋  </p>
+<p><span style="font-size: 16px;"><u><strong>球鞋:</strong></u></span><br />
+出門要保護足部, 差不多所有人都會穿鞋, 而鞋也分了不少類別: 布鞋(如converse), 高跟鞋, 涼鞋, 皮鞋, 拖鞋, 跑鞋, 球鞋, 鬆糕鞋等等...<br />
+布鞋的鞋面和鞋底都薄, 一來會令到腳面受壓不平衡, 也令到在高處躍下是腳部把震盪由背骨傳到頭上, 但價錢便宜<br />
+高跟鞋, 在高低在水平移動中都突現很大的缺點, 腳部受力和發力都不及其他鞋種, 接觸點較小也令到敲擊地面時更容易暴露自己的行踪, 但可以用到更高的視角去觀察環境<br />
+皮鞋, 有著布鞋的缺點而且更為嚴重, 沒甚麼優點<br />
+拖鞋, 跑動時不穩定, 高處跳下時也抵不了衝擊, 但方便穿著<br />
+跑鞋, 可以很穩定而十分高速的跑動, 發聲十分小, 也能吸收一定的衝擊, 但價錢較貴<br />
+球鞋, 可以穩定而高速的跑動, 十分能吸收衝擊, 但價錢頗高<br />
+鬆糕鞋, 高跟鞋的改良版, 腳部受力和發力都優於高跟鞋, 但因為重心十分高,劇烈行動起來處於劣勢,行動也不穩, 但可以用更高的視角去觀察環境<br />
+由此可見, 跑鞋和球鞋雖然比較貴, 但是卻十分實用  </p>
+<p><u><strong><span style="font-size: 16px;">束著上衣的長褲:<br />
+</span></strong></u>要保護下體自然要穿衣服, 而選擇有: 長裙、短裙、中裙、長褲、短褲、中褲, 又有高中低腰之分<br />
+長度愈長, 則可以提供更佳的保護, 用以抵抗外物如: 銳物、蚊子、不小心跌倒..等等的傷害<br />
+以同等長度來說褲比裙好, 因為裙會上揚而失去保護力<br />
+行動起來則褲和褲相差不遠, 但高腰比中腰好, 中腰比低腰好十分多, 因為低腰衣物只依賴褲和盤骨之間的磨擦力, 在劇烈行動中跌下的風險較大, 而中腰和高腰則有盤骨的上沿頂著<br />
+由此觀之, 中高腰的長褲實為最佳選擇<br />
+而穿著中高腰的長褲則還要選擇束上衣還是不束<br />
+束上衣: 可以防止褲的受力點和皮膚直接接觸, 在受力點出汗時有衣服可以吸汗<br />
+不束上衣:在受力點出汗時沒有衣服可以吸汗, 皮膚可能會有不適, 但穿著較為方便  </p>
+<p>由不整齊的頭髮, 背包, 球鞋, 束著上衣的長褲的電車男式打扮中可以看到打扮者是實用主義型, 也可以看到務實、智慧、不怕麻煩、注重健康及為不時之需作好準備等特點  </p>
+<p>電車男這樣裝扮, 其實也主要是因為不時之需而作出的, 這個可能是當人問起&quot;為甚麼你要這樣打扮?&quot;的時候, 可以以充足的理據去支持, 以免其他人覺得自己是個怪人(誰不知在今天這種完整的合理性反而會被人覺得&quot;<br />
+怪&quot;, 這不是一種反智的表現嗎?), 而其實很多人都很在意這種心理上的合理性  </p>
+<p>雖然推動潮流的奸商不會把潮流帶到這種實用主義中, 但是作為大眾也應該以清楚的腦筋去想想怎麼打扮,<br />
+除了外貌是不是美觀這種主觀的看法外, 裝扮之前也許應該想想&quot;為甚麼要穿這件呢?&quot;,<br />
+提出實際的理據, 忘記甚麼時&quot;時裝&quot; 這樣說不定會更自由, 更心安而&quot;理得&quot;呢  </p></div>
+        <div id="permalink" style='word-break: break-all;'>{{paramlink}}</div>
+        
+    </div>
+</body>
+
+</html>

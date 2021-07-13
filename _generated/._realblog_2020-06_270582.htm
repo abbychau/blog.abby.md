@@ -1,0 +1,108 @@
+<html>
+
+<head>
+    <title>Abby's Archive</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <style>
+        /* for all screens */
+        #info {
+            display: none;
+        }
+
+        /* only when orientation is in portrait mode */
+        @media all and (orientation:portrait) {
+            #info {
+                color: red;
+                display: inline;
+                font-size: 20px
+            }
+        }
+
+
+        body {
+            background-color: #2c292d;
+            color: #fdf9f3;
+            padding: 1em;
+            margin: 0;
+            font-family: consolas, monospace;
+        }
+
+        a {
+            color: #a9dc76;
+            cursor: pointer
+        }
+
+        .hljs {
+            font-family: consolas, monospace;
+        }
+
+        body>div {
+            word-break: break-all;
+            position: fixed;
+        }
+
+        img {
+            max-width: 90%;
+        }
+    </style>
+    <link rel="icon" type="image/png"
+        href="https://d2v9k5u4v94ulw.cloudfront.net/assets/images/2191294/original/e01cdc83-7764-49d6-9176-4695d37133b7?1522307876" />
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+
+    <script>
+        function myMarked(str) {
+
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+
+
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            myMarked($('#article').html())
+        })
+    </script>
+</head>
+
+<body>
+    
+    <div id='article' style='padding:0 15px 10px 10px'>
+        <h1 id="subject">拆掉六人造人的勇氣</h1>
+        <div id="date" style='font-size: 9pt;'>2020-06-19</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags">"日常生活"</div>
+        <div id="content" style='word-break: break-all;'><p>今天玩TFT 時，一如以往地玩６人造人今天玩TFT 時，一如以往地玩６人造人。<br />
+自從改版後，將好運姐和天使移除後，玩人造人的人變少了。  </p>
+<p>但沒有天使，可以把遠程裝備分到汎上。有了雷紋和慎的上下位替換，反而令中期過渡變後平滑了。</p>
+<p>戰績也比上季好多了。
+<img src="https://cdn0.zkiz.com/file/realblog/user_files/4/5eebac6271074image-1592503396569.png" alt="file" /></p>
+<p>但也因為少了天使，後期變弱了。</p>
+<p>在保持六人造人三劍的前題下，就算上９人口，也是無法抗住暗星。</p>
+<p>本來有破魔和未來的瑟雷西在組合適應性上和長期戰力上都是最好的選擇。<br />
+但被暗星在中期一個個殺掉的話，瑟雷西通常起不了甚麼效果。</p>
+<p>破魔對暗星來說也作用不大。  </p>
+<p>於是今天這局我有個很大膽的想法，就是把六人造人拆了。然後在上面堆上額外的兩隻有即戰力的五星。  </p>
+<p>在前面最強的就是龍獸和烏爾加特。  </p>
+<p>在拆時試過幾個思路：<br />
+１。放棄菲歐拉—＞菲歐拉在後期絕對放不出技，但缺了她就沒有三劍<br />
+２。放棄汎—＞在接替天使後比較重要輸出點，如果露西恩已經滿，她的裝備沒其他人可以接<br />
+３。放棄伊澤—＞本來就是掛件，放棄他可以保持六劍，要不要他就看路西恩的裝備<br />
+４。放棄菲艾—＞不太有機會可以突破打到暗星的ＡＤＣ，但不太能缺少她的坦度  </p>
+<p>到最後我選了菲歐拉，拿下這局。<br />
+<img src="https://cdn0.zkiz.com/file/realblog/user_files/4/5eebaba99675dimage-1592503210975.png" alt="file" /></p>
+<p>雖然依瑞莉亞和雷玟在大後期已經成為主力輸出點，但仔細想想，三劍的主要作用點其實在天使。<br />
+雷紋在有藍ｂｕｆｆ的情況下，其實沒有必要斬出第二劍<br />
+而依瑞莉亞雖然是破暗星的關鍵，但要求她暴出一劍就可以了。多餘的一劍的作用不及多一隻五星。  </p>
+<p>然後六人造人的定額增幅在大後期其實沒有那麼重要，在拔有一個後，所缺的就是每人２５０ＨＰ和４０點攻。這種程度的犠牲不是不能接受。  </p></div>
+        <div id="permalink" style='word-break: break-all;'>{{paramlink}}</div>
+        
+    </div>
+</body>
+
+</html>

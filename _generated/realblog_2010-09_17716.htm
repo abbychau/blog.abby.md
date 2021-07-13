@@ -1,0 +1,86 @@
+<html>
+
+<head>
+    <title>Abby's Archive</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <style>
+        /* for all screens */
+        #info {
+            display: none;
+        }
+
+        /* only when orientation is in portrait mode */
+        @media all and (orientation:portrait) {
+            #info {
+                color: red;
+                display: inline;
+                font-size: 20px
+            }
+        }
+
+
+        body {
+            background-color: #2c292d;
+            color: #fdf9f3;
+            padding: 1em;
+            margin: 0;
+            font-family: consolas, monospace;
+        }
+
+        a {
+            color: #a9dc76;
+            cursor: pointer
+        }
+
+        .hljs {
+            font-family: consolas, monospace;
+        }
+
+        img {
+            max-width: 90%;
+        }
+    </style>
+    <link rel="icon" type="image/png"
+        href="https://d2v9k5u4v94ulw.cloudfront.net/assets/images/2191294/original/e01cdc83-7764-49d6-9176-4695d37133b7?1522307876" />
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+
+    <script>
+        function myMarked(str) {
+
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+
+
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            myMarked($('#article').html())
+        })
+    </script>
+</head>
+
+<body>
+    
+    <div id='article' style='padding:0 15px 10px 10px'>
+        <h1 id="subject">異種</h1>
+        <div id="date" style='font-size: 9pt;'>2010-09-03</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags">"作品"</div>
+        <div id="content" style='word-break: break-all;'><p>從前有一個地方, 鳥語花香, 綠草如茵。難說上是仙境, 可是任何人都不會抗拒在這種地方逗留; 可是人們一直都沒找到這個地方, 直至一個風雨交加的夜晚...</p>
+<p>在這個晚上, 天空風雷閃電, 令趕路的人都不禁擔心起來, 一個正在踏單車回家途中的男人爬到比較高處的大樹下休息了; 他的名字叫裕明。</p>
+<p>雖說在大樹下, 但是風雨的確太大了, 甚至大到一個地步, 大樹外的景物都不能看清了, 因此他全身早已濕透, 原來的那條小路, 像是被洪水沖刷著一樣。他打算拿出電話向警察求助, 不料一道閃電在天空划過, 擊在他頭上的大樹上, 大樹應聲倒地。失去遮蔽物的裕明為免電話壞掉, 趕緊把手上的電話放進袋中, 但與此同時, 他一下失足就掉進原來的小路裡了。在河流中, 裕明慢慢失去知覺, 但在最後的意識中, 他沒有忘掉把自己的電話放到他手提包裡的一個膠袋中, 因為那是他最喜歡的jPhone 啊! 要是壞了可真是心痛死了。</p>
+<p>不知過了多少天, 裕明在一片草地上醒來。</p>
+<p>四周的空氣真的好極了, 裕明在草地上站起來, 做了一下深呼吸。四周不見有人煙, 於是他第一時間在四周找找食物。這個地方實在太舒服了, 也太美了, 這個地方的一切好得令裕明覺得就連在地上拿起一片草葉來生吞也是滋味無比, 反正四周應該沒有人會取笑。於是他勇敢的實現一下這個奇怪的想法, 同一時間, 他拿出袋中的jPhone 把這個如仙境的地方拍下來。</p>
+<p>咔察! 咦... 裕明竟然發現電話的信號還在呢!</p></div>
+        <div id="permalink" style='word-break: break-all;padding:2em 0 2em 0'><a href="https://blog.abby.md/_generated/realblog_2010-09_17716.htm">Permalink of this blog</a></div>
+        
+    </div>
+</body>
+
+</html>

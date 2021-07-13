@@ -1,0 +1,24 @@
+<p><span class="Apple-style-span" style="font-family: Arial; font-size: medium; "><span class="Apple-style-span" style="font-family: Arial, Verdana, sans-serif; font-size: 14px; ">這幾天一直都有考慮這個像是跟據喜好所展開的哲學問題.</span>  </p>
+<p>要Keep It Simple and Stupid 還是Don't Repeat Yourself?  </p>
+<p>希望大家都可以閱讀:  </p>
+<p>有關術語集合:<br />
+<a href="http://dev.firnow.com/course/4_webprogram/php/phpjs/2008224/101342.html">http://dev.firnow.com/course/4_webprogram/php/phpjs/2008224/101342.html  </a></p>
+<p>註: Hard Code 該翻譯為硬碼</p>
+<p><a href="http://stackoverflow.com/questions/320373/ive-heard-of-dry-and-kiss-what-other-maxims-do-i-need">http://stackoverflow.com/questions/320373/ive-heard-of-dry-and-kiss-what-other-maxims-do-i-need</a><a href="http://mindhacks.cn/2009/03/09/first-principles-of-programming/">  </a>  </p>
+<p>延展的思考:</p>
+<p><a href="http://mindhacks.cn/2009/03/09/first-principles-of-programming/">http://mindhacks.cn/2009/03/09/first-principles-of-programming/</a></p>
+<p><a href="http://c2.com/cgi/wiki?ItDepends">http://c2.com/cgi/wiki?ItDepends</a>  </p>
+<p>討論:</p>
+<p><a href="http://stackoverflow.com/questions/159176">http://stackoverflow.com/questions/159176</a>  </p>
+<p>包含人生哲理的金句收錄:</p>
+<p><strong>Zen, part I: Programming is only the road, not the way.</strong></p>
+<p>Programming is only the technique to teach a computer what it's gotta do. To be successful in creating fast, reliable software means to know your algorithms, best-practices and all the other stuff not necessarily connected to your Programming (language).</p>
+<p><strong>Zen, part II: If you are in a hurry, stroll along slowly. If you really are in a hurry, make a detour.</strong></p>
+<p>Sounds silly, but do not let yourself get into compromises that (really) may trouble you afterwards. I got a rule: If you are at the core of a program, try to be as precise and good as possible. If you are using methods from the core that are deep in your software, try to be faster in coding. If you are coding above these two, you can even get a little bit more sloppy.</p>
+<p>Design errors are the hardest to find and/or fix, next step are programming errors in parts everyone relies on, then the &quot;real showing-off software parts&quot;. If you need to fix a design error at the end of a project, ummm, that's not good... ;-)</p>
+<p><strong>Zen, part III: Know your path, Neo.</strong></p>
+<p>Know your environment, tools and the stuff you rely on on a daily basis and get it sorted so that it works for you. Best if you use your programming &quot;environment&quot; so natural that you do not even have to think of it. If you have to get a job done do not introduce &quot;fancy new stuff&quot; but do your work. This stuff can be introduced in a new project, namely then when you have time to prepare and use it.</p>
+<p>一个人的simple可能是另一个人的stupid，一个人的stupid可能是另一个人的unnecessary。</p>
+<p><strong>写API时时刻设想你就是要去使用这坨API的人。</strong></p>
+<p>對於這句, 我的感受: 雖然看來是很電腦的樣子, 但API 這個東西實在最能表達這個意思, 一個API 往往是集合很多API 而成, 而上一層的API 又是很多下一層的API 集合而成... 而這句很有在中間的透徹視野</p>
+<p></span>  </p>

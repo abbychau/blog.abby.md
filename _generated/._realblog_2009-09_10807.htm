@@ -1,0 +1,98 @@
+<html>
+
+<head>
+    <title>Abby's Archive</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <style>
+        /* for all screens */
+        #info {
+            display: none;
+        }
+
+        /* only when orientation is in portrait mode */
+        @media all and (orientation:portrait) {
+            #info {
+                color: red;
+                display: inline;
+                font-size: 20px
+            }
+        }
+
+
+        body {
+            background-color: #2c292d;
+            color: #fdf9f3;
+            padding: 1em;
+            margin: 0;
+            font-family: consolas, monospace;
+        }
+
+        a {
+            color: #a9dc76;
+            cursor: pointer
+        }
+
+        .hljs {
+            font-family: consolas, monospace;
+        }
+
+        body>div {
+            word-break: break-all;
+            position: fixed;
+        }
+
+        img {
+            max-width: 90%;
+        }
+    </style>
+    <link rel="icon" type="image/png"
+        href="https://d2v9k5u4v94ulw.cloudfront.net/assets/images/2191294/original/e01cdc83-7764-49d6-9176-4695d37133b7?1522307876" />
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+
+    <script>
+        function myMarked(str) {
+
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+
+
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            myMarked($('#article').html())
+        })
+    </script>
+</head>
+
+<body>
+    
+    <div id='article' style='padding:0 15px 10px 10px'>
+        <h1 id="subject">一直都好討厭反問句...</h1>
+        <div id="date" style='font-size: 9pt;'>2009-09-05</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags">"日常生活"</div>
+        <div id="content" style='word-break: break-all;'><p><span class="Apple-style-span" style="font-size: 13px; white-space: pre; ">一直都好討厭反問句...尤其係用書面語或者普通話講出黎果陣<br />
+咁今日就係google 度search 一下...搵到個人講出左心聲, 慳返小小力</span>  </p>
+<p><span class="Apple-style-span" style="font-size: 13px; white-space: pre; ">3月5日<br />
+讨厌反问句<br />
+</span>  </p>
+<p>反问句是肯定的疑问句式表达否定意思或者否定的疑问句式表达肯定的意思；亦即，把陈述的内容通过问句的形式，表达相反的意思，从而大大加强语气（全凭上学时的印象啊，不知道表达得对不对orz……）。  </p>
+<p>生活中的反问句我们会经常碰到。比如“你都没用过，难道我用过了吗？”“你居然没用过网易邮箱啊？”“这个还需要解释吗？”“李幸的blog废话程度难道还不够大吗？”……文章里也经常会碰到，往往某个陈述之观点需要强调突出时，一个好办法就是置其为反问句。  </p>
+<p>然而在工作中，我渐渐发觉反问句不是个好东西。  </p>
+<p>尤其是在进行比较正式的沟通之时，反问语气会显得非常强硬，而且非常没有礼貌。譬如吧，我不是一个技术人员，当我就开发中的某个技术类问题很虚心地向某人请教时，冷不丁地，对方回我一句冷冰冰的反问，我立马觉得十分讨厌；但是为了更好地达到交流的目的，维系同事间那根脆弱的神经，好好，我听话，我忍了行了吧，我脑袋发热帮你想反问句所表达的是否定还是肯定还是先否定后肯定还是先肯定后否定，这都无所谓，我愚笨，我反思；然而，对方你一而再、再而三、三而四、四而五六七八九地发问，没完了，去一句小心翼翼，就换回来一句凶神恶煞啊，这让人怎么受得了？我相信我的忍耐指数对于常人来说，算是高的了。很快，我就不愿与之交流下去了。  </p>
+<p>如果说是无关紧要的事儿，还没大问题，大不了我不搭理就是了，偏偏还碰到必须协作的情况，烦恼和气愤皆出于此。这样反问的目的，据我揣测，<strong>原因可能有四：一是推卸责任，反诘他人的工作；二是嘲笑，认为这点技术问题只有我一个人懂你们都不配知道，所以别来怀疑；三是压根没有仔细考虑他人的问题，而匆匆反向发问，企图欲盖弥彰浑水摸鱼；四是强加观点，还真有先下手为强的味道。</strong>  </p>
+<p>我相信很多人在相互聊天的时候也碰到过，一些反问会令你很窘的，甚至生厌。如果是熟人朋友之间的调侃，来两句反问一点儿问题没有，反倒是关系的体现与感情的需要；但双方谈论的问题比较严肃，而且关系并不算亲密，那么这时候用过多的反问句交流就有问题了。反问语气在沟通中很像是责难，处理不好会直接拉大双方的距离，影响到沟通中彼此的认知感。能陈述好一个事实，何必要用反问呢？用反问来解释别人的问题，只会让你显得更无知。  </p>
+<p>其实遭受连珠炮似的反问句已经不是第一次了，奈何我的情感指数真的很高，我的同情心位居本小组第一。然则今天的反问句实在让我忍无可忍，连头儿都看不过去了。然后我们就开始琢磨着如何使用反问句来对付他那水平实在不咋地的反问句……还好还好，项目已经结束了。我就多忍一天吧。我讨厌反问句。难道你不讨厌吗？（最后这个反问如何？您觉得难受吗？如果您觉得不难受，可能是您比较同意我的观点，要不就是我的朋友……嘿嘿嘿嘿嘿嘿嘿嘿……）   </p>
+<p><a href="http://lixing1981.spaces.live.com/blog/cns!7F8DF3ECCC39C337!2706.entry">http://lixing1981.spaces.live.com/blog/cns!7F8DF3ECCC39C337!2706.entry</a>  </p></div>
+        <div id="permalink" style='word-break: break-all;'>{{paramlink}}</div>
+        
+    </div>
+</body>
+
+</html>

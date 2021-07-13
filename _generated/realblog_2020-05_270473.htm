@@ -1,0 +1,207 @@
+<html>
+
+<head>
+    <title>Abby's Archive</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <style>
+        /* for all screens */
+        #info {
+            display: none;
+        }
+
+        /* only when orientation is in portrait mode */
+        @media all and (orientation:portrait) {
+            #info {
+                color: red;
+                display: inline;
+                font-size: 20px
+            }
+        }
+
+
+        body {
+            background-color: #2c292d;
+            color: #fdf9f3;
+            padding: 1em;
+            margin: 0;
+            font-family: consolas, monospace;
+        }
+
+        a {
+            color: #a9dc76;
+            cursor: pointer
+        }
+
+        .hljs {
+            font-family: consolas, monospace;
+        }
+
+        img {
+            max-width: 90%;
+        }
+    </style>
+    <link rel="icon" type="image/png"
+        href="https://d2v9k5u4v94ulw.cloudfront.net/assets/images/2191294/original/e01cdc83-7764-49d6-9176-4695d37133b7?1522307876" />
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+
+    <script>
+        function myMarked(str) {
+
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+
+
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            myMarked($('#article').html())
+        })
+    </script>
+</head>
+
+<body>
+    
+    <div id='article' style='padding:0 15px 10px 10px'>
+        <h1 id="subject">4. aCore - 抽象化VGA</h1>
+        <div id="date" style='font-size: 9pt;'>2020-05-13</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags">"實務電腦"</div>
+        <div id="content" style='word-break: break-all;'><p>雖然OS 還是基於<code>VGA Text Buffer</code>的, 但我們以這個作為起點, 再住下挖之前, 先做點上層抽象。</p>
+<pre><code class="language-Rust">#[allow(dead_code)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+#[repr(u8)]
+pub enum Color {
+    Black = 0,
+    Blue = 1,
+    Green = 2,
+    Cyan = 3,
+    Red = 4,
+    Magenta = 5,
+    Brown = 6,
+    LightGray = 7,
+    DarkGray = 8,
+    LightBlue = 9,
+    LightGreen = 10,
+    LightCyan = 11,
+    LightRed = 12,
+    Pink = 13,
+    Yellow = 14,
+    White = 15,
+}</code></pre>
+<p>然後加入一個impl struct</p>
+<pre><code class="language-rust">#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+#[repr(transparent)]
+struct ColorCode(u8);
+
+impl ColorCode {
+    fn new(foreground: Color, background: Color) -&gt; ColorCode {
+        ColorCode((background as u8) &lt;&lt; 4 | (foreground as u8))
+    }
+}</code></pre>
+<p>這裡出現了<code>#[repr(transparent)]</code> , 意思是, 會跟著ColorCode 的大小(u8) 來分配空間佈局(data layout)
+<a href="https://doc.rust-lang.org/nomicon/other-reprs.html#reprtransparent">https://doc.rust-lang.org/nomicon/other-reprs.html#reprtransparent</a></p>
+<p>再加入另一個struct ScreenChar</p>
+<pre><code class="language-Rust">#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+#[repr(C)]
+struct ScreenChar {
+    ascii_character: u8,
+    color_code: ColorCode,
+}
+
+const BUFFER_HEIGHT: usize = 25;
+const BUFFER_WIDTH: usize = 80;
+
+#[repr(transparent)]
+struct Buffer {
+    chars: [[ScreenChar; BUFFER_WIDTH]; BUFFER_HEIGHT],
+}</code></pre>
+<p><code>#[repr(C)]</code> 在這裡意思是請編譯器保持資料次序, 也就是頭8個bit 是留給<code>ascii_character</code>的。</p>
+<p><strong>好, 到打印的部分了!</strong>
+再加入
+說到工程化, 我們先把功能完成再說。</p>
+<pre><code class="language-Rust">pub struct Writer {
+    column_position: usize,
+    color_code: ColorCode,
+    buffer: &amp;'static mut Buffer,
+}</code></pre>
+<p><code>Buffer</code> 在這裡是螢光幕的幀緩衝, 所以我們開一個靜態lifetime, 我們的OS 暫時都要依賴這個VGA 輸出來做所有輸出的。</p>
+<p>加入他的impl, 一個叫<code>write_byte</code> 的函數</p>
+<pre><code class="language-Rust">impl Writer {
+    pub fn write_byte(&amp;mut self, byte: u8) {
+        match byte {
+            b'\n' =&gt; self.new_line(),
+            byte =&gt; {
+                if self.column_position &gt;= BUFFER_WIDTH {
+                    self.new_line();
+                }
+
+                let row = BUFFER_HEIGHT - 1;
+                let col = self.column_position;
+
+                let color_code = self.color_code;
+                self.buffer.chars[row][col] = ScreenChar {
+                    ascii_character: byte,
+                    color_code,
+                };
+                self.column_position += 1;
+            }
+        }
+    }
+
+    fn new_line(&amp;mut self) {/* TODO */}
+}</code></pre>
+<p>原理十分淺白: 就是把字符一個個畫在前一個的右邊, 到瑩幕邊沿時, 就換行下一行。
+可以預見: 這個下一行就是把buffer.chars 的 cursor 移到下一行的頭。
+但因為到尾端要卷到的關係, 所以還有很多邏輯, 我們先把它留空好了。</p>
+<pre><code class="language-Rust">impl Writer {
+    pub fn write_string(&amp;mut self, s: &amp;str) {
+        for byte in s.bytes() {
+            match byte {
+                // printable ASCII byte or newline
+                0x20..=0x7e | b'\n' =&gt; self.write_byte(byte),
+                // not part of printable ASCII range
+                _ =&gt; self.write_byte(0xfe),
+            }
+
+        }
+    }
+}</code></pre>
+<p>加入<code>write_string</code> 這個函數, 只是write_byte 的wrapper。
+根據: <a href="https://en.wikipedia.org/wiki/Code_page_437">這頁Wiki</a></p>
+<blockquote>
+<p>Table rows 2 to 7, codes 32 to 126 (20hex to 7Ehex), are the standard ASCII printable characters.</p>
+</blockquote>
+<p>我們只打印x20到x7E 的字好了。</p>
+<pre><code class="language-Rust">pub fn print_something() {
+    let mut writer = Writer {
+        column_position: 0,
+        color_code: ColorCode::new(Color::Yellow, Color::Black),
+        buffer: unsafe { &amp;mut *(0xb8000 as *mut Buffer) },
+    };
+
+    writer.write_byte(b'H');
+    writer.write_string("ello ");
+    writer.write_string("Wörld!");
+}</code></pre>
+<p>加入這個公有函數後, 我們就可以看看成果了。</p>
+<p>把 main.rs 的_start 改為:</p>
+<pre><code class="language-Rust">#[no_mangle]
+pub extern fn _start() -&gt; ! {
+    vga_buffer::print_something();
+
+    loop {}
+}</code></pre>
+<p><img src="https://i.imgur.com/DLXZTst.png" alt="Result" /></p>
+<p>我們看到<code>ö</code> 變成了 <code>■■</code> , 這是因為它是2-byte 的UTF8 字符, 我們暫時不管了。</p></div>
+        <div id="permalink" style='word-break: break-all;padding:2em 0 2em 0'><a href="https://blog.abby.md/_generated/realblog_2020-05_270473.htm">Permalink of this blog</a></div>
+        
+    </div>
+</body>
+
+</html>

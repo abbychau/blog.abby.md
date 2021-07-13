@@ -1,0 +1,99 @@
+<html>
+
+<head>
+    <title>Abby's Archive</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <style>
+        /* for all screens */
+        #info {
+            display: none;
+        }
+
+        /* only when orientation is in portrait mode */
+        @media all and (orientation:portrait) {
+            #info {
+                color: red;
+                display: inline;
+                font-size: 20px
+            }
+        }
+
+
+        body {
+            background-color: #2c292d;
+            color: #fdf9f3;
+            padding: 1em;
+            margin: 0;
+            font-family: consolas, monospace;
+        }
+
+        a {
+            color: #a9dc76;
+            cursor: pointer
+        }
+
+        .hljs {
+            font-family: consolas, monospace;
+        }
+
+        body>div {
+            word-break: break-all;
+            position: fixed;
+        }
+
+        img {
+            max-width: 90%;
+        }
+    </style>
+    <link rel="icon" type="image/png"
+        href="https://d2v9k5u4v94ulw.cloudfront.net/assets/images/2191294/original/e01cdc83-7764-49d6-9176-4695d37133b7?1522307876" />
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+
+    <script>
+        function myMarked(str) {
+
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+
+
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            myMarked($('#article').html())
+        })
+    </script>
+</head>
+
+<body>
+    
+    <div id='article' style='padding:0 15px 10px 10px'>
+        <h1 id="subject">呢排都係baf ga la</h1>
+        <div id="date" style='font-size: 9pt;'>2006-10-25</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags">["未分類"]</div>
+        <div id="content" style='word-break: break-all;'><p> 尋晚玩到好夜丫...起身已經中午...玩左陣baf就番poly 食飯...</p>
+<p>中途5C 撞到阿翠儀...佢今日test...但無阻我玩gundam 的興致</p>
+<p>上market 可以話集中唔到, 今日講turn information to action...即係點攞資料, 點分析同有咩對策咁<br />
+唔係因為我無精神去聽...我今日都好夠訓...<br />
+好明顯係丫brian 愈黎愈悶...甚至我個status 有d 似以前上葉sir 堂...<br />
+中邦就好醒目...攞左我部psp 撐落堂...orz</p>
+<p>到落堂就去library...中邦continue 我ge psp...<br />
+我就改番份econ...之後又玩baf...lol...<br />
+中邦都玩左一局....我發覺...如果佢真係第一次玩ge 話...天分就真係好高...不過我無問佢</p>
+<p><a href="http://photo.xanga.com/abbychau/ec51a85010764/photo.html"><img src="images/z58408233.jpg" alt="Set310_02" /></a><br />
+呢張係...我搭緊5C 打的其中一關...最正係個兩句:<br />
+Clear the mission quickly &lt;&lt;&lt;快到直頭無計幾多時間? 10000分<br />
+Killed Many Enemy &lt;&lt;&lt;多到無計幾多人? 10000分<br />
+XDD...Rank S</p></div>
+        <div id="permalink" style='word-break: break-all;'>{{paramlink}}</div>
+        
+    </div>
+</body>
+
+</html>

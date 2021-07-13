@@ -1,0 +1,114 @@
+<html>
+
+<head>
+    <title>Abby's Archive</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <style>
+        /* for all screens */
+        #info {
+            display: none;
+        }
+
+        /* only when orientation is in portrait mode */
+        @media all and (orientation:portrait) {
+            #info {
+                color: red;
+                display: inline;
+                font-size: 20px
+            }
+        }
+
+
+        body {
+            background-color: #2c292d;
+            color: #fdf9f3;
+            padding: 1em;
+            margin: 0;
+            font-family: consolas, monospace;
+        }
+
+        a {
+            color: #a9dc76;
+            cursor: pointer
+        }
+
+        .hljs {
+            font-family: consolas, monospace;
+        }
+
+        body>div {
+            word-break: break-all;
+            position: fixed;
+        }
+
+        img {
+            max-width: 90%;
+        }
+    </style>
+    <link rel="icon" type="image/png"
+        href="https://d2v9k5u4v94ulw.cloudfront.net/assets/images/2191294/original/e01cdc83-7764-49d6-9176-4695d37133b7?1522307876" />
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+
+    <script>
+        function myMarked(str) {
+
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+
+
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            myMarked($('#article').html())
+        })
+    </script>
+</head>
+
+<body>
+    
+    <div id='article' style='padding:0 15px 10px 10px'>
+        <h1 id="subject">電梯(1)</h1>
+        <div id="date" style='font-size: 9pt;'>2008-12-05</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags">"作品"</div>
+        <div id="content" style='word-break: break-all;'><p><span style="font-size: medium;">話說有一個貪婪的人, 貪婪得令所有人都討厭他。<br />
+這個貪婪的人甚麼都貪, 小至在市場買菜要拿多幾條, 大至在公職上收取不正當利益。<br />
+說起來有一點不合理的... 雖然透過受賄已經得到很大的利益, 但為甚麼還會貪圖幾毛錢去拿幾條菜呢?</span>  </p>
+<p><span style="font-size: medium;">話說有一個大意的人, 大意得家人每天都罵他。<br />
+這個人甚麼都有點大意, 小至乘車會過站, 大至結婚當日會忘記註冊還一直睡到晚上。<br />
+說起來有點不合理的... 甚麼事都這樣忘記, 為甚麼還可以結婚呢? 不過這不重要, 他老婆大概都想清楚了。</span>  </p>
+<p><span style="font-size: medium;">這兩個人都在同一間公司公作, 那間公司是一間上市的機械公司。貪婪的人在四樓上班, 大意的人在六樓。 因為每天都一起上班, 貪婪的人一直都在想辦法佔大意的人的便宜...</span>  </p>
+<p><span style="font-size: medium;">直到在一個風和日麗的早晨, 貪婪的人和大意的人一起都去上班了...只有他兩個人在電梯中, 按了4字和6字之後, 電梯開始行駛, 到了四樓正當貪婪打算出電梯的時候突然全個世界變得很靜。作為一間有名的建築公司, 電梯的品質是不錯的, 所以本來電梯裡面也很寧靜, 排氣扇的聲音也是很小的。但這種突然的寧靜, 他們從沒遇過的... 不單止排氣扇的聲音,就連電梯的震動, 扇排出的風聲, 等等都感受不到。</span>  </p>
+<p><span style="font-size: medium;">他們對望著, 開始了下面的對話:</span>  </p>
+<p><span style="font-size: medium;">貪: &quot;是電梯故障嗎?&quot;<br />
+大: &quot;不會吧?&quot;<br />
+貪: &quot;這樣停了下來不算故障嗎?&quot;<br />
+大: &quot;這樣說也對吧...&quot;<br />
+貪: &quot;怎麼辦?&quot;<br />
+大: &quot;你問我啊?&quot;</span>  </p>
+<p><span style="font-size: medium;">氣氛如聲音一樣...也靜止了<br />
+話說這台電梯是這個機械公司的其中一個皇牌產品, 號稱永不損壞。因為這個原因, 也為了展示給其他人看到公司對它的信心, 所以在這個商業大廈的電梯, 警鐘按鈕是移除了的。<br />
+過了幾十秒, 他們又繼續對話:</span>  </p>
+<p><span style="font-size: medium;">大: &quot;他們會來救我們吧?&quot;<br />
+貪: &quot;會吧... 不過大約要等上幾十分鐘吧!&quot;<br />
+大: &quot;我總感到有點不安...&quot;<br />
+貪: &quot;嗯, 因為我們兩個好像是在這大廈第一次被困的人吧&quot;</span>  </p>
+<p><span style="font-size: medium;">幾十分鐘後, 大意看看他的手錶, 看到&quot;十二時正&quot;。問了貪婪:&quot;我們甚麼時候進入升降機的呢?&quot; 大約他是忘記了, 事實上他是在九時正進入電梯的, 換言之, 他們已經被困三個小時了。經此一問, 貪婪突然發現問題所在:&quot;三小時了嗎?&quot;</span>  </p>
+<p><span style="font-size: medium;">大: &quot;看來我們要想辦法逃出去了...&quot;<br />
+貪: &quot;嗯? 你有辦法?&quot;<br />
+大: &quot;不錯, 話說我是這電梯的設計者之一啊!不過逃出去的話, 要你幫忙喔!&quot;<br />
+貪: &quot;幫忙嗎? 酬勞是多少呢?&quot;<br />
+大: &quot;酬勞啊... ... 就你一條人命吧&quot;</span>  </p>
+<p><span style="font-size: medium;">大意對他這樣的應對一點也沒有驚奇, 反而給出一個如此的答案。</span>  </p></div>
+        <div id="permalink" style='word-break: break-all;'>{{paramlink}}</div>
+        
+    </div>
+</body>
+
+</html>

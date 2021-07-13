@@ -1,0 +1,101 @@
+<html>
+
+<head>
+    <title>Abby's Archive</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <style>
+        /* for all screens */
+        #info {
+            display: none;
+        }
+
+        /* only when orientation is in portrait mode */
+        @media all and (orientation:portrait) {
+            #info {
+                color: red;
+                display: inline;
+                font-size: 20px
+            }
+        }
+
+
+        body {
+            background-color: #2c292d;
+            color: #fdf9f3;
+            padding: 1em;
+            margin: 0;
+            font-family: consolas, monospace;
+        }
+
+        a {
+            color: #a9dc76;
+            cursor: pointer
+        }
+
+        .hljs {
+            font-family: consolas, monospace;
+        }
+
+        body>div {
+            word-break: break-all;
+            position: fixed;
+        }
+
+        img {
+            max-width: 90%;
+        }
+    </style>
+    <link rel="icon" type="image/png"
+        href="https://d2v9k5u4v94ulw.cloudfront.net/assets/images/2191294/original/e01cdc83-7764-49d6-9176-4695d37133b7?1522307876" />
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+
+    <script>
+        function myMarked(str) {
+
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+
+
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            myMarked($('#article').html())
+        })
+    </script>
+</head>
+
+<body>
+    
+    <div id='article' style='padding:0 15px 10px 10px'>
+        <h1 id="subject">絕世閒人</h1>
+        <div id="date" style='font-size: 9pt;'>2005-03-22</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags">["短評"]</div>
+        <div id="content" style='word-break: break-all;'><p>我少有在網誌中貼歌詞,<br />
+因為聽過那首歌的人不會到網誌去找歌詞,<br />
+沒聽過的就不會去看歌詞,<br />
+如果只看歌詞而沒音樂的話也是沒意思的.</p>
+<p>以下是絕世閒人的歌詞,<br />
+因為表達這種思想的歌很少,<br />
+像絕世閒人一歌般直接說出來的就更少,<br />
+這種思想在這個新世代很易取得人共鳴的...<br />
+但主旨還是自己了解吧!</p>
+<p>既然直放歌詞沒意思,<br />
+我把歌詞的句子都連起來...</p>
+<blockquote>
+<p>我不貪加官和封爵位，也並未見我有所作為。閒人們或許總被看低，我沒與你爭輝，但處事深不見底。</p>
+<p>莫笑我的鬥心不再，閒著似我才可以發現愛。如果沒有天賜休閒，誰會知道怎樣放開。請你不要羡慕被御用，也許這最後是場夢，我沒有貪威；沒有想領功；沒有妄想跨鳳乘龍。你若自負天聰顯威風，也許最後被愚弄。這種事要智者方可以想得通。</p>
+</blockquote>
+<p><a href="http://aero.bhscmc.edu.hk/~046b05/docs/lyricprinceshadow.txt">按此下載原歌詞</a></p></div>
+        <div id="permalink" style='word-break: break-all;'>{{paramlink}}</div>
+        
+    </div>
+</body>
+
+</html>

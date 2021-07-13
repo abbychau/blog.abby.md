@@ -1,0 +1,92 @@
+<html>
+
+<head>
+    <title>Abby's Archive</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <style>
+        /* for all screens */
+        #info {
+            display: none;
+        }
+
+        /* only when orientation is in portrait mode */
+        @media all and (orientation:portrait) {
+            #info {
+                color: red;
+                display: inline;
+                font-size: 20px
+            }
+        }
+
+
+        body {
+            background-color: #2c292d;
+            color: #fdf9f3;
+            padding: 1em;
+            margin: 0;
+            font-family: consolas, monospace;
+        }
+
+        a {
+            color: #a9dc76;
+            cursor: pointer
+        }
+
+        .hljs {
+            font-family: consolas, monospace;
+        }
+
+        img {
+            max-width: 90%;
+        }
+    </style>
+    <link rel="icon" type="image/png"
+        href="https://d2v9k5u4v94ulw.cloudfront.net/assets/images/2191294/original/e01cdc83-7764-49d6-9176-4695d37133b7?1522307876" />
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+
+    <script>
+        function myMarked(str) {
+
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+
+
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            myMarked($('#article').html())
+        })
+    </script>
+</head>
+
+<body>
+    
+    <div id='article' style='padding:0 15px 10px 10px'>
+        <h1 id="subject">有關Expressiveness (1)</h1>
+        <div id="date" style='font-size: 9pt;'>2020-06-26</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags">"立場"</div>
+        <div id="content" style='word-break: break-all;'><p>很久以前，我認為不想打字是因為打字的速度跟不上腦袋的輸出。中間無味的操作也令我覺得不適。<br />
+後來試著把兩面的輸出速度同步，互相遷就。文字的可讀性就變低了。因為犠牲了邏輯推進。就如這句一樣。  </p>
+<p>我交流時利用了文字，一直以為無論是邏輯上的有序推進還是內容上的有序重覆，都可以透過抽象成為術語來交流。<br />
+但事實上，自然語言的表達性並不如此豐富。  </p>
+<p>一直覺得粵語地區的優越性不在於粵語，而在於寫作時可以抽離最熟悉的說話方式。寫作的輸出更為［思考後］。  </p>
+<p>在描述一個編程語言時，近年有很多人會用expressive 作為對一個語言或者使用方法的正向評價。粗淺而具體上來說，是把一個語言的特性增加而令學習後的人更易去描寫和閱讀某方面的抽象概念。Scala就是一個有大量標示符號而又相對大眾的語言例子。  </p>
+<p>然後，在主流的意見下，隱性轉換是危險而低級的表達手法。在自然語言中自動補完主語和型態的行為。主語的推導並不在嚴格的規格中存在，但型態的推導卻是亳無規則可言。於是，我們有了專們研究型態的學科。這裡的型態不單指［八］是人名還是數字。細心地想一下，要抽象現有的語元的話，不只一個方式。型態是一個方式，這就如同數論中的［群］一樣，實則是集合的有限二元運算，而等命題即型態(propositions as types)，則成為了用語言證明公理的基石。  </p>
+<p>近年PLT 的用語在不斷不斷抽象化的前端交流下走進了更多人的眼中，例於immutable/Pure Function/Side Effect/map-reduce-filter 甚至monad/functor/high-order 等等函數式描述方法。這都是在區域人口不斷增長下出現的交流土壤。  </p>
+<p>雖然到今天，大行其道的還是隱性的交流。大量地用不同的字去具體化專門語言，在通訊理論上不是個好方法。如德文那樣加前後修飾詞也不是。<br />
+大概我們會有學習坡度平緩，而又可以突破現有的文章長度的［文長複雜度］的零件可以加入到一隻自然語言中；的情況出現。<br />
+機會大約就是更多的人不滿足於日常對話的深度／效率／猜疑。但在這之前，似乎要放進一個受歡迎的程式語言也不容易；</p>
+<p>但至少０到１的變化是出現了。</p></div>
+        <div id="permalink" style='word-break: break-all;padding:2em 0 2em 0'><a href="https://blog.abby.md/_generated/realblog_2020-06_270627.htm">Permalink of this blog</a></div>
+        
+    </div>
+</body>
+
+</html>

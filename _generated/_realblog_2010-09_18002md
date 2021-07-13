@@ -1,0 +1,18 @@
+<p>Good afternoon-  </p>
+<p>I have browsed the forums as well as the web looking for an answer to this question. Hope someone out there can help.   </p>
+<p>I need to create a .htaccess file that will only allow the files in the folder to be seen if the &quot;referer&quot; is from a particular site (or possibly two sites). I have found a lot of solutions out there for people who want to block specific sites, but I can't seem to figure out how to only allow specific sites. I have done some trial and error based on some of the things I have found, but with no luck.  </p>
+<p>Any ideas?  </p>
+<p>Thanks in advance!  </p>
+<p>David</p>
+<p>－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－</p>
+<p>ANS:</p>
+<p>Hi David,   </p>
+<p>Welcome to the forums   </p>
+<p>I haven't tested it, but try;</p>
+<p>RewriteEngine on<br />
+RewriteBase /<br />
+RewriteCond %{HTTP_REFERER} !^<a href="http://www\\.your\_domain\_name\\.com/">http://www\\.your\_domain\_name\\.com/</a> [NC]<br />
+RewriteCond %{HTTP_REFERER} !^<a href="http://www\\.OKdomain1\\.com/">http://www\\.OKdomain1\\.com/</a> [NC]<br />
+RewriteCond %{HTTP_REFERER} !^<a href="http://www\\.OKdomain2\\.com/">http://www\\.OKdomain2\\.com/</a> [NC]<br />
+RewriteRule ^.*$ <a href="http://www.your\_domain\_name.com/not\_allowed\_here.htm">http://www.your\_domain\_name.com/not\_allowed\_here.htm</a> [R=301,L]</p>
+<p>or I'd try something along those lines anyway - with the not_allowed_here.htm being a page I redirected all those I don't want to.</p>

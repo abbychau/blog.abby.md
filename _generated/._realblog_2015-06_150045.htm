@@ -1,0 +1,108 @@
+<html>
+
+<head>
+    <title>Abby's Archive</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <style>
+        /* for all screens */
+        #info {
+            display: none;
+        }
+
+        /* only when orientation is in portrait mode */
+        @media all and (orientation:portrait) {
+            #info {
+                color: red;
+                display: inline;
+                font-size: 20px
+            }
+        }
+
+
+        body {
+            background-color: #2c292d;
+            color: #fdf9f3;
+            padding: 1em;
+            margin: 0;
+            font-family: consolas, monospace;
+        }
+
+        a {
+            color: #a9dc76;
+            cursor: pointer
+        }
+
+        .hljs {
+            font-family: consolas, monospace;
+        }
+
+        body>div {
+            word-break: break-all;
+            position: fixed;
+        }
+
+        img {
+            max-width: 90%;
+        }
+    </style>
+    <link rel="icon" type="image/png"
+        href="https://d2v9k5u4v94ulw.cloudfront.net/assets/images/2191294/original/e01cdc83-7764-49d6-9176-4695d37133b7?1522307876" />
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+
+    <script>
+        function myMarked(str) {
+
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+
+
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            myMarked($('#article').html())
+        })
+    </script>
+</head>
+
+<body>
+    
+    <div id='article' style='padding:0 15px 10px 10px'>
+        <h1 id="subject">F.I.R 和Globe 和Keiko</h1>
+        <div id="date" style='font-size: 9pt;'>2015-06-22</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags">"歌曲"</div>
+        <div id="content" style='word-break: break-all;'><p>很久沒寫過Blog 了，尤其是關於音樂的Blog。最近的感覺是連寫字都覺得有點力不從心的感覺。</p>
+<p>這次想寫一下這隊算是很紅，可是現在已經退下火線的Globe。Globe 也就是小室哲哉的Globe。</p>
+<p>一直覺得F.I.R 是最令人嚮往和最正派的band、陳建寧也是我最為欣賞的製作人之一。到最近一個月才知道F.I.R 的組成幾乎和Globe 一模一樣：一個很有實力的製作人（說小室是全世界最有實力的製作人也不為過，至少在他之前日本可是沒有製作人的，就像我認為在周星馳之前沒有喜劇演員一樣）找到兩個比他年輕很多的年輕人，一男一女，男的是主玩樂器，唱歌為輔；女的則是在歌唱比賽中展露了隱約而異樣的光輝，成為了樂團的主音，最後大放異彩。</p>
+<p>還有一樣很相似的地方－－就是裡面的女主音都和樂團中的男隊員結婚了；只是F.I.R是兩個年輕人，Globe 則是製作人和女主音。</p>
+<p>第一次聽Globe 的歌是Get Wild－－一首和我一樣年紀的歌，是小室的舊團所持有的歌；在十年前重製後，加入Get Wild and tough和Get Chance and Luck 這兩句後，令人耳目一新，再加上小室桂子的聲線，這樣的歌完全可以在音樂節中做壓軸的表演。</p>
+<p><a href="https://www.youtube.com/watch?v=36ydeA9sSYM">https://www.youtube.com/watch?v=36ydeA9sSYM</a></p>
+<p>而其實，Globe 一開始是和F.I.R 所走的路線幾乎是一樣的，都是有點以樂載道的意思，一方面希望聽眾可以放耳世界而加入各種mix，一方面歌詞也是以人生哲理為主。和F.I.R 初出道時是一樣的，參看F.I.R 同名EP裡面的＜＜Lydia＞＞、＜＜刺鳥＞＞等等，都無不像是流行音樂中的清泉，也現在都是入俗了。看Ｇｌｏｂｅ的Ｉｓ ｔｈｉｓ ｌｏｖｅ的mv，有沒有滿滿的F.I.R 的既視感？</p>
+<p><a href="https://www.youtube.com/watch?v=Cd6NvdB8PG0">https://www.youtube.com/watch?v=Cd6NvdB8PG0</a></p>
+<p>到現時為止，我都是用Ｇｌｏｂｅ和ＦＩＲ比較，但是這不代表他們的水平一樣。</p>
+<p>Ｇｌｏｂｅ的水準和人氣比起ＦＩＲ來說都不是在一個數量級。不作過多的對比，有意的自己ＷＩＫＩ一下就可以了，我還是主要想說ＧＬＯＢＥ。</p>
+<p>製作人小室哲哉就不用過多的介紹了，他的大名我覺得在東南亞是無人不曉的。我想說很比較多的是主音Keiko，令我喜歡上Keiko 的是Feel like Dance。她的笑容、動態實在太吸引了，再加上那穿透力可以追越張韶涵的聲線，<span style="font-weight: bold;">一見鍾情</span>這四個字在我這一生人從來沒有使用過，只有她給了我這個感覺。我還馬上去找她的Twitter，才發現她已經開始老了。</p>
+<p><a href="https://www.youtube.com/watch?v=VHKMwue-jUE">https://www.youtube.com/watch?v=VHKMwue-jUE</a></p>
+<p><img src="http://members.zkiz.com/storage/1/0622_001954young.png" alt="" /></p>
+<p>從Feel like Dance 和 Get Wild 中可以看到Keiko Live 的表現力，和修飾技巧之高，尤其在唱Feel like Dance 時那輕輕的一個旋轉，令人覺得她是多麼的享受這個過程啊！</p>
+<p>對於Keiko, 我的見解和濱崎步如出一轍：ＫＥＩＫＯ是最有魅力感人的人之一(排在後面的還有宮澤理惠、松田聖子、降谷建志)</p>
+<p>小室的一生也是充滿傳奇色彩，從他把製作人制度引入日本，成為日本10大首富，到破產，到江郎才盡，出產不能。種種的故事，種種的佳作，和小室桂子一起，最後退出江湖，回歸平靜，真像是一個經典的故事啊！  </p>
+<p>看看我喜歡的小室桂子現在的Twitter 吧!<br />
+<a href="https://twitter.com/ks_tenki">https://twitter.com/ks_tenki</a>  </p>
+<iframe allowfullscreen="" allowtransparency="true" class="twitter-timeline twitter-timeline-rendered" frameborder="0" height="600" id="twitter-widget-0" scrolling="no" style="border: medium none; max-width: 100%; min-width: 180px; margin: 0px; padding: 0px; display: inline-block; position: static; visibility: visible; width: 520px;" title="Twitter 時間軸"></iframe> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+ 一連幾千日的oyasuminasai...ＬＯＬ![](http://members.zkiz.com/storage/1/0622_002024now.jpg)
+
+おやすみなさい！</div>
+        <div id="permalink" style='word-break: break-all;'>{{paramlink}}</div>
+        
+    </div>
+</body>
+
+</html>

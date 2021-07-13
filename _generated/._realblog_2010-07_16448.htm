@@ -1,0 +1,110 @@
+<html>
+
+<head>
+    <title>Abby's Archive</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <style>
+        /* for all screens */
+        #info {
+            display: none;
+        }
+
+        /* only when orientation is in portrait mode */
+        @media all and (orientation:portrait) {
+            #info {
+                color: red;
+                display: inline;
+                font-size: 20px
+            }
+        }
+
+
+        body {
+            background-color: #2c292d;
+            color: #fdf9f3;
+            padding: 1em;
+            margin: 0;
+            font-family: consolas, monospace;
+        }
+
+        a {
+            color: #a9dc76;
+            cursor: pointer
+        }
+
+        .hljs {
+            font-family: consolas, monospace;
+        }
+
+        body>div {
+            word-break: break-all;
+            position: fixed;
+        }
+
+        img {
+            max-width: 90%;
+        }
+    </style>
+    <link rel="icon" type="image/png"
+        href="https://d2v9k5u4v94ulw.cloudfront.net/assets/images/2191294/original/e01cdc83-7764-49d6-9176-4695d37133b7?1522307876" />
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+
+    <script>
+        function myMarked(str) {
+
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+
+
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            myMarked($('#article').html())
+        })
+    </script>
+</head>
+
+<body>
+    
+    <div id='article' style='padding:0 15px 10px 10px'>
+        <h1 id="subject">東風三麻的思考方針</h1>
+        <div id="date" style='font-size: 9pt;'>2010-07-05</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags">"遊藝"</div>
+        <div id="content" style='word-break: break-all;'><p>在東風三麻中, 如果起手牌不太好, 就要想辦法&quot;逃生&quot;。  </p>
+<p>逃生這個詞是我在打三麻中想到的, 所謂逃生並不是單純指防守, 而是計算出最有可能的和牌方法。  </p>
+<p>在三麻中防守不比四麻簡單, 因為對方聽牌常常會十分新奇。在說這個之前先說一下各張牌的效率。  </p>
+<p>三麻中效率由最弱開始排</p>
+<ol>
+<li>一萬, 九萬, 不能作順子, 萬子混一效率奇差, 阻礙其他一色、斷么、平和牌, 在早巡先被放棄的牌。</li>
+<li>北: 95% 會被早巡拔去, 拔走還+1翻, 除了作奇襲還是拔走吧</li>
+<li>客風: 不用說了</li>
+<li>自風: 役牌能夠作逃生使用</li>
+<li>中白發: 役牌能夠作逃生使用, 在對手手上的維持時間比客風長, 還有大小三元這個狙擊方向</li>
+<li>1s 9s 1m 9m : 阻礙斷么</li>
+<li>單牌2s 8s 2m 8m</li>
+<li>其他</li>
+</ol>
+<p>當然要配合手牌才可以決定, 但是這主要是用來談論防守的  </p>
+<p>在聽牌時, 聽1m/9m/北/客風 的機率可說比四麻高出很多, 因為牌少了, 以下幾個牌型出現機率暴增</p>
+<ol>
+<li>七對子</li>
+<li>對對和</li>
+<li>對碰</li>
+</ol>
+<p>這種幾乎不能防禦的牌以弱牌立直以至默聽十分常見  </p>
+<p>因此, 在三麻中除非要防守兩家, 逃生的方法應為速和。尤其是在親位時, 被摸一下足以完場三位。  </p>
+<p>補充一下: 用現物防守, 在四麻中是十分可行的, 因為除了聽牌者, 還有兩家幫忙測試, 牌種也多, 在三麻中如果想行這條路, 我推薦拆走么九刻子向流滿進發。  </p>
+<p>三麻中不進攻的後果是很嚴重的。</p></div>
+        <div id="permalink" style='word-break: break-all;'>{{paramlink}}</div>
+        
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,183 @@
+<html>
+
+<head>
+    <title>Abby's Archive</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <style>
+        /* for all screens */
+        #info {
+            display: none;
+        }
+
+        /* only when orientation is in portrait mode */
+        @media all and (orientation:portrait) {
+            #info {
+                color: red;
+                display: inline;
+                font-size: 20px
+            }
+        }
+
+
+        body {
+            background-color: #2c292d;
+            color: #fdf9f3;
+            padding: 1em;
+            margin: 0;
+            font-family: consolas, monospace;
+        }
+
+        a {
+            color: #a9dc76;
+            cursor: pointer
+        }
+
+        .hljs {
+            font-family: consolas, monospace;
+        }
+
+        img {
+            max-width: 90%;
+        }
+    </style>
+    <link rel="icon" type="image/png"
+        href="https://d2v9k5u4v94ulw.cloudfront.net/assets/images/2191294/original/e01cdc83-7764-49d6-9176-4695d37133b7?1522307876" />
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+
+    <script>
+        function myMarked(str) {
+
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+
+
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            myMarked($('#article').html())
+        })
+    </script>
+</head>
+
+<body>
+    
+    <div id='article' style='padding:0 15px 10px 10px'>
+        <h1 id="subject">1. aCore - 配置Rust Project 和第一次建置</h1>
+        <div id="date" style='font-size: 9pt;'>2020-05-10</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags">"實務電腦"</div>
+        <div id="content" style='word-break: break-all;'><h2>環境配置懶人包</h2>
+<p>在開發前, 我們配一下Rust 環境。會用Rustup 的話, 就不多解釋下面的命令了。如果不了解的話Rustup 和Cargo 自身也帶備說明。
+所以, 我直接來個 <strong>環境配置懶人包</strong>:</p>
+<pre><code class="language-bash">$ rustup toolchain install nightly #安裝rust nightly 環境
+$ rustup component add rls --toolchain nightly #Nightly RLS
+$ cargo new --bin aCore 
+$ cargo install cargo-xbuild #xbuild 可以建置 core, compiler_builtins 和 alloc
+$ rustup component add rust-src #Rust的原始碼
+$ rustup override set nightly #預設nightly</code></pre>
+<p>查看一下 自己的Target 設定:
+<code>rustc +nightly -Z unstable-options --print target-spec-json</code></p>
+<p>會看到類似:</p>
+<pre><code>{
+  "arch": "x86_64",
+  "cpu": "x86-64",
+  "data-layout": "e-m:e-p270:32:32-p271:32:32-p272:64:64-i64:64-f80:128-n8:16:32:64-S128",
+  "dynamic-linking": true,
+  "env": "gnu",
+  "executables": true,
+  "has-elf-tls": true,
+  "has-rpath": true,
+  "is-builtin": true,
+  "linker-flavor": "gcc",
+  "linker-is-gnu": true,
+  "llvm-target": "x86_64-unknown-linux-gnu",
+  "max-atomic-width": 64,
+  "os": "linux",
+  "position-independent-executables": true,
+  "pre-link-args": {
+    "gcc": [
+      "-Wl,--as-needed",
+      "-Wl,-z,noexecstack",
+      "-m64"
+    ]
+  },
+  "relro-level": "full",
+  "stack-probes": true,
+  "target-c-int-width": "32",
+  "target-endian": "little",
+  "target-family": "unix",
+  "target-pointer-width": "64",
+  "vendor": "unknown"
+}</code></pre>
+<p>有關細項的解釋, 可查看: <a href="https://doc.rust-lang.org/nightly/nightly-rustc/rustc_target/spec/struct.Target.html">https://doc.rust-lang.org/nightly/nightly-rustc/rustc_target/spec/struct.Target.html</a>
+可以留意一下前幾項。我們會用到那邊的配置。</p>
+<p>建立 <code>x86_64-aCore.json</code></p>
+<pre><code>{
+    "llvm-target": "x86_64-unknown-none",
+    "data-layout": "e-m:e-i64:64-f80:128-n8:16:32:64-S128",
+    "arch": "x86_64",
+    "target-endian": "little",
+    "target-pointer-width": "64",
+    "target-c-int-width": "32",
+    "os": "none",
+    "executables": true,
+    "linker-flavor": "ld.lld",
+    "linker": "rust-lld",
+    "panic-strategy": "abort",
+    "disable-redzone": true,
+    "features": "-mmx,-sse,+soft-float"
+}</code></pre>
+<h2>data-layout</h2>
+<p>這個項目是LLVM用來設定資料在記憶體中儲存的方式，
+每個部份用減號 <code>-</code> 來分隔。
+而分隔項可以查看:
+<a href="http://llvm.org/docs/LangRef.html#data-layout">http://llvm.org/docs/LangRef.html#data-layout</a></p>
+<p>其他可以隨便修改試試看, 但 <code>"features": "-mmx,-sse,+soft-float"</code> 是要留下的。
+否則的話 <code>opcode</code> 不正確會引起 CPU 的Triple Fault, 嚴重的會把Host 也同時掛掉 ,
+所以我們日後有機會再面對MMX 和SSE 吧。</p>
+<h2>修改</h2>
+<p>建立或修改你的main.rs</p>
+<pre><code class="language-rust">#![no_std]
+#![no_main]
+
+use core::panic::PanicInfo;
+
+#[panic_handler]
+fn panic(_info: &amp;PanicInfo) -&gt; ! {
+    loop {}
+}
+
+#[no_mangle]
+pub extern fn _start() -&gt; ! {
+    loop {}
+}</code></pre>
+<p>修改Cargo.toml</p>
+<pre><code>[package]
+name = "aCore"
+version = "0.1.0"
+authors = ["Abby &lt;i@abby.md&gt;"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"</code></pre>
+<p>建置:
+<code>cargo xbuild --target x86_64-aCore.json</code></p></div>
+        <div id="permalink" style='word-break: break-all;padding:2em 0 2em 0'><a href="https://blog.abby.md/_generated/realblog_2020-05_270459.htm">Permalink of this blog</a></div>
+        
+    </div>
+</body>
+
+</html>

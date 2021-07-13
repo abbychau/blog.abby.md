@@ -1,0 +1,115 @@
+<html>
+
+<head>
+    <title>Abby's Archive</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <style>
+        /* for all screens */
+        #info {
+            display: none;
+        }
+
+        /* only when orientation is in portrait mode */
+        @media all and (orientation:portrait) {
+            #info {
+                color: red;
+                display: inline;
+                font-size: 20px
+            }
+        }
+
+
+        body {
+            background-color: #2c292d;
+            color: #fdf9f3;
+            padding: 1em;
+            margin: 0;
+            font-family: consolas, monospace;
+        }
+
+        a {
+            color: #a9dc76;
+            cursor: pointer
+        }
+
+        .hljs {
+            font-family: consolas, monospace;
+        }
+
+        img {
+            max-width: 90%;
+        }
+    </style>
+    <link rel="icon" type="image/png"
+        href="https://d2v9k5u4v94ulw.cloudfront.net/assets/images/2191294/original/e01cdc83-7764-49d6-9176-4695d37133b7?1522307876" />
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+
+    <script>
+        function myMarked(str) {
+
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+
+
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            myMarked($('#article').html())
+        })
+    </script>
+</head>
+
+<body>
+    
+    <div id='article' style='padding:0 15px 10px 10px'>
+        <h1 id="subject">彼岸になりし曼珠沙華、其の輝図は何処</h1>
+        <div id="date" style='font-size: 9pt;'>2010-12-10</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags">"日常生活"</div>
+        <div id="content" style='word-break: break-all;'><p>東方花映塚的名曲，眼看漢字十分的華麗，因此很想知道它的意思。</p>
+<p>在google 出乎意料的找不到，唯有慢慢的翻譯一下</p>
+<p>由重點開始:曼珠沙華</p>
+<p>曼珠沙華是一種花</p>
+<p><img src="http://static.flickr.com/9/70025228_7b4ea53cf1.jpg?v=0" alt="" /></p>
+<p><span style="font-family: 新細明體;">曼珠沙華，又稱<strong>彼岸</strong>花。一般認為是生長在三途河邊的接引之花。花香傳說有魔力，能喚起死者生前的記憶。</span></p>
+<p>好了，很快另一個關鍵字出來了-- 彼岸, 但在曲名中的彼岸應為一個地點而已</p>
+<p>首句: 彼岸に なりし 曼珠沙華</p>
+<p>なりし是沒有定義的字, 應為 なりしだい / なる 的意思、也就是成為</p>
+<p>到彼岸成為曼珠沙華</p>
+<p>有一著名上聯: 彼岸花開開彼岸，我再以此推斷應為這個意思</p>
+<p>至於下聯則五花百門，但以&quot;斷腸草愁愁斷腸&quot;最為工整，這卻是題外話<br />
+因為有一個雖然不甚工整但意思很對的下聯&quot;奈何橋前可奈何&quot;</p>
+<p>彼岸花就是一種充滿跨越生死味道的花朵</p>
+<p>但東方的幻想鄉中，靈夢是在神廟中居住的，而神廟，亦即是佛教的伺候機構</p>
+<p>我又再推斷一下，因為曼珠沙華這個名字本來就來自佛經</p>
+<p>曼珠沙華、曼陀羅華，是佛經中描繪的天界之花。曼殊沙華、摩訶曼殊沙華、曼陀羅華、摩訶曼陀羅華、芬陀利華、摩訶芬陀利華等等這些稱謂源於梵文佛經，曾於《大乘妙法蓮華經》中記載過。摩訶的意思是大，大乘梵語發音即為摩訶衍那，至於衍那就是乘載的意思，華在古漢語中即是花之意。這些詞語出現在古梵文佛經中，意指地上之花。</p>
+<p>法華經的卷一有這句提及這種花</p>
+<p>佛說此經已，結跏趺坐，入於無量義處三昧，身心不動。是時亂墜天花，有四花，天雨曼陀羅華，摩訶曼陀羅華，曼珠沙華，摩訶曼殊沙華。而散佛上及諸大眾。</p>
+<p>其の輝図は何処 一句中輝図是甚麼意思呢?</p>
+<p><span class="item_name">在日語中似乎只</span>有在扇面輝図中用到這個字，而扇面輝<span class="item_name">図則是．．</span></p>
+<p><span class="item_name"><img src="http://image.shopping.yahoo.co.jp/i/j/e-kakejiku_ueda-30" alt="" /></span></p>
+<p>一種像掛畫的藝術品，售價奇高</p>
+<p>而輝<span class="item_name">図就是上面的圖畫了</span></p>
+<p>其の輝図は何処 : 那個漂亮的圖畫是在何處?</p>
+<p>前後兩句相通的話，似乎是在瀕死一刻還未找到一生中燦爛的事物時的感覺。</p>
+<p>但是彼岸花還有一個特性不得不提及</p>
+<p><img src="http://peterkim.hellpara.org/temp2/flower/f2.jpg" alt="" /></p>
+<p>「彼岸花，花開開彼岸，<br />
+花開時無葉，有葉時無花，花葉永不相見，生生相錯。」</p>
+<p>沒錯，在開花之前，它的葉子就會先掉落，花葉永不相見</p>
+<p>花葉本是一對的，輝図和作者是不是又本是一對呢?</p>
+<p>留下原曲</p>
+<p><embed height="34" loop="true" menu="true" play="true" pluginspage="http://www.macromedia.com/go/getflashplayer" src="http://www.google.com/reader/ui/3523697345-audio-player.swf?audioUrl=http://abby.zkiz.com/hanataba_2_02.mp3" type="application/x-shockwave-flash" width="412"></embed></p>
+<p><img src="file:///C:/DOCUME%7E1/ADMINI%7E1/LOCALS%7E1/Temp/moz-screenshot-4.png" alt="" /></p></div>
+        <div id="permalink" style='word-break: break-all;padding:2em 0 2em 0'><a href="https://blog.abby.md/_generated/realblog_2010-12_20007.htm">Permalink of this blog</a></div>
+        
+    </div>
+</body>
+
+</html>

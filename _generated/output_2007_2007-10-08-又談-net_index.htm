@@ -1,0 +1,103 @@
+<html>
+
+<head>
+    <title>Abby's Archive</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <style>
+        /* for all screens */
+        #info {
+            display: none;
+        }
+
+        /* only when orientation is in portrait mode */
+        @media all and (orientation:portrait) {
+            #info {
+                color: red;
+                display: inline;
+                font-size: 20px
+            }
+        }
+
+
+        body {
+            background-color: #2c292d;
+            color: #fdf9f3;
+            padding: 1em;
+            margin: 0;
+            font-family: consolas, monospace;
+        }
+
+        a {
+            color: #a9dc76;
+            cursor: pointer
+        }
+
+        .hljs {
+            font-family: consolas, monospace;
+        }
+
+        img {
+            max-width: 90%;
+        }
+    </style>
+    <link rel="icon" type="image/png"
+        href="https://d2v9k5u4v94ulw.cloudfront.net/assets/images/2191294/original/e01cdc83-7764-49d6-9176-4695d37133b7?1522307876" />
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+
+    <script>
+        function myMarked(str) {
+
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+
+
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            myMarked($('#article').html())
+        })
+    </script>
+</head>
+
+<body>
+    
+    <div id='article' style='padding:0 15px 10px 10px'>
+        <h1 id="subject">又談.NET</h1>
+        <div id="date" style='font-size: 9pt;'>2007-10-08</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags">["未分類"]</div>
+        <div id="content" style='word-break: break-all;'><p>常常都會在腦袋中想起關於.NET 的事,<br />
+可能對於普遍民眾這可能只是電腦世界的一個小轉變或者小發明,<br />
+其實...這可能關乎了世界未來文明的發展啊</p>
+<p>有那麼誇張嗎?<br />
+如果:&quot;難出的招易中, 易出的招難中&quot;<br />
+那麼.NET 可說是又難出又難中, 但一旦中了則會一統天下<br />
+從今日所見, .NET 到了3.5, vs.net 到了2008<br />
+asp.net 開始得到重視,<br />
+各種.net 語言可以上至寫出directx, 下至寫出手提電話的application</p>
+<p>今日發現IBM 竟然寫了一篇這麼有趣的文章<br />
+<a href="http://www.ibm.com/developerworks/cn/webservices/ws-J2EEvs.NET/index.html" title="http://www.ibm.com/developerworks/cn/webservices/ws-J2EEvs.NET/index.html">http://www.ibm.com/developerworks/cn/webservices/ws-J2EEvs.NET/index.html</a></p>
+<p>從一個毫無背景的framework 踏有已經有無數競爭對手的各個領域<br />
+又再一步步的成長...</p>
+<p>這叫平分春色嗎? J2EE 你已經輸了</p>
+<p>有幾個事件會令到這個世界跟著.net, 由易至難</p>
+<p>1. Windows Vista或後續版本 普及至XP的程度</p>
+<p>2. 手提電話機能提升至可preload .net 的程度</p>
+<p>3. WinMobile/UMPC 系統整合家電的時候</p>
+<p>上面的事雖然都未發生, 但總會發生<br />
+既然總會發生.net 總會佔據生活所有電子領域, 小至電子計分板, 手錶至汽水售賣機可能都可以用.net 寫入程序<br />
+既然總會被.net 佔據, 那麼微軟是一定會牽引世界到一個很大的地步,<br />
+如發動機和電一樣<br />
+所引起的再不是技術問題, 而是社會問題, 一個私人機構有這樣的勢力, 會怎樣呢?</p></div>
+        <div id="permalink" style='word-break: break-all;padding:2em 0 2em 0'><a href="https://blog.abby.md/_generated/output_2007_2007-10-08-又談-net_index.htm">Permalink of this blog</a></div>
+        
+    </div>
+</body>
+
+</html>

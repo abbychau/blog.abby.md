@@ -1,0 +1,95 @@
+<html>
+
+<head>
+    <title>Abby's Archive</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <style>
+        /* for all screens */
+        #info {
+            display: none;
+        }
+
+        /* only when orientation is in portrait mode */
+        @media all and (orientation:portrait) {
+            #info {
+                color: red;
+                display: inline;
+                font-size: 20px
+            }
+        }
+
+
+        body {
+            background-color: #2c292d;
+            color: #fdf9f3;
+            padding: 1em;
+            margin: 0;
+            font-family: consolas, monospace;
+        }
+
+        a {
+            color: #a9dc76;
+            cursor: pointer
+        }
+
+        .hljs {
+            font-family: consolas, monospace;
+        }
+
+        img {
+            max-width: 90%;
+        }
+    </style>
+    <link rel="icon" type="image/png"
+        href="https://d2v9k5u4v94ulw.cloudfront.net/assets/images/2191294/original/e01cdc83-7764-49d6-9176-4695d37133b7?1522307876" />
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+
+    <script>
+        function myMarked(str) {
+
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+
+
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            myMarked($('#article').html())
+        })
+    </script>
+</head>
+
+<body>
+    
+    <div id='article' style='padding:0 15px 10px 10px'>
+        <h1 id="subject">愚蠢的錯誤</h1>
+        <div id="date" style='font-size: 9pt;'>2009-05-08</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags">"社評"</div>
+        <div id="content" style='word-break: break-all;'><p>經常會聽人說到一些錯誤是&quot;愚蠢的錯誤&quot;, 比如說裁判律師上庭時帶錯文件就會被人說成是&quot;愚蠢的錯誤&quot;  </p>
+<p>但是在我們的認知中, 愚蠢和聰明一樣, 不是用來描述生物的能力嗎? 而錯誤決非生物, 那麼&quot;愚蠢&quot;的錯誤, 又是甚麼呢?  </p>
+<p>我會想到, 會是一直以來通俗的用法吧! 於我找詞典幫忙!  </p>
+<table border="1" cellpadding="1" cellspacing="1"> <tr> <td colspan="2"> 1. 愚蠢</td> </tr> <tr> <td colspan="2"> 注音一式 ㄩˊ ㄔㄨㄣˇ</td> </tr> <tr> <td> 漢語拼音 ｙ![](http://dict.revised.moe.edu.tw/images/fe7d.jpg) ｃｈ![](http://dict.revised.moe.edu.tw/images/fe7e.jpg) ｎ</td> <td> 注音二式 ｙ![](http://dict.revised.moe.edu.tw/images/fe7d.jpg) ｃｈｕ![](http://dict.revised.moe.edu.tw/images/fe6e.jpg) ｎ</td> </tr> <tr> <td> 相似詞 痴呆、愚笨、愚昧</td> <td> 相反詞 伶俐、智慧、聰明、聰穎、穎悟</td> </tr> <tr> <td colspan="2"> <table border="0"> <tr> <td colspan="3">痴呆笨拙。警世通言˙卷二十二˙宋小官團圓破氈笠：「劉翁愚蠢，全不省事，逕與女兒討那破氈笠。」老殘遊記˙第九回：「只是既然三教道裡子都是一樣，在下愚蠢得極，到要請教這同處在甚麼地方，異處在甚麼地方？」</td> </tr> </table>
+<p></td> </tr> </table></p>
+<p>(<a href="http://dict.revised.moe.edu.tw/cgi-bin/newDict/dict.sh?idx=dict.idx&amp;amp;cond=%B7M%C4%F8&amp;amp;pieceLen=50&amp;amp;fld=1&amp;amp;cat=&amp;amp;imgFont=1">http://dict.revised.moe.edu.tw/cgi-bin/newDict/dict.sh?idx=dict.idx&amp;amp;cond=%B7M%C4%F8&amp;amp;pieceLen=50&amp;amp;fld=1&amp;amp;cat=&amp;amp;imgFont=1</a>)  </p>
+<p>痴呆笨拙是用來具體的形容思考和行動的吧! 那麼愚蠢的錯誤是一個錯誤的搭配呢!(即使英文上也有Stupid Mistake 的用法)  </p>
+<p>事實上&quot;愚蠢的錯誤&quot;實在不能令我知道那是個怎麼的錯誤,<br />
+錯誤可以是容易出現的, 可以是不常出現的, 可以是嚴重的, 可以是輕微的...<br />
+為甚麼很多是都會出現愚蠢呢?  </p>
+<p>那麼來到重點了! 這個詞是怎樣出現的呢?<br />
+我想情境應該是當一個人做出一些大意的錯誤時, 監察者自然會覺得那個人<strong>愚蠢</strong>(其實也不然)<br />
+而如果說:&quot;你真愚蠢&quot;或&quot;你處理得真愚蠢&quot;, 說出口的人會覺得這樣會傷人自尊甚至會被人當成人身攻擊而出現嚴重口角。因此, 為了避免這樣的情況, 愚蠢這個詞就轉移到形容錯誤這個不適當對象身上。  </p>
+<p>但是, 這不是遺背事實嗎?<br />
+我只可以說, 使用&quot;愚蠢的錯誤&quot;的人愚蠢至極! 到最後可能所有人也不知道這個錯誤的情況。  </p></div>
+        <div id="permalink" style='word-break: break-all;padding:2em 0 2em 0'><a href="https://blog.abby.md/_generated/realblog_2009-05_7789.htm">Permalink of this blog</a></div>
+        
+    </div>
+</body>
+
+</html>

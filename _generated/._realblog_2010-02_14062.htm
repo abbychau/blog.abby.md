@@ -1,0 +1,103 @@
+<html>
+
+<head>
+    <title>Abby's Archive</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <style>
+        /* for all screens */
+        #info {
+            display: none;
+        }
+
+        /* only when orientation is in portrait mode */
+        @media all and (orientation:portrait) {
+            #info {
+                color: red;
+                display: inline;
+                font-size: 20px
+            }
+        }
+
+
+        body {
+            background-color: #2c292d;
+            color: #fdf9f3;
+            padding: 1em;
+            margin: 0;
+            font-family: consolas, monospace;
+        }
+
+        a {
+            color: #a9dc76;
+            cursor: pointer
+        }
+
+        .hljs {
+            font-family: consolas, monospace;
+        }
+
+        body>div {
+            word-break: break-all;
+            position: fixed;
+        }
+
+        img {
+            max-width: 90%;
+        }
+    </style>
+    <link rel="icon" type="image/png"
+        href="https://d2v9k5u4v94ulw.cloudfront.net/assets/images/2191294/original/e01cdc83-7764-49d6-9176-4695d37133b7?1522307876" />
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+
+    <script>
+        function myMarked(str) {
+
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+
+
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            myMarked($('#article').html())
+        })
+    </script>
+</head>
+
+<body>
+    
+    <div id='article' style='padding:0 15px 10px 10px'>
+        <h1 id="subject">超經典的</h1>
+        <div id="date" style='font-size: 9pt;'>2010-02-04</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags">"日常生活"</div>
+        <div id="content" style='word-break: break-all;'><p>有一個修女到神父那裡懺悔：「神父，請您原諒我，我昨天辱罵了一個男人。」   </p>
+<p>神父：「你罵他什麼？」   </p>
+<p>修女：「我罵他『你媽了個*』。」   </p>
+<p>神父：「你為什麼要罵他呢，告訴我，我會請求上帝原諒你的。」   </p>
+<p>修女：「她摸我的胸部。」   </p>
+<p>（神父把手伸進了修女的胸部）：「是這樣嗎？」   </p>
+<p>修女：「是的。」   </p>
+<p>神父：「即使他摸了你的胸，你也不應該罵他啊。」   </p>
+<p>修女：「可是他又接著往下摸我。」   </p>
+<p>（神父往下摸修女）：「是這樣嗎？」   </p>
+<p>修女：「是的。」   </p>
+<p>神父：「即使他摸了你，你也不應該罵他啊。」   </p>
+<p>修女：「可是他又接著把我摁到地上，把我q j了。」   </p>
+<p>（神父把修女摁到地上，q j了修女......）：「是這樣嗎？」   </p>
+<p>修女：「是的。」   </p>
+<p>神父：「即使他q j了你，你也不應該罵他啊。」   </p>
+<p>修女：「可是完事後他告訴我他有愛滋病。」 ............<br />
+神父：「你媽了個*！」  </p></div>
+        <div id="permalink" style='word-break: break-all;'>{{paramlink}}</div>
+        
+    </div>
+</body>
+
+</html>

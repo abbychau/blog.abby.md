@@ -1,0 +1,100 @@
+<html>
+
+<head>
+    <title>Abby's Archive</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <style>
+        /* for all screens */
+        #info {
+            display: none;
+        }
+
+        /* only when orientation is in portrait mode */
+        @media all and (orientation:portrait) {
+            #info {
+                color: red;
+                display: inline;
+                font-size: 20px
+            }
+        }
+
+
+        body {
+            background-color: #2c292d;
+            color: #fdf9f3;
+            padding: 1em;
+            margin: 0;
+            font-family: consolas, monospace;
+        }
+
+        a {
+            color: #a9dc76;
+            cursor: pointer
+        }
+
+        .hljs {
+            font-family: consolas, monospace;
+        }
+
+        body>div {
+            word-break: break-all;
+            position: fixed;
+        }
+
+        img {
+            max-width: 90%;
+        }
+    </style>
+    <link rel="icon" type="image/png"
+        href="https://d2v9k5u4v94ulw.cloudfront.net/assets/images/2191294/original/e01cdc83-7764-49d6-9176-4695d37133b7?1522307876" />
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+
+    <script>
+        function myMarked(str) {
+
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+
+
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            myMarked($('#article').html())
+        })
+    </script>
+</head>
+
+<body>
+    
+    <div id='article' style='padding:0 15px 10px 10px'>
+        <h1 id="subject">演化至中間碼</h1>
+        <div id="date" style='font-size: 9pt;'>2008-03-22</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags">["未分類"]</div>
+        <div id="content" style='word-break: break-all;'><p>今天有點閒心寫寫技術文,<br />
+asp, php, jsp 一直都有各自的優點和支持者<br />
+坊間的書籍也多是寫這幾個網絡語言, CGI/perl/python 等需然在某些應用中表現突出, 但應用起來沒前面的普及</p>
+<p>asp, php, jsp 在今天的優缺點先在這兒重溫一次, 之後再說今天的演化<br />
+執行效率: jsp 大大優於php, php 稍為好於asp<br />
+程式結構: jsp 大複雜於php, php 稍複雜於asp<br />
+程式結構層次的支援數: 這個很難說清, 但在某些具體事實下可見jsp 優於asp, asp 優於php.... 但人為上多數都能克服這些限制<br />
+費用: jsp=10 asp=8 php=0 (不計算盜版的話)<br />
+可見網站比較適合的話: 　　jsp: 大型 asp: 中小型 php: 小型</p>
+<p>jsp 的執行效率如此的高是完全因為它是執行編譯後的碼, 當jsp 碼第一次運行時, 伺服器會把它生成可執行二進制檔, 這樣對比起直譯器(asp/php) 有超過10倍以上的效率<br />
+microsoft近年有asp.net, 這不同於asp 的地方除了在編寫的語言/語法外, 更革命性的地方在於它可以生成中間的二進制碼, 給伺服器執行...這一點和jsp 有點相似<br />
+但在更早之前, php 已經推出了zend 作為對原始碼的加密, 而加密後的檔也正好是可以給伺服器執行的二進制檔!</p>
+<p>這樣的話, 效能是追上去了, 但對於自身的優點也放棄了一些: 價格<br />
+對於asp.net, 伺服器必須安裝新版的windows server, 這個價格上萬元的作業系統, 而對於php 的zend 來說, zend encoder 和decoder 都是收費的, 雖然是誇平台, 但對於自身免費的優點則是失去了很多</p>
+<p>對於網頁語言這種生成binary 的發展方向, 我覺得其實是走錯方向的, 生成直譯器是不少程式員的夢想, 但現在為了具具的十倍效能, 卻把方向反轉了...當依賴了編譯器之後, 根本就很難回到直譯器的軌道上發展, 因為那個時候要放棄的一定不只十倍的執行效率, 甚至是不可行的地步...現在的cpu 發展得那麼快, 8核心的也已經應用在伺服器上了, 我覺得停留在直譯的階段對語言的長遠發展有更大的幫助</p></div>
+        <div id="permalink" style='word-break: break-all;'>{{paramlink}}</div>
+        
+    </div>
+</body>
+
+</html>

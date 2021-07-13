@@ -1,0 +1,138 @@
+<html>
+
+<head>
+    <title>Abby's Archive</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <style>
+        /* for all screens */
+        #info {
+            display: none;
+        }
+
+        /* only when orientation is in portrait mode */
+        @media all and (orientation:portrait) {
+            #info {
+                color: red;
+                display: inline;
+                font-size: 20px
+            }
+        }
+
+
+        body {
+            background-color: #2c292d;
+            color: #fdf9f3;
+            padding: 1em;
+            margin: 0;
+            font-family: consolas, monospace;
+        }
+
+        a {
+            color: #a9dc76;
+            cursor: pointer
+        }
+
+        .hljs {
+            font-family: consolas, monospace;
+        }
+
+        body>div {
+            word-break: break-all;
+            position: fixed;
+        }
+
+        img {
+            max-width: 90%;
+        }
+    </style>
+    <link rel="icon" type="image/png"
+        href="https://d2v9k5u4v94ulw.cloudfront.net/assets/images/2191294/original/e01cdc83-7764-49d6-9176-4695d37133b7?1522307876" />
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+
+    <script>
+        function myMarked(str) {
+
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+
+
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            myMarked($('#article').html())
+        })
+    </script>
+</head>
+
+<body>
+    
+    <div id='article' style='padding:0 15px 10px 10px'>
+        <h1 id="subject">真日記</h1>
+        <div id="date" style='font-size: 9pt;'>2009-04-04</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags">"日常生活"</div>
+        <div id="content" style='word-break: break-all;'><p>雖然沒有和熟悉的朋友一起, 但是今天卻有很多難忘的回憶. 很值得記下來  </p>
+<p>起床已經是中午時分, 還在家無所事事了良久才出發<br />
+終於到了香港日本人俱樂部<br />
+<img src="http://www.hkjapaneseclub.org/images/newclub/image1.jpg" alt="" />  </p>
+<p>在大廈的地面, 找升降機的時候找不到到達18和19樓的電梯, 過幾秒鐘, 才發現有一部專用的升降機是到18和19樓的, 在等電梯的時間已經看到有日本人, 進電梯時發覺連那個小學生都是日本人, 果然是日本人的俱樂部<br />
+到了18樓, 因為遲到近兩個小時了, 打電話給宮本, 因為我覺得來到這個空間我已經是啞了, 唯有找一個有一面之緣還會一點點英語的人來帶路吧  </p>
+<p>果然不出我所料, 這個俱樂部是為日本人而設的, 就算是外來的幾個香港人/西方人, 都是日語使用者<br />
+不過很高興的是, 之前在polyu 遇到的albert 也到了, 之前他說要過節的, 最後還是來了  </p>
+<p>ps.Albert 是個只有一面之緣在PolyU日本文化節認識的人  </p>
+<p>不過進到房間第一時間發現的不是albert, 而是一個正在輕鬆自若的一對五下著讓子將棋的男人,<br />
+雖然坐中有兩個都是小一至小三左右的日本子供, 但其他看起來棋力不低, 被吸引著了, 肯定地, 那個男人是職業的  </p>
+<p>因為遲來的關係, albert 已經在之前和&quot;該男人&quot;下過一局, 在四子落的情況下...慘敗<br />
+之後還albert 下了一局, albert 的算力有點不足加上大意走失一隻角行之後敗給我了<br />
+後來他們拿紀念品時, 因為紀念品都是&quot;該男人&quot;的手筆(字寫得很好啊!), 所以發現他的來歷了<br />
+&quot;高田尚平 六段&quot; <a href="http://ja.wikipedia.org/wiki/%E9%AB%98%E7%94%B0%E5%B0%9A%E5%B9%B3">http://ja.wikipedia.org/wiki/%E9%AB%98%E7%94%B0%E5%B0%9A%E5%B9%B3</a>  </p>
+<p>職業六段...來吧! 這種機會真的可遇不可求...<br />
+坐下之後就開始了, 我對將棋的認知還是流於規則、一兩手開局棋以及幾種殺法之上<br />
+手筋可以說是十分空白, 旁邊的人跟我說, 初玩還是六子落...我覺得, 再不濟也還是跟著albert 的步調吧, 向高田豎起四隻手指表示以四子落開局  </p>
+<p>難得有機會和這樣的高手對局, 雖然不知道他有沒有當作一回事, 但實在太興奮了...<br />
+以下是對局內容<br />
+腦中沒有任何手筋, 開局高田是升銀, 我在以桂, 飛, 角打開後打探苦尋無果, 其中一隻桂還變了孤棋, 高田已連升三步向我逼近了<br />
+還好, 可能是性格使然, 在這個情我沒有急起來, 因為我知道只要一讓對方在少子的情況下追近, 差不多就已經意味著...&quot;輸&quot;<br />
+這個想法在對高段棋手尤其有用, 這麼想是因為我方子勢較強時還守不著, 變弱後一定會一面倒的<br />
+所以我下得非常慢...甚至用上了之前從沒試過的推金銀上三線, 在幾步之後, 總於找到<strong>突破點</strong><br />
+真的嗎? 真的可以嗎? 我竟然猶豫了兩下, 因為對方是職業啊...殺下去真的可行嗎?<br />
+但幾秒後又在想, 不過是職業嗎? 又不是神, 落四子後出現空位是正常不過的事啊!  </p>
+<p>沒有發生任何意外, 計劃成功了, 在兌掉對方桂馬的同時做出了香成<br />
+桂馬兌掉後, 雖然高田不算有損失, 但神情變了...沒有錯, 變認真起來了<br />
+但是, 在飛和角的保護下, 之後下得十分順利, 還成功單方面提掉四隻步  </p>
+<p>在下完7三步成之後...高田連聲goodo goodo<br />
+一方面誇奬的同時, 沒有錯, 我還知道一樣我當時還沒有看出來的事態 - 高田劣勢了  </p>
+<p>約十手後, 對方使出連桂、焦點步...這是他所有的持駒了<br />
+我知道, 只要挨過這一劫, 就算不贏, 也不會太快輸了...<br />
+不過對方的王已經動彈不得, 我打算要進攻了, 2二飛成, 加上一步4五桂, 我看到...高田輸掉了的表情<br />
+為甚麼呢? 不過棋力不夠就是不夠, 最後還是看不到...被最方進來的5三步成打下來<br />
+覆盤時才發現...剛剛4五桂竟然已經是一步十手詰(詰在將棋中是連續王手的殺著)...浪費了啊! 一個把對面打下的機會<br />
+不過勝負真的真的不重要, 不然早就要求六子落了<br />
+這局的內容, 令雙方都很滿意了  </p>
+<p><img src="http://images.upload2world.com/get-4-2009-upload2world_com_yehbwuu.jpg" alt="" />  </p>
+<p>時間快到7時, 和Albert 離開了<br />
+他和他的兩個很要好的舊朋友去吃飯, 因為只個孤獨一人, 所以決定冒昧一起去吃了<br />
+不過...因為兩個都有不錯的工作吧, 吃的是一間很有名的韓國料理餐廳, 對於我來說...有點貴呢<br />
+(最後只支付了自己點的東西, 他的有錢朋友幫我支付了酒錢和其他的菜)<br />
+不過餐廳倒是座無虛席!<br />
+看餐廳外牆的報導, 是一間有名的韓國的料理店的師傅在香港開設的...<br />
+雖然裝修是普通店舖的格局, 但由牆壁上那些印刷菜單, 天花上ORDER NOW 的字句,<br />
+都令我忘記了那是香港...的不過意想不到的時裡面的員工也是韓國人呢..@@<br />
+(料理當然是超級好味的!!! 到現在還記得肉排, 菜, 白飯的香味)  </p>
+<p>在走啊走...走到一個地鐵口時, 他們在討論...<br />
+&quot;在哪有雪糕吃啊?&quot;<br />
+&quot;那裡有一間Haagen-dazs&quot;<br />
+就和他們道別了...  </p>
+<p>回到荷里活發覺還是找不到e-amusement pass, 沒有玩DDR 就離開了  </p></div>
+        <div id="permalink" style='word-break: break-all;'>{{paramlink}}</div>
+        
+    </div>
+</body>
+
+</html>

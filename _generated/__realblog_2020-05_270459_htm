@@ -1,0 +1,103 @@
+<h2>環境配置懶人包</h2>
+<p>在開發前, 我們配一下Rust 環境。會用Rustup 的話, 就不多解釋下面的命令了。如果不了解的話Rustup 和Cargo 自身也帶備說明。
+所以, 我直接來個 <strong>環境配置懶人包</strong>:</p>
+<pre><code class="language-bash">$ rustup toolchain install nightly #安裝rust nightly 環境
+$ rustup component add rls --toolchain nightly #Nightly RLS
+$ cargo new --bin aCore 
+$ cargo install cargo-xbuild #xbuild 可以建置 core, compiler_builtins 和 alloc
+$ rustup component add rust-src #Rust的原始碼
+$ rustup override set nightly #預設nightly</code></pre>
+<p>查看一下 自己的Target 設定:
+<code>rustc +nightly -Z unstable-options --print target-spec-json</code></p>
+<p>會看到類似:</p>
+<pre><code>{
+  "arch": "x86_64",
+  "cpu": "x86-64",
+  "data-layout": "e-m:e-p270:32:32-p271:32:32-p272:64:64-i64:64-f80:128-n8:16:32:64-S128",
+  "dynamic-linking": true,
+  "env": "gnu",
+  "executables": true,
+  "has-elf-tls": true,
+  "has-rpath": true,
+  "is-builtin": true,
+  "linker-flavor": "gcc",
+  "linker-is-gnu": true,
+  "llvm-target": "x86_64-unknown-linux-gnu",
+  "max-atomic-width": 64,
+  "os": "linux",
+  "position-independent-executables": true,
+  "pre-link-args": {
+    "gcc": [
+      "-Wl,--as-needed",
+      "-Wl,-z,noexecstack",
+      "-m64"
+    ]
+  },
+  "relro-level": "full",
+  "stack-probes": true,
+  "target-c-int-width": "32",
+  "target-endian": "little",
+  "target-family": "unix",
+  "target-pointer-width": "64",
+  "vendor": "unknown"
+}</code></pre>
+<p>有關細項的解釋, 可查看: <a href="https://doc.rust-lang.org/nightly/nightly-rustc/rustc_target/spec/struct.Target.html">https://doc.rust-lang.org/nightly/nightly-rustc/rustc_target/spec/struct.Target.html</a>
+可以留意一下前幾項。我們會用到那邊的配置。</p>
+<p>建立 <code>x86_64-aCore.json</code></p>
+<pre><code>{
+    "llvm-target": "x86_64-unknown-none",
+    "data-layout": "e-m:e-i64:64-f80:128-n8:16:32:64-S128",
+    "arch": "x86_64",
+    "target-endian": "little",
+    "target-pointer-width": "64",
+    "target-c-int-width": "32",
+    "os": "none",
+    "executables": true,
+    "linker-flavor": "ld.lld",
+    "linker": "rust-lld",
+    "panic-strategy": "abort",
+    "disable-redzone": true,
+    "features": "-mmx,-sse,+soft-float"
+}</code></pre>
+<h2>data-layout</h2>
+<p>這個項目是LLVM用來設定資料在記憶體中儲存的方式，
+每個部份用減號 <code>-</code> 來分隔。
+而分隔項可以查看:
+<a href="http://llvm.org/docs/LangRef.html#data-layout">http://llvm.org/docs/LangRef.html#data-layout</a></p>
+<p>其他可以隨便修改試試看, 但 <code>"features": "-mmx,-sse,+soft-float"</code> 是要留下的。
+否則的話 <code>opcode</code> 不正確會引起 CPU 的Triple Fault, 嚴重的會把Host 也同時掛掉 ,
+所以我們日後有機會再面對MMX 和SSE 吧。</p>
+<h2>修改</h2>
+<p>建立或修改你的main.rs</p>
+<pre><code class="language-rust">#![no_std]
+#![no_main]
+
+use core::panic::PanicInfo;
+
+#[panic_handler]
+fn panic(_info: &amp;PanicInfo) -&gt; ! {
+    loop {}
+}
+
+#[no_mangle]
+pub extern fn _start() -&gt; ! {
+    loop {}
+}</code></pre>
+<p>修改Cargo.toml</p>
+<pre><code>[package]
+name = "aCore"
+version = "0.1.0"
+authors = ["Abby &lt;i@abby.md&gt;"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"</code></pre>
+<p>建置:
+<code>cargo xbuild --target x86_64-aCore.json</code></p>
