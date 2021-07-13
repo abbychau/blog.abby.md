@@ -72,7 +72,7 @@ foreach($store as $v){
         $head = "$sub07<br />";
     }
     $title=$v['meta']['title']?$v['meta']['title']:'untitled';
-    $list.="$head &gt; <a href='{$v['generated_path']}' target='main_frame'>{$title}</a><br />";
+    $list.="$head &gt; <a href='{$v['generated_path']}' target='main_frame'>{$title}</a><br />\n";
 }
 $template = file_get_contents('templates/template_list.htm');
 $template = str_replace("{{list}}",$list,$template);
@@ -109,5 +109,5 @@ $jsonfeed['feed_url']="https://blog.abby.md/feed.json";
 foreach($store as $v){
     $jsonfeed['items'][]=['id'=>md5($v['meta']['date']), 'url'=>"https://blog.abby.md/{$v['generated_path']}", 'title'=>$v['meta']['title'] ];
 }
-file_put_contents("feed.json",json_encode($jsonfeed));
+file_put_contents("feed.json",json_encode($jsonfeed, JSON_PRETTY_PRINT));
 echo "Done.\n";
