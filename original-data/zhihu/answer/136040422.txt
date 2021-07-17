@@ -1,0 +1,3 @@
+为什么没有新的支持底层达到类似C++这种程度，而易用性达到C#的语言出现？
+其實C#是可以的。<br><a href="http://link.zhihu.com/?target=https%3A//www.codeproject.com/articles/1392/using-unmanaged-code-and-assembler-in-c" class=" wrap external" target="_blank" rel="nofollow noreferrer">Using Unmanaged code and assembler in C#</a>
+1481812005

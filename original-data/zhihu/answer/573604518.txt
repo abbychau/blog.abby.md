@@ -1,0 +1,3 @@
+Google Chrome、Mozilla Firefox、Opera、Edge、Safari 五大浏览器优劣势对比分析？
+<p>Edge 不說了，沒支持了.</p><p>Safari Opera Chrome 都是webkit 。並且同的問題是擴展的權限比Firefox 低，而且依賴JS 注入。</p><p>Safari<br>Pro: 不用安裝<br>Con:Extension Market 幾乎沒有可用的東西。</p><p>Chrome<br>Pro: Extension 比較齊全<br>Con: 和Google 深度整合並強制同步登入，吃電。</p><p>Opera<br>Pro: Sidebar 和News 功能好用，Battery Saver<br>Con: Addon 幾乎是Chrome 的子集，第二公民的概念，有一些不正常的瀏覽行為，例如在Gmail 上一頁會脫離。</p><p>Firefox <br>Pro: 擴展自由度大，設定的自由度大；無需為擴展提供容器節省記憶體。<br>Con: 日常生活重度依賴Google時沒有Chrome 方便</p>
+1547448977

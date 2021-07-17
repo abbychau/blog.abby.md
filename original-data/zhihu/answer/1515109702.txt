@@ -1,0 +1,4 @@
+以下js程序如何编写，最好用switch语句？
+<div class="highlight"><pre><code class="language-js"><span></span><span class="nx">switch語句</span><span class="o">=</span><span class="p">(</span><span class="nx">n</span><span class="p">){</span><span class="k">return</span> <span class="s1">'星期'</span><span class="o">+</span><span class="s1">'日一二三四五六'</span><span class="p">[</span><span class="nx">n</span><span class="p">]}</span>
+</code></pre></div>
+1602242700

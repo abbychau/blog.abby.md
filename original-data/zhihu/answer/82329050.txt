@@ -1,0 +1,3 @@
+JavaScript引擎、虚拟机、运行时环境是一回事儿吗？
+先用英文定義一下，為免混淆。<br>問主所說的分別是: engine，VM，runtime<br><br>Engine 就是一個VM ，是一個虛擬機，它可以接受指令並運作，就像機器一樣。<br><br>engine 這個字比較大眾向，讓大眾也能理解，像V8首頁是介紹自己是high performance js engine.<br><br>Runtime 其實是簡寫，應該叫runtime environment或runtime system。是用以處理已編譯的更底階碼。它會在這些碼的執行過程轉譯這些編碼，令寄生系統可以運作，但它通常不自我管理一套執行環境。<br><br>舉個例子: <br>我有一台計算工具會計加法，於是有了套乘號runtime，有了這個工具就可以用"乘語言"執行了， <br><br>你的compiler 把2^3 編譯成，2*2*2，這是中間碼。<br><br>在運行時runtime把已編儲存的2*2*2 解讀成2+2+2+2<br><br>硬體成功執行。<br>某品牌電腦回傳"八"<br><br><br>對於vm 來說，<br>vm 啟動<br>我放進2*2*2<br>它回傳8<br>硬體看到8, 回傳同值的"八"<br>vm成功完成任務，關閉
+1453192996

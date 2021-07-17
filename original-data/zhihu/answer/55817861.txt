@@ -1,0 +1,26 @@
+有没有一首歌的歌词是代码？
+<div class="highlight"><pre><code class="language-rust"><span></span><span class="n">template</span><span class="w"> </span><span class="o">&lt;</span><span class="n">animal</span><span class="p">.</span><span class="n">sound</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">char</span><span class="o">&gt;</span><span class="w"> </span><span class="p">[</span><span class="n">goes</span><span class="p">,</span><span class="n">say</span><span class="p">]</span><span class="w"></span>
+<span class="n">Dog</span><span class="p">.</span><span class="n">sound</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">woof</span><span class="p">;</span><span class="w"></span>
+<span class="n">Cat</span><span class="p">.</span><span class="n">sound</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">meow</span><span class="p">;</span><span class="w"></span>
+<span class="n">Bird</span><span class="p">.</span><span class="n">sound</span><span class="w"> </span><span class="n">tweet</span><span class="p">;</span><span class="w"></span>
+<span class="n">mouse</span><span class="p">.</span><span class="n">sound</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">squeek</span><span class="p">;</span><span class="w"></span>
+<span class="n">Cow</span><span class="p">.</span><span class="n">sound</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">moo</span><span class="p">;</span><span class="w"></span>
+<span class="n">Frog</span><span class="p">.</span><span class="n">sound</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">croak</span><span class="p">;</span><span class="w"></span>
+<span class="n">the_elephant</span><span class="p">.</span><span class="n">sound</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">toot</span><span class="p">;</span><span class="w"></span>
+
+<span class="n">Ducks</span><span class="p">.</span><span class="n">sound</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">quack</span><span class="p">;</span><span class="w"></span>
+<span class="n">fish</span><span class="p">.</span><span class="n">sound</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">blub</span><span class="w"></span>
+<span class="n">the_seal</span><span class="p">.</span><span class="n">sound</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"ow ow ow"</span><span class="p">;</span><span class="w"></span>
+
+<span class="kd">let</span><span class="w"> </span><span class="n">one</span><span class="p">.</span><span class="n">sound</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">undefined</span><span class="p">;</span><span class="w"></span>
+<span class="n">function</span><span class="w"> </span><span class="n">what_the_fox_say</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">function</span><span class="p">(){</span><span class="w"></span>
+<span class="k">return</span><span class="w"> </span><span class="s">"Ring-ding-ding-ding-dingeringeding!"</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="n">what_the_fox_say</span><span class="p">();</span><span class="n">what_the_fox_say</span><span class="p">();</span><span class="n">what_the_fox_say</span><span class="p">();</span><span class="w"></span>
+
+<span class="n">what_the_fox_say</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">function</span><span class="p">(){</span><span class="w"></span>
+<span class="k">return</span><span class="w"> </span><span class="s">"Wa-pa-pa-pa-pa-pa-pow!"</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="n">what_the_fox_say</span><span class="p">();</span><span class="n">what_the_fox_say</span><span class="p">();</span><span class="n">what_the_fox_say</span><span class="p">();</span><span class="w"></span>
+</code></pre></div><br>寫不下去了 orz
+1437418769

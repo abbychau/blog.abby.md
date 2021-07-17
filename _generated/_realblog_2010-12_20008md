@@ -1,3 +1,0 @@
-<p>In PHP a string is actually an array, so $foo =&quot;hotscripts&quot;, you could access the &quot;h&quot; with $foo[0], the &quot;o&quot; with $foo[1], and so on.</p>
-<p>-------------------</p>
-<p><img src="file:///C:/DOCUME~1/ADMINI~1/LOCALS~1/Temp/moz-screenshot-5.png" alt="" /><img src="file:///C:/DOCUME%7E1/ADMINI%7E1/LOCALS%7E1/Temp/moz-screenshot-6.png" alt="" /><img src="file:///C:/DOCUME%7E1/ADMINI%7E1/LOCALS%7E1/Temp/moz-screenshot-7.png" alt="" />delete from zm_tags WHERE length(tag) &lt; 4 AND tag + 0 &lt;&gt; 0</p>

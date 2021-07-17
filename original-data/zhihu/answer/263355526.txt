@@ -1,0 +1,3 @@
+Linux 的桌面环境是否已经达到了 Windows XP 的水准？
+桌面環境太多了，基本上學習曲線愈長的，效率愈高。<br><br>被acm 常客tourist 毒害用far manager 的人很多。<br><br>然後基本上我身邊的hackathoner或者dev/opsper 用了i3 後都不能回頭。<br><br>就以原生的來說，Ubuntu 的unity 的生產效率我認為在熟習快捷鍵後已是簡單追越windows 了。畢竟大部分人用linux 都是用作生產力工具。<br><br>mac os x 的工具通常都很強大，足以彌補os 的笨拙。<br><br>windows 的ui 設計是最為靈活和高效的，但通常鍵盤操作的優化上沒有linux 的好。
+1511261218

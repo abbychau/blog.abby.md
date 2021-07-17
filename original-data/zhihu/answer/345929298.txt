@@ -1,0 +1,3 @@
+你见过哪些「没什么鸟用」的手机应用（App）？
+技術含量高<br>和<br>沒有用<br>並存<br><br>就是意味著：「其技術含量的參考價值」不在其用處之中吧。<br>那各種 Code golf 就是明顯的最正確答案了。<br><br>現時最細小的安卓 App :<br><a href="http://link.zhihu.com/?target=https%3A//github.com/fractalwrench/ApkGolf" class=" external" target="_blank" rel="nofollow noreferrer"><span class="invisible">https://</span><span class="visible">github.com/fractalwrenc</span><span class="invisible">h/ApkGolf</span><span class="ellipsis"></span></a><br><br>只有678byte, 除了可以安裝和打開就沒有其他用途了。
+1521510313

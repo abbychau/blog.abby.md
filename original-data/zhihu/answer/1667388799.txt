@@ -1,0 +1,5 @@
+对于刚安装好的mysql数据库，如何使用一个查询搞垮它？
+<p>幫Nico 答個題<br><br><a href="http://link.zhihu.com/?target=https%3A//severalnines.com/database-blog/how-fail-or-crash-your-mysql-instances-testing" class=" external" target="_blank" rel="nofollow noreferrer"><span class="invisible">https://</span><span class="visible">severalnines.com/databa</span><span class="invisible">se-blog/how-fail-or-crash-your-mysql-instances-testing</span><span class="ellipsis"></span></a><br><br>不算外部指令，只用sql 查詢的話 就是這兩句了</p><div class="highlight"><pre><code class="language-mysql"><span></span><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">sbtest</span><span class="p">.</span><span class="nf">test</span> <span class="p">(</span><span class="n">id</span> <span class="kt">INT</span><span class="p">);</span>
+<span class="k">FLUSH</span> <span class="kp">TABLES</span> <span class="k">WITH</span> <span class="k">READ</span> <span class="k">LOCK</span><span class="p">;</span>
+</code></pre></div><p></p>
+1610084691

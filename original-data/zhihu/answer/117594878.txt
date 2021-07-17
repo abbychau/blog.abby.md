@@ -1,0 +1,3 @@
+在php开发工作中，你用redis做过什么？
+Cache, session, queue
+1471522749

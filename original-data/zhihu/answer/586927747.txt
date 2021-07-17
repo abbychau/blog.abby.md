@@ -1,0 +1,3 @@
+Rust 语言入门有哪些书？
+<p>RustPrimer <a href="http://link.zhihu.com/?target=https%3A//github.com/rustcc/RustPrimer" class=" wrap external" target="_blank" rel="nofollow noreferrer">rustcc/RustPrimer</a> 和 Rust By Example <a href="http://link.zhihu.com/?target=https%3A//doc.rust-lang.org/rust-by-example/" class=" wrap external" target="_blank" rel="nofollow noreferrer">Introduction - Rust By Example</a></p>
+1548978390

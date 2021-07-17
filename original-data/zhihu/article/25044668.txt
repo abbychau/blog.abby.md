@@ -1,0 +1,2 @@
+HackTrain 2016 感想s
+<ul><li>The most well sponsored Hackathon, w/o one of</li><li>Only 30 technical guys/gals but all international players are interesting!</li><li>一地都係npm install、唯我們除了chatfuel API 設了台node 之外, 純手動PHP，在hackathon 中有反樸歸真的感覺（汗</li></ul>

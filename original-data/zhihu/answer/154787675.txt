@@ -1,0 +1,26 @@
+计算机领域研究方向有鄙视链吗？
+<p>這是一條數學系推廣鏈:
+
+[Functional Languages]
+v
+<i>[Procedural Languages] </i>&gt; [Markup Languages]
+^
+C &lt; &gt; C++
+^
+v
+Assembly
+^
+APU Manufacture &gt; Machine Learning 
+^
+Physics / Chemistry
+^
+<b>Mathematics </b>&gt; Neural &gt; Statistical &gt; Data Mining
+v
+Applied Mathematics
+v
+Statistics &lt; Data Mining
+v
+Non-science
+
+</p>
+1491032173

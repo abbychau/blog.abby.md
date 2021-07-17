@@ -1,0 +1,3 @@
+mysql的MEMORY引擎为什么应用没有redis的应用广泛？
+我自己寫的論壇中的online 表就是用memory 引擎的。<br><br>作為kv 查詢是夠用了，但有一個很嚴重的limit，就是表總容量很小。不像redis 和memcache 那樣可以一直添加。<br>同一時間我也有redis 去處理更加煩心的緩存問題。
+1499058478

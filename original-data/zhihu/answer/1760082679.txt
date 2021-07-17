@@ -1,0 +1,3 @@
+既然 JS 的 var是失误，为什么不修改或删除 var，反而引进了 let 和 const?
+<p>var 是global。</p><p>let 和 const 是local。</p><p>為了引入塊作用域，就只能引進了，不理解題目中的「反而」。</p>
+1614756534

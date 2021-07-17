@@ -1,0 +1,3 @@
+PHP到底有多糟糕？
+<p>1. 多連接和永續程序很難管理。但這可以用workman swoole 等接管生命週期。</p><p>2. Zend API 的生態很差。擴展很難寫。</p><p>3. Array 很強但array function 很多而且寫法囉嗦。</p><p>4. 欠缺fp 寫法。</p><p>5. 沒有pattern matching。</p><p>6. Php documator 和mailing list 的管理方法像停留在上個時代。</p><p>7. 只能做網頁和API. 難以和其他語言內聯或嵌套。</p><p><br></p><p>但暇不掩瑜。這始終是在網站上開發效率乘運行效率最高的工具。</p>
+1546533997

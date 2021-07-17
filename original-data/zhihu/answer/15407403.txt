@@ -1,0 +1,3 @@
+Objective-C 学到什么程度，才可以开始研究学习 iPhone 编程？
+找現成代码看, 看到看不明白的上google 找...找幾天都會了<br>ios 的話apple xcode 開發iphone 的入門則必需要看
+1350371816

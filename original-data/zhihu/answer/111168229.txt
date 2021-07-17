@@ -1,0 +1,8 @@
+Python 字母行转序号应该怎么做？
+<div class="highlight"><pre><code class="language-text"><span></span>s = 'abcd'
+new_s = ''
+for c in s:
+    new_s += str(ord(c) - 96)
+print(new_s)
+</code></pre></div><br>問主應該是個初學者，用個最容易理解的過程式寫法你看看。
+1468508854

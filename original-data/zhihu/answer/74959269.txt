@@ -1,0 +1,3 @@
+为什么有很多人喜欢在中文里面夹杂English？
+有好几个回答说:虽然我英文不好/普通，但是还是会中英夹杂。<br>他们连接词错了。<br>不是但是，是所以。<br><br>要做到统一语系，不单要有足够的母语词量，还要有决心，耐性，胆识，和执行力。<br><br>像我开口就是"结构化查询语言"，"通用序列接口"的人真的不易当啊。<br><br>人家记下usb 三个字就可以了，不然串错读ubs 还会有人理解。<br>我们还要记下universial serial bus, 念时还要马上再翻译一次。<br>为了语法合理，还要加上接口，插头，供电，集线器等等的描写。我有时候觉得自己是个受虐狂，而且也讨不了别人欢心。遇到不懂的一不小心还会被误以为卖弄。<br><br>我是觉得:你们可以尊重一下交流的严谨度吗？<br><br>至于sure, high 之类的，我从小就很在意了，基本在没沾上恶习。<br><br>我借此提供一下常用要注意的英文字<br>confirm<br>check<br>debug<br>lunch<br>commit <br>check in <br>check out<br>merge<br>revenue <br>smartphone<br>3.5mm<br>usb<br>sql<br>mouse<br>keyboard<br>confuse<br>warning<br>error <br>compile<br>build <br>linker<br>building <br>link / hyperlink <br>cam / webcam<br>mon(monitor)<br>delete <br>backspace <br>checkbox<br>survey
+1449070066

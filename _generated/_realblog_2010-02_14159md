@@ -1,6 +1,0 @@
-<p>會SQL DataType 的請做一做以下測試:<br />
-在表格中的column 中要儲存小數有三種型態可以使用<br />
-先說明:Double 和real 是一樣的, 不用翻查Real 了, 而它們合計一種  </p>
-<p>請在google 找出它們有甚麼不一樣  </p>
-<p>你在google 中輸入的查詢字串是甚麼呢? 那三個字的按哪一個次序輸入了?  </p>
-<p>是不是:<span style="color: #ffffff"><span style="background-color: #ffffff">&quot;float double decimal&quot;</span></span>呢?</p>

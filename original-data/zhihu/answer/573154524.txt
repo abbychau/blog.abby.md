@@ -1,0 +1,13 @@
+如何从零写一个kv数据库？
+<p>現場寫一個。</p><div class="highlight"><pre><code class="language-php"><span></span><span class="cp">&lt;?php</span>
+<span class="nv">$state</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span><span class="nb">file_get_contents</span><span class="p">(</span><span class="s2">"state.json"</span><span class="p">,</span><span class="nx">LOCK_EX</span><span class="p">),</span><span class="k">true</span><span class="p">);</span>
+<span class="k">if</span><span class="p">(</span><span class="nv">$argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">==</span><span class="s1">'set'</span><span class="p">){</span><span class="nv">$state</span><span class="p">[</span><span class="nv">$argv</span><span class="p">[</span><span class="mi">2</span><span class="p">]]</span> <span class="o">=</span> <span class="nv">$argv</span><span class="p">[</span><span class="mi">3</span><span class="p">];}</span><span class="k">else</span><span class="p">{</span><span class="k">echo</span> <span class="nv">$state</span><span class="p">[</span><span class="nv">$argv</span><span class="p">[</span><span class="mi">2</span><span class="p">]];}</span>
+<span class="nb">file_put_contents</span><span class="p">(</span><span class="s2">"state.json"</span><span class="p">,</span><span class="nb">json_encode</span><span class="p">(</span><span class="nv">$state</span><span class="p">));</span>
+</code></pre></div><p>用法：</p><div class="highlight"><pre><code class="language-bash"><span></span>$ php kv.php <span class="nb">set</span> key1 value1
+$ php kv.php <span class="nb">set</span> key2 value2
+$ php kv.php get key1
+value1 
+$ php kv.php get key2
+value2
+</code></pre></div><p><br>(逃</p>
+1547390454

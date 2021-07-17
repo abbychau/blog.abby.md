@@ -1,0 +1,3 @@
+编程编程语言求救？
+沒專案的支撐學甚麼都事倍功半。<br>你想做網站還是遊戲還是APP 呢?<br>先定目標再學吧。<br><br>Laravel 是現在比較先進的網頁框架，是基於php 的。但起步和配置都比較複雜。<br>python 步處起來不那麼靈活，但語言本身應用比較廣闊。<br>它們都是做網頁和網頁服務的好語言。<br><br>遊戲方面對遊戲框架的熟練度要求比起語言要求要高。今天建議用unity配c#使用。<br><br>app 只可以是java 和objective c, 但同樣地對sdk 的認識要求比起語言來說重要得多。<br><br>甚麼? 你只想學隻語言來解acm, gcj 或者oj? <br>那好像只有c,c++和java 三隻可以選了。<br><br>雖然應用面不廣，但其實<a href="http://link.zhihu.com/?target=http%3A//vb.net" class=" external" target="_blank" rel="nofollow noreferrer"><span class="invisible">http://</span><span class="visible">vb.net</span><span class="invisible"></span></a> (不同vb)現在也是語言特性十分完整的語言，完全可以和c#和java 比較，在快速開始方面也有優勢。如果對windows 編程有興趣，深入認識它以及.net framework其實還是不錯的。
+1444130264

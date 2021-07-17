@@ -1,0 +1,3 @@
+nodejs怎样向tomcat服务器提交ajax请求？
+把jquery 送到後端去，也要幾個大牛去想virtual dom 怎麼實現。<br><br>現在好了，竟然把nodejs 拉到前端來。我想不得不用web assembly 架起個運算池和內存池了。<br><br>這種前後端分離的方法感覺是某MIT 大神才敢去挖的天坑。
+1471265153

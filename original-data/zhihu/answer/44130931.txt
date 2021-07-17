@@ -1,0 +1,8 @@
+为什么C语言的编译器用C写?
+<p>BCPL</p><br><blockquote><p>It is described pretty well in <a href="http://link.zhihu.com/?target=http%3A//cm.bell-labs.com/who/dmr/chist.html" class=" wrap external" target="_blank" rel="nofollow noreferrer">Dennis Ritchie's writeup</a> of the C language history.</p><p>Giving just a summary of what he wrote there, use his article for the
+ finer details.  C started with the BCPL language, Ken Thomson had 
+access to a compiler for it that ran on their General Electrics 635 main
+ frame.  Unhappy with the language, Thomson used BCPL to write a 
+compiler for the B language, an evolutionary step beyond BCPL that 
+removed some of the technical problems in BCPL.</p></blockquote><br><a href="http://link.zhihu.com/?target=http%3A//stackoverflow.com/questions/18125490/how-was-the-first-c-compiler-written" class=" wrap external" target="_blank" rel="nofollow noreferrer">assembly - How was the first C compiler written ?</a>
+1428492994

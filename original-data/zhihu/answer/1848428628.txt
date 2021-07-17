@@ -1,0 +1,3 @@
+Go、Rust、Nim等新兴语言，为什么都抛弃了constructor?
+<p>既然new struct 時可以把所有的public 資源傳入，而且還帶named 的，這比固定的constructor 好多了。</p>
+1619062646

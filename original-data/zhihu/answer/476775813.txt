@@ -1,0 +1,3 @@
+如何评价Jif编程语言？
+<p>我對information flow security 的實用價值有很大的保留。</p><p>但如果要寫DLM 的話，jif 算是最成熟的實驗語言了。</p><p>就算單說Security Types 的話MLIF, PCC, CCured, Cqual, Walker等也都只停留在paper 層面。</p>
+1535087384

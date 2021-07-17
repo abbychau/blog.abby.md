@@ -1,9 +1,0 @@
-<p>Facebook removed API to get your friend list.
-Now:</p>
-<ol>
-<li>Go to your logged in facebook.com</li>
-<li>request token: <code>document.getElementsByName('fb_dtsg')[0].value</code></li>
-<li>your uid: <code>https://findmyfbid.in/</code></li>
-<li><code>https://www.facebook.com/ajax/typeahead/first_degree.php?__a=1&amp;filter%5B0%5D=user&amp;lazy=0&amp;viewer=&lt;your_uid&gt;&amp;token=v7&amp;stale_ok=0&amp;options%5B0%5D=friends_only&amp;options%5B1%5D=nm&amp;fb_dtsg=&lt;request_token&gt;</code></li>
-</ol>
-<p>Do you share your request token to anyone.</p>

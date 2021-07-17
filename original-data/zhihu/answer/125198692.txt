@@ -1,0 +1,3 @@
+我们用的计算机语言底层都是用什么写的？
+就bootstrapping 角度來說，和滙編甚至和ADA的路向不一樣。<br><br><br>Konrad 在二戰前做出機械式z1 後<br>Z1 Z2 <br>Z3 Z4 Z5 Z11 Z22<br>ALGOL 58<br>ALGOL 60<br>CPL<br>BCPL<br>C<br>萬物<br><br>第一個Asm 是在電子式Z3中實現的<br>而Algol 是在Z22 實現的
+1475735911
