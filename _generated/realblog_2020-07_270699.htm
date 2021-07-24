@@ -65,7 +65,7 @@
         }
         $(document).ready(function () {
             $('#content').html(myMarked($('#content').html()))
-            if(inIframe()){
+            if(!inIframe()){
                 $('#homelink').show()
             }
         })
