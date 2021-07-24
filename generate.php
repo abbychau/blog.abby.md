@@ -6,8 +6,9 @@ $Parsedown = new Parsedown();
 use Symfony\Component\Yaml\Yaml;
 use WyriHaximus\HtmlCompress\Factory;
 
+$pickupList = [];
 function process($file){
-    global $Parsedown;
+    global $Parsedown,$pickupList;
     $txt=file_get_contents($file);
     $ytxt=[];$mc=0;$store=[];
     foreach(explode("\n", $txt) as $line){
@@ -36,12 +37,32 @@ function process($file){
     $markdownContent = $Parsedown->text($content);
     $cleanPath = "_generated/".trim(str_replace(['original-data','/','.md'],['','_','.htm'],$data['path']),"._");
     $template = file_get_contents('templates/template_article.htm');
+    if(isset($data['tags'])){
+        if(!is_array($data['tags'])){
+            $data['tags'] = [$data['tags']];
+        }
+    }else{
+        $data['tags'] = [];
+    }
+    if(isset($data['categories'])){
+        if(!is_array($data['categories'])){
+            $data['categories'] = [$data['categories']];
+        }
+    }else{
+        $data['categories'] = [];
+    }
+    $tags = array_merge($data['tags'],$data['categories']);
+    $tags = array_unique($tags);
+    if(in_array("pick-up", $tags)){
+        $pickupList[]=['title'=>$data['title'],'url'=>"https://blog.abby.md/{$cleanPath}"];
+    }
     $template = str_replace(
         ["{{subject}}","{{date}}","{{tags}}","{{markdown}}","{{paramlink}}","{{source}}"],
-        [$data['title'],$data['date'],
-        (isset($data['tags'])?json_encode($data['tags'],JSON_UNESCAPED_UNICODE):"").json_encode($data['categories'],JSON_UNESCAPED_UNICODE),$markdownContent,
-        "https://blog.abby.md/{$cleanPath}",
-        "https://github.com/abbychau/blog.abby.md/blob/master/{$data['path']}"],
+        [
+            $data['title'],$data['date'],json_encode($tags,JSON_UNESCAPED_UNICODE),$markdownContent,
+            "https://blog.abby.md/{$cleanPath}",
+            "https://github.com/abbychau/blog.abby.md/blob/master/{$data['path']}"
+        ],
         $template
     );
     file_put_contents($cleanPath,$template);
@@ -63,7 +84,7 @@ foreach(glob("./original-data/realblog/*/*") as $v){
 usort($store,function($a,$b){
     return $b['meta']['date'] <=> $a['meta']['date'];
 });
-$list='';
+$strArchive='';$strPickup='';
 $prev07='';
 echo "Generating List...\n";
 foreach($store as $v){
@@ -74,10 +95,15 @@ foreach($store as $v){
         $head = "$sub07<br />";
     }
     $title=$v['meta']['title']?$v['meta']['title']:'untitled';
-    $list.="$head &gt; <a href='{$v['generated_path']}' target='main_frame'>{$title}</a><br />\n";
+    $strArchive.="$head &gt; <a href='{$v['generated_path']}' target='main_frame'>{$title}</a><br />\n";
+}
+foreach($pickupList as $v){
+    
+    $strPickup.="$head &gt; <a href='{$v['url']}' target='main_frame'>{$v['title']}</a><br />\n";
 }
 $template = file_get_contents('templates/template_list.htm');
-$template = str_replace("{{list-archive}}",$list,$template);
+$template = str_replace("{{list-archive}}",$strArchive,$template);
+$template = str_replace("{{list-pickup}}",$strPickup,$template);
 // echo "Compressing...\n";
 // $parser = Factory::constructSmallest();
 // $compressedHtml = $parser->compress($template);

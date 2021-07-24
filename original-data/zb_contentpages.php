@@ -1593,7 +1593,7 @@ I\'ll reach the next stage to realize all.<br />
 <p>1. 戰線持久, 有些許等級優勢而且不易出現逆風局<br />
 2. 後期戰鬥壓制性強<br />
 3. 打野人選有彈性</p>','content_markup' => 'HTML','password' => NULL,'views' => '3611','isshow' => '1','is_page' => '0','displaymode' => '0','type' => '39','datetime' => '2012-02-07 04:21:08','commentnum' => '0','type' => '遊戲'),
-  array('id' => '31122','ownerid' => '4','title' => 'F# 學習筆記 1 變數和函數','content' => '<p>F# : 弱型態, 編譯型, Functional</p><p>&nbsp;</p><pre class="prettyprint">
+  array('id' => '31122','ownerid' => '4','title' => 'F# 學習筆記 1 變數和函數','content' => '<p>F# : 弱型態, 編譯型, Functional</p><p>&nbsp;</p>
 // 開啟一些標準命名空間
 open System
 
@@ -1636,7 +1636,7 @@ let rec hcf a b =                       // 注意: 2 個參數以空格分隔
     // 注意: \'let rec\' 會定義遞迴函式
 </pre>','content_markup' => 'HTML','password' => NULL,'views' => '1394','isshow' => '1','is_page' => '0','displaymode' => '0','type' => '5','datetime' => '2012-02-11 16:39:30','commentnum' => '0','type' => '日常生活'),
   array('id' => '31124','ownerid' => '4','title' => 'F# 學習筆記 2 Tuple 和其他型別','content' => '<pre>// Tuple// ---------------------------------------------------------------// 簡單的整數 Tuplelet pointA = (1, 2, 3)// 簡單的整數、字串和雙精確度浮點數的 Tuplelet dataB = (1, &quot;fred&quot;, 3.1415)/// 將 Tuple 中兩個值的順序互換的函式let Swap (a, b) = (b, a)// 布林值// ---------------------------------------------------------------/// 簡單的布林值let boolean1 = true/// 第二個簡單的布林值let boolean2 = false/// 使用 And、Or 和 Not 計算新的布林值let boolean3 = not boolean1 &amp;&amp; (boolean2 || false)// 字串// ---------------------------------------------------------------/// 簡單的字串let stringA  = &quot;Hello&quot;/// 第二個簡單的字串let stringB  = &quot;world&quot;/// 使用字串串連計算 &quot;Hello world&quot;let stringC  = stringA + &quot; &quot; + stringB/// 使用 .NET 程式庫函式計算 &quot;Hello world&quot;let stringD = String.Join(&quot; &quot;,[| stringA; stringB |])  // 嘗試重新輸入上一行，以查看 IntelliSense 的作用  // 注意，在識別項上使用 Ctrl-J (部分) 會重新啟動該識別項Ctrl+J (很重要) Tuple 和List 都是可以儲備多個數值的變數, 但是有分別的, 但可以先當tuple 寫法是php 的non-assoc array 而list 是個整數loop , 下回再說List</pre>','content_markup' => 'HTML','password' => NULL,'views' => '1243','isshow' => '1','is_page' => '0','displaymode' => '0','type' => '5','datetime' => '2012-02-11 16:43:29','commentnum' => '0','type' => '日常生活'),
-  array('id' => '31128','ownerid' => '4','title' => 'F# 學習筆記 3 List','content' => '<pre class="prettyprint">
+  array('id' => '31128','ownerid' => '4','title' => 'F# 學習筆記 3 List','content' => '
 // 功能清單
 // ---------------------------------------------------------------/
 // 空白清單
@@ -1649,7 +1649,7 @@ let listD = SumList [1; 2; 3]  /// 介於 1 到 10 (含) 之間的整數清單
 let oneToTen = [1..10]/// 前 10 個整數的平方
 let squaresOfOneToTen = [ for x in 0..10 -&gt; x*x ]
 </pre><p>List 是F# 最重要特點之一, 可以將數值快速運數及整合, 會用python 或matlab 的人會比較有認識</p><p>上面有用過一個寫法&quot; match .. with | &quot;</p><p>這是個foreach loop, 意思是xs 作為List 中其中的一個element,</p><p>| 是switch 式, 用作處理不同的情況</p><p>-&gt; 是return的意味, y::ys -&gt; y + SumList ys 意思是把y 從List 中抽取出來, 再來和餘下的List Element 加起來</p>','content_markup' => 'HTML','password' => NULL,'views' => '1346','isshow' => '1','is_page' => '0','displaymode' => '0','type' => '5','datetime' => '2013-03-11 18:21:18','commentnum' => '0','type' => '日常生活'),
-  array('id' => '31150','ownerid' => '4','title' => 'F# 學習筆記 3 陣列和Assoc','content' => '<pre class="prettyprint">// 可變動的陣列
+  array('id' => '31150','ownerid' => '4','title' => 'F# 學習筆記 3 陣列和Assoc','content' => '// 可變動的陣列
 // ---------------------------------------------------------------
 
 /// 建立陣列
@@ -1697,7 +1697,7 @@ let SumOfSquaresUpTo n =
   |&gt; List.sum
 
 </pre>建立函式是Functional language 的最常手法所以F# 建立它的方法也同樣多姿多彩<br />let squares2 = List.map (fun x -&gt; x*x) [1; 2; 3; 4]這句最能表現F# 的魅力<br />fun x-&gt; x*x 是anonymous function<br />因為呼叫方法和shell 一樣, 所以squares2 就變所List 放到裡面去(1;4;9;16)','content_markup' => 'HTML','password' => NULL,'views' => '1416','isshow' => '1','is_page' => '0','displaymode' => '0','type' => '5','datetime' => '2012-02-11 18:46:28','commentnum' => '2','type' => '日常生活'),
-  array('id' => '31157','ownerid' => '4','title' => 'F# 學習筆記 5 等位和記錄','content' => '<pre class="prettyprint">
+  array('id' => '31157','ownerid' => '4','title' => 'F# 學習筆記 5 等位和記錄','content' => '
 // 型別: 等位
 // ---------------------------------------------------------------
 type Expr =   
@@ -1725,7 +1725,7 @@ let expressionTree1 = Add(Variable &quot;a&quot;, Multiply(Number 2, Variable &q
 // table of values for the variables. 
 let result = Evaluate environment expressionTree1
 </string></pre><p>有心要學好它就一口氣把各樣的語法都學會吧...</p><p>這回再說一個關鍵字: type type</p><p>和Java 的hashtable 一樣變成強型態了</p><p>等位的意思像其他語言的class,  match 還是要存在</p><p>Num 像一個getter</p><p>Add Mul 就是function 了</p><p>expT1 是expression, 用來定義Evaluate 要做的事, 也像是一個參數的配對 整件事就是envA 放到expT1 再以Evaluate 計算, 得出resT1</p>','content_markup' => 'HTML','password' => NULL,'views' => '1366','isshow' => '1','is_page' => '0','displaymode' => '0','type' => '5','datetime' => '2013-03-11 18:32:26','commentnum' => '0','type' => '日常生活'),
-  array('id' => '31172','ownerid' => '4','title' => 'F# 學習筆記 6 記錄和類別','content' => '<pre class="prettyprint">
+  array('id' => '31172','ownerid' => '4','title' => 'F# 學習筆記 6 記錄和類別','content' => '
 // 型別: 記錄
 // ---------------------------------------------------------------
 type Card = { Name  : string;
@@ -1746,7 +1746,7 @@ member v.DY = dy    /// 向量的長度
 member v.Length = length    // 依照一個常數重新調整向量    
 member v.Scale(k) = Vector2D(k*dx, k*dy)
 </pre><p>記錄和類別就是型別之一 到現時為止, F# 的型別有等位,記錄和類別, 之後還會說最後的一個:介面</p><p>這個Card 是一個自定義的type 然後cardA</p><p>因為Name, Phone, Ok, 都配對到Card 裡, 所以就成為了Card  下面那個就是Class 的意思; 除了參數, 也有方法</p>','content_markup' => 'HTML','password' => NULL,'views' => '1461','isshow' => '1','is_page' => '0','displaymode' => '0','type' => '5','datetime' => '2013-03-11 18:26:08','commentnum' => '0','type' => '日常生活'),
-  array('id' => '31175','ownerid' => '4','title' => 'F# 學習筆記 7 介面','content' => '<pre class="prettyprint">// 型別: 介面
+  array('id' => '31175','ownerid' => '4','title' => 'F# 學習筆記 7 介面','content' => '// 型別: 介面
 // ---------------------------------------------------------------
  
 type IPeekPoke = 
@@ -2306,7 +2306,7 @@ rest of it is comments.
 Once we decode a typical human genome, we see that the contents begin as
 follows:
 
-<pre class="prettyprint">===
+===
 /* HUMAN_DNA.H
  *
  * Human Genome
