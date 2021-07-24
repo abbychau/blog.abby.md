@@ -61,7 +61,7 @@
             return marked(str, { gfm: true, breaks: true });
         }
         $(document).ready(function () {
-            myMarked($('#article').html())
+            $('#content').html(myMarked($('#content').html()))
         })
     </script>
 </head>
