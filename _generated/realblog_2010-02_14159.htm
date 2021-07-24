@@ -46,22 +46,28 @@
 
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
 
     <script>
+        function inIframe() {
+            try {
+                return window.self !== window.top;
+            } catch (e) {
+                return true;
+            }
+        }
         function myMarked(str) {
-
             str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
-
             str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
-
-
             return marked(str, { gfm: true, breaks: true });
         }
         $(document).ready(function () {
             $('#content').html(myMarked($('#content').html()))
+            if(!inIframe()){
+                $('#homelink').show()
+            }
         })
     </script>
 </head>
@@ -88,12 +94,14 @@
         async>
         </script>
 
-        <div id="permalink" style='word-break: break-all;padding:2em 0 2em 0'>
+        <div id="permalink" style='word-break: break-all;padding:2em 0 1em 0'>
             <a href="https://blog.abby.md/_generated/realblog_2010-02_14159.htm">Permalink of this blog</a>
             <a href="https://github.com/abbychau/blog.abby.md/blob/master/./original-data/realblog/2010-02/14159.md">Source</a>
         </div>
         
-        
+        <div id="homelink" style='word-break: break-all;padding:1em 0 2em 0;display: none;'>
+            <a href="/">Abby's Archive</a>
+        </div>  
     </div>
 </body>
 
