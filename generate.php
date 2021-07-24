@@ -34,7 +34,7 @@ function process($file){
     }
     $content=implode("\n",$ytxt);
     $markdownContent = $Parsedown->text($content);
-    $cleanPath = "_generated/".trim(str_replace(['/','.md'],['_','.htm'],$data['path']),"._");
+    $cleanPath = "_generated/".trim(str_replace(['original-data','/','.md'],['','_','.htm'],$data['path']),"._");
     $template = file_get_contents('templates/template_article.htm');
     $template = str_replace(
         ["{{subject}}","{{date}}","{{tags}}","{{markdown}}","{{paramlink}}"],
@@ -47,14 +47,14 @@ function process($file){
     return $out;
 }
 echo "Loading Files...\n";
-foreach(glob("./_posts/*") as $file){
+foreach(glob("./original-data/hexo/*") as $file){
     $store[]=process($file);
 }
-foreach(glob("./output/*/*") as $v){
+foreach(glob("./original-data/msn-space/*/*") as $v){
     $file = "$v/index.md";
     $store[]=process($file);
 }
-foreach(glob("./realblog/*/*") as $v){
+foreach(glob("./original-data/realblog/*/*") as $v){
     $file = $v;
     $store[]=process($file);
 }
@@ -75,7 +75,7 @@ foreach($store as $v){
     $list.="$head &gt; <a href='{$v['generated_path']}' target='main_frame'>{$title}</a><br />\n";
 }
 $template = file_get_contents('templates/template_list.htm');
-$template = str_replace("{{list}}",$list,$template);
+$template = str_replace("{{list-archive}}",$list,$template);
 // echo "Compressing...\n";
 // $parser = Factory::constructSmallest();
 // $compressedHtml = $parser->compress($template);

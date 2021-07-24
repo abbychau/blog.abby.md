@@ -1,0 +1,90 @@
+<html>
+
+<head>
+    <title>Abby's Archive</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <style>
+        /* for all screens */
+        #info {
+            display: none;
+        }
+
+        /* only when orientation is in portrait mode */
+        @media all and (orientation:portrait) {
+            #info {
+                color: red;
+                display: inline;
+                font-size: 20px
+            }
+        }
+
+
+        body {
+            background-color: #2c292d;
+            color: #fdf9f3;
+            padding: 1em;
+            margin: 0;
+            font-family: consolas, monospace;
+        }
+
+        a {
+            color: #a9dc76;
+            cursor: pointer
+        }
+
+        .hljs {
+            font-family: consolas, monospace;
+        }
+
+        img {
+            max-width: 90%;
+        }
+    </style>
+    <link rel="icon" type="image/png"
+        href="https://d2v9k5u4v94ulw.cloudfront.net/assets/images/2191294/original/e01cdc83-7764-49d6-9176-4695d37133b7?1522307876" />
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+
+    <script>
+        function myMarked(str) {
+
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+
+
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            myMarked($('#article').html())
+        })
+    </script>
+</head>
+
+<body>
+    
+    <div id='article' style='padding:0 15px 10px 10px'>
+        <h1 id="subject">exciting 2005</h1>
+        <div id="date" style='font-size: 9pt;'>2007-03-05</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags">["tired"]["未分類"]</div>
+        <div id="content" style='word-break: break-all;'><p> 朝早聽電話彈左起身...唔夠訓都番左programming, lunch 得知marcus 原來係籃球加pingpong ball 校隊, 籃球仲要係打第一組別...超勁</p>
+<p>之後竟然係上management ge tutorial....竟然唔記得左要上....份功課仲要即堂交!<br />
+我又無帶又無upload 定上網...一時間點算ar..唔係要比佢扣分丫? 卒之我記得其實唔難做... 與其番去屋企攞不如即做....呃住Ivy 話唔記得print 諗住五點前交都ok 丫..點知ivy 好似知道我其實無得print, 比5分鐘我去m core print. 9</p>
+<p>因為之前係課室睇係要寫咩加上高超ge IE 同 MS Word 技術(逃...別打我),  m core 用左一分鐘多d 完左又番番去交...(第一次用word 同IE 用到咁exciting, no mistake even nearly without using backspace)...</p>
+<p>之後係m core 上網整forum d code....神奇ge Dreamweaver Portable 最終比我放左入psp...<br />
+習得: 1. DW portable. 2. Discuz : toggle_collapse 3: html: onLoad=&quot;[script]&quot;</p>
+<p>最後係cct tutorial...ying 同kristy 竟然一齊有得上workshop...羨慕indeed....(i didn't apply it i know)</p>
+<p><img src="images/shiseido_front.jpg" alt="" />&lt;&lt;係shiseido workshop?<br />
+同cathrine 個組無驚無險選左一條幾簡單ge logic 題....完美解決, dr.ying 都係重覆多次我d point onli.....</p>
+<p>其實朝早開始已經好眼訓...加上上左三堂之後............然後出旺角ge 事唔講la...</p></div>
+        <div id="permalink" style='word-break: break-all;padding:2em 0 2em 0'><a href="https://blog.abby.md/_generated/msn-space_2007_2007-03-05-exciting-2005_index.htm">Permalink of this blog</a></div>
+        
+    </div>
+</body>
+
+</html>

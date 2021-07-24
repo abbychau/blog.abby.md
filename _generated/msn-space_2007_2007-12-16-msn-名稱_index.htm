@@ -3,8 +3,7 @@
 <head>
     <title>Abby's Archive</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <BASE target="main_frame">
-
+    <base target="_blank">
     <style>
         /* for all screens */
         #info {
@@ -24,10 +23,9 @@
         body {
             background-color: #2c292d;
             color: #fdf9f3;
-            padding: 0;
-            margin: 10px;
+            padding: 1em;
+            margin: 0;
             font-family: consolas, monospace;
-            font-size:14px;
         }
 
         a {
@@ -53,21 +51,34 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
 
     <script>
-        $(document).ready(function(){ 
-            $('a').on('click', function(e){
-                window.parent.history.pushState({}, $(this).text(), "#"+$(this).attr('href'));
-            })
-        });
+        function myMarked(str) {
+
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+
+
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            myMarked($('#article').html())
+        })
     </script>
 </head>
 
 <body>
-<a href='whoami.htm' target='main_frame'>Who Am I</a>
-<hr />
-Pick-ups<br />
-{{list-pickups}}
-Archive<br />
-{{list-archive}}
+    
+    <div id='article' style='padding:0 15px 10px 10px'>
+        <h1 id="subject">msn 名/稱</h1>
+        <div id="date" style='font-size: 9pt;'>2007-12-16</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags">["未分類"]</div>
+        <div id="content" style='word-break: break-all;'><p>這樣迅捷的portable dreamweaver 8...真的想說句it's freaking amazing!<br />
+真的用vfs 做的嗎?</p>
+<p>原來玩2周目真係好悶, 玩ccff7, ds2 等arpg 二周目後感</p>
+<p>kwan:&quot;明知聽日要打路加, 前個日仲唔練好!?&quot; 明天真的要打路加嗎? 那隻真的是路加嗎?</p></div>
+        <div id="permalink" style='word-break: break-all;padding:2em 0 2em 0'><a href="https://blog.abby.md/_generated/msn-space_2007_2007-12-16-msn-名稱_index.htm">Permalink of this blog</a></div>
+        
+    </div>
 </body>
 
 </html>
