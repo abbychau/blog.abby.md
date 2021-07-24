@@ -67,7 +67,6 @@
 </head>
 
 <body>
-    
     <div id='article' style='padding:0 15px 10px 10px'>
         <h1 id="subject">Performance of OOP PHP versus non-OOP</h1>
         <div id="date" style='font-size: 9pt;'>2012-10-26</div>
@@ -93,7 +92,22 @@
 </div><div>測試代碼: </div><div>  
 </div><div>  
 </div><div><div>&lt;?php</div><div><span class="Apple-tab-span" style="white-space:pre"> </span>function getmicrotime() //grabbed from PHP.net documentation</div><div><span class="Apple-tab-span" style="white-space:pre"> </span>{</div><div><span class="Apple-tab-span" style="white-space:pre"> </span>list($usec, $sec) = explode(" ", microtime());</div><div><span class="Apple-tab-span" style="white-space:pre"> </span>return ((float)$usec + (float)$sec);</div><div><span class="Apple-tab-span" style="white-space:pre"> </span>}</div><div><span class="Apple-tab-span" style="white-space:pre"></span></div><div><span class="Apple-tab-span" style="white-space:pre"> </span>$t1=getmicrotime(); // start stopwatch</div><div><span class="Apple-tab-span" style="white-space:pre"></span></div><div><span class="Apple-tab-span" style="white-space:pre"> </span>if($_GET['test']==1){</div><div><span class="Apple-tab-span" style="white-space:pre"> </span>class basket {</div><div><span class="Apple-tab-span" style="white-space:pre"> </span>private $apples;</div><div><span class="Apple-tab-span" style="white-space:pre"></span></div><div><span class="Apple-tab-span" style="white-space:pre"> </span>function basket($apples) {</div><div> $this-&gt;apples=$apples;</div><div><span class="Apple-tab-span" style="white-space:pre"> </span>}</div><div><span class="Apple-tab-span" style="white-space:pre"></span></div><div><span class="Apple-tab-span" style="white-space:pre"> </span>function addApple() {</div><div> ++$this-&gt;apples;</div><div><span class="Apple-tab-span" style="white-space:pre"> </span>}</div><div><span class="Apple-tab-span" style="white-space:pre"> </span>}</div><div><span class="Apple-tab-span" style="white-space:pre"></span></div><div><span class="Apple-tab-span" style="white-space:pre"> </span>$b1=new basket(10); // start with 10 apples</div><div><span class="Apple-tab-span" style="white-space:pre"></span></div><div><span class="Apple-tab-span" style="white-space:pre"></span></div><div><span class="Apple-tab-span" style="white-space:pre"> </span>for ($i=0; $i&lt;50000; $i++) {</div><div><span class="Apple-tab-span" style="white-space:pre"> </span>$b1-&gt;addApple();</div><div><span class="Apple-tab-span" style="white-space:pre"> </span>$b1-&gt;addApple();</div><div><span class="Apple-tab-span" style="white-space:pre"> </span>}</div><div><span class="Apple-tab-span" style="white-space:pre"></span></div><div><span class="Apple-tab-span" style="white-space:pre"> </span>}else if($_GET['test']==2){</div><div><span class="Apple-tab-span" style="white-space:pre"></span></div><div><span class="Apple-tab-span" style="white-space:pre"></span></div><div><span class="Apple-tab-span" style="white-space:pre"></span></div><div><span class="Apple-tab-span" style="white-space:pre"> </span>function addApple(&amp;$basket) {</div><div><span class="Apple-tab-span" style="white-space:pre"> </span>return ++$basket;</div><div><span class="Apple-tab-span" style="white-space:pre"> </span>}</div><div><span class="Apple-tab-span" style="white-space:pre"></span></div><div><span class="Apple-tab-span" style="white-space:pre"> </span>$b1=10; // start with 10 apples</div><div><span class="Apple-tab-span" style="white-space:pre"></span></div><div><span class="Apple-tab-span" style="white-space:pre"> </span>for ($i=0; $i&lt;50000; $i++) {</div><div><span class="Apple-tab-span" style="white-space:pre"> </span>addApple($b1);</div><div><span class="Apple-tab-span" style="white-space:pre"> </span>addApple($b1);</div><div><span class="Apple-tab-span" style="white-space:pre"> </span>}</div><div><span class="Apple-tab-span" style="white-space:pre"></span></div><div><span class="Apple-tab-span" style="white-space:pre"> </span>}else if($_GET['test']==3){</div><div><span class="Apple-tab-span" style="white-space:pre"></span></div><div><span class="Apple-tab-span" style="white-space:pre"></span></div><div><span class="Apple-tab-span" style="white-space:pre"> </span>}</div><div><span class="Apple-tab-span" style="white-space:pre"></span></div><div><span class="Apple-tab-span" style="white-space:pre"></span></div><div><span class="Apple-tab-span" style="white-space:pre"> </span>$t2=getmicrotime();</div><div><span class="Apple-tab-span" style="white-space:pre"></span></div><div><span class="Apple-tab-span" style="white-space:pre"> </span>echo ($t2-$t1)*1000; //result time</div></div><div>?&gt;</div></div>
-        <div id="permalink" style='word-break: break-all;padding:2em 0 2em 0'><a href="https://blog.abby.md/_generated/realblog_2012-10_39090.htm">Permalink of this blog</a></div>
+
+
+        <script src="https://utteranc.es/client.js"
+        repo="abbychau/blog.abby.md"
+        issue-term="pathname"
+        label="blog comment"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async>
+        </script>
+
+        <div id="permalink" style='word-break: break-all;padding:2em 0 2em 0'>
+            <a href="https://blog.abby.md/_generated/realblog_2012-10_39090.htm">Permalink of this blog</a>
+            <a href="https://github.com/abbychau/blog.abby.md/blob/master/./original-data/realblog/2012-10/39090.md">Source</a>
+        </div>
+        
         
     </div>
 </body>

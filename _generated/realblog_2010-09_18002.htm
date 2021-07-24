@@ -67,7 +67,6 @@
 </head>
 
 <body>
-    
     <div id='article' style='padding:0 15px 10px 10px'>
         <h1 id="subject">.htaccess - Allow Only By Referer</h1>
         <div id="date" style='font-size: 9pt;'>2010-09-13</div>
@@ -90,7 +89,22 @@ RewriteCond %{HTTP_REFERER} !^<a href="http://www\\.OKdomain1\\.com/">http://www
 RewriteCond %{HTTP_REFERER} !^<a href="http://www\\.OKdomain2\\.com/">http://www\\.OKdomain2\\.com/</a> [NC]<br />
 RewriteRule ^.*$ <a href="http://www.your\_domain\_name.com/not\_allowed\_here.htm">http://www.your\_domain\_name.com/not\_allowed\_here.htm</a> [R=301,L]</p>
 <p>or I'd try something along those lines anyway - with the not_allowed_here.htm being a page I redirected all those I don't want to.</p></div>
-        <div id="permalink" style='word-break: break-all;padding:2em 0 2em 0'><a href="https://blog.abby.md/_generated/realblog_2010-09_18002.htm">Permalink of this blog</a></div>
+
+
+        <script src="https://utteranc.es/client.js"
+        repo="abbychau/blog.abby.md"
+        issue-term="pathname"
+        label="blog comment"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async>
+        </script>
+
+        <div id="permalink" style='word-break: break-all;padding:2em 0 2em 0'>
+            <a href="https://blog.abby.md/_generated/realblog_2010-09_18002.htm">Permalink of this blog</a>
+            <a href="https://github.com/abbychau/blog.abby.md/blob/master/./original-data/realblog/2010-09/18002.md">Source</a>
+        </div>
+        
         
     </div>
 </body>

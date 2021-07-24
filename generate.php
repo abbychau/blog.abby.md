@@ -37,9 +37,11 @@ function process($file){
     $cleanPath = "_generated/".trim(str_replace(['original-data','/','.md'],['','_','.htm'],$data['path']),"._");
     $template = file_get_contents('templates/template_article.htm');
     $template = str_replace(
-        ["{{subject}}","{{date}}","{{tags}}","{{markdown}}","{{paramlink}}"],
+        ["{{subject}}","{{date}}","{{tags}}","{{markdown}}","{{paramlink}}","{{source}}"],
         [$data['title'],$data['date'],
-        (isset($data['tags'])?json_encode($data['tags'],JSON_UNESCAPED_UNICODE):"").json_encode($data['categories'],JSON_UNESCAPED_UNICODE),$markdownContent,"https://blog.abby.md/{$cleanPath}"],
+        (isset($data['tags'])?json_encode($data['tags'],JSON_UNESCAPED_UNICODE):"").json_encode($data['categories'],JSON_UNESCAPED_UNICODE),$markdownContent,
+        "https://blog.abby.md/{$cleanPath}",
+        "https://github.com/abbychau/blog.abby.md/blob/master/{$data['path']}"],
         $template
     );
     file_put_contents($cleanPath,$template);

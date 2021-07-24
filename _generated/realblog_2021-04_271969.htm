@@ -67,7 +67,6 @@
 </head>
 
 <body>
-    
     <div id='article' style='padding:0 15px 10px 10px'>
         <h1 id="subject">MySQL 的Linear Hash 到底有多「不亂」</h1>
         <div id="date" style='font-size: 9pt;'>2021-04-03</div>
@@ -150,7 +149,22 @@ int main()
 </code></pre>
 <p>可見上面是個無迴圈的高速取餘(利用位遮蔽)。這對於一般的HASH 或者自增鍵來說是沒問題的。但是如果數據的值間隔和分區數其中是另一個的倍數或有公因數組合時，分配就會不平了。</p>
 <p>希望這文章能幫到一些人吧。</p></div>
-        <div id="permalink" style='word-break: break-all;padding:2em 0 2em 0'><a href="https://blog.abby.md/_generated/realblog_2021-04_271969.htm">Permalink of this blog</a></div>
+
+
+        <script src="https://utteranc.es/client.js"
+        repo="abbychau/blog.abby.md"
+        issue-term="pathname"
+        label="blog comment"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async>
+        </script>
+
+        <div id="permalink" style='word-break: break-all;padding:2em 0 2em 0'>
+            <a href="https://blog.abby.md/_generated/realblog_2021-04_271969.htm">Permalink of this blog</a>
+            <a href="https://github.com/abbychau/blog.abby.md/blob/master/./original-data/realblog/2021-04/271969.md">Source</a>
+        </div>
+        
         
     </div>
 </body>
