@@ -55,7 +55,7 @@ function process($file){
     $tags = array_merge($data['tags'],$data['categories']);
     $tags = array_unique($tags);
     if(in_array("pick-up", $tags)){
-        $pickupList[]=['title'=>$data['title'],'url'=>"https://blog.abby.md/{$cleanPath}"];
+        $pickupList[]=['title'=>$data['title'],'url'=>"/{$cleanPath}"];
     }
     $strTagLinks=[];
     foreach($tags as $tag){
