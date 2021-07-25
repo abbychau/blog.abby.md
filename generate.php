@@ -8,10 +8,11 @@ use WyriHaximus\HtmlCompress\Factory;
 
 $pickupList = [];
 $tagToArticles=[];
+$store=[];
 function process($file){
-    global $Parsedown,$pickupList,$tagToArticles;
+    global $Parsedown,$pickupList,$tagToArticles,$store;
     $txt=file_get_contents($file);
-    $ytxt=[];$mc=0;$store=[];
+    $ytxt=[];$mc=0;
     foreach(explode("\n", $txt) as $line){
         if(trim($line) == "---"){
             if(++$mc==2){
@@ -54,6 +55,10 @@ function process($file){
     }
     $tags = array_merge($data['tags'],$data['categories']);
     $tags = array_unique($tags);
+    if(in_array('omit',$tags)){
+        echo "omit!\n";
+        return;
+    }
     $strTagLinks=[];
     foreach($tags as $tag){
         $tagToArticles[$tag][]=['title'=>$data['title'],'url'=>$cleanPath];
@@ -70,20 +75,18 @@ function process($file){
         $template
     );
     file_put_contents($cleanPath,$template);
-    $out=['meta'=>$data,'content'=>$content,'markdown'=>$markdownContent,'generated_path'=>$cleanPath];
-    return $out;
+    $store[]=['meta'=>$data,'content'=>$content,'markdown'=>$markdownContent,'generated_path'=>$cleanPath];
 }
 echo "Loading Files...\n";
 foreach(glob("./original-data/hexo/*") as $file){
-    $store[]=process($file);
+    process($file);
 }
 foreach(glob("./original-data/msn-space/*/*") as $v){
     $file = "$v/index.md";
-    $store[]=process($file);
+    process($file);
 }
 foreach(glob("./original-data/realblog/*/*") as $v){
-    $file = $v;
-    $store[]=process($file);
+    process($v);
 }
 usort($store,function($a,$b){
     return $b['meta']['date'] <=> $a['meta']['date'];
@@ -92,6 +95,7 @@ $strArchive='';$strPickup='';
 $prev07='';
 echo "Generating List...\n";
 foreach($store as $v){
+    if(!$v){continue;}
     $sub07=substr($v['meta']['date'],0,7);
     $head = '';
     if($sub07 != $prev07){
