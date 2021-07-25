@@ -1,0 +1,100 @@
+<html>
+
+<head>
+    <title>Abby's Archive</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <link rel="stylesheet" href="https://blog.abby.md/style.css" />
+    <link rel="icon" type="image/png" href="https://d2v9k5u4v94ulw.cloudfront.net/assets/images/2191294/original/e01cdc83-7764-49d6-9176-4695d37133b7?1522307876" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+
+    <script>
+        function inIframe() {
+            try {
+                return window.self !== window.top;
+            } catch (e) {
+                return true;
+            }
+        }
+
+        function myMarked(str) {
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            $('#content').html(myMarked($('#content').html()))
+            hljs.highlightAll();
+
+            if(!inIframe()){
+                $('#homelink').show()
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div id='article' style='padding:0 15px 10px 10px'>
+        <h1 id="subject">我又用Frameset 了</h1>
+        <div id="date" style='font-size: 9pt;'>2021-07-26</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags"><a href='/_meta/blog.htm'>blog</a>, <a href='/_meta/日記.htm'>日記</a></div>
+        <div id="content" style='word-break: break-all;'><p>今天又是沒有元氣的一天，<br />
+在吃飯時，單就看看自己在噗浪寫過的東西，也可以哭起來。</p>
+<p>情緒is a mess。</p>
+<p>但是，我把這麼多年的爛日記都整理一遍了。<br />
+在github 中放置了一個Github Action, 這樣我就可以隨時在Github上面寫日記了。</p>
+<p>這個博客也是夠復古的。<br />
+我一直有個想法：Frameset 這東西只會一直處於deprecated 的狀態，而永遠不會remove。<br />
+原因是：他不像embed / marquee / bgmusic , 移除它對瀏覽器而言亳無好處。<br />
+他也足夠簡單地可以被JS 作透明模擬。</p>
+<p>所以，我就用Frameset 了。</p>
+<p>Frameset 一直有3個問題: (<a href="https://www.cs.uct.ac.za/mit_notes/web_programming/html/ch08s02.html">https://www.cs.uct.ac.za/mit_notes/web_programming/html/ch08s02.html</a>)</p>
+<ol>
+<li>網址不更新, 無法被用家複製然後傳播 或者 Bookmark</li>
+<li>Search engines 只能抓到子頁面</li>
+<li>Back button 變得不合乎習慣</li>
+</ol>
+<p>但:<br />
+對於1 而言, 我們可以插入一個pushState 啊</p>
+<pre><code class="language-javascript">$('a').on('click', function(e){
+    window.parent.history.pushState({}, $(this).text(), "#"+$(this).attr('href'));
+})</code></pre>
+<p>然後</p>
+<pre><code class="language-javascript">$(document).ready(function () {
+    if (window.location.hash) {
+        var hash = window.location.hash.substring(1); //Puts hash in variable, and removes the # character
+        $("#main_frame").attr('src',hash);
+    }
+})</code></pre>
+<p>事實上, 這個問題在mvvm 中同樣發生, 而新API 反而給老Frameset 解套了。</p>
+<p>對於2 而言: 這在每個頁面中加入一個套新套框的link 就可以了。現在都是自動生成的時代了。<br />
+對於3 : 每個連結配合一個後退, 這一直都很合乎習慣, 在MVVM 框架中pushState 後也是假倒退的, 不是嗎?</p>
+<p>所以...<br />
+我就這樣完成了w</p></div>
+
+
+        <script src="https://utteranc.es/client.js"
+        repo="abbychau/blog.abby.md"
+        issue-term="pathname"
+        label="blog comment"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async>
+        </script>
+
+        <div id="permalink" style='word-break: break-all;padding:2em 0 1em 0'>
+            <a href="https://blog.abby.md/_generated/blog_我又用Frameset 了.htm">Permalink of this blog</a>
+            <a href="https://github.com/abbychau/blog.abby.md/blob/master/./original-data/blog/我又用Frameset 了.md">Source</a>
+        </div>
+        
+        <div id="homelink" style='word-break: break-all;padding:1em 0 2em 0;display: none;'>
+            <a href="/">Abby's Archive</a>
+        </div>  
+    </div>
+</body>
+
+</html>
