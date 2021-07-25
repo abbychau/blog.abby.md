@@ -1,3 +1,3 @@
-有了 swoole 加持的 PHP 离 GO 有多远？
-<p>我觉得swoole的文档比起Go差很远.EasySwoole MixPHP等等的应用規模很固定，而Swoole官方的文档就如碎片一样。基本上不可用 。还是因历史问题，令到Composer比起新的包管理器要难用一些。</p><p> 这就导致PHP基本上是Java化的路向。</p><p> 其次是因为php对底层支持不好，扩展起来很依赖c扩展，建置和迁移如果没Docker就很多环境依赖。这点上node和go的社群就好多了。语言原生库比较多.composer远远未能取代phpize。</p><p> 总括来说，PHP性能上虽然很好，类库很丰富，但就Php + swoole上，还有很多地方要改善.Swoole自身的文档是最重要的，然后，基于swoole的底层库能建立起生态 ，这才能给其他开发者愉快的体验。</p><p> 这不是单靠Swoft或者EasySwoole这类框架能提供的。</p>
+有了 swoole 加持的 PHP 離 GO 有多遠？
+<p>我覺得swoole的文檔比起Go差很遠.EasySwoole MixPHP等等的應用規模很固定，而Swoole官方的文檔就如碎片一樣。基本上不可用 。還是因歷史問題，令到Composer比起新的包管理器要難用一些。</p><p> 這就導致PHP基本上是Java化的路向。</p><p> 其次是因為php對底層支持不好，擴展起來很依賴c擴展，建置和遷移如果沒Docker就很多環境依賴。這點上node和go的社群就好多了。語言原生庫比較多.composer遠遠未能取代phpize。</p><p> 總括來說，PHP性能上雖然很好，類庫很豐富，但就Php + swoole上，還有很多地方要改善.Swoole自身的文檔是最重要的，然後，基於swoole的底層庫能建立起生態 ，這才能給其他開發者愉快的體驗。</p><p> 這不是單靠Swoft或者EasySwoole這類框架能提供的。</p>
 1568979367

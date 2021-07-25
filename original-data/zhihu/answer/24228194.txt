@@ -1,3 +1,3 @@
-最好的 PHP 框架是什么？为什么？
+最好的 PHP 框架是什麽？為什麽？
 不是萬金油的回答, 但是真的沒有最好, 只有最合用。<br>框架分四種:<br>1. [把文件層先脫離出來就是大一步了]的Minimalist 系: Slim/KissMVC =&gt; 都差不多<br>2. [把輪子通通拿來給本大爺用的]功能齊全大庫系: Yii, CI, Cake 等 =&gt;Yii 比較好<br>3. [不能高級一點嗎?]的安裝擴展系: Laravel, ZF =&gt; Laravel 比較好<br>4. [速度最實際]的C 系: Yaf, Phalcon =&gt; Phalcon 比較豐富
 1396931738

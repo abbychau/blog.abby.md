@@ -1,3 +1,3 @@
-为什么「Life is short」而不是 int 或 double？
+為什麽「Life is short」而不是 int 或 double？
 問主有點誤解了。<br><br>Life is short 中的short 不是在描述資料儲存型態，而是描述生命的心理時間長度。
 1437989586

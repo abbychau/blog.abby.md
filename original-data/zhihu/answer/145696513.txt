@@ -1,3 +1,3 @@
-GIMP 与 PS 两者之间具有可比性吗？如果有的话，哪个更好？
+GIMP 與 PS 兩者之間具有可比性嗎？如果有的話，哪個更好？
 有可比性, <br>以前photoshop 的絕對優點很多, 但經過GIMP 2.8之後, 加入CMYK 模式和non-destructive editing 之後, 現在也只餘下CameraRAW 以及和Adobe 其他的軟件連動了<br><br>但photoshop 還是有很多程度不輕的相對優勢:<br>比如更美觀的ui<br>更容易學習<br>更多的硬體支援<br>更成熟的硬體加速<br>更多種類和高性能的插件庫<br><br>不過現在gimp 也是不斷追趕上來了, 比如開放了主題設定和單視窗模式, gpu 加速也實裝了, 繪圖板也已經穩定下來<br>而且在2.9 中也會進一步優化<br><br><br>而Gimp 還有一個優勢<br>就是開發plugin 不需要Adobe Photoshop SDK 然後寫C++ 和學習resource file, 只要直接打python 代碼就可以編譯執行, 這在開發和擴展的效率有很大優勢
 1486754199

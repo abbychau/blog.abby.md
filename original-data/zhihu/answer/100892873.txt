@@ -1,3 +1,3 @@
-如何评价 Swift 语言？
+如何評價 Swift 語言？
 swift 是繼AS3 之後第一種我可以在投入生產前連基礎都不用看的編程語言。<br>人性化得令人感動。<br><br>舉個例子：<br>有一次我想把幾個control 的特性設定一次，<br>我就幻想，JSON 的數組可以直接用吧，foreach 也可以吧。。。中間的指針會自動對齊吧。。。。<br><p>一秒鐘後就打出了</p><p>        for control in [btnTitleText,btnSave,btnLoad,btnMenu]{</p><p>            control.tintColor = UIColor.blackColor()</p><p>        }</p><p>這樣我有點期待又有滿佈邏輯漏洞的一個遍歷。。。</p><br><p>竟然成功執行了。。。</p><p>我在想，SWIFT這個語言是不是我無意中設計出來的！？</p>
 1463237895

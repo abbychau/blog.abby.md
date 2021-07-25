@@ -1,3 +1,3 @@
-Mac 电脑贵在何处？
-<p>macos </p><p>完善的Unix 生態。很容易就配置好開發環境。</p><p>讓你可以使用物超所值的logic pro x。如果做音樂創作或者編曲的，買Mac 絕對比windows 省錢。單coreaudio 就省下一片高階的asio 的聲卡。lpx 的功能和聲庫已經值回買Mac 和lpx 的差價。同一套配下來windows 可能反而貴上幾千。</p><p>可以編譯ios 和c++的xcode。雖然沒有visual studio 好用，但免費。</p><p>以上的買台mac mini 就能享受到。</p><p>至mbp，溢價的確是高。它雖然有最頂級的顯示屏，和nvme 和不錯的揚聲器。但在windows 陣營也是不缺的。就算把Macos 價值加上去還是貴。mbp 的溢價完全來自unibody還有作為可以運行macos 的notebook的稀缺性而來的。</p><p>至於蘋果生態，這是要額外付費的。</p>
+Mac 電腦貴在何處？
+<p>macos </p><p>完善的Unix 生態。很容易就配置好開發環境。</p><p>讓你可以使用物超所值的logic pro x。如果做音樂創作或者編曲的，買Mac 絕對比windows 省錢。單coreaudio 就省下一片高階的asio 的聲卡。lpx 的功能和聲庫已經值回買Mac 和lpx 的差價。同一套配下來windows 可能反而貴上幾千。</p><p>可以編譯ios 和c++的xcode。雖然沒有visual studio 好用，但免費。</p><p>以上的買臺mac mini 就能享受到。</p><p>至mbp，溢價的確是高。它雖然有最頂級的顯示屏，和nvme 和不錯的揚聲器。但在windows 陣營也是不缺的。就算把Macos 價值加上去還是貴。mbp 的溢價完全來自unibody還有作為可以運行macos 的notebook的稀缺性而來的。</p><p>至於蘋果生態，這是要額外付費的。</p>
 1557485978

@@ -1,4 +1,4 @@
-免费在超市搬走一购物车的东西，如何组合才能使其价值最大化？
+免費在超市搬走一購物車的東西，如何組合才能使其價值最大化？
 <p>先把超市的貨物的重量和價值記錄下來。代入以下dp 式，即可歸遞求解。</p><div class="highlight"><pre><code class="language-text"><span></span>B[i][j]= max(B[i – 1][j], V[i]+B[i – 1][j – W[i]]
 </code></pre></div><p>B是最大價值 </p><p>V是物件價值</p><p>W是重量</p><p></p>
 1566563649

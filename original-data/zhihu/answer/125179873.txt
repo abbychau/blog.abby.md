@@ -1,3 +1,3 @@
-PHP 为什么没有取代 Python ？
+PHP 為什麽沒有取代 Python ？
 學一隻新語言比起用一種不合適的語言來控制非官方API 更省力。<br><br>Php 還可以新建com class 來做direct X 輸出呢。PHP-GTK 的坑也是挺相似的。<br><br>到坑踩得夠多，會發現其實C# 也很簡單的，不用死抱著PHP 去做這種事。
 1475727876

@@ -1,4 +1,4 @@
-有哪些让你感叹「写出这种句子的人，我十辈子都追不上了」的句子？
+有哪些讓你感嘆「寫出這種句子的人，我十輩子都追不上了」的句子？
 <div class="highlight"><pre><code class="language-text"><span></span>i  = 0x5f3759df - ( i &gt;&gt; 1 ); 
 </code></pre></div>
 1459935887

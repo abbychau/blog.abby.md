@@ -1,3 +1,3 @@
-jade渲染慢的问题？
+jade渲染慢的問題？
 Node 的Production mode 對jade 影響很大，記緊打開。<br><br>打開前30-40微秒的頁面，打開後不足1ms。
 1485116029

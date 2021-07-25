@@ -1,3 +1,3 @@
-单独使用NGINX+PHP好还是NGINX+APACHE+PHP好？
-選用apache+PHP+nginx  而不是單純ngnix+php 只有一個原因，mod_php 。<br><br>LNMPA使用Nginx作为前端服务能够更快更及时的静态页面、js、图片等，当客户端请求访问动态页面时由Nginx的反向代理给Apache处理，Apache处理完再交予Nginx返回给客户端。<br>采用LNMPA能够更好的解决LNMP架构中由于PHP-FPM方面产生的502错误，同时能够为提供更安全的多用户多站点环境。
+單獨使用NGINX+PHP好還是NGINX+APACHE+PHP好？
+選用apache+PHP+nginx  而不是單純ngnix+php 只有一個原因，mod_php 。<br><br>LNMPA使用Nginx作為前端服務能夠更快更及時的靜態頁面、js、圖片等，當客戶端請求訪問動態頁面時由Nginx的反向代理給Apache處理，Apache處理完再交予Nginx返回給客戶端。<br>采用LNMPA能夠更好的解決LNMP架構中由於PHP-FPM方面產生的502錯誤，同時能夠為提供更安全的多用戶多站點環境。
 1534999475

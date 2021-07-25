@@ -1,4 +1,4 @@
-有没有一首歌的歌词是代码？
+有沒有一首歌的歌詞是代碼？
 <div class="highlight"><pre><code class="language-rust"><span></span><span class="n">template</span><span class="w"> </span><span class="o">&lt;</span><span class="n">animal</span><span class="p">.</span><span class="n">sound</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">char</span><span class="o">&gt;</span><span class="w"> </span><span class="p">[</span><span class="n">goes</span><span class="p">,</span><span class="n">say</span><span class="p">]</span><span class="w"></span>
 <span class="n">Dog</span><span class="p">.</span><span class="n">sound</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">woof</span><span class="p">;</span><span class="w"></span>
 <span class="n">Cat</span><span class="p">.</span><span class="n">sound</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">meow</span><span class="p">;</span><span class="w"></span>

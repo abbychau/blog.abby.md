@@ -1,3 +1,3 @@
-如何评价lambda the ultimate imperative?
+如何評價lambda the ultimate imperative?
 驗證了用lambda寫法去寫以往程序的可行性。
 1527825610

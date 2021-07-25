@@ -1,5 +1,5 @@
-如果你们想要自创一个编程语言，你们希望它有什么特色?
-<p>就生產力來說, 我和很多人理想語言有著比較相反的概念</p><p>有很多人都說了強类型 / 反射 / 或者防止隱性推導的特色. 但再強也強不過Rust / Haskell .</p><p>反而, 我覺得把隱性推導再更進一步也未必不是好事</p><p>先像是PHP 那樣, 字串可以直接當成boolean, array(包括map), float, int, 空值 , 雖然這樣會令很多不了解轉換規則的人寫出不安全的代碼, 但能借技術債才是編程語言的根本需求。</p><p>但我覺得可以更進一步, 就是利用類似tabnine 的AI code completion, 把class / object / json / array 都一併推導了</p><p>像是要把一個grpc 的go struct 或者java class 同時給dynamodb / mysql / grpc 共用時, annotation 不用打, 不用寫新的models, 也不用改protoc gen 出來的代碼</p><p>AI 直接把不同大小寫/camelCase/underscore 和型態等等的理解了</p><p>像這種go 代碼就不用手工定義</p><div class="highlight"><pre><code class="language-text"><span></span>	kolDigit := int64(0)
+如果你們想要自創一個編程語言，你們希望它有什麽特色?
+<p>就生產力來說, 我和很多人理想語言有著比較相反的概念</p><p>有很多人都說了強類型 / 反射 / 或者防止隱性推導的特色. 但再強也強不過Rust / Haskell .</p><p>反而, 我覺得把隱性推導再更進一步也未必不是好事</p><p>先像是PHP 那樣, 字串可以直接當成boolean, array(包括map), float, int, 空值 , 雖然這樣會令很多不了解轉換規則的人寫出不安全的代碼, 但能借技術債才是編程語言的根本需求。</p><p>但我覺得可以更進一步, 就是利用類似tabnine 的AI code completion, 把class / object / json / array 都一併推導了</p><p>像是要把一個grpc 的go struct 或者java class 同時給dynamodb / mysql / grpc 共用時, annotation 不用打, 不用寫新的models, 也不用改protoc gen 出來的代碼</p><p>AI 直接把不同大小寫/camelCase/underscore 和型態等等的理解了</p><p>像這種go 代碼就不用手工定義</p><div class="highlight"><pre><code class="language-text"><span></span>	kolDigit := int64(0)
 	if ui.IsKOL {
 		kolDigit = 1
 	}

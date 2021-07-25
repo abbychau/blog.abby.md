@@ -1,4 +1,4 @@
-给 PHP 网站加一个最简单的计数器，使用 Zend Framework，大概需要多久完成？如使用 txt 文档的形式，需要写多久？
+給 PHP 網站加一個最簡單的計數器，使用 Zend Framework，大概需要多久完成？如使用 txt 文檔的形式，需要寫多久？
 就幾秒鐘:<br><div class="highlight"><pre><code class="language-php"><span></span><span class="x">Count: </span><span class="cp">&lt;?</span><span class="o">=</span><span class="nv">$a</span><span class="o">=</span><span class="nb">file_get_contents</span><span class="p">(</span><span class="s2">"c"</span><span class="p">);</span><span class="nb">file_put_contents</span><span class="p">(</span><span class="s2">"c"</span><span class="p">,</span><span class="nv">$a</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span><span class="cp">?&gt;</span><span class="x"></span>
 </code></pre></div>
 1484373371

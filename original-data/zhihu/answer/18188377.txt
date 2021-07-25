@@ -1,3 +1,3 @@
-如何快速、准确地数出一袋瓜子有多少颗？
+如何快速、準確地數出一袋瓜子有多少顆？
 有鐅於問題已古, 不想碼太多字去搶那機率不高的票了。但看了上面的確沒有人提出工業級的解決方案。<br>要求高速, 大量, 準確的小型物件計算, 在現實中真的不常見, 但並不是沒有。唯一有日常中出現的莫過於遊戲機中心的推幣機。<br><br>推幣機的這個部分, 會因為其計算物強硬而光滑而變得比較簡單, 但其核心元件光眼/電眼, 在這個場景中還是可用的。<br><br>有關產品可見阿里爸爸的批發頁<br><a href="http://link.zhihu.com/?target=http%3A//www.1688.com/chanpin/-CDC6B1D2BBFAB9E2D1DB.html" class=" external" target="_blank" rel="nofollow noreferrer"><span class="invisible">http://www.</span><span class="visible">1688.com/chanpin/-CDC6B</span><span class="invisible">1D2BBFAB9E2D1DB.html</span><span class="ellipsis"></span></a>
 1375548612

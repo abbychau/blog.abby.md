@@ -1,3 +1,3 @@
-如何评价 minggeJS ？
+如何評價 minggeJS ？
 <p>太有啟發性了，啟發了我去造abbyjs</p><a data-draft-node="block" data-draft-type="link-card" href="http://link.zhihu.com/?target=https%3A//github.com/abbychau/abbyjs" class=" external" target="_blank" rel="nofollow noreferrer"><span class="invisible">https://</span><span class="visible">github.com/abbychau/abb</span><span class="invisible">yjs</span><span class="ellipsis"></span></a><p><br></p><p>MingGeJS 有兩點：</p><p>1.大量手工regex （為了兼容？</p><p>2.CSS3動畫庫</p><p>而且也是真的有自己的思想，很多細節都沒抄jquery。只拿幾千塊是有點委屈他了。</p>
 1609242162

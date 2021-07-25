@@ -1,3 +1,3 @@
-AlphaGoZero跟完美的围棋之神有多大差距？
+AlphaGoZero跟完美的圍棋之神有多大差距？
 <p>如果一天還是要依賴神經網絡而不是規則型策略而做圍棋AI 那麼圍棋之神就不會出現。</p><p>在卡片圍棋中，一至二十目的卡片都是整數。我們都傾向把第一手定在取得13.5卡片左右下第一手。但如果這是最優解。那麼後手優勢就會隨著AI提升，難以追回半目而令後手的優勢變得越來越高。</p><p>卡片圍棋：<a href="https://zhuanlan.zhihu.com/p/33390850" class="internal"><span class="invisible">https://</span><span class="visible">zhuanlan.zhihu.com/p/33</span><span class="invisible">390850</span><span class="ellipsis"></span></a></p><p>如果將卡片的值再半分呢？可能13.75目的先手會必勝，但算力競賽就會重置。</p><p>只要還沒法舉出所有情況，這個細分是無窮無盡的。而明顯，圍棋的狀態複雜度在這裡發生關鍵作用了。</p><p>如果圍棋之神存在，他會給出這張卡片的值，這個無理數的收斂方法。</p>
-1623499842
+o1623499842

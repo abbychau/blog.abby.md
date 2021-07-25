@@ -1,3 +1,3 @@
-PHP HTML 混写的别扭？
-1. html 嵌php写法建議用short tag <br>&lt;?=$a?&gt; 這樣的字符量不比模版多<br><br>2. 在表示層不要寫邏輯。<br><br>3. 把表示層抽出來成為view, 再用代碼(include, smarty, twig 等等)載入, 開發時可以在潛意識上幫助你實現2.<br><br>4. 把view 放給客戶端處理, 可以在技術上幫你強制執行2. , 比如jquery template, ember, angular 等等
+PHP HTML 混寫的別扭？
+1. html 嵌php寫法建議用short tag <br>&lt;?=$a?&gt; 這樣的字符量不比模版多<br><br>2. 在表示層不要寫邏輯。<br><br>3. 把表示層抽出來成為view, 再用代碼(include, smarty, twig 等等)載入, 開發時可以在潛意識上幫助你實現2.<br><br>4. 把view 放給客戶端處理, 可以在技術上幫你強制執行2. , 比如jquery template, ember, angular 等等
 1481470216

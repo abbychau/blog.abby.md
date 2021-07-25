@@ -1,3 +1,3 @@
-libevent支持udp协议吗？
+libevent支持udp協議嗎？
 <p>支持的,</p><p>比如這個時鐘服務器,</p><p><a href="http://link.zhihu.com/?target=https%3A//github.com/eklitzke/event-clock/blob/master/clock.c" class=" external" target="_blank" rel="nofollow noreferrer"><span class="invisible">https://</span><span class="visible">github.com/eklitzke/eve</span><span class="invisible">nt-clock/blob/master/clock.c</span><span class="ellipsis"></span></a></p><p>註冊了的 udp_cb</p><p></p><p></p>
 1499782026

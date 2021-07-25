@@ -1,4 +1,4 @@
-Python 字母行转序号应该怎么做？
+Python 字母行轉序號應該怎麽做？
 <div class="highlight"><pre><code class="language-text"><span></span>s = 'abcd'
 new_s = ''
 for c in s:

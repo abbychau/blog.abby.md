@@ -1,3 +1,3 @@
-drogon为什么能在Techempower第19次测试大幅提升多语句查询的性能？
+drogon為什麽能在Techempower第19次測試大幅提升多語句查詢的性能？
 <p>其中最重要一點是, 它現在和may-minihttp 和actix 一樣, 起用了非系統的malloc : 現在是MIMALLOC</p>
 1591767746

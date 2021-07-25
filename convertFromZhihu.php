@@ -14,7 +14,8 @@ foreach(glob("./original-data/zhihu/answer/*") as $filename){
 function process($filename){
     global $Parsedown,$translator,$converter,$indexList,$stores;
     $strFile=file_get_contents($filename);
-    $strFile=$translator->trad($strFile);
+//    $strFile=$translator->trad($strFile);
+//    file_put_contents($filename,$strFile);
     $fileParts = explode("\n",$strFile);
     $dateLine = trim(array_pop($fileParts));
     $titleLine = trim(array_shift($fileParts));
@@ -24,12 +25,22 @@ function process($filename){
     //     print_r($fileParts);
     //     exit;
     // }
+    if($dateLine[0]=="x"){
+        echo "x";
+        return;
+    }
+    if($dateLine[0]=="o"){
+        echo "o";
+        $dateLine=substr($dateLine,1);
+    }else{
+        echo ".";
+    }
     $store=['title'=>$titleLine,'content'=>$content,'date'=>date("Y-m-d H:i",$dateLine)];//$converter->convert($v['content'])
     $stores[]=$store;
     $txt=file_get_contents($filename);
 
     $cleanPath = "_generated_pages/answers/".str_replace(['/','.txt','zhihu','original-data','.','txt','answer'],'',$filename).".htm";
-    echo ".";
+    
     $indexList[] = "<li><a href='/$cleanPath'>{$store['title']}</a></li>";
     $template = file_get_contents('templates/template_html.htm');
     $template = str_replace(
