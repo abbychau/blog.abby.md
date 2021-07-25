@@ -129,7 +129,7 @@ function sanTag($tag){
     $file = mb_ereg_replace("([^\w\s\d\-_~,;\[\]\(\).])", '', $tag);
     // Remove any runs of periods (thanks falstro!)
     $file = mb_ereg_replace("([\.]{2,})", '', $file);
-    return $file;
+    return strtolower($file);
 }
 $metaIndexStr="<ul>";
 foreach($tagToArticles as $tag=>$list){
