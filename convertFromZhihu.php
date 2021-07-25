@@ -6,12 +6,13 @@ include("./includes/TranslateChinese.php");
 
 $translator = new TranslateChinese();
 $converter = new HtmlConverter();
+$indexList = [];
 foreach(glob("./original-data/zhihu/answer/*") as $filename){
     process($filename);
 }
 
 function process($filename){
-    global $Parsedown,$translator,$converter;
+    global $Parsedown,$translator,$converter,$indexList;
     $strFile=file_get_contents($filename);
     $strFile=$translator->trad($strFile);
     $fileParts = explode("\n",$strFile);
@@ -28,7 +29,8 @@ function process($filename){
     $txt=file_get_contents($filename);
 
     $cleanPath = "_generated_pages/answers/".str_replace(['/','.txt','zhihu','original-data','.','txt','answer'],'',$filename).".htm";
-
+    echo ".";
+    $indexList[] = "<li><a href='/$cleanPath'>{$store['title']}</a></li>";
     $template = file_get_contents('templates/template_html.htm');
     $template = str_replace(
         ["{{subject}}","{{date}}","{{tags}}","{{content}}","{{paramlink}}"],
@@ -39,3 +41,8 @@ function process($filename){
     // $out=['meta'=>$data,'content'=>$content,'markdown'=>$markdownContent,'generated_path'=>$cleanPath];
     // return $out;
 }
+$template = file_get_contents("./templates/template_meta.htm");
+$strIndexList = "<ol>".implode("\n",$indexList)."</ol>";
+file_put_contents("_generated_pages/index.htm",
+    str_replace(["{{tag}}","{{list}}"],["知乎答案",$strIndexList],$template)
+);
