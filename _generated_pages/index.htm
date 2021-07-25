@@ -1,1675 +1,21 @@
-<html>
-
-<head>
+<html><head>
     <title>Abby's Archive</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <BASE target="main_frame">
-
-    <style>
-        /* for all screens */
-        #info {
-            display: none;
-        }
-
-        /* only when orientation is in portrait mode */
-        @media all and (orientation:portrait) {
-            #info {
-                color: red;
-                display: inline;
-                font-size: 20px
-            }
-        }
-
-
-        body {
-            background-color: #2c292d;
-            color: #fdf9f3;
-            padding: 0;
-            margin: 10px;
-            font-family: consolas, monospace;
-            font-size:14px;
-        }
-
-        a {
-            color: #a9dc76;
-            cursor: pointer
-        }
-
-        .hljs {
-            font-family: consolas, monospace;
-        }
-
-        img {
-            max-width: 90%;
-        }
-    </style>
     <link rel="icon" type="image/png"
-        href="https://d2v9k5u4v94ulw.cloudfront.net/assets/images/2191294/original/e01cdc83-7764-49d6-9176-4695d37133b7?1522307876" />
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    href="https://d2v9k5u4v94ulw.cloudfront.net/assets/images/2191294/original/e01cdc83-7764-49d6-9176-4695d37133b7?1522307876" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
-
     <script>
-        $(document).ready(function(){ 
-            $('a').on('click', function(e){
-                window.parent.history.pushState({}, $(this).text(), "#"+$(this).attr('href'));
-            })
-        });
+    $(document).ready(function () {
+        if (window.location.hash) {
+            var hash = window.location.hash.substring(1); //Puts hash in variable, and removes the # character
+            $("#main_frame").attr('src',hash);
+        } else {
+        }
+    })
     </script>
-</head>
-
-<body>
-<h1>知乎答案</h1>
-<ol><li><a href='/_generated_pages/answers/1001016777.htm'>從一讀到一億需要讀多少個漢字？</a></li>
-<li><a href='/_generated_pages/answers/100610766.htm'>《魔獸》電影會不會拿下史上最高票房？</a></li>
-<li><a href='/_generated_pages/answers/100892873.htm'>如何評價 Swift 語言？</a></li>
-<li><a href='/_generated_pages/answers/101036115.htm'>APPLE官網為什麽保留著2012年款13英寸的MacBook Pro 售賣,因為很出色嗎?</a></li>
-<li><a href='/_generated_pages/answers/101236151.htm'>為什麽很多人更願意去咖啡館看書、寫作、工作？</a></li>
-<li><a href='/_generated_pages/answers/1012567390.htm'>什麽時候你會覺得群眾是愚蠢的？</a></li>
-<li><a href='/_generated_pages/answers/101689743.htm'>當面試官說「你之前做的項目沒有什麽難度」，應聘者應如何應對？</a></li>
-<li><a href='/_generated_pages/answers/1019679852.htm'>給困在孤島上的人空投什麽東西最殘忍？</a></li>
-<li><a href='/_generated_pages/answers/1020313079.htm'>為什麽遊戲王中很少出現泳裝卡面？</a></li>
-<li><a href='/_generated_pages/answers/102353008.htm'>如何看待這個現象：窮人的子女總認為自己父母付出很多？</a></li>
-<li><a href='/_generated_pages/answers/1024405937.htm'>什麽是我們這個年代像金子一樣珍貴的東西？</a></li>
-<li><a href='/_generated_pages/answers/1025412819.htm'>使用微軟歷代 Windows 版本是怎樣的一番體驗？</a></li>
-<li><a href='/_generated_pages/answers/102821895.htm'>看 AV 和一個人的道德水平相關嗎？</a></li>
-<li><a href='/_generated_pages/answers/102991445.htm'>《英雄聯盟》皮城女警怎樣才能玩好？</a></li>
-<li><a href='/_generated_pages/answers/103118637.htm'>現代家庭夫妻之間誰管錢比較合理？</a></li>
-<li><a href='/_generated_pages/answers/103373466.htm'>怎麽看當下非常火的直播？</a></li>
-<li><a href='/_generated_pages/answers/103488816.htm'>假設十個人用抽簽的方式抽取一個出來進行懲罰，考慮每個人運氣不同的情況，是不是最後一個抽的人最劃算？</a></li>
-<li><a href='/_generated_pages/answers/1040822372.htm'>麻煩點開詳細描述...音樂創作人一定要會樂理嗎？我就是寫出來好聽不夠嗎？</a></li>
-<li><a href='/_generated_pages/answers/104322591.htm'>怎樣判斷一部作品最適合的畫風？</a></li>
-<li><a href='/_generated_pages/answers/105183425.htm'>為什麽我現在看到港臺明星都覺得他們是港獨臺獨？</a></li>
-<li><a href='/_generated_pages/answers/105204073.htm'>如何看待 AKB48 針對 SNH48 的聲明？</a></li>
-<li><a href='/_generated_pages/answers/105330743.htm'>如何準確理解或翻譯 meta- 這個詞頭？</a></li>
-<li><a href='/_generated_pages/answers/1053706367.htm'>韓國「新天地」會長李萬熙記者會上跪地道歉，能獲得民眾原諒嗎？</a></li>
-<li><a href='/_generated_pages/answers/105432578.htm'>臺灣哪裏出了問題？</a></li>
-<li><a href='/_generated_pages/answers/1055508199.htm'>輸出語句，例如print，cout ，是最好的調試方法嗎?</a></li>
-<li><a href='/_generated_pages/answers/1055519364.htm'>如何評價武漢高二學生 4 天用了4 支筆寫 1.5 萬個「武漢加油」，拼出鐘南山頭像？</a></li>
-<li><a href='/_generated_pages/answers/105804606.htm'>數據可視化是讓信息易讀，還是更複雜？</a></li>
-<li><a href='/_generated_pages/answers/1059232351.htm'>下落式音遊中關閉判定線的顯示進行遊戲，對玩家會有什麽樣的提升和影響？為什麽會有玩家選擇關閉判定線？</a></li>
-<li><a href='/_generated_pages/answers/1060538971.htm'>為什麽有些前端一直用 div 當按鈕，而不是用 button？</a></li>
-<li><a href='/_generated_pages/answers/106089030.htm'>最近寫連連看程序,打亂圖片的時候圖片也不是很亂,感覺是隨機函數出了問題?</a></li>
-<li><a href='/_generated_pages/answers/106094779.htm'>為何要自主開發遊戲引擎？</a></li>
-<li><a href='/_generated_pages/answers/106282830.htm'>如何看待 WWDC 2016 上推出的 Swift Playgrounds？</a></li>
-<li><a href='/_generated_pages/answers/106414654.htm'>有一個懂P/NP問題解法的女朋友是一種怎樣的體驗？</a></li>
-<li><a href='/_generated_pages/answers/1073062008.htm'>如何看待孫正義向日本人提供100萬份免費新冠肺炎檢測，卻遭到日本人民抵制？</a></li>
-<li><a href='/_generated_pages/answers/1075854511.htm'>如何用照片/視頻記錄這個特殊的春天？</a></li>
-<li><a href='/_generated_pages/answers/107966950.htm'>如何評價まらしぃ（觸手猴）的鋼琴水平？</a></li>
-<li><a href='/_generated_pages/answers/1080348440.htm'>打日本麻將時如何判斷立直與默聽適當的時機？</a></li>
-<li><a href='/_generated_pages/answers/1080462283.htm'>為什麽作息規律，有健身，也多喝水，還是長痘痘？</a></li>
-<li><a href='/_generated_pages/answers/1084717050.htm'>喜歡用圖形界面而不喜歡用命令行的人是不是不適合當程序員？</a></li>
-<li><a href='/_generated_pages/answers/108506317.htm'>知乎和 Quora、Stack Overflow 的差距在哪兒？</a></li>
-<li><a href='/_generated_pages/answers/108508112.htm'>知乎為什麽出現了越來越多的諷刺題主且並沒有實際解決問題的答題者？</a></li>
-<li><a href='/_generated_pages/answers/109287003.htm'>什麽時候你覺得自己腦子不夠用，為什麽？</a></li>
-<li><a href='/_generated_pages/answers/1095027987.htm'>音遊如何針對性練習手速？</a></li>
-<li><a href='/_generated_pages/answers/109628639.htm'>誰最應該被印在人民幣上面？</a></li>
-<li><a href='/_generated_pages/answers/109880956.htm'>一行 JS (以分號結束)能實現什麽喪心病狂的功能？</a></li>
-<li><a href='/_generated_pages/answers/109889578.htm'>如何抽象評判現有語言優劣，繼而設計一款別具優雅的計算機語言 X ？</a></li>
-<li><a href='/_generated_pages/answers/109892093.htm'>堅持4個月，每天在線學2小時以上的編程是一種怎樣的體驗？</a></li>
-<li><a href='/_generated_pages/answers/109894066.htm'>你有哪些用計算機技能解決生活問題的經歷？</a></li>
-<li><a href='/_generated_pages/answers/109895320.htm'>編程語言會影響程序員的性格嗎？</a></li>
-<li><a href='/_generated_pages/answers/109895839.htm'>零基礎學編程，VB / Java / C / C# / C++ 等哪個更容易上手？</a></li>
-<li><a href='/_generated_pages/answers/110672740.htm'>天鳳麻將沒有現物情況下什麽時候可以無視立直？</a></li>
-<li><a href='/_generated_pages/answers/1108645843.htm'>現在英特爾集成的顯卡能吊打中檔的獨顯嗎？</a></li>
-<li><a href='/_generated_pages/answers/110874125.htm'>有人了解pokemon trading card game 嗎？</a></li>
-<li><a href='/_generated_pages/answers/110984308.htm'>GitHub 是怎樣的一個存在？</a></li>
-<li><a href='/_generated_pages/answers/111168229.htm'>Python 字母行轉序號應該怎麽做？</a></li>
-<li><a href='/_generated_pages/answers/111609380.htm'>一個人旅行有哪些必備神器？</a></li>
-<li><a href='/_generated_pages/answers/111649904.htm'>Python 有那麽神嗎？</a></li>
-<li><a href='/_generated_pages/answers/111738234.htm'>是否有多人認為程序員的工作就是複制粘貼？為什麽？</a></li>
-<li><a href='/_generated_pages/answers/112066315.htm'>怎麽看待今晚《最強大腦》瓜子哥的俄羅斯方塊挑戰項目？</a></li>
-<li><a href='/_generated_pages/answers/112315558.htm'>大三的女生，學編程一年了，不想畢業後當程序員，應不應該考慮轉行？如何在新的方向努力？</a></li>
-<li><a href='/_generated_pages/answers/112583995.htm'>為什麽部分香港金融行業從業者能接受英語，卻不能接受普通話？</a></li>
-<li><a href='/_generated_pages/answers/113688807.htm'>虐待蚊子都有什麽奇技淫巧？</a></li>
-<li><a href='/_generated_pages/answers/1159344271.htm'>港澳臺哪些偏見是讓大陸同胞不悅的？</a></li>
-<li><a href='/_generated_pages/answers/1159530261.htm'>怎麽用通俗的語言解釋大數據和雲計算？</a></li>
-<li><a href='/_generated_pages/answers/1159692155.htm'>MiloYip到底說了什麽?</a></li>
-<li><a href='/_generated_pages/answers/116483503.htm'>為什麽大部分財務人員工資那麽低？</a></li>
-<li><a href='/_generated_pages/answers/1166247469.htm'>柯潔被清華大學免試錄取，拋開運動員保送的問題，大學對名人的特殊招收方式是否妥當？</a></li>
-<li><a href='/_generated_pages/answers/116849348.htm'>如何評價 CBC 主持人忘關話筒評論中國 14 歲遊泳運動員艾衍含「died like a pig」？</a></li>
-<li><a href='/_generated_pages/answers/117018542.htm'>nodejs怎樣向tomcat服務器提交ajax請求？</a></li>
-<li><a href='/_generated_pages/answers/117181291.htm'>按照無限猴子定律，是不是圓周率中就包含了描述整個宇宙信息？</a></li>
-<li><a href='/_generated_pages/answers/117268405.htm'>區塊鏈是什麽，如何簡單易懂地介紹區塊鏈？</a></li>
-<li><a href='/_generated_pages/answers/117594878.htm'>在php開發工作中，你用redis做過什麽？</a></li>
-<li><a href='/_generated_pages/answers/1176297063.htm'>怎樣不提雪字描述雪很大?</a></li>
-<li><a href='/_generated_pages/answers/1177121783.htm'>為什麽現實很少有人穿動漫中好看的白絲？</a></li>
-<li><a href='/_generated_pages/answers/117733607.htm'>業余籃球賽事的運營需要註意哪些方面？</a></li>
-<li><a href='/_generated_pages/answers/118781140.htm'>請問這幾行代碼的意思是什麽？</a></li>
-<li><a href='/_generated_pages/answers/1189424169.htm'>信息門是什麽？</a></li>
-<li><a href='/_generated_pages/answers/1193034653.htm'>想了個日文名叫絵羽（えはね）翼（つばさ），日本人會覺得奇怪嗎？</a></li>
-<li><a href='/_generated_pages/answers/1194960240.htm'>Rust相較於Haskell除了效率還有何優勢？</a></li>
-<li><a href='/_generated_pages/answers/119606573.htm'>如果lol設立全球名人堂，那麽會有哪些人入選？</a></li>
-<li><a href='/_generated_pages/answers/119804073.htm'>面對一些令人頭疼事情的時候，可以用什麽方式去思考和解決？如何去克服對失敗的恐懼？</a></li>
-<li><a href='/_generated_pages/answers/119834694.htm'>為什麽說 goto 是一種不好的用法？</a></li>
-<li><a href='/_generated_pages/answers/1199118163.htm'>如何評價遊戲LIVE A LIVE（時空勇士）？</a></li>
-<li><a href='/_generated_pages/answers/120154390.htm'>吸食海洛因四個月，戒掉的幾率是多少？</a></li>
-<li><a href='/_generated_pages/answers/120171354.htm'>島田莊司是怎樣獲得“推理之神”這一稱號的？</a></li>
-<li><a href='/_generated_pages/answers/1202879853.htm'>領導喜歡怎樣的下屬？</a></li>
-<li><a href='/_generated_pages/answers/1205139771.htm'>如何看待部分年輕人對B站《後浪》的消極態度?</a></li>
-<li><a href='/_generated_pages/answers/1206017252.htm'>請問學計算機難嗎？</a></li>
-<li><a href='/_generated_pages/answers/1209202690.htm'>日麻中三麻的自摸損是不是麻將中最反智的設定？</a></li>
-<li><a href='/_generated_pages/answers/121041569.htm'>認識男友2年，馬上結婚，為什麽他從沒生理需求？</a></li>
-<li><a href='/_generated_pages/answers/1215631396.htm'>沒有一點城府，別人問什麽都如實回答，該怎麽辦？</a></li>
-<li><a href='/_generated_pages/answers/121828415.htm'>有哪些推薦的可以編曲的軟件？</a></li>
-<li><a href='/_generated_pages/answers/1218292198.htm'>你認為你天生就有吃動物的權利嗎？</a></li>
-<li><a href='/_generated_pages/answers/1219459576.htm'>Node.js 這麽重要，為什麽大學教育沒有開課？</a></li>
-<li><a href='/_generated_pages/answers/1219510670.htm'>哪位大神能用通俗的語言給小菜鳥解釋一下反訓及其道理？</a></li>
-<li><a href='/_generated_pages/answers/1219608267.htm'>澳門人怎麽看待香港人？</a></li>
-<li><a href='/_generated_pages/answers/1220089137.htm'>隨著微服務（服務化）的盛行，php是否勢必會越來越衰頹，swoole能否撐起php的另一片天？</a></li>
-<li><a href='/_generated_pages/answers/1224066572.htm'>為什麽遊戲行業近十年幾乎沒有任何進展?</a></li>
-<li><a href='/_generated_pages/answers/122661166.htm'>知乎編輯器應該支持 Markdown 嗎？</a></li>
-<li><a href='/_generated_pages/answers/1227357929.htm'>QQ和20多個人有火花的男生是什麽樣的人？</a></li>
-<li><a href='/_generated_pages/answers/1227549291.htm'>為什麽學校里普遍都教java，而不教Golang, Rust, Nodejs這些?</a></li>
-<li><a href='/_generated_pages/answers/122872617.htm'>是不是現在的互聯網服務比較排斥Tor用戶？</a></li>
-<li><a href='/_generated_pages/answers/122876597.htm'>如何完全隱藏自己的身份上網？</a></li>
-<li><a href='/_generated_pages/answers/1230250298.htm'>相比於其他編程語言C++相對較難，為什麽還有那麽多人學習，尤其是中小學生？</a></li>
-<li><a href='/_generated_pages/answers/1231185054.htm'>期貨股票交易如果你虧錢，你可以反著做可以嗎?</a></li>
-<li><a href='/_generated_pages/answers/1231562674.htm'>如何評價馬保國為太極正名而反被KO？</a></li>
-<li><a href='/_generated_pages/answers/123442313.htm'>為什麽吃飯吃得很幹凈會被某些人嘲笑？</a></li>
-<li><a href='/_generated_pages/answers/1237050008.htm'>JAVA中直接用Jdbc就能操作數據庫了，為什麽還要用spring框架?</a></li>
-<li><a href='/_generated_pages/answers/1237201918.htm'>植物為什麽會產油？</a></li>
-<li><a href='/_generated_pages/answers/1237376014.htm'>如何看待同濟大學軟件工程系2020年大三前端小作業是不用框架2周寫一個電商網站？</a></li>
-<li><a href='/_generated_pages/answers/123781618.htm'>PHP 項目中的 MySQL 通常用 phpMyAdmin 管理嗎？還是用 cmd 管理？大公司的項目通常用什麽管理？</a></li>
-<li><a href='/_generated_pages/answers/1238594479.htm'>當你開始懷疑自己能力的時候是不是消極的自我暗示？</a></li>
-<li><a href='/_generated_pages/answers/1238704275.htm'>雷軍提問：未來幾年，科技領域會有哪些重大突破？將會為哪些行業帶來新機遇？</a></li>
-<li><a href='/_generated_pages/answers/124105288.htm'>如何評價Ryu☆（中原龍太郎）的新EP《shiro—ep》?</a></li>
-<li><a href='/_generated_pages/answers/124216981.htm'>unity能不能識別節奏遊戲BMS文件？如果不能，有什麽遊戲引擎可以讀？</a></li>
-<li><a href='/_generated_pages/answers/124238637.htm'>為什麽不要去考驗人性？</a></li>
-<li><a href='/_generated_pages/answers/124313996.htm'>微博、豆瓣、貼吧與知乎有什麽區別？</a></li>
-<li><a href='/_generated_pages/answers/1243297222.htm'>如何評價半澤直樹中的渡真利忍？</a></li>
-<li><a href='/_generated_pages/answers/1246344538.htm'>日本土地價格及建房費用如何？有哪些建築公司願意到山里建房？</a></li>
-<li><a href='/_generated_pages/answers/1248457447.htm'>如果你們想要自創一個編程語言，你們希望它有什麽特色?</a></li>
-<li><a href='/_generated_pages/answers/1251652034.htm'>真的有人不認為柯潔的這些言行是沒有問題的嗎？</a></li>
-<li><a href='/_generated_pages/answers/125179873.htm'>PHP 為什麽沒有取代 Python ？</a></li>
-<li><a href='/_generated_pages/answers/125198692.htm'>我們用的計算機語言底層都是用什麽寫的？</a></li>
-<li><a href='/_generated_pages/answers/125216898.htm'>小米作了哪些惡？</a></li>
-<li><a href='/_generated_pages/answers/1252775944.htm'>請各位大佬們用簡潔通俗易懂的語言系統地為我講一下導數的運算，謝謝你們?</a></li>
-<li><a href='/_generated_pages/answers/1255870929.htm'>代碼之間為什麽要加空格？</a></li>
-<li><a href='/_generated_pages/answers/1258039075.htm'>高智商是種什麽體驗？</a></li>
-<li><a href='/_generated_pages/answers/125882290.htm'>你寫過什麽有趣的程序？</a></li>
-<li><a href='/_generated_pages/answers/1267398907.htm'>圍棋為什麽不規定貼7目？</a></li>
-<li><a href='/_generated_pages/answers/1267455276.htm'>人在國內，如何在去日本之前，租到日本的房子？</a></li>
-<li><a href='/_generated_pages/answers/1269284741.htm'>HTML5新標簽section、article、aside的語義以及它們適用場景？</a></li>
-<li><a href='/_generated_pages/answers/1272498983.htm'>部分人都提倡禁止遊戲，你怎麽看?</a></li>
-<li><a href='/_generated_pages/answers/1274529467.htm'>大家電腦上瀏覽器首頁都是什麽？</a></li>
-<li><a href='/_generated_pages/answers/1274586119.htm'>中間件是什麽？如何解釋比較通俗易懂？</a></li>
-<li><a href='/_generated_pages/answers/1274932001.htm'>drogon為什麽能在Techempower第19次測試大幅提升多語句查詢的性能？</a></li>
-<li><a href='/_generated_pages/answers/1276326694.htm'>為什麽我很反感電子競技？</a></li>
-<li><a href='/_generated_pages/answers/1279616980.htm'>如何看待谷歌擬棄用「黑名單」這一說法，助力反種族歧視運動？黑名單是否涉嫌種族歧視？</a></li>
-<li><a href='/_generated_pages/answers/127967192.htm'>為什麽香港幾乎人手一個名牌包及滿地都是好車？</a></li>
-<li><a href='/_generated_pages/answers/1280702702.htm'>如果一個人看問題和事物理解層次太高，和常人差距太大，難以合眾，是該悲哀還是慶幸?</a></li>
-<li><a href='/_generated_pages/answers/1295948181.htm'>我國是否有必要建成類似日本電車的城際鐵路?</a></li>
-<li><a href='/_generated_pages/answers/1297474617.htm'>a²＋a³＝392 怎麽解？</a></li>
-<li><a href='/_generated_pages/answers/129880396.htm'>怎樣反駁「程序 = 算法 + 數據結構」的言論？</a></li>
-<li><a href='/_generated_pages/answers/1299226210.htm'>微軟這些年有哪些大的敗筆?</a></li>
-<li><a href='/_generated_pages/answers/1300637429.htm'>前端應該如何在公司業務中落地 Node？</a></li>
-<li><a href='/_generated_pages/answers/1300651665.htm'>如何看待「語言只是一門工具」的說法？</a></li>
-<li><a href='/_generated_pages/answers/130066223.htm'>最近想分析的一下gcc的源代碼，但不知從何出入手。請大神們指教指教，非常感謝。？</a></li>
-<li><a href='/_generated_pages/answers/1301598904.htm'>i7 4790不帶k能最大化1080ti的性能嗎？</a></li>
-<li><a href='/_generated_pages/answers/1305846342.htm'>程序員的悲哀是什麽？</a></li>
-<li><a href='/_generated_pages/answers/130607008.htm'>剛上大一，軟件工程專業，在學c語言，天天打代碼，有什麽好的建議？</a></li>
-<li><a href='/_generated_pages/answers/130616301.htm'>如何評價唐納德·特朗普（Donald J. Trump）當選第 45 任美國總統？</a></li>
-<li><a href='/_generated_pages/answers/1307058513.htm'>周傑倫聽自己的歌要開會員嗎？</a></li>
-<li><a href='/_generated_pages/answers/1311075415.htm'>如何看待 2020 年 6 月 29 日晚，印度宣布封殺 TikTok、微信等 59 款中國 App?</a></li>
-<li><a href='/_generated_pages/answers/1312923743.htm'>往余額寶里存50萬，不工作了可以嗎，為什麽？</a></li>
-<li><a href='/_generated_pages/answers/1313132299.htm'>2020 年有沒有同時滿足辦公和遊戲的顯示器推薦呢？</a></li>
-<li><a href='/_generated_pages/answers/1317059019.htm'>你有什麽話想對香港人說？</a></li>
-<li><a href='/_generated_pages/answers/1323832291.htm'>巨龍不能花錢卻死死占據著那麽多金銀財寶的意義何在？</a></li>
-<li><a href='/_generated_pages/answers/1324376692.htm'>如何看待 2020 年上海市高考作文題？</a></li>
-<li><a href='/_generated_pages/answers/1324573179.htm'>高考前一個小時怎麽逆襲?</a></li>
-<li><a href='/_generated_pages/answers/1328439062.htm'>在立直麻將中使用中國流打法是否真的吃虧？</a></li>
-<li><a href='/_generated_pages/answers/1336136145.htm'>我應該從日本辭職回國嗎？</a></li>
-<li><a href='/_generated_pages/answers/1338413746.htm'>如何讓不懂編程的人感受到編程的魅力？</a></li>
-<li><a href='/_generated_pages/answers/1338418199.htm'>和平有多奢侈？</a></li>
-<li><a href='/_generated_pages/answers/1339921152.htm'>5G 的普及，將給互聯網行業帶來哪些機遇，有哪些商業模式可能取得較快發展？</a></li>
-<li><a href='/_generated_pages/answers/1342348309.htm'>為什麽楊振寧被噴得這麽慘？</a></li>
-<li><a href='/_generated_pages/answers/134459054.htm'>如何評價特朗普打破1979年以來慣例與臺灣地區當局領導人通電話？</a></li>
-<li><a href='/_generated_pages/answers/134538509.htm'>如何反駁「JVM、PVM是C寫的，語言不就是對C的封裝嗎！把C學精通了看我多厲害！」？</a></li>
-<li><a href='/_generated_pages/answers/1348342916.htm'>公司里有人踩著點上班，也不願意晚下班1分鐘，安排加班總說家里有事，怎麽辦？</a></li>
-<li><a href='/_generated_pages/answers/1349316144.htm'>如何評價阿里、螞蟻集團取消周報？周報機制是否有必要？</a></li>
-<li><a href='/_generated_pages/answers/134946682.htm'>為什麽拍照的時候大家會習慣性的舉起剪刀手呢？</a></li>
-<li><a href='/_generated_pages/answers/135327663.htm'>怎麽回答面試官的題目：你是怎麽理解 http？</a></li>
-<li><a href='/_generated_pages/answers/135390114.htm'>PHP HTML 混寫的別扭？</a></li>
-<li><a href='/_generated_pages/answers/135395542.htm'>如何看待家長以「反日」名義禁止小孩子觀看《你的名字。》？</a></li>
-<li><a href='/_generated_pages/answers/135446549.htm'>為什麽用php的人越來越少了？</a></li>
-<li><a href='/_generated_pages/answers/135500367.htm'>26歲學web前端還是php或安卓好就業啊？</a></li>
-<li><a href='/_generated_pages/answers/135524957.htm'>如何看待世嘉遊戲《如龍6》中出現臺詞「臺灣這個國家」？</a></li>
-<li><a href='/_generated_pages/answers/135759616.htm'>為什麽有人說“仇日是智商問題”？</a></li>
-<li><a href='/_generated_pages/answers/136021409.htm'>並行計算與C++的關系是什麽？</a></li>
-<li><a href='/_generated_pages/answers/136040422.htm'>為什麽沒有新的支持底層達到類似C++這種程度，而易用性達到C#的語言出現？</a></li>
-<li><a href='/_generated_pages/answers/136339802.htm'>港幣現在...........誰知道怎麽回事</a></li>
-<li><a href='/_generated_pages/answers/136355590.htm'>如何評價最新最強大腦里的泰森多邊形項目難度？</a></li>
-<li><a href='/_generated_pages/answers/136425506.htm'>在香港讀研究型碩士學校安排宿舍嗎？  畢業以後在就業市場上好就業嗎？</a></li>
-<li><a href='/_generated_pages/answers/1364303839.htm'>為什麽和日本人說話時不要隨便說“嗯”這個字呢？</a></li>
-<li><a href='/_generated_pages/answers/136441620.htm'>如何評價 NVIDIA 發布的 DGX-1？</a></li>
-<li><a href='/_generated_pages/answers/136441833.htm'>到香港讀Mphil環境方面的 具體幹些什麽 會不會很難呢？</a></li>
-<li><a href='/_generated_pages/answers/1371216387.htm'>日本的疫情為何反反複複？</a></li>
-<li><a href='/_generated_pages/answers/1372465657.htm'>親妹妹和我表白了……我該怎麽做……？</a></li>
-<li><a href='/_generated_pages/answers/1373936974.htm'>如何反駁“靠幾代人積累的背景和財富，憑什麽不如你寒窗苦讀幾十年”這一說法？</a></li>
-<li><a href='/_generated_pages/answers/1376969786.htm'>一個女孩子背著自己男朋友去見別人的男朋友，這是什麽心理？</a></li>
-<li><a href='/_generated_pages/answers/1379681547.htm'>8700k和1080ti該怎麽選擇？</a></li>
-<li><a href='/_generated_pages/answers/1381421330.htm'>國家收購Tiktok是否可行？</a></li>
-<li><a href='/_generated_pages/answers/138270166.htm'>單表10億條記錄(100G左右)的數據用哪個數據庫較好？</a></li>
-<li><a href='/_generated_pages/answers/1383116497.htm'>為什麽其他辦公領域不使用git?</a></li>
-<li><a href='/_generated_pages/answers/1388513532.htm'>日本麻將如果增加番種「兩杠子（1 番）」並將「三杠子」調整為 3 番，同時恢複「杠振（1 番）」的話？</a></li>
-<li><a href='/_generated_pages/answers/139340529.htm'>如何區分抽象派畫家的作品與小孩隨手塗鴉之作？</a></li>
-<li><a href='/_generated_pages/answers/139341592.htm'>抽象畫與印象畫有何本質區別？</a></li>
-<li><a href='/_generated_pages/answers/139348409.htm'>當一個很重要的人說最後悔的事就是認識你，是怎樣的一種感受?</a></li>
-<li><a href='/_generated_pages/answers/139352702.htm'>三本院校，平均分78，雅思6，能申請到香港讀研嗎？</a></li>
-<li><a href='/_generated_pages/answers/1398098951.htm'>有沒有人特別反感「人口紅利」這個詞？</a></li>
-<li><a href='/_generated_pages/answers/1398119507.htm'>倘若在一次浩劫中，所有科學知識都被摧毀，每門學科只能留存一句話，你認為你所在的領域會留下什麽話呢？</a></li>
-<li><a href='/_generated_pages/answers/139834888.htm'>戰術性勝利和戰略性勝利區別在哪里？</a></li>
-<li><a href='/_generated_pages/answers/139972308.htm'>香港房子為什麽沒有陽臺？</a></li>
-<li><a href='/_generated_pages/answers/140061933.htm'>音樂人是不是要改觀對fl studio的刻板印象？</a></li>
-<li><a href='/_generated_pages/answers/140063366.htm'>Macbook裝Windows系統來玩FL Studio好用？還是…?</a></li>
-<li><a href='/_generated_pages/answers/140066275.htm'>想學習Logic Pro編曲，正好蘋果10.28新推出了三款Pro，選擇哪一款就夠了呢？</a></li>
-<li><a href='/_generated_pages/answers/140341411.htm'>簡書、知乎、github、qiita這些網站的markdown中粘貼截圖直接上傳的功能是如何實現的？</a></li>
-<li><a href='/_generated_pages/answers/140908785.htm'>給 PHP 網站加一個最簡單的計數器，使用 Zend Framework，大概需要多久完成？如使用 txt 文檔的形式，需要寫多久？</a></li>
-<li><a href='/_generated_pages/answers/141052100.htm'>yoshiki(林佳樹）的古典音樂屬於什麽水平？</a></li>
-<li><a href='/_generated_pages/answers/141054339.htm'>為什麽在和外國人聊天時對方說的話都懂但是自己卻不能流利表達出想法，如何改變？</a></li>
-<li><a href='/_generated_pages/answers/1416591619.htm'>為什麽手機版騰訊圍棋里9路棋黑貼7目半？</a></li>
-<li><a href='/_generated_pages/answers/1417170669.htm'>如何評價遊戲《怪物獵人世界》的DLC 冰原（Ice Borne）?</a></li>
-<li><a href='/_generated_pages/answers/1421504506.htm'>傳統下落式實體按鍵街機音遊的玩法與彈鋼琴是否有本質區別？（希望各位盡可能看一下問題描述）？</a></li>
-<li><a href='/_generated_pages/answers/142347545.htm'>jade渲染慢的問題？</a></li>
-<li><a href='/_generated_pages/answers/1423749622.htm'>去高盛做quant developer還是去bloomberg做SDE?</a></li>
-<li><a href='/_generated_pages/answers/142375256.htm'>為什麽上學不是唯一出路，而我們卻一定要上學？</a></li>
-<li><a href='/_generated_pages/answers/142460629.htm'>我怎樣面對內心對世界的無意義感？</a></li>
-<li><a href='/_generated_pages/answers/142486921.htm'>JavaScript 函數式編程存在性能問題麽？</a></li>
-<li><a href='/_generated_pages/answers/1430483523.htm'>我爸不停否認我關於男女平權的觀點，並且說我以後在社會上會混不下去，我該怎麽辦？</a></li>
-<li><a href='/_generated_pages/answers/1434491512.htm'>mhw入坑，想知道老版本的獵人是怎麽應對飛龍種的?</a></li>
-<li><a href='/_generated_pages/answers/1435837490.htm'>黃賭毒三個誰最厲害？</a></li>
-<li><a href='/_generated_pages/answers/1435849165.htm'>如給李登輝塑“漢奸跪像”，最好擺放在哪里？</a></li>
-<li><a href='/_generated_pages/answers/1435856793.htm'>在嚴刑逼供不能做到舍生取義的人是漢奸嗎？</a></li>
-<li><a href='/_generated_pages/answers/143652944.htm'>如果谷歌無征兆地宕機24小時，會發生什麽？</a></li>
-<li><a href='/_generated_pages/answers/1437180514.htm'>你認為《怪物獵人世界》膚淺嗎？</a></li>
-<li><a href='/_generated_pages/answers/1438624142.htm'>當前有什麽辦法可以緩解甚至根除996？</a></li>
-<li><a href='/_generated_pages/answers/144037042.htm'>為什麽很多人認為醫生教師不應該多賺錢？</a></li>
-<li><a href='/_generated_pages/answers/144882237.htm'>做了人工智能獨立研究很多年，如何找出路？</a></li>
-<li><a href='/_generated_pages/answers/145017930.htm'>喜歡動漫的男生有什麽特點？</a></li>
-<li><a href='/_generated_pages/answers/1451138139.htm'>私が殺人犯です。和 私は殺人犯です。的區別是什麽？</a></li>
-<li><a href='/_generated_pages/answers/145232927.htm'>在香港理工大學 (PolyU) 就讀是怎樣一番體驗？</a></li>
-<li><a href='/_generated_pages/answers/1453021454.htm'>圍棋的棋子除了最常見的玻璃材質之外，有沒有用其他材質制成的棋子？</a></li>
-<li><a href='/_generated_pages/answers/145696513.htm'>GIMP 與 PS 兩者之間具有可比性嗎？如果有的話，哪個更好？</a></li>
-<li><a href='/_generated_pages/answers/1457039807.htm'>在立直麻將中，若公開嶺上牌（這里指初始牌墻的最後四張牌），其它規則不變，牌局會發生什麽樣的變化？</a></li>
-<li><a href='/_generated_pages/answers/1460707348.htm'>為什麽有些人只喜歡單機遊戲里的 PVE？</a></li>
-<li><a href='/_generated_pages/answers/1463374298.htm'>餓了麽淩晨發文將推出新功能，用戶可選擇是否願意多等外賣員 5 分鐘，你願意多等這 5 分鐘嗎？</a></li>
-<li><a href='/_generated_pages/answers/1466391703.htm'>為什麽沒有普及128位操縱系統的計算機?</a></li>
-<li><a href='/_generated_pages/answers/1468006679.htm'>如何看待張馨予呼籲不要對女演員胖瘦太苛刻？你認同她的觀點嗎？</a></li>
-<li><a href='/_generated_pages/answers/147159913.htm'>在新大師規則（大師規則4）適用後，遊戲王會從此走向衰落嗎？</a></li>
-<li><a href='/_generated_pages/answers/147575689.htm'>文科女生想找個程序員當男朋友，可為什麽朋友都覺得我口味有點重……？</a></li>
-<li><a href='/_generated_pages/answers/1479898353.htm'>日本人真的很敬業嗎？真的會守著破小公司幹一輩子嗎？</a></li>
-<li><a href='/_generated_pages/answers/148374386.htm'>是等華為P10還是三星S7edge？？</a></li>
-<li><a href='/_generated_pages/answers/148472971.htm'>聽重金屬的朋友們，你們會主動和身邊的朋友談論這個嗎？</a></li>
-<li><a href='/_generated_pages/answers/148823288.htm'>理論上，一個國家能不能不征稅，僅靠發行新幣來作為政府支出的來源？</a></li>
-<li><a href='/_generated_pages/answers/1492673674.htm'>為什麽祖傳代碼被稱為「屎山」？</a></li>
-<li><a href='/_generated_pages/answers/14980930.htm'>為什麽音樂中一小節五拍的樂曲很少？</a></li>
-<li><a href='/_generated_pages/answers/1498177081.htm'>為什麽人們總說漢堡是垃圾食品？</a></li>
-<li><a href='/_generated_pages/answers/1500862169.htm'>為什麽很多單機玩家把單機看作遊戲產業的頂端和象征？</a></li>
-<li><a href='/_generated_pages/answers/15016129.htm'>為什麽google提供的奧運賽程都是美國LA時間？</a></li>
-<li><a href='/_generated_pages/answers/1502130660.htm'>如何看待男子為了打一副銀手鐲，連偷 40 個奔馳車標，但奔馳車標只是不銹鋼？</a></li>
-<li><a href='/_generated_pages/answers/1502449719.htm'>為什麽現在部分985高校還是給大一上C語言課？</a></li>
-<li><a href='/_generated_pages/answers/1503090910.htm'>舍友堅持認為自己在淘寶上促銷39塊錢買的褲子平時399才能買到，如何勸醒他或者勸醒我自己放棄勸醒他？</a></li>
-<li><a href='/_generated_pages/answers/15032520.htm'>你有哪些打麻將的經驗技巧？</a></li>
-<li><a href='/_generated_pages/answers/150367515.htm'>Javascript 分號寫前面好還是後面好?</a></li>
-<li><a href='/_generated_pages/answers/150430619.htm'>計算器計算出「1+1=2」的整個計算過程是怎樣的？為什麽能秒算？</a></li>
-<li><a href='/_generated_pages/answers/15046521.htm'>如何教育一個軟硬不吃又怯懦膽小的孩子？</a></li>
-<li><a href='/_generated_pages/answers/15073673.htm'>怎樣提高閱讀量和閱讀速度？（閱讀各類書籍、雜誌、報刊等）</a></li>
-<li><a href='/_generated_pages/answers/15075178.htm'>有了通俗的日常用語，為什麽還要專業術語？</a></li>
-<li><a href='/_generated_pages/answers/15097105.htm'>想去香港工作，學托福還是雅思好一點？如何申請？</a></li>
-<li><a href='/_generated_pages/answers/15097111.htm'>香港人和大陸人的沖突是否嚴重？</a></li>
-<li><a href='/_generated_pages/answers/15097124.htm'>reg課是什麽意思？香港大學生愛說的嗎？</a></li>
-<li><a href='/_generated_pages/answers/15097134.htm'>為什麽香港和大陸派出不同的奧運代表團？</a></li>
-<li><a href='/_generated_pages/answers/15097137.htm'>面向臺灣和香港的繁體APP應用，主要發布在哪個渠道？</a></li>
-<li><a href='/_generated_pages/answers/15097155.htm'>山寨node.js作lua語言的版本，技術上有意義嗎？適用於哪些場景？</a></li>
-<li><a href='/_generated_pages/answers/15099366.htm'>作為一個中高級 PHPer，應該懂得哪些技術？</a></li>
-<li><a href='/_generated_pages/answers/15101212.htm'>效率最高的時候你一天能做什麽？</a></li>
-<li><a href='/_generated_pages/answers/15101236.htm'>學完html  css   和javascript可以做一個讓用戶上傳照片 發布文字     評論    關註好友的網站嗎？</a></li>
-<li><a href='/_generated_pages/answers/15104653.htm'>一個民科的論文（試圖統一物理上的相互作用、生物進化、意識形成、社會發展等問題）應當如何發表？</a></li>
-<li><a href='/_generated_pages/answers/151270703.htm'>如何和一個音遊玩家開始一個話題？</a></li>
-<li><a href='/_generated_pages/answers/151291487.htm'>既然程序是通過調用各種API來實現的，我們為什麽還要學算法？</a></li>
-<li><a href='/_generated_pages/answers/15131555.htm'>散文看多了寫多了會不會影響邏輯思維寫不好一些正一點的文章?</a></li>
-<li><a href='/_generated_pages/answers/1515109702.htm'>以下js程序如何編寫，最好用switch語句？</a></li>
-<li><a href='/_generated_pages/answers/1515176366.htm'>114514歲了還事學生是怎樣一種體驗？</a></li>
-<li><a href='/_generated_pages/answers/1523615367.htm'>男生都 26 歲了還買 PS5 ，值得嗎?</a></li>
-<li><a href='/_generated_pages/answers/1523628173.htm'>現在前端實習一個月，不知道要不要轉後端？</a></li>
-<li><a href='/_generated_pages/answers/15270230.htm'>如果日本人的名字翻譯成中文是多音字，應該怎麽讀？</a></li>
-<li><a href='/_generated_pages/answers/1535583137.htm'>程序員該選擇Macbook Pro嗎？</a></li>
-<li><a href='/_generated_pages/answers/153681393.htm'>聲明變量var後面每一個變量之間都用逗號隔開和每一個變量都用var聲明有什麽區別？</a></li>
-<li><a href='/_generated_pages/answers/15378456.htm'>無色無味液態，極小份量（如幾滴）即可致人深度昏迷不省人事幾小時但事後身體無恙的麻醉品有哪些?</a></li>
-<li><a href='/_generated_pages/answers/15378494.htm'>做了一個鉆石的電子商務網站，可是流量上不去，轉化率很低。該怎麽辦？還有，針對鉆石的網上銷售，應該註意些什麽？誰能提供一個系統的切合實際的方案？萬分感謝</a></li>
-<li><a href='/_generated_pages/answers/15378501.htm'>什麽樣的人不適合創業？</a></li>
-<li><a href='/_generated_pages/answers/153902677.htm'>有哪些方法能夠比彩禮更好的降低婚姻市場中的信息不對稱？</a></li>
-<li><a href='/_generated_pages/answers/15407403.htm'>Objective-C 學到什麽程度，才可以開始研究學習 iPhone 編程？</a></li>
-<li><a href='/_generated_pages/answers/1545424823.htm'>你是切身體會到了PHP使用體驗差；還是因為就業前景等因素讓你覺得PHP很差？</a></li>
-<li><a href='/_generated_pages/answers/1545728455.htm'>美國正式退出世衛組織，你想說什麽？意味著什麽？</a></li>
-<li><a href='/_generated_pages/answers/154787675.htm'>計算機領域研究方向有鄙視鏈嗎？</a></li>
-<li><a href='/_generated_pages/answers/1552193377.htm'>毀掉一個女孩的方法是什麽？</a></li>
-<li><a href='/_generated_pages/answers/155499424.htm'>地鐵內對別人說「下車嗎？下嗎？」是文明有禮還是語言暴力？</a></li>
-<li><a href='/_generated_pages/answers/1559245124.htm'>為什麽說不能以道德評判去衡量文學作品？</a></li>
-<li><a href='/_generated_pages/answers/1560750828.htm'>弈城圍棋5段已經可以邁入高手的行業了嗎？</a></li>
-<li><a href='/_generated_pages/answers/1566646231.htm'>只會中文可以去日本旅行嗎？</a></li>
-<li><a href='/_generated_pages/answers/157030116.htm'>如何用設計超贊的房子代替商品房？</a></li>
-<li><a href='/_generated_pages/answers/157038421.htm'>當有人叫你學霸或大神的時候，如何回應？</a></li>
-<li><a href='/_generated_pages/answers/1571351897.htm'>如何解決思維混亂、講話沒條理的情況？</a></li>
-<li><a href='/_generated_pages/answers/157842565.htm'>日本麻將中如何處理「相公」？</a></li>
-<li><a href='/_generated_pages/answers/158259370.htm'>為什麽我覺得電子競技很奇葩？</a></li>
-<li><a href='/_generated_pages/answers/1584664626.htm'>上海一智能公廁 15 分鐘不出來自動報警提醒保潔員協助，避免老年人如廁發生意外，這一設計是否合理？</a></li>
-<li><a href='/_generated_pages/answers/1588718374.htm'>如何看待臺灣偏藍媒體中天新聞臺被「關停」，臺當局稱「沒有任何政治力介入」？後續會產生哪些影響？</a></li>
-<li><a href='/_generated_pages/answers/1591981764.htm'>喜歡上了我們專業的一位女生，她是專業第一，我是九十名開外（專業兩百多個人），我可以做哪些努力呢？</a></li>
-<li><a href='/_generated_pages/answers/1595820509.htm'>如今流行音樂大多都是軟件制作的。所以音樂人是不是可以不學五線譜？</a></li>
-<li><a href='/_generated_pages/answers/1600100518.htm'>你認為，哪個字、哪個詞最能代表你的2020年？</a></li>
-<li><a href='/_generated_pages/answers/16014009.htm'>大陸的整體文字水平與香港臺灣相比，誰更高些？為什麽？</a></li>
-<li><a href='/_generated_pages/answers/16044178.htm'>永不斷裂的繩索，求可行性論證？</a></li>
-<li><a href='/_generated_pages/answers/1604444790.htm'>為什麽我覺得Go語言很複雜？</a></li>
-<li><a href='/_generated_pages/answers/16078655.htm'>為何三國殺會在中國內地青年群體中流行？</a></li>
-<li><a href='/_generated_pages/answers/160795405.htm'>編程是否該作為基礎教育的一部分？</a></li>
-<li><a href='/_generated_pages/answers/1610160954.htm'>宇宙是不連續的，那為什麽微積分可以成立？</a></li>
-<li><a href='/_generated_pages/answers/1615024950.htm'>領導微信發“辛苦了”，作為員工應該怎麽回答？</a></li>
-<li><a href='/_generated_pages/answers/161555717.htm'>音樂遊戲制譜切割key音時，將單個音按頻響分解成多個key音是被認可的嗎？</a></li>
-<li><a href='/_generated_pages/answers/162433730.htm'>這樣提高英語做題？</a></li>
-<li><a href='/_generated_pages/answers/162538721.htm'>如何看待斯坦福大學用JavaScript取代Java作為計算機入門課程？</a></li>
-<li><a href='/_generated_pages/answers/1627774969.htm'>Fabrice Bellard 是個什麽水平的程序員？</a></li>
-<li><a href='/_generated_pages/answers/162805211.htm'>你認為最先進的政治體制是哪一種？為什麽？</a></li>
-<li><a href='/_generated_pages/answers/1629358490.htm'>2021年你在用什麽編程語言？</a></li>
-<li><a href='/_generated_pages/answers/1631038691.htm'>PlayStation 6會不會直接取消光驅版？</a></li>
-<li><a href='/_generated_pages/answers/163221504.htm'>音樂遊戲怎麽能讓生成的音符與音樂節奏對應？</a></li>
-<li><a href='/_generated_pages/answers/163229436.htm'>臺灣統一後會采用何種模式，會設立臺灣省還是設立臺灣特別行政區？</a></li>
-<li><a href='/_generated_pages/answers/1634692296.htm'>日本政府明年開始推行 AI 婚配，利用的是什麽原理？你接受 AI 婚配嗎？</a></li>
-<li><a href='/_generated_pages/answers/1638310027.htm'>如何看待浙江一男孩在蹦床公園對外國女孩大打出手，男孩父親稱「你不服報警啊」？</a></li>
-<li><a href='/_generated_pages/answers/1641479745.htm'>為什麽現在的一部分男孩子對夜店毫無興趣，甚至排斥夜店?</a></li>
-<li><a href='/_generated_pages/answers/1642509949.htm'>hololive所屬的vtb有哪些是相對無辜的？</a></li>
-<li><a href='/_generated_pages/answers/1643857261.htm'>我研究生室友提出的擇偶標準算高嗎？</a></li>
-<li><a href='/_generated_pages/answers/1644741017.htm'>被知乎十年感動到了嗎？</a></li>
-<li><a href='/_generated_pages/answers/1647863444.htm'>感冒的時候吃氯雷他定可以喝酒麽？</a></li>
-<li><a href='/_generated_pages/answers/1648004342.htm'>香港荔枝角屬於哪個區？</a></li>
-<li><a href='/_generated_pages/answers/1648047696.htm'>有哪些遊戲的死亡懲罰非常嚴厲？</a></li>
-<li><a href='/_generated_pages/answers/1648060127.htm'>在電子遊戲中99%的暴擊率、1%的爆傷和1%的暴擊率、99%的爆傷，兩者誰帶來的收益更高？</a></li>
-<li><a href='/_generated_pages/answers/1648071902.htm'>圍棋開局點天元的那種惡心下法有解嗎？</a></li>
-<li><a href='/_generated_pages/answers/1649370994.htm'>2020年各位後端開發者更看好誰，Java，go，node.js還是php（swoole）？</a></li>
-<li><a href='/_generated_pages/answers/1651646910.htm'>人類真正可以信任的東西是什麽？</a></li>
-<li><a href='/_generated_pages/answers/1651808829.htm'>如何評價 minggeJS ？</a></li>
-<li><a href='/_generated_pages/answers/1651893932.htm'>用daw來做實時混音可以嗎?</a></li>
-<li><a href='/_generated_pages/answers/1655815812.htm'>怎麽回懟“我先是人，才是中國人”的觀點？</a></li>
-<li><a href='/_generated_pages/answers/1662075192.htm'>蝦米音樂宣布將於 2 月 5 日關停，蝦米音樂為何會走向下坡，它給了你哪些回憶？</a></li>
-<li><a href='/_generated_pages/answers/1662104400.htm'>為什麽現在投資越來越高，演員也來越多，卻再也沒有新白娘子傳奇這樣的經典？</a></li>
-<li><a href='/_generated_pages/answers/1662168542.htm'>你如何評價「誰響誰喝」的酒桌遊戲?</a></li>
-<li><a href='/_generated_pages/answers/1662673280.htm'>假如用匯編語言重制某遊戲或者軟件能否降低 CPU 性能損耗？</a></li>
-<li><a href='/_generated_pages/answers/166442456.htm'>音樂或者整個藝術領域有沒如科學界的民科一般的存在？</a></li>
-<li><a href='/_generated_pages/answers/1667388799.htm'>對於剛安裝好的mysql數據庫，如何使用一個查詢搞垮它？</a></li>
-<li><a href='/_generated_pages/answers/1677550872.htm'>算法題：從屏幕上挖掉臟矩形後，則剩下的區域最少可由多少個矩形組成？</a></li>
-<li><a href='/_generated_pages/answers/168968323.htm'>用好多種hash算法組成一個結果比較長的算法，會不會比較安全？</a></li>
-<li><a href='/_generated_pages/answers/169327599.htm'>為什麽日本人可大方穿和服，中國人穿漢服就會受到詬病與嘲笑？</a></li>
-<li><a href='/_generated_pages/answers/1698665402.htm'>麻將使用哪種比賽分規則更合理？</a></li>
-<li><a href='/_generated_pages/answers/1699761713.htm'>如何評價索尼全畫幅旗艦微單 Sony a1 (ILCE-1)?</a></li>
-<li><a href='/_generated_pages/answers/1704034326.htm'>是購買一臺alpha 1，還是購買a7r4+a7s3組合？</a></li>
-<li><a href='/_generated_pages/answers/1704055146.htm'>如果不按套路下棋是不是就能贏 Alpha Go 了？</a></li>
-<li><a href='/_generated_pages/answers/1704080164.htm'>請問住哪里離港中文和港科大都比較近？</a></li>
-<li><a href='/_generated_pages/answers/1704704981.htm'>1 月 31 日起中國不再承認所謂BNO護照作為旅行證件和身份證明，後續會有何影響？</a></li>
-<li><a href='/_generated_pages/answers/1708811451.htm'>隨著筆記本電腦的發展，臺式電腦最終會逐漸消失嗎？</a></li>
-<li><a href='/_generated_pages/answers/1708975895.htm'>你覺得圍棋培養了你在生活中的哪些思維？</a></li>
-<li><a href='/_generated_pages/answers/1709011498.htm'>如何在沒有條件買手臺的情況下練習街機端音遊？</a></li>
-<li><a href='/_generated_pages/answers/1709181165.htm'>如何評價綜藝節目《燃燒吧！天才程序員》？</a></li>
-<li><a href='/_generated_pages/answers/1709371666.htm'>在交易過程中，怎麽才能做到不以漲喜，不以跌悲？</a></li>
-<li><a href='/_generated_pages/answers/1709571611.htm'>假如世界上沒有臟話存在，會發生什麽？</a></li>
-<li><a href='/_generated_pages/answers/1711030051.htm'>你們是如何入坑音遊的？</a></li>
-<li><a href='/_generated_pages/answers/1712072420.htm'>假如有某種力量使得世界上所有編譯器都被刪除了, 人類是否需要從打孔卡開始寫第一個編譯器?</a></li>
-<li><a href='/_generated_pages/answers/1712078995.htm'>有哪些話一聽就知道一個程序員是個水貨？</a></li>
-<li><a href='/_generated_pages/answers/1712448672.htm'>為什麽內地人很難融入香港人的圈子？</a></li>
-<li><a href='/_generated_pages/answers/1712471912.htm'>通過程序計數器PC控制指令執行流程，PC不斷加一，但是計算機是怎麽判斷一個程序所對應的指令序列的結束？</a></li>
-<li><a href='/_generated_pages/answers/1712478193.htm'>為什麽年輕人敢手撕領導？</a></li>
-<li><a href='/_generated_pages/answers/1723860797.htm'>如何評價7月11日在steam上發布的pc下落式音遊quaver？</a></li>
-<li><a href='/_generated_pages/answers/172447437.htm'>為什麽過去 20 年，音樂的平均音量變得越來越大？</a></li>
-<li><a href='/_generated_pages/answers/1725795749.htm'>「C++ 早就過時了，大部分寫工程不用 C++，學習這個語言只是為了競賽」的觀點是否正確？</a></li>
-<li><a href='/_generated_pages/answers/1725805689.htm'>音遊天賦是指什麽樣的天賦？</a></li>
-<li><a href='/_generated_pages/answers/17260209.htm'>哪些菜肴足以判斷出一個人廚藝的高低？</a></li>
-<li><a href='/_generated_pages/answers/17260272.htm'>為什麽總有女生說男生“幼稚”？</a></li>
-<li><a href='/_generated_pages/answers/1730340870.htm'>如果我每天可以憑空制造一焦耳的能量，人類會怎麽樣?</a></li>
-<li><a href='/_generated_pages/answers/1733217869.htm'>為什麽當有人拿一個億換你一分鐘壽命時你會毫不猶豫的答應？</a></li>
-<li><a href='/_generated_pages/answers/1734424353.htm'>索尼、微軟為什麽不把上一代主機做成掌機繼續賣？例如：出了ps5，就把ps4改成掌機繼續賣？</a></li>
-<li><a href='/_generated_pages/answers/1735789791.htm'>貧窮是否是一切痛苦的根源？</a></li>
-<li><a href='/_generated_pages/answers/1737449926.htm'>IT 行業程序員在日本東京工作 5 年，有可能年薪超過 800w 日元嗎？</a></li>
-<li><a href='/_generated_pages/answers/1737671766.htm'>20.22.25.30.37.（）後邊的這個數到底是多少？</a></li>
-<li><a href='/_generated_pages/answers/1737817265.htm'>大多數日本動漫音樂都有的一個樂器是什麽？</a></li>
-<li><a href='/_generated_pages/answers/1737862758.htm'>如何看待王垠對數據庫的理解？</a></li>
-<li><a href='/_generated_pages/answers/1739275507.htm'>日本有沒有地震隱患相對較小的地方？</a></li>
-<li><a href='/_generated_pages/answers/17427774.htm'>玩遊戲技術的高低和年齡有關嗎？</a></li>
-<li><a href='/_generated_pages/answers/1747585401.htm'>孩子6歲3個月，已學圍棋1年半，目前野狐7D可以考慮走職業路線嗎？</a></li>
-<li><a href='/_generated_pages/answers/175868183.htm'>孩子嫌家里窮該怎麽辦？</a></li>
-<li><a href='/_generated_pages/answers/1759454232.htm'>日本朋友對我說加油，我說はい、できます（好的，我會的）有問題嗎，感覺Ta怪怪的?</a></li>
-<li><a href='/_generated_pages/answers/1759713541.htm'>小學三年級寫不出作文，不知道怎麽教導，誰能推薦一些作文培訓網課？</a></li>
-<li><a href='/_generated_pages/answers/1760082679.htm'>既然 JS 的 var是失誤，為什麽不修改或刪除 var，反而引進了 let 和 const?</a></li>
-<li><a href='/_generated_pages/answers/1764203362.htm'>為什麽成人滿口都是錢？</a></li>
-<li><a href='/_generated_pages/answers/176675056.htm'>知乎網與知網的區別是什麽？</a></li>
-<li><a href='/_generated_pages/answers/176683834.htm'>端午節叫男朋友上門，家人要他帶身份證和畢業證，男朋友很生氣，說這是作踐他的人格，硬是不帶，怎麽辦？</a></li>
-<li><a href='/_generated_pages/answers/1768625810.htm'>達到財務自由後為什麽還是充滿焦慮？</a></li>
-<li><a href='/_generated_pages/answers/1768774768.htm'>有哪些大家不說，但需要知道的社會常識？</a></li>
-<li><a href='/_generated_pages/answers/17724457.htm'>優秀的程序員和一般的程序員差別在哪？</a></li>
-<li><a href='/_generated_pages/answers/17735469.htm'>臺灣和香港地區都用什麽聊天工具？是否有類似 QQ 群的群聊系統？</a></li>
-<li><a href='/_generated_pages/answers/17735759.htm'>香港人平時一般上什麽網站？</a></li>
-<li><a href='/_generated_pages/answers/1774055806.htm'>為什麽美國憲法上一個殺人嫌疑犯有權保持緘默？</a></li>
-<li><a href='/_generated_pages/answers/177444698.htm'>初入職場的新人，什麽行為或者話會讓老員工反感？</a></li>
-<li><a href='/_generated_pages/answers/17784912.htm'>22 歲開始 8 年時間內掌握英語、法語、西班牙語、俄語四門語言能實現麽？</a></li>
-<li><a href='/_generated_pages/answers/17792588.htm'>2013 年高考狀元業余愛好廣泛也看電視打網遊，是我們素質教育開花結果了嗎？</a></li>
-<li><a href='/_generated_pages/answers/177962364.htm'>人類害怕人工智能的哪一點？</a></li>
-<li><a href='/_generated_pages/answers/17807838.htm'>大學里的學習成績有多重要？</a></li>
-<li><a href='/_generated_pages/answers/17807925.htm'>年輕人該看些什麽書？</a></li>
-<li><a href='/_generated_pages/answers/1781126076.htm'>宜家家具會讓新家顯得廉價嗎？</a></li>
-<li><a href='/_generated_pages/answers/1783167971.htm'>為何現在街上的「巨型洛麗塔」越來越多？</a></li>
-<li><a href='/_generated_pages/answers/17882018.htm'>男孩子太單純太認真好嗎？</a></li>
-<li><a href='/_generated_pages/answers/17884565.htm'>做遊戲的人會不會有罪惡感？</a></li>
-<li><a href='/_generated_pages/answers/1790534720.htm'>發現自己的很多條件都輸在了起跑線上，失去了奮鬥的動力該怎麽辦？</a></li>
-<li><a href='/_generated_pages/answers/1791683202.htm'>你會願意等一個人10年嗎？</a></li>
-<li><a href='/_generated_pages/answers/17926160.htm'>如何老練地跟人溝通？</a></li>
-<li><a href='/_generated_pages/answers/17941506.htm'>如何看待大量依靠旁白或自白來輔助敘事或表達角色情感的電影？</a></li>
-<li><a href='/_generated_pages/answers/1794563576.htm'>完全不懂圍棋，如何在寫小說的時候裝得很懂圍棋的樣子？</a></li>
-<li><a href='/_generated_pages/answers/17950243.htm'>為什麽TED能火？你喜歡TED演講內容嗎？</a></li>
-<li><a href='/_generated_pages/answers/179524408.htm'>如何在香港紅磡體育館開演唱會？</a></li>
-<li><a href='/_generated_pages/answers/17956253.htm'>你如何向別人證明自己不是外星人？</a></li>
-<li><a href='/_generated_pages/answers/1798197101.htm'>中美關系這麽緊張，為什麽外資企業沒有像預想中一樣紛紛撤離，反而加大了在中國的投資與合作？</a></li>
-<li><a href='/_generated_pages/answers/17993902.htm'>太內向了，跟別人都沒什麽話題好聊，怎麽辦？</a></li>
-<li><a href='/_generated_pages/answers/180340870.htm'>編程大佬不會寫tokenizer是不是一件很值得驕傲的事情？</a></li>
-<li><a href='/_generated_pages/answers/1804360577.htm'>情商低和性格直的區別？</a></li>
-<li><a href='/_generated_pages/answers/1807489756.htm'>如何看待 Nike、優衣庫、GAP、Zara 等品牌均在境外官網發布「禁用新疆棉花」的聲明？</a></li>
-<li><a href='/_generated_pages/answers/1810769344.htm'>BCI 上海辦事處稱「未在新疆發現強迫勞動，品牌行為與其無關」，這一事件中 BCI 扮演了什麽角色？</a></li>
-<li><a href='/_generated_pages/answers/1811518937.htm'>你覺得自己牛在哪兒？為什麽會這樣覺得？</a></li>
-<li><a href='/_generated_pages/answers/1811802833.htm'>去香港拿3.5萬，還是選擇在深圳拿2.5萬？</a></li>
-<li><a href='/_generated_pages/answers/1812014325.htm'>如何評價原研哉設計的小米新logo？</a></li>
-<li><a href='/_generated_pages/answers/1812185713.htm'>席瑞為楊笠發聲，稱「吐槽的核心只能是下位者對上位者的冒犯，女性作為弱勢群體可以冒犯男性」，你認同嗎？</a></li>
-<li><a href='/_generated_pages/answers/1815987738.htm'>手里有四千萬怎麽穩定利益最大化？</a></li>
-<li><a href='/_generated_pages/answers/1816623330.htm'>那些網暴肖戰的人，會意識到自己錯了嗎？</a></li>
-<li><a href='/_generated_pages/answers/18169494.htm'>C、C++、Java、JavaScript、PHP、Python、Ruby 這些語言分別主要用來開發什麽？</a></li>
-<li><a href='/_generated_pages/answers/1818336972.htm'>國家規定未成年人每日 22 點至 8 點禁玩網遊，你有什麽看法？</a></li>
-<li><a href='/_generated_pages/answers/1818392278.htm'>如何看待視頻平臺YouTube拒絕下架鼓吹「搶劫亞裔」的歌曲，還借口稱「不能開此先例」？</a></li>
-<li><a href='/_generated_pages/answers/18184590.htm'>舟舟的指揮到底是什麽水平？</a></li>
-<li><a href='/_generated_pages/answers/1818649475.htm'>如果時間可以交易，一年一百萬人民幣（不是想賣就能賣，必須有人買才行），這個世界會怎樣？</a></li>
-<li><a href='/_generated_pages/answers/18188377.htm'>如何快速、準確地數出一袋瓜子有多少顆？</a></li>
-<li><a href='/_generated_pages/answers/1819848455.htm'>該如何設計實現一個telnet bbs？</a></li>
-<li><a href='/_generated_pages/answers/1820749763.htm'>為什麽部分學生選擇在家看二次元，而不是去學校和有元氣美少女美少年感的人互動？</a></li>
-<li><a href='/_generated_pages/answers/1822325568.htm'>花6000元買電腦的人，為何不花3000元買，然後2000元買個遊戲機，剩1000買遊戲呢？</a></li>
-<li><a href='/_generated_pages/answers/1826539531.htm'>如何看待這句話。?</a></li>
-<li><a href='/_generated_pages/answers/1830758040.htm'>嶽雲鵬稱128G手機可用內存僅112G，系統內存應廠家消化，你認同嗎？可用內存與宣傳不符算虛假宣傳嗎？</a></li>
-<li><a href='/_generated_pages/answers/1830781644.htm'>為什麽 Python 里面的 range 不包含上界？</a></li>
-<li><a href='/_generated_pages/answers/1830828366.htm'>北京為什麽是一線城市?</a></li>
-<li><a href='/_generated_pages/answers/1832701604.htm'>積分不就是找反導數嗎，為什麽還有稀奇古怪的積分技巧？</a></li>
-<li><a href='/_generated_pages/answers/1832721741.htm'>為什麽健身房 10 家有 9.5 家倒閉?</a></li>
-<li><a href='/_generated_pages/answers/1833584034.htm'>如果殺人不犯法，地球人口會在什麽規模？</a></li>
-<li><a href='/_generated_pages/answers/1833782677.htm'>你最討厭漫展里哪些行為?</a></li>
-<li><a href='/_generated_pages/answers/1835130740.htm'>星際爭霸2如何實現遠程兵種的依次齊射而避免傷害的嚴重溢出？</a></li>
-<li><a href='/_generated_pages/answers/1835138730.htm'>如果我股票漲了就賣掉收益，比如10%，跌了加倉，比如5%，這個方案可行嗎？</a></li>
-<li><a href='/_generated_pages/answers/1838188649.htm'>為什麽有些人這麽希望回形針涼？</a></li>
-<li><a href='/_generated_pages/answers/1838776102.htm'>美國政府為什麽無視了阿里達摩院？</a></li>
-<li><a href='/_generated_pages/answers/1846539057.htm'>如何看待百度網盤海外版更名 TeraBox，下載不限速？</a></li>
-<li><a href='/_generated_pages/answers/1847186165.htm'>為什麽漢字常用部首不能像日語的ｱｲｳｴｵ一樣只占半格？</a></li>
-<li><a href='/_generated_pages/answers/1848428628.htm'>Go、Rust、Nim等新興語言，為什麽都拋棄了constructor?</a></li>
-<li><a href='/_generated_pages/answers/1848598642.htm'>在公交上或地鐵上睡著是什麽體驗？</a></li>
-<li><a href='/_generated_pages/answers/1850172458.htm'>為什麽有些人恨不得華為趕緊倒閉？</a></li>
-<li><a href='/_generated_pages/answers/1851083931.htm'>男朋友年終獎發了六萬，轉了520給我，我該生氣嗎?</a></li>
-<li><a href='/_generated_pages/answers/18551740.htm'>怎麽樣控制自己的脾氣？</a></li>
-<li><a href='/_generated_pages/answers/1856238198.htm'>你知道哥斯達黎加最富有的人是誰嗎？</a></li>
-<li><a href='/_generated_pages/answers/1856294064.htm'>一個男孩子向我表白了兩次，我都拒絕了。後來我向他表白，他以他太直男了不適合談戀愛為由拒絕是什麽意思？</a></li>
-<li><a href='/_generated_pages/answers/1857429884.htm'>是什麽讓你不想去漫展?</a></li>
-<li><a href='/_generated_pages/answers/1857939018.htm'>「I love you, you loving me.」這句話有語法錯誤嗎？</a></li>
-<li><a href='/_generated_pages/answers/1859239698.htm'>小偷尾隨老人偷 8000 元退 7500 ，稱「怕這是他的救命錢」，這是出於什麽心理？</a></li>
-<li><a href='/_generated_pages/answers/1859381808.htm'>為什麽總有數學專業的人覺得自己什麽都懂？</a></li>
-<li><a href='/_generated_pages/answers/186483726.htm'>如何評價美劇《風騷律師》（Better Call Saul）第三季？</a></li>
-<li><a href='/_generated_pages/answers/18682336.htm'>如何成為一個能獨立思考的人？</a></li>
-<li><a href='/_generated_pages/answers/1871678026.htm'>為什麽有很多的程序員覺得Linux比Windows更加方便，更加有效率？</a></li>
-<li><a href='/_generated_pages/answers/1873152453.htm'>老公 32 了，決定放棄百萬年薪創業，我應該支持嗎?</a></li>
-<li><a href='/_generated_pages/answers/18735282.htm'>去日本自由行，有什麽好的路線推薦？需要註意什麽？</a></li>
-<li><a href='/_generated_pages/answers/1873619002.htm'>我畫了一個立繪然後委托他人制作成3d模型和live2d模型，但是不給源文件，說擁有著作權，是否侵權?</a></li>
-<li><a href='/_generated_pages/answers/1873674754.htm'>如何用日語回複“今夜は月が綺麗ですね（今晚月色真美）” ？</a></li>
-<li><a href='/_generated_pages/answers/187512116.htm'>乒乓球運動量這麽小，為什麽還會有那麽多傷痛？</a></li>
-<li><a href='/_generated_pages/answers/18752881.htm'>創業公司怎樣尋找 PHP 程序員？</a></li>
-<li><a href='/_generated_pages/answers/18752920.htm'>怎麽勸家庭貧困同學接受二手電腦？</a></li>
-<li><a href='/_generated_pages/answers/18752936.htm'>iOS 上能提高學習、工作效率的應用有哪些？</a></li>
-<li><a href='/_generated_pages/answers/18752957.htm'>朋友介紹了一個人才，能力很強但年齡小資歷弱，如果安排到重要崗位會不服眾，怎麽協調他與老員工的關系？</a></li>
-<li><a href='/_generated_pages/answers/18753054.htm'>到了下班的點，領導都不走怎麽辦？</a></li>
-<li><a href='/_generated_pages/answers/18753057.htm'>金融市場的本質是「賭場」嗎？</a></li>
-<li><a href='/_generated_pages/answers/1876627189.htm'>為什麽現在一提封殺都這麽高興？</a></li>
-<li><a href='/_generated_pages/answers/1876714627.htm'>C語言 乘以0.01快？還是除以100快？</a></li>
-<li><a href='/_generated_pages/answers/1883827465.htm'>如何評價技嘉官網宣稱中國大陸代工制造為「低質量、低成本」?</a></li>
-<li><a href='/_generated_pages/answers/1887478556.htm'>如何評價任天堂 Switch 的 Pro 手柄？</a></li>
-<li><a href='/_generated_pages/answers/1890882459.htm'>預算4000-5000，戴爾哪款電腦性價比比較高？</a></li>
-<li><a href='/_generated_pages/answers/1892478851.htm'>如果科研人員的收入比明星高，會是什麽樣的景象呢？</a></li>
-<li><a href='/_generated_pages/answers/18938127.htm'>1997 年前香港使用的貨幣為什麽是港幣而不是英鎊？</a></li>
-<li><a href='/_generated_pages/answers/18940742.htm'>你認為編程界的無上心法是什麽？</a></li>
-<li><a href='/_generated_pages/answers/18942638.htm'>如何保持超過十年的長久交情？</a></li>
-<li><a href='/_generated_pages/answers/1895992696.htm'>如何看待4月23日幣圈集體暴跌？</a></li>
-<li><a href='/_generated_pages/answers/1896650145.htm'>被問及工資時，你們一般回答稅前工資還是稅後工資？</a></li>
-<li><a href='/_generated_pages/answers/1896773734.htm'>我們為什麽要禁止刑訊逼供？</a></li>
-<li><a href='/_generated_pages/answers/1896823919.htm'>求助！香港跑馬地150坪房子不要錢，住嗎？</a></li>
-<li><a href='/_generated_pages/answers/189782673.htm'>大局大將棋是怎麽樣的？</a></li>
-<li><a href='/_generated_pages/answers/1898769569.htm'>金融委打擊比特幣挖礦和交易行為，堅決防範個體風險向社會領域傳遞，將產生哪些影響？</a></li>
-<li><a href='/_generated_pages/answers/18988410.htm'>在這個現代社會，沒有駕照會帶來哪些不便？</a></li>
-<li><a href='/_generated_pages/answers/1898855971.htm'>從用語委婉方面考慮，日本人和中國人有哪些區別？</a></li>
-<li><a href='/_generated_pages/answers/1898885321.htm'>如何看待金融委指出，打擊比特幣挖礦和交易行為，堅決防範個體風險向社會領域傳遞？釋放了什麽信號？</a></li>
-<li><a href='/_generated_pages/answers/1899412385.htm'>遊戲《逆轉裁判》中最符合你擇偶要求的角色是誰？</a></li>
-<li><a href='/_generated_pages/answers/19000576.htm'>為什麽國標麻將要保留花牌這個幾乎完全靠運氣的規則？</a></li>
-<li><a href='/_generated_pages/answers/19013428.htm'>一個男生和一個女生出去旅遊，怎麽住最合適？求妹子們回答</a></li>
-<li><a href='/_generated_pages/answers/19014559.htm'>為何不同廠商的遊戲主機玩家之間常常出現對立？</a></li>
-<li><a href='/_generated_pages/answers/1904947390.htm'>2021年的今天，日式遊戲有沒有複興，有沒有縮小與歐美遊戲的差距？</a></li>
-<li><a href='/_generated_pages/answers/1906571859.htm'>微軟決定在 2022 年 6 月 15 日徹底結束IE瀏覽器使命，如何評價這款軟件？它帶給你哪些回憶？</a></li>
-<li><a href='/_generated_pages/answers/1906962218.htm'>借了給別人幾個比特幣，手里有欠條，欠條上寫的是比特幣數量，請問討債受不受法律保護？</a></li>
-<li><a href='/_generated_pages/answers/1908812408.htm'>手持日本刀，能對付了四五個手持匕首的混混嗎？</a></li>
-<li><a href='/_generated_pages/answers/19099969.htm'>男人就真的那麽喜歡玩遊戲麽？是不是戒不掉的？</a></li>
-<li><a href='/_generated_pages/answers/1910260261.htm'>數學系適合什麽樣的人去讀？</a></li>
-<li><a href='/_generated_pages/answers/1913643465.htm'>突然很好奇，秒回信息是覺得重視你還是對方真的無所事事？</a></li>
-<li><a href='/_generated_pages/answers/1915066726.htm'>git有沒有類似mutex的鎖機制，在自己加鎖期間別人無法修改？</a></li>
-<li><a href='/_generated_pages/answers/19159309.htm'>上廁所大號的時候突然發現沒紙，手機又沒有帶，周圍又沒有人，該怎麽辦？</a></li>
-<li><a href='/_generated_pages/answers/1916254391.htm'>西方文明和東方文明的主要區別是什麽？</a></li>
-<li><a href='/_generated_pages/answers/1916865591.htm'>用自己是否喜歡其中音樂來評價音樂遊戲是否公正且合理？</a></li>
-<li><a href='/_generated_pages/answers/1917439782.htm'>為什麽有的人肯花三四千買電腦，卻不肯再多花三四百買固態硬盤？</a></li>
-<li><a href='/_generated_pages/answers/1917760855.htm'>請問下落式音遊頂尖玩家jakads有多強？</a></li>
-<li><a href='/_generated_pages/answers/1918642103.htm'>為什麽我媽對其親戚說我 4470 元買的手表是 30 元買的？</a></li>
-<li><a href='/_generated_pages/answers/1919788034.htm'>如何看待華為將於 6 月 2 日舉辦鴻蒙發布會？你對此有哪些期待？</a></li>
-<li><a href='/_generated_pages/answers/192213875.htm'>在國外時，如何反駁外國同學「臺灣不屬於中國」的言論？</a></li>
-<li><a href='/_generated_pages/answers/19227731.htm'>教師改作業用「〇」代替「✘」的辦法能達到柔和教學的目的嗎？</a></li>
-<li><a href='/_generated_pages/answers/192456037.htm'>好朋友總是要我請客？</a></li>
-<li><a href='/_generated_pages/answers/1927820327.htm'>日本麻將好玩在哪里？</a></li>
-<li><a href='/_generated_pages/answers/192830059.htm'>mysql的MEMORY引擎為什麽應用沒有redis的應用廣泛？</a></li>
-<li><a href='/_generated_pages/answers/1929093025.htm'>中國年輕人躺平會如何收場？</a></li>
-<li><a href='/_generated_pages/answers/1931017759.htm'>高房價可能帶來哪些危害？</a></li>
-<li><a href='/_generated_pages/answers/19318024.htm'>一個大學畢業生懷揣創意和理想能拿到風投麽？</a></li>
-<li><a href='/_generated_pages/answers/1931845071.htm'>什麽樣的員工容易被提拔為管理者，他們有哪些共同特質？</a></li>
-<li><a href='/_generated_pages/answers/193186437.htm'>有哪些玩遊戲時很慫的人？</a></li>
-<li><a href='/_generated_pages/answers/193409457.htm'>weblogic報錯？</a></li>
-<li><a href='/_generated_pages/answers/19353152.htm'>你覺得最值得反複觀看的好電影是哪一部？為什麽？</a></li>
-<li><a href='/_generated_pages/answers/1936413820.htm'>在中國，你反對死刑的原因是什麽？</a></li>
-<li><a href='/_generated_pages/answers/1936444160.htm'>華為的鴻蒙動了誰的蛋糕？</a></li>
-<li><a href='/_generated_pages/answers/1936625745.htm'>中國人有什麽普遍特征？</a></li>
-<li><a href='/_generated_pages/answers/1936664030.htm'>點一份全熟的牛排真的會被嘲笑嗎？</a></li>
-<li><a href='/_generated_pages/answers/19367651.htm'>如何在一個寬松的環境嚴格要求自己？</a></li>
-<li><a href='/_generated_pages/answers/19367878.htm'>有哪些改變世界的發明？</a></li>
-<li><a href='/_generated_pages/answers/19368559.htm'>如何從知乎回答里區分大牛和三腳貓？</a></li>
-<li><a href='/_generated_pages/answers/1936963202.htm'>AlphaGoZero跟完美的圍棋之神有多大差距？</a></li>
-<li><a href='/_generated_pages/answers/1937065832.htm'>觀察者網是一家中肯公正的媒體嗎？為什麽？</a></li>
-<li><a href='/_generated_pages/answers/1939190075.htm'>如何看待《賽博朋克 2077》在 3 月 29 日發布的 1.2 更新？</a></li>
-<li><a href='/_generated_pages/answers/19400928.htm'>如何解析《布達佩斯之戀》中的和諧三角關系？</a></li>
-<li><a href='/_generated_pages/answers/1940179733.htm'>如果鴻蒙算是一個我們自主研發的新系統，那麽國內的chromium內核瀏覽器算是自主研發的新瀏覽器嗎?</a></li>
-<li><a href='/_generated_pages/answers/1940222459.htm'>為何《怪物獵人》的傷害都是只有幾十點？</a></li>
-<li><a href='/_generated_pages/answers/1943280403.htm'>如何看待術士新卡“靈魂竊賊”成為《爐石傳說》首個被禁用的卡？</a></li>
-<li><a href='/_generated_pages/answers/1943428324.htm'>爸爸是非常實在的人，想送父親節禮物，有沒有實用，又不顯矯情的父親節禮物?</a></li>
-<li><a href='/_generated_pages/answers/1947510099.htm'>如何理解「小孩子才分對錯，成年人只看利弊」這句話？</a></li>
-<li><a href='/_generated_pages/answers/19483232.htm'>兩個人睡覺怎樣睡才舒服？</a></li>
-<li><a href='/_generated_pages/answers/19493669.htm'>大一，對學校和同學失望至極，如何應對？</a></li>
-<li><a href='/_generated_pages/answers/19493698.htm'>男人在網上愛賣萌到底好不好？</a></li>
-<li><a href='/_generated_pages/answers/1950971371.htm'>科普自媒體回形針發文稱「公司嚴重失職，停更所有內容」，對此你有何看法？</a></li>
-<li><a href='/_generated_pages/answers/1952455002.htm'>好難過，喜歡鋼煉的我怎麽辦?</a></li>
-<li><a href='/_generated_pages/answers/19525400.htm'>異地戀算戀愛嗎？</a></li>
-<li><a href='/_generated_pages/answers/19525626.htm'>五歲的孩子看不起保潔阿姨，怎麽辦？</a></li>
-<li><a href='/_generated_pages/answers/19525937.htm'>學邏輯學的真正用途是什麽？</a></li>
-<li><a href='/_generated_pages/answers/19526048.htm'>在公開場合演講時，如何用 30 秒鐘的時間鎮住全場？</a></li>
-<li><a href='/_generated_pages/answers/19537259.htm'>在餐館怎麽叫服務員才合適得體？</a></li>
-<li><a href='/_generated_pages/answers/1954097140.htm'>c++20為什麽要推出比較運算符<=>？</a></li>
-<li><a href='/_generated_pages/answers/195488031.htm'>如何看待愛醬微博評論回複七七事變被噴？</a></li>
-<li><a href='/_generated_pages/answers/19567251.htm'>作為一個二十歲出頭的女生，只想被別人養起來正常嗎？</a></li>
-<li><a href='/_generated_pages/answers/19567745.htm'>為什麽有的人說話不經大腦？</a></li>
-<li><a href='/_generated_pages/answers/1957172106.htm'>為什麽 iPhone 還是這麽受歡迎？</a></li>
-<li><a href='/_generated_pages/answers/1958240363.htm'>為什麽全世界普遍有辱華言論產生？</a></li>
-<li><a href='/_generated_pages/answers/1958984493.htm'>PHP沒落的原因是移動領域的興起嗎？</a></li>
-<li><a href='/_generated_pages/answers/1959034622.htm'>國內的 「JK 制服」屬於日本 ACG 文化嗎?</a></li>
-<li><a href='/_generated_pages/answers/1959149516.htm'>蘋果日報和高登論壇能不能代表香港民眾關於大陸的主流民意？</a></li>
-<li><a href='/_generated_pages/answers/1959164906.htm'>為什麽網上會有這麽多人罵袁隆平、楊振寧等偉人呢？</a></li>
-<li><a href='/_generated_pages/answers/1961029457.htm'>有人和我說女孩腰圍大於50cm都算不上身材好？</a></li>
-<li><a href='/_generated_pages/answers/19659875.htm'>如何拒絕孩子買 iPad 的要求？</a></li>
-<li><a href='/_generated_pages/answers/196901613.htm'>libevent支持udp協議嗎？</a></li>
-<li><a href='/_generated_pages/answers/1970034337.htm'>如何評價 GitHub 與 OpenAI 合作推出的 AI 代碼建議方案 Copilot?</a></li>
-<li><a href='/_generated_pages/answers/1972129642.htm'>經濟學上，新房和二手房是互補品還是替代品啊？</a></li>
-<li><a href='/_generated_pages/answers/1974012502.htm'>有哪些被低估的電影和電視劇？</a></li>
-<li><a href='/_generated_pages/answers/1974238304.htm'>如果你是林丹，你會給李宗偉放一次水嗎？</a></li>
-<li><a href='/_generated_pages/answers/1977188681.htm'>你的微信里是否有一個不刪不聊又不打擾的人？</a></li>
-<li><a href='/_generated_pages/answers/1979830136.htm'>安賽龍的時代來臨?</a></li>
-<li><a href='/_generated_pages/answers/1979940172.htm'>在火災中，如果救貓自己就有50%的概率會死，救不救？</a></li>
-<li><a href='/_generated_pages/answers/1982345610.htm'>有線耳機已成為時代的眼淚了嗎？</a></li>
-<li><a href='/_generated_pages/answers/198515406.htm'>做一個我的世界這樣的馬賽克堆積木遊戲有多難？</a></li>
-<li><a href='/_generated_pages/answers/198750540.htm'>如何看待資生堂「過了 25 歲就不再是女孩了」的廣告停播？</a></li>
-<li><a href='/_generated_pages/answers/1987609935.htm'>為什麽國內很多人不認可埃隆·馬斯克（Elon Musk）？</a></li>
-<li><a href='/_generated_pages/answers/199300638.htm'>你有名校情結嗎？為什麽?</a></li>
-<li><a href='/_generated_pages/answers/1995347505.htm'>有哪些工程或高科技項目，讓你覺得寄托著設計者的星辰大海？</a></li>
-<li><a href='/_generated_pages/answers/1999716750.htm'>如何看待回形針Paperclip和大象公會的b站賬號被註銷?</a></li>
-<li><a href='/_generated_pages/answers/1999982259.htm'>如果日語沒有了漢字會發生什麽？</a></li>
-<li><a href='/_generated_pages/answers/2000576052.htm'>如果世界上存在一個最大的數，那麽它是奇數還是偶數？</a></li>
-<li><a href='/_generated_pages/answers/200181735.htm'>Lua 的 table 索引默認從 1 開始，這樣做有什麽好處？</a></li>
-<li><a href='/_generated_pages/answers/200190467.htm'>腹有詩書氣自華是真的嗎？</a></li>
-<li><a href='/_generated_pages/answers/200201429.htm'>為什麽有「原子彈下無冤魂」這種說法?</a></li>
-<li><a href='/_generated_pages/answers/20088569.htm'>如何巧妙地結束一個不想繼續的對話？</a></li>
-<li><a href='/_generated_pages/answers/20342889.htm'>為什麽部分外行人看起來不太複雜的網站，比如Facebook，需要大量頂尖高手來開發？</a></li>
-<li><a href='/_generated_pages/answers/203612823.htm'>中小學輔導班所說的名師都是真的嗎？真的會有研究生、博士生給孩子上課嗎？</a></li>
-<li><a href='/_generated_pages/answers/203618386.htm'>MP為什麽是藍色的？</a></li>
-<li><a href='/_generated_pages/answers/203646062.htm'>日本麻將中有哪些「大局觀」？</a></li>
-<li><a href='/_generated_pages/answers/203646380.htm'>如何評價《風騷律師》男主角吉米的演技?</a></li>
-<li><a href='/_generated_pages/answers/203651769.htm'>如何不切下腦袋而稱出腦袋的重量？</a></li>
-<li><a href='/_generated_pages/answers/204421189.htm'>怎麽看待在高雄市舉辦的LOL亞洲對抗賽頒獎時，大陸隊拿冠軍臺灣觀眾大量離場的反應？</a></li>
-<li><a href='/_generated_pages/answers/204422244.htm'>如果外星人命令地球人摧毀一個國家，否則讓人類滅絕，人類會怎麽做？</a></li>
-<li><a href='/_generated_pages/answers/204422780.htm'>如何在debug的同時保持溫柔屬性？</a></li>
-<li><a href='/_generated_pages/answers/204423437.htm'>一些人不再使用 iPhone 而換成其他系統智能手機的原因是什麽？</a></li>
-<li><a href='/_generated_pages/answers/204423869.htm'>經常玩大型單機遊戲，2k 144hz 和 4K 60hz 選擇哪個好？</a></li>
-<li><a href='/_generated_pages/answers/204424252.htm'>我想換 iPhone 6s，但我爸總以愛國之由勸導我選擇國產手機怎麽辦？？</a></li>
-<li><a href='/_generated_pages/answers/205182475.htm'>女朋友花了1700元給我買了一個不理想的遊戲鍵盤，該如何安慰自己它很好用很值得？</a></li>
-<li><a href='/_generated_pages/answers/205480286.htm'>作為程序員，你關註哪些國外 IT 網站？</a></li>
-<li><a href='/_generated_pages/answers/205745622.htm'>你最喜歡的英國男演員是誰？</a></li>
-<li><a href='/_generated_pages/answers/205929250.htm'>discuz論壇數據庫的設計為什麽把主題的詳細內容放到回複表（posts）里？</a></li>
-<li><a href='/_generated_pages/answers/206247531.htm'>做一個優秀的程序員到底難在哪里？</a></li>
-<li><a href='/_generated_pages/answers/20677450.htm'>楊千嬅作為一個明星的特質是什麽？定位受眾是哪類人？</a></li>
-<li><a href='/_generated_pages/answers/20677566.htm'>怎麽看大學生一天到晚的玩網遊？</a></li>
-<li><a href='/_generated_pages/answers/206913155.htm'>如何看待「月薪 3 萬撐不起孩子一個暑假」的現象？如何考慮在孩子教育上燒錢的合理性？</a></li>
-<li><a href='/_generated_pages/answers/207162370.htm'>《爐石傳說》中有哪些小技巧可以快速提高遊戲水平？</a></li>
-<li><a href='/_generated_pages/answers/207681334.htm'>C 語言比 C++ 更強大嗎？</a></li>
-<li><a href='/_generated_pages/answers/207696524.htm'>說「你國」的人是出於什麽心態？</a></li>
-<li><a href='/_generated_pages/answers/207718478.htm'>遇到插隊怎麽辦?</a></li>
-<li><a href='/_generated_pages/answers/208396978.htm'>按照美國人的標準，中國私家車司機是否全都不會修車？</a></li>
-<li><a href='/_generated_pages/answers/209948054.htm'>有沒有那個時刻讓你覺得C語言白學了？</a></li>
-<li><a href='/_generated_pages/answers/209949319.htm'>很喜歡lolita洋裝，可我是個男的=_=好想穿出去啊！咋整？</a></li>
-<li><a href='/_generated_pages/answers/210059107.htm'>購買盜版書可恥嗎？</a></li>
-<li><a href='/_generated_pages/answers/211792688.htm'>錢對個人而言有多重要？</a></li>
-<li><a href='/_generated_pages/answers/212006816.htm'>電子競技能否在2024年成為巴黎奧運會正式比賽項目？</a></li>
-<li><a href='/_generated_pages/answers/212858244.htm'>lol中有哪些有趣的陣容？</a></li>
-<li><a href='/_generated_pages/answers/21300333.htm'>時間到了，但產品還是很爛，需要發布嘛？</a></li>
-<li><a href='/_generated_pages/answers/21337363.htm'>華語樂壇有哪些讓幾百萬人流淚過的歌？</a></li>
-<li><a href='/_generated_pages/answers/21365340.htm'>麻將是中國人發明的，色子是誰發明的？</a></li>
-<li><a href='/_generated_pages/answers/215009032.htm'>男朋友（老公）脾氣好是怎樣的體驗？</a></li>
-<li><a href='/_generated_pages/answers/215802856.htm'>如果你回到了2001年九月一日，你會盡全力去阻止911事件的發生嗎？</a></li>
-<li><a href='/_generated_pages/answers/215971973.htm'>怎樣看待抓住小三後公共場合脫衣猛打？</a></li>
-<li><a href='/_generated_pages/answers/216529729.htm'>朋友之間的最好狀態是怎樣的？</a></li>
-<li><a href='/_generated_pages/answers/21769692.htm'>同學向我炫耀成績，我該如何回應他？</a></li>
-<li><a href='/_generated_pages/answers/21771766.htm'>為什麽有人分不清東西南北？</a></li>
-<li><a href='/_generated_pages/answers/21781510.htm'>「boss」和「both」，「beach」「bitch」從音標看，發音不一樣，實際口語中，為什麽我聽不出來有什麽區別？</a></li>
-<li><a href='/_generated_pages/answers/21950579.htm'>為什麽極光滑的表面摩擦力反而會大？</a></li>
-<li><a href='/_generated_pages/answers/22067596.htm'>如果沒有騰訊，LOL 是否也會這麽成功？</a></li>
-<li><a href='/_generated_pages/answers/22126061.htm'>有哪些禮儀是必備的？</a></li>
-<li><a href='/_generated_pages/answers/22221811.htm'>男生會因為遊戲上的事哭嗎？</a></li>
-<li><a href='/_generated_pages/answers/22233076.htm'>為什麽各種以投行、咨詢為代表的專業服務公司，都采用高薪然後把人往死里使喚的用工方式呢？1/2薪水，1/2的工作量為什麽不行？</a></li>
-<li><a href='/_generated_pages/answers/22256248.htm'>為什麽現在好多人喜歡鄧紫棋？</a></li>
-<li><a href='/_generated_pages/answers/22256336.htm'>找人做個類似微信的應用，報價超過十萬，貴嗎？</a></li>
-<li><a href='/_generated_pages/answers/22256767.htm'>如何高效利用早起後時間？</a></li>
-<li><a href='/_generated_pages/answers/22257802.htm'>鄧紫棋黑歷史是真有其事還是造謠？</a></li>
-<li><a href='/_generated_pages/answers/22269003.htm'>如何看待男人經常做家務？</a></li>
-<li><a href='/_generated_pages/answers/22316290.htm'>獨自一人坐火車晚上睡覺如何保證行李安全？</a></li>
-<li><a href='/_generated_pages/answers/223972345.htm'>如何看待廣州上榜全球最不友好城市？</a></li>
-<li><a href='/_generated_pages/answers/224120758.htm'>身份證號的末位校驗碼算法最後一步模11是基於什麽考慮？</a></li>
-<li><a href='/_generated_pages/answers/22420256.htm'>如何評價百合網的廣告「因為愛不等待」？</a></li>
-<li><a href='/_generated_pages/answers/22445337.htm'>一個初中生熱愛計算機，通過自學，有可能找到工作嗎？</a></li>
-<li><a href='/_generated_pages/answers/224508846.htm'>如何評價周星馳的電影《回魂夜》？</a></li>
-<li><a href='/_generated_pages/answers/22498269.htm'>要經歷、學習、觀察、思考什麽事情才能年紀輕輕就擁有較深刻的人生厚度和感悟？</a></li>
-<li><a href='/_generated_pages/answers/22498653.htm'>怎樣速讀？</a></li>
-<li><a href='/_generated_pages/answers/22528589.htm'>offer比較：C++職位和golang職位？</a></li>
-<li><a href='/_generated_pages/answers/22575868.htm'>送給香港人什麽禮物好？</a></li>
-<li><a href='/_generated_pages/answers/22583039.htm'>英雄聯盟6300英雄買什麽比較好？近期哪些英雄強勢？</a></li>
-<li><a href='/_generated_pages/answers/226832724.htm'>我的生活怎麽改變？</a></li>
-<li><a href='/_generated_pages/answers/227123181.htm'>PHP的未來在哪？</a></li>
-<li><a href='/_generated_pages/answers/22717883.htm'>有哪些遊戲擁有堪比優秀電影的劇情？</a></li>
-<li><a href='/_generated_pages/answers/22963469.htm'>識繁寫簡，五筆熟練的前提下，怎樣學倉頡輸入法？</a></li>
-<li><a href='/_generated_pages/answers/22974120.htm'>這張港幣是真的嗎？</a></li>
-<li><a href='/_generated_pages/answers/23183175.htm'>二十多歲該做什麽，將來才不後悔？</a></li>
-<li><a href='/_generated_pages/answers/23261432.htm'>咖啡粉不煮可以直接喝嗎？</a></li>
-<li><a href='/_generated_pages/answers/233959730.htm'>DOTA2 中為什麽要加入概率性的東西，這對公平性有什麽影響嗎？而lol 為什麽又要取消這個東西呢？</a></li>
-<li><a href='/_generated_pages/answers/234099592.htm'>為了一件三萬八的婚紗和準老公吵翻了，我錯了嗎？</a></li>
-<li><a href='/_generated_pages/answers/23485346.htm'>有哪些有公信力的港臺媒體值得推薦？</a></li>
-<li><a href='/_generated_pages/answers/235900886.htm'>「將軍墓前無人問，戲子家事天下知」是病態社會的體現嗎？</a></li>
-<li><a href='/_generated_pages/answers/235924268.htm'>如何看待Facebook 的 HHVM 引擎將轉用 Hack 語言？</a></li>
-<li><a href='/_generated_pages/answers/236748470.htm'>女性 30 歲，在北京有車有房有戶口，持有如下擇偶標準，是要求太高了嗎？</a></li>
-<li><a href='/_generated_pages/answers/236912894.htm'>為什麽維他檸檬茶受歡迎？</a></li>
-<li><a href='/_generated_pages/answers/23713651.htm'>簡化字對閱讀古文有影響嗎？</a></li>
-<li><a href='/_generated_pages/answers/23855420.htm'>是不是越漂亮的女人真的越危險？為什麽會有這個觀點的產生呢？</a></li>
-<li><a href='/_generated_pages/answers/238631248.htm'>有哪些表現手法可以突出音樂中想強調的音符或者虛化某些想弱化的音符（除了音量）？</a></li>
-<li><a href='/_generated_pages/answers/238720908.htm'>有哪些大家不說，但需要知道的社會規則？</a></li>
-<li><a href='/_generated_pages/answers/238757279.htm'>我支持平權，準備結婚前不要男方彩禮、夫妻共同買房。但我的母親堅持男方不交彩禮就不得結婚。我該怎麽辦？</a></li>
-<li><a href='/_generated_pages/answers/239071487.htm'>“好記性不如爛筆頭”有科學依據嗎？</a></li>
-<li><a href='/_generated_pages/answers/23986221.htm'>雪球網推出的理財產品能達到 7% 的平均收益率嗎？「14 天 7% 的收益」宣傳是否合規？</a></li>
-<li><a href='/_generated_pages/answers/24000954.htm'>如果我們相信未來會更好，我們還應該珍惜現在嗎？</a></li>
-<li><a href='/_generated_pages/answers/240633168.htm'>怪物獵人系列是否已經跑偏？</a></li>
-<li><a href='/_generated_pages/answers/241137495.htm'>怪物獵人好玩在哪里？</a></li>
-<li><a href='/_generated_pages/answers/24136751.htm'>如何簡明判斷一部美劇是否反智？</a></li>
-<li><a href='/_generated_pages/answers/24182379.htm'>《灌籃高手》的動畫是否是失敗的？</a></li>
-<li><a href='/_generated_pages/answers/24182624.htm'>現在去香港工作，如果不考慮所學專業，選擇什麽行業在香港比較有發展前途？</a></li>
-<li><a href='/_generated_pages/answers/241832097.htm'>日本麻將半莊戰中，東場暫時四位，和三位點差一萬以上，應該怎樣處理手中的牌？</a></li>
-<li><a href='/_generated_pages/answers/242023571.htm'>有哪些不建議取的英文名？</a></li>
-<li><a href='/_generated_pages/answers/24206729.htm'>廣東麻將禁吃之後，技巧上會有哪些不同？</a></li>
-<li><a href='/_generated_pages/answers/24211273.htm'>學生應該如何充分利用  PC？</a></li>
-<li><a href='/_generated_pages/answers/24213271.htm'>去香港買什麽書？</a></li>
-<li><a href='/_generated_pages/answers/24220295.htm'>在香港購物時，如被激進人士謾罵，該如何有力地回擊？</a></li>
-<li><a href='/_generated_pages/answers/24228194.htm'>最好的 PHP 框架是什麽？為什麽？</a></li>
-<li><a href='/_generated_pages/answers/242529631.htm'>什麽是用戶體驗？如何評價用戶體驗的好壞？</a></li>
-<li><a href='/_generated_pages/answers/24297576.htm'>「好萊塢電影的成功，不是靠砸錢投資，而是靠精準的分析來組建合適的電影制作團隊來確保成功」，是這樣麽？</a></li>
-<li><a href='/_generated_pages/answers/243060191.htm'>如何評價數字音頻工作站 REAPER？</a></li>
-<li><a href='/_generated_pages/answers/243324124.htm'>想讓五歲的女兒玩編程、進行啟蒙，怎樣著手準備比較適合？</a></li>
-<li><a href='/_generated_pages/answers/243764958.htm'>如果借網貸的人死了，那這筆錢是不是不用還了？</a></li>
-<li><a href='/_generated_pages/answers/24385573.htm'>在我們日常寫作中，文章的節奏是什麽？</a></li>
-<li><a href='/_generated_pages/answers/24481224.htm'>如何向別人推薦電影，且最大限度不引起別人的反感？</a></li>
-<li><a href='/_generated_pages/answers/245147951.htm'>淘寶中差評是不是已經形同虛設？</a></li>
-<li><a href='/_generated_pages/answers/245152750.htm'>如何看待 Steam 遊戲因為沒有中文而打差評的行為？</a></li>
-<li><a href='/_generated_pages/answers/24529873.htm'>為什麽那麽多人喜歡 Sheldon，而對 Leonard 不待見？</a></li>
-<li><a href='/_generated_pages/answers/245341619.htm'>祝自己20歲生日高逼格文字？</a></li>
-<li><a href='/_generated_pages/answers/245350449.htm'>庫里這樣打籃球是否已經失去了籃球的意義？</a></li>
-<li><a href='/_generated_pages/answers/245413956.htm'>怎樣壓制住外界施加的浮躁跟內心的不安，安安靜靜不浮不躁的提升自己的內在修養？</a></li>
-<li><a href='/_generated_pages/answers/245544398.htm'>工作後你還會主動看論文嗎？</a></li>
-<li><a href='/_generated_pages/answers/24624572.htm'>同樣是因為偷盜損失一千塊，心情為什麽卻不一樣？</a></li>
-<li><a href='/_generated_pages/answers/24627781.htm'>建立一個數據庫，同步導入幾個企業管理軟件數據，不影響其他系統穩定性。需要打通哪些環節？</a></li>
-<li><a href='/_generated_pages/answers/24661692.htm'>為什麽很多畫家都需要模特？</a></li>
-<li><a href='/_generated_pages/answers/246976551.htm'>坐飛機的時候有什麽東西可以提升幸福感？</a></li>
-<li><a href='/_generated_pages/answers/247289303.htm'>為什麽存在一些那麽在乎幾塊錢的人？</a></li>
-<li><a href='/_generated_pages/answers/247400640.htm'>程序員記憶力不好，記不住數據結構中的成員，還適合幹這行麽？</a></li>
-<li><a href='/_generated_pages/answers/24756504.htm'>網線接口為什麽是 RJ45 規格，而不能做成 USB 型？</a></li>
-<li><a href='/_generated_pages/answers/248007128.htm'>家產十幾億的年輕人私生活是怎樣的？</a></li>
-<li><a href='/_generated_pages/answers/24846730.htm'>如何看待大陸夫婦因男童街頭大便被拍，而與港人發生沖突一事？</a></li>
-<li><a href='/_generated_pages/answers/24846984.htm'>如何駁斥“遊戲無害論”這一觀點？</a></li>
-<li><a href='/_generated_pages/answers/24917812.htm'>程序員中的大牛都是從很早就開始接觸編程的嗎？</a></li>
-<li><a href='/_generated_pages/answers/24944245.htm'>有哪些書的封面讓人一見想讀？</a></li>
-<li><a href='/_generated_pages/answers/249855157.htm'>抽取20個有一個紅球再抽取20個沒有紅球與抽40個一個紅球的概率？</a></li>
-<li><a href='/_generated_pages/answers/25170725.htm'>中國造不出世界主流水平的汽車發動機嗎？</a></li>
-<li><a href='/_generated_pages/answers/25190480.htm'>如何忘掉漢語，進入真正的英語思維？</a></li>
-<li><a href='/_generated_pages/answers/251984720.htm'>從安卓手機換iPhone後你會考慮用回安卓手機嗎？</a></li>
-<li><a href='/_generated_pages/answers/252099602.htm'>如何評價 2017 年 10 月 29 日英雄聯盟全球總決賽半決賽 WE vs SSG？</a></li>
-<li><a href='/_generated_pages/answers/252290224.htm'>有哪些讓你一眼相中的句子？</a></li>
-<li><a href='/_generated_pages/answers/252449638.htm'>怎麽看待蘋果公司要求分成微信、值乎打賞 32%？</a></li>
-<li><a href='/_generated_pages/answers/252807529.htm'>如何評價倉頡輸入法？</a></li>
-<li><a href='/_generated_pages/answers/25375050.htm'>如何評價周星馳的演技？</a></li>
-<li><a href='/_generated_pages/answers/25411803.htm'>知乎鼓勵問 why 還是 how ？</a></li>
-<li><a href='/_generated_pages/answers/25412010.htm'>最令你吃驚的事實是什麽？</a></li>
-<li><a href='/_generated_pages/answers/254152943.htm'>那些最開始在知乎的人現在還有幾個留在這里？</a></li>
-<li><a href='/_generated_pages/answers/255705252.htm'>貧窮有多可怕？</a></li>
-<li><a href='/_generated_pages/answers/256436765.htm'>怎麽評價在討論國家統一、民族問題時「人走地留」的觀點？</a></li>
-<li><a href='/_generated_pages/answers/256478143.htm'>你為什麽不買 iPhone X？</a></li>
-<li><a href='/_generated_pages/answers/257547419.htm'>作曲/編曲時候 什麽時候用木管/銅管/弦樂？</a></li>
-<li><a href='/_generated_pages/answers/258622673.htm'>ACM 競賽的題目在專業程序員眼中是怎樣的水準？</a></li>
-<li><a href='/_generated_pages/answers/258799104.htm'>為什麽我總想了解編程中更底層的知識，而不是問題的解決？</a></li>
-<li><a href='/_generated_pages/answers/258806068.htm'>什麽樣的人最自由？</a></li>
-<li><a href='/_generated_pages/answers/258810473.htm'>為什麽諾基亞會如此快地衰落覆滅，而很多國內廠商（如小米、魅族）卻能抓住安卓這根救命稻草做的風生水起？</a></li>
-<li><a href='/_generated_pages/answers/258812728.htm'>民科到底是一個什麽樣的群體？</a></li>
-<li><a href='/_generated_pages/answers/258817021.htm'>失敗者不應該獲得掌聲 怎麽辯論？</a></li>
-<li><a href='/_generated_pages/answers/258818206.htm'>如果知乎需要實名制，強制你用真實頭像、寫真實姓名，你還會玩知乎嗎？</a></li>
-<li><a href='/_generated_pages/answers/258838604.htm'>音樂遊戲是判定更重要還是combo更重要？</a></li>
-<li><a href='/_generated_pages/answers/258850571.htm'>能否在平面中表現出所有RGB顏色，並保持連續性？</a></li>
-<li><a href='/_generated_pages/answers/258854815.htm'>值得欣賞的 Logo 有哪些？</a></li>
-<li><a href='/_generated_pages/answers/258878220.htm'>怪物獵人的“校服”現象是大家所願意看到的嗎？</a></li>
-<li><a href='/_generated_pages/answers/258889245.htm'>在函數的入口處對參數的合法性進行檢查是一個值得提倡的好習慣嗎？</a></li>
-<li><a href='/_generated_pages/answers/258908566.htm'>你見過哪些把無恥當有趣的行為？</a></li>
-<li><a href='/_generated_pages/answers/259974743.htm'>如何看待壓縮？</a></li>
-<li><a href='/_generated_pages/answers/260328773.htm'>如何看待：男子拒簽不平等婚前協議，結婚前一天悔婚？</a></li>
-<li><a href='/_generated_pages/answers/260908154.htm'>什麽樣的包適合 IT 男上班用？</a></li>
-<li><a href='/_generated_pages/answers/26187625.htm'>手機卡牌遊戲，在美工水平極其有限的情況下，策劃如何通過玩法彌補呢？</a></li>
-<li><a href='/_generated_pages/answers/26203038.htm'>生活中哪些小事或細節會讓你覺得一個女生比較靠譜？</a></li>
-<li><a href='/_generated_pages/answers/262150481.htm'>如何看待蘋果日報刊登文章：“我們上等人不用支付寶！”這件事？</a></li>
-<li><a href='/_generated_pages/answers/262160643.htm'>編曲時音樂的情感走向與預算的想法相反時你們怎麽辦？</a></li>
-<li><a href='/_generated_pages/answers/26216537.htm'>公司內部可以完全使用 Mac 嗎？</a></li>
-<li><a href='/_generated_pages/answers/262243455.htm'>程序員大牛與菜雞分別寫音樂播放器，播放同一首歌，音質會有差別嗎？</a></li>
-<li><a href='/_generated_pages/answers/262822434.htm'>PHP 的語言設計上有沒有什麽值得借鑒的地方？</a></li>
-<li><a href='/_generated_pages/answers/26332177.htm'>Linux 用戶一打開終端就 sudo su 算是壞習慣嗎？</a></li>
-<li><a href='/_generated_pages/answers/263355526.htm'>Linux 的桌面環境是否已經達到了 Windows XP 的水準？</a></li>
-<li><a href='/_generated_pages/answers/26338378.htm'>香港人敵視內地人嗎？</a></li>
-<li><a href='/_generated_pages/answers/26338558.htm'>如何讓香港人不討厭大陸人？</a></li>
-<li><a href='/_generated_pages/answers/264390138.htm'>為什麽微信很難在海外成功，比不過Line, Viber, Telegram 之類的app？</a></li>
-<li><a href='/_generated_pages/answers/26454533.htm'>大學生如何利用課少時的空余時間？</a></li>
-<li><a href='/_generated_pages/answers/26484820.htm'>有沒有寶馬產的自行車？有的話哪里能買到？</a></li>
-<li><a href='/_generated_pages/answers/266241880.htm'>遇到危險，伴侶卻先逃跑，該原諒ta嗎？</a></li>
-<li><a href='/_generated_pages/answers/26630597.htm'>如何設計一款適合畫素描的自動鉛筆？</a></li>
-<li><a href='/_generated_pages/answers/267572201.htm'>如何正確使用 The Merriam-Webster Dictionary？</a></li>
-<li><a href='/_generated_pages/answers/26766135.htm'>為什麽紅警星際會比不過 lol dota 這類的競技性遊戲？</a></li>
-<li><a href='/_generated_pages/answers/26805609.htm'>不值得作為真心朋友來交往的人，他們身上都有哪些特點？</a></li>
-<li><a href='/_generated_pages/answers/26858348.htm'>為什麽很多人討厭章子怡？</a></li>
-<li><a href='/_generated_pages/answers/26860563.htm'>如何跟一個熱衷於osu、galgame以及硬件的男生建立良好的聯系？</a></li>
-<li><a href='/_generated_pages/answers/26919539.htm'>如何回應「人的眼睛有 5.76 億像素，卻終究看不懂人心」？</a></li>
-<li><a href='/_generated_pages/answers/26952257.htm'>軟件工程中，架構師，系統分析師，需求分析師等崗位的職責如何界定？是否這些崗位都要專職？</a></li>
-<li><a href='/_generated_pages/answers/270319386.htm'>有馬甲線是種怎樣的體驗？</a></li>
-<li><a href='/_generated_pages/answers/27130489.htm'>什麽樣的女生算是心智成熟了？</a></li>
-<li><a href='/_generated_pages/answers/27131965.htm'>在 985 大學墊底，停學一年按計劃自學編程合適嗎？</a></li>
-<li><a href='/_generated_pages/answers/27132581.htm'>為什麽香港的 IT 行業平均薪酬較低？</a></li>
-<li><a href='/_generated_pages/answers/27135270.htm'>鋼琴的哪些特點使其被廣泛用做多種樂器的伴奏？</a></li>
-<li><a href='/_generated_pages/answers/27135532.htm'>為什麽有的人好像什麽都知道但現實中卻一事無成？</a></li>
-<li><a href='/_generated_pages/answers/27135922.htm'>是否有可能備份整個互聯網？</a></li>
-<li><a href='/_generated_pages/answers/27138996.htm'>無摩擦的，無空氣阻力的鐘擺下用繩子掛一物體的最終狀態是什麽樣子的？會保持運動還是會停下來？</a></li>
-<li><a href='/_generated_pages/answers/272040703.htm'>如何從性能方面選擇for，map和forEach？</a></li>
-<li><a href='/_generated_pages/answers/27249941.htm'>現實可以有多殘酷？</a></li>
-<li><a href='/_generated_pages/answers/273333631.htm'>因為堅持跑步得罪了同事和領導，怎麽辦？</a></li>
-<li><a href='/_generated_pages/answers/274629091.htm'>教科書和科普書有什麽區別？</a></li>
-<li><a href='/_generated_pages/answers/27691627.htm'>參加 Code Jam 需要多高的編程技術？</a></li>
-<li><a href='/_generated_pages/answers/27836239.htm'>蘋果公司的很多產品具備金屬外殼卻不接地，符合電氣規範嗎？</a></li>
-<li><a href='/_generated_pages/answers/280692432.htm'>node相比傳統服務端技術棧差在哪里？</a></li>
-<li><a href='/_generated_pages/answers/28326225.htm'>男性更看重女性的身材、臉蛋還是思想？</a></li>
-<li><a href='/_generated_pages/answers/28332751.htm'>中國人的語文能力在退步嗎？</a></li>
-<li><a href='/_generated_pages/answers/28403259.htm'>有哪些文化創意產業與互聯網跨界的成功案例？</a></li>
-<li><a href='/_generated_pages/answers/28447875.htm'>20 多歲男士包里放些什麽東西會顯得比較有格調？</a></li>
-<li><a href='/_generated_pages/answers/285956007.htm'>讀書早晚會忘，為什麽還要讀書？</a></li>
-<li><a href='/_generated_pages/answers/285968887.htm'>初中畢業在家想學Java，找個培訓機構好還是自學比較好啊？</a></li>
-<li><a href='/_generated_pages/answers/28603869.htm'>男生約我看電影，排隊時卻嫌票貴不看了，他為何會這樣？</a></li>
-<li><a href='/_generated_pages/answers/286211998.htm'>前端的表單驗證還有必要嗎？</a></li>
-<li><a href='/_generated_pages/answers/286661646.htm'>法學界為什麽有學者一直在為廢除死刑而努力？</a></li>
-<li><a href='/_generated_pages/answers/28744552.htm'>如果處於美國本土的人類突然全部消失，會發生什麽？</a></li>
-<li><a href='/_generated_pages/answers/289383640.htm'>你在 GitHub 上看到過哪些有意思的 Issue？</a></li>
-<li><a href='/_generated_pages/answers/289407852.htm'>日本網頁設計為什麽超鏈接全都帶下劃線？</a></li>
-<li><a href='/_generated_pages/answers/290985973.htm'>斯諾登是賣國賊嗎？</a></li>
-<li><a href='/_generated_pages/answers/290994092.htm'>在男人眼中，一個優秀男人的定義是什麽？（請附加案例）</a></li>
-<li><a href='/_generated_pages/answers/29100457.htm'>一個球繞地球一周回到原地可能麽？</a></li>
-<li><a href='/_generated_pages/answers/291029585.htm'>簡歷是一頁好還是多頁好？網上那些簡歷模板有用嗎？</a></li>
-<li><a href='/_generated_pages/answers/292724093.htm'>為什麽說 60 歲看三國覺得劉備最厲害？</a></li>
-<li><a href='/_generated_pages/answers/29316903.htm'>如果領導說的話特別難聽，生氣辭職是否中二呢？</a></li>
-<li><a href='/_generated_pages/answers/293636414.htm'>哪些問題不管回答 Yes 或 No 都對自己有弊無利？</a></li>
-<li><a href='/_generated_pages/answers/29416504.htm'>為什麽Billboard Top100中舞曲占大多數?</a></li>
-<li><a href='/_generated_pages/answers/296352895.htm'>計算機專業畢業生不會並且不用 Excel 里的 vlookup 功能理所應當嗎？</a></li>
-<li><a href='/_generated_pages/answers/29649702.htm'>學生時代你做過最裝逼的事是什麽?</a></li>
-<li><a href='/_generated_pages/answers/29649875.htm'>一個極度追求自由平等、蔑視權威、討厭一切束縛但心懷世界大同的人 ，能成為這個世界的改造者嗎?</a></li>
-<li><a href='/_generated_pages/answers/29650753.htm'>有哪些值得背下來的東西?</a></li>
-<li><a href='/_generated_pages/answers/29652120.htm'>第一次去電音節要註意什麽？</a></li>
-<li><a href='/_generated_pages/answers/296705048.htm'>男生 25 歲了，應該明白哪些道理？</a></li>
-<li><a href='/_generated_pages/answers/29725275.htm'>女生有啥技能不小心暴露出來會讓男生眼前一亮？</a></li>
-<li><a href='/_generated_pages/answers/29795853.htm'>如何評價 2014 年 8 月 27 日羅永浩和王自如的直播辯論？</a></li>
-<li><a href='/_generated_pages/answers/29905266.htm'>高中生如何寫出有思想、有深度的作文？</a></li>
-<li><a href='/_generated_pages/answers/30005429.htm'>有哪些麻將的勝負成為了傳奇？</a></li>
-<li><a href='/_generated_pages/answers/30049864.htm'>有哪些能提高邏輯思維能力的書或者資料值得推薦？</a></li>
-<li><a href='/_generated_pages/answers/30361652.htm'>如何評價 2014 年 9 月 9 日蘋果的產品發布會以及新產品？</a></li>
-<li><a href='/_generated_pages/answers/305120999.htm'>如何看待「175 名中國遊客被棄日本機場 與當地警方發生沖突」？</a></li>
-<li><a href='/_generated_pages/answers/30753127.htm'>“歷史/政治沒有對錯，只有輸贏” 這個觀點是否正確？</a></li>
-<li><a href='/_generated_pages/answers/30754448.htm'>玩 Galgame 的女性是因為什麽而喜歡上這類遊戲的？</a></li>
-<li><a href='/_generated_pages/answers/309971739.htm'>有哪些由於生活富足而被我們忽視了的現象？</a></li>
-<li><a href='/_generated_pages/answers/30999286.htm'>怎麽成為一個好女孩？</a></li>
-<li><a href='/_generated_pages/answers/31090344.htm'>有人說長城沒能擋住遊牧騎兵，金字塔沒能使法老木乃伊複活，所以都是失敗的超級工程，大家贊同嗎？</a></li>
-<li><a href='/_generated_pages/answers/31118091.htm'>懂音樂的人玩節奏大師/勁樂團會更有優勢嗎？</a></li>
-<li><a href='/_generated_pages/answers/311199001.htm'>被家長看見妹套和卡墊怎麽解釋？</a></li>
-<li><a href='/_generated_pages/answers/31151308.htm'>如何通過短時間交談和觀察判斷候選人人格特征和價值取向？</a></li>
-<li><a href='/_generated_pages/answers/31156635.htm'>血流麻將清一色的牌什麽牌型和八張、七張、六張、五張、四張？</a></li>
-<li><a href='/_generated_pages/answers/31191134.htm'>為什麽有的女生說不會玩遊戲？</a></li>
-<li><a href='/_generated_pages/answers/312281419.htm'>如果《MHW》在PSV上出攜帶版，是否會扭轉PSV現在的頹勢？</a></li>
-<li><a href='/_generated_pages/answers/31259191.htm'>什麽是「Think like a lawyer」？如何做到？</a></li>
-<li><a href='/_generated_pages/answers/31338692.htm'>戀愛後如何處理與朋友之間的關系？</a></li>
-<li><a href='/_generated_pages/answers/31382045.htm'>什麽東西價錢很貴，但是長期看來其實很便宜？</a></li>
-<li><a href='/_generated_pages/answers/31435664.htm'>為什麽大部分人喜歡穩定？</a></li>
-<li><a href='/_generated_pages/answers/31492912.htm'>自己寫的代碼太醜不敢開源怎麽辦？</a></li>
-<li><a href='/_generated_pages/answers/31643848.htm'>為什麽越來越討厭《絕命毒師》中的Walter?</a></li>
-<li><a href='/_generated_pages/answers/31698446.htm'>「Talk is cheap. Show me the code」怎麽翻譯比較好？</a></li>
-<li><a href='/_generated_pages/answers/31750009.htm'>喜歡編程的人是什麽心態？</a></li>
-<li><a href='/_generated_pages/answers/31763577.htm'>買東西到底是越貴越好，還是便宜也有好貨呢？</a></li>
-<li><a href='/_generated_pages/answers/31867066.htm'>無工作經驗的應屆畢業生如何制作簡歷？</a></li>
-<li><a href='/_generated_pages/answers/31870459.htm'>你見過的情商最高的行為是什麽？</a></li>
-<li><a href='/_generated_pages/answers/320673291.htm'>自信來源於什麽？</a></li>
-<li><a href='/_generated_pages/answers/324901135.htm'>年薪三十萬的碼農不如一個省委辦公廳公務員嗎？</a></li>
-<li><a href='/_generated_pages/answers/326980770.htm'>為什麽故意損毀人民幣是違法行為？ 是為了維護國家權威（比如不能燒國旗）還是為了貨幣調控？</a></li>
-<li><a href='/_generated_pages/answers/32698194.htm'>對大陸 80 後影響最大的一部日本動畫片是？</a></li>
-<li><a href='/_generated_pages/answers/326985792.htm'>如果中國人登月把美國人插的國旗拔掉了，美國會怎麽做？</a></li>
-<li><a href='/_generated_pages/answers/328470134.htm'>如何看待衡水學生們的二二四運動？</a></li>
-<li><a href='/_generated_pages/answers/329885357.htm'>程序員是如何看待「祖傳代碼」的？</a></li>
-<li><a href='/_generated_pages/answers/33089411.htm'>你見過哪些雷人的中式英語？</a></li>
-<li><a href='/_generated_pages/answers/33174594.htm'>如何評價彭羚這個香港歌手？</a></li>
-<li><a href='/_generated_pages/answers/333392966.htm'>過度依賴框架有什麽不好？</a></li>
-<li><a href='/_generated_pages/answers/33487604.htm'>日式RPG中默認固定的冒險職業組合是怎麽形成的？</a></li>
-<li><a href='/_generated_pages/answers/33495923.htm'>為什麽我那個當程序員的男朋友，一直特別想要一個機械鍵盤？</a></li>
-<li><a href='/_generated_pages/answers/33934732.htm'>“上進”這個詞，提的人很多，但是具體表現出來是一種怎樣的工作或者生活狀態？</a></li>
-<li><a href='/_generated_pages/answers/341651773.htm'>怎樣鍛煉可以在短期內提高引體向上的數量？</a></li>
-<li><a href='/_generated_pages/answers/342793840.htm'>不懂遊戲的室友/朋友/親戚說過哪些冒犯你們的話？</a></li>
-<li><a href='/_generated_pages/answers/343997342.htm'>在東京生活是怎樣的一番體驗？</a></li>
-<li><a href='/_generated_pages/answers/34569353.htm'>剛入了個投影,求廉價音響解決方案?</a></li>
-<li><a href='/_generated_pages/answers/345929298.htm'>你見過哪些「沒什麽鳥用」的手機應用（App）？</a></li>
-<li><a href='/_generated_pages/answers/34630173.htm'>比一個人吃火鍋更孤獨的事有什麽？</a></li>
-<li><a href='/_generated_pages/answers/34682225.htm'>為什麽有些人不喜歡出身底層的人？</a></li>
-<li><a href='/_generated_pages/answers/34682315.htm'>你是什麽時候發現自己與眾不同的？</a></li>
-<li><a href='/_generated_pages/answers/347563892.htm'>如何看待大學生想用幾千塊理財時，別人會勸誡你投資自己（健身、讀書、交友）？</a></li>
-<li><a href='/_generated_pages/answers/34778273.htm'>橋牌、德州撲克、麻將這三種棋牌類遊戲對智力的考驗哪個比較高？為什麽？</a></li>
-<li><a href='/_generated_pages/answers/34883904.htm'>哪些話不能用來和男朋友開玩笑？</a></li>
-<li><a href='/_generated_pages/answers/34883916.htm'>為什麽大多數人喜歡在家里吃飯？</a></li>
-<li><a href='/_generated_pages/answers/34883968.htm'>與大牛在同一個餐桌上，應該怎麽聊天？</a></li>
-<li><a href='/_generated_pages/answers/34886828.htm'>內向的男人不打麻將如何混入麻將圈？</a></li>
-<li><a href='/_generated_pages/answers/34886865.htm'>奧運會銀牌、銅牌得主的國旗的高度以及領獎臺的高度是一樣高麽？</a></li>
-<li><a href='/_generated_pages/answers/34886928.htm'>學生黨有必要窮遊嗎，還是應該先專心學習為以後打下基礎？</a></li>
-<li><a href='/_generated_pages/answers/34968370.htm'>如何解釋“破罐子破摔”的心態，並規避這種心態的產生？</a></li>
-<li><a href='/_generated_pages/answers/34968446.htm'>該不該給中小學生買智能手機？什麽系統更合適？如何設置更合理？</a></li>
-<li><a href='/_generated_pages/answers/34968669.htm'>香港人和臺灣人是怎麽輸入繁體中文的？</a></li>
-<li><a href='/_generated_pages/answers/34968705.htm'>為什麽有些人更喜歡依靠地圖而不願意問路呢？</a></li>
-<li><a href='/_generated_pages/answers/34968860.htm'>為什麽說科學（物理學等）不是迷信？</a></li>
-<li><a href='/_generated_pages/answers/34969001.htm'>為什麽很多人喜歡聽陳奕迅的歌？</a></li>
-<li><a href='/_generated_pages/answers/35009418.htm'>追了自己很多年的男生突然不追並變得冷漠，是什麽感覺？</a></li>
-<li><a href='/_generated_pages/answers/350429521.htm'>中國 00 後與前輩比是否有足夠的進步？</a></li>
-<li><a href='/_generated_pages/answers/350526817.htm'>如何看待騰訊近幾年的口碑名聲?</a></li>
-<li><a href='/_generated_pages/answers/350557740.htm'>如果在公海上突然多出來一塊大陸那它將會屬於誰？</a></li>
-<li><a href='/_generated_pages/answers/350823950.htm'>哪個瞬間你理解了父母的某個思想或行為？</a></li>
-<li><a href='/_generated_pages/answers/352644732.htm'>面試官問你的缺點是什麽，應該如何回答？</a></li>
-<li><a href='/_generated_pages/answers/35274279.htm'>孩子偷偷拿父母的錢消費，怎麽教育？</a></li>
-<li><a href='/_generated_pages/answers/35333696.htm'>不厭其煩地糾正別人 IOS 應該是 iOS， iphone 應該是 iPhone 的人是怎樣一種心態？</a></li>
-<li><a href='/_generated_pages/answers/355481972.htm'>如何看待北師大教授田松「警惕科學家」的言論？</a></li>
-<li><a href='/_generated_pages/answers/355741387.htm'>如何評價甲方“要用 Photoshop 不能用PS”？</a></li>
-<li><a href='/_generated_pages/answers/35598922.htm'>麻將桌上有哪些規矩？</a></li>
-<li><a href='/_generated_pages/answers/35599659.htm'>程序員的核心競爭力是什麽？為什麽？</a></li>
-<li><a href='/_generated_pages/answers/35661283.htm'>在網絡發達的現在，CD銷售是否還有市場？</a></li>
-<li><a href='/_generated_pages/answers/35941179.htm'>女兒太聽話了怎麽辦？</a></li>
-<li><a href='/_generated_pages/answers/359857843.htm'>《英雄聯盟》中有哪些冷知識？</a></li>
-<li><a href='/_generated_pages/answers/360713771.htm'>有錢真的是可以為所欲為嗎？</a></li>
-<li><a href='/_generated_pages/answers/36091347.htm'>如何保證自己不長殘？</a></li>
-<li><a href='/_generated_pages/answers/36205005.htm'>如今遊戲選手退役後又複出，是不是因為缺乏其他更好的職業選擇空間？</a></li>
-<li><a href='/_generated_pages/answers/36320412.htm'>為什麽古代中國、埃及印度等文明很少進行對外貿易？</a></li>
-<li><a href='/_generated_pages/answers/36588507.htm'>日本為什麽能在二戰結束之後成為經濟強國？</a></li>
-<li><a href='/_generated_pages/answers/367431066.htm'>程序員讓計算機替自己完成工作，老板該不該解雇他？</a></li>
-<li><a href='/_generated_pages/answers/36766594.htm'>香港還有哪些傳統老式的港式茶餐廳？</a></li>
-<li><a href='/_generated_pages/answers/36768306.htm'>港式茶餐廳取名？</a></li>
-<li><a href='/_generated_pages/answers/368564079.htm'>如何反駁「因為你遲到，全班 40 個人每人耽誤一分鐘，加起來就是一節課」？</a></li>
-<li><a href='/_generated_pages/answers/368615231.htm'>是否應該給高考遲到十五分鐘以上（不含十五分鐘）的人網開一面，讓其進入考場？</a></li>
-<li><a href='/_generated_pages/answers/36940262.htm'>男生應該擦潤唇膏嗎？</a></li>
-<li><a href='/_generated_pages/answers/369539715.htm'>為什麽很多中國人不認真對待子女的抑郁癥？</a></li>
-<li><a href='/_generated_pages/answers/369858575.htm'>美國普通人一個月 3000 美元的工資，為什麽還會覺得 iPhone X 貴？</a></li>
-<li><a href='/_generated_pages/answers/370410785.htm'>Linux下編程有什麽優勢？</a></li>
-<li><a href='/_generated_pages/answers/370715712.htm'>我一個平民百姓可以為敘利亞做什麽？</a></li>
-<li><a href='/_generated_pages/answers/371282227.htm'>2000年的時候，MSN、ICQ的傳輸協議都是TCP嗎？</a></li>
-<li><a href='/_generated_pages/answers/371807198.htm'>如果中國被美國禁止使用 Android、iOS、Windows 系統，會對中國造成怎樣的影響？</a></li>
-<li><a href='/_generated_pages/answers/372701728.htm'>如果有一天上帝給了數學家素數的通項公式，這會對數學界有什麽影響？</a></li>
-<li><a href='/_generated_pages/answers/372913853.htm'>登入界面中，「登錄」和「登陸」哪個正確？</a></li>
-<li><a href='/_generated_pages/answers/37303174.htm'>Instagram 的用戶增長速度為什麽超過了 Twitter？</a></li>
-<li><a href='/_generated_pages/answers/373748810.htm'>王自如和羅永浩的論戰有什麽亮點？</a></li>
-<li><a href='/_generated_pages/answers/37429650.htm'>2007 年就購入了第一代 iPhone，在當年的體驗是怎樣的？</a></li>
-<li><a href='/_generated_pages/answers/37430473.htm'>當說PHP是最好的語言的時候，理由在哪里？</a></li>
-<li><a href='/_generated_pages/answers/378758945.htm'>女明星們身高超過170體重40+kg的數據是真實的麽？</a></li>
-<li><a href='/_generated_pages/answers/380254464.htm'>Golang vs Rust vs Dlang 哪個更有前途，哪位大牛這 3 門語言都用過？</a></li>
-<li><a href='/_generated_pages/answers/38042306.htm'>如何在一個陌生的地方快速建立並適應東南西北？</a></li>
-<li><a href='/_generated_pages/answers/382698564.htm'>使用Rust的開發效率怎麽樣？</a></li>
-<li><a href='/_generated_pages/answers/382699451.htm'>如何比較 iPhone X 和小米MIX 2？</a></li>
-<li><a href='/_generated_pages/answers/384218444.htm'>為什麽日本人喜歡用手機發郵件而不是發短信？</a></li>
-<li><a href='/_generated_pages/answers/384219215.htm'>為什麽日本人總習慣把包放在地上，而不是桌子上或者椅子上呢？</a></li>
-<li><a href='/_generated_pages/answers/384226257.htm'>日本人工作時是如何偷懶的？</a></li>
-<li><a href='/_generated_pages/answers/385118695.htm'>外國人問「How are you?」時到底應如何回答？</a></li>
-<li><a href='/_generated_pages/answers/385166753.htm'>怪物獵人系列中的龍屬性到底是什麽？</a></li>
-<li><a href='/_generated_pages/answers/38602788.htm'>如何高效率、有質量地自學《標準日本語》初級（上下）？</a></li>
-<li><a href='/_generated_pages/answers/388016963.htm'>你願意回到民國，走在石板路上，做一個撐著油紙傘的優雅姑娘嗎？</a></li>
-<li><a href='/_generated_pages/answers/388045099.htm'>如何通俗易懂地向學前班水平的小朋友解釋：坐車時，為何近處的景物比遠處的景物移動得快？</a></li>
-<li><a href='/_generated_pages/answers/39005703.htm'>有必要認認真真的系統學習語法嗎？</a></li>
-<li><a href='/_generated_pages/answers/391089453.htm'>如何看待華為P20pro的DXO評分達到109分？</a></li>
-<li><a href='/_generated_pages/answers/39117155.htm'>現在軟件行業已經很成熟，為什麽程序員還在沒日沒夜敲代碼搞系統更新？</a></li>
-<li><a href='/_generated_pages/answers/39117690.htm'>通貨膨脹對什麽人有好處？普通人如何應對或是從中牟利呢？</a></li>
-<li><a href='/_generated_pages/answers/39151656.htm'>女生擁有哪些技能或特長會讓人覺得很酷炫、很有魅力？</a></li>
-<li><a href='/_generated_pages/answers/392962474.htm'>和不會打籃球的人打球什麽體驗？</a></li>
-<li><a href='/_generated_pages/answers/393529124.htm'>學校預算十萬購買一臺服務器，請問有推薦嗎？</a></li>
-<li><a href='/_generated_pages/answers/39653244.htm'>如果自己打工賺學費上大學，父母是否有權利知道期末成績？</a></li>
-<li><a href='/_generated_pages/answers/396843336.htm'>不擅長吵架，是一種什麽樣的體驗？</a></li>
-<li><a href='/_generated_pages/answers/397320352.htm'>為什麽說人類無法組裝出一個細胞？</a></li>
-<li><a href='/_generated_pages/answers/39752788.htm'>你媽媽告訴過哪些讓你受用至今的道理？</a></li>
-<li><a href='/_generated_pages/answers/39766272.htm'>上司經常在微信朋友圈分享「莫言最經典的十句話」，感覺很腦殘，怎麽辦？</a></li>
-<li><a href='/_generated_pages/answers/39768479.htm'>那些初高中甚至小學就接觸編程的人最後到了什麽樣的境界？</a></li>
-<li><a href='/_generated_pages/answers/398389986.htm'>你為什麽不喜歡狼人殺？</a></li>
-<li><a href='/_generated_pages/answers/39850226.htm'>四川麻將定缺為 1+1+2 的時候是 1 容易贏還是 2 容易贏？</a></li>
-<li><a href='/_generated_pages/answers/398759418.htm'>如果複仇者聯盟加入一位東方英雄，你希望加入誰？為什麽會是Ta？</a></li>
-<li><a href='/_generated_pages/answers/40040962.htm'>經典的電子樂器為什麽要停產？</a></li>
-<li><a href='/_generated_pages/answers/40075438.htm'>「魚香」和「魚」有什麽關系？</a></li>
-<li><a href='/_generated_pages/answers/400849068.htm'>知乎上這麽多推崇學 Python 入 IT 行的，如果他們學完 Python 這一套找不到工作怎麽辦？</a></li>
-<li><a href='/_generated_pages/answers/402648524.htm'>Python 初學者應該如何在 Rust 和 Go 之間選擇？</a></li>
-<li><a href='/_generated_pages/answers/402874556.htm'>程序員能純靠技術渡過中年危機嗎？</a></li>
-<li><a href='/_generated_pages/answers/403361337.htm'>身為程序員碰到最奇葩的需求是怎樣的？</a></li>
-<li><a href='/_generated_pages/answers/403403386.htm'>Switch 值得買嗎，為什麽？</a></li>
-<li><a href='/_generated_pages/answers/404264759.htm'>男生玩遊戲會經常飆臟話嗎？</a></li>
-<li><a href='/_generated_pages/answers/40543087.htm'>如何回答女生「你喜歡我什麽」？</a></li>
-<li><a href='/_generated_pages/answers/40578779.htm'>為什麽命令行界面（CLI）並未隨著命令行操作系統（如 DOS）的淘汰而消亡？</a></li>
-<li><a href='/_generated_pages/answers/406056389.htm'>支付寶和微信蓄勢待發，香港的移動支付市場未來會如何？</a></li>
-<li><a href='/_generated_pages/answers/406726092.htm'>如何評價lambda the ultimate imperative?</a></li>
-<li><a href='/_generated_pages/answers/40699093.htm'>聽過 1 萬張以上的唱片是什麽體驗？</a></li>
-<li><a href='/_generated_pages/answers/407605531.htm'>手指過於粗大，如何選購鍵盤？</a></li>
-<li><a href='/_generated_pages/answers/40836544.htm'>有哪些可以安靜地發泄憤怒的方法？</a></li>
-<li><a href='/_generated_pages/answers/40976414.htm'>如果讓你從街機遊戲里評選出十強好遊戲的話？</a></li>
-<li><a href='/_generated_pages/answers/41017521.htm'>各位互聯網行業的大大們，你認識的最牛的安卓開發者是怎樣的？</a></li>
-<li><a href='/_generated_pages/answers/411917497.htm'>如何糾正「覺得父親沒本事」的心態？</a></li>
-<li><a href='/_generated_pages/answers/411966792.htm'>殖民時期的香港有對中國的民族認同感嗎？</a></li>
-<li><a href='/_generated_pages/answers/412455790.htm'>為什麽說 C 語言比 Java 難？</a></li>
-<li><a href='/_generated_pages/answers/412837842.htm'>電梯失控垂直從 20 層落下會發生什麽？</a></li>
-<li><a href='/_generated_pages/answers/413241972.htm'>只會nodejs，但公司強制要求上php，是讓他們招個phper，還是自己去學？</a></li>
-<li><a href='/_generated_pages/answers/41484222.htm'>馬拉松運動員比賽時都在想什麽？</a></li>
-<li><a href='/_generated_pages/answers/41494805.htm'>讀完一篇英語文章，如何給出現的生詞做筆記？是簡略地按照詞典抄寫，還是只寫音標和單詞的意思？</a></li>
-<li><a href='/_generated_pages/answers/41531110.htm'>為什麽pc不能造漂亮一點?</a></li>
-<li><a href='/_generated_pages/answers/41558192.htm'>地方自治發源地的英國為什麽出現了畸形獨大的首都？</a></li>
-<li><a href='/_generated_pages/answers/41568219.htm'>既然潛規則比明規則好用，那我們還要明規則幹什麽？</a></li>
-<li><a href='/_generated_pages/answers/415965305.htm'>現在研究生是否低質化，如果是，你怎麽看？</a></li>
-<li><a href='/_generated_pages/answers/416456487.htm'>如果你是拳頭設計師，你會怎樣調整或重做亞索？</a></li>
-<li><a href='/_generated_pages/answers/417421263.htm'>為什麽靠譜員工越來越難找？</a></li>
-<li><a href='/_generated_pages/answers/419193968.htm'>如何通俗易懂地解釋支持向量回歸(support vector regression)?</a></li>
-<li><a href='/_generated_pages/answers/419693043.htm'>不發朋友圈動態的人對朋友圈是什麽態度？</a></li>
-<li><a href='/_generated_pages/answers/419956536.htm'>教授說沒有寫過一千行以上代碼的程序就別想上大公司，這種說法對嗎？</a></li>
-<li><a href='/_generated_pages/answers/420531580.htm'>熬夜看世界杯有哪些「神器」？</a></li>
-<li><a href='/_generated_pages/answers/420923110.htm'>哪些專業名詞翻譯得特別爛？</a></li>
-<li><a href='/_generated_pages/answers/422587904.htm'>有哪些對你很有沖擊力的設計？</a></li>
-<li><a href='/_generated_pages/answers/422734230.htm'>你心中的索尼旗艦手機應該是什麽樣子的？</a></li>
-<li><a href='/_generated_pages/answers/42358023.htm'>如何擺脫屌絲氣質？</a></li>
-<li><a href='/_generated_pages/answers/423984769.htm'>同為博弈為什麽圍棋高雅，而麻將電子競技被視為低俗？</a></li>
-<li><a href='/_generated_pages/answers/423988008.htm'>現代職業圍棋是否應該恢複中國古代正統圍棋規則中的「還棋頭」（數子法）規則？</a></li>
-<li><a href='/_generated_pages/answers/424105467.htm'>為什麽 IMO 不僅不考微積分，連很多高中數學知識也不考？</a></li>
-<li><a href='/_generated_pages/answers/424938135.htm'>《爐石傳說》中終極感染這張牌是不是無腦強？</a></li>
-<li><a href='/_generated_pages/answers/425861626.htm'>《塞爾達傳說：曠野之息》真的像我朋友說的這麽差嗎？</a></li>
-<li><a href='/_generated_pages/answers/426531367.htm'>如何看待中國拒收「洋垃圾」，遭韓媒痛批「忘本」？</a></li>
-<li><a href='/_generated_pages/answers/426764893.htm'>詞曲編錄混中後三者的存在感較低的狀況在將來能否改觀？</a></li>
-<li><a href='/_generated_pages/answers/42726322.htm'>婚後遇到更合適、更情投意合的今生摯愛，怎麽辦？</a></li>
-<li><a href='/_generated_pages/answers/42727521.htm'>打籃球時通過哪些細節可以看出一個人水平？</a></li>
-<li><a href='/_generated_pages/answers/42796695.htm'>BT 客戶端在Play商店為什麽沒有被下架？</a></li>
-<li><a href='/_generated_pages/answers/42894995.htm'>將來東亞十六國能否同西歐一樣整體進入發達社會？</a></li>
-<li><a href='/_generated_pages/answers/429487863.htm'>玩英雄聯盟最討厭隊友選什麽英雄?</a></li>
-<li><a href='/_generated_pages/answers/429666605.htm'>女生玩 LOL 被罵，語言極其惡毒，而且對方揚言要舉報我，我該怎麽辦？</a></li>
-<li><a href='/_generated_pages/answers/429818237.htm'>為什麽我鉆石段位 solo 會輸給了一個黃銅？</a></li>
-<li><a href='/_generated_pages/answers/429858574.htm'>第二好的語言是什麽？</a></li>
-<li><a href='/_generated_pages/answers/429987647.htm'>你遇到過哪些「有意思」的名字？</a></li>
-<li><a href='/_generated_pages/answers/430526412.htm'>日本有什麽不好？</a></li>
-<li><a href='/_generated_pages/answers/43237142.htm'>三個普通人能否赤手空拳打倒一個訓練有素的軍人？</a></li>
-<li><a href='/_generated_pages/answers/43247675.htm'>為什麽部分人友善且獨來獨往？</a></li>
-<li><a href='/_generated_pages/answers/43525346.htm'>為什麽很多中國女孩子不化妝？</a></li>
-<li><a href='/_generated_pages/answers/435788213.htm'>軟件工程應屆生需要達到什麽水平才算合格/優秀/牛X？</a></li>
-<li><a href='/_generated_pages/answers/435793470.htm'>你認為ACG界有什麽質量很高卻不火的「被隱藏的神作」？</a></li>
-<li><a href='/_generated_pages/answers/436774182.htm'>如何提高從研究分析到投資收益的轉化率？</a></li>
-<li><a href='/_generated_pages/answers/436815833.htm'>如何評價音樂遊戲作曲家kors k（</a></li>
-<li><a href='/_generated_pages/answers/43835371.htm'>如何評價知乎刪除《如何評價知乎刪除百度統計代碼被用於攻擊GitHub的事件？》</a></li>
-<li><a href='/_generated_pages/answers/438866756.htm'>如何給孩子解釋他是怎麽從媽媽肚皮里出來的？</a></li>
-<li><a href='/_generated_pages/answers/438879383.htm'>用C++編寫遊戲容易嗎？有什麽開源的小遊戲嗎？能分享一下嗎？</a></li>
-<li><a href='/_generated_pages/answers/43944238.htm'>海上絲綢之路主要港口沒有防城港？</a></li>
-<li><a href='/_generated_pages/answers/43962899.htm'>零基礎自學 Android 並去找工作可行性大麽？</a></li>
-<li><a href='/_generated_pages/answers/440064804.htm'>計算器是如何實現乘法、除法、指數、對數、三角函數運算的？</a></li>
-<li><a href='/_generated_pages/answers/440896407.htm'>作為前端開發人員無法造出類似React和Vue這樣的輪子,是否應該早日轉行?</a></li>
-<li><a href='/_generated_pages/answers/44130931.htm'>為什麽C語言的編譯器用C寫?</a></li>
-<li><a href='/_generated_pages/answers/441316690.htm'>怎麽看待知乎上很多回答都不看好創業？</a></li>
-<li><a href='/_generated_pages/answers/44134540.htm'>對親人的生老病死看得很淡，算冷血嗎？</a></li>
-<li><a href='/_generated_pages/answers/44234008.htm'>每天不開心也不難過這是種什麽生活狀態？</a></li>
-<li><a href='/_generated_pages/answers/44306152.htm'>小孩子大聲說「那個阿姨的衣服跟我們家鋼琴布一樣」時，作為孩子家長或那個阿姨，應如何化解尷尬？</a></li>
-<li><a href='/_generated_pages/answers/44385498.htm'>給定矩形ACEF，B、D分別在AC、CE上，以這六個點中的三個為頂點，一共可以畫出多少個三角形？</a></li>
-<li><a href='/_generated_pages/answers/445071747.htm'>你班主任說過最讓你難忘的一句話是什麽？</a></li>
-<li><a href='/_generated_pages/answers/445501113.htm'>頭發少的女生應該怎麽打扮？</a></li>
-<li><a href='/_generated_pages/answers/44572906.htm'>有哪些值得每天一看的網站？</a></li>
-<li><a href='/_generated_pages/answers/44574168.htm'>女生如何玩好 LOL？</a></li>
-<li><a href='/_generated_pages/answers/448338762.htm'>高考英語可以寫圓體嗎？</a></li>
-<li><a href='/_generated_pages/answers/451001353.htm'>一個人健身前和健身後有什麽區別？</a></li>
-<li><a href='/_generated_pages/answers/45386544.htm'>跟女生第一次吃飯，男生團購很low嗎？</a></li>
-<li><a href='/_generated_pages/answers/455563556.htm'>為什麽音遊很多譜面的發狂段都設置在最後？</a></li>
-<li><a href='/_generated_pages/answers/455590104.htm'>什麽樣子的音樂遊戲譜面可以被稱為優秀？</a></li>
-<li><a href='/_generated_pages/answers/45589452.htm'>怎樣深入淺出地回答問題？</a></li>
-<li><a href='/_generated_pages/answers/456012087.htm'>便宜的衣服比貴的衣服差很多嗎？</a></li>
-<li><a href='/_generated_pages/answers/45753228.htm'>追我的男生找我吃飯，我讓他請客，不想 AA 制，合適嗎？我該怎麽向他說明？</a></li>
-<li><a href='/_generated_pages/answers/45756007.htm'>怎麽勸說妹子換工作？</a></li>
-<li><a href='/_generated_pages/answers/457681610.htm'>《明日之子》第二季不管其他因素，李袁傑至少唱的比大部分人好聽，為什麽不能被選？</a></li>
-<li><a href='/_generated_pages/answers/459125548.htm'>如何評價Liquid Types？</a></li>
-<li><a href='/_generated_pages/answers/459809876.htm'>去日本旅行，如果你的同伴想去靖國神社看看，你會如何反應？</a></li>
-<li><a href='/_generated_pages/answers/46268918.htm'>能否通過大量的閱讀獲得真實的為人處世經驗？</a></li>
-<li><a href='/_generated_pages/answers/46270849.htm'>大陸人日常使用繁體字是一種什麽心態？</a></li>
-<li><a href='/_generated_pages/answers/463194365.htm'>中國普通民眾天文常識匱乏到什麽地步？</a></li>
-<li><a href='/_generated_pages/answers/46491665.htm'>家里欠債 700 多萬，該怎麽辦？</a></li>
-<li><a href='/_generated_pages/answers/465631425.htm'>糾結使用原生PHP還是框架?</a></li>
-<li><a href='/_generated_pages/answers/467333454.htm'>人生目前一帆風順，困難總是可以克服，為何依舊極度沒有自信和安全感？這是憂鬱癥嗎？</a></li>
-<li><a href='/_generated_pages/answers/46746747.htm'>如何看待360殺毒在AV-C等評測機構的測試中因作弊被譴責後發布的公關文？</a></li>
-<li><a href='/_generated_pages/answers/46838216.htm'>被瞧不起後，如何成為別人高攀不起的人？</a></li>
-<li><a href='/_generated_pages/answers/46843164.htm'>在一個5-6人的小團隊里，如何作為一個 Leader 快速考核每個人的工作質量？</a></li>
-<li><a href='/_generated_pages/answers/469805575.htm'>朋友說任天堂是給小孩和女生玩的，該怎麽反駁他？</a></li>
-<li><a href='/_generated_pages/answers/47006185.htm'>有哪些讓你相見恨晚的 PPT 制作技術或知識？</a></li>
-<li><a href='/_generated_pages/answers/47289318.htm'>女神是用多少錢「堆」出來的？</a></li>
-<li><a href='/_generated_pages/answers/47389013.htm'>學習過科學麻將理論的牌手，在天鳳般場和上級打牌，有什麽需要調整戰術的地方嗎？</a></li>
-<li><a href='/_generated_pages/answers/47421826.htm'>女性是否應該因為年齡的增長而降低擇偶標準？</a></li>
-<li><a href='/_generated_pages/answers/47495878.htm'>安卓手機上是否有支持MIDI格式的播放器？</a></li>
-<li><a href='/_generated_pages/answers/47498756.htm'>什麽是玩遊戲？什麽是被遊戲玩？</a></li>
-<li><a href='/_generated_pages/answers/475897806.htm'>單獨使用NGINX+PHP好還是NGINX+APACHE+PHP好？</a></li>
-<li><a href='/_generated_pages/answers/475905268.htm'>PHP大型門戶站是用靜態好，還是偽靜態好？</a></li>
-<li><a href='/_generated_pages/answers/47670434.htm'>長時間堅持健身能在一定程度上改變容貌嗎？</a></li>
-<li><a href='/_generated_pages/answers/476775813.htm'>如何評價Jif編程語言？</a></li>
-<li><a href='/_generated_pages/answers/47721563.htm'>日本麻將最大點數是多少？</a></li>
-<li><a href='/_generated_pages/answers/477501352.htm'>為什麽陳佩斯的回答都用繁體字寫？</a></li>
-<li><a href='/_generated_pages/answers/477804685.htm'>男生會主動搭訕一個長得很高並且顏值很高的女生嗎？</a></li>
-<li><a href='/_generated_pages/answers/48035816.htm'>杜能農業區位論、克里斯塔勒的中心地理論和韋伯工業區位論的區別？</a></li>
-<li><a href='/_generated_pages/answers/48063526.htm'>同樣是姑娘，差距為什麽這麽大？</a></li>
-<li><a href='/_generated_pages/answers/481228558.htm'>如何評價 Opera 瀏覽器棄用自家 Presto 引擎轉用 WebKit？</a></li>
-<li><a href='/_generated_pages/answers/48132194.htm'>什麽叫做內心強大？怎樣變成一個內心強大的人？</a></li>
-<li><a href='/_generated_pages/answers/48210475.htm'>PBT材質的鍵帽和POM的有什麽區別？</a></li>
-<li><a href='/_generated_pages/answers/482703466.htm'>為什麽健身房內沒人打架？</a></li>
-<li><a href='/_generated_pages/answers/48336586.htm'>程序員眼中理想的世界是什麽？</a></li>
-<li><a href='/_generated_pages/answers/48337019.htm'>戀愛中的男性生氣的話應該怎麽辦？</a></li>
-<li><a href='/_generated_pages/answers/484607719.htm'>為什麽總是有人說 Java 啰嗦，卻沒人說 C++ 啰嗦？</a></li>
-<li><a href='/_generated_pages/answers/48489605.htm'>一年什麽工作也不做，只上知乎，會有什麽結果？</a></li>
-<li><a href='/_generated_pages/answers/485217417.htm'>在萬智牌規則逐漸簡化的情況下，為何遊戲王的規則越來越複雜？</a></li>
-<li><a href='/_generated_pages/answers/48529185.htm'>有哪些標誌或動畫形象可以供宿舍七個人每人一個的圖案印在 T 恤上？</a></li>
-<li><a href='/_generated_pages/answers/48538731.htm'>請問五十年後或者一百年之後，港幣會消失嘛？</a></li>
-<li><a href='/_generated_pages/answers/490034840.htm'>如何看待 Redis 修改 Master/Slave 稱呼，以避免讓人聯系到奴隸制？</a></li>
-<li><a href='/_generated_pages/answers/49135435.htm'>奇葩舍友為什麽喜歡一邊哭窮一邊炫富?</a></li>
-<li><a href='/_generated_pages/answers/49155246.htm'>如何回答助理「你就給我三千月薪，你還想我怎麽樣」的問題？</a></li>
-<li><a href='/_generated_pages/answers/491593818.htm'>崇洋媚外有多可怕？</a></li>
-<li><a href='/_generated_pages/answers/491594856.htm'>如何看待吉他和弦神器？</a></li>
-<li><a href='/_generated_pages/answers/491622088.htm'>Rust的設計中為什麽要區分不可變變量和常量？</a></li>
-<li><a href='/_generated_pages/answers/492330533.htm'>一百字以內能寫出怎樣的爽文？</a></li>
-<li><a href='/_generated_pages/answers/49333610.htm'>有哪些值得推薦的關於二次元的APP?</a></li>
-<li><a href='/_generated_pages/answers/49407765.htm'>想靠炒股成為有錢人，靠譜嗎？</a></li>
-<li><a href='/_generated_pages/answers/49544854.htm'>如何看待經濟地理(人文地理與城鄉規劃)這個專業？</a></li>
-<li><a href='/_generated_pages/answers/49544923.htm'>我為什麽總是精神不振？</a></li>
-<li><a href='/_generated_pages/answers/49545117.htm'>為什麽 2015 年公告牌音樂大獎沒有 Billboard Icon Award 獎項了？</a></li>
-<li><a href='/_generated_pages/answers/49545254.htm'>如何評價羅文在粵語樂壇的地位？</a></li>
-<li><a href='/_generated_pages/answers/49545354.htm'>為什麽 2015 公告牌大獎節目比往屆單調很多？</a></li>
-<li><a href='/_generated_pages/answers/49545440.htm'>翡翠臺TVB為什麽能夠打敗亞洲電視ATV？</a></li>
-<li><a href='/_generated_pages/answers/49545619.htm'>香港人面臨著巨大的生活壓力，但為何不移居臺灣？</a></li>
-<li><a href='/_generated_pages/answers/49596877.htm'>如何區分偽隨機和真隨機？</a></li>
-<li><a href='/_generated_pages/answers/49599056.htm'>你的計算機啟蒙是誰？</a></li>
-<li><a href='/_generated_pages/answers/497114578.htm'>為什麽美國的胖女生要比中國的胖女生有自信？</a></li>
-<li><a href='/_generated_pages/answers/49715205.htm'>人會預感到死亡嗎？</a></li>
-<li><a href='/_generated_pages/answers/49788279.htm'>男人更喜歡職場打拼女，還是大胸細腰的妹子？</a></li>
-<li><a href='/_generated_pages/answers/498056243.htm'>遊戲王卡牌後期是否太偏向於效果怪物？</a></li>
-<li><a href='/_generated_pages/answers/498121456.htm'>廣大的知友們，我想請問下剛開始學習炒港股有哪些比較好的書籍，網站，論壇或者資源能夠推薦呢？</a></li>
-<li><a href='/_generated_pages/answers/499197405.htm'>日元為什麽不能把面值縮小到十分之一？</a></li>
-<li><a href='/_generated_pages/answers/49972807.htm'>如何制作港式奶茶？</a></li>
-<li><a href='/_generated_pages/answers/50043470.htm'>讀博士一直不能畢業，老婆嫌我沒出息，怎麽辦？</a></li>
-<li><a href='/_generated_pages/answers/50046312.htm'>在你看來最完美的一生是什麽樣的？</a></li>
-<li><a href='/_generated_pages/answers/50333373.htm'>是否應該取消「中小學強制性的文言文學習」？</a></li>
-<li><a href='/_generated_pages/answers/50470782.htm'>生活在一個壓力大的環境怎麽辦？</a></li>
-<li><a href='/_generated_pages/answers/50471424.htm'>對於在國外，特別是在美國有必要性區分大陸人，香港人，臺灣人</a></li>
-<li><a href='/_generated_pages/answers/50525273.htm'>如何辨認身邊的聰明人？</a></li>
-<li><a href='/_generated_pages/answers/50572567.htm'>辯論中屢次被打斷怎麽辦？ 比如《紙牌屋》第三季大選辯論、羅永浩和王自如直播辯論？</a></li>
-<li><a href='/_generated_pages/answers/50847069.htm'>跟優秀的人相處是種怎樣的體驗？</a></li>
-<li><a href='/_generated_pages/answers/50850672.htm'>和女朋友一起打麻將該不該和女朋友點的炮？</a></li>
-<li><a href='/_generated_pages/answers/51004668.htm'>玩《英雄聯盟》時被噴該怎麽回擊？</a></li>
-<li><a href='/_generated_pages/answers/51070904.htm'>好多香港人或者說粵語的人寫字是用一些奇怪的漢字，是什麽意思？</a></li>
-<li><a href='/_generated_pages/answers/51085115.htm'>打麻將真的可以猜到對手要和的牌嗎？</a></li>
-<li><a href='/_generated_pages/answers/51141105.htm'>如何做好一次三四分鐘的即興演講？</a></li>
-<li><a href='/_generated_pages/answers/51237800.htm'>打麻將技術好就一定行嗎？「三分技術，七分手氣」是什麽意思？</a></li>
-<li><a href='/_generated_pages/answers/51280720.htm'>澳門和香港口音有什麽差別嗎？</a></li>
-<li><a href='/_generated_pages/answers/513593274.htm'>能力強但是人品差的員工該不該留？</a></li>
-<li><a href='/_generated_pages/answers/51413917.htm'>日本麻將的自動麻將桌，其點數統計是如何實現的？</a></li>
-<li><a href='/_generated_pages/answers/51461738.htm'>「現在」是什麽樣一種狀態和感受，我們又是如何清晰而準確地辨知這狀態不是幻覺、夢境，不是過去不是將來？</a></li>
-<li><a href='/_generated_pages/answers/514802219.htm'>如何教我的蛇寫Rust？</a></li>
-<li><a href='/_generated_pages/answers/515471605.htm'>為什麽中國象棋走點 而國際象棋和將棋走格子？</a></li>
-<li><a href='/_generated_pages/answers/51558203.htm'>如何評價國粹麻將？</a></li>
-<li><a href='/_generated_pages/answers/515643412.htm'>如何看待英雄聯盟 S8 八強賽 RNG 2:3 不敵 G2？</a></li>
-<li><a href='/_generated_pages/answers/515646164.htm'>如何看待夜店小姐指控沙特富商強奸，富商稱不慎絆倒進入女子身體，最終被判無罪？</a></li>
-<li><a href='/_generated_pages/answers/515650323.htm'>大家如何看待加拿大立法通過吸食大麻合法？</a></li>
-<li><a href='/_generated_pages/answers/51565058.htm'>如何打破青少年對於想休學去從事電子競技的幻想？</a></li>
-<li><a href='/_generated_pages/answers/515931607.htm'>為什麽身邊很多現充喜歡自稱肥宅？</a></li>
-<li><a href='/_generated_pages/answers/515948032.htm'>如何看待父母口中的遊戲毀了一代人？</a></li>
-<li><a href='/_generated_pages/answers/51595186.htm'>香港海洋公園和迪斯尼，哪個更適合雨天玩？</a></li>
-<li><a href='/_generated_pages/answers/51656551.htm'>香港姓名拼法和粵拼為何不同？</a></li>
-<li><a href='/_generated_pages/answers/51658741.htm'>這一代90後香港男生的普遍特點是什麽？</a></li>
-<li><a href='/_generated_pages/answers/516981706.htm'>以下 2 個純牌效率麻將問題，如何打？</a></li>
-<li><a href='/_generated_pages/answers/51784448.htm'>在香港說普通話購物感覺受到了歧視怎麽辦？</a></li>
-<li><a href='/_generated_pages/answers/51901660.htm'>如何用最快速的方法判斷一個人的人品好壞？</a></li>
-<li><a href='/_generated_pages/answers/520675300.htm'>單身，不談戀愛，怎麽才能不寂寞？</a></li>
-<li><a href='/_generated_pages/answers/520679558.htm'>美國人肥胖嚴重的根本原因是什麽？</a></li>
-<li><a href='/_generated_pages/answers/521502225.htm'>日本人真的有國人想象中那麽開放嗎？</a></li>
-<li><a href='/_generated_pages/answers/52160601.htm'>麻將打得好的人打麻將時是種怎樣的感覺？</a></li>
-<li><a href='/_generated_pages/answers/52170929.htm'>如何面試 PHP 工程師？</a></li>
-<li><a href='/_generated_pages/answers/52185475.htm'>創業 idea 被大佬「偷走」，創業者該憤怒麽？</a></li>
-<li><a href='/_generated_pages/answers/52399524.htm'>長大以後，你悟出過哪些不一樣的道理？</a></li>
-<li><a href='/_generated_pages/answers/52401908.htm'>廣東話歌詞為什麽那麽難懂？</a></li>
-<li><a href='/_generated_pages/answers/52521160.htm'>為什麽外企全是中國HR卻喜歡要求職者交英文簡歷？</a></li>
-<li><a href='/_generated_pages/answers/52652717.htm'>喜歡穿裙子也是錯嗎？</a></li>
-<li><a href='/_generated_pages/answers/528628948.htm'>為什麽很多人都說php和c語言語法很像，我卻覺得差了那麽多？</a></li>
-<li><a href='/_generated_pages/answers/52864893.htm'>SEGA 麻雀能否與雀龍門和天鳳抗衡？</a></li>
-<li><a href='/_generated_pages/answers/529802392.htm'>有哪些外行看上去很普通，但在內行眼里其實非常高級的東西？</a></li>
-<li><a href='/_generated_pages/answers/53036304.htm'>從深圳到香港鴨脷洲海怡工貿中心，怎樣走最便捷？</a></li>
-<li><a href='/_generated_pages/answers/53329501.htm'>為什麽香港那麽小的地方有那麽多名校？</a></li>
-<li><a href='/_generated_pages/answers/53340088.htm'>打麻將和玩股票有什麽區別？</a></li>
-<li><a href='/_generated_pages/answers/53340609.htm'>作為軟粉你最看不慣哪些針對微軟產品的無腦黑？</a></li>
-<li><a href='/_generated_pages/answers/53341886.htm'>如何讓一個六歲的孩子相信，這個世界上並沒有鬼？</a></li>
-<li><a href='/_generated_pages/answers/535012561.htm'>如何評價編程語言wren?</a></li>
-<li><a href='/_generated_pages/answers/53587866.htm'>安徽地理位置那麽好，為什麽經濟落後？</a></li>
-<li><a href='/_generated_pages/answers/53588420.htm'>動漫《鬥牌傳說》是否對提高麻將技術有幫助？</a></li>
-<li><a href='/_generated_pages/answers/53652548.htm'>誰能簡述下20多年前（時值回歸前後）的香港是什麽樣的風貌？</a></li>
-<li><a href='/_generated_pages/answers/53654644.htm'>買車是買低配、中配還是高配？</a></li>
-<li><a href='/_generated_pages/answers/53657917.htm'>讀書到底為了什麽，讀研到底值不值？</a></li>
-<li><a href='/_generated_pages/answers/53714421.htm'>如何看待小米路由器團隊關於「404 錯誤頁面優化」的官方聲明？</a></li>
-<li><a href='/_generated_pages/answers/53720796.htm'>如何在辯論時駁倒強盜邏輯？</a></li>
-<li><a href='/_generated_pages/answers/53724785.htm'>知乎有哪些著名的香港人？</a></li>
-<li><a href='/_generated_pages/answers/53744661.htm'>喜歡聽 Techno 的人一般具有怎樣的性格？</a></li>
-<li><a href='/_generated_pages/answers/53799539.htm'>如何看待 Rust 的應用前景？</a></li>
-<li><a href='/_generated_pages/answers/53853418.htm'>如何看待生活中的一些人通過一些刁鉆刻薄或不依不饒的行為來獲得便宜的行為？</a></li>
-<li><a href='/_generated_pages/answers/53855980.htm'>假如今天開始微軟及其所有產品都消失了會怎麽樣?</a></li>
-<li><a href='/_generated_pages/answers/53880279.htm'>請問知乎那里糟糕？</a></li>
-<li><a href='/_generated_pages/answers/540343549.htm'>web開發用mac還是windows？</a></li>
-<li><a href='/_generated_pages/answers/540463672.htm'>如何向前端團隊安利函數式編程？</a></li>
-<li><a href='/_generated_pages/answers/540958424.htm'>你為什麽喜歡獨自旅行？</a></li>
-<li><a href='/_generated_pages/answers/541752667.htm'>買車是一生最壞的投資，這樣的觀點你同意嗎？</a></li>
-<li><a href='/_generated_pages/answers/541764733.htm'>為什麽我批評政府時，爸媽就勸我多角度看問題，可自己卻不從反面看？</a></li>
-<li><a href='/_generated_pages/answers/541797233.htm'>人民幣為什麽不把面值提高100倍？</a></li>
-<li><a href='/_generated_pages/answers/542498855.htm'>如何引導程序員新人按正確的流程開發?</a></li>
-<li><a href='/_generated_pages/answers/542519451.htm'>註冊用戶達到千萬，選用哪種PHP框架搭建這種承載量的網站比較適合？</a></li>
-<li><a href='/_generated_pages/answers/542829984.htm'>RMVB格式視頻使用什麽播放器最好播放？</a></li>
-<li><a href='/_generated_pages/answers/54292734.htm'>為什麽有很多人說吉他是「低級入門樂器」？</a></li>
-<li><a href='/_generated_pages/answers/54350030.htm'>知乎的局限性有哪些？</a></li>
-<li><a href='/_generated_pages/answers/54391180.htm'>IT男閑暇之余看看心理書會怎樣？</a></li>
-<li><a href='/_generated_pages/answers/54442457.htm'>香港泛民主派為什麽反對創新科技局的成立？</a></li>
-<li><a href='/_generated_pages/answers/54442827.htm'>在香港合法開店、開餐廳、開小巴等等到底需不需要給黑社會交保護費？</a></li>
-<li><a href='/_generated_pages/answers/54504652.htm'>寫代碼用哪種字體看起來最舒適？</a></li>
-<li><a href='/_generated_pages/answers/54506074.htm'>初次跟女生吃牛排時，女生對服務員說要八分熟，應該說些什麽來緩解尷尬？</a></li>
-<li><a href='/_generated_pages/answers/54508782.htm'>php好學嗎？自學php可以嗎？</a></li>
-<li><a href='/_generated_pages/answers/54509186.htm'>為什麽php和php工程師總是被黑？</a></li>
-<li><a href='/_generated_pages/answers/54509398.htm'>php最擅長做什麽？</a></li>
-<li><a href='/_generated_pages/answers/54533343.htm'>為什麽會很多人會莫名其妙害怕某一種特定的動物？</a></li>
-<li><a href='/_generated_pages/answers/54653338.htm'>怎樣才能擁有講故事的能力？或者說怎麽能將自己的生活經歷繪聲繪色的講給別人聽。</a></li>
-<li><a href='/_generated_pages/answers/54653854.htm'>談戀愛一定要有技巧嗎？</a></li>
-<li><a href='/_generated_pages/answers/54659580.htm'>人到底可以有多壞？</a></li>
-<li><a href='/_generated_pages/answers/54667169.htm'>廣西作為沿海省份，高速鐵路里程全國第二，為什麽經濟落後？</a></li>
-<li><a href='/_generated_pages/answers/547963112.htm'>大部分日本人的英語水平是怎樣的？</a></li>
-<li><a href='/_generated_pages/answers/54807481.htm'>如何評價陳奕迅榮獲歌神稱號？</a></li>
-<li><a href='/_generated_pages/answers/550488764.htm'>有哪些專業名詞是非常普通的生活中常用詞，但意義聯系幾乎沒有的？</a></li>
-<li><a href='/_generated_pages/answers/55103596.htm'>Facebook 首頁都使用了哪些技術提高訪問速度？</a></li>
-<li><a href='/_generated_pages/answers/55146431.htm'>為什麽 Laravel 5 這麽好一個框架，國人都不去用？</a></li>
-<li><a href='/_generated_pages/answers/55150216.htm'>看了laravel的php框架怎麽感覺很不靠譜？</a></li>
-<li><a href='/_generated_pages/answers/553182074.htm'>如何看待日本東京山手線新站被命名為“高輪Gateway站”（高輪ゲートウェイ駅）？</a></li>
-<li><a href='/_generated_pages/answers/55318940.htm'>日本麻將為什麽不允許龍七對？</a></li>
-<li><a href='/_generated_pages/answers/55319296.htm'>玩電子遊戲算是愛好嗎？</a></li>
-<li><a href='/_generated_pages/answers/553287310.htm'>有哪些書非常有利於年輕人未來發展？</a></li>
-<li><a href='/_generated_pages/answers/55422047.htm'>雙語家庭是如何做到讓孩子從一開始就能區分兩種語言的？</a></li>
-<li><a href='/_generated_pages/answers/55531835.htm'>女朋友和其他男生看電影，你會介意麽？</a></li>
-<li><a href='/_generated_pages/answers/55532436.htm'>如何鑒別渣女？</a></li>
-<li><a href='/_generated_pages/answers/55534314.htm'>數碼相機X100T與RX1R，選擇哪個更為理性？</a></li>
-<li><a href='/_generated_pages/answers/55626561.htm'>編程中，有哪些好的習慣從一開始就值得堅持？</a></li>
-<li><a href='/_generated_pages/answers/55711008.htm'>怎樣用微信朋友圈吸引你喜歡的男生？</a></li>
-<li><a href='/_generated_pages/answers/55754355.htm'>現在一個人去香港安全嗎？</a></li>
-<li><a href='/_generated_pages/answers/55791092.htm'>微信的好處究竟在哪里，為何我感受不到？</a></li>
-<li><a href='/_generated_pages/answers/55817861.htm'>有沒有一首歌的歌詞是代碼？</a></li>
-<li><a href='/_generated_pages/answers/55857048.htm'>大學畢業以後想以吉他彈唱謀生，靠譜嗎？</a></li>
-<li><a href='/_generated_pages/answers/55912692.htm'>現在的人，能夠因為錢，變得有多壞？</a></li>
-<li><a href='/_generated_pages/answers/561521470.htm'>像 Swift 和 Kotlin 這種語法風格叫什麽，和 Java 比有哪些優勢？</a></li>
-<li><a href='/_generated_pages/answers/561853434.htm'>如何評價one outs 這部漫畫？</a></li>
-<li><a href='/_generated_pages/answers/561941669.htm'>HTTP為什麽要設計成無狀態的，這樣比有狀態有什麽好處，有哪些協議是典型的有狀態，好處又在哪里？</a></li>
-<li><a href='/_generated_pages/answers/56217401.htm'>Xbox系列遊戲機在日本不受歡迎的深層次原因是什麽？</a></li>
-<li><a href='/_generated_pages/answers/56548369.htm'>臺灣已經在招收大陸本科生了，但為什麽和香港高校的火爆招生完全形成對比呢？</a></li>
-<li><a href='/_generated_pages/answers/56550544.htm'>什麽聊天工具能搜索標簽和關鍵字？</a></li>
-<li><a href='/_generated_pages/answers/565542371.htm'>蘋果全家桶用戶粘性高的利弊分析？</a></li>
-<li><a href='/_generated_pages/answers/565562662.htm'>如何評價 Richard Stallman？</a></li>
-<li><a href='/_generated_pages/answers/56556403.htm'>完全沒有動力了，不知該怎麽辦？</a></li>
-<li><a href='/_generated_pages/answers/56587436.htm'>聽電音有什麽壞處？</a></li>
-<li><a href='/_generated_pages/answers/565891515.htm'>PHP到底有多糟糕？</a></li>
-<li><a href='/_generated_pages/answers/56642140.htm'>睇我思嬌情緒好比度日如年。思嬌是什麽意思？？</a></li>
-<li><a href='/_generated_pages/answers/56655268.htm'>為什麽「Life is short」而不是 int 或 double？</a></li>
-<li><a href='/_generated_pages/answers/56657117.htm'>什麽是「直覺」？直覺可信嗎？女人的直覺真的更準嗎？</a></li>
-<li><a href='/_generated_pages/answers/56770283.htm'>為什麽很多人不喜歡發語音信息？</a></li>
-<li><a href='/_generated_pages/answers/56898353.htm'>打電話的時候為什麽要先說：現在通話方便嗎？</a></li>
-<li><a href='/_generated_pages/answers/569435374.htm'>除了 Go、Rust、Nim，還有哪些新編程語言更靠譜？</a></li>
-<li><a href='/_generated_pages/answers/56985741.htm'>如何評價索尼RX10?</a></li>
-<li><a href='/_generated_pages/answers/57007088.htm'>求推薦 一款家用相機，無攝影基礎，求比較奧林巴斯XZ-1、索尼NEX-5N、理光GRD4、佳能G1X ？</a></li>
-<li><a href='/_generated_pages/answers/570768509.htm'>有一種女孩表面上性格很好，有禮貌，也容易接觸，可為什麽讓人感覺有距離感？</a></li>
-<li><a href='/_generated_pages/answers/570916453.htm'>為什麽大多公司不要培訓班培訓出來的Java程序員？</a></li>
-<li><a href='/_generated_pages/answers/572080002.htm'>為什麽很多男生認為的女神，女孩都認為不好看，男女審美的差異在哪兒？</a></li>
-<li><a href='/_generated_pages/answers/572490443.htm'>家用電腦裝 Linux 系統能否在防止孩子玩遊戲的同時滿足他們 「查資料」的需求？</a></li>
-<li><a href='/_generated_pages/answers/572717432.htm'>如何評價EMUI9?</a></li>
-<li><a href='/_generated_pages/answers/57273167.htm'>科學麻將每一手的決定是否唯一？</a></li>
-<li><a href='/_generated_pages/answers/573154524.htm'>如何從零寫一個kv數據庫？</a></li>
-<li><a href='/_generated_pages/answers/573604518.htm'>Google Chrome、Mozilla Firefox、Opera、Edge、Safari 五大瀏覽器優劣勢對比分析？</a></li>
-<li><a href='/_generated_pages/answers/573974321.htm'>《黑鏡：潘達斯奈基》到底講了什麽？</a></li>
-<li><a href='/_generated_pages/answers/575133935.htm'>如何用5W rmb支持34W並發？</a></li>
-<li><a href='/_generated_pages/answers/575255847.htm'>你們喝完酒幹過什麽過分的事？</a></li>
-<li><a href='/_generated_pages/answers/576150695.htm'>現在人類的頂尖圍棋棋手例如柯潔能下得過古代的圍棋高手嗎？</a></li>
-<li><a href='/_generated_pages/answers/57667824.htm'>為什麽很多人在推薦理光GRD，不想帶單反，輕便點出行的話是不是性價比最好選擇？</a></li>
-<li><a href='/_generated_pages/answers/577251846.htm'>你怎麽看待滿嘴高並發，編碼能力卻稀松平常的程序員？</a></li>
-<li><a href='/_generated_pages/answers/577999716.htm'>為什麽會有黑LO娘情況出現？</a></li>
-<li><a href='/_generated_pages/answers/579521351.htm'>如果一個人無意撿到了哥德巴赫猜想的證明，應該如何處理？</a></li>
-<li><a href='/_generated_pages/answers/58150429.htm'>妹妹是問題少女，我該如何讓她變好？</a></li>
-<li><a href='/_generated_pages/answers/583213878.htm'>隨手畫線段，其長度最有可能是有理數還是無理數？</a></li>
-<li><a href='/_generated_pages/answers/58322688.htm'>有哪些適合情侶兩個人一起玩的桌遊？</a></li>
-<li><a href='/_generated_pages/answers/58344360.htm'>圍棋的中心內容是什麽？</a></li>
-<li><a href='/_generated_pages/answers/58408704.htm'>為什麽那麽多人對電子遊戲如此熱愛？</a></li>
-<li><a href='/_generated_pages/answers/58559049.htm'>RTS遊戲單位碰撞是怎麽實現的？</a></li>
-<li><a href='/_generated_pages/answers/58580519.htm'>香港大學文學院和香港中文大學是同一個大學嗎？</a></li>
-<li><a href='/_generated_pages/answers/586138773.htm'>你是否支持分詞書寫中文，為什麽？</a></li>
-<li><a href='/_generated_pages/answers/586927747.htm'>Rust 語言入門有哪些書？</a></li>
-<li><a href='/_generated_pages/answers/58755294.htm'>考雅思要不要離職？</a></li>
-<li><a href='/_generated_pages/answers/58772449.htm'>對比一下深港兩地的工薪族年輕人，究竟哪一邊置業壓力更大？</a></li>
-<li><a href='/_generated_pages/answers/588620930.htm'>靜態自動化內存管理難在哪里?</a></li>
-<li><a href='/_generated_pages/answers/58974399.htm'>如何看待「老婆待產，男人周末還去網吧」的行為？</a></li>
-<li><a href='/_generated_pages/answers/591731411.htm'>如果有一臺算力無限的計算機，會怎麽樣？</a></li>
-<li><a href='/_generated_pages/answers/59332618.htm'>香港人與大陸人有融洽相處的可能嗎？</a></li>
-<li><a href='/_generated_pages/answers/59544594.htm'>如何看待兩個中國人之間用英文微信溝通？</a></li>
-<li><a href='/_generated_pages/answers/59564604.htm'>微信在香港不能用嗎？</a></li>
-<li><a href='/_generated_pages/answers/59681275.htm'>聯系匯率制適合香港的現狀嗎？如果不適合的話提出改進意見?</a></li>
-<li><a href='/_generated_pages/answers/597457251.htm'>關於馬里奧制造的明日香？</a></li>
-<li><a href='/_generated_pages/answers/59853055.htm'>讀一本爛書是種怎樣的體驗？</a></li>
-<li><a href='/_generated_pages/answers/600140541.htm'>為何Switch成功了而 PSV 失敗了？</a></li>
-<li><a href='/_generated_pages/answers/60069783.htm'>開發像泡泡龍這種消除遊戲，如果想做出比較好的碰撞體驗的話有必要引入物理引擎麽？</a></li>
-<li><a href='/_generated_pages/answers/601960466.htm'>被別人看見打東方是一種怎樣的體驗？</a></li>
-<li><a href='/_generated_pages/answers/60205073.htm'>遇到港臺人說「你們中國人」應如何回應？</a></li>
-<li><a href='/_generated_pages/answers/60324476.htm'>為什麽我們總是不滿足於現在的生活狀態，總是懷念過去的生活狀態？</a></li>
-<li><a href='/_generated_pages/answers/603759103.htm'>如何評價很多網紅甚至歌手不會作詞作曲編曲沒有樂理常識  依舊很火？</a></li>
-<li><a href='/_generated_pages/answers/604613442.htm'>為什麽Patreon上開源領袖Eric Raymond所得到的捐助不到vue.js的 1/10？</a></li>
-<li><a href='/_generated_pages/answers/60540990.htm'>大陸人去香港購物對香港經濟影響有多大？</a></li>
-<li><a href='/_generated_pages/answers/60557650.htm'>24歲女人跟37歲離異無小孩的優秀男人在一起會有什麽問題？</a></li>
-<li><a href='/_generated_pages/answers/60558208.htm'>如何告訴小孩，不是什麽事兒都能順心如意？</a></li>
-<li><a href='/_generated_pages/answers/60630520.htm'>被男友暴打並以裸照威脅不分手應該怎麽辦？</a></li>
-<li><a href='/_generated_pages/answers/606986859.htm'>為什麽日本這麽多好吃的東西，日本人卻很少有肥胖的人？</a></li>
-<li><a href='/_generated_pages/answers/607110604.htm'>如何評價騰訊開源的PHP框架Biny？</a></li>
-<li><a href='/_generated_pages/answers/60868861.htm'>那些花幾百、上千塊錢買副耳機的人是什麽心態？</a></li>
-<li><a href='/_generated_pages/answers/608809589.htm'>有哪些讓人愛不釋手的圍棋禮品或產品？</a></li>
-<li><a href='/_generated_pages/answers/609325802.htm'>如果有一節永遠有電的五號電池，能用來做什麽？</a></li>
-<li><a href='/_generated_pages/answers/60978632.htm'>廣東人說“先生”的時候為什麽要省略“先”字，例如“李生”，王“生”？</a></li>
-<li><a href='/_generated_pages/answers/610577965.htm'>如何看待2018年深圳GDP超過香港？</a></li>
-<li><a href='/_generated_pages/answers/612563084.htm'>如何評價遊戲《俄羅斯方塊99》？</a></li>
-<li><a href='/_generated_pages/answers/612803192.htm'>為什麽韓國圍棋無法突破中國圍棋史上最強厚度的堵截？</a></li>
-<li><a href='/_generated_pages/answers/613018601.htm'>有哪些遊戲可以用 MIDI 鍵盤玩？</a></li>
-<li><a href='/_generated_pages/answers/613151225.htm'>哪位經常被黑的明星是你莫名討厭不起來的？</a></li>
-<li><a href='/_generated_pages/answers/613730614.htm'>在你熟悉的領域，你覺得多少個普通人能對抗一個世界頂尖選手呢？</a></li>
-<li><a href='/_generated_pages/answers/61581783.htm'>如何區別粵語的「多謝」和「唔該」？</a></li>
-<li><a href='/_generated_pages/answers/619222562.htm'>swoole如其作者所說比node.js有很多優勢，為什麽像天貓等大型高並發網站並沒有采用？</a></li>
-<li><a href='/_generated_pages/answers/619606762.htm'>有沒有關於編程語言的大一統理論？</a></li>
-<li><a href='/_generated_pages/answers/620643723.htm'>我的語文老師不喜歡陶淵明，因為覺得其虛偽，這樣的評價有說服力嗎？</a></li>
-<li><a href='/_generated_pages/answers/622284799.htm'>麻將中能否構造一個牌山，使得四家無論怎麽切牌或鳴牌都無法和牌？</a></li>
-<li><a href='/_generated_pages/answers/622528724.htm'>為什麽現在遊戲玩家這麽想要簡體中文？</a></li>
-<li><a href='/_generated_pages/answers/622673623.htm'>世界上最著名的遊戲是哪一款？</a></li>
-<li><a href='/_generated_pages/answers/62377054.htm'>win8和win10下的開機運行時間對timeGetTime()函數有影響嗎？</a></li>
-<li><a href='/_generated_pages/answers/62406848.htm'>生活中怎樣的美女才能被稱為「大」美女？</a></li>
-<li><a href='/_generated_pages/answers/624582862.htm'>為什麽沒有代碼批評？</a></li>
-<li><a href='/_generated_pages/answers/624909690.htm'>日本麻將中，強調爭一與強調避四的規則各有何優劣？</a></li>
-<li><a href='/_generated_pages/answers/625297077.htm'>如何評價新劇Ozark 黑錢勝地？</a></li>
-<li><a href='/_generated_pages/answers/62639111.htm'>覺得女生打麻將很 low 的想法是不是有問題呢？</a></li>
-<li><a href='/_generated_pages/answers/62672516.htm'>真的像電影《決勝21點》中的情節一樣玩black jack是可以算牌的？</a></li>
-<li><a href='/_generated_pages/answers/62733379.htm'>那些寫著大學必讀，人生必讀的書，真的必讀嗎？</a></li>
-<li><a href='/_generated_pages/answers/62812503.htm'>有哪些經典的打臉案例？</a></li>
-<li><a href='/_generated_pages/answers/62860839.htm'>在你的專業里，有什麽基礎知識是和普通人的認識不相符的？</a></li>
-<li><a href='/_generated_pages/answers/62923299.htm'>日本當代建築所追求的曖昧，與後現代主義建築體現出來的構圖結構不清晰，模糊性有什麽區別？</a></li>
-<li><a href='/_generated_pages/answers/630208157.htm'>如何看待《素媛》原型案件兇手趙鬥順將刑滿釋放？</a></li>
-<li><a href='/_generated_pages/answers/63072481.htm'>升入大學，如何看待自己的“女性”美？</a></li>
-<li><a href='/_generated_pages/answers/63179506.htm'>為什麽在家庭暴力中，母親通常比較懦弱？</a></li>
-<li><a href='/_generated_pages/answers/63266433.htm'>有什麽網站可以認識到香港人？</a></li>
-<li><a href='/_generated_pages/answers/63559767.htm'>在健身房辦了健身卡，之前從來沒有接觸過器械，該如何了解器械和鍛煉？</a></li>
-<li><a href='/_generated_pages/answers/63560994.htm'>為什麽很多乖女孩沒有對象？</a></li>
-<li><a href='/_generated_pages/answers/63561162.htm'>為什麽嗑瓜子可以嗑半個小時甚至一個小時以上，看書學習卻不可以？</a></li>
-<li><a href='/_generated_pages/answers/63607162.htm'>什麽是止損？</a></li>
-<li><a href='/_generated_pages/answers/63635849.htm'>太容易上當受騙怎麽辦？</a></li>
-<li><a href='/_generated_pages/answers/638762954.htm'>我給我媽發了一個表情包，但她當真了我該怎麽解釋?</a></li>
-<li><a href='/_generated_pages/answers/63946925.htm'>網易新聞客戶端的這種操作有沒有違反新聞道德？</a></li>
-<li><a href='/_generated_pages/answers/63949278.htm'>在東南亞和北美地區，華人說福州話、閩南話等閩語更多，還是粵語更多？</a></li>
-<li><a href='/_generated_pages/answers/64202278.htm'>如何回答「你們九零後吃過什麽苦」這個問題？</a></li>
-<li><a href='/_generated_pages/answers/642181439.htm'>音遊的重複練習到底改變了人體的什麽？</a></li>
-<li><a href='/_generated_pages/answers/643075524.htm'>「因果報應」真的存在嗎？</a></li>
-<li><a href='/_generated_pages/answers/64376950.htm'>如何增加一個人的自信？</a></li>
-<li><a href='/_generated_pages/answers/644147093.htm'>為什麽交淺言深是不好的？</a></li>
-<li><a href='/_generated_pages/answers/64472424.htm'>去香港紅磡看演唱會住哪比較方便，要可以逛吃逛吃的那種^_^？</a></li>
-<li><a href='/_generated_pages/answers/64546033.htm'>為什麽有人玩《英雄聯盟》從來不投降？</a></li>
-<li><a href='/_generated_pages/answers/645512196.htm'>任天堂switch被@fail0verflow破解並運行Doom3意味著什麽？</a></li>
-<li><a href='/_generated_pages/answers/645699366.htm'>日麻中怎麽避免無銃吃四？</a></li>
-<li><a href='/_generated_pages/answers/64692301.htm'>為什麽總有人覺得陳奕迅紅的很晚？</a></li>
-<li><a href='/_generated_pages/answers/649186145.htm'>人類的科技，是否已經接近極限？</a></li>
-<li><a href='/_generated_pages/answers/64991357.htm'>大齡女性是否不易嫁人？</a></li>
-<li><a href='/_generated_pages/answers/65153684.htm'>如何判斷伴侶在婚後會不會有家庭暴力？</a></li>
-<li><a href='/_generated_pages/answers/65320665.htm'>如何才能從困境中走出來？大四女生由考研引發的一系列關於前二十多年的失敗人生中的問題思考，請大家賜教！?</a></li>
-<li><a href='/_generated_pages/answers/653645659.htm'>假設如果996的工資大概是正常工作的2.276倍，如果降薪一半以上再找個程序員分擔工作，大家願意嗎？</a></li>
-<li><a href='/_generated_pages/answers/653655718.htm'>AMD 能否憑借 7nm 全面翻盤？</a></li>
-<li><a href='/_generated_pages/answers/653670723.htm'>如何通過代碼實現日本麻將的役種識別？</a></li>
-<li><a href='/_generated_pages/answers/653674663.htm'>Rust為什麽允許&&str傳參給&str？</a></li>
-<li><a href='/_generated_pages/answers/654473017.htm'>五一小長假，兒子的班主任想組織班里的小學生一起登頂珠峰，應該給孩子報名嗎？</a></li>
-<li><a href='/_generated_pages/answers/65450781.htm'>怎樣跟女生簡潔地解釋三大錯覺中的「我能反殺」？</a></li>
-<li><a href='/_generated_pages/answers/654526295.htm'>我白天上班，老婆晚上起來餵奶要喊我起來陪著，這是什麽心態？</a></li>
-<li><a href='/_generated_pages/answers/655292761.htm'>為什麽臺灣的媒體總是喜歡誇大大陸的負面信息，而臺灣人還一點懷疑都沒有，隨聲附和，把它當成實事？</a></li>
-<li><a href='/_generated_pages/answers/65586136.htm'>在打麻將單吊將時，是換牌贏的概率大，還是不換牌贏的概率大？</a></li>
-<li><a href='/_generated_pages/answers/656016081.htm'>如何看待手機內存 RAM 容量瘋長甚至有隱隱超過電腦通用 8G 的趨勢？</a></li>
-<li><a href='/_generated_pages/answers/656667950.htm'>哪些事是你當了領導才明白的？</a></li>
-<li><a href='/_generated_pages/answers/65826824.htm'>在香港開摩托車是怎麽樣的體驗？</a></li>
-<li><a href='/_generated_pages/answers/658645829.htm'>在一個 1*1 的正方形隨機選兩個點，如何求這兩個點的期望歐幾里得距離？</a></li>
-<li><a href='/_generated_pages/answers/65904310.htm'>和喜歡卻不合適的人分開，怎麽盡快走出來?</a></li>
-<li><a href='/_generated_pages/answers/659422200.htm'>學圍棋3個月了，一直在懟電腦，一局沒贏過。現在快對圍棋失去興趣了，怎麽在沒人陪我下棋的情況下學棋？</a></li>
-<li><a href='/_generated_pages/answers/65955075.htm'>《港囧》的熱映能否像當年《泰囧》一樣，在內地市場中重新提振對當地（香港）旅遊業的發展呢？</a></li>
-<li><a href='/_generated_pages/answers/66029513.htm'>在國外如何面對和反駁說臺灣香港不是中國的言論？</a></li>
-<li><a href='/_generated_pages/answers/66040090.htm'>為什麽現在國內對香港的反感程度與日俱增？</a></li>
-<li><a href='/_generated_pages/answers/66047275.htm'>假設宇宙中的能量是無限的，能量守恒是不是沒有意義？</a></li>
-<li><a href='/_generated_pages/answers/66063683.htm'>香港每年的放假安排以及國慶節香港是怎麽在安排假日？</a></li>
-<li><a href='/_generated_pages/answers/66089965.htm'>陳奕迅的一絲不掛有多難唱？</a></li>
-<li><a href='/_generated_pages/answers/66131874.htm'>怎麽評價福本伸行動漫《銀與金》？</a></li>
-<li><a href='/_generated_pages/answers/66132546.htm'>三本學生沒有出路嗎？</a></li>
-<li><a href='/_generated_pages/answers/66160996.htm'>女性是否需要保護自己從而最大程度地避免自己被強奸？</a></li>
-<li><a href='/_generated_pages/answers/66162383.htm'>評價一部作品，真的不應該考慮作者本身嗎？</a></li>
-<li><a href='/_generated_pages/answers/66286406.htm'>面對父母轉發朋友圈各種信息給你，該如何得體應對啊？？？？？</a></li>
-<li><a href='/_generated_pages/answers/66353805.htm'>一枚硬幣，扔了一億次都是正面朝上，再扔一次反面朝上的概率是多少？</a></li>
-<li><a href='/_generated_pages/answers/66491599.htm'>為什麽部分賣烤魷魚的比某些正經大學生掙得多？</a></li>
-<li><a href='/_generated_pages/answers/66549109.htm'>編程編程語言求救？</a></li>
-<li><a href='/_generated_pages/answers/66550424.htm'>聲明式編程和命令式編程有什麽區別？</a></li>
-<li><a href='/_generated_pages/answers/66550996.htm'>編程語言實質？</a></li>
-<li><a href='/_generated_pages/answers/66644826.htm'>年紀輕輕的單身碼農（男），開著奧迪車是怎麽樣的一種體驗？</a></li>
-<li><a href='/_generated_pages/answers/67011072.htm'>香港醫療體系完善，為何還是事故頻頻？</a></li>
-<li><a href='/_generated_pages/answers/673619241.htm'>如何評價周傑倫在巴黎演唱會上應一外國粉絲點歌哼了幾秒學貓叫？</a></li>
-<li><a href='/_generated_pages/answers/67389330.htm'>程序員標準的電腦硬件配置是什麽？</a></li>
-<li><a href='/_generated_pages/answers/675607963.htm'>為什麽編曲做作品，在耳機、音響里明明都還不錯的，拿到手機上放卻很難聽？</a></li>
-<li><a href='/_generated_pages/answers/67578068.htm'>大學的c語言課本過時了怎麽辦？</a></li>
-<li><a href='/_generated_pages/answers/67673136.htm'>做客孩子臨走時帶走幾只玩具，我的孩子抗拒並一直哭，要怎麽開導？</a></li>
-<li><a href='/_generated_pages/answers/67783802.htm'>如何評價《史丹利的寓言》作者新作《新手指南》(The Beginner's Guide)？</a></li>
-<li><a href='/_generated_pages/answers/677892141.htm'>社會上反對聲音強烈，為什麽中科院高能所極力推動對撞機項目？</a></li>
-<li><a href='/_generated_pages/answers/677913086.htm'>如何說服部門主管使用 C++11 開發？</a></li>
-<li><a href='/_generated_pages/answers/67800493.htm'>有多少人看過KEY社的三大催淚彈（Kanon、clannad、air）？有什麽感想麽？</a></li>
-<li><a href='/_generated_pages/answers/67822923.htm'>男人說駕馭不住一個女生是什麽體驗？</a></li>
-<li><a href='/_generated_pages/answers/67823311.htm'>香港重慶大廈特色在哪？</a></li>
-<li><a href='/_generated_pages/answers/678318724.htm'>對初學者C語言用啥軟件（手頭上沒書）？</a></li>
-<li><a href='/_generated_pages/answers/679015871.htm'>Mac 電腦貴在何處？</a></li>
-<li><a href='/_generated_pages/answers/68019250.htm'>去新加坡讀研好還是香港貨日本讀研好？</a></li>
-<li><a href='/_generated_pages/answers/680289112.htm'>如何看待 Rust 語言中新加入的 .await 後綴關鍵字？</a></li>
-<li><a href='/_generated_pages/answers/68130963.htm'>香港有什麽魅力吸引外國移民？</a></li>
-<li><a href='/_generated_pages/answers/68344803.htm'>百度雲管家的限速是合法的嗎？</a></li>
-<li><a href='/_generated_pages/answers/685012691.htm'>日語考試的N3~N5存在的意義是什麽？</a></li>
-<li><a href='/_generated_pages/answers/68538514.htm'>打麻將時吃什麽零食比較好？</a></li>
-<li><a href='/_generated_pages/answers/68811081.htm'>為什麽沒有經濟實力的女人能要求追她的男的有車有房？</a></li>
-<li><a href='/_generated_pages/answers/688398328.htm'>對於初學者而言，電子音樂的制作應該從何學起？</a></li>
-<li><a href='/_generated_pages/answers/689063798.htm'>為什麽提供給香港的產品需要特供？</a></li>
-<li><a href='/_generated_pages/answers/69044878.htm'>為什麽 UE4 在國內火不起來？</a></li>
-<li><a href='/_generated_pages/answers/69058591.htm'>Unity 3D引擎有多強大？</a></li>
-<li><a href='/_generated_pages/answers/69062849.htm'>unity2d 一輛車往一個坐標移動？</a></li>
-<li><a href='/_generated_pages/answers/691607959.htm'>在實體經濟一片下滑的大環境中，哪些行業還可以？</a></li>
-<li><a href='/_generated_pages/answers/693472854.htm'>php7發布3年多了，有多少人在生產環境使用php7？</a></li>
-<li><a href='/_generated_pages/answers/693914981.htm'>一個人說他是s1的老玩家，這人什麽水平？</a></li>
-<li><a href='/_generated_pages/answers/69926744.htm'>跑步如何大腿用力?</a></li>
-<li><a href='/_generated_pages/answers/699781204.htm'>電氣電子工程師學會（IEEE）禁止華為參與學術編輯和審稿，可能會有什麽影響？</a></li>
-<li><a href='/_generated_pages/answers/700255060.htm'>如何評價蘋果突然上架的新款 iPod touch？這個階段更新 iPod touch 的意義在哪里？</a></li>
-<li><a href='/_generated_pages/answers/700322160.htm'>macbook pro大家都選的13還是15？</a></li>
-<li><a href='/_generated_pages/answers/70088505.htm'>關於PHP的一道面試題？</a></li>
-<li><a href='/_generated_pages/answers/701195454.htm'>如何評價中國計算機學會（CCF）更改了列表（刪除IEEE版本）?</a></li>
-<li><a href='/_generated_pages/answers/701203299.htm'>你是不是真的體會到了三十而立？</a></li>
-<li><a href='/_generated_pages/answers/70203565.htm'>香港衰落的根本原因有哪些？</a></li>
-<li><a href='/_generated_pages/answers/70207103.htm'>潮汐能是從哪里來的？因為萬有引力是一直存在的，感覺能量無窮無盡啊？求解釋?</a></li>
-<li><a href='/_generated_pages/answers/70293068.htm'>站在巨人的肩膀上，如果巨人錯了呢？</a></li>
-<li><a href='/_generated_pages/answers/70647060.htm'>長時間不讀書會是否導致什麽不良結果？如果是，會有哪些？</a></li>
-<li><a href='/_generated_pages/answers/70647860.htm'>書讀完第一遍後，就不想再次閱讀，怎麽辦？</a></li>
-<li><a href='/_generated_pages/answers/70682104.htm'>減肥對外貌的改變有多大？</a></li>
-<li><a href='/_generated_pages/answers/707088788.htm'>遊戲王，爐石傳說這類卡牌遊戲到底是怎麽做到讓人如此上癮？</a></li>
-<li><a href='/_generated_pages/answers/70749134.htm'>氣場被壓怎麽辦?</a></li>
-<li><a href='/_generated_pages/answers/70785367.htm'>現在的男孩心里都在想些什麽？</a></li>
-<li><a href='/_generated_pages/answers/707891779.htm'>Rust 語言是否反人類?</a></li>
-<li><a href='/_generated_pages/answers/70948598.htm'>怎麽理解邏輯學中的“與”和英語中“Although”,“While”等詞語的等價關系？</a></li>
-<li><a href='/_generated_pages/answers/71314584.htm'>強奸對女性的傷害有多大？</a></li>
-<li><a href='/_generated_pages/answers/71315709.htm'>最近新出的雷柏（rapoo）v500機械鍵盤怎麽樣，手感類似與紅黑茶青中的哪種軸體，它的優點和瑕疵有些什麽？</a></li>
-<li><a href='/_generated_pages/answers/71327579.htm'>玩真心話，在被選到的時候，有些問題被選定的人明知隨便一答便可矇混過關，為什麼心理上卻傾向說真實答案？</a></li>
-<li><a href='/_generated_pages/answers/71335263.htm'>如何從零開始打籃球? 活了19年沒打過</a></li>
-<li><a href='/_generated_pages/answers/71352404.htm'>遊戲玩家適合的鍵盤有哪些可以推薦的？</a></li>
-<li><a href='/_generated_pages/answers/71395690.htm'>奶茶中的奶精與果糖的主要作用是什麽？</a></li>
-<li><a href='/_generated_pages/answers/715419499.htm'>畢設答辯，老師說node不可能寫後臺怎麽辦?</a></li>
-<li><a href='/_generated_pages/answers/715833864.htm'>怎麽告訴一個日本朋友，討厭她的國家，但並不是討厭所有日本人?</a></li>
-<li><a href='/_generated_pages/answers/71648017.htm'>對於一個擁身高195，熱愛籃球的人來講，除了實戰以外，如何能掌握更多籃底功夫以及打板和中距離投射技術？</a></li>
-<li><a href='/_generated_pages/answers/71648886.htm'>如何策劃，能使女大生們多參與到籃球賽中？</a></li>
-<li><a href='/_generated_pages/answers/71649836.htm'>如何在運球的過程中過掉貼身防守人？</a></li>
-<li><a href='/_generated_pages/answers/71689138.htm'>較早以三消作為RPG戰鬥方式基礎的遊戲有哪些？</a></li>
-<li><a href='/_generated_pages/answers/71749947.htm'>為什麽要追求經濟增長？</a></li>
-<li><a href='/_generated_pages/answers/717546216.htm'>如何看待提倡性價比的雷軍，購買幾百萬的邁巴赫S600？</a></li>
-<li><a href='/_generated_pages/answers/71827256.htm'>玩《爐石傳說》越玩越憤怒怎麽辦？</a></li>
-<li><a href='/_generated_pages/answers/718367263.htm'>你見過的最虐心的案子是什麽？</a></li>
-<li><a href='/_generated_pages/answers/71926095.htm'>女生問男朋友自己漂亮嗎，男朋友該如何回答？</a></li>
-<li><a href='/_generated_pages/answers/719778509.htm'>十進制的無理數是否在某一進制下是有理數？</a></li>
-<li><a href='/_generated_pages/answers/72021818.htm'>談了四年多的女朋友因為我提出發生關系要分手。我該怎麽做？</a></li>
-<li><a href='/_generated_pages/answers/72024925.htm'>賭博對於賭徒到底意味著什麽？</a></li>
-<li><a href='/_generated_pages/answers/72025382.htm'>你聽說過或者見識過“千術”嗎？</a></li>
-<li><a href='/_generated_pages/answers/72069433.htm'>哪部作品讓你有「能寫出這種東西的人真是了不起啊」的感覺？</a></li>
-<li><a href='/_generated_pages/answers/72078759.htm'>香港人或香港本地學生對於在港讀書的大陸學生有什麽樣的看法和態度？</a></li>
-<li><a href='/_generated_pages/answers/72085708.htm'>卡牌手遊下一個主流的核心玩法是什麽？</a></li>
-<li><a href='/_generated_pages/answers/721992090.htm'>你在哪個瞬間決定一輩子不買華為的任何產品？</a></li>
-<li><a href='/_generated_pages/answers/72291196.htm'>你的知乎昵稱有哪些寓意、由來或故事？</a></li>
-<li><a href='/_generated_pages/answers/72469068.htm'>黑膠唱片的音質和 CD 的音質哪一個更好？為什麽？</a></li>
-<li><a href='/_generated_pages/answers/72513216.htm'>香港巴士是如何計價的？為什麽有時兩站地就要收很高價錢？</a></li>
-<li><a href='/_generated_pages/answers/725566205.htm'>圍棋相比於當今電子遊戲還有多少意義?</a></li>
-<li><a href='/_generated_pages/answers/727018717.htm'>為什麽比爾·蓋茨認為自己最大的誤判是給了谷歌推 Android 的機會？怎麽理解軟件世界的贏者通吃？</a></li>
-<li><a href='/_generated_pages/answers/72722752.htm'>怎麽看待國足兩度“逼平”中國香港隊，國足還有出線的可能性嗎？</a></li>
-<li><a href='/_generated_pages/answers/72749257.htm'>什麽叫"四分音符為一拍"?</a></li>
-<li><a href='/_generated_pages/answers/72808509.htm'>如何評價 2015 年 11 月 17 日國足同中國香港的比賽？</a></li>
-<li><a href='/_generated_pages/answers/729888161.htm'>為什麽從拿球的一瞬間就知道一個人會不會打籃球？</a></li>
-<li><a href='/_generated_pages/answers/733557325.htm'>rust語言有什麽推薦的資料或者書籍或者項目嗎?</a></li>
-<li><a href='/_generated_pages/answers/73427221.htm'>為什麽很多優質女性沒有男友？</a></li>
-<li><a href='/_generated_pages/answers/73632402.htm'>和一個素未蒙面的姑娘吃飯應該需要哪些特別註意的地方？</a></li>
-<li><a href='/_generated_pages/answers/73691342.htm'>爐石傳說冒險模式解鎖次序？</a></li>
-<li><a href='/_generated_pages/answers/738463316.htm'>是否真的越了解日本，就讓人越喜歡不起來日本？</a></li>
-<li><a href='/_generated_pages/answers/739316839.htm'>摸著屁股說，這樣的XR有沒有競爭力?</a></li>
-<li><a href='/_generated_pages/answers/74323968.htm'>如何反駁「你骨架小肩太窄 一輩子也練寬不了」？</a></li>
-<li><a href='/_generated_pages/answers/74324578.htm'>我有點像transgay難道我要孤老終身？</a></li>
-<li><a href='/_generated_pages/answers/74331466.htm'>如何用 C 寫出一個麻將遊戲？</a></li>
-<li><a href='/_generated_pages/answers/743973739.htm'>部門人手不夠的時候離職，是不負責任嗎？</a></li>
-<li><a href='/_generated_pages/answers/74400588.htm'>如何更好地控制情緒，不「擡杠」？</a></li>
-<li><a href='/_generated_pages/answers/74538598.htm'>如何看待香港球迷舉「香港不是中國」標語？</a></li>
-<li><a href='/_generated_pages/answers/74732792.htm'>爐石傳說里暴雪為什麽要設置「抱歉」這個對話？</a></li>
-<li><a href='/_generated_pages/answers/74755963.htm'>跑步的意義在哪？</a></li>
-<li><a href='/_generated_pages/answers/74959269.htm'>為什麽有很多人喜歡在中文里面夾雜English？</a></li>
-<li><a href='/_generated_pages/answers/751720656.htm'>如何看待 V 語言登頂 GitHub Top 1？</a></li>
-<li><a href='/_generated_pages/answers/75230445.htm'>婚禮上用什麽音樂比較好？</a></li>
-<li><a href='/_generated_pages/answers/75246188.htm'>怎樣看待“照片拍出來就是最好最真實的，絕不PS”而且以此為傲的想法？</a></li>
-<li><a href='/_generated_pages/answers/752843266.htm'>已知 20÷2X=5，X 到底應該等於多少？</a></li>
-<li><a href='/_generated_pages/answers/75299830.htm'>為什麽學 C++ 的看不起學 Java 的？</a></li>
-<li><a href='/_generated_pages/answers/75550879.htm'>日本人玩麻將帶贏錢的嗎？</a></li>
-<li><a href='/_generated_pages/answers/756571290.htm'>越來越討厭小米的各系列產品，怎麽辦？</a></li>
-<li><a href='/_generated_pages/answers/756835018.htm'>為什麽《命運石之門》被評為神作？</a></li>
-<li><a href='/_generated_pages/answers/756849255.htm'>日本二次元文化是否對我國構成某種意義上的文化入侵?</a></li>
-<li><a href='/_generated_pages/answers/75730538.htm'>集換式卡牌遊戲是否必須通過印新卡才能延長其壽命？</a></li>
-<li><a href='/_generated_pages/answers/757474947.htm'>程序員用雙顯示器方便還是一個大的寬屏顯示器比如27寸4K屏方便？</a></li>
-<li><a href='/_generated_pages/answers/75802345.htm'>在奴隸戰和奧秘騎中，你更能接受哪一個卡組？</a></li>
-<li><a href='/_generated_pages/answers/758051936.htm'>一個自律的人有多可怕？</a></li>
-<li><a href='/_generated_pages/answers/75814846.htm'>爐石傳說和遊戲王哪個更需要技巧？</a></li>
-<li><a href='/_generated_pages/answers/75826153.htm'>Python腳本服務器端可以執行，瀏覽器端無法執行？</a></li>
-<li><a href='/_generated_pages/answers/75827009.htm'>如果過了幾十年，轉基因的危害顯現出來，或者科學證明了轉基因的危害，人們會如何評價崔永元?</a></li>
-<li><a href='/_generated_pages/answers/75894214.htm'>在家裝里，最劃算的投入是什麽？</a></li>
-<li><a href='/_generated_pages/answers/76088381.htm'>《爐石傳說》有哪些厲害的套路？</a></li>
-<li><a href='/_generated_pages/answers/761060294.htm'>學習一種編程語言對學另一種編程語言有幫助嗎？會不會出現兩種語言截然不同的情況？</a></li>
-<li><a href='/_generated_pages/answers/76329941.htm'>「一色三同順」與「一色三節高」的出現概率是多少？</a></li>
-<li><a href='/_generated_pages/answers/766212088.htm'>為什麽野球場上看不到有人穿喬丹球衣?</a></li>
-<li><a href='/_generated_pages/answers/768033842.htm'>大學做項目，負責人禁止我用 Vue，React，讓我用基礎 HTML，CSS，JS 開發前端怎麽辦?</a></li>
-<li><a href='/_generated_pages/answers/768594011.htm'>為什麽這兩年函數式編程又火起來了？</a></li>
-<li><a href='/_generated_pages/answers/776026826.htm'>如何看待中國新一線城市排名？</a></li>
-<li><a href='/_generated_pages/answers/77815547.htm'>“買你能承受的最貴器材”這句話靠譜嗎？</a></li>
-<li><a href='/_generated_pages/answers/780738587.htm'>編曲時畫延音踏板和拉長音符有什麽區別？</a></li>
-<li><a href='/_generated_pages/answers/782231613.htm'>如何看待華為 2019 年 8 月 9 日正式發布的 HarmonyOS 鴻蒙系統？</a></li>
-<li><a href='/_generated_pages/answers/78226560.htm'>“很拼”是一種好的狀態嗎？</a></li>
-<li><a href='/_generated_pages/answers/78576733.htm'>剛開始組樂隊，作為一個鍵盤手，有什麽樂器推薦？</a></li>
-<li><a href='/_generated_pages/answers/786055033.htm'>你們有遇到過什麽極品綠茶（指人/也指茶葉）嗎？</a></li>
-<li><a href='/_generated_pages/answers/788287214.htm'>有個程序員同事最近總是做leetcode習題，還看一些基礎的知識，說明什麽？</a></li>
-<li><a href='/_generated_pages/answers/78862940.htm'>學樂器一開始一定要學習樂理知識嗎？</a></li>
-<li><a href='/_generated_pages/answers/78983597.htm'>即興演奏是亂彈的意思嗎？</a></li>
-<li><a href='/_generated_pages/answers/79531842.htm'>你遇過哪些概率極小的事？</a></li>
-<li><a href='/_generated_pages/answers/795856537.htm'>智商為 x 與 y  的兩個人合作，相當於一個智商多少的人？</a></li>
-<li><a href='/_generated_pages/answers/79946052.htm'>12歲弟弟迷上網絡小說，如何引導他讀名著經典？</a></li>
-<li><a href='/_generated_pages/answers/800064031.htm'>免費在超市搬走一購物車的東西，如何組合才能使其價值最大化？</a></li>
-<li><a href='/_generated_pages/answers/80098433.htm'>怎樣判斷女生聊天發（哈哈哈）是真的在笑還是敷衍？</a></li>
-<li><a href='/_generated_pages/answers/801831122.htm'>編程語言自舉，不需要擔心執行效率嗎？</a></li>
-<li><a href='/_generated_pages/answers/802768031.htm'>語文老師說《人間失格》是亂七八糟的小說，該怎麽回答她？</a></li>
-<li><a href='/_generated_pages/answers/80368614.htm'>你聽過最酷的一句話是哪句？說這句話的人也一樣酷麽？</a></li>
-<li><a href='/_generated_pages/answers/805185296.htm'>70 年來，有沒有一首歌，讓你聽了就熱淚盈眶？</a></li>
-<li><a href='/_generated_pages/answers/805308940.htm'>如何激怒一位編程語言愛好者？</a></li>
-<li><a href='/_generated_pages/answers/80543979.htm'>那些高學歷，高顏值，身材好，又特別聰明懂事的女生，最後都嫁給了什麽樣的男人？</a></li>
-<li><a href='/_generated_pages/answers/81004758.htm'>如何理解「籃球更像是男生，足球更像是男人」這句話？</a></li>
-<li><a href='/_generated_pages/answers/81010684.htm'>這個時候，還有哪一家公司能弄倒騰訊麼？如果有，將會是怎麼辦到的？</a></li>
-<li><a href='/_generated_pages/answers/810127812.htm'>本屆男籃世界杯，你還相信美國隊能奪冠嗎？</a></li>
-<li><a href='/_generated_pages/answers/81067988.htm'>把男朋友打哭了，如何哄男朋友？</a></li>
-<li><a href='/_generated_pages/answers/81068916.htm'>為什麽大學過的比高中還累？</a></li>
-<li><a href='/_generated_pages/answers/81072555.htm'>哪些文字絕妙到「一句話就是一個故事」？</a></li>
-<li><a href='/_generated_pages/answers/81127359.htm'>你對自己玩的遊戲研究到了什麽程度？</a></li>
-<li><a href='/_generated_pages/answers/81127772.htm'>單身程序狗解決了一個技術難題後沒有妹子可以炫耀或誇一下自己怎麽辦？</a></li>
-<li><a href='/_generated_pages/answers/81180780.htm'>如何看待 Facebook 刪除反占中組織香港培青社主頁？</a></li>
-<li><a href='/_generated_pages/answers/812562750.htm'>二十年後，華為筆記本能取代聯想的地位嗎？</a></li>
-<li><a href='/_generated_pages/answers/81405660.htm'>像圍棋這種遊戲，理論上是不是可以完全通過邏輯分析推出來？</a></li>
-<li><a href='/_generated_pages/answers/814354819.htm'>《棋魂》在日漫中算得上 S 級作品嗎？</a></li>
-<li><a href='/_generated_pages/answers/816523168.htm'>女生總是覺得自己長得醜，沒有自信怎麽辦？</a></li>
-<li><a href='/_generated_pages/answers/81680072.htm'>以音樂行家的角度來看，ZUN 的編曲水平如何？</a></li>
-<li><a href='/_generated_pages/answers/81982563.htm'>香港的《基本法》相當於中國內地的什麽？</a></li>
-<li><a href='/_generated_pages/answers/82176990.htm'>在沒有防備情況下，被籃球和足球砸中，哪個會更疼？</a></li>
-<li><a href='/_generated_pages/answers/82310981.htm'>當你學會了什麽之後感覺自己的編程算是入門了?</a></li>
-<li><a href='/_generated_pages/answers/82329050.htm'>JavaScript引擎、虛擬機、運行時環境是一回事兒嗎？</a></li>
-<li><a href='/_generated_pages/answers/82354839.htm'>LOL 在日本開設的服務器預期能有多高的流行程度？</a></li>
-<li><a href='/_generated_pages/answers/82400362.htm'>如何看待《最強大腦》中的國家寶藏和蜂巢迷宮挑戰？</a></li>
-<li><a href='/_generated_pages/answers/825576665.htm'>如何看待 iPhone 11 仍配 5V1A 充電器？</a></li>
-<li><a href='/_generated_pages/answers/825610356.htm'>機械手表有多少技術含量？</a></li>
-<li><a href='/_generated_pages/answers/825675306.htm'>為什麽有非常多的LOL玩家反對虐泉，官方卻沒有改動泉水傷害？</a></li>
-<li><a href='/_generated_pages/answers/82645043.htm'>地球有什麽bug嗎？</a></li>
-<li><a href='/_generated_pages/answers/827510180.htm'>如何看待 Dark lang?</a></li>
-<li><a href='/_generated_pages/answers/828995141.htm'>有了 swoole 加持的 PHP 離 GO 有多遠？</a></li>
-<li><a href='/_generated_pages/answers/829976709.htm'>如何看待余承東稱若谷歌服務不能用，華為 P40 或搭載鴻蒙系統？</a></li>
-<li><a href='/_generated_pages/answers/83051253.htm'>有什麽值得一看的港劇或香港電影？</a></li>
-<li><a href='/_generated_pages/answers/831206166.htm'>為什麽現在許多人還沒用過 5G，就說 5G 沒有用？</a></li>
-<li><a href='/_generated_pages/answers/831373554.htm'>Cache 和 Buffer 都是緩存，主要區別是什麽？</a></li>
-<li><a href='/_generated_pages/answers/831838775.htm'>你最期待在《奇葩說》第六季看到哪些辯題?</a></li>
-<li><a href='/_generated_pages/answers/831877095.htm'>作為碼農，有沒有一瞬間覺得自己沈迷於代碼或者技術，而忘記了擡頭看路，視野變得狹窄，看問題過於片面？</a></li>
-<li><a href='/_generated_pages/answers/835134974.htm'>PHP 的協程化是什麽意思？</a></li>
-<li><a href='/_generated_pages/answers/838957133.htm'>數碼寶貝第一部8個主角的重要程度是怎麽排名的？</a></li>
-<li><a href='/_generated_pages/answers/839449059.htm'>如何看待知乎用戶「林盛兒」2014 年和 2019 年前後迥異的兩次言論？</a></li>
-<li><a href='/_generated_pages/answers/83969943.htm'>在互聯網公司做程序員是種怎樣的感覺？</a></li>
-<li><a href='/_generated_pages/answers/840102771.htm'>有哪些「懂的人自然懂」的數字？</a></li>
-<li><a href='/_generated_pages/answers/840988554.htm'>如何看待「86年男生阿里 p8 年薪近兩百萬，就想找一個90後獨生女」一事？</a></li>
-<li><a href='/_generated_pages/answers/84159244.htm'>如何看待 Google 圍棋 AI AlphaGo 擊敗歐洲圍棋冠軍？</a></li>
-<li><a href='/_generated_pages/answers/84346535.htm'>初二學生，寒假玩爐石傳說，充點錢，值得嗎？</a></li>
-<li><a href='/_generated_pages/answers/843711378.htm'>有哪個Linux操作系統推薦？</a></li>
-<li><a href='/_generated_pages/answers/846343494.htm'>設光速為1那麽我的飛船（小滑塊）達到0.9的循環，是否能代表我達到了光速？</a></li>
-<li><a href='/_generated_pages/answers/84975620.htm'>把擊劍運動的直線劍道改成圓形場地會導致技戰術發生什麽變化？</a></li>
-<li><a href='/_generated_pages/answers/84976284.htm'>現在的擊劍、散打、拳擊等運動有沒有一邊出招一邊大喊招式名的選手？？</a></li>
-<li><a href='/_generated_pages/answers/852267464.htm'>有哪些計算機術語的翻譯，讓你第一次學的時候感到十分別扭？</a></li>
-<li><a href='/_generated_pages/answers/85239106.htm'>具有程序員特色的拜年短信怎麽寫？</a></li>
-<li><a href='/_generated_pages/answers/85349953.htm'>穿西裝和皮鞋是取悅他人的自虐嗎？</a></li>
-<li><a href='/_generated_pages/answers/854736612.htm'>【魔鬼契約】如果可以用你的1/10壽命作交換，你願意換什麽？</a></li>
-<li><a href='/_generated_pages/answers/85513598.htm'>麻將和什麽牌期望最大？</a></li>
-<li><a href='/_generated_pages/answers/85730269.htm'>為什麽麻將打得好不好和數學好不好沒有關系？</a></li>
-<li><a href='/_generated_pages/answers/85902950.htm'>現在的香港還適合去上大學嗎？</a></li>
-<li><a href='/_generated_pages/answers/85951364.htm'>英雄聯盟最大的優點和最大的缺點？</a></li>
-<li><a href='/_generated_pages/answers/860951831.htm'>為什麽日本動漫非常推崇溫柔?</a></li>
-<li><a href='/_generated_pages/answers/860959785.htm'>如何看待編程在項目中的重要性？</a></li>
-<li><a href='/_generated_pages/answers/861991102.htm'>你最希望PHP出一個怎樣的神奇擴展，補足PHP的尷尬境地，除了 swoole？</a></li>
-<li><a href='/_generated_pages/answers/864298036.htm'>為什麽有的人喜歡半英文半中文講話？</a></li>
-<li><a href='/_generated_pages/answers/865286332.htm'>發明dyon語言的動機是什麽？</a></li>
-<li><a href='/_generated_pages/answers/86569155.htm'>為什麽總有人寧可被推上高地也死不投降？</a></li>
-<li><a href='/_generated_pages/answers/871804623.htm'>有哪些新手程序員不知道的小技巧？</a></li>
-<li><a href='/_generated_pages/answers/873169041.htm'>如何看待國人對小費文化的不理解?</a></li>
-<li><a href='/_generated_pages/answers/87909412.htm'>為什麽用SQL而不是Excel+VBA？</a></li>
-<li><a href='/_generated_pages/answers/885754982.htm'>你見過最無恥的雙標是什麽？</a></li>
-<li><a href='/_generated_pages/answers/88591961.htm'>如何看待「買書如山倒，看書如抽絲」的行為？</a></li>
-<li><a href='/_generated_pages/answers/887186277.htm'>為什麽中國的免簽國如此之少？</a></li>
-<li><a href='/_generated_pages/answers/890456407.htm'>怎麽樣辨別窮人跟有錢人？</a></li>
-<li><a href='/_generated_pages/answers/89104723.htm'>孩子需要經歷些什麽才會明白學業的重要性？</a></li>
-<li><a href='/_generated_pages/answers/892255722.htm'>公司c位程序員不願使用git,怎麽辦？</a></li>
-<li><a href='/_generated_pages/answers/893131766.htm'>為啥那麽多做手機的公司，只有蘋果做成了自己的操作系統iOS，其它公司的操作系統都基於Android？</a></li>
-<li><a href='/_generated_pages/answers/89365305.htm'>喜歡跳舞的女孩有哪些特點？</a></li>
-<li><a href='/_generated_pages/answers/89464631.htm'>阿里巴巴的這個招聘貼是否涉及性別歧視？若果是，對此作為一名普通學生可以做哪些事來盡可能的改變這種歧視？</a></li>
-<li><a href='/_generated_pages/answers/89468170.htm'>有哪些年輕人「千萬不能碰」的東西？</a></li>
-<li><a href='/_generated_pages/answers/89485702.htm'>23 歲到 35 歲該如何實現資產增值？如何不陷入結婚生孩子買房的惡性循環中？</a></li>
-<li><a href='/_generated_pages/answers/895087342.htm'>如何看待谷歌「夜鶯計劃」被曝光，醫生患者不知情前提下被秘密采集數百萬醫療隱私數據一事，是否屬實？</a></li>
-<li><a href='/_generated_pages/answers/89557757.htm'>如何勸導聲稱「發現了六合彩 90% 的規律」的家人停止賭博？</a></li>
-<li><a href='/_generated_pages/answers/89665585.htm'>慢慢看？</a></li>
-<li><a href='/_generated_pages/answers/89706533.htm'>如何看待「清華現超級學霸」 課程 15 門 100 分 4 門 99 分，有人唱衰有人贊嘆的現象？</a></li>
-<li><a href='/_generated_pages/answers/89739447.htm'>庫里現在是不是已經成為史詩級的球星了？</a></li>
-<li><a href='/_generated_pages/answers/89748705.htm'>西方人有哪些有趣的姓氏？</a></li>
-<li><a href='/_generated_pages/answers/898610533.htm'>為什麽有很多人執著於中文編程?</a></li>
-<li><a href='/_generated_pages/answers/89993472.htm'>如何評價 9 歲孩子「每天學 18 小時」的作息表？</a></li>
-<li><a href='/_generated_pages/answers/901125690.htm'>如何評價「不懂指令集的程序員過幾年必將被淘汰」?</a></li>
-<li><a href='/_generated_pages/answers/908780087.htm'>編程語言除了開發軟件還有什麽奇妙的用途呢？</a></li>
-<li><a href='/_generated_pages/answers/91068167.htm'>如何續寫「我有一壺酒，足以慰風塵」？</a></li>
-<li><a href='/_generated_pages/answers/91184322.htm'>籃球比賽中，對方球員一直用手貼著我，左右移動，擋住我的移送路線，這樣算犯規嗎？</a></li>
-<li><a href='/_generated_pages/answers/91197640.htm'>如何看待日本大地震幸存女孩事件？</a></li>
-<li><a href='/_generated_pages/answers/91416272.htm'>如何評價「矯枉必須過正」？</a></li>
-<li><a href='/_generated_pages/answers/917253768.htm'>怎麽看待業余籃球運動中有肢體碰撞就喊犯規，被蓋帽就喊犯規，導致不能愉快的玩耍下去的籃球愛好者？</a></li>
-<li><a href='/_generated_pages/answers/91894657.htm'>為什麽有些長輩反感電子遊戲？</a></li>
-<li><a href='/_generated_pages/answers/91933493.htm'>如果給AlphaGo一個二次元設定會是什麽樣的？</a></li>
-<li><a href='/_generated_pages/answers/919798598.htm'>如何理解HTTP狀態碼251？</a></li>
-<li><a href='/_generated_pages/answers/92017862.htm'>女生說的「要求不高」是什麽意思？</a></li>
-<li><a href='/_generated_pages/answers/92019254.htm'>怎麽解釋像林書豪和鄧紫棋這樣快速走紅卻無法保持人氣和熱度的人啊？</a></li>
-<li><a href='/_generated_pages/answers/92055771.htm'>香港的Art Basel有哪些展最值得看？</a></li>
-<li><a href='/_generated_pages/answers/924007065.htm'>Scala 是一門怎樣的語言，具有哪些優缺點？</a></li>
-<li><a href='/_generated_pages/answers/925915769.htm'>如何看待Rust語言的發展在未來對信息安全行業的影響？</a></li>
-<li><a href='/_generated_pages/answers/92932377.htm'>有哪些典型的「學生思維」？</a></li>
-<li><a href='/_generated_pages/answers/929846569.htm'>吉他夾變調夾可以把任何調的和弦推算出來,為什麽還要學其他調的和弦？</a></li>
-<li><a href='/_generated_pages/answers/930420530.htm'>如果玩音樂遊戲DDR不幸去世，KONAMI和U1，TAG是否要承擔刑事責任？</a></li>
-<li><a href='/_generated_pages/answers/934203122.htm'>本人在校學生，學習C++的過程嘗試著把STL 自己寫了一遍，請問可以算做一個經歷寫在簡歷上嗎？</a></li>
-<li><a href='/_generated_pages/answers/93720163.htm'>如何看待「小學生文言文」躥紅？</a></li>
-<li><a href='/_generated_pages/answers/93969743.htm'>有哪些讓你感嘆「寫出這種句子的人，我十輩子都追不上了」的句子？</a></li>
-<li><a href='/_generated_pages/answers/943754968.htm'>大家身邊極度聰明的人是什麽樣子？</a></li>
-<li><a href='/_generated_pages/answers/951803084.htm'>該怎麽反駁「探測不到神不能證明無神論」的觀點?</a></li>
-<li><a href='/_generated_pages/answers/95250790.htm'>打算讀計科高考後的暑假怎麽先自學?</a></li>
-<li><a href='/_generated_pages/answers/955401483.htm'>如果用兩個字 來形容生活  你想說什麽？</a></li>
-<li><a href='/_generated_pages/answers/955405234.htm'>《吹響吧，上低音號》中這是什麽樂器？</a></li>
-<li><a href='/_generated_pages/answers/956961467.htm'>如果有了一億人民幣，你們還會上學/工作嗎？</a></li>
-<li><a href='/_generated_pages/answers/962414577.htm'>五年之後的前端會是什麽樣？</a></li>
-<li><a href='/_generated_pages/answers/962940794.htm'>你見過哪些「群xxx，時不時來群里xxx」的表情包?</a></li>
-<li><a href='/_generated_pages/answers/96534591.htm'>面試前都需要做些什麽準備？</a></li>
-<li><a href='/_generated_pages/answers/96680558.htm'>如何看待爐石傳說4月21日舊卡的改動？</a></li>
-<li><a href='/_generated_pages/answers/968304603.htm'>是哪些因素導致了《太鼓達人》的上手難度如此之高？</a></li>
-<li><a href='/_generated_pages/answers/97497228.htm'>爐石傳說為什麽選擇退環境，而不選擇推出新職業新人物或者修改卡牌來維持平衡？</a></li>
-<li><a href='/_generated_pages/answers/977955016.htm'>為什麽滑鐵盧大學讓大一學生從不實用的racket語言學起而不是直接上手C語言？</a></li>
-<li><a href='/_generated_pages/answers/978080342.htm'>如何看待 Rust Actix 庫的維護者退出開源界？</a></li>
-<li><a href='/_generated_pages/answers/98126176.htm'>如何看待安徽近十名中學生群毆老師只為不交試卷？</a></li>
-<li><a href='/_generated_pages/answers/98127870.htm'>任天堂的大部分遊戲有什麽共同特點？</a></li>
-<li><a href='/_generated_pages/answers/981681985.htm'>程序員是不是公司地位最低的?</a></li>
-<li><a href='/_generated_pages/answers/982077099.htm'>中文數數的效率是否不夠高？</a></li>
-<li><a href='/_generated_pages/answers/99076116.htm'>為什麽絕大多數散戶（> 90%）在進行外匯交易時都是輸錢？</a></li>
-<li><a href='/_generated_pages/answers/99111265.htm'>打麻將怎麽樣打出氣勢？</a></li>
-<li><a href='/_generated_pages/answers/99176278.htm'>你心中一直告訴自己的話是什麽？</a></li>
-<li><a href='/_generated_pages/answers/99177516.htm'>凡事先從自己身上找原因是不是一種優良品德？</a></li>
-<li><a href='/_generated_pages/answers/99178336.htm'>懂事的孩子快樂嗎？</a></li>
-<li><a href='/_generated_pages/answers/99178679.htm'>如何評價《部落沖突：皇室戰爭》？</a></li>
-<li><a href='/_generated_pages/answers/992017262.htm'>高中畢業，現在學PHP ，java之類靠譜嗎？</a></li>
-<li><a href='/_generated_pages/answers/99432595.htm'>如何看待MSI SKT四連敗，哪里出現了問題？</a></li>
-<li><a href='/_generated_pages/answers/997088699.htm'>為什麽物理科普讀物讀起來津津有味，計算機科普卻很枯燥且很少見？</a></li></ol>
-</body>
-
-</html>
+    </head>
+    <frameset cols="400,*">
+        <frame src="list.htm" />
+        <frame src="content.htm" name='main_frame' id='main_frame' scrolling="yes" />
+    </frameset>
+    </html>
+    

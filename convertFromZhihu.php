@@ -43,6 +43,6 @@ function process($filename){
 }
 $template = file_get_contents("./templates/template_meta.htm");
 $strIndexList = "<ol>".implode("\n",$indexList)."</ol>";
-file_put_contents("_generated_pages/index.htm",
+file_put_contents("_generated_pages/list.htm",
     str_replace(["{{tag}}","{{list}}"],["知乎答案",$strIndexList],$template)
 );
