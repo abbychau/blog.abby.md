@@ -148,7 +148,8 @@ foreach($tagToArticles as $tag=>$list){
     $file=sanTag($tag);
     $strSave = str_replace("{{list}}",$_str,$strSave);  
     file_put_contents("_meta/{$file}.htm",$strSave);
-    $metaIndexStr.="<li><a target='main_frame' href='/_meta/{$file}.htm'>$tag</a></li>";
+    $len=sizeof($list);
+    $metaIndexStr.="<li><a target='main_frame' href='/_meta/{$file}.htm'>$tag</a>($len)</li>";
 }
 $metaIndexStr.="</ul>";
 $metaIndexTemplate = file_get_contents("templates/template_meta_index.htm");
