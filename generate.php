@@ -54,9 +54,6 @@ function process($file){
     }
     $tags = array_merge($data['tags'],$data['categories']);
     $tags = array_unique($tags);
-    if(in_array("pick-up", $tags)){
-        $pickupList[]=['title'=>$data['title'],'url'=>"/{$cleanPath}"];
-    }
     $strTagLinks=[];
     foreach($tags as $tag){
         $tagToArticles[$tag][]=['title'=>$data['title'],'url'=>$cleanPath];
@@ -104,7 +101,7 @@ foreach($store as $v){
     $title=$v['meta']['title']?$v['meta']['title']:'untitled';
     $strArchive.="$head &gt; <a href='{$v['generated_path']}' target='main_frame'>{$title}</a><br />\n";
 }
-foreach($pickupList as $v){
+foreach($tagToArticles['pick-up'] as $v){
     $strPickup.="$head &gt; <a href='{$v['url']}' target='main_frame'>{$v['title']}</a><br />\n";
 }
 $template = file_get_contents('templates/template_list.htm');
