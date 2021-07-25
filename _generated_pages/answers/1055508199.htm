@@ -53,13 +53,17 @@
 <body>
     
     <div id='article' style='padding:0 15px 10px 10px'>
-        <h1 id="subject">輸出語句，例如print，cout ，是最好的調試方法嗎?</h1>
+        <h1 id="subject">輸出語句，例如print，cout ，是最好的調試方法嗎?</h1>
         <div id="date" style='font-size: 9pt;'>2020-03-04 08:20</div>
         <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags">答案</div>
-        <div id="content" style='word-break: break-all;'><p>通常來說調式分三類</p><ol><li>gdb/lldb 這種debug 模式下meta data 的交互軟件</li><li>用日誌線程打日誌</li><li>在同一線程print</li></ol><p>明顯地各有優缺點。</p><p>1的功能強，信息完備，但導致代碼速度慢，也不能用於生產環境</p><p>2的介面固定，容易檢索，可以在任何環境使用，但會引入額外配置，信息不全而且要重新編譯</p><p>3的速度快，靈活，但佔用標準輸出而且要重新編譯</p></div>
+        <div id="content" style='word-break: break-all;'><p>通常來說調式分三類</p><ol><li>gdb/lldb 這種debug 模式下meta data 的交互軟件</li><li>用日誌線程打日誌</li><li>在同一線程print</li></ol><p>明顯地各有優缺點。</p><p>1的功能強，信息完備，但導致代碼速度慢，也不能用於生產環境</p><p>2的介面固定，容易檢索，可以在任何環境使用，但會引入額外配置，信息不全而且要重新編譯</p><p>3的速度快，靈活，但佔用標準輸出而且要重新編譯</p></div>
         <div id="permalink" style='word-break: break-all;padding:2em 0 2em 0'><a href="https://blog.abby.md/_generated_pages/answers/1055508199.htm">Permalink of this blog</a></div>
         
     </div>
 </body>
-
+<script>
+    $("img[data-actualsrc]").each(function(num,e){
+        $(this).attr("src",$(this).actualsrc);
+    });
+</script>
 </html>

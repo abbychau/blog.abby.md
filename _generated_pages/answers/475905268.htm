@@ -53,13 +53,17 @@
 <body>
     
     <div id='article' style='padding:0 15px 10px 10px'>
-        <h1 id="subject">PHP大型門戶站是用靜態好，還是偽靜態好？</h1>
+        <h1 id="subject">PHP大型門戶站是用靜態好，還是偽靜態好？</h1>
         <div id="date" style='font-size: 9pt;'>2018-08-23 04:54</div>
         <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags">答案</div>
-        <div id="content" style='word-break: break-all;'>pv 和ip 不能直接反映問題。<br>主要是看效能瓶頸在不在於數據庫。和動態生成的時候，是不是只用主鍵或者nosql就可以解決。<br>如果生成靜態後，還是有信息要ajax 解決的話，那麼靜態化的好處也沒有想像中大。<br><br>在今天，可以用nosql 解決的話，那成本效益應是最高的。</div>
+        <div id="content" style='word-break: break-all;'>pv 和ip 不能直接反映問題。<br>主要是看效能瓶頸在不在於數據庫。和動態生成的時候，是不是只用主鍵或者nosql就可以解決。<br>如果生成靜態後，還是有信息要ajax 解決的話，那麼靜態化的好處也沒有想像中大。<br><br>在今天，可以用nosql 解決的話，那成本效益應是最高的。</div>
         <div id="permalink" style='word-break: break-all;padding:2em 0 2em 0'><a href="https://blog.abby.md/_generated_pages/answers/475905268.htm">Permalink of this blog</a></div>
         
     </div>
 </body>
-
+<script>
+    $("img[data-actualsrc]").each(function(num,e){
+        $(this).attr("src",$(this).actualsrc);
+    });
+</script>
 </html>

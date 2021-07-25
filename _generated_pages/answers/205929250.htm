@@ -53,13 +53,17 @@
 <body>
     
     <div id='article' style='padding:0 15px 10px 10px'>
-        <h1 id="subject">discuz論壇數據庫的設計為什麽把主題的詳細內容放到回複表（posts）里？</h1>
+        <h1 id="subject">discuz論壇數據庫的設計為什麽把主題的詳細內容放到回複表（posts）里？</h1>
         <div id="date" style='font-size: 9pt;'>2017-07-30 05:42</div>
         <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags">答案</div>
-        <div id="content" style='word-break: break-all;'><p><b>threads 的連接很重, 要盡可能輕量化。把blob 數據單獨在另一個表中處理是很常見的事。</b></p></div>
+        <div id="content" style='word-break: break-all;'><p><b>threads 的連接很重, 要盡可能輕量化。把blob 數據單獨在另一個表中處理是很常見的事。</b></p></div>
         <div id="permalink" style='word-break: break-all;padding:2em 0 2em 0'><a href="https://blog.abby.md/_generated_pages/answers/205929250.htm">Permalink of this blog</a></div>
         
     </div>
 </body>
-
+<script>
+    $("img[data-actualsrc]").each(function(num,e){
+        $(this).attr("src",$(this).actualsrc);
+    });
+</script>
 </html>

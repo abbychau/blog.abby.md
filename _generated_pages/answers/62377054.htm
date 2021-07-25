@@ -53,13 +53,17 @@
 <body>
     
     <div id='article' style='padding:0 15px 10px 10px'>
-        <h1 id="subject">win8和win10下的開機運行時間對timeGetTime()函數有影響嗎？</h1>
+        <h1 id="subject">win8和win10下的開機運行時間對timeGetTime()函數有影響嗎？</h1>
         <div id="date" style='font-size: 9pt;'>2015-09-05 06:57</div>
         <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags">答案</div>
-        <div id="content" style='word-break: break-all;'>DWORD 轉 float 如果要求不積累失真是不可以直接casting的。簡單地用unsigned int (註意64位系統中dword 是有兩倍於int 的長度的，理論上更要用上Uint64) <br>用1.0/60.0 *1000作比較就可以了，但其實1.0/60.0 也是失真的，因為除不盡的原因，最後一個位元會進位或去除，在你的程序中還是會把失真累積，只是影響比較微細而已。</div>
+        <div id="content" style='word-break: break-all;'>DWORD 轉 float 如果要求不積累失真是不可以直接casting的。簡單地用unsigned int (註意64位系統中dword 是有兩倍於int 的長度的，理論上更要用上Uint64) <br>用1.0/60.0 *1000作比較就可以了，但其實1.0/60.0 也是失真的，因為除不盡的原因，最後一個位元會進位或去除，在你的程序中還是會把失真累積，只是影響比較微細而已。</div>
         <div id="permalink" style='word-break: break-all;padding:2em 0 2em 0'><a href="https://blog.abby.md/_generated_pages/answers/62377054.htm">Permalink of this blog</a></div>
         
     </div>
 </body>
-
+<script>
+    $("img[data-actualsrc]").each(function(num,e){
+        $(this).attr("src",$(this).actualsrc);
+    });
+</script>
 </html>

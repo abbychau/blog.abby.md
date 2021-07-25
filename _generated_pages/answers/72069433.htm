@@ -53,13 +53,17 @@
 <body>
     
     <div id='article' style='padding:0 15px 10px 10px'>
-        <h1 id="subject">哪部作品讓你有「能寫出這種東西的人真是了不起啊」的感覺？</h1>
+        <h1 id="subject">哪部作品讓你有「能寫出這種東西的人真是了不起啊」的感覺？</h1>
         <div id="date" style='font-size: 9pt;'>2015-11-13 13:24</div>
         <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags">答案</div>
-        <div id="content" style='word-break: break-all;'>氰化鉀（化學式：KCN），俗稱山埃鉀，是氰化氫的鉀鹽。它是無色或白色、有杏仁味。<br><br><b>有杏仁味</b></div>
+        <div id="content" style='word-break: break-all;'>氰化鉀（化學式：KCN），俗稱山埃鉀，是氰化氫的鉀鹽。它是無色或白色、有杏仁味。<br><br><b>有杏仁味</b></div>
         <div id="permalink" style='word-break: break-all;padding:2em 0 2em 0'><a href="https://blog.abby.md/_generated_pages/answers/72069433.htm">Permalink of this blog</a></div>
         
     </div>
 </body>
-
+<script>
+    $("img[data-actualsrc]").each(function(num,e){
+        $(this).attr("src",$(this).actualsrc);
+    });
+</script>
 </html>

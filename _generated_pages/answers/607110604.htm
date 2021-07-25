@@ -53,13 +53,17 @@
 <body>
     
     <div id='article' style='padding:0 15px 10px 10px'>
-        <h1 id="subject">如何評價騰訊開源的PHP框架Biny？</h1>
+        <h1 id="subject">如何評價騰訊開源的PHP框架Biny？</h1>
         <div id="date" style='font-size: 9pt;'>2019-03-02 15:28</div>
         <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags">答案</div>
-        <div id="content" style='word-break: break-all;'><p>既然是初始階段，也是輕量，使用場景應該比較靈活，有關packaging, dependencies, test 和psr 的就不說要怎麼改善了，這都是架式。要是工程化程度不高就都是垃圾，那就有點強加個人意願了。</p><p>我不是想說這是個好東西，只是，這個框架的真正設計原因和心路歷程是更值得關註的畢竟，今天已經有數不過來的"框架"了。</p><p>首先作者的水平我是有點懷疑的。</p><p>1。文檔中有一句：「請在php.ini配置中打開short_open_tag，使用簡寫模版，提高開發效率」。他利用了傳參來反映模版變數，輔以「&lt;?=」來顯示，但事實上，打不打開「short_open_tag」根本不影響&lt;?= 的作用的，只影響&lt;?的作用。</p><p>然後這個所謂的框架是有點兒「剛愎自用」或者在github 上更常見的「opinionated」。</p><p>2。作為所謂的「輕量庫」，DAO 卻占了一大部分。</p><p>3。渲染的這個部分</p><p>return $this-&gt;display('main/test', array('test'=&gt;1), array('path'=&gt;'/test.png'));</p><p>他說：「第二個為頁面參數數組，第三個為系統類數據(沒有可不傳)」</p><p>這個分法和次序，在語義上亳無設計感。</p><p>4。幾乎所有namespace 下的有功能的類別有一個TX 的prefix。。。這種opinionated 亳無道理。除非他能解釋這些classes 和騰訊某個庫有關系，又或者TX 只是他女朋友的名字之類的，否則，這種品味也實在太差。</p><p>5。路由方面：默認路由十分弱雞，自定義路由則要用家寫極費腦力的REGEX。我造過輪子，看得出是作者在這有點能力不足，寫不出好的路由專用的DSL的解釋代碼，而只好走兩個極端。只要真用起來，稍微不是trival 的項目，都會知道現在這個設計會帶來多少痛楚。</p><p></p></div>
+        <div id="content" style='word-break: break-all;'><p>既然是初始階段，也是輕量，使用場景應該比較靈活，有關packaging, dependencies, test 和psr 的就不說要怎麼改善了，這都是架式。要是工程化程度不高就都是垃圾，那就有點強加個人意願了。</p><p>我不是想說這是個好東西，只是，這個框架的真正設計原因和心路歷程是更值得關註的畢竟，今天已經有數不過來的"框架"了。</p><p>首先作者的水平我是有點懷疑的。</p><p>1。文檔中有一句：「請在php.ini配置中打開short_open_tag，使用簡寫模版，提高開發效率」。他利用了傳參來反映模版變數，輔以「&lt;?=」來顯示，但事實上，打不打開「short_open_tag」根本不影響&lt;?= 的作用的，只影響&lt;?的作用。</p><p>然後這個所謂的框架是有點兒「剛愎自用」或者在github 上更常見的「opinionated」。</p><p>2。作為所謂的「輕量庫」，DAO 卻占了一大部分。</p><p>3。渲染的這個部分</p><p>return $this-&gt;display('main/test', array('test'=&gt;1), array('path'=&gt;'/test.png'));</p><p>他說：「第二個為頁面參數數組，第三個為系統類數據(沒有可不傳)」</p><p>這個分法和次序，在語義上亳無設計感。</p><p>4。幾乎所有namespace 下的有功能的類別有一個TX 的prefix。。。這種opinionated 亳無道理。除非他能解釋這些classes 和騰訊某個庫有關系，又或者TX 只是他女朋友的名字之類的，否則，這種品味也實在太差。</p><p>5。路由方面：默認路由十分弱雞，自定義路由則要用家寫極費腦力的REGEX。我造過輪子，看得出是作者在這有點能力不足，寫不出好的路由專用的DSL的解釋代碼，而只好走兩個極端。只要真用起來，稍微不是trival 的項目，都會知道現在這個設計會帶來多少痛楚。</p><p></p></div>
         <div id="permalink" style='word-break: break-all;padding:2em 0 2em 0'><a href="https://blog.abby.md/_generated_pages/answers/607110604.htm">Permalink of this blog</a></div>
         
     </div>
 </body>
-
+<script>
+    $("img[data-actualsrc]").each(function(num,e){
+        $(this).attr("src",$(this).actualsrc);
+    });
+</script>
 </html>

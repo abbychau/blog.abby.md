@@ -53,13 +53,17 @@
 <body>
     
     <div id='article' style='padding:0 15px 10px 10px'>
-        <h1 id="subject">為什麽有的人好像什麽都知道但現實中卻一事無成？</h1>
+        <h1 id="subject">為什麽有的人好像什麽都知道但現實中卻一事無成？</h1>
         <div id="date" style='font-size: 9pt;'>2014-06-22 15:29</div>
         <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags">答案</div>
-        <div id="content" style='word-break: break-all;'>他們不可能一事無成, 那一事無成的感覺, 可能是你心中的自我平衡而已。</div>
+        <div id="content" style='word-break: break-all;'>他們不可能一事無成, 那一事無成的感覺, 可能是你心中的自我平衡而已。</div>
         <div id="permalink" style='word-break: break-all;padding:2em 0 2em 0'><a href="https://blog.abby.md/_generated_pages/answers/27135532.htm">Permalink of this blog</a></div>
         
     </div>
 </body>
-
+<script>
+    $("img[data-actualsrc]").each(function(num,e){
+        $(this).attr("src",$(this).actualsrc);
+    });
+</script>
 </html>

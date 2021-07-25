@@ -53,13 +53,17 @@
 <body>
     
     <div id='article' style='padding:0 15px 10px 10px'>
-        <h1 id="subject">如果你回到了2001年九月一日，你會盡全力去阻止911事件的發生嗎？</h1>
+        <h1 id="subject">如果你回到了2001年九月一日，你會盡全力去阻止911事件的發生嗎？</h1>
         <div id="date" style='font-size: 9pt;'>2017-08-17 06:14</div>
         <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags">答案</div>
-        <div id="content" style='word-break: break-all;'>會呀，這麼神奇的按鈕不按一下一定後悔，要入場券的話也要買來按一下。</div>
+        <div id="content" style='word-break: break-all;'>會呀，這麼神奇的按鈕不按一下一定後悔，要入場券的話也要買來按一下。</div>
         <div id="permalink" style='word-break: break-all;padding:2em 0 2em 0'><a href="https://blog.abby.md/_generated_pages/answers/215802856.htm">Permalink of this blog</a></div>
         
     </div>
 </body>
-
+<script>
+    $("img[data-actualsrc]").each(function(num,e){
+        $(this).attr("src",$(this).actualsrc);
+    });
+</script>
 </html>

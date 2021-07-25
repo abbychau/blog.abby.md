@@ -53,13 +53,17 @@
 <body>
     
     <div id='article' style='padding:0 15px 10px 10px'>
-        <h1 id="subject">最近寫連連看程序,打亂圖片的時候圖片也不是很亂,感覺是隨機函數出了問題?</h1>
+        <h1 id="subject">最近寫連連看程序,打亂圖片的時候圖片也不是很亂,感覺是隨機函數出了問題?</h1>
         <div id="date" style='font-size: 9pt;'>2016-06-15 05:27</div>
         <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags">答案</div>
-        <div id="content" style='word-break: break-all;'>這個程序有兩個問題。<br>1. 同一個nIndex 應用在橫坐標和豎坐標上了。<br>2. 行數和欄數都叫nCol 了。<br><br>結果就是只有對角線上的會亂啊。（汗</div>
+        <div id="content" style='word-break: break-all;'>這個程序有兩個問題。<br>1. 同一個nIndex 應用在橫坐標和豎坐標上了。<br>2. 行數和欄數都叫nCol 了。<br><br>結果就是只有對角線上的會亂啊。（汗</div>
         <div id="permalink" style='word-break: break-all;padding:2em 0 2em 0'><a href="https://blog.abby.md/_generated_pages/answers/106089030.htm">Permalink of this blog</a></div>
         
     </div>
 </body>
-
+<script>
+    $("img[data-actualsrc]").each(function(num,e){
+        $(this).attr("src",$(this).actualsrc);
+    });
+</script>
 </html>

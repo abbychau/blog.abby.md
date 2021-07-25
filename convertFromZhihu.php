@@ -7,25 +7,25 @@ include("./includes/TranslateChinese.php");
 $translator = new TranslateChinese();
 $converter = new HtmlConverter();
 $indexList = [];
+$stores=[];
 foreach(glob("./original-data/zhihu/answer/*") as $filename){
     process($filename);
 }
-
 function process($filename){
-    global $Parsedown,$translator,$converter,$indexList;
+    global $Parsedown,$translator,$converter,$indexList,$stores;
     $strFile=file_get_contents($filename);
     $strFile=$translator->trad($strFile);
     $fileParts = explode("\n",$strFile);
-    $dateLine = array_pop($fileParts);
-    $titleLine = array_shift($fileParts);
-    $content=implode("\n",$fileParts);
+    $dateLine = trim(array_pop($fileParts));
+    $titleLine = trim(array_shift($fileParts));
+    $content=trim(implode("\n",$fileParts));
     // if(!intval($fileParts[2])){
     //     echo $filename."\n";
     //     print_r($fileParts);
     //     exit;
     // }
     $store=['title'=>$titleLine,'content'=>$content,'date'=>date("Y-m-d H:i",$dateLine)];//$converter->convert($v['content'])
-
+    $stores[]=$store;
     $txt=file_get_contents($filename);
 
     $cleanPath = "_generated_pages/answers/".str_replace(['/','.txt','zhihu','original-data','.','txt','answer'],'',$filename).".htm";
@@ -42,7 +42,10 @@ function process($filename){
     // return $out;
 }
 $template = file_get_contents("./templates/template_meta.htm");
+
 $strIndexList = "<ol>".implode("\n",$indexList)."</ol>";
 file_put_contents("_generated_pages/list.htm",
     str_replace(["{{tag}}","{{list}}"],["知乎答案",$strIndexList],$template)
 );
+
+file_put_contents("zhihu_dump.json",json_encode($stores,JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT));

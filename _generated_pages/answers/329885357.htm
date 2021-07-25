@@ -53,13 +53,17 @@
 <body>
     
     <div id='article' style='padding:0 15px 10px 10px'>
-        <h1 id="subject">程序員是如何看待「祖傳代碼」的？</h1>
+        <h1 id="subject">程序員是如何看待「祖傳代碼」的？</h1>
         <div id="date" style='font-size: 9pt;'>2018-02-27 11:43</div>
         <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags">答案</div>
-        <div id="content" style='word-break: break-all;'>我是不給工時絕對不碰的一派。<br><br>話說在十五年前公司的某承辦商的某小程，用vbs 寫了個程序，就是跑大約8000次Dijkstra 輔以手動調配的規則表，來算最優轉車站和最優路線。<br>因為Vbs 的Runtime 慢，程序優化也不佳的關係，每次跑要20分鐘。<br><br>雖然CPU 更新了幾代，但站數也同樣增長了，運算時間還是差不多。<br><br>不少人試過轉用其他簡單的動態語言寫一次，比如說js php 之流。<br>在單線程下速度都快上十倍。<br>但因為沒有人願意規劃成本做測試，而且一年才跑兩次，那個vbs一直沿用至今。<br><br>我覺得沒有毛病。<br><br>在調試規則時，對操作者來說，一次十分一秒還是百分一秒，也是沒有意義的差別。</div>
+        <div id="content" style='word-break: break-all;'>我是不給工時絕對不碰的一派。<br><br>話說在十五年前公司的某承辦商的某小程，用vbs 寫了個程序，就是跑大約8000次Dijkstra 輔以手動調配的規則表，來算最優轉車站和最優路線。<br>因為Vbs 的Runtime 慢，程序優化也不佳的關係，每次跑要20分鐘。<br><br>雖然CPU 更新了幾代，但站數也同樣增長了，運算時間還是差不多。<br><br>不少人試過轉用其他簡單的動態語言寫一次，比如說js php 之流。<br>在單線程下速度都快上十倍。<br>但因為沒有人願意規劃成本做測試，而且一年才跑兩次，那個vbs一直沿用至今。<br><br>我覺得沒有毛病。<br><br>在調試規則時，對操作者來說，一次十分一秒還是百分一秒，也是沒有意義的差別。</div>
         <div id="permalink" style='word-break: break-all;padding:2em 0 2em 0'><a href="https://blog.abby.md/_generated_pages/answers/329885357.htm">Permalink of this blog</a></div>
         
     </div>
 </body>
-
+<script>
+    $("img[data-actualsrc]").each(function(num,e){
+        $(this).attr("src",$(this).actualsrc);
+    });
+</script>
 </html>

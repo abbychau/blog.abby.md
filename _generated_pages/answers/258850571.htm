@@ -53,13 +53,17 @@
 <body>
     
     <div id='article' style='padding:0 15px 10px 10px'>
-        <h1 id="subject">能否在平面中表現出所有RGB顏色，並保持連續性？</h1>
+        <h1 id="subject">能否在平面中表現出所有RGB顏色，並保持連續性？</h1>
         <div id="date" style='font-size: 9pt;'>2017-11-12 13:54</div>
         <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags">答案</div>
-        <div id="content" style='word-break: break-all;'><p>非歐幾里得幾何下的可以。最簡單是hsv 中的v接成一個環就可以了。</p><p>在現實環境中，但無論RGB和HSV 都是三維的，投射到平面時必需以全息圖方式儲存。表現手法則是主觀行為，但我支持全息圖是一個平面，因為弦論和量子量力都包含著這個特性。</p></div>
+        <div id="content" style='word-break: break-all;'><p>非歐幾里得幾何下的可以。最簡單是hsv 中的v接成一個環就可以了。</p><p>在現實環境中，但無論RGB和HSV 都是三維的，投射到平面時必需以全息圖方式儲存。表現手法則是主觀行為，但我支持全息圖是一個平面，因為弦論和量子量力都包含著這個特性。</p></div>
         <div id="permalink" style='word-break: break-all;padding:2em 0 2em 0'><a href="https://blog.abby.md/_generated_pages/answers/258850571.htm">Permalink of this blog</a></div>
         
     </div>
 </body>
-
+<script>
+    $("img[data-actualsrc]").each(function(num,e){
+        $(this).attr("src",$(this).actualsrc);
+    });
+</script>
 </html>

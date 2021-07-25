@@ -53,13 +53,17 @@
 <body>
     
     <div id='article' style='padding:0 15px 10px 10px'>
-        <h1 id="subject">請問這幾行代碼的意思是什麽？</h1>
+        <h1 id="subject">請問這幾行代碼的意思是什麽？</h1>
         <div id="date" style='font-size: 9pt;'>2016-08-25 01:57</div>
         <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags">答案</div>
-        <div id="content" style='word-break: break-all;'>縱然對你的思念從不會得到回聲，<br>仍無法停止地，無可避免地，<br>從遇見你一的一刻開始，思念不斷。<br><br>只要宇宙洪荒仍能賦予時間一點意義，<br>我必會如昨天一樣，思念不止。</div>
+        <div id="content" style='word-break: break-all;'>縱然對你的思念從不會得到回聲，<br>仍無法停止地，無可避免地，<br>從遇見你一的一刻開始，思念不斷。<br><br>只要宇宙洪荒仍能賦予時間一點意義，<br>我必會如昨天一樣，思念不止。</div>
         <div id="permalink" style='word-break: break-all;padding:2em 0 2em 0'><a href="https://blog.abby.md/_generated_pages/answers/118781140.htm">Permalink of this blog</a></div>
         
     </div>
 </body>
-
+<script>
+    $("img[data-actualsrc]").each(function(num,e){
+        $(this).attr("src",$(this).actualsrc);
+    });
+</script>
 </html>

@@ -53,13 +53,17 @@
 <body>
     
     <div id='article' style='padding:0 15px 10px 10px'>
-        <h1 id="subject">怎麽看當下非常火的直播？</h1>
+        <h1 id="subject">怎麽看當下非常火的直播？</h1>
         <div id="date" style='font-size: 9pt;'>2016-05-30 05:02</div>
         <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags">答案</div>
-        <div id="content" style='word-break: break-all;'>已經把直播和點播流 結合的youtube, 我沒看到哪家公司可以在它無限的帶寬和中繼器的處理能力下活下來。<br>現在看直播已經很少再考慮twitch 了。</div>
+        <div id="content" style='word-break: break-all;'>已經把直播和點播流 結合的youtube, 我沒看到哪家公司可以在它無限的帶寬和中繼器的處理能力下活下來。<br>現在看直播已經很少再考慮twitch 了。</div>
         <div id="permalink" style='word-break: break-all;padding:2em 0 2em 0'><a href="https://blog.abby.md/_generated_pages/answers/103373466.htm">Permalink of this blog</a></div>
         
     </div>
 </body>
-
+<script>
+    $("img[data-actualsrc]").each(function(num,e){
+        $(this).attr("src",$(this).actualsrc);
+    });
+</script>
 </html>

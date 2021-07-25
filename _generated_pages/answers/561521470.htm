@@ -53,13 +53,17 @@
 <body>
     
     <div id='article' style='padding:0 15px 10px 10px'>
-        <h1 id="subject">像 Swift 和 Kotlin 這種語法風格叫什麽，和 Java 比有哪些優勢？</h1>
+        <h1 id="subject">像 Swift 和 Kotlin 這種語法風格叫什麽，和 Java 比有哪些優勢？</h1>
         <div id="date" style='font-size: 9pt;'>2018-12-28 05:30</div>
         <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags">答案</div>
-        <div id="content" style='word-break: break-all;'><p>Dim a as string ="5"</p><p>Var a: string ="5"</p><p>String a ="5"</p><p>我們都一致認為5 放在後面的，因為5是可選的。</p><p>但到int32 呢？</p><p>Dim a as int32</p><p>Var a : i32</p><p>時i32 也是可能被後文推導的，</p><p>所以也是可選的。</p><p>Var a 和 不寫 就只餘下可讀性問題了。</p><p>在今天大部分人還是認為變數要宣告的氣氛下，Var a : type = x 擁有最高的自由度。</p><p>另外，在fp 或者immutable 中，把型態前置也浪費很多關鍵字空間。</p><p>例如ops a b時，ops 就必須用大小寫或者其他方法來區分方法和自定義類型了。</p><p></p></div>
+        <div id="content" style='word-break: break-all;'><p>Dim a as string ="5"</p><p>Var a: string ="5"</p><p>String a ="5"</p><p>我們都一致認為5 放在後面的，因為5是可選的。</p><p>但到int32 呢？</p><p>Dim a as int32</p><p>Var a : i32</p><p>時i32 也是可能被後文推導的，</p><p>所以也是可選的。</p><p>Var a 和 不寫 就只餘下可讀性問題了。</p><p>在今天大部分人還是認為變數要宣告的氣氛下，Var a : type = x 擁有最高的自由度。</p><p>另外，在fp 或者immutable 中，把型態前置也浪費很多關鍵字空間。</p><p>例如ops a b時，ops 就必須用大小寫或者其他方法來區分方法和自定義類型了。</p><p></p></div>
         <div id="permalink" style='word-break: break-all;padding:2em 0 2em 0'><a href="https://blog.abby.md/_generated_pages/answers/561521470.htm">Permalink of this blog</a></div>
         
     </div>
 </body>
-
+<script>
+    $("img[data-actualsrc]").each(function(num,e){
+        $(this).attr("src",$(this).actualsrc);
+    });
+</script>
 </html>

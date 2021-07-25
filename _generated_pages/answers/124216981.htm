@@ -53,13 +53,17 @@
 <body>
     
     <div id='article' style='padding:0 15px 10px 10px'>
-        <h1 id="subject">unity能不能識別節奏遊戲BMS文件？如果不能，有什麽遊戲引擎可以讀？</h1>
+        <h1 id="subject">unity能不能識別節奏遊戲BMS文件？如果不能，有什麽遊戲引擎可以讀？</h1>
         <div id="date" style='font-size: 9pt;'>2016-09-29 07:38</div>
         <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags">答案</div>
-        <div id="content" style='word-break: break-all;'>不能直接讀取的，我以前有試過人手寫過parser。但後來覺得還是用JSON 抽象一層比較清爽。</div>
+        <div id="content" style='word-break: break-all;'>不能直接讀取的，我以前有試過人手寫過parser。但後來覺得還是用JSON 抽象一層比較清爽。</div>
         <div id="permalink" style='word-break: break-all;padding:2em 0 2em 0'><a href="https://blog.abby.md/_generated_pages/answers/124216981.htm">Permalink of this blog</a></div>
         
     </div>
 </body>
-
+<script>
+    $("img[data-actualsrc]").each(function(num,e){
+        $(this).attr("src",$(this).actualsrc);
+    });
+</script>
 </html>

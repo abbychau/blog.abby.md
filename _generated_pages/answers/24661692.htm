@@ -53,13 +53,17 @@
 <body>
     
     <div id='article' style='padding:0 15px 10px 10px'>
-        <h1 id="subject">為什麽很多畫家都需要模特？</h1>
+        <h1 id="subject">為什麽很多畫家都需要模特？</h1>
         <div id="date" style='font-size: 9pt;'>2014-04-18 14:52</div>
         <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags">答案</div>
-        <div id="content" style='word-break: break-all;'>題主有學過畫嗎?<br>初學者用木頭人來參考光暗和外框線, 有錢了當然就找真人來參考了</div>
+        <div id="content" style='word-break: break-all;'>題主有學過畫嗎?<br>初學者用木頭人來參考光暗和外框線, 有錢了當然就找真人來參考了</div>
         <div id="permalink" style='word-break: break-all;padding:2em 0 2em 0'><a href="https://blog.abby.md/_generated_pages/answers/24661692.htm">Permalink of this blog</a></div>
         
     </div>
 </body>
-
+<script>
+    $("img[data-actualsrc]").each(function(num,e){
+        $(this).attr("src",$(this).actualsrc);
+    });
+</script>
 </html>

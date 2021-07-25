@@ -53,13 +53,17 @@
 <body>
     
     <div id='article' style='padding:0 15px 10px 10px'>
-        <h1 id="subject">為什麽拍照的時候大家會習慣性的舉起剪刀手呢？</h1>
+        <h1 id="subject">為什麽拍照的時候大家會習慣性的舉起剪刀手呢？</h1>
         <div id="date" style='font-size: 9pt;'>2016-12-08 11:14</div>
         <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags">答案</div>
-        <div id="content" style='word-break: break-all;'>因為它背後同時包含<br>表現決心、熱烈、歡快的「勝利」，以及表現親和、愛、團結的「和平」<br><br>它的意義令人十分喜愛而且也十分萬用。</div>
+        <div id="content" style='word-break: break-all;'>因為它背後同時包含<br>表現決心、熱烈、歡快的「勝利」，以及表現親和、愛、團結的「和平」<br><br>它的意義令人十分喜愛而且也十分萬用。</div>
         <div id="permalink" style='word-break: break-all;padding:2em 0 2em 0'><a href="https://blog.abby.md/_generated_pages/answers/134946682.htm">Permalink of this blog</a></div>
         
     </div>
 </body>
-
+<script>
+    $("img[data-actualsrc]").each(function(num,e){
+        $(this).attr("src",$(this).actualsrc);
+    });
+</script>
 </html>

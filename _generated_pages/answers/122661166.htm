@@ -53,13 +53,17 @@
 <body>
     
     <div id='article' style='padding:0 15px 10px 10px'>
-        <h1 id="subject">知乎編輯器應該支持 Markdown 嗎？</h1>
+        <h1 id="subject">知乎編輯器應該支持 Markdown 嗎？</h1>
         <div id="date" style='font-size: 9pt;'>2016-09-19 05:16</div>
         <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags">答案</div>
-        <div id="content" style='word-break: break-all;'>首先，大標題運用不當會破壞答案的舖排結構。<br>其次，插入圖片時會必須留下辨識符或url ，編輯器需要留下額外的空間去讓人管理附件。<br>最後，連結或圖片也可能會出現語法錯誤，而更新解釋器時可能會令含有錯誤語法的表示方式改變。<br><br>而且，真沒有很需要。</div>
+        <div id="content" style='word-break: break-all;'>首先，大標題運用不當會破壞答案的舖排結構。<br>其次，插入圖片時會必須留下辨識符或url ，編輯器需要留下額外的空間去讓人管理附件。<br>最後，連結或圖片也可能會出現語法錯誤，而更新解釋器時可能會令含有錯誤語法的表示方式改變。<br><br>而且，真沒有很需要。</div>
         <div id="permalink" style='word-break: break-all;padding:2em 0 2em 0'><a href="https://blog.abby.md/_generated_pages/answers/122661166.htm">Permalink of this blog</a></div>
         
     </div>
 </body>
-
+<script>
+    $("img[data-actualsrc]").each(function(num,e){
+        $(this).attr("src",$(this).actualsrc);
+    });
+</script>
 </html>

@@ -53,13 +53,17 @@
 <body>
     
     <div id='article' style='padding:0 15px 10px 10px'>
-        <h1 id="subject">HTTP為什麽要設計成無狀態的，這樣比有狀態有什麽好處，有哪些協議是典型的有狀態，好處又在哪里？</h1>
+        <h1 id="subject">HTTP為什麽要設計成無狀態的，這樣比有狀態有什麽好處，有哪些協議是典型的有狀態，好處又在哪里？</h1>
         <div id="date" style='font-size: 9pt;'>2018-12-28 17:25</div>
         <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags">答案</div>
-        <div id="content" style='word-break: break-all;'><p>我們不是因為需要http 才設計成無狀態。</p><p>而是因為需要一個無狀態協議才設計http。</p><p>如果http 設計成有狀態的話，那我們瀏覽網頁就是用另一個協議了。</p><p>至於網頁為什麼不要長連接和有狀態。那是因為在telnet 後，資源下載變得普及，有很多普通用戶需要下載和顯示二合一的功能。至於header 裡面五花八門的信息，要怎麼利用還是不利用都是網主的自由。</p></div>
+        <div id="content" style='word-break: break-all;'><p>我們不是因為需要http 才設計成無狀態。</p><p>而是因為需要一個無狀態協議才設計http。</p><p>如果http 設計成有狀態的話，那我們瀏覽網頁就是用另一個協議了。</p><p>至於網頁為什麼不要長連接和有狀態。那是因為在telnet 後，資源下載變得普及，有很多普通用戶需要下載和顯示二合一的功能。至於header 裡面五花八門的信息，要怎麼利用還是不利用都是網主的自由。</p></div>
         <div id="permalink" style='word-break: break-all;padding:2em 0 2em 0'><a href="https://blog.abby.md/_generated_pages/answers/561941669.htm">Permalink of this blog</a></div>
         
     </div>
 </body>
-
+<script>
+    $("img[data-actualsrc]").each(function(num,e){
+        $(this).attr("src",$(this).actualsrc);
+    });
+</script>
 </html>

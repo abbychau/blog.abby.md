@@ -53,13 +53,17 @@
 <body>
     
     <div id='article' style='padding:0 15px 10px 10px'>
-        <h1 id="subject">Facebook 首頁都使用了哪些技術提高訪問速度？</h1>
+        <h1 id="subject">Facebook 首頁都使用了哪些技術提高訪問速度？</h1>
         <div id="date" style='font-size: 9pt;'>2015-07-14 17:07</div>
         <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags">答案</div>
-        <div id="content" style='word-break: break-all;'><a href="http://link.zhihu.com/?target=http%3A//www.reddit.com/r/programming/comments/nav19/facebook_releases_hhvm_60_percent_faster_than_its/c37pitt" class=" wrap external" target="_blank" rel="nofollow noreferrer">koko775 comments on Facebook releases HHVM, 60 percent faster than its current PHP interpreter and uses 90 percent less memory.</a><br><br>1. C++ 後臺<br>2. 99.9% Key 命中率<br>3. 前後端結合的API 返回 (有點反best practice 的感覺)<br>4. Bigtable 式儲存, 註重atomic call, 使用app server 過濾而不使用數據庫<br>5. Memcache 第四點的call<br>6. <a href="http://link.zhihu.com/?target=https%3A//github.com/phacility/libphutil/blob/master/src/utils/utils.php" class=" wrap external" target="_blank" rel="nofollow noreferrer">libphutil/utils.php at master · phacility/libphutil · GitHub</a> 高效率的數列函數(然沒甚麼關係<br>7. HHVM</div>
+        <div id="content" style='word-break: break-all;'><a href="http://link.zhihu.com/?target=http%3A//www.reddit.com/r/programming/comments/nav19/facebook_releases_hhvm_60_percent_faster_than_its/c37pitt" class=" wrap external" target="_blank" rel="nofollow noreferrer">koko775 comments on Facebook releases HHVM, 60 percent faster than its current PHP interpreter and uses 90 percent less memory.</a><br><br>1. C++ 後臺<br>2. 99.9% Key 命中率<br>3. 前後端結合的API 返回 (有點反best practice 的感覺)<br>4. Bigtable 式儲存, 註重atomic call, 使用app server 過濾而不使用數據庫<br>5. Memcache 第四點的call<br>6. <a href="http://link.zhihu.com/?target=https%3A//github.com/phacility/libphutil/blob/master/src/utils/utils.php" class=" wrap external" target="_blank" rel="nofollow noreferrer">libphutil/utils.php at master · phacility/libphutil · GitHub</a> 高效率的數列函數(然沒甚麼關係<br>7. HHVM</div>
         <div id="permalink" style='word-break: break-all;padding:2em 0 2em 0'><a href="https://blog.abby.md/_generated_pages/answers/55103596.htm">Permalink of this blog</a></div>
         
     </div>
 </body>
-
+<script>
+    $("img[data-actualsrc]").each(function(num,e){
+        $(this).attr("src",$(this).actualsrc);
+    });
+</script>
 </html>

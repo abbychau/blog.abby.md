@@ -53,13 +53,17 @@
 <body>
     
     <div id='article' style='padding:0 15px 10px 10px'>
-        <h1 id="subject">你怎麽看待滿嘴高並發，編碼能力卻稀松平常的程序員？</h1>
+        <h1 id="subject">你怎麽看待滿嘴高並發，編碼能力卻稀松平常的程序員？</h1>
         <div id="date" style='font-size: 9pt;'>2019-01-19 06:50</div>
         <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags">答案</div>
-        <div id="content" style='word-break: break-all;'><p>我以前增刪查改比說中文還要流利。</p><p>但現在用以前自己寫出來的封裝還要重新看一遍實現。</p></div>
+        <div id="content" style='word-break: break-all;'><p>我以前增刪查改比說中文還要流利。</p><p>但現在用以前自己寫出來的封裝還要重新看一遍實現。</p></div>
         <div id="permalink" style='word-break: break-all;padding:2em 0 2em 0'><a href="https://blog.abby.md/_generated_pages/answers/577251846.htm">Permalink of this blog</a></div>
         
     </div>
 </body>
-
+<script>
+    $("img[data-actualsrc]").each(function(num,e){
+        $(this).attr("src",$(this).actualsrc);
+    });
+</script>
 </html>

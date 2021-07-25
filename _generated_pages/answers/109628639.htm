@@ -53,13 +53,17 @@
 <body>
     
     <div id='article' style='padding:0 15px 10px 10px'>
-        <h1 id="subject">誰最應該被印在人民幣上面？</h1>
+        <h1 id="subject">誰最應該被印在人民幣上面？</h1>
         <div id="date" style='font-size: 9pt;'>2016-07-14 18:48</div>
         <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags">答案</div>
-        <div id="content" style='word-break: break-all;'>前印30以內乘法表。<br>後印周期元素表。<br>有空位再加印中國地圖，世界地圖。<br><br>旁邊印上厘米和英吋刻度。以及量角器。<br><br>不要浪費空位在人像上面了。</div>
+        <div id="content" style='word-break: break-all;'>前印30以內乘法表。<br>後印周期元素表。<br>有空位再加印中國地圖，世界地圖。<br><br>旁邊印上厘米和英吋刻度。以及量角器。<br><br>不要浪費空位在人像上面了。</div>
         <div id="permalink" style='word-break: break-all;padding:2em 0 2em 0'><a href="https://blog.abby.md/_generated_pages/answers/109628639.htm">Permalink of this blog</a></div>
         
     </div>
 </body>
-
+<script>
+    $("img[data-actualsrc]").each(function(num,e){
+        $(this).attr("src",$(this).actualsrc);
+    });
+</script>
 </html>

@@ -53,13 +53,17 @@
 <body>
     
     <div id='article' style='padding:0 15px 10px 10px'>
-        <h1 id="subject">如今流行音樂大多都是軟件制作的。所以音樂人是不是可以不學五線譜？</h1>
+        <h1 id="subject">如今流行音樂大多都是軟件制作的。所以音樂人是不是可以不學五線譜？</h1>
         <div id="date" style='font-size: 9pt;'>2020-11-26 02:30</div>
         <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags">答案</div>
-        <div id="content" style='word-break: break-all;'><p>不可以。</p><p>這是義務教育強制執行的。用不用軟件都要學。</p></div>
+        <div id="content" style='word-break: break-all;'><p>不可以。</p><p>這是義務教育強制執行的。用不用軟件都要學。</p></div>
         <div id="permalink" style='word-break: break-all;padding:2em 0 2em 0'><a href="https://blog.abby.md/_generated_pages/answers/1595820509.htm">Permalink of this blog</a></div>
         
     </div>
 </body>
-
+<script>
+    $("img[data-actualsrc]").each(function(num,e){
+        $(this).attr("src",$(this).actualsrc);
+    });
+</script>
 </html>

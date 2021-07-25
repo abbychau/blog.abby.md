@@ -53,14 +53,18 @@
 <body>
     
     <div id='article' style='padding:0 15px 10px 10px'>
-        <h1 id="subject">免費在超市搬走一購物車的東西，如何組合才能使其價值最大化？</h1>
+        <h1 id="subject">免費在超市搬走一購物車的東西，如何組合才能使其價值最大化？</h1>
         <div id="date" style='font-size: 9pt;'>2019-08-23 12:34</div>
         <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags">答案</div>
         <div id="content" style='word-break: break-all;'><p>先把超市的貨物的重量和價值記錄下來。代入以下dp 式，即可歸遞求解。</p><div class="highlight"><pre><code class="language-text"><span></span>B[i][j]= max(B[i – 1][j], V[i]+B[i – 1][j – W[i]]
-</code></pre></div><p>B是最大價值 </p><p>V是物件價值</p><p>W是重量</p><p></p></div>
+</code></pre></div><p>B是最大價值 </p><p>V是物件價值</p><p>W是重量</p><p></p></div>
         <div id="permalink" style='word-break: break-all;padding:2em 0 2em 0'><a href="https://blog.abby.md/_generated_pages/answers/800064031.htm">Permalink of this blog</a></div>
         
     </div>
 </body>
-
+<script>
+    $("img[data-actualsrc]").each(function(num,e){
+        $(this).attr("src",$(this).actualsrc);
+    });
+</script>
 </html>

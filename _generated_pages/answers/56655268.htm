@@ -53,13 +53,17 @@
 <body>
     
     <div id='article' style='padding:0 15px 10px 10px'>
-        <h1 id="subject">為什麽「Life is short」而不是 int 或 double？</h1>
+        <h1 id="subject">為什麽「Life is short」而不是 int 或 double？</h1>
         <div id="date" style='font-size: 9pt;'>2015-07-27 09:33</div>
         <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags">答案</div>
-        <div id="content" style='word-break: break-all;'>問主有點誤解了。<br><br>Life is short 中的short 不是在描述資料儲存型態，而是描述生命的心理時間長度。</div>
+        <div id="content" style='word-break: break-all;'>問主有點誤解了。<br><br>Life is short 中的short 不是在描述資料儲存型態，而是描述生命的心理時間長度。</div>
         <div id="permalink" style='word-break: break-all;padding:2em 0 2em 0'><a href="https://blog.abby.md/_generated_pages/answers/56655268.htm">Permalink of this blog</a></div>
         
     </div>
 </body>
-
+<script>
+    $("img[data-actualsrc]").each(function(num,e){
+        $(this).attr("src",$(this).actualsrc);
+    });
+</script>
 </html>

@@ -53,13 +53,17 @@
 <body>
     
     <div id='article' style='padding:0 15px 10px 10px'>
-        <h1 id="subject">你見過最無恥的雙標是什麽？</h1>
+        <h1 id="subject">你見過最無恥的雙標是什麽？</h1>
         <div id="date" style='font-size: 9pt;'>2019-11-07 11:40</div>
         <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags">答案</div>
-        <div id="content" style='word-break: break-all;'><a class="video-box" href="http://link.zhihu.com/?target=https%3A//www.zhihu.com/video/1175859491348996096" target="_blank" data-video-id="" data-video-playable="" data-name="我最討厭兩種人" data-poster="https://pic2.zhimg.com/v2-62e8fd4d5feeb8ef2b2fd2054d25f3be.jpeg" data-lens-id="1175859491348996096">              <img class="thumbnail" src="https://pic2.zhimg.com/v2-62e8fd4d5feeb8ef2b2fd2054d25f3be.jpeg">              <span class="content">                <span class="title">我最討厭兩種人<span class="z-ico-extern-gray"></span><span class="z-ico-extern-blue"></span></span>                <span class="url"><span class="z-ico-video"></span>https://www.zhihu.com/video/1175859491348996096</span>              </span>            </a>            </div>
+        <div id="content" style='word-break: break-all;'><a class="video-box" href="http://link.zhihu.com/?target=https%3A//www.zhihu.com/video/1175859491348996096" target="_blank" data-video-id="" data-video-playable="" data-name="我最討厭兩種人" data-poster="https://pic2.zhimg.com/v2-62e8fd4d5feeb8ef2b2fd2054d25f3be.jpeg" data-lens-id="1175859491348996096">              <img class="thumbnail" src="https://pic2.zhimg.com/v2-62e8fd4d5feeb8ef2b2fd2054d25f3be.jpeg">              <span class="content">                <span class="title">我最討厭兩種人<span class="z-ico-extern-gray"></span><span class="z-ico-extern-blue"></span></span>                <span class="url"><span class="z-ico-video"></span>https://www.zhihu.com/video/1175859491348996096</span>              </span>            </a></div>
         <div id="permalink" style='word-break: break-all;padding:2em 0 2em 0'><a href="https://blog.abby.md/_generated_pages/answers/885754982.htm">Permalink of this blog</a></div>
         
     </div>
 </body>
-
+<script>
+    $("img[data-actualsrc]").each(function(num,e){
+        $(this).attr("src",$(this).actualsrc);
+    });
+</script>
 </html>

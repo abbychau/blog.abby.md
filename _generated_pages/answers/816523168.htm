@@ -53,13 +53,17 @@
 <body>
     
     <div id='article' style='padding:0 15px 10px 10px'>
-        <h1 id="subject">女生總是覺得自己長得醜，沒有自信怎麽辦？</h1>
+        <h1 id="subject">女生總是覺得自己長得醜，沒有自信怎麽辦？</h1>
         <div id="date" style='font-size: 9pt;'>2019-09-07 12:11</div>
         <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags">答案</div>
-        <div id="content" style='word-break: break-all;'><p>多讀書</p></div>
+        <div id="content" style='word-break: break-all;'><p>多讀書</p></div>
         <div id="permalink" style='word-break: break-all;padding:2em 0 2em 0'><a href="https://blog.abby.md/_generated_pages/answers/816523168.htm">Permalink of this blog</a></div>
         
     </div>
 </body>
-
+<script>
+    $("img[data-actualsrc]").each(function(num,e){
+        $(this).attr("src",$(this).actualsrc);
+    });
+</script>
 </html>

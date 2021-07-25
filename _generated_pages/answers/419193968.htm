@@ -53,13 +53,17 @@
 <body>
     
     <div id='article' style='padding:0 15px 10px 10px'>
-        <h1 id="subject">如何通俗易懂地解釋支持向量回歸(support vector regression)?</h1>
+        <h1 id="subject">如何通俗易懂地解釋支持向量回歸(support vector regression)?</h1>
         <div id="date" style='font-size: 9pt;'>2018-06-16 15:49</div>
         <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags">答案</div>
-        <div id="content" style='word-break: break-all;'><p>相對於用一條直線分割兩類，SVM 不限制數據的維度，數據可以是2維，也可以是3/4/5維，理論上，只要維度夠高，配合合適的幾何公式，總是可以把數點完美分割的。</p><p>而SVR 的理念就是在這種升維後數據上，找出n-1維的分類器，和線性回歸和Log 回歸的概念是一模一樣的。</p><p>還有一個分別，就是Loss 計算上不一樣，LR 只可以根據 X或者 Y 差別的其中一個作為Loss, 而SVM 則是在所有n-1維差別的convolution, 比如在2維而X和Y間距一樣的維度中，則是簡單的畢氏定理sqrt(x^2+y^2) 。</p><p>當然，升維的過程伴隨不同的x和y 的關係，所以計起來會複雜很多。</p></div>
+        <div id="content" style='word-break: break-all;'><p>相對於用一條直線分割兩類，SVM 不限制數據的維度，數據可以是2維，也可以是3/4/5維，理論上，只要維度夠高，配合合適的幾何公式，總是可以把數點完美分割的。</p><p>而SVR 的理念就是在這種升維後數據上，找出n-1維的分類器，和線性回歸和Log 回歸的概念是一模一樣的。</p><p>還有一個分別，就是Loss 計算上不一樣，LR 只可以根據 X或者 Y 差別的其中一個作為Loss, 而SVM 則是在所有n-1維差別的convolution, 比如在2維而X和Y間距一樣的維度中，則是簡單的畢氏定理sqrt(x^2+y^2) 。</p><p>當然，升維的過程伴隨不同的x和y 的關係，所以計起來會複雜很多。</p></div>
         <div id="permalink" style='word-break: break-all;padding:2em 0 2em 0'><a href="https://blog.abby.md/_generated_pages/answers/419193968.htm">Permalink of this blog</a></div>
         
     </div>
 </body>
-
+<script>
+    $("img[data-actualsrc]").each(function(num,e){
+        $(this).attr("src",$(this).actualsrc);
+    });
+</script>
 </html>

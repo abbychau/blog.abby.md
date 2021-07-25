@@ -53,13 +53,17 @@
 <body>
     
     <div id='article' style='padding:0 15px 10px 10px'>
-        <h1 id="subject">為什麽存在一些那麽在乎幾塊錢的人？</h1>
+        <h1 id="subject">為什麽存在一些那麽在乎幾塊錢的人？</h1>
         <div id="date" style='font-size: 9pt;'>2017-10-20 04:35</div>
         <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags">答案</div>
-        <div id="content" style='word-break: break-all;'>他們也許只是借這個機會向你進行教育。<br>他們不願意去消費這幾塊錢也許不是這幾塊的價值，而是消費的來源來自於你的意見。</div>
+        <div id="content" style='word-break: break-all;'>他們也許只是借這個機會向你進行教育。<br>他們不願意去消費這幾塊錢也許不是這幾塊的價值，而是消費的來源來自於你的意見。</div>
         <div id="permalink" style='word-break: break-all;padding:2em 0 2em 0'><a href="https://blog.abby.md/_generated_pages/answers/247289303.htm">Permalink of this blog</a></div>
         
     </div>
 </body>
-
+<script>
+    $("img[data-actualsrc]").each(function(num,e){
+        $(this).attr("src",$(this).actualsrc);
+    });
+</script>
 </html>
