@@ -8,7 +8,7 @@
     $(document).ready(function () {
         if (window.location.hash) {
             var hash = window.location.hash.substring(1); //Puts hash in variable, and removes the # character
-            $("#main_frame").attr('src',hash);
+            $("#main_frame2").attr('src',hash);
         } else {
         }
     })
@@ -16,7 +16,7 @@
     </head>
     <frameset cols="400,*">
         <frame src="list_safe.htm" />
-        <frame src="content.htm" name='main_frame' id='main_frame' scrolling="yes" />
+        <frame src="content.htm" name='main_frame2' id='main_frame2' scrolling="yes" />
     </frameset>
 </html>
     
