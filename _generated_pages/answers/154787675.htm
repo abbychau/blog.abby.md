@@ -86,7 +86,7 @@ Non-science
 </body>
 <script>
     $("img[data-actualsrc]").each(function(num,e){
-        $(this).attr("src",$(this).attr("actualsrc"));
+        $(this).attr("src",$(this).attr("data-actualsrc"));
     });
 </script>
 </html>

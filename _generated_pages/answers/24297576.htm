@@ -65,7 +65,7 @@ Hollywood 本來就不是一個人，裡面製作人的價值觀不可能劃一�
 </body>
 <script>
     $("img[data-actualsrc]").each(function(num,e){
-        $(this).attr("src",$(this).attr("actualsrc"));
+        $(this).attr("src",$(this).attr("data-actualsrc"));
     });
 </script>
 </html>
