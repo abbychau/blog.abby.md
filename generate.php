@@ -4,12 +4,11 @@ $Parsedown = new Parsedown();
 use Symfony\Component\Yaml\Yaml;
 use WyriHaximus\HtmlCompress\Factory;
 
-$pickupList = [];
 $tagToArticles=[];
 $store=[];
 $Parsedown->setBreaksEnabled(true);
 function process($file){
-    global $Parsedown,$pickupList,$tagToArticles,$store;
+    global $Parsedown,$tagToArticles,$store;
     $txt=file_get_contents($file);
     $ytxt=[];$mc=0;
     foreach(explode("\n", $txt) as $line){
@@ -112,7 +111,7 @@ foreach($store as $v){
     $strArchive.="$head &gt; <a href='{$v['generated_path']}' target='main_frame'>{$title}</a><br />\n";
 }
 foreach($tagToArticles['pick-up'] as $v){
-    $strPickup.="$head &gt; <a href='{$v['url']}' target='main_frame'>{$v['title']}</a><br />\n";
+    $strPickup.="&gt; <a href='{$v['url']}' target='main_frame'>{$v['title']}</a><br />\n";
 }
 $template = file_get_contents('templates/template_list.htm');
 $template = str_replace("{{list-archive}}",$strArchive,$template);
