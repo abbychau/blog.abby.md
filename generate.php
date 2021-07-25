@@ -137,6 +137,9 @@ function sanTag($tag){
     return strtolower($file);
 }
 $metaIndexStr="<ul>";
+uasort($tagToArticles,function($a,$b){
+    return sizeof($b) <=> sizeof($a);
+});
 foreach($tagToArticles as $tag=>$list){
     $strSave = str_replace("{{tag}}",$tag,$template);    
     $_str="<ul>";
