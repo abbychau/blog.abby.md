@@ -5,9 +5,9 @@ categories:
 - Networking
 - Rust
 tags: 
-- Rust,
-- ipv4,
-- ipv6,
+- Rust
+- ipv4
+- ipv6
 - multicast
 - udp
 ---
