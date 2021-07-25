@@ -1,0 +1,35 @@
+/* for all screens */
+#info {
+    display: none;
+}
+
+/* only when orientation is in portrait mode */
+@media all and (orientation:portrait) {
+    #info {
+        color: red;
+        display: inline;
+        font-size: 20px
+    }
+}
+
+
+body {
+    background-color: #2c292d;
+    color: #fdf9f3;
+    padding: 0;
+    margin: 10px;
+    font-size:14px;
+}
+
+a {
+    color: #a9dc76;
+    cursor: pointer
+}
+
+.hljs {
+    font-family: consolas, monospace;
+}
+
+img {
+    max-width: 90%;
+}
