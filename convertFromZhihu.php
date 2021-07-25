@@ -59,10 +59,10 @@ $template = file_get_contents("./templates/template_meta.htm");
 
 $strIndexList = "<ol>".implode("\n",$indexList)."</ol>";
 file_put_contents("_generated_pages/list.htm",
-    str_replace(["{{tag}}","{{list}}"],["知乎答案",$strIndexList],$template)
+    str_replace(["{{tag}}","{{list}}","main_frame"],["Q&A",$strIndexList,"main_frame2"],$template)
 );
 $strIndexListSafe = "<ol>".implode("\n",$indexListSafe)."</ol>";
 file_put_contents("_generated_pages/list_safe.htm",
-    str_replace(["{{tag}}","{{list}}"],["Q&A",$strIndexListSafe],$template)
+    str_replace(["{{tag}}","{{list}}","main_frame"],["Q&A",$strIndexListSafe,"main_frame2"],$template)
 );
 file_put_contents("zhihu_dump.json",json_encode($stores,JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT));
