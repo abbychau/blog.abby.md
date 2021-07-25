@@ -131,6 +131,7 @@ function sanTag($tag){
     $file = mb_ereg_replace("([\.]{2,})", '', $file);
     return $file;
 }
+$metaIndexStr="<ul>";
 foreach($tagToArticles as $tag=>$list){
     $strSave = str_replace("{{tag}}",$tag,$template);    
     $_str="<ul>";
@@ -142,8 +143,10 @@ foreach($tagToArticles as $tag=>$list){
     $file=sanTag($tag);
     $strSave = str_replace("{{list}}",$_str,$strSave);  
     file_put_contents("_meta/{$file}.htm",$strSave);
-
+    $metaIndexStr.="<li><a href='/_meta/{$file}.htm'>$tag</a></li>";
 }
+$metaIndexStr.="</ul>";
+file_put_contents("_meta/index.htm",$metaIndexStr);
 
 echo "Generating jsonfeed...\n";
 $jsonfeed['version']="https://jsonfeed.org/version/1.1";
