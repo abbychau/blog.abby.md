@@ -136,7 +136,7 @@ foreach($tagToArticles as $tag=>$list){
     $strSave = str_replace("{{tag}}",$tag,$template);    
     $_str="<ul>";
     foreach($list as $item){
-        $_str.="<li><a href='{$item['url']}'>{$item['title']}</a></li>\n";
+        $_str.="<li><a target='_self' href='/{$item['url']}'>{$item['title']}</a></li>\n";
     }
     $_str.="</ul>";
 
