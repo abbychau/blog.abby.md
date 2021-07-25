@@ -57,12 +57,7 @@
                 return true;
             }
         }
-        marked.setOptions({
-            langPrefix: '',
-            highlight: function (code, lang) {
-                return hljs.highlightAuto(code, [lang]).value
-            }
-        });
+
         function myMarked(str) {
             str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
             str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
@@ -70,6 +65,8 @@
         }
         $(document).ready(function () {
             $('#content').html(myMarked($('#content').html()))
+            hljs.highlightAll();
+
             if(!inIframe()){
                 $('#homelink').show()
             }
