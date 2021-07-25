@@ -117,10 +117,10 @@ pub extern fn _start() -&gt; ! {
 <li>前補1個位元, 表示顏色的亮度，0為正常、1為加亮。</li>
 </ul>
 <p><img src="https://i.imgur.com/VTQWjtZ.png" alt="" /></p>
-<p>你會看到上面有Hello World 了。
+<p>你會看到上面有Hello World 了。<br />
 在高興的同時, 有沒有一點困惑呢? 明明沒有字符表, 為為甚還會有字, 是不是bootimage 有甚麼大東西包進去了?</p>
 <p>那麼科普一個叫<code>VGA Text Buffer</code> 的東西 : <a href="https://en.wikipedia.org/wiki/VGA_text_mode">https://en.wikipedia.org/wiki/VGA_text_mode</a></p>
-<p>它是個VGA 硬體中的一個特點的記憶體區域, 格式可以看上面的Wiki
+<p>它是個VGA 硬體中的一個特點的記憶體區域, 格式可以看上面的Wiki<br />
 限制有一個: 就是80 * 25 的大小, 以及只可以顯示以下的字符。</p>
 <p><img src="https://i.imgur.com/0mZVaq4.png" alt="" /></p></div>
 

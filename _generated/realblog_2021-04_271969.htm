@@ -81,7 +81,7 @@
         <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags"><a href='/_meta/database.htm'>Database</a>, <a href='/_meta/pick-up.htm'>pick-up</a></div>
         <div id="content" style='word-break: break-all;'><p>在MySQL  中，如果資料很多，為了同一個索引的參數可以高速存取，我們都會分區，而分區又有很多的方法。</p>
 <p>其中要平均散序時，我們有Hash 和Linear Hash 兩種。</p>
-<p>這兩種有甚麼分別呢？
+<p>這兩種有甚麼分別呢？<br />
 在我尋找過一陣子之後，好像沒有人解釋Linear Hash 的原理和實際的Trade off。幾乎全部人都滿足於官方文檔中的這個描述。</p>
 <blockquote>
 <p>The advantage in partitioning by linear hash is that the adding, dropping, merging, and splitting of partitions is made much faster, which can be beneficial when dealing with tables containing extremely large amounts (terabytes) of data. The disadvantage is that data is less likely to be evenly distributed between partitions as compared with the distribution obtained using regular hash partitioning.</p>
@@ -92,7 +92,7 @@
 </blockquote>
 <p>算法和說明：<a href="https://dev.mysql.com/doc/refman/5.6/en/partitioning-linear-hash.html">https://dev.mysql.com/doc/refman/5.6/en/partitioning-linear-hash.html</a></p>
 <p>前面的更快兩個字是單調優勢，但在後面的一句 <code>data is less likely to be evenly distributed between partitions</code> 就很含糊了。</p>
-<p>雖然重組分區的人很少，甚至在實務上都不會把這當成常規操作。可能因為這個原因，我在網上幾乎找不到Linear Hash 的經驗分享。就連它的長處有多長和短處有多短都沒找到。
+<p>雖然重組分區的人很少，甚至在實務上都不會把這當成常規操作。可能因為這個原因，我在網上幾乎找不到Linear Hash 的經驗分享。就連它的長處有多長和短處有多短都沒找到。<br />
 這看起來對橫向擴展明明很有益處的。</p>
 <p>這個less likely 到底有多less 呢?</p>
 <p>相似的疑問在這個SE 的冷門答案有提過。<a href="https://stackoverflow.com/questions/59650198/mysql-linear-hash-partitioning">https://stackoverflow.com/questions/59650198/mysql-linear-hash-partitioning</a></p>

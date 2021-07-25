@@ -103,12 +103,12 @@ impl fmt::Write for Writer {
     writer.write_string("ello! ");
     write!(writer, "The numbers are {} and {}", 42, 1.0/3.0).unwrap();
 }</code></pre>
-<p>然而這次我們再打開, 就發現... QEMU 不斷重啟了...
+<p>然而這次我們再打開, 就發現... QEMU 不斷重啟了...<br />
 <img src="https://i.imgur.com/QEiFnA9.gif" alt="" /></p>
-<p>如果出現這個情況, 可能是你的 json 檔案寫錯了。檢查一下 , 修好之後要記得先 <code>cargo clean</code>
+<p>如果出現這個情況, 可能是你的 json 檔案寫錯了。檢查一下 , 修好之後要記得先 <code>cargo clean</code><br />
 到現在為止, build 和xbuild 都不能按照這個檔案自動刪除舊緩存。</p>
-<p>小插曲, 為了減少一個warning, 我把項目中的aCore 改名為 a_core
-你可以修改<code>Cargo.toml</code>, 設  <code>name = "a_core"</code> 。
+<p>小插曲, 為了減少一個warning, 我把項目中的aCore 改名為 a_core<br />
+你可以修改<code>Cargo.toml</code>, 設  <code>name = "a_core"</code> 。<br />
 然後 , 運行方法以後改成 <code>qemu-system-x86_64 -drive format=raw,file=target/x86_64-aCore/debug/bootimage-a_core.bin</code></p>
 <h2>Newlines</h2>
 <p>回到Writer 把Newline 完成</p>
@@ -135,7 +135,7 @@ impl fmt::Write for Writer {
         }
     }
 }</code></pre>
-<p>原理是 : 把每一格文字都移上一列, 然後把最下面的一行清空。
+<p>原理是 : 把每一格文字都移上一列, 然後把最下面的一行清空。<br />
 清空時我們用一個 <code>clear_row</code> , 方法是在每一格寫入 <code>b''</code></p>
 <p><img src="https://i.imgur.com/m4I5615.png" alt="" /></p>
 <p>結果如上</p></div>

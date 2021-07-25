@@ -80,7 +80,7 @@
         <div id="date" style='font-size: 9pt;'>2020-05-10</div>
         <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags"><a href='/_meta/實務電腦.htm'>實務電腦</a></div>
         <div id="content" style='word-break: break-all;'><h2>環境配置懶人包</h2>
-<p>在開發前, 我們配一下Rust 環境。會用Rustup 的話, 就不多解釋下面的命令了。如果不了解的話Rustup 和Cargo 自身也帶備說明。
+<p>在開發前, 我們配一下Rust 環境。會用Rustup 的話, 就不多解釋下面的命令了。如果不了解的話Rustup 和Cargo 自身也帶備說明。<br />
 所以, 我直接來個 <strong>環境配置懶人包</strong>:</p>
 <pre><code class="language-bash">$ rustup toolchain install nightly #安裝rust nightly 環境
 $ rustup component add rls --toolchain nightly #Nightly RLS
@@ -88,7 +88,7 @@ $ cargo new --bin aCore
 $ cargo install cargo-xbuild #xbuild 可以建置 core, compiler_builtins 和 alloc
 $ rustup component add rust-src #Rust的原始碼
 $ rustup override set nightly #預設nightly</code></pre>
-<p>查看一下 自己的Target 設定:
+<p>查看一下 自己的Target 設定:<br />
 <code>rustc +nightly -Z unstable-options --print target-spec-json</code></p>
 <p>會看到類似:</p>
 <pre><code>{
@@ -122,7 +122,7 @@ $ rustup override set nightly #預設nightly</code></pre>
   "target-pointer-width": "64",
   "vendor": "unknown"
 }</code></pre>
-<p>有關細項的解釋, 可查看: <a href="https://doc.rust-lang.org/nightly/nightly-rustc/rustc_target/spec/struct.Target.html">https://doc.rust-lang.org/nightly/nightly-rustc/rustc_target/spec/struct.Target.html</a>
+<p>有關細項的解釋, 可查看: <a href="https://doc.rust-lang.org/nightly/nightly-rustc/rustc_target/spec/struct.Target.html">https://doc.rust-lang.org/nightly/nightly-rustc/rustc_target/spec/struct.Target.html</a><br />
 可以留意一下前幾項。我們會用到那邊的配置。</p>
 <p>建立 <code>x86_64-aCore.json</code></p>
 <pre><code>{
@@ -141,12 +141,12 @@ $ rustup override set nightly #預設nightly</code></pre>
     "features": "-mmx,-sse,+soft-float"
 }</code></pre>
 <h2>data-layout</h2>
-<p>這個項目是LLVM用來設定資料在記憶體中儲存的方式，
-每個部份用減號 <code>-</code> 來分隔。
-而分隔項可以查看:
+<p>這個項目是LLVM用來設定資料在記憶體中儲存的方式，<br />
+每個部份用減號 <code>-</code> 來分隔。<br />
+而分隔項可以查看:<br />
 <a href="http://llvm.org/docs/LangRef.html#data-layout">http://llvm.org/docs/LangRef.html#data-layout</a></p>
-<p>其他可以隨便修改試試看, 但 <code>"features": "-mmx,-sse,+soft-float"</code> 是要留下的。
-否則的話 <code>opcode</code> 不正確會引起 CPU 的Triple Fault, 嚴重的會把Host 也同時掛掉 ,
+<p>其他可以隨便修改試試看, 但 <code>"features": "-mmx,-sse,+soft-float"</code> 是要留下的。<br />
+否則的話 <code>opcode</code> 不正確會引起 CPU 的Triple Fault, 嚴重的會把Host 也同時掛掉 ,<br />
 所以我們日後有機會再面對MMX 和SSE 吧。</p>
 <h2>修改</h2>
 <p>建立或修改你的main.rs</p>
@@ -180,7 +180,7 @@ panic = "abort"
 
 [profile.release]
 panic = "abort"</code></pre>
-<p>建置:
+<p>建置:<br />
 <code>cargo xbuild --target x86_64-aCore.json</code></p></div>
 
 

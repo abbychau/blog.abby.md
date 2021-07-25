@@ -111,7 +111,7 @@ impl ColorCode {
         ColorCode((background as u8) &lt;&lt; 4 | (foreground as u8))
     }
 }</code></pre>
-<p>這裡出現了<code>#[repr(transparent)]</code> , 意思是, 會跟著ColorCode 的大小(u8) 來分配空間佈局(data layout)
+<p>這裡出現了<code>#[repr(transparent)]</code> , 意思是, 會跟著ColorCode 的大小(u8) 來分配空間佈局(data layout)<br />
 <a href="https://doc.rust-lang.org/nomicon/other-reprs.html#reprtransparent">https://doc.rust-lang.org/nomicon/other-reprs.html#reprtransparent</a></p>
 <p>再加入另一個struct ScreenChar</p>
 <pre><code class="language-Rust">#[derive(Debug, Clone, Copy, PartialEq, Eq)]
@@ -129,8 +129,8 @@ struct Buffer {
     chars: [[ScreenChar; BUFFER_WIDTH]; BUFFER_HEIGHT],
 }</code></pre>
 <p><code>#[repr(C)]</code> 在這裡意思是請編譯器保持資料次序, 也就是頭8個bit 是留給<code>ascii_character</code>的。</p>
-<p><strong>好, 到打印的部分了!</strong>
-再加入
+<p><strong>好, 到打印的部分了!</strong><br />
+再加入<br />
 說到工程化, 我們先把功能完成再說。</p>
 <pre><code class="language-Rust">pub struct Writer {
     column_position: usize,
@@ -163,8 +163,8 @@ struct Buffer {
 
     fn new_line(&amp;mut self) {/* TODO */}
 }</code></pre>
-<p>原理十分淺白: 就是把字符一個個畫在前一個的右邊, 到瑩幕邊沿時, 就換行下一行。
-可以預見: 這個下一行就是把buffer.chars 的 cursor 移到下一行的頭。
+<p>原理十分淺白: 就是把字符一個個畫在前一個的右邊, 到瑩幕邊沿時, 就換行下一行。<br />
+可以預見: 這個下一行就是把buffer.chars 的 cursor 移到下一行的頭。<br />
 但因為到尾端要卷到的關係, 所以還有很多邏輯, 我們先把它留空好了。</p>
 <pre><code class="language-Rust">impl Writer {
     pub fn write_string(&amp;mut self, s: &amp;str) {
@@ -179,7 +179,7 @@ struct Buffer {
         }
     }
 }</code></pre>
-<p>加入<code>write_string</code> 這個函數, 只是write_byte 的wrapper。
+<p>加入<code>write_string</code> 這個函數, 只是write_byte 的wrapper。<br />
 根據: <a href="https://en.wikipedia.org/wiki/Code_page_437">這頁Wiki</a></p>
 <blockquote>
 <p>Table rows 2 to 7, codes 32 to 126 (20hex to 7Ehex), are the standard ASCII printable characters.</p>

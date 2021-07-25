@@ -85,13 +85,13 @@
 <h2>Volatile</h2>
 <p>在C, C++, Java, C# 中都會看到這個變數標示, 通常我們會標示它給多線程讀取的變數, 但基礎意義上來說 , <code>Volatile</code> 這個字在他們中間卻有很大的分別。以下我都是以C 作為標準。</p>
 <p>可能會有人聯想到Mutex 等臨界區保護的方案 , 但是Volatile 其實只是單純地讓編譯器不要把讀取這個變數時優化掉而已。並無任何的邏輯增減。</p>
-<p>這是用到Volatile, 是因為我們現在要讀取的是VGA Buffer 而不是RAM , 所以編譯器並不知道這種讀寫是有意義的。
+<p>這是用到Volatile, 是因為我們現在要讀取的是VGA Buffer 而不是RAM , 所以編譯器並不知道這種讀寫是有意義的。<br />
 有關具體的優化的例子, 可以看這頁WIKI : <a href="https://zh.wikipedia.org/wiki/Volatile%E5%8F%98%E9%87%8F">https://zh.wikipedia.org/wiki/Volatile%E5%8F%98%E9%87%8F</a></p>
 <p>(我覺得上次(當機前)講得好多了)</p>
 <p>那麼, 在<code>Cargo.toml</code> 加入:</p>
 <pre><code class="language-toml">[dependencies]
 volatile = "0.2.6"</code></pre>
-<p>在<code>vga_buffer.rs</code> 的頂部加入 <code>use volatile::Volatile;</code>
+<p>在<code>vga_buffer.rs</code> 的頂部加入 <code>use volatile::Volatile;</code><br />
 並修改 Buffer 為 :</p>
 <pre><code class="language-Rust">struct Buffer {
     chars: [[Volatile&lt;ScreenChar&gt;; BUFFER_WIDTH]; BUFFER_HEIGHT],

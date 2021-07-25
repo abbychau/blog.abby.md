@@ -102,7 +102,7 @@
 <p>The functionality for MongoDB is limited as well. (<a href="https://www.tutorialspoint.com/mongodb/mongodb_indexing_limitations.htm">link</a>)</p>
 <p>And, MySQL will force you to do partitioning in order to continue scaling, which is not easy for business logics.</p>
 <h1>Core of the problem</h1>
-<p>The core of the problem is indexing.
+<p>The core of the problem is indexing.<br />
 Or in another word, index is prohibiting the growth of a single server because the memory of a single server is limited.</p>
 <h1>Let's try to make index efficient</h1>
 <p>For all of the business logic in the real world, the number is not exceeding unsigned 32bit. And even for some extreme case like &quot;View count of Gangnam Style&quot;, the count can be handled by 64bit.</p>
@@ -110,7 +110,7 @@ Or in another word, index is prohibiting the growth of a single server because t
 <p>If we assign 32GB of ram of the computer. 32GB/64bit= <code>INT_MAX of 32bit integer</code>. I would think that this is enough for storing relations for most global scale applications.</p>
 <p>So in my mind, the architecture of database is just as simple as &quot;NoSQL Store&quot; + &quot;Index Store&quot;. We seperate the main problem, indexing, to another server and make the store efficient.</p>
 <h1>Nature of Index</h1>
-<p>The structure of index is very simple and fixed; which is <code>u64 -&gt; [u64;n]</code>.
+<p>The structure of index is very simple and fixed; which is <code>u64 -&gt; [u64;n]</code>.<br />
 So we usually invest too much overhead to handle arbitrary datatypes, serializations, data formating, byte-network-transport interfacings, etc.</p>
 <p>My idea is to make a server taking in an integer and return a list of integer immediately.</p>
 <h1>Journey of constructing a data-structure</h1>

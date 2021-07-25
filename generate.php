@@ -9,6 +9,7 @@ use WyriHaximus\HtmlCompress\Factory;
 $pickupList = [];
 $tagToArticles=[];
 $store=[];
+$Parsedown->setBreaksEnabled(true);
 function process($file){
     global $Parsedown,$pickupList,$tagToArticles,$store;
     $txt=file_get_contents($file);
