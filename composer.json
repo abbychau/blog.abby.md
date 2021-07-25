@@ -6,6 +6,9 @@
         "erusev/parsedown": "^1.7",
         "symfony/yaml": "^5.3",
         "league/html-to-markdown": "^5.0",
-        "wyrihaximus/html-compress": "^4.1"
+        "wyrihaximus/html-compress": "^4.1",
+        "mailgun/mailgun-php": "^3.5",
+        "nyholm/psr7": "^1.4",
+        "kriswallsmith/buzz": "^1.2"
     }
 }
