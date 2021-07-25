@@ -1,10 +1,8 @@
 ---
-title: ""
+title: "日記"
 date: "2007-03-08"
 categories: 
-  - "未分類"
-tags: 
-  - "tag"
+  - "日記"
 ---
 
 "最近"tag:

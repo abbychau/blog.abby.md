@@ -2,7 +2,7 @@
 title: "有d 攰la..."
 date: "2006-11-08"
 categories: 
-  - "未分類"
+  - "日記"
 tags: 
   - "marketing"
   - "raymond"

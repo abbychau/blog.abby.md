@@ -1,8 +1,8 @@
 ---
-title: ""
+title: "Deciding to build a FTP server of not"
 date: "2003-06-28"
 categories: 
-  - "未分類"
+  - "日記"
 ---
 
 Deciding to build a FTP server of not,  

@@ -1,8 +1,8 @@
 ---
-title: ""
+title: "MSN Space"
 date: "2005-05-18"
 categories: 
-  - "未分類"
+  - "Blog"
 ---
 
 Xanga blog is hot...  

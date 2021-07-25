@@ -2,9 +2,7 @@
 title: "日記..."
 date: "2006-11-16"
 categories: 
-  - "未分類"
-tags: 
-  - "daily"
+  - "日記"
 ---
 
 point form 極速日記始動...

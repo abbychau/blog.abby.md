@@ -2,9 +2,7 @@
 title: "雙測奇謀 - The Two Tests"
 date: "2006-10-28"
 categories: 
-  - "未分類"
-tags: 
-  - "tests"
+  - "日記"
 ---
 
 今日係兩個test ge 日子...  

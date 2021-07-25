@@ -2,7 +2,7 @@
 title: "I love Groove Coverage"
 date: "2006-11-15"
 categories: 
-  - "未分類"
+  - "音樂"
 tags: 
   - "best-of"
   - "groove-coverage"

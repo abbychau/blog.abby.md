@@ -2,7 +2,7 @@
 title: "Edward Elric"
 date: "2006-11-21"
 categories: 
-  - "未分類"
+  - "日記"
 tags: 
   - "edward"
   - "elric"

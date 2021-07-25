@@ -2,7 +2,7 @@
 title: "ac 完結"
 date: "2006-12-19"
 categories: 
-  - "未分類"
+  - "日記"
 tags: 
   - "computing"
 ---

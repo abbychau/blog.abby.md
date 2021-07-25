@@ -2,7 +2,7 @@
 title: "漫漫長長的bt 下載：mandriva 6cd"
 date: "2005-07-17"
 categories: 
-  - "未分類"
+  - "Linux"
 ---
 
 看過上一篇網誌之後,

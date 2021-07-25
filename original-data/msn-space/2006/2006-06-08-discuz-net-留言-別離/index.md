@@ -2,7 +2,7 @@
 title: "discuz.net 留言...別離"
 date: "2006-06-08"
 categories: 
-  - "未分類"
+  - "日記"
 ---
 
 以下是我在discuz.net 的留言

@@ -1,5 +1,3 @@
-
-
 <?php
 include("./vendor/autoload.php");
 $Parsedown = new Parsedown();
@@ -75,6 +73,10 @@ function process($file){
         ],
         $template
     );
+    if($data['title']==""){
+        echo $data['path'];
+        exit;
+    }
     file_put_contents($cleanPath,$template);
     $store[]=['meta'=>$data,'content'=>$content,'markdown'=>$markdownContent,'generated_path'=>$cleanPath];
 }

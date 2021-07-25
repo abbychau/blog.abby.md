@@ -2,7 +2,7 @@
 title: "一個好的powerpoint 要"
 date: "2006-11-07"
 categories: 
-  - "未分類"
+  - "日記"
 tags: 
   - "powerpoint"
   - "presentation"

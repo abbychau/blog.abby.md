@@ -2,7 +2,7 @@
 title: "近排玩咩呢?"
 date: "2006-11-22"
 categories: 
-  - "未分類"
+  - "日記"
 tags: 
   - "cabal"
   - "tracker"

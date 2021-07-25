@@ -5,6 +5,7 @@ categories:
   - "未分類"
 tags: 
   - "jupas"
+  - omit
 ---
 
 | Priority | Course | Institution |

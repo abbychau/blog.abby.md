@@ -2,7 +2,7 @@
 title: "7 years and 50 days...by one of my pop singers, groove coverage"
 date: "2006-11-12"
 categories: 
-  - "未分類"
+  - "音樂"
 tags: 
   - "coverage"
   - "groove"

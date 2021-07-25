@@ -2,7 +2,7 @@
 title: "唔打咁多要溫書"
 date: "2006-11-17"
 categories: 
-  - "未分類"
+  - "日記"
 tags: 
   - "computing"
   - "revision"

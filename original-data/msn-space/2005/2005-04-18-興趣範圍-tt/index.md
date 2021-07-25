@@ -2,7 +2,7 @@
 title: "興趣範圍: TT"
 date: "2005-04-18"
 categories: 
-  - "未分類"
+  - "PDA"
 ---
 
 在這半年中,  

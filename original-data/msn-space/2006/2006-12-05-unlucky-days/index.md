@@ -2,7 +2,7 @@
 title: "unlucky days"
 date: "2006-12-05"
 categories: 
-  - "未分類"
+  - "日記"
 tags: 
   - "ebc"
   - "econ"

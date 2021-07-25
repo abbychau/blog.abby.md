@@ -2,7 +2,7 @@
 title: "Smile.dk 舊歌"
 date: "2006-12-09"
 categories: 
-  - "未分類"
+  - "音樂"
 tags: 
   - "butterfly"
   - "ddr"

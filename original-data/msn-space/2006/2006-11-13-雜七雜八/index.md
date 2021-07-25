@@ -2,7 +2,7 @@
 title: "雜七雜八"
 date: "2006-11-13"
 categories: 
-  - "未分類"
+  - "日記"
 tags: 
   - "38620199713862020843"
   - "deathnotes"

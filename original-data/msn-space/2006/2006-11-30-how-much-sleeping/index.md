@@ -2,7 +2,7 @@
 title: "how much sleeping?"
 date: "2006-11-30"
 categories: 
-  - "未分類"
+  - "日記"
 tags: 
   - "energy"
 ---

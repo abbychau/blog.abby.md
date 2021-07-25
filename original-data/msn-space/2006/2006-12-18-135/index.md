@@ -1,5 +1,5 @@
 ---
-title: ""
+title: "日記"
 date: "2006-12-18"
 categories: 
   - "未分類"
