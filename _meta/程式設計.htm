@@ -1,0 +1,79 @@
+<html>
+
+<head>
+    <title>Abby's Archive</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <BASE target="main_frame">
+
+    <style>
+        /* for all screens */
+        #info {
+            display: none;
+        }
+
+        /* only when orientation is in portrait mode */
+        @media all and (orientation:portrait) {
+            #info {
+                color: red;
+                display: inline;
+                font-size: 20px
+            }
+        }
+
+
+        body {
+            background-color: #2c292d;
+            color: #fdf9f3;
+            padding: 0;
+            margin: 10px;
+            font-family: consolas, monospace;
+            font-size:14px;
+        }
+
+        a {
+            color: #a9dc76;
+            cursor: pointer
+        }
+
+        .hljs {
+            font-family: consolas, monospace;
+        }
+
+        img {
+            max-width: 90%;
+        }
+    </style>
+    <link rel="icon" type="image/png"
+        href="https://d2v9k5u4v94ulw.cloudfront.net/assets/images/2191294/original/e01cdc83-7764-49d6-9176-4695d37133b7?1522307876" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+
+    <script>
+        $(document).ready(function(){ 
+            $('a').on('click', function(e){
+                window.parent.history.pushState({}, $(this).text(), "#"+$(this).attr('href'));
+            })
+        });
+    </script>
+</head>
+
+<body>
+<h1>程式設計</h1>
+<ul><li><a href='_generated/realblog_2010-01_13961.htm'>這個分類</a></li>
+<li><a href='_generated/realblog_2010-03_14478.htm'>Short, Simple and Full guide to install tomcat6 on ubuntu 9.10</a></li>
+<li><a href='_generated/realblog_2010-05_15510.htm'>ie-css3</a></li>
+<li><a href='_generated/realblog_2010-06_16194.htm'>PHP 6 的新特性</a></li>
+<li><a href='_generated/realblog_2010-06_16196.htm'>APC(Alternative PHP Cache)</a></li>
+<li><a href='_generated/realblog_2010-09_18002.htm'>.htaccess - Allow Only By Referer</a></li>
+<li><a href='_generated/realblog_2010-12_20008.htm'>In PHP a string is actually an array</a></li>
+<li><a href='_generated/realblog_2013-03_31175.htm'>F# 學習筆記 7 介面</a></li>
+<li><a href='_generated/realblog_2016-02_185235.htm'>PHP7 Upgrade</a></li>
+<li><a href='_generated/realblog_2021-04_272199.htm'>The things I tested on a broadcast queue - multiqueue2</a></li>
+</ul>
+</body>
+
+</html>

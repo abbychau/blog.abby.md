@@ -76,7 +76,7 @@
     <div id='article' style='padding:0 15px 10px 10px'>
         <h1 id="subject">現在寫 PHP6-compatible 的一些技巧</h1>
         <div id="date" style='font-size: 9pt;'>2010-06-22</div>
-        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags">["日常生活"]</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags"><a href='/_meta/日常生活.htm'>日常生活</a></div>
         <div id="content" style='word-break: break-all;'><p><span class="Apple-style-span" style="font-family: 'Lucida Grande', Verdana, Arial, sans-serif; font-size: 15px; color: rgb(68, 68, 68); line-height: 27px; "><a href="http://bitfilm.net/?p=18">Becoming PHP 6 Compatible</a> 這篇裡面提到的五個技巧，現在遵循這些習慣，等到 PHP6 正式推出的時候程式碼才不會改太多：- 不要再依賴 <code>register_globals</code>：<code>register_globals</code> 將<code>$_GET</code>、<code>$_POST</code>、<code>$_COOKIE</code> 這三個的變數內容直接對應到全域變數。這在目前的 PHP4 與 PHP5 預設都是關閉的，但還是有文件書籍會「建議」你打開。在 PHP6 中，這個功能將直接消失。不過，還是可以透過 <a href="http://www.php.net/manual/en/function.extract.php">extract()</a> 達到一樣的效果。</p>
 <ul>
 <li>不要使用 <code>magic_quotes</code>：這個功能在目前的 PHP4 與 PHP5 預設是<strong>開啟</strong>的，但在 PHP6 將會消失 (而非改為關閉)，所以，在開發軟體時最好以 <code>magic_quotes</code> 關閉的情況下開發。</li>

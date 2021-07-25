@@ -76,7 +76,7 @@
     <div id='article' style='padding:0 15px 10px 10px'>
         <h1 id="subject">Performance of OOP PHP versus non-OOP</h1>
         <div id="date" style='font-size: 9pt;'>2012-10-26</div>
-        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags">["實務電腦"]</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags"><a href='/_meta/實務電腦.htm'>實務電腦</a></div>
         <div id="content" style='word-break: break-all;'><p>有關php 中class 的效能。實在是一個十分有價值的問題。在網上我找到一個測試。</p>
 <div>[http://www.theserverpages.com/articles/webmasters/php/performance/Performance\_of\_OOP\_PHP\_versus\_non-OOP.html](http://www.theserverpages.com/articles/webmasters/php/performance/Performance_of_OOP_PHP_versus_non-OOP.html)</div><div>  
 </div><div>找到大約overhead 為13%, 但我覺得有點問題。現修改如最下。</div><div>修改原因為: </div><div>1. 加入對照實驗。</div><div>2. 以++$ 代替$++ 以加速無用處理。</div><div>3. 平function addApple() 修改為pass by reference, 因為在oo 中也沒有複製變數</div><div>  

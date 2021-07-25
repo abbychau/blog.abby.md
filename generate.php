@@ -7,8 +7,9 @@ use Symfony\Component\Yaml\Yaml;
 use WyriHaximus\HtmlCompress\Factory;
 
 $pickupList = [];
+$tagToArticles=[];
 function process($file){
-    global $Parsedown,$pickupList;
+    global $Parsedown,$pickupList,$tagToArticles;
     $txt=file_get_contents($file);
     $ytxt=[];$mc=0;$store=[];
     foreach(explode("\n", $txt) as $line){
@@ -56,10 +57,16 @@ function process($file){
     if(in_array("pick-up", $tags)){
         $pickupList[]=['title'=>$data['title'],'url'=>"https://blog.abby.md/{$cleanPath}"];
     }
+    $strTagLinks=[];
+    foreach($tags as $tag){
+        $tagToArticles[$tag][]=['title'=>$data['title'],'url'=>$cleanPath];
+        $file = sanTag($tag);
+        $strTagLinks[] = "<a href='/_meta/{$file}.htm'>$tag</a>";
+    }
     $template = str_replace(
         ["{{subject}}","{{date}}","{{tags}}","{{markdown}}","{{paramlink}}","{{source}}"],
         [
-            $data['title'],$data['date'],json_encode($tags,JSON_UNESCAPED_UNICODE),$markdownContent,
+            $data['title'],$data['date'],implode(", ",$strTagLinks),$markdownContent,
             "https://blog.abby.md/{$cleanPath}",
             "https://github.com/abbychau/blog.abby.md/blob/master/{$data['path']}"
         ],
@@ -98,7 +105,6 @@ foreach($store as $v){
     $strArchive.="$head &gt; <a href='{$v['generated_path']}' target='main_frame'>{$title}</a><br />\n";
 }
 foreach($pickupList as $v){
-    
     $strPickup.="$head &gt; <a href='{$v['url']}' target='main_frame'>{$v['title']}</a><br />\n";
 }
 $template = file_get_contents('templates/template_list.htm');
@@ -110,25 +116,35 @@ $template = str_replace("{{list-pickup}}",$strPickup,$template);
 
 file_put_contents("list.htm",$template);
 
-//jf1.1
-// {
-//     "version": "https://jsonfeed.org/version/1.1",
-//     "title": "My Example Feed",
-//     "home_page_url": "https://example.org/",
-//     "feed_url": "https://example.org/feed.json",
-//     "items": [
-//         {
-//             "id": "2",
-//             "content_text": "This is a second item.",
-//             "url": "https://example.org/second-item"
-//         },
-//         {
-//             "id": "1",
-//             "content_html": "<p>Hello, world!</p>",
-//             "url": "https://example.org/initial-post"
-//         }
-//     ]
-// }
+echo "Generating Meta List...\n";
+$files = glob('./_meta/*'); // get all file names
+foreach($files as $file){ // iterate files
+  if(is_file($file)) {
+    unlink($file); // delete file
+  }
+}
+$template = file_get_contents('templates/template_meta.htm');
+function sanTag($tag){
+    // Thanks @Łukasz Rysiak!
+    $file = mb_ereg_replace("([^\w\s\d\-_~,;\[\]\(\).])", '', $tag);
+    // Remove any runs of periods (thanks falstro!)
+    $file = mb_ereg_replace("([\.]{2,})", '', $file);
+    return $file;
+}
+foreach($tagToArticles as $tag=>$list){
+    $strSave = str_replace("{{tag}}",$tag,$template);    
+    $_str="<ul>";
+    foreach($list as $item){
+        $_str.="<li><a href='{$item['url']}'>{$item['title']}</a></li>\n";
+    }
+    $_str.="</ul>";
+
+    $file=sanTag($tag);
+    $strSave = str_replace("{{list}}",$_str,$strSave);  
+    file_put_contents("_meta/{$file}.htm",$strSave);
+
+}
+
 echo "Generating jsonfeed...\n";
 $jsonfeed['version']="https://jsonfeed.org/version/1.1";
 $jsonfeed['title']="Abby's Archive";
