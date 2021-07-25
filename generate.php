@@ -81,6 +81,9 @@ echo "Loading Files...\n";
 foreach(glob("./original-data/hexo/*") as $file){
     process($file);
 }
+foreach(glob("./original-data/blog/*") as $file){
+    process($file);
+}
 foreach(glob("./original-data/msn-space/*/*") as $v){
     $file = "$v/index.md";
     process($file);
