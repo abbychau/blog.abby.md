@@ -1,0 +1,42 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Mailer
+
+# Controls when the workflow will run
+on:
+  schedule:
+    - cron: "0 0 * * *"
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Validate composer.json and composer.lock
+      run: composer validate --strict
+
+    - name: Cache Composer packages
+      id: composer-cache
+      uses: actions/cache@v2
+      with:
+        path: vendor
+        key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-php-
+          
+    - name: Install dependencies and send mail
+      env:
+          EMAIL_TARGETS: ${{ secrets.EMAIL_TARGETS }}
+          MAILGUN_KEY: ${{ secrets.MAILGUN_KEY }}
+      run: |
+        composer install --prefer-dist --no-progress
+        php readPlurk.php
+      
