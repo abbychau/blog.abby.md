@@ -2,8 +2,14 @@
 include("./vendor/autoload.php");
 use Mailgun\Mailgun;
 
-$feed = 'https://www.plurk.com/abbychau.xml';
-$arrFeeds = (array) simplexml_load_file($feed);
+do{
+    $string = file_get_contents('https://www.plurk.com/abbychau.xml');
+    sleep(1);
+}while($string=="");
+
+echo mb_substr($string,0,100);
+
+$arrFeeds = (array) simplexml_load_string($string);
 $arr=json_decode(json_encode($arrFeeds),true);
 foreach($arr as $k=>&$v){
     if($k=='link'){
