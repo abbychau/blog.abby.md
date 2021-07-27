@@ -44,8 +44,9 @@ foreach($arr['entry'] as $entry){
     $str.=  "<hr>\n";
 }
 $targets = explode(",",getenv('EMAIL_TARGETS'));
-$str = "Service is experiencing an Error.";
-
+if($str==""){
+    $str = "No posts today.";
+}
 
 foreach($targets as $v){
     mySendMail($v,$v,"Abby's Daily ".date("Y-m-d"), $str);
