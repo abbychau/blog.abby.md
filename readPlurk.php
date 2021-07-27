@@ -42,7 +42,7 @@ $str = "Service is experiencing an Error.";
 
 
 foreach($targets as $v){
-    mySendMail($v,$v,"Abby's Daily", $str);
+    mySendMail($v,$v,"Abby's Daily ".date("Y-m-d"), $str);
 }
 
 function mySendMail($to_name, $to_email, $title, $content)
