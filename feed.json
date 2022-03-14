@@ -5,6 +5,11 @@
     "feed_url": "https:\/\/blog.abby.md\/feed.json",
     "items": [
         {
+            "id": "40eaec2198d3972b509c91a36cf99228",
+            "url": "https:\/\/blog.abby.md\/_generated\/blog_golang-error.htm",
+            "title": "Is Golang's error handling good or bad, comparing to `try...catch`?"
+        },
+        {
             "id": "90215d2f0b6f7e51f906db0bf89b059f",
             "url": "https:\/\/blog.abby.md\/_generated\/blog_\u6211\u53c8\u7528Frameset \u4e86.htm",
             "title": "\u6211\u53c8\u7528Frameset \u4e86"
