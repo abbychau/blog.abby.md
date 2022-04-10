@@ -5,6 +5,11 @@
     "feed_url": "https:\/\/blog.abby.md\/feed.json",
     "items": [
         {
+            "id": "b9fcb2c05f75da036a2a45b5de710348",
+            "url": "https:\/\/blog.abby.md\/_generated\/blog_elden_ring_endings.htm",
+            "title": "\u827e\u723e\u767b\u6cd5\u74b0\u7d50\u5c40\u6dfa\u89e3"
+        },
+        {
             "id": "40eaec2198d3972b509c91a36cf99228",
             "url": "https:\/\/blog.abby.md\/_generated\/blog_golang-error.htm",
             "title": "Is Golang's error handling good or bad, comparing to `try...catch`?"
