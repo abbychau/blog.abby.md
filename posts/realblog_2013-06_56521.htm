@@ -1,0 +1,100 @@
+<html>
+
+<head>
+    <title>論TPA 做戲的可能性</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <link rel="stylesheet" href="https://blog.abby.md/style.css" />
+    <link rel="icon" type="image/png" href="https://blog.abby.md/favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+    
+    <script>
+        function inIframe() {
+            try {
+                return window.self !== window.top;
+            } catch (e) {
+                return true;
+            }
+        }
+
+        function myMarked(str) {
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            $('#content').html(myMarked($('#content').html()))
+            hljs.highlightAll();
+
+            if(!inIframe()){
+                $('#homelink').show()
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div id='article' style='padding:0 15px 10px 10px;font-size: large;font-family: serif;'>
+        <h1 id="subject">論TPA 做戲的可能性</h1>
+        <div id="date" style='font-size: 9pt;'>2013-06-02</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags"><a href='/tags/日常生活.htm'>日常生活</a></div>
+        <div id="content" style='word-break: break-all;'><p>即使單純以愛好者角度來看, 這不是不可能.  </p>
+<p>1. 在春季賽不停放招, 但到後期, 像olaf, kayle, nidalee 都已經被riot 削得七七八八了. Riot 以頂級團隊作為patch 參考是顯然易見的事, 這樣的話既然已經確定取得資格, 還不如藏招, 與其把角色用爛, 還不如不用。  </p>
+<p>2. Mistake 走了的確是個大問題, 但看到Bebe 和Stanley 在對線時何其溫柔, 令我覺得TPA 不想打出令人印象深刻的比賽。  </p>
+<p>3. 已經成為一季冠軍的隊伍, 要保持高勝率到下界時不可能的事; S1 的Fanatic 在S2 的強度可見一斑, 但不用LOLWC 這種歷史甚短的比賽, 在世界盃即使強如巴西也只是能夠一次衛冕。</p>
+<blockquote>
+<p>原因有很多:<br />
+A. 上界冠軍是現代足球的最高水平, 該隊的戰術有研究價值, 甚至每場比賽也要研究<br />
+B. 為了針對性戰術而研究<br />
+C. 甚至為了研究能夠Carry 的隊員<br />
+落敗如果不是隊員素質不夠, 那麼只會是合作不良和&quot;被研究&quot;<br />
+fanatic 已經是一個很好的例子<br />
+那麼對對策時甚麼呢? 總括來說是: 在對日後比賽沒有影響的情況下&quot;被輕視&quot;, TPA 知道只有在其中一季拿下首名即可進入本年的世界賽, 那麼最好的策略當然是在春季放招, 夏季藏招。<br />
+原因是  </p>
+<ol>
+<li>一旦進入World Championship 的第一場, LOL 的版本就會Freeze, 這時候放一下招也不會出現季候賽馬上被針對的慘況。  </li>
+<li>春季前期打好, 後期打壞, 到夏季更是拿不下首兩名; 這樣更能給人步步衰退的感覺; 一切是為WC 能夠順利放招舖路。</li>
+</ol>
+</blockquote>
+<ol start="4">
+<li>
+<p>明白第三點後, 那麼更會覺得Dinter 切換Mistake 的一刻應是最壞時期, 但不然, TPA 的水平竟比磨合期更要低, 這個矛盾不可無視。  </p>
+</li>
+<li>
+<p>最後但也是最重要, 心理學上來說一個隊伍要唯持頂尖狀態而取後另一個冠軍是十分困難的事.<br />
+a. 即使再次取得冠軍也沒有了[下剋上][以弱勝強], 等這種榮耀感, 推動力很缺<br />
+b. 被環境不斷針對而令隊足十分沮喪<br />
+c. 被新興隊伍打下時要承受群眾壓力, 但新興隊伍輸了則沒有  </p>
+</li>
+</ol>
+<p>在這種困境下, 是不可能取得下界冠軍的  </p>
+<p>要擺脫這種困境, 就必需要令隊伍進入足夠長的低潮期, 以被輕視甚至放棄。<br />
+目標就是令隊伍再次最得冠軍時, 會有令人刮目相看的感覺, 這是最基本的。無論觀眾還是官方甚至為隊伍士氣來說, 逐步成長的一隊, 比起一方王者要好得多。<br />
+令隊伍不斷令人失望, 似乎是上界冠軍最理智的一步。  </p></div>
+
+
+        <script src="https://utteranc.es/client.js"
+        repo="abbychau/blog.abby.md"
+        issue-term="pathname"
+        label="blog comment"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async>
+        </script>
+
+        <div id="permalink" style='word-break: break-all;padding:2em 0 1em 0'>
+            <a href="https://blog.abby.md/posts/realblog_2013-06_56521.htm">Permalink of this blog</a>
+            <a href="https://github.com/abbychau/blog.abby.md/blob/master/./original-data/realblog/2013-06/56521.md">Source</a>
+        </div>
+        
+        <div id="homelink" style='word-break: break-all;padding:1em 0 2em 0;display: none;'>
+            <a href="/">Abby's Archive</a>
+        </div>  
+    </div>
+</body>
+
+</html>

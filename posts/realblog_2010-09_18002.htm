@@ -1,0 +1,85 @@
+<html>
+
+<head>
+    <title>.htaccess - Allow Only By Referer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <link rel="stylesheet" href="https://blog.abby.md/style.css" />
+    <link rel="icon" type="image/png" href="https://blog.abby.md/favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+    
+    <script>
+        function inIframe() {
+            try {
+                return window.self !== window.top;
+            } catch (e) {
+                return true;
+            }
+        }
+
+        function myMarked(str) {
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            $('#content').html(myMarked($('#content').html()))
+            hljs.highlightAll();
+
+            if(!inIframe()){
+                $('#homelink').show()
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div id='article' style='padding:0 15px 10px 10px;font-size: large;font-family: serif;'>
+        <h1 id="subject">.htaccess - Allow Only By Referer</h1>
+        <div id="date" style='font-size: 9pt;'>2010-09-13</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags"><a href='/tags/程式設計.htm'>程式設計</a></div>
+        <div id="content" style='word-break: break-all;'><p>Good afternoon-  </p>
+<p>I have browsed the forums as well as the web looking for an answer to this question. Hope someone out there can help.   </p>
+<p>I need to create a .htaccess file that will only allow the files in the folder to be seen if the &quot;referer&quot; is from a particular site (or possibly two sites). I have found a lot of solutions out there for people who want to block specific sites, but I can't seem to figure out how to only allow specific sites. I have done some trial and error based on some of the things I have found, but with no luck.  </p>
+<p>Any ideas?  </p>
+<p>Thanks in advance!  </p>
+<p>David</p>
+<p>－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－</p>
+<p>ANS:</p>
+<p>Hi David,   </p>
+<p>Welcome to the forums   </p>
+<p>I haven't tested it, but try;</p>
+<p>RewriteEngine on<br />
+RewriteBase /<br />
+RewriteCond %{HTTP_REFERER} !^<a href="http://www\\.your\_domain\_name\\.com/">http://www\\.your\_domain\_name\\.com/</a> [NC]<br />
+RewriteCond %{HTTP_REFERER} !^<a href="http://www\\.OKdomain1\\.com/">http://www\\.OKdomain1\\.com/</a> [NC]<br />
+RewriteCond %{HTTP_REFERER} !^<a href="http://www\\.OKdomain2\\.com/">http://www\\.OKdomain2\\.com/</a> [NC]<br />
+RewriteRule ^.*$ <a href="http://www.your\_domain\_name.com/not\_allowed\_here.htm">http://www.your\_domain\_name.com/not\_allowed\_here.htm</a> [R=301,L]</p>
+<p>or I'd try something along those lines anyway - with the not_allowed_here.htm being a page I redirected all those I don't want to.</p></div>
+
+
+        <script src="https://utteranc.es/client.js"
+        repo="abbychau/blog.abby.md"
+        issue-term="pathname"
+        label="blog comment"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async>
+        </script>
+
+        <div id="permalink" style='word-break: break-all;padding:2em 0 1em 0'>
+            <a href="https://blog.abby.md/posts/realblog_2010-09_18002.htm">Permalink of this blog</a>
+            <a href="https://github.com/abbychau/blog.abby.md/blob/master/./original-data/realblog/2010-09/18002.md">Source</a>
+        </div>
+        
+        <div id="homelink" style='word-break: break-all;padding:1em 0 2em 0;display: none;'>
+            <a href="/">Abby's Archive</a>
+        </div>  
+    </div>
+</body>
+
+</html>

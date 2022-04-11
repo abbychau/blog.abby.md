@@ -1,0 +1,93 @@
+<html>
+
+<head>
+    <title>旅遊中一瞬的回憶閃光更新</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <link rel="stylesheet" href="https://blog.abby.md/style.css" />
+    <link rel="icon" type="image/png" href="https://blog.abby.md/favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+    
+    <script>
+        function inIframe() {
+            try {
+                return window.self !== window.top;
+            } catch (e) {
+                return true;
+            }
+        }
+
+        function myMarked(str) {
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            $('#content').html(myMarked($('#content').html()))
+            hljs.highlightAll();
+
+            if(!inIframe()){
+                $('#homelink').show()
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div id='article' style='padding:0 15px 10px 10px;font-size: large;font-family: serif;'>
+        <h1 id="subject">旅遊中一瞬的回憶閃光更新</h1>
+        <div id="date" style='font-size: 9pt;'>2014-04-15</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags"><a href='/tags/日常生活.htm'>日常生活</a></div>
+        <div id="content" style='word-break: break-all;'><div class="myblock">涉谷某小商場地面的DEA, 兩個女生初玩DEA時, 選到怪盜少女在玩, 一直在大驚少叫話跟唔上, 再重覆地望住我講"幫我玩啊""快啲幫我玩啊" 推了Abby 入機玩, 完成後她們在重覆地叫"完壁"呢  
+</div><div class="myblock">Kathmandu 某二樓健行小店, 妄想地利用對方表情來看是否有在說謊, 是我做過最白痴的一件事。  
+</div><div class="myblock">台灣某夜市中, 老闆: "只有你和你弟弟嗎?"  
+</div><div class="myblock">新宿某Bookoff 中,   
+"有這張唱片嗎?"(寫下Pandora Voxx) ,   
+"那位歌手的?"  
+"是音樂片, Kemu 的"  
+男店員帶我走到其他欄去了  
+</div><div class="myblock">奈良市役所大門, 職員看到大背包:"先生是從哪裡來的呢?" "香港來的"   
+"香港の方ですか...", 多麼公式化的語調啊  
+</div><div class="myblock">馬來西亞某五星級高腳屋酒店方間中: 在清沏可看到海底的地板玻璃上, 外面下著雨, 我坐在玻璃上, 對朋友說:"打PSP 吧..."  
+</div><div class="myblock">仙台, 沿着 るーぷる仙台的巴士路線行走, 在烈日下走到河上的橋, 看到河邊有幾個二十歲左右的年輕男女走到河裡玩呢!  
+</div><div class="myblock">仙台, 坐在雪糕姐的車上, 和Yuugi, Rin-go!, 和Mika 一起... 駛到便利店, 雪糕拿著準備買的三支Cider, 在我說出Cyber-Thunder-Cider後, 在便利店跳起來  
+</div><div class="myblock"> 岡山-鷲羽山頂, 在小小的山頂上, 放置了有一個標示三百六十度四周有何景物的不足一米大的石圓台, 我說對直也說: 今晚來下圍棋吧! 這山頂很適合啊! ...再在黑夜配上燈光! (岡山的黑夜大部分地區都幾乎全黑的, 不用說山頂了) 超有氣勢的! 再拍下來放上Youtube! 直也: 觀看人數會barabara 地上升吧, 哈  
+(這我還是有點想圓夢啊)  
+</div><div class="myblock">背著伊達公像, 兩個人一起看了煙花呢, 和kayano. 那時候心突然跳起來了  
+</div><div class="myblock">(回想兩年前) , 又是岡山, 在公用電話終於打通了! 看著末日倒數一樣的電話儲值卡, 15-14- "是Haruka 嗎?"...13 "你在哪呢?我在那個綠色的公共電話啊"... 12 "公共電話嗎?" 我根本不知這個車路有多少公共電話, 而且對那時候的日語不存任何希望, 於是在旁邊抓到一個路人 11, 飛快地"おねがい", 把話筒放到他(她?)的手上, 10, "ここ", "早く", 9, "早く", 那路人非常合作地用根本不會以和陌生人說話的語速完成對話, "8", "知道了嗎?", "嗯, 馬上到了" "7"  
+
+在雨中的後樂園, 突然有種Cyberpunk 的未日感。尤其在這幾乎無雨的岡山。  
+</div><div class="myblock">廣州, 沒有電話的我, 竟把姨媽的地址和電話都沒有帶上身, 之前對話中隱約的記憶都沒有了。在地鐵站外的兩端重覆尋找, 又問問人, 發覺付近都沒有住宅呢。我神推鬼扯之下, 上了一部的士, 上到的士, 我根本不知道應該和司機說些甚麼...但還是開口了, 用僅有的資訊: "在哪邊有高的住宅呢?"(我有他住樓上的記憶) "很多住宅啊!"(我也覺得我夠白痴了) "哪邊有嗎?" "不知道" "那從那邊(我覺得的那邊)駛, 慢慢駛, 讓我看看" , 過了五分鐘, 我看到"茶葉市場", 一個能勾起我一點記憶的字眼, 可是不知道為甚麼有這個記憶, 四周的景物也是陌生的, 但是我下車了... 一下車四處看看, 好像有人在叫我呢!   
+這段可是可以歸納到怪談一類的經歷, 是由對目的地的資訊一無所知之下, 找到目的地的  
+</div><div class="myblock">西藏-樟木, 走了大半天, 所有店舖都是關門的, 叫死城也不為過了, 可是沒看過那麼光亮的死城, 在買拉薩車票的地方, 老板給了我一間房晚上睡, 還有熱水。 (不要問我怎麼確定安全的, 這太高深太複雜了)  
+</div><div class="myblock">Annapurna, 約第八天, 回程中, 在這生活不能自理的山區, 我看到餐牌上寫著"Burger and fries"...在大半小時後, 我真忍不住, 走到廚房裡去了, 看到廚師又在煎三條薯條, 旁邊是滿滿的一碟準備給我的, 然後, 我吃到了一個製作了一小時(甚至以上)的炸薯條套餐。這炸薯條的味道和口感, 是以後都沒有找到過的。  
+
+Annapurna 區對我來說, 茄汁是神器, 放到面包或者面條甚麼的都好吃, 而配到它真正的最佳伙伴後, 我覺得太滿足了。  
+</div></div>
+
+
+        <script src="https://utteranc.es/client.js"
+        repo="abbychau/blog.abby.md"
+        issue-term="pathname"
+        label="blog comment"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async>
+        </script>
+
+        <div id="permalink" style='word-break: break-all;padding:2em 0 1em 0'>
+            <a href="https://blog.abby.md/posts/realblog_2014-04_95448.htm">Permalink of this blog</a>
+            <a href="https://github.com/abbychau/blog.abby.md/blob/master/./original-data/realblog/2014-04/95448.md">Source</a>
+        </div>
+        
+        <div id="homelink" style='word-break: break-all;padding:1em 0 2em 0;display: none;'>
+            <a href="/">Abby's Archive</a>
+        </div>  
+    </div>
+</body>
+
+</html>

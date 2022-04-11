@@ -1,0 +1,89 @@
+<html>
+
+<head>
+    <title>Is Golang's error handling good or bad, comparing to `try...catch`?</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <link rel="stylesheet" href="https://blog.abby.md/style.css" />
+    <link rel="icon" type="image/png" href="https://blog.abby.md/favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+    
+    <script>
+        function inIframe() {
+            try {
+                return window.self !== window.top;
+            } catch (e) {
+                return true;
+            }
+        }
+
+        function myMarked(str) {
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            $('#content').html(myMarked($('#content').html()))
+            hljs.highlightAll();
+
+            if(!inIframe()){
+                $('#homelink').show()
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div id='article' style='padding:0 15px 10px 10px;font-size: large;font-family: serif;'>
+        <h1 id="subject">Is Golang's error handling good or bad, comparing to `try...catch`?</h1>
+        <div id="date" style='font-size: 9pt;'>2022-03-14</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags"><a href='/tags/golang.htm'>golang</a></div>
+        <div id="content" style='word-break: break-all;'><p>How would you argue that GO's <code>if err != nil</code> error handling is better or worse than <code>try...catch...</code> ?</p>
+<p>I would like to say it is worse.</p>
+<p>I think it's necessary to calmly talk about how PL people think about language design. </p>
+<p>This is very reasonable in the environment where half of them know Type Theory and half of them only have engineering backgrounds. Someone expressed that the design of golang's err is not a &quot;mistake&quot;, but a pure taste problem. I can't agree. </p>
+<p>But at the same time we have to admit that even in 2022, it is a very difficult task to make the argument type essential and critical to a language without resorting to taste. I think that people expressed a very common criticism of the role of type theory in programming languages: </p>
+<p>One can argue that type safety provides safety, but one can also argue that <strong>choosing safety over something else</strong> is taste itself. </p>
+<p>Harper believes that languages ​​with unsafe types do not make sense, and Bryant, one of the authors of CSAPP, said that things like Standard ML simply cannot be used to write &quot;Fast code&quot;.</p>
+<p>People who may do programming language theory naturally feel that if the behavior of the program is unspecified or non-deterministic, it is already ridiculous/unacceptable. At the same time, they are very concerned about the expressiveness and abstraction ability of the language.<br />
+But system guys may think that as long as it is convenient to build the system, it is good, and they don't very care about other properties. People like the latter probably don't understand (and don't care about) type theory, but it would seem arrogant to deny them a part in language design discussions (and call them cranks).</p>
+<p>For this, my point of view is this, in 2022, is: Designing a language often has a core goal, which can be under the PL framework (for example, I want the language to be formally verified, or I want the language to be lazy), and also Probably not under the PL framework (e.g. Go's design goals are largely &quot;easy to use&quot; and extremely efficient concurrency). </p>
+<p>For the latter, it is likely that the final language will sacrifice safety (think rust's unsafe). But we also have to admit that after meeting the core goals, a large part of the design of the language is still floating. For such parts, type theory can guide how to enhance abstraction, how to make programmers make fewer mistakes, and so on. Go is typically fuxxing up on the latter. I'm not going to criticize why Go has a null pointer exception (and the language is unsafe), because it's largely the result of Go compromising on its core goals. But the design of err!=nil simply shouldn't be. The conclusion is that if you do language design without knowing anything about type theory, you may get a language that meets your core needs, but your language is likely to be very difficult to use and full of pits. People created such a product are probably not wrong to be called cranks.</p>
+<p>The problem with a design like Go's is that it makes it harder for programmers to analyze the correctness of a program. There are actually four possible return values of Go functions,<br />
+namely<br />
+(no result, err not nil),<br />
+(with result, err nil),<br />
+(no result, err nil),<br />
+(with result, err not nil). </p>
+<p>In principle, to ensure that the results of program operation are always in line with expectations, all four conditions must be checked, otherwise the program will enter an undefined state when an unchecked condition occurs. </p>
+<p>In fact, Go programmers often ignore the latter two, because there is an unwritten convention that the latter two situations generally do not occur. This is very bad, the correctness of the program depends on a convention that is not part of the language. </p>
+<p>To make matters worse, some library functions actually do not follow this convention! Because this design introduces implicit assumptions to the programmer that cannot be checked by the compiler, it leads to bugs and is therefore a bad design.</p>
+<p>In conslusion,<br />
+In 2022, we still use product type to indicate something that should be sum type, and still think this is a language advantage; is not acceptable. </p></div>
+
+
+        <script src="https://utteranc.es/client.js"
+        repo="abbychau/blog.abby.md"
+        issue-term="pathname"
+        label="blog comment"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async>
+        </script>
+
+        <div id="permalink" style='word-break: break-all;padding:2em 0 1em 0'>
+            <a href="https://blog.abby.md/posts/blog_golang-error.htm">Permalink of this blog</a>
+            <a href="https://github.com/abbychau/blog.abby.md/blob/master/./original-data/blog/golang-error.md">Source</a>
+        </div>
+        
+        <div id="homelink" style='word-break: break-all;padding:1em 0 2em 0;display: none;'>
+            <a href="/">Abby's Archive</a>
+        </div>  
+    </div>
+</body>
+
+</html>

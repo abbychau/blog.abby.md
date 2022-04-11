@@ -1,0 +1,77 @@
+<html>
+
+<head>
+    <title>滿足與禁止(一)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <link rel="stylesheet" href="https://blog.abby.md/style.css" />
+    <link rel="icon" type="image/png" href="https://blog.abby.md/favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+    
+    <script>
+        function inIframe() {
+            try {
+                return window.self !== window.top;
+            } catch (e) {
+                return true;
+            }
+        }
+
+        function myMarked(str) {
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            $('#content').html(myMarked($('#content').html()))
+            hljs.highlightAll();
+
+            if(!inIframe()){
+                $('#homelink').show()
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div id='article' style='padding:0 15px 10px 10px;font-size: large;font-family: serif;'>
+        <h1 id="subject">滿足與禁止(一)</h1>
+        <div id="date" style='font-size: 9pt;'>2009-03-20</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags"><a href='/tags/作品.htm'>作品</a></div>
+        <div id="content" style='word-break: break-all;'><p>欲望的產生源自對滿足感的重新實現<br />
+滿足感的衰減源於對本身的重覆實現<br />
+滿足感減退是絕望的來源<br />
+慾望是快感的來源, 也是絕望的來源<br />
+反之, 禁慾亦然...  </p>
+<p>&quot;如果要達到人生的目標就必須努力不懈&quot; 演說家說完最後一句之後, 得到台下如雷的掌聲<br />
+今日是陳輝煌大學畢業的日子, 幾位相熟的同班同學相約這天整天合照, 本來, 陳輝煌是拒絕的...  </p>
+<p>就在上一個星期...  </p>
+<p>待續  </p>
+<p>p.s. 離港兩天  </p></div>
+
+
+        <script src="https://utteranc.es/client.js"
+        repo="abbychau/blog.abby.md"
+        issue-term="pathname"
+        label="blog comment"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async>
+        </script>
+
+        <div id="permalink" style='word-break: break-all;padding:2em 0 1em 0'>
+            <a href="https://blog.abby.md/posts/realblog_2009-03_6739.htm">Permalink of this blog</a>
+            <a href="https://github.com/abbychau/blog.abby.md/blob/master/./original-data/realblog/2009-03/6739.md">Source</a>
+        </div>
+        
+        <div id="homelink" style='word-break: break-all;padding:1em 0 2em 0;display: none;'>
+            <a href="/">Abby's Archive</a>
+        </div>  
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<html>
+
+<head>
+    <title>unlucky days</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <link rel="stylesheet" href="https://blog.abby.md/style.css" />
+    <link rel="icon" type="image/png" href="https://blog.abby.md/favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+    
+    <script>
+        function inIframe() {
+            try {
+                return window.self !== window.top;
+            } catch (e) {
+                return true;
+            }
+        }
+
+        function myMarked(str) {
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            $('#content').html(myMarked($('#content').html()))
+            hljs.highlightAll();
+
+            if(!inIframe()){
+                $('#homelink').show()
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div id='article' style='padding:0 15px 10px 10px;font-size: large;font-family: serif;'>
+        <h1 id="subject">unlucky days</h1>
+        <div id="date" style='font-size: 9pt;'>2006-12-05</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags"><a href='/tags/ebc.htm'>ebc</a>, <a href='/tags/econ.htm'>econ</a>, <a href='/tags/orz.htm'>orz</a>, <a href='/tags/result.htm'>result</a>, <a href='/tags/日記.htm'>日記</a></div>
+        <div id="content" style='word-break: break-all;'><p>these days are GAY!...</p>
+<p>1. 今日EBC 派番memo 份assignment...得71 分...雖然個mean 係69, 但EBC 諗住唔係淨係高mean 少少咁簡單ga ma....個見到ge 好多都係71<br />
+挫折指數: ***(五個最高)</p>
+<p>2. ECON assignment 2....開頭以為多番考慮的第一題竟然全題錯哂...14/24, 個mean 仲要係廿幾分...<br />
+挫折指數: ****</p>
+<p>3. 今日正想畫畫個陣...竟然發覺畫板支筆唔見左...之後成晚係度搵都搵唔到...又哂哂d 時間, 如果真係搵唔到咁點算丫...咁貴...唔通買過咩!<br />
+挫折指數: ****</p>
+<p>4. ECON test...開頭做完以為做得唔錯...點知最後成績係無比低分....20/35, 個mean 都26到...<br />
+挫折指數: ***** + *</p>
+<p>5. 今日同阿lin 去試打seed destiny...點知打打下見到Ken Fung...即刻比佢無間斷暗串...<br />
+挫折指數: **</p>
+<p>要播orz 之歌黎聽la...</p>
+<p><a href="http://photo.xanga.com/abbychau/f28c093479713/photo.html"><img src="images/z65194908.jpg" alt="snap0019" /></a><br />
+偽鈔!</p></div>
+
+
+        <script src="https://utteranc.es/client.js"
+        repo="abbychau/blog.abby.md"
+        issue-term="pathname"
+        label="blog comment"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async>
+        </script>
+
+        <div id="permalink" style='word-break: break-all;padding:2em 0 1em 0'>
+            <a href="https://blog.abby.md/posts/msn-space_2006_2006-12-05-unlucky-days_index.htm">Permalink of this blog</a>
+            <a href="https://github.com/abbychau/blog.abby.md/blob/master/./original-data/msn-space/2006/2006-12-05-unlucky-days/index.md">Source</a>
+        </div>
+        
+        <div id="homelink" style='word-break: break-all;padding:1em 0 2em 0;display: none;'>
+            <a href="/">Abby's Archive</a>
+        </div>  
+    </div>
+</body>
+
+</html>

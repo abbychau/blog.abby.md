@@ -1,0 +1,88 @@
+<html>
+
+<head>
+    <title>無待堂: 是的，我地柒咗</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <link rel="stylesheet" href="https://blog.abby.md/style.css" />
+    <link rel="icon" type="image/png" href="https://blog.abby.md/favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+    
+    <script>
+        function inIframe() {
+            try {
+                return window.self !== window.top;
+            } catch (e) {
+                return true;
+            }
+        }
+
+        function myMarked(str) {
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            $('#content').html(myMarked($('#content').html()))
+            hljs.highlightAll();
+
+            if(!inIframe()){
+                $('#homelink').show()
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div id='article' style='padding:0 15px 10px 10px;font-size: large;font-family: serif;'>
+        <h1 id="subject">無待堂: 是的，我地柒咗</h1>
+        <div id="date" style='font-size: 9pt;'>2013-12-03</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags"><a href='/tags/吐糟.htm'>吐糟!!!</a></div>
+        <div id="content" style='word-break: break-all;'><h5><div class="text_exposed_root text_exposed" id="id_529dd84e57d363756560291" style="display: inline;"></h5>
+<p><span style="font-weight: normal;">無待堂呢排又係靠FB政治正確飛起左</span>  </p>
+<p><span style="font-weight: normal;">係個朋友度留左言唔好哂</span><br />
+<span style="font-weight: normal;">回應緊係呢篇: </span><a href="http://dadazim.com/journal/2013/12/we-are-seven/">http://dadazim.com/journal/2013/12/we-are-seven/</a>  </p>
+<h5><div class="text_exposed_root text_exposed" id="id_529dd84e57d363756560291" style="display: inline;"><span style="font-weight: normal;">我對無待堂的評價係: </span>主場新聞之流</div></h5>
+<p></div></p>
+<p><span style="font-weight: normal;">我反而覺得問題唔係有無人估錯, 呢篇文最大問題係佢轉移左點解柒(唔想用咁多呢個字, 下面用X)。</span>  </p>
+<p><span style="font-weight: normal;">一個反問</span><br />
+<span style="font-weight: normal;">因為香港是一個還剩餘「信任」的地方，所以總是有柒的機會，但這</span><wbr><span class="word_break" style="font-weight: normal; display: inline-block;"></span><span style="font-weight: normal;">種信任還剩多少？</span><br />
+<span style="font-weight: normal;">兩個反問</span><span class="text_exposed_show" style="font-weight: normal; display: inline;"><br />
+純真幻滅，是每個人都只願站在最安全的位置觀望，每個人背後都好<wbr><span class="word_break" style="display: inline-block;"></span>像有很多耐人尋味的陰影。香港作為一個有多少公民互助的地方，是<wbr><span class="word_break" style="display: inline-block;"></span>不是要到此為止？  </p>
+<p>講D 其實唔洗反思都知既事實黎話: 即使被騙也只是我們良心未泯, 但成個logic錯哂<br />
+最X 既地方係&quot;未確定真兇而當作真兇是「大陸口音」拐子佬&quot;   </p>
+<p>第二<br />
+作者一下用<br />
+我們不是偵探或者重案組，習慣用懷疑和黑暗的眼光打量案件。<br />
+我們想不到最知道最會利用大陸人的壞印象的，就是他們自己。<br />
+鬧哂一開頭寧願承認無知都唔寧願去忽忙補完印象的人。  </p>
+<p>我們不是偵探或者重案組, 唔係用&quot;懷疑和黑暗的眼光打量案件&quot;, 但亦唔應該係用自我的眼光認定案件。<br />
+&quot;我們想不到最知道最會利用大陸人的壞印象的，就是他們自己。&quot;<wbr><span class="word_break" style="display: inline-block;"></span>, 如果印象可以深到被人利用, 要反醒的應該是持有刻板印象的懶鬼們吧。  </p>
+<p>所以X點唔係受騙定係估唔中, 而係有好多人的注意力因為被編造的&quot;「大陸口音」拐子佬&quot;而提高<wbr><span class="word_break" style="display: inline-block;"></span>了呢個現象</wbr></wbr></wbr></wbr></span></wbr></p></div>
+
+
+        <script src="https://utteranc.es/client.js"
+        repo="abbychau/blog.abby.md"
+        issue-term="pathname"
+        label="blog comment"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async>
+        </script>
+
+        <div id="permalink" style='word-break: break-all;padding:2em 0 1em 0'>
+            <a href="https://blog.abby.md/posts/realblog_2013-12_83703.htm">Permalink of this blog</a>
+            <a href="https://github.com/abbychau/blog.abby.md/blob/master/./original-data/realblog/2013-12/83703.md">Source</a>
+        </div>
+        
+        <div id="homelink" style='word-break: break-all;padding:1em 0 2em 0;display: none;'>
+            <a href="/">Abby's Archive</a>
+        </div>  
+    </div>
+</body>
+
+</html>

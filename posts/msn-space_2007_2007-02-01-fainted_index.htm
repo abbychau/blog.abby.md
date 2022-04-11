@@ -1,0 +1,80 @@
+<html>
+
+<head>
+    <title>fainted</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <link rel="stylesheet" href="https://blog.abby.md/style.css" />
+    <link rel="icon" type="image/png" href="https://blog.abby.md/favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+    
+    <script>
+        function inIframe() {
+            try {
+                return window.self !== window.top;
+            } catch (e) {
+                return true;
+            }
+        }
+
+        function myMarked(str) {
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            $('#content').html(myMarked($('#content').html()))
+            hljs.highlightAll();
+
+            if(!inIframe()){
+                $('#homelink').show()
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div id='article' style='padding:0 15px 10px 10px;font-size: large;font-family: serif;'>
+        <h1 id="subject">fainted</h1>
+        <div id="date" style='font-size: 9pt;'>2007-02-01</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags"><a href='/tags/fainted.htm'>fainted</a>, <a href='/tags/未分類.htm'>未分類</a></div>
+        <div id="content" style='word-break: break-all;'><p>一面花痕,<br />
+一串鎖匙,<br />
+一堂缺席,<br />
+數天的欺騙, 數十小時的精力<br />
+被剝削得太多, 但別以為這樣可以將我拿下;<br />
+今天開始, 我已經開始取回原本屬於我的事物</p>
+<p>幾日無打Xanga...好多感受唔講la</p>
+<p>今日polyu 有體適能玩....有9分..<br />
+我知唔低分ga la, 但最衰果個situp 阿嬸...叫人做慢d...唔係可以過十分攞外套...orz<br />
+7分到9分都係個件禮物(攞左水樽)</p>
+<p>今日攞左部入左kof02 ge psp 番學...黃偉坤勁興奮...(暈)</p>
+<p>今日朝早堂programming 又無番...我唔想ga...真係唔知醒ar ma...下次唔會ga la....75% attendency ar ma</p>
+<p>(ps...今次programming Tutorial assignment 絕對係最簡單的一份...攞黎做course-work 就差唔多orz)</p></div>
+
+
+        <script src="https://utteranc.es/client.js"
+        repo="abbychau/blog.abby.md"
+        issue-term="pathname"
+        label="blog comment"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async>
+        </script>
+
+        <div id="permalink" style='word-break: break-all;padding:2em 0 1em 0'>
+            <a href="https://blog.abby.md/posts/msn-space_2007_2007-02-01-fainted_index.htm">Permalink of this blog</a>
+            <a href="https://github.com/abbychau/blog.abby.md/blob/master/./original-data/msn-space/2007/2007-02-01-fainted/index.md">Source</a>
+        </div>
+        
+        <div id="homelink" style='word-break: break-all;padding:1em 0 2em 0;display: none;'>
+            <a href="/">Abby's Archive</a>
+        </div>  
+    </div>
+</body>
+
+</html>

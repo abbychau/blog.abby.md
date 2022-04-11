@@ -1,0 +1,102 @@
+<html>
+
+<head>
+    <title>在sourceFORGE 的經歷</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <link rel="stylesheet" href="https://blog.abby.md/style.css" />
+    <link rel="icon" type="image/png" href="https://blog.abby.md/favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+    
+    <script>
+        function inIframe() {
+            try {
+                return window.self !== window.top;
+            } catch (e) {
+                return true;
+            }
+        }
+
+        function myMarked(str) {
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            $('#content').html(myMarked($('#content').html()))
+            hljs.highlightAll();
+
+            if(!inIframe()){
+                $('#homelink').show()
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div id='article' style='padding:0 15px 10px 10px;font-size: large;font-family: serif;'>
+        <h1 id="subject">在sourceFORGE 的經歷</h1>
+        <div id="date" style='font-size: 9pt;'>2005-06-03</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags"><a href='/tags/短評.htm'>短評</a></div>
+        <div id="content" style='word-break: break-all;'><p>相信知道我sourceforge(<a href="http://www.sf.net/">按此進入</a>) 裡面MTC 專案的管理員的身份不多...<br />
+原因我也只在icq 的info 裡公開過一天,<br />
+但, 這不影響我去寫這篇網誌.</p>
+<p>想當初加入sourceFORGE(簡稱sf),<br />
+為了的只是一個php+cgi+mysql 的空間<br />
+(可是ssh 的速度太慢又不支援ftp, 沒用了)<br />
+直至今日,<br />
+它發了14 日不活躍期警告信,<br />
+我才把第一次把源碼和軟件放上去...</p>
+<p>sf 為open-source 的專案提供了不少開發和發佈的資源,<br />
+cvs server, http server, mysql server, frs 等等...<br />
+實在不可多得的,<br />
+VA linux 做了一件本世紀電腦界中十分偉大的事...</p>
+<p>但VA linux 在sf 的做法和最近各方對sf 的言論使我對sf 的信心大減,<br />
+原因:</p>
+<p>1.本來近乎完美的全開源團體竟慢慢的轉為closed source...<br />
+例如, postgrate sql 要轉為oracle (在招聘廣告中得知)  </p>
+<p>2.最駭人聽聞的是sf 有近乎鎖project 的傾向,<br />
+例如, 突然不提供cvs 的export 功能...<br />
+這令開源專案難以轉到其他平台...<br />
+如果這對於open source 世界來說是十分不妥,<br />
+甚至令人感到有陰謀...</p>
+<p>3.sf 現在對電腦軟件發展的影響太大了<br />
+各專案都在sf 裡 host,<br />
+萬一sf 倒下的話,<br />
+這些專案雖不至一夜裡完全消失,<br />
+但當時對開發群們的沖擊之大可想而之...<br />
+經過那麼多年才可以走在一起各大專案,<br />
+會不會成為散沙, 各自為政呢?<br />
+可能大專案的開發群有能力獨善其生,<br />
+但各發展中的中小專案則可能會因此暫停開發,<br />
+甚至停止...<br />
+就因為他們再也沒有人力去發展下去<br />
+對電腦軟件的發展影響深遠...</p>
+<p>*sf 是全球最大開源碼軟件支持團體</p></div>
+
+
+        <script src="https://utteranc.es/client.js"
+        repo="abbychau/blog.abby.md"
+        issue-term="pathname"
+        label="blog comment"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async>
+        </script>
+
+        <div id="permalink" style='word-break: break-all;padding:2em 0 1em 0'>
+            <a href="https://blog.abby.md/posts/msn-space_2005_2005-06-03-在sourceforge-的經歷_index.htm">Permalink of this blog</a>
+            <a href="https://github.com/abbychau/blog.abby.md/blob/master/./original-data/msn-space/2005/2005-06-03-在sourceforge-的經歷/index.md">Source</a>
+        </div>
+        
+        <div id="homelink" style='word-break: break-all;padding:1em 0 2em 0;display: none;'>
+            <a href="/">Abby's Archive</a>
+        </div>  
+    </div>
+</body>
+
+</html>

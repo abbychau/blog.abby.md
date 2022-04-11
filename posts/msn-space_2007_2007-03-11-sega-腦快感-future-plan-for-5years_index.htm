@@ -1,0 +1,97 @@
+<html>
+
+<head>
+    <title>Sega 腦快感? future plan for 5years</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <link rel="stylesheet" href="https://blog.abby.md/style.css" />
+    <link rel="icon" type="image/png" href="https://blog.abby.md/favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+    
+    <script>
+        function inIframe() {
+            try {
+                return window.self !== window.top;
+            } catch (e) {
+                return true;
+            }
+        }
+
+        function myMarked(str) {
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            $('#content').html(myMarked($('#content').html()))
+            hljs.highlightAll();
+
+            if(!inIframe()){
+                $('#homelink').show()
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div id='article' style='padding:0 15px 10px 10px;font-size: large;font-family: serif;'>
+        <h1 id="subject">Sega 腦快感? future plan for 5years</h1>
+        <div id="date" style='font-size: 9pt;'>2007-03-11</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags"><a href='/tags/plan.htm'>plan</a>, <a href='/tags/未分類.htm'>未分類</a></div>
+        <div id="content" style='word-break: break-all;'><p>呢兩真係有好多事發生左...<br />
+下面好快咁講一下, 雖則每則都可能好短, 但每件事對於我黎講都係份量十足</p>
+<p>1. 係機舖撞到&quot;有為&quot;....發覺佢係鼓機能手...馬機之王<br />
+7x-8x 可以fullcombo...仲示範左鬼姬extreme...</p>
+<p>2. 長話短說&gt;&gt;由于yahoo 個ypn 係要商業登記先可以於到overture...所以暫時無申請住<br />
+但由ypn 轉介過黎ge manyway ltd.就有兩個方案比左我用,<br />
+一個係照用overture(心諗實會比佢抽少少水), 一係就佢出server, 我放廣告交換<br />
+但我深知我本錢唔多, 加上提供的server 個負載都用到幾高, 再加上有三條頻<br />
+(一條海外, 一條大陸, 一條香港)...就選左第二個</p>
+<p>3. 搞左幾個小時發覺個mysql 機連唔到, 我自作主張用住個副機...<br />
+但個&quot;技術員&quot;話用住先...都好ge...遲d 再轉</p>
+<p>4. 終於用左個試驗中的直排插件, 唔知反應會係點...有一個好神奇ge 事我仲未解決到,<br />
+e+ 只係撞一個setting 用住先...話說直排到排尾會有</td><td>的完結加開新欄方式,<br />
+細閱程式碼之後, 發覺判定條件係 $key % A = = B....基本上B=0...咁就假設A = 4會4個區轉一欄, 但神奇的事係A同B 雖然係會改變排列方法(主要係A(個數), B係決定第幾個會轉), 但改變的方法卻無從推想(明天努力)</p>
+<p>5. 今日又做左pure maths, 發覺d 信心番左d 黎, 有唔少問題都識做</p>
+<p>6. 晚黑睇左uwants 同discuss.com.hk 模版寫法...<br />
+discuss.com.hk 個右列廣告只係table, uwants 係用一段幾難抄ge js 寫ge</p>
+<p>7. 發現一個phpadsnews...一直係我心入面想做ge 事可能做得成,<br />
+如果真係有運氣ge 話, 希望可以係網絡廣告市場入面分一小杯...</p>
+<p>8. 廣告仲未開始有offer, 但如果廣告收入穩定, 註冊商業登記係肯定ge 事, 收多份overture 錢係好重要!!!!!!!!!!!!</p>
+<p>9. 駁番好mysql 機之後, 為拓大ip 數, 第三方服務會快快推行, 多用戶discuz cluster 如果搵唔到source code, 通爆肝我都要自己寫出黎(因為已經諗到個concept), 因為香港需求太大, 對手太弱, 客戶群太廣闊(其實咪又係想講revenue 會好高?)</p>
+<p>10. 駁番好mysql 機之後, 可以達到同樣目的ge 仲有第三方blog, 難度較低, 但需求飽和, 而且硬件要求也不低, 對手太強</p>
+<p>11. 有客戶群之後, 補習網等等可以慢慢寫出再起用...</p>
+<p>12. 但到時候業務係咁ge 話...係唔係要請人呢?(想太遠了)</p>
+<p>13. 要講呢排有咩好玩, 就只有係psp 入面ge ps 模擬器, 我裝左數碼暴卡2</p>
+<p>14. 開一間公司好重要, 其實一張商業登記証真係唔貴, 買左主機順手租比人做埋hosting 都唔會蝕.</p>
+<p>ps. 如果我去做兼職...可能就係為左開域名/買nU機...加快計劃進度, 有$$ 真係好重要....</p>
+<p>時間真係太少, 想做ge 事太多, 完美世界今日已經無玩, 發覺大學做兼職好浪費時間,<br />
+精神極重要, notebook 好重要, uwants 好強, 但目標係tom.com...  </p>
+<p>題外一句話: 中國的網站內容很夠, 但目光短淺(要理解不容易的說), 氣氛是針對競爭者的利潤而創立, 難成一級企業</p></div>
+
+
+        <script src="https://utteranc.es/client.js"
+        repo="abbychau/blog.abby.md"
+        issue-term="pathname"
+        label="blog comment"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async>
+        </script>
+
+        <div id="permalink" style='word-break: break-all;padding:2em 0 1em 0'>
+            <a href="https://blog.abby.md/posts/msn-space_2007_2007-03-11-sega-腦快感-future-plan-for-5years_index.htm">Permalink of this blog</a>
+            <a href="https://github.com/abbychau/blog.abby.md/blob/master/./original-data/msn-space/2007/2007-03-11-sega-腦快感-future-plan-for-5years/index.md">Source</a>
+        </div>
+        
+        <div id="homelink" style='word-break: break-all;padding:1em 0 2em 0;display: none;'>
+            <a href="/">Abby's Archive</a>
+        </div>  
+    </div>
+</body>
+
+</html>

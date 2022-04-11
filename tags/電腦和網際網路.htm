@@ -1,0 +1,37 @@
+<html>
+
+<head>
+    <title>電腦和網際網路</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <BASE target="main_frame">
+
+    <link rel="stylesheet" href="https://blog.abby.md/style.css" />
+    <link rel="icon" type="image/png" href="https://blog.abby.md/favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+
+    <script>
+        $(document).ready(function(){ 
+            $('a').on('click', function(e){
+                window.parent.history.pushState({}, $(this).text(), "#"+$(this).attr('href'));
+            })
+        });
+    </script>
+</head>
+
+<body>
+<h1>電腦和網際網路</h1>
+<ul><li><a href="/list.htm">..</a></li></ul>
+
+<ul><li><a target='_self' href='/posts/msn-space_2005_2005-08-31-ir-ps-dw-fw-混用_index.htm'>IR PS DW FW 混用</a></li>
+<li><a target='_self' href='/posts/msn-space_2005_2005-08-31-日記-與-action-與-macro_index.htm'>日記 與 Action 與 Macro</a></li>
+<li><a target='_self' href='/posts/msn-space_2005_2005-10-30-世紀帝國3_index.htm'>世紀帝國3</a></li>
+<li><a target='_self' href='/posts/msn-space_2006_2006-08-11-net-必勝_index.htm'>.NET 必勝?</a></li>
+<li><a target='_self' href='/posts/msn-space_2006_2006-08-15-phpwind-和discuz-之戰-重要的轉變_index.htm'>PHPwind 和Discuz 之戰....重要的轉變</a></li>
+</ul>
+</body>
+
+</html>

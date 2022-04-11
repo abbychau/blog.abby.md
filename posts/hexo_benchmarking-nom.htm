@@ -1,0 +1,239 @@
+<html>
+
+<head>
+    <title>Benchmarking nom</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <link rel="stylesheet" href="https://blog.abby.md/style.css" />
+    <link rel="icon" type="image/png" href="https://blog.abby.md/favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+    
+    <script>
+        function inIframe() {
+            try {
+                return window.self !== window.top;
+            } catch (e) {
+                return true;
+            }
+        }
+
+        function myMarked(str) {
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            $('#content').html(myMarked($('#content').html()))
+            hljs.highlightAll();
+
+            if(!inIframe()){
+                $('#homelink').show()
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div id='article' style='padding:0 15px 10px 10px;font-size: large;font-family: serif;'>
+        <h1 id="subject">Benchmarking nom</h1>
+        <div id="date" style='font-size: 9pt;'>2019-05-20</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags"><a href='/tags/rust.htm'>Rust</a>, <a href='/tags/parser.htm'>Parser</a>, <a href='/tags/nom.htm'>nom</a></div>
+        <div id="content" style='word-break: break-all;'><h2>Start</h2>
+<p>Let's take the example of hello world of <code>nom</code>:</p>
+<pre><code class="language-Rust">  assert_eq!(hex_color("#2F14DF"), Ok(("", Color {
+    red: 47,
+    green: 20,
+    blue: 223,
+  })));</code></pre>
+<p>RGB Hex code is very similar to low level TCP/UDP messages. That, for instance of <code>#AABBCC</code>, <code>#</code> means &quot;This is a color, the following message length is 6: 0-1 is for R, 2-3:G, 4-5:B`.</p>
+<p>That one can make a theoretically O(n) memory model for it by reading bytes by bytes.</p>
+<p>We can also expect a worse performance from a parser doing <code>let (input, (red, green, blue)) = tuple((hex_primary, hex_primary, hex_primary))(input)?;</code></p>
+<h2>Common Functions</h2>
+<p>To be fair, here are the common functions shared by two parsers.</p>
+<pre><code class="language-Rust">// tools.rs
+pub fn from_hex(input: &amp;str) -&gt; Result&lt;u8, std::num::ParseIntError&gt; {
+    u8::from_str_radix(input, 16)
+}
+pub fn to_i64(input: &amp;str) -&gt; Result&lt;i64, std::num::ParseIntError&gt; {
+    input.parse::&lt;i64&gt;()
+}
+pub fn is_hex_digit(_c: char) -&gt; bool {
+    true
+}
+pub fn is_num(c: char) -&gt; bool {
+    c.is_digit(10)
+}
+pub fn to_string(c: &amp;str) -&gt; Result&lt;String, ()&gt; {
+    Ok(c.to_string().trim().to_string())
+}</code></pre>
+<p><code>is_hex_digit</code> is for validation of the input byte by <code>take_while_m_n</code>, which is a very common operation by parsers, but we keep it always returning true so the have the baseline first, before we want the power of the lexical engine.</p>
+<h1>Nom Parser</h1>
+<p>We got <code>main.rs</code>, which is using <code>nom</code> as below.</p>
+<pre><code class="language-Rust">#![feature(test)]
+
+#[macro_use]
+extern crate nom;
+
+mod tools;
+use tools::*;
+
+#[derive(Debug, PartialEq)]
+pub struct Color {
+    pub red: u8,
+    pub green: u8,
+    pub blue: u8,
+    pub number1: i64,
+    pub number2: i64,
+    pub number3: i64,
+    pub number4: i64,
+    pub number5: String,
+}
+
+named!(hex_primary&lt;&amp;str, u8&gt;,
+  map_res!(take_while_m_n!(2, 2, is_hex_digit), from_hex)
+);
+named!(four_length_int&lt;&amp;str, i64&gt;,
+  map_res!(take!(8), to_i64)
+);
+named!(length8_string&lt;&amp;str, String&gt;,
+  map_res!(take!(8), to_string)
+);
+named!(length100_string&lt;&amp;str, String&gt;,
+  map_res!(take!(100), to_string)
+);
+
+fn from_u8(c: &amp;str) -&gt; Result&lt;String, ()&gt; {
+    print!("{:?}", c);
+    Ok(c.to_string())
+}
+named!(structure1&lt;&amp;str, Color&gt;,
+  do_parse!(
+           tag!("#")   &gt;&gt;
+    red:   hex_primary &gt;&gt;
+    green: hex_primary &gt;&gt;
+    blue:  hex_primary &gt;&gt;
+    number1: four_length_int &gt;&gt;
+    number2: four_length_int &gt;&gt;
+    number3: four_length_int &gt;&gt;
+    number4: four_length_int &gt;&gt;
+    number5: length8_string &gt;&gt;
+    (
+      Color {
+        red,
+        green,
+        blue,
+        number1,
+        number2,
+        number3,
+        number4,
+        number5
+      }
+    )
+  )
+);
+
+fn main() {
+
+}
+
+#[cfg(test)]
+mod tests_main {
+
+    extern crate test;
+    use super::*;
+    use test::Bencher;
+
+    #[bench]
+    fn parse_color1(b: &amp;mut Bencher) {
+        b.iter(|| structure1("#2F14DF888888887777777766666666555555551234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890"));
+    }
+
+}</code></pre>
+<h1>&amp;str Slice Reader</h1>
+<p>And <code>direct.rs</code>, which is a direct slice access to <code>&amp;str</code>.</p>
+<pre><code class="language-Rust">#![feature(test)]
+
+mod tools;
+use tools::*;
+
+#[derive(Debug, PartialEq)]
+pub struct Color {
+    pub red: u8,
+    pub green: u8,
+    pub blue: u8,
+    pub number1: i64,
+    pub number2: i64,
+    pub number3: i64,
+    pub number4: i64,
+    pub number5: String,
+}
+
+fn main() {}
+fn structure1(c: &amp;str) -&gt; Result&lt;Color, String&gt; {
+    Ok(Color {
+        red: from_hex(&amp;c[1..3]).unwrap(),
+        green: from_hex(&amp;c[3..5]).unwrap(),
+        blue: from_hex(&amp;c[5..7]).unwrap(),
+        number1: to_i64(&amp;c[7..7 + 8]).unwrap(),
+        number2: to_i64(&amp;c[7 + 8..7 + 8 + 8]).unwrap(),
+        number3: to_i64(&amp;c[7 + 8 + 8..7 + 8 + 8 + 8]).unwrap(),
+        number4: to_i64(&amp;c[7 + 8 + 8 + 8..7 + 8 + 8 + 8 + 8]).unwrap(),
+        number5: to_string(&amp;c[7 + 8 * 4..7 + 8 * 4 + 100]).unwrap(),
+    })
+}
+
+#[cfg(test)]
+mod tests_direct {
+
+    extern crate test;
+    use super::*;
+    use test::Bencher;
+
+    #[bench]
+    fn parse_color1(b: &amp;mut Bencher) {
+        b.iter(|| structure1("#2F14DF888888887777777766666666555555551234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890"));
+    }
+
+}</code></pre>
+<p>Both of the are zero-copy during parsing.</p>
+<h2>Result</h2>
+<p>After running a <code>cargo +nightly bench</code>, we got:</p>
+<pre><code class="language-console">running 1 test
+test tests_direct::parse_color1 ... bench:         263 ns/iter (+/- 22)
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 1 measured; 0 filtered out
+
+     Running target/release/deps/nomtest-cdc895365399f2bf
+
+running 1 test
+test tests_main::parse_color1 ... bench:         670 ns/iter (+/- 76)
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 1 measured; 0 filtered out</code></pre>
+<p>This is quite close to the expection that how <code>nom</code> is punishing on its lexical techniques. (Testing on a Apple MacBook Pro 2018 i7 16GB RAM)</p></div>
+
+
+        <script src="https://utteranc.es/client.js"
+        repo="abbychau/blog.abby.md"
+        issue-term="pathname"
+        label="blog comment"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async>
+        </script>
+
+        <div id="permalink" style='word-break: break-all;padding:2em 0 1em 0'>
+            <a href="https://blog.abby.md/posts/hexo_benchmarking-nom.htm">Permalink of this blog</a>
+            <a href="https://github.com/abbychau/blog.abby.md/blob/master/./original-data/hexo/benchmarking-nom.md">Source</a>
+        </div>
+        
+        <div id="homelink" style='word-break: break-all;padding:1em 0 2em 0;display: none;'>
+            <a href="/">Abby's Archive</a>
+        </div>  
+    </div>
+</body>
+
+</html>

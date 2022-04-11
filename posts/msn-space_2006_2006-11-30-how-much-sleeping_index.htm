@@ -1,0 +1,80 @@
+<html>
+
+<head>
+    <title>how much sleeping?</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <link rel="stylesheet" href="https://blog.abby.md/style.css" />
+    <link rel="icon" type="image/png" href="https://blog.abby.md/favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+    
+    <script>
+        function inIframe() {
+            try {
+                return window.self !== window.top;
+            } catch (e) {
+                return true;
+            }
+        }
+
+        function myMarked(str) {
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            $('#content').html(myMarked($('#content').html()))
+            hljs.highlightAll();
+
+            if(!inIframe()){
+                $('#homelink').show()
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div id='article' style='padding:0 15px 10px 10px;font-size: large;font-family: serif;'>
+        <h1 id="subject">how much sleeping?</h1>
+        <div id="date" style='font-size: 9pt;'>2006-11-30</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags"><a href='/tags/energy.htm'>energy</a>, <a href='/tags/日記.htm'>日記</a></div>
+        <div id="content" style='word-break: break-all;'><p>其實瞓幾多先夠呢?</p>
+<p>有d 人話8 個鐘, 有d 6 個鐘, 有d 4 個鐘....</p>
+<p>如果一個人訓8 個鐘, 咁佢活動時間就係16 個鐘,咁活動個陣要每小時消耗精神的oc 就係0.5 個休息時間</p>
+<p>如此類推...<br />
+6休18動 = 0.333<br />
+4休20動 = 0.25</p>
+<p>定義精神oc的rate 為精神密度</p>
+<p>雖然每個人的睡眠質量唔同, 但有多人都試過唔夠訓ge 時候表現會變差<br />
+按咁講就係個陣的精神密度唔夠</p>
+<p>但相反....如果一個人的生理同心理上都沒有甚麼問題的時候,<br />
+可以睡16 小時而只活動8 小時....那他活動的時候精神密度就會係2...亦即係8 休人的4倍..</p>
+<p>再設有一定密度以上的時候會訓唔著, 咁個d 可以訓16 個鐘的人輸出的rate 咁大,<br />
+可以做的事係唔係可以有西利呢? 天才們應該要訓多d, 唔好哂左佢</p></div>
+
+
+        <script src="https://utteranc.es/client.js"
+        repo="abbychau/blog.abby.md"
+        issue-term="pathname"
+        label="blog comment"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async>
+        </script>
+
+        <div id="permalink" style='word-break: break-all;padding:2em 0 1em 0'>
+            <a href="https://blog.abby.md/posts/msn-space_2006_2006-11-30-how-much-sleeping_index.htm">Permalink of this blog</a>
+            <a href="https://github.com/abbychau/blog.abby.md/blob/master/./original-data/msn-space/2006/2006-11-30-how-much-sleeping/index.md">Source</a>
+        </div>
+        
+        <div id="homelink" style='word-break: break-all;padding:1em 0 2em 0;display: none;'>
+            <a href="/">Abby's Archive</a>
+        </div>  
+    </div>
+</body>
+
+</html>

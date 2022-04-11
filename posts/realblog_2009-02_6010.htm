@@ -1,0 +1,84 @@
+<html>
+
+<head>
+    <title>本物的外觀觀察</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <link rel="stylesheet" href="https://blog.abby.md/style.css" />
+    <link rel="icon" type="image/png" href="https://blog.abby.md/favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+    
+    <script>
+        function inIframe() {
+            try {
+                return window.self !== window.top;
+            } catch (e) {
+                return true;
+            }
+        }
+
+        function myMarked(str) {
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            $('#content').html(myMarked($('#content').html()))
+            hljs.highlightAll();
+
+            if(!inIframe()){
+                $('#homelink').show()
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div id='article' style='padding:0 15px 10px 10px;font-size: large;font-family: serif;'>
+        <h1 id="subject">本物的外觀觀察</h1>
+        <div id="date" style='font-size: 9pt;'>2009-02-22</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags"><a href='/tags/社評.htm'>社評</a></div>
+        <div id="content" style='word-break: break-all;'><p>很多時候, 人都會以五官的接收加上自身經驗來判斷一件事物的價值, 這個做法是正常的,<br />
+其實這正是偏見的來源...  </p>
+<p>但, 甚至, 會有更糟糕的事態, 就是有時候會被非經驗產生的感覺去改變了自己的態度  </p>
+<p>比如看到高的人會產生好感, 明明高度和一切的作風並沒有拉上甚麼關係,<br />
+比如對著美女/美男的態度會比較寬鬆, 明明彼此並不認識,<br />
+比如會對著少女會偏向讚賞, 明明彼此也不認識  </p>
+<p>至於這樣的改變是否關及經驗實在難以定奪, 但關係的強度該不至於會做成如此大的影響  </p>
+<p>還有的外觀有不少的...就拿一個來做例子說說:<br />
+眼神, 這個因為對象細小而不受其他的外貌影響, 所以人們也經常對他作出觀察, 但其實觀察眼神的判斷可以說是一種體現目的的說法, 眼球中的瞳孔, 環, 及它們的顔色, 眼白, 大小, 上下眼骨的突出程度, 都是靠天生的...唯一一個差別就是眼睛移動的風格, 但風格的描述就恰恰是一種體現目的的說法<br />
+比如: 專注vs 呆滯, 敏捷vs 散漫, 這樣的風格表達可以說是沒有一點價值  </p>
+<p>甚至有一些運用了通感的說法: 清淅, 混濁, 甚至判斷的後果: 單純, 狡猾, 無神<br />
+這樣都不可以算是一種眼神, 那已經是對持有人的人格判斷了  </p>
+<p>因為眼的樣貌都是天生, 那麼如果一個人的能力都體現於眼神的話, 那就是抹煞了那個人後天的努力, 或者是命運論信奉者.  </p>
+<p><img src="http://news.xinhuanet.com/shuhua/2008-01/03/xin_312120430140340600418.jpg" alt="" />  </p>
+<p>這個是...期盼, 憂傷, 絕望, 喜極而泣, 突然嚇呆, 成功, 失敗, 還是其他?<br />
+莫說只看眼神, 就算給你很多東西去觀察, 其他判斷也是無從入手的  </p>
+<p>人們只喜歡說:&quot;雖然他的外貌普通, 和看他堅定的眼神可見他絕非凡人&quot; 這樣突出自己觀察力的華麗操詞  </p></div>
+
+
+        <script src="https://utteranc.es/client.js"
+        repo="abbychau/blog.abby.md"
+        issue-term="pathname"
+        label="blog comment"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async>
+        </script>
+
+        <div id="permalink" style='word-break: break-all;padding:2em 0 1em 0'>
+            <a href="https://blog.abby.md/posts/realblog_2009-02_6010.htm">Permalink of this blog</a>
+            <a href="https://github.com/abbychau/blog.abby.md/blob/master/./original-data/realblog/2009-02/6010.md">Source</a>
+        </div>
+        
+        <div id="homelink" style='word-break: break-all;padding:1em 0 2em 0;display: none;'>
+            <a href="/">Abby's Archive</a>
+        </div>  
+    </div>
+</body>
+
+</html>

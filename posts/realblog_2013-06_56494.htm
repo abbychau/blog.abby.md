@@ -1,0 +1,99 @@
+<html>
+
+<head>
+    <title>Daisuke 付拍子歌詞</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <link rel="stylesheet" href="https://blog.abby.md/style.css" />
+    <link rel="icon" type="image/png" href="https://blog.abby.md/favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+    
+    <script>
+        function inIframe() {
+            try {
+                return window.self !== window.top;
+            } catch (e) {
+                return true;
+            }
+        }
+
+        function myMarked(str) {
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            $('#content').html(myMarked($('#content').html()))
+            hljs.highlightAll();
+
+            if(!inIframe()){
+                $('#homelink').show()
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div id='article' style='padding:0 15px 10px 10px;font-size: large;font-family: serif;'>
+        <h1 id="subject">Daisuke 付拍子歌詞</h1>
+        <div id="date" style='font-size: 9pt;'>2013-06-02</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags"><a href='/tags/歌曲.htm'>歌曲</a></div>
+        <div id="content" style='word-break: break-all;'><pre><code>I’m a coun-try-girl,-but |
+&lt;strong&gt;&lt;span style="color:#ff0000;"&gt;yo-u-re(a)-sup-er-ci-ty-boy.&lt;/span&gt;&lt;/strong&gt;
+I’m a na-tu-ral-girl,|
+&lt;strong&gt;&lt;span style="color:#ff0000;"&gt;but you ’re-prin-ce-for-me.&lt;/span&gt;&lt;/strong&gt;
+
+&lt;span style="color:#996633;"&gt;E-very-day-won-der-ing &lt;/span&gt;| how I become your girl.
+&lt;span style="color:#996633;"&gt;E-very-night,-I’m-feeling&lt;/span&gt; | your body in my dreams.
+I can’t sleep at all, hello, Morning sun.
+My love, my crush, (I) wanna-tell-(you)my-feeling.
+
+Please-tell-me-now, how do you feel me (pause)?
+Please-show-me-now. I wanna dance with you more.
+Right now, I want you(’re) one for you.
+Everytime, everywhere,
+I will surely get your ho-nest love.
+Daisuke...
+
+Please tell me now, how do you feel me (pause)?
+&lt;del&gt;Please show me now.
+I wanna dance with you more.
+Right now, I want you’re one for you.&lt;/del&gt;
+Everytime,&lt;del&gt; (everynight,) &lt;/del&gt;everywhere,&lt;del&gt; (everywhere,)&lt;/del&gt;
+I will surely get your ho-nest love.
+Daisuke...
+
+每每覺得日本人寫的英文歌詞都得像聖詩, 聖詩是不理會音調, 而這首則是不理會拍子
+上面加了hyphen 是表示相連的使用相同時間去唱, 而括號裡面則是該音不佔據時間, 可以省略
+
+加了刪除線的是
+&lt;a href="http://www.youtube.com/watch?v=Kwv_vPIL4IQ"&gt;http://www.youtube.com/watch?v=Kwv_vPIL4IQ&lt;/a&gt;
+這個版本沒有唱出來的地方</code></pre>
+<iframe allowfullscreen="" frameborder="0" height="315" src="http://www.youtube.com/embed/Kwv_vPIL4IQ" width="420"></iframe></div>
+
+
+        <script src="https://utteranc.es/client.js"
+        repo="abbychau/blog.abby.md"
+        issue-term="pathname"
+        label="blog comment"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async>
+        </script>
+
+        <div id="permalink" style='word-break: break-all;padding:2em 0 1em 0'>
+            <a href="https://blog.abby.md/posts/realblog_2013-06_56494.htm">Permalink of this blog</a>
+            <a href="https://github.com/abbychau/blog.abby.md/blob/master/./original-data/realblog/2013-06/56494.md">Source</a>
+        </div>
+        
+        <div id="homelink" style='word-break: break-all;padding:1em 0 2em 0;display: none;'>
+            <a href="/">Abby's Archive</a>
+        </div>  
+    </div>
+</body>
+
+</html>

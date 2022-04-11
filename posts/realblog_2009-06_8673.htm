@@ -1,0 +1,85 @@
+<html>
+
+<head>
+    <title>日記</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <link rel="stylesheet" href="https://blog.abby.md/style.css" />
+    <link rel="icon" type="image/png" href="https://blog.abby.md/favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+    
+    <script>
+        function inIframe() {
+            try {
+                return window.self !== window.top;
+            } catch (e) {
+                return true;
+            }
+        }
+
+        function myMarked(str) {
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            $('#content').html(myMarked($('#content').html()))
+            hljs.highlightAll();
+
+            if(!inIframe()){
+                $('#homelink').show()
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div id='article' style='padding:0 15px 10px 10px;font-size: large;font-family: serif;'>
+        <h1 id="subject">日記</h1>
+        <div id="date" style='font-size: 9pt;'>2009-06-16</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags"><a href='/tags/日常生活.htm'>日常生活</a></div>
+        <div id="content" style='word-break: break-all;'><p><span style="font-size: 16px;">Arrabiatta</span> exp 好難啊  </p>
+<p>jQuery 很安定但 <u><strong><span style="font-size: 19px;">script.aculo.us</span></strong></u> 也很好!  </p>
+<p>收到J2, iNews, HDJade 了, 可惜只是昨天的事  </p>
+<p>MHP2g 極速的衝到7星, 這次重玩領會到很多:<br />
+上位裝防禦力十分不錯, 有G位的一半以上<br />
+下位裝的防禦力十分危險, 有被上位下級怪一招秒掉的可能<strong>獵人套裝</strong>可以令你輕鬆由1星通到7星, 自動標示, 體力+20, 剝取鐵人, 每件只售$900 十分超值!!!  </p>
+<p>要輕鬆通關, 武器的選擇尤其重要!! 如果不想再用禁斷的太刀也不想用弓弩去磨的話, 以下的也可以打得<strong>很快</strong><br />
+配備長槍一支以應付: 盾蟹/鎌蟹/單角/角龍/轟龍<br />
+強烈推介: <span style="font-size: 16px;"><strong>蛇龍槍</strong></span>(騎士槍升級)/鎌蟹槍<br />
+配備鎗統一支以應付一切你打不入的: 岩龍/電龍/鎧龍<br />
+強烈推介: 骨火統(3級通常)/轟龍統(2級擴散)<br />
+配備一支大劍以應付站起來的怪物: 雄火/雌火/怪鳥/水龍<br />
+強烈推介: 鎌蟹刃/電龍劍  </p>
+<p>隨行貓攻擊力很高!! 已經殺掉多隻Boss了!  </p>
+<p>以下有很大部分的心聲XD:<br />
+<a href="http://www.twowin.com.tw/alldata/fun/fun884.SWF">http://www.twowin.com.tw/alldata/fun/fun884.SWF</a>  </p>
+<p>心存感激:<br />
+*****Clarice&amp;Kristy gave me a birthday cake and a birthday song those non-existed in many many years. *Widdy gave me, whom she at first even don't know the name of, a E-pass.  </p></div>
+
+
+        <script src="https://utteranc.es/client.js"
+        repo="abbychau/blog.abby.md"
+        issue-term="pathname"
+        label="blog comment"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async>
+        </script>
+
+        <div id="permalink" style='word-break: break-all;padding:2em 0 1em 0'>
+            <a href="https://blog.abby.md/posts/realblog_2009-06_8673.htm">Permalink of this blog</a>
+            <a href="https://github.com/abbychau/blog.abby.md/blob/master/./original-data/realblog/2009-06/8673.md">Source</a>
+        </div>
+        
+        <div id="homelink" style='word-break: break-all;padding:1em 0 2em 0;display: none;'>
+            <a href="/">Abby's Archive</a>
+        </div>  
+    </div>
+</body>
+
+</html>

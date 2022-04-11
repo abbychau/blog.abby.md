@@ -1,0 +1,81 @@
+<html>
+
+<head>
+    <title>bitcoin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <link rel="stylesheet" href="https://blog.abby.md/style.css" />
+    <link rel="icon" type="image/png" href="https://blog.abby.md/favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+    
+    <script>
+        function inIframe() {
+            try {
+                return window.self !== window.top;
+            } catch (e) {
+                return true;
+            }
+        }
+
+        function myMarked(str) {
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            $('#content').html(myMarked($('#content').html()))
+            hljs.highlightAll();
+
+            if(!inIframe()){
+                $('#homelink').show()
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div id='article' style='padding:0 15px 10px 10px;font-size: large;font-family: serif;'>
+        <h1 id="subject">bitcoin</h1>
+        <div id="date" style='font-size: 9pt;'>2013-04-25</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags"><a href='/tags/日常生活.htm'>日常生活</a></div>
+        <div id="content" style='word-break: break-all;'><p>要了解bitcoin 的來龍去脈不難, 但對此有錯誤理解的人還是不少。<br />
+以同環的 這篇 <a href="http://realblog.zkiz.com/lgaim/54786">http://realblog.zkiz.com/lgaim/54786  </a>舉出的兩個弱點<br />
+1. 話說Bitcoin雖然恆定數量,但沒有恆定種類,有人認受的話大天朝山寨隨時可以發行Acoin,Ccoin咁樣,結果一樣等於無限增發<br />
+2. Bitcoin既然寄生於網絡上,政府(特別係大陸)剪你網線就收皮,無論軟剪定硬剪<br />
+都是常見的失誤, 簡短地說:<br />
+1. 如果出現Acoin, 也看不見對Bitcoin 價值的影響, 因為他們並無優劣之分, 就如現在開始對H2O 的同位素為交易, 也不會令各貴金屬失去價值<br />
+2. 除非取消使用互聯網, 否則這東西還是不能夠被消滅  </p>
+<p>但本身我是對這東西保持觀望, 也找到一篇比較靠譜的反對文<br />
+<a href="http://ivarptr.blogspot.hk/2011/06/bitcoin.html">http://ivarptr.blogspot.hk/2011/06/bitcoin.html  </a><br />
+文中有五點<br />
+第一點是申述立場而已, 算不上是論點<br />
+2. 這點是常態, 挖鑛只是一個過渡期, 正如現在你要靠自身去挖金維生也是不現實的<br />
+第三點是文中的亮點所在(我認為), 因為現在金額分布幾乎無法估計, 以社會演化的前景來看, 的確無法放心地大量採用, 資源確實的分布確實是有點令人擔憂<br />
+第四點以後必然是抽象化解決, 也算不上是甚麼缺點</p></div>
+
+
+        <script src="https://utteranc.es/client.js"
+        repo="abbychau/blog.abby.md"
+        issue-term="pathname"
+        label="blog comment"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async>
+        </script>
+
+        <div id="permalink" style='word-break: break-all;padding:2em 0 1em 0'>
+            <a href="https://blog.abby.md/posts/realblog_2013-04_54811.htm">Permalink of this blog</a>
+            <a href="https://github.com/abbychau/blog.abby.md/blob/master/./original-data/realblog/2013-04/54811.md">Source</a>
+        </div>
+        
+        <div id="homelink" style='word-break: break-all;padding:1em 0 2em 0;display: none;'>
+            <a href="/">Abby's Archive</a>
+        </div>  
+    </div>
+</body>
+
+</html>

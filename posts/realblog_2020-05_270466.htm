@@ -1,0 +1,84 @@
+<html>
+
+<head>
+    <title>屎山推倒計劃</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <link rel="stylesheet" href="https://blog.abby.md/style.css" />
+    <link rel="icon" type="image/png" href="https://blog.abby.md/favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+    
+    <script>
+        function inIframe() {
+            try {
+                return window.self !== window.top;
+            } catch (e) {
+                return true;
+            }
+        }
+
+        function myMarked(str) {
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            $('#content').html(myMarked($('#content').html()))
+            hljs.highlightAll();
+
+            if(!inIframe()){
+                $('#homelink').show()
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div id='article' style='padding:0 15px 10px 10px;font-size: large;font-family: serif;'>
+        <h1 id="subject">屎山推倒計劃</h1>
+        <div id="date" style='font-size: 9pt;'>2020-05-12</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags"><a href='/tags/實務電腦.htm'>實務電腦</a></div>
+        <div id="content" style='word-break: break-all;'><p>讀過前面幾篇, 應該都容易理解到, 為甚麼我要碰屎山...</p>
+<p><img src="https://i.imgur.com/Zu8LXtr.png" alt="" /></p>
+<blockquote>
+<p>我想寫os內核，然後想把筆記寫成blog, 於是在改寫以前的blog 系統。<br />
+。。。這是傷心太平洋嗎？</p>
+</blockquote>
+<p><a href="https://www.youtube.com/watch?v=b1SRjGmgA54"><img src="https://img.youtube.com/vi/b1SRjGmgA54/0.jpg" alt="傷心太平洋" /></a></p>
+<p>這是我這兩天的剷屎過程:</p>
+<ul>
+<li>連結 : <a href="https://github.com/abbychau/realblog/commits/master">https://github.com/abbychau/realblog/commits/master</a></li>
+</ul>
+<p>最重要的當然是加入markdown 的支持了, 然後, 我面對了addslashes 和mysqli_real_escape_string 不安全的現實,<br />
+又把很多的concat magic 都改完了。</p>
+<p>順帶, 修復了幾個很臭的蟲。<br />
+還移除了一大堆垃圾。</p>
+<p>用Git 最快樂的地方, 就是在倒垃圾時可以再無顧慮。</p>
+<p>感謝Github! 這令我解開了這個心結。</p></div>
+
+
+        <script src="https://utteranc.es/client.js"
+        repo="abbychau/blog.abby.md"
+        issue-term="pathname"
+        label="blog comment"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async>
+        </script>
+
+        <div id="permalink" style='word-break: break-all;padding:2em 0 1em 0'>
+            <a href="https://blog.abby.md/posts/realblog_2020-05_270466.htm">Permalink of this blog</a>
+            <a href="https://github.com/abbychau/blog.abby.md/blob/master/./original-data/realblog/2020-05/270466.md">Source</a>
+        </div>
+        
+        <div id="homelink" style='word-break: break-all;padding:1em 0 2em 0;display: none;'>
+            <a href="/">Abby's Archive</a>
+        </div>  
+    </div>
+</body>
+
+</html>

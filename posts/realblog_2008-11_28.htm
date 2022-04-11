@@ -1,0 +1,102 @@
+<html>
+
+<head>
+    <title>不值錢的棋協段位</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <link rel="stylesheet" href="https://blog.abby.md/style.css" />
+    <link rel="icon" type="image/png" href="https://blog.abby.md/favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+    
+    <script>
+        function inIframe() {
+            try {
+                return window.self !== window.top;
+            } catch (e) {
+                return true;
+            }
+        }
+
+        function myMarked(str) {
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            $('#content').html(myMarked($('#content').html()))
+            hljs.highlightAll();
+
+            if(!inIframe()){
+                $('#homelink').show()
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div id='article' style='padding:0 15px 10px 10px;font-size: large;font-family: serif;'>
+        <h1 id="subject">不值錢的棋協段位</h1>
+        <div id="date" style='font-size: 9pt;'>2008-11-18</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags"><a href='/tags/社評.htm'>社評</a></div>
+        <div id="content" style='word-break: break-all;'><p><span style="font-size: 13px">(轉載自:書呆弈論壇上的討論)</span><a href="http://blog.xuite.net/godata/chinagoorg/3770301"><span style="font-size: 13px">連結</span></a>醜貓:看到這一期棋道雜誌，五段以上棋手約千人，四段棋手也有近千人。<br />
+台灣業餘棋界棋力這麼強啊！段位證書真的毫不值錢。現在連五段恐怕都不能說是「高手」了。<br />
+之前的討論串好像說四段約為 LGS 2d*, 五段約為 LGS 3d*, 六段為 LGS 4d*-6d*, LGS 7d* 大體是業餘強豪或是新進職棋的程度。husil:台灣目前比較有公信力的大概只剩6.7段了,5段要升6段因為必須全勝所以難度較高如果跟6段並在一起的話那更不簡單,我覺得會變成今天這樣比賽太多是個因素一些棋院自己辦內部比賽讓自己的學生升段早已不是新聞.<br />
+希耶爾:我覺得頂多就是人數不少吧<br />
+倒不至於＂不值錢＂我覺得這種說法有點否定下棋者的努力耶&gt;&quot;&lt;<br />
+我大姑丈從大學時代迷上圍棋，下到現在六十歲出頭了吧<br />
+前年看到他，聊到圍棋，他興高采烈的秀給我看他那陣子收到的業餘五段證書時，臉上那榮耀而驕傲的愉悅表情至今仍叫我印象深刻他是真的喜愛並圍棋長期陪著圍棋一路走下來的杯杯，每天一定會花時間坐在棋盤前擺擺棋<br />
+他對圍棋的付出讓我感動四五段的業餘其手或許人數很多<br />
+但是他們的努力並不該因此而被否定^___^<br />
+Lianbin: 雖然講起來很令人傷心，但段位門檻一旦浮濫到一個地步，真的就是在否定棋友的努力。試想，圍棋班關起門來隨便辦個比賽都能拿段位證書，對於真正努力的人來 說，他們拿到的證書意義何在？並不是&quot;不值錢&quot;這種說法有什麼問題，而是事實上一個不良的制度，在否定棋友的努力！我大概還沒本事拿到五段證書。可是很令 我生氣的是，四段以下竟然被棋協搞成「推廣段」，完全剝奪了我「興高采烈拿證書」的樂趣！<br />
+理: 段位證書儘代表棋力&quot;曾&quot;達到某種最低標準, 還有相當之運氣成分在, 所以各段之最低棋力與一般或超強者相差二三子算是正常現象, 沒什麼值不值錢的問題, 就算是大家都有很&quot;努力&quot;去升段, 弱六段輸給強四段或是弱四段輸給強初段都是很正常的, 更不要說有些人明明實力超強但卻不去升段, 反過來嘲笑目前段位證書之價值則實無意義.<br />
+醜貓:儘管同段位棋手實力有差距可以理解，但若同一個時期，甚至同個月份，台灣各地不同比賽晉升段的棋手實力懸殊到四五子的話，未免太說不過去了。棋協一直不對此亂象採取任何措施，無怪乎很多人認為棋協只想要證書費收入而已。<br />
+以前其實就建議過解決辦法了。按照比賽對象限制程度，獎金多少，段位程度，參賽人數多寡分級，就可以減少這種亂象。<br />
+譬如限定參賽資格為學生或小朋友的比賽不能發給晉升二段以上的段位，無獎金的比賽不能發給晉升三段以上的段位，冠軍獎金一萬元以下者，且報名人數低於32人者，不能發給晉升五段以上的段位，諸如此類。<br />
+此外若有總量管制，應該也比較好。譬如從現在開始對於各段人數比例設定預期的人數比例，准此核定允許昇段的總人數，應該也可以考慮。<br />
+我並非提議不能隨意辦比賽，但未符條件者不能給予優勝者昇段，應該不是難事啊！play:感謝大家的啟發..段位證書我想最新的意義.  </p>
+<ol>
+<li>鼓勵新進人員尤其是小朋友及背後辛苦的家長的士氣.<br />
+想想你小學時開頭拿到學期前幾名的感覺.<br />
+拿到段位證書時還是多少會高興一下.  </li>
+<li>當作自己樂捐及有參加圍棋活動比賽的證明. 我想<br />
+5百,1千也不貴吧,當作是另一種獎狀或感謝狀.<br />
+理:剛剛聽到一位實力稍弱的初段小朋友之感言--&gt; 升段後之比賽時不論成績如何, 只要想到身上別的是&quot;初段組&quot;之名牌, 連走路都會有風.<br />
+雖說目前升段已經容易許多了, 但還是有許多小朋友明明已達三五級之水平後, 經過半年一年之努力也還無法如願, 這張證書對於小朋友(及家長)而言, 還是十分的重要.<br />
+前 幾天之大里市長盃, 最晚完成賽程的當然是高段組, 但最後第二結束賽程的竟是甲組, 可見能在最後一盤獲勝就能升段之甲組選手有多重視這場比賽, 相對而言, 也看到高段組最後一盤有無望升段者在十分鐘內草草結束賽程, 根本是無心戀棧, 而還有機會升段者, 有人明明盤面已差到50目以上還是堅持到最後, 不願意投子認輸. 醜貓:再補充一下，我不是說段位手合不能放寬，放寬讓更多人對圍棋有興趣，從行銷上來說是好事。如果目標是段差一先也可以，但重要的是要讓段位有鑑別力。<br />
+六 段原則上就應該是業餘最強棋力，職業棋士讓半先要能擋得住，接下來每段段差一先無妨，但是昇段的制度要盡可能的讓段差能夠接近一先。而不是像現在這樣漫無 標準亂升一通，簡直到了社團或教室或安親班自己內部辦一場訓練賽就可以讓人晉升段，再這樣下去五六段之間都要可以讓五六子，不是天下大亂了嗎？<br />
+棋協若不再思考這件事，醜貓我預言棋協的業餘段位將來會被其他系統所取代。  
+<hr />
+<p><span style="font-size: 16px">好了, 轉載就到這裡, 原文請看連結吧</span><span style="font-size: 16px">棋協段位不值錢, 看棋力看LGS 評給還好..<br />
+促成這種事情的不就是一群行銷的人們嗎??<br />
+這種事不單只發生在圍棋這種純競技活動上, 在從事生產的社會層面, 這種事情也是開始蔓延<br />
+例子實在多的是, </span> <span style="font-size: 16px">證書愈出愈濫, 出席一個活動就有證書, 很多&quot;證書&quot;現在只能用來證明&quot;出席&quot; </span> <span style="font-size: 16px">文憑也濫, 在我一份兼差中知道, 一張diploma 是多麼的兒嬉, 任何一個人只要讀一些簡單到不行的課程都有文憑, 而這張文憑還可以幫你入high dip 甚至degree </span> <span style="font-size: 16px">可想而知, degree 的水準下降到甚麼地步, 除非讀數科/理科, 不然就算你無任何學院知識, 都可以讀好degree 課程, 因為佢一定會當全部人一D 認識都無重頭教過 </span> <span style="font-size: 16px">要靠的只有專業考試, degree holder 都逃不過一定要考專業考試, 會計要靠ACCA/LCCI, php 要靠zend cert, 就算你唔讀CS, 你拎番幾張Adobe/Microsoft Certified Profession 都一樣ok </span><span style="font-size: 16px">行銷就係令到咁多野水準一直下降既原因, 降低要求就好似減息咁...</span> <span style="font-size: 16px">減息只可以刺激暫時內銷和吸引外資, 長遠來說, 只會令貨幣弱勢, 日後要成功運用貨幣政策來解決問題會要愈來愈大的付出(如: 貶值本土貨幣, 利用庫房填保空洞) </span> <span style="font-size: 16px">降低要求只可以刺激暫時令更多人有興趣去加入, 長遠來說, 只會令本身的認受情下降, 日後要吸引人參與下去, 只好拿出更高價值的東西來貶值(如, 高段, 碩士, pgd) </span><span style="font-size: 16px"><br />
+後果是嚴重的, 因為最後一步, 就是輸掉所有人對制度的信心<br />
+</span></p></li>
+</ol></div>
+
+
+        <script src="https://utteranc.es/client.js"
+        repo="abbychau/blog.abby.md"
+        issue-term="pathname"
+        label="blog comment"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async>
+        </script>
+
+        <div id="permalink" style='word-break: break-all;padding:2em 0 1em 0'>
+            <a href="https://blog.abby.md/posts/realblog_2008-11_28.htm">Permalink of this blog</a>
+            <a href="https://github.com/abbychau/blog.abby.md/blob/master/./original-data/realblog/2008-11/28.md">Source</a>
+        </div>
+        
+        <div id="homelink" style='word-break: break-all;padding:1em 0 2em 0;display: none;'>
+            <a href="/">Abby's Archive</a>
+        </div>  
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+<html>
+
+<head>
+    <title>挑釁的反應</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <link rel="stylesheet" href="https://blog.abby.md/style.css" />
+    <link rel="icon" type="image/png" href="https://blog.abby.md/favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+    
+    <script>
+        function inIframe() {
+            try {
+                return window.self !== window.top;
+            } catch (e) {
+                return true;
+            }
+        }
+
+        function myMarked(str) {
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            $('#content').html(myMarked($('#content').html()))
+            hljs.highlightAll();
+
+            if(!inIframe()){
+                $('#homelink').show()
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div id='article' style='padding:0 15px 10px 10px;font-size: large;font-family: serif;'>
+        <h1 id="subject">挑釁的反應</h1>
+        <div id="date" style='font-size: 9pt;'>2005-05-29</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags"><a href='/tags/個人.htm'>個人</a></div>
+        <div id="content" style='word-break: break-all;'><p>這是我第一次錄mp3 放上網去的,<br />
+令我這樣做的原是以下這兩個網址:<br />
+<a href="http://spaces.msn.com/members/oneirocriticism/Blog/cns!1peXNyyyEQFpEG_53Yx09lSA!255.entry">http://spaces.msn.com/members/oneirocriticism/Blog/cns!1peXNyyyEQFpEG_53Yx09lSA!255.entry</a><br />
+<a href="http://spaces.msn.com/members/oneirocriticism/Blog/cns!1peXNyyyEQFpEG_53Yx09lSA!263.entry">http://spaces.msn.com/members/oneirocriticism/Blog/cns!1peXNyyyEQFpEG_53Yx09lSA!263.entry</a></p>
+<p>見到這篇歌詞,<br />
+我才知道我前幾天聽到的那首歌是甚麼的一回事...<br />
+十分的富挑釁性...</p>
+<p>於是我重新填了詞...  </p>
+<p>(調：心跳回憶)<br />
+已經　無法擺脫的豬樣<br />
+仿佛豬叫的聲線<br />
+又卻喜愛小白臉  </p>
+<p>仲有　長相好似半肥瘦<br />
+直至知道佢地係塊豬扒即刻搵出口  </p>
+<p>從此　撕毀最後的一幅相<br />
+都因醜惡的樣相<br />
+沒有身材卻扮好掂  </p>
+<p>無論豬欄怎樣變<br />
+農夫都會　放低這養料　養大那無限豬隻<br />
+無論事隔多年　我也心跳<br />
+然後見你出入女厠灑尿<br />
+走進女廁的人比鬼屋更少<br />
+老鼠也不敢叫囂  </p>
+<p>讓我多謝我也心跳<br />
+可以進錯豬欄即刻閃!  </p>
+<p>彷佛我的心如不見了<br />
+然而懷念當日你我這段傻事<br />
+便與她算了</p>
+<p><a href="http://aero.bhscmc.edu.hk/~046b05/docs/01.mp3">http://aero.bhscmc.edu.hk/~046b05/docs/01.mp3</a><br />
+(Dull個人清唱)</p>
+<p>PS. 這首歌只為回應挑釁行為, 並無心挑釁女生, 引起不悅請見諒</p></div>
+
+
+        <script src="https://utteranc.es/client.js"
+        repo="abbychau/blog.abby.md"
+        issue-term="pathname"
+        label="blog comment"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async>
+        </script>
+
+        <div id="permalink" style='word-break: break-all;padding:2em 0 1em 0'>
+            <a href="https://blog.abby.md/posts/msn-space_2005_2005-05-29-挑釁的反應_index.htm">Permalink of this blog</a>
+            <a href="https://github.com/abbychau/blog.abby.md/blob/master/./original-data/msn-space/2005/2005-05-29-挑釁的反應/index.md">Source</a>
+        </div>
+        
+        <div id="homelink" style='word-break: break-all;padding:1em 0 2em 0;display: none;'>
+            <a href="/">Abby's Archive</a>
+        </div>  
+    </div>
+</body>
+
+</html>

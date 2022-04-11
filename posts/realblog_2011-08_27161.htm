@@ -1,0 +1,100 @@
+<html>
+
+<head>
+    <title>KIMONO♥PRINCESS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <link rel="stylesheet" href="https://blog.abby.md/style.css" />
+    <link rel="icon" type="image/png" href="https://blog.abby.md/favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+    
+    <script>
+        function inIframe() {
+            try {
+                return window.self !== window.top;
+            } catch (e) {
+                return true;
+            }
+        }
+
+        function myMarked(str) {
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            $('#content').html(myMarked($('#content').html()))
+            hljs.highlightAll();
+
+            if(!inIframe()){
+                $('#homelink').show()
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div id='article' style='padding:0 15px 10px 10px;font-size: large;font-family: serif;'>
+        <h1 id="subject">KIMONO♥PRINCESS</h1>
+        <div id="date" style='font-size: 9pt;'>2011-08-25</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags"><a href='/tags/日常生活.htm'>日常生活</a></div>
+        <div id="content" style='word-break: break-all;'><p><span class="Apple-style-span" style="color: rgb(77, 77, 77); font-family: verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif; font-size: 12px; ">I've been invited to a summer festival<br />
+Music surrounds me on this special night<br />
+I find myself getting lost in the moment<br />
+'Cause she's there dancing and you're in my sight  </p>
+<p>You're stepping along<br />
+Can't get my eyes off of you<br />
+Then I see you're looking back . at me<br />
+Could this be what I think it is?<br />
+Can feel my heart beat like a new butterfly  </p>
+<p>I know you've got to be the one<br />
+I could tell when our eyes met each other<br />
+I can't sit down my knees are feelin' weak<br />
+As I feel myself at last  </p>
+<p>You've got the cutest little smile<br />
+We can tell there's attraction going on now<br />
+Shows you're all that I need<br />
+One by one<br />
+For our love<br />
+You are my prince charming<br />
+And you make me feel like I am a KIMONO♥PRINCESS  </p>
+<p>I'm not dreaming<br />
+I know you've got to be the one<br />
+I could tell when our eyes met each other<br />
+I can't sit down my knees are feelin' weak<br />
+And I feel myself at last  </p>
+<p>You've got the cutest little smile<br />
+We can tell there's attraction going on now<br />
+Shows you're all that I need<br />
+One by one<br />
+For our love<br />
+You are my prince charming<br />
+And you make me feel like I am a KIMONO♥PRINCESS</span></p>
+<iframe allowfullscreen="" frameborder="0" height="345" src="http://www.youtube.com/embed/PMGfGxUE6Ks" width="420"></iframe></div>
+
+
+        <script src="https://utteranc.es/client.js"
+        repo="abbychau/blog.abby.md"
+        issue-term="pathname"
+        label="blog comment"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async>
+        </script>
+
+        <div id="permalink" style='word-break: break-all;padding:2em 0 1em 0'>
+            <a href="https://blog.abby.md/posts/realblog_2011-08_27161.htm">Permalink of this blog</a>
+            <a href="https://github.com/abbychau/blog.abby.md/blob/master/./original-data/realblog/2011-08/27161.md">Source</a>
+        </div>
+        
+        <div id="homelink" style='word-break: break-all;padding:1em 0 2em 0;display: none;'>
+            <a href="/">Abby's Archive</a>
+        </div>  
+    </div>
+</body>
+
+</html>

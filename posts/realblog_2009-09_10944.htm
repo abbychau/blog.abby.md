@@ -1,0 +1,107 @@
+<html>
+
+<head>
+    <title>檄！帝國華擊團</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <link rel="stylesheet" href="https://blog.abby.md/style.css" />
+    <link rel="icon" type="image/png" href="https://blog.abby.md/favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+    
+    <script>
+        function inIframe() {
+            try {
+                return window.self !== window.top;
+            } catch (e) {
+                return true;
+            }
+        }
+
+        function myMarked(str) {
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            $('#content').html(myMarked($('#content').html()))
+            hljs.highlightAll();
+
+            if(!inIframe()){
+                $('#homelink').show()
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div id='article' style='padding:0 15px 10px 10px;font-size: large;font-family: serif;'>
+        <h1 id="subject">檄！帝國華擊團</h1>
+        <div id="date" style='font-size: 9pt;'>2009-09-09</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags"><a href='/tags/歌曲.htm'>歌曲</a></div>
+        <div id="content" style='word-break: break-all;'><p><span style="font-size: 16px;">櫻花大戰...不馬虎的人設和劇情, 自然吸引到不少的fans</span>, <span style="font-size: 16px;">由於MyO2 的關係, 竟然聽起檄！帝國華擊團來...這樣精彩的歌, 那怕是第一次聽也會被深深吸引</span>  </p>
+<p><span style="font-size: 16px;">正派又熱血的歌詞, 寶塚的曲風, 精心的樂章編排, 給我竟是如國歌一般的震撼</span><span style="font-size: 16px;"><br />
+</span>  </p>
+<p><span style="font-size: 16px;">在這個時候, 大家都老了, 大家都變了, 到這個時候眾人走在一起, 在fans 一起<br />
+再次唱出檄！帝國華擊團<br />
+一樣的歌, 一樣的舞</span>  </p>
+<p><span style="font-size: 16px;">大家都是老朋友</span>  </p>
+<p><span style="font-size: 16px;">在最後, 我感到每到每個人員的笑臉上都留著不捨的眼淚,<br />
+這份感動, 大家都明白的感動</span>  </p>
+<p><span style="font-size: 16px;"><br />
+</span>  </p>
+<p><span style="font-size: 16px;">中文歌詞   </p>
+<p>檄!帝國華擊團   </p>
+<p>撕裂寂靜 黑暗咆哮 震動帝都朝野<br />
+齊聲高唱愛之歌 舞出鬥士的風采<br />
+心如鋼鐵般堅強 少女快武裝起來<br />
+驅散邪惡勢力 誓要弘揚正義   </p>
+<p>快步沖 如光似電 帝國華擊團<br />
+高聲唱 誰人可擋 帝國華擊團   </p>
+<p>五色街燈 悄然而熄 難掩帝都恐慌<br />
+身披七彩霓虹 舞出鬥士的風采<br />
+曙光映照出少女 激情洋溢的面影<br />
+消滅邪惡勢力 誓要弘揚正義   </p>
+<p>向前衝 如光似電 帝國華擊團<br />
+高聲唱 誰人可擋 帝國華擊團   </p>
+<p>我們 為了正義而戰<br />
+哪怕必須為之獻出寶貴青春生命<br />
+我等也決不哪怕後退一步<br />
+只要在這帝都中<br />
+邪惡一天不除盡<br />
+我們仍將戰鬥不息<br />
+這只因為 我們是帝國華擊團   </p>
+<p>美好晚夢 四散而去 帝都幾成凍土<br />
+沐浴愛的燈火 舞出鬥士的風采<br />
+鋼鐵般的誓言 少女用生命承諾<br />
+斬除邪惡勢力 誓要弘揚正義   </p>
+<p>向前衝 如光似電 帝國華擊團<br />
+高聲唱 誰人可擋 帝國華擊團   </p>
+<p>向前衝 如光似電 帝國華擊團<br />
+高聲唱 誰人可擋 帝國華擊團 </span>  </p></div>
+
+
+        <script src="https://utteranc.es/client.js"
+        repo="abbychau/blog.abby.md"
+        issue-term="pathname"
+        label="blog comment"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async>
+        </script>
+
+        <div id="permalink" style='word-break: break-all;padding:2em 0 1em 0'>
+            <a href="https://blog.abby.md/posts/realblog_2009-09_10944.htm">Permalink of this blog</a>
+            <a href="https://github.com/abbychau/blog.abby.md/blob/master/./original-data/realblog/2009-09/10944.md">Source</a>
+        </div>
+        
+        <div id="homelink" style='word-break: break-all;padding:1em 0 2em 0;display: none;'>
+            <a href="/">Abby's Archive</a>
+        </div>  
+    </div>
+</body>
+
+</html>

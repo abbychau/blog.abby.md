@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <title>商界</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <BASE target="main_frame">
+
+    <link rel="stylesheet" href="https://blog.abby.md/style.css" />
+    <link rel="icon" type="image/png" href="https://blog.abby.md/favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+
+    <script>
+        $(document).ready(function(){ 
+            $('a').on('click', function(e){
+                window.parent.history.pushState({}, $(this).text(), "#"+$(this).attr('href'));
+            })
+        });
+    </script>
+</head>
+
+<body>
+<h1>商界</h1>
+<ul><li><a href="/list.htm">..</a></li></ul>
+
+<ul><li><a target='_self' href='/posts/realblog_2009-04_7546.htm'>Creative Accounting 的最大啟示</a></li>
+<li><a target='_self' href='/posts/realblog_2009-04_7578.htm'>無理的收費</a></li>
+<li><a target='_self' href='/posts/realblog_2009-09_10734.htm'>恒 生 指 數 ETF  vs 盈富基金</a></li>
+<li><a target='_self' href='/posts/realblog_2011-02_22744.htm'>我看groupon</a></li>
+</ul>
+</body>
+
+</html>

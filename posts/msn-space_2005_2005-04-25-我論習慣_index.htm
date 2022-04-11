@@ -1,0 +1,96 @@
+<html>
+
+<head>
+    <title>我論習慣</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <link rel="stylesheet" href="https://blog.abby.md/style.css" />
+    <link rel="icon" type="image/png" href="https://blog.abby.md/favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+    
+    <script>
+        function inIframe() {
+            try {
+                return window.self !== window.top;
+            } catch (e) {
+                return true;
+            }
+        }
+
+        function myMarked(str) {
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            $('#content').html(myMarked($('#content').html()))
+            hljs.highlightAll();
+
+            if(!inIframe()){
+                $('#homelink').show()
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div id='article' style='padding:0 15px 10px 10px;font-size: large;font-family: serif;'>
+        <h1 id="subject">我論習慣</h1>
+        <div id="date" style='font-size: 9pt;'>2005-04-25</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags"><a href='/tags/個人.htm'>個人</a></div>
+        <div id="content" style='word-break: break-all;'><p>習慣這個題目,<br />
+不少有名之士都有發揮過...<br />
+但都離不開一個要點: 好習慣的養成很重要!!<br />
+他們舉了很多的例子來說明,<br />
+設例, 史例, 事例等等.</p>
+<p>但, 我對於他們的觀點不可說有保留...<br />
+而是, 完全反對!</p>
+<p>讓我來個先破後立...<br />
+他們多說不養成好習慣而養成了壞習慣的壞處,<br />
+而少說養成好習慣的好處,<br />
+這並不能說服我去養成好習慣的...</p>
+<p>我的觀點是:<br />
+習慣, 是一種取決於前方時間的個人反應而作出的不自主行為,<br />
+世上習慣並無好習慣可言...只有壞習慣...</p>
+<p>例如: 回到家脫鞋, 洗澡後穿衣服, 吃飯前洗手......<br />
+這些可能在一般人眼中是好習慣,<br />
+只其實如果被人掌握了你的生活節奏,<br />
+加害你時便十分容易(比如: 在你慣常穿的鞋裡放釘子)<br />
+我這樣說好像太陰謀論,<br />
+但習慣對於人的確百害而無一利.<br />
+比如隨著時間的過去,<br />
+舊有的習慣便不合用,<br />
+繼續舊習慣的話就只會不斷的犯錯...</p>
+<p>我唯一支持最好的是&quot;避免養成任何習慣&quot;,<br />
+做每項選擇前都要想好...<br />
+習慣一多, 決定事情便容易出錯了<br />
+(究竟是誰人說出&quot;做事認真不馬虎&quot;這個習慣的!!<br />
+ 這個跟本是否決習慣存在性的句子,<br />
+ 自相矛盾...)</p></div>
+
+
+        <script src="https://utteranc.es/client.js"
+        repo="abbychau/blog.abby.md"
+        issue-term="pathname"
+        label="blog comment"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async>
+        </script>
+
+        <div id="permalink" style='word-break: break-all;padding:2em 0 1em 0'>
+            <a href="https://blog.abby.md/posts/msn-space_2005_2005-04-25-我論習慣_index.htm">Permalink of this blog</a>
+            <a href="https://github.com/abbychau/blog.abby.md/blob/master/./original-data/msn-space/2005/2005-04-25-我論習慣/index.md">Source</a>
+        </div>
+        
+        <div id="homelink" style='word-break: break-all;padding:1em 0 2em 0;display: none;'>
+            <a href="/">Abby's Archive</a>
+        </div>  
+    </div>
+</body>
+
+</html>

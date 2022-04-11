@@ -1,0 +1,97 @@
+<html>
+
+<head>
+    <title>Space 的前瞻性</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <link rel="stylesheet" href="https://blog.abby.md/style.css" />
+    <link rel="icon" type="image/png" href="https://blog.abby.md/favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+    
+    <script>
+        function inIframe() {
+            try {
+                return window.self !== window.top;
+            } catch (e) {
+                return true;
+            }
+        }
+
+        function myMarked(str) {
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            $('#content').html(myMarked($('#content').html()))
+            hljs.highlightAll();
+
+            if(!inIframe()){
+                $('#homelink').show()
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div id='article' style='padding:0 15px 10px 10px;font-size: large;font-family: serif;'>
+        <h1 id="subject">Space 的前瞻性</h1>
+        <div id="date" style='font-size: 9pt;'>2005-03-06</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags"><a href='/tags/局勢.htm'>局勢</a></div>
+        <div id="content" style='word-break: break-all;'><p>這回兒有不少人在msn space 申請了blog,<br />
+我想除了msn 的整合策略外,<br />
+它還有其他條件成功的!</p>
+<p>1. 可用的sql server:</p>
+<blockquote>
+<p>對ms 來說msn space 的主要負擔在於sql server,<br />
+長遠來說, space 的 sql  server 對比microsoft 的msdn 可能會是二比一的負擔, 但msn 有處理&quot;msn groups&quot; 的經驗,<br />
+到現在管理blog hosts 應該問題不大,<img src="images/smile_regular.gif" alt="" /><br />
+但前題是ms 要給msn 比msdn 更力度的支持.</p>
+</blockquote>
+<p>2. aspx</p>
+<blockquote>
+<p>aspx compiler 的負擔相對於microsoft 的業務可說微乎其微.<br />
+在msn groups 中可看到: aspx 有能力執行多進程,<br />
+結束進程速度和普遍用戶的頻道反應對於瀏覽進程的寬度相約,可見microsoft 工程人員能力之高.<img src="images/star.gif" alt="" /></p>
+</blockquote>
+<p>3. passport</p>
+<blockquote>
+<p>這是msn 的最大心願,<br />
+現在已經實現了!<img src="images/lightbulb.gif" alt="" /><br />
+這對用家來說是<strong>方便</strong>,<br />
+對程式來說是<strong>統一模組</strong>,<br />
+對伺服器來說是<strong>減低負荷</strong>,<br />
+對msn 來說是<strong>壯大聲勢</strong>...</p>
+</blockquote>
+<p>總結是:<br />
+msn 是ms 重點發展的業務之一,<br />
+space 會有好的發展!<br />
+但msn space 不是ms 的核心業務,<br />
+ms 低潮的時候, 首當其衝被放棄的也許就是msn!</p></div>
+
+
+        <script src="https://utteranc.es/client.js"
+        repo="abbychau/blog.abby.md"
+        issue-term="pathname"
+        label="blog comment"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async>
+        </script>
+
+        <div id="permalink" style='word-break: break-all;padding:2em 0 1em 0'>
+            <a href="https://blog.abby.md/posts/msn-space_2005_2005-03-06-space-的前瞻性_index.htm">Permalink of this blog</a>
+            <a href="https://github.com/abbychau/blog.abby.md/blob/master/./original-data/msn-space/2005/2005-03-06-space-的前瞻性/index.md">Source</a>
+        </div>
+        
+        <div id="homelink" style='word-break: break-all;padding:1em 0 2em 0;display: none;'>
+            <a href="/">Abby's Archive</a>
+        </div>  
+    </div>
+</body>
+
+</html>

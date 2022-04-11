@@ -1,0 +1,74 @@
+<html>
+
+<head>
+    <title>Pentile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <link rel="stylesheet" href="https://blog.abby.md/style.css" />
+    <link rel="icon" type="image/png" href="https://blog.abby.md/favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+    
+    <script>
+        function inIframe() {
+            try {
+                return window.self !== window.top;
+            } catch (e) {
+                return true;
+            }
+        }
+
+        function myMarked(str) {
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            $('#content').html(myMarked($('#content').html()))
+            hljs.highlightAll();
+
+            if(!inIframe()){
+                $('#homelink').show()
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div id='article' style='padding:0 15px 10px 10px;font-size: large;font-family: serif;'>
+        <h1 id="subject">Pentile</h1>
+        <div id="date" style='font-size: 9pt;'>2012-08-20</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags"><a href='/tags/日常生活.htm'>日常生活</a></div>
+        <div id="content" style='word-break: break-all;'><p>有感身邊的人對常識以外的認識太有限, 我決定每日都教一個我認為應該要知道的知識。這種介乎於常識和冷知識中間的我叫知暖知識吧。</p>
+<div>  
+</div><div>Pentile</div><div>在說Pentile 之前要知道RGB, 一個像素用RGB三種光源組成的就是RGB 排列而Pentile 則是省略G和B的其中一個, 然後交替排列。</div><div>  
+</div> Pentile排列主要是通過相鄰像素公用子像素的方法來減少子像素的個數，從而達到低分辨率模擬高分辨率的效果。Pentile排列最大的好處就是增加通透性，同樣的亮度只需要更小的功耗，提升續航能力，可以顯著的降低成本。缺點同樣明顯，低分辨率下顏色不純正。<div>  
+</div><div>![](http://i.imgur.com/2o6Qc.jpg)</div><div>  
+</div> Pentile排列確實可以達到高顯示效果(公用子像素)，不過遺憾的是在我們日常使用的時候顯示情況非常的複雜，圓形、弧形、梯形等不規則的圖形都會造成子像素無法公用，這個時候Pentile進行了修復，讓本該滅掉的子像素重新亮點來達到顏色的平衡。不過這樣就造成了顯示毛邊粗糙等顯現，這就是我們之前感覺到屏幕邊緣不平滑的原因。 由於目前的手機尺寸比較的大，而手機的分辨率一定的情況下造成Pentile排列的子像素過於突出，從而造成屏幕的「顆粒感」嚴重，實際上這些都是PPI(像素密度)惹的禍,說的再白一點，就是屏幕的顯示效果看起來比標稱值要低，屏幕看起來有顆粒感。<div> pentile並不是一無是處,如果採用同樣大小的RGB條作為亞像素點的佈局方式，就會受到信號尋址機制的很多限制，這樣即便是硬件速度提升但是液晶面板的尋址能力最大也只能提高兩倍;但是如果採用這種PenTile陣列的排列格式(上圖右側)，這樣信號不管是在橫向還是縱向都可以提高尋址能力，那麼就是2倍的平方為4倍。而且PenTile陣列的排列格式還有另外一個優點，因為像素的排列是對稱形式的，所以顯示屏顯示的圖形是接近於旋轉對稱;這樣的特性對於便攜裝置：筆記或者手機來說很實用，這樣用戶可以方便的旋轉顯示屏。</div><div>  
+</div><div>註意TAG 始終是日常生活。</div></div>
+
+
+        <script src="https://utteranc.es/client.js"
+        repo="abbychau/blog.abby.md"
+        issue-term="pathname"
+        label="blog comment"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async>
+        </script>
+
+        <div id="permalink" style='word-break: break-all;padding:2em 0 1em 0'>
+            <a href="https://blog.abby.md/posts/realblog_2012-08_36359.htm">Permalink of this blog</a>
+            <a href="https://github.com/abbychau/blog.abby.md/blob/master/./original-data/realblog/2012-08/36359.md">Source</a>
+        </div>
+        
+        <div id="homelink" style='word-break: break-all;padding:1em 0 2em 0;display: none;'>
+            <a href="/">Abby's Archive</a>
+        </div>  
+    </div>
+</body>
+
+</html>

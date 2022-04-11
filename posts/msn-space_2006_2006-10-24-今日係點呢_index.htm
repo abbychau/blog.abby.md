@@ -1,0 +1,81 @@
+<html>
+
+<head>
+    <title>今日係點呢?</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <link rel="stylesheet" href="https://blog.abby.md/style.css" />
+    <link rel="icon" type="image/png" href="https://blog.abby.md/favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+    
+    <script>
+        function inIframe() {
+            try {
+                return window.self !== window.top;
+            } catch (e) {
+                return true;
+            }
+        }
+
+        function myMarked(str) {
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            $('#content').html(myMarked($('#content').html()))
+            hljs.highlightAll();
+
+            if(!inIframe()){
+                $('#homelink').show()
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div id='article' style='padding:0 15px 10px 10px;font-size: large;font-family: serif;'>
+        <h1 id="subject">今日係點呢?</h1>
+        <div id="date" style='font-size: 9pt;'>2006-10-24</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags"><a href='/tags/日常生活.htm'>日常生活</a></div>
+        <div id="content" style='word-break: break-all;'><p>今日呢...晨咁早就起左身, 明明唔夠訓, 又驚乞睇訓....</p>
+<p>卒之背水一戰...八點幾開左部notebook 玩baf...想玩ge 去baf.9you.com 睇下la...</p>
+<p>狂掃30lv 至50lv ge 歌....發覺成績一般...但成個人集哂...</p>
+<p>咁食左d 野就番去poly, 5C 途中玩新到手的gundam battle royale....</p>
+<p>都幾好玩...唔知佢係我手上過到幾耐...</p>
+<p>因為今日D 堂早出晚收, 又要做起份memo...所以...d freetime 都係做佢...</p>
+<p>做做下睇下中邦個一份...發覺自己漏左D point...估唔到英文都搞到咁</p>
+<p>好彩睇下補番...</p>
+<p>Marketing 個堂Kristy Fing 左部nokia 8280 連叉機過黎...個陣真係有dddddd感動tim...</p>
+<p>之後發覺原來T100 係好靚仔ge...</p>
+<p>最後個堂係商業英文...今堂講打電話...打電話都要講?</p>
+<p>無錯! 卒之個Lecturer 講到勁爆笑...</p>
+<p>eng 上到勁夜...5C 途中又訓著...又係奇蹟咁係落車的站彈起身...lol...</p>
+<p>orz...都係做埋econ 份story 先...&gt;&lt;</p></div>
+
+
+        <script src="https://utteranc.es/client.js"
+        repo="abbychau/blog.abby.md"
+        issue-term="pathname"
+        label="blog comment"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async>
+        </script>
+
+        <div id="permalink" style='word-break: break-all;padding:2em 0 1em 0'>
+            <a href="https://blog.abby.md/posts/msn-space_2006_2006-10-24-今日係點呢_index.htm">Permalink of this blog</a>
+            <a href="https://github.com/abbychau/blog.abby.md/blob/master/./original-data/msn-space/2006/2006-10-24-今日係點呢/index.md">Source</a>
+        </div>
+        
+        <div id="homelink" style='word-break: break-all;padding:1em 0 2em 0;display: none;'>
+            <a href="/">Abby's Archive</a>
+        </div>  
+    </div>
+</body>
+
+</html>

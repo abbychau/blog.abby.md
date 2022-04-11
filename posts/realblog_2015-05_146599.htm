@@ -1,0 +1,88 @@
+<html>
+
+<head>
+    <title>介紹</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <link rel="stylesheet" href="https://blog.abby.md/style.css" />
+    <link rel="icon" type="image/png" href="https://blog.abby.md/favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+    
+    <script>
+        function inIframe() {
+            try {
+                return window.self !== window.top;
+            } catch (e) {
+                return true;
+            }
+        }
+
+        function myMarked(str) {
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            $('#content').html(myMarked($('#content').html()))
+            hljs.highlightAll();
+
+            if(!inIframe()){
+                $('#homelink').show()
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div id='article' style='padding:0 15px 10px 10px;font-size: large;font-family: serif;'>
+        <h1 id="subject">介紹</h1>
+        <div id="date" style='font-size: 9pt;'>2015-05-24</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags"><a href='/tags/日常生活.htm'>日常生活</a></div>
+        <div id="content" style='word-break: break-all;'><p>名: 亞貝 or abbychau<br />
+愛好的遊戲: o2jam<br />
+希望討論的事物: PHP, 圍棋</p>
+<h3>網站</h3>
+<p><a href="http://realblog.zkiz.com">RealBlog</a><br />
+<a href="http://bbs.zkiz.com">X-Kizz</a><br />
+<a href="http://ec.zkiz.com">Endless Choice</a><br />
+<a href="http://realforum.zkiz.com/userinfo.php?zid=1">我在Real Forum 的主題</a>  </p>
+<h3>長久未變的選擇</h3>
+<p>最佳電腦遊戲: o2jam<br />
+最佳歌曲: Eyes on Me<br />
+最佳被改編曲: 貝多芬悲愴第三樂章  </p>
+<h3>喜歡的歌</h3>
+<iframe allowfullscreen="" frameborder="0" height="200" src="http://www.youtube.com/embed/VrO9EWbt9mc" width="200"></iframe><iframe allowfullscreen="" frameborder="0" height="200" src="http://www.youtube.com/embed/IzYdhhfdz14" width="200"></iframe><iframe allowfullscreen="" frameborder="0" height="200" src="http://www.youtube.com/embed/r5zI3m-xmIk" width="200"></iframe>  
+<h3>RealBlogRing</h3>
+<p><a href="/oneirocriticism">冰漓</a><br />
+<a href="/greatsoup">Greatsoup</a><br />
+<a href="/residueon">Residue</a><br />
+<a href="/byuwraindmaizwei"><img src="http://farm6.static.flickr.com/5131/5409882491_014e043172_t.jpg" alt="" /></a>  </p>
+<h3>本Blog QR</h3>
+<p><img src="http://chart.apis.google.com/chart?chs=100x100&amp;cht=qr&amp;chld=|1&amp;chl=http%3A%2F%2Fgoo.gl%2FzQQIee" alt="QR Code" /></p></div>
+
+
+        <script src="https://utteranc.es/client.js"
+        repo="abbychau/blog.abby.md"
+        issue-term="pathname"
+        label="blog comment"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async>
+        </script>
+
+        <div id="permalink" style='word-break: break-all;padding:2em 0 1em 0'>
+            <a href="https://blog.abby.md/posts/realblog_2015-05_146599.htm">Permalink of this blog</a>
+            <a href="https://github.com/abbychau/blog.abby.md/blob/master/./original-data/realblog/2015-05/146599.md">Source</a>
+        </div>
+        
+        <div id="homelink" style='word-break: break-all;padding:1em 0 2em 0;display: none;'>
+            <a href="/">Abby's Archive</a>
+        </div>  
+    </div>
+</body>
+
+</html>

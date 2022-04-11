@@ -1,0 +1,70 @@
+<html>
+
+<head>
+    <title>handicap me</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <link rel="stylesheet" href="https://blog.abby.md/style.css" />
+    <link rel="icon" type="image/png" href="https://blog.abby.md/favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+    
+    <script>
+        function inIframe() {
+            try {
+                return window.self !== window.top;
+            } catch (e) {
+                return true;
+            }
+        }
+
+        function myMarked(str) {
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            $('#content').html(myMarked($('#content').html()))
+            hljs.highlightAll();
+
+            if(!inIframe()){
+                $('#homelink').show()
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div id='article' style='padding:0 15px 10px 10px;font-size: large;font-family: serif;'>
+        <h1 id="subject">handicap me</h1>
+        <div id="date" style='font-size: 9pt;'>2007-02-04</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags"><a href='/tags/handicap-me.htm'>handicap-me</a>, <a href='/tags/未分類.htm'>未分類</a></div>
+        <div id="content" style='word-break: break-all;'><p>今日試左跛手ge 感覺....成隻前臂無左咁...個種感覺係上臂釣住一舊野咁...d 神經pulse會傳唔到去前面...好難講明白, 但都係奉勸想試ge 唔好試...</p>
+<p>因為完全唔知發生咩事ge 關係, 初時真係驚...但過左唔夠4秒, 我ge 心態已經轉變為要接受現實, 既然已經跛左, 都要繼續生活, 又或者醫生會救得番, 要出街睇醫生之類ge 想法...(好快正常番)情緒出已經好多年無出現過大波動...但估唔到發生咁ge 事都移動唔到, 個人咁冷靜, 其實個心理生活係唔係好悶ge 呢...我都唔知lo...</p>
+<p>如果要評價跛手的經驗...雖然係新, 但絕對係不令人感到甚麼正面情緒, 感覺係很大的缺失...</p></div>
+
+
+        <script src="https://utteranc.es/client.js"
+        repo="abbychau/blog.abby.md"
+        issue-term="pathname"
+        label="blog comment"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async>
+        </script>
+
+        <div id="permalink" style='word-break: break-all;padding:2em 0 1em 0'>
+            <a href="https://blog.abby.md/posts/msn-space_2007_2007-02-04-handicap-me_index.htm">Permalink of this blog</a>
+            <a href="https://github.com/abbychau/blog.abby.md/blob/master/./original-data/msn-space/2007/2007-02-04-handicap-me/index.md">Source</a>
+        </div>
+        
+        <div id="homelink" style='word-break: break-all;padding:1em 0 2em 0;display: none;'>
+            <a href="/">Abby's Archive</a>
+        </div>  
+    </div>
+</body>
+
+</html>

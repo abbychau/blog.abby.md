@@ -1,0 +1,108 @@
+<html>
+
+<head>
+    <title>Development Story on a Standalone Eventually Consistent KV-Store</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <link rel="stylesheet" href="https://blog.abby.md/style.css" />
+    <link rel="icon" type="image/png" href="https://blog.abby.md/favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+    
+    <script>
+        function inIframe() {
+            try {
+                return window.self !== window.top;
+            } catch (e) {
+                return true;
+            }
+        }
+
+        function myMarked(str) {
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            $('#content').html(myMarked($('#content').html()))
+            hljs.highlightAll();
+
+            if(!inIframe()){
+                $('#homelink').show()
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div id='article' style='padding:0 15px 10px 10px;font-size: large;font-family: serif;'>
+        <h1 id="subject">Development Story on a Standalone Eventually Consistent KV-Store</h1>
+        <div id="date" style='font-size: 9pt;'>2019-10-16</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags"><a href='/tags/key-value.htm'>key-value</a>, <a href='/tags/database.htm'>Database</a>, <a href='/tags/concurrent.htm'>Concurrent</a>, <a href='/tags/rust.htm'>Rust</a>, <a href='/tags/development.htm'>Development</a>, <a href='/tags/key-value store.htm'>Key-Value Store</a></div>
+        <div id="content" style='word-break: break-all;'><p><strong>Hint: If you are looking for Key-value store for your arbitrary values. This won't suit your case.</strong></p>
+<h1>Story</h1>
+<p>I am in development of my own social networking site. After some careful consideration, I decided to use MySQL, but in a NoSQL way, like MongoDB.</p>
+<p>The reason is straight-forward as I want scalibility. </p>
+<p>Of course mysql can do very good scale by setting up MGM, SQL nodes, and data nodes. However, there are some problems:</p>
+<ol>
+<li>
+<p>The overhead of cluster is very high when the scale is small that we need 5 servers to serve the capacity of the data volume less than 2 servers.</p>
+</li>
+<li>
+<p>Network is busy for synchronizing and query. And the speed is limited by the synchronizing speed.</p>
+</li>
+<li>
+<p>MySQL cluster is based on memory which with is with Maximum capacity. </p>
+</li>
+</ol>
+<p>There are many more points for MySQL cluster is not suitable for most of the business cases, so please search around if you are interested. This is not the core of this article.</p>
+<p>Then, <strong>why not MongoDB?</strong>, because making structure can make better use of disk space and this ease the backend development too. I don't think that NoSQL is only for unstructured data. Besides, MySQL provides JSON type as well.</p>
+<h1>So we have a relation problem</h1>
+<p>In SaaS (or whatever aaS you named) like AWS DynamoDB. AWS charges you 100bytes per item of storage to account for indexes, which is very inefficient, and thus expensive (even though it is linear). Not mentioning you need usually two or more for each function.</p>
+<p>The functionality for MongoDB is limited as well. (<a href="https://www.tutorialspoint.com/mongodb/mongodb_indexing_limitations.htm">link</a>)</p>
+<p>And, MySQL will force you to do partitioning in order to continue scaling, which is not easy for business logics.</p>
+<h1>Core of the problem</h1>
+<p>The core of the problem is indexing.<br />
+Or in another word, index is prohibiting the growth of a single server because the memory of a single server is limited.</p>
+<h1>Let's try to make index efficient</h1>
+<p>For all of the business logic in the real world, the number is not exceeding unsigned 32bit. And even for some extreme case like &quot;View count of Gangnam Style&quot;, the count can be handled by 64bit.</p>
+<p>unsigned 64 bit integer is even large enough for relationship counts.</p>
+<p>If we assign 32GB of ram of the computer. 32GB/64bit= <code>INT_MAX of 32bit integer</code>. I would think that this is enough for storing relations for most global scale applications.</p>
+<p>So in my mind, the architecture of database is just as simple as &quot;NoSQL Store&quot; + &quot;Index Store&quot;. We seperate the main problem, indexing, to another server and make the store efficient.</p>
+<h1>Nature of Index</h1>
+<p>The structure of index is very simple and fixed; which is <code>u64 -&gt; [u64;n]</code>.<br />
+So we usually invest too much overhead to handle arbitrary datatypes, serializations, data formating, byte-network-transport interfacings, etc.</p>
+<p>My idea is to make a server taking in an integer and return a list of integer immediately.</p>
+<h1>Journey of constructing a data-structure</h1>
+<p>Data structure is the bread and butter of a store. </p>
+<p>Let's start with Hashmap, which is a very simple in-memory internal store. </p>
+<p>Take <code>Hashmap&lt;u64, Vec&lt;u64&gt;&gt;</code> as an example.</p>
+<p>...to be continued...</p>
+<h1>Hash Functions</h1>
+<p><a href="https://github.com/JesperAxelsson/rust-intmap">https://github.com/JesperAxelsson/rust-intmap</a></p></div>
+
+
+        <script src="https://utteranc.es/client.js"
+        repo="abbychau/blog.abby.md"
+        issue-term="pathname"
+        label="blog comment"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async>
+        </script>
+
+        <div id="permalink" style='word-break: break-all;padding:2em 0 1em 0'>
+            <a href="https://blog.abby.md/posts/hexo_standalone-eventually-consistent-kv-store.htm">Permalink of this blog</a>
+            <a href="https://github.com/abbychau/blog.abby.md/blob/master/./original-data/hexo/standalone-eventually-consistent-kv-store.md">Source</a>
+        </div>
+        
+        <div id="homelink" style='word-break: break-all;padding:1em 0 2em 0;display: none;'>
+            <a href="/">Abby's Archive</a>
+        </div>  
+    </div>
+</body>
+
+</html>

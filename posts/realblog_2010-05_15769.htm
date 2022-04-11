@@ -1,0 +1,73 @@
+<html>
+
+<head>
+    <title>[遊戲王]壓縮卡組的價值</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <link rel="stylesheet" href="https://blog.abby.md/style.css" />
+    <link rel="icon" type="image/png" href="https://blog.abby.md/favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+    
+    <script>
+        function inIframe() {
+            try {
+                return window.self !== window.top;
+            } catch (e) {
+                return true;
+            }
+        }
+
+        function myMarked(str) {
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            $('#content').html(myMarked($('#content').html()))
+            hljs.highlightAll();
+
+            if(!inIframe()){
+                $('#homelink').show()
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div id='article' style='padding:0 15px 10px 10px;font-size: large;font-family: serif;'>
+        <h1 id="subject">[遊戲王]壓縮卡組的價值</h1>
+        <div id="date" style='font-size: 9pt;'>2010-05-29</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags"><a href='/tags/遊藝.htm'>遊藝</a></div>
+        <div id="content" style='word-break: break-all;'><p>在遊戲王中, 因為要穩定的組成combo, 不少人會考慮把卡組壓縮, 就是在放40枚下限後, 加入有抽卡效果的卡片。</p>
+<p>牌組有40枚, 究竟壓縮一枚的價值有多少呢?</p>
+<p>成金(暴富的)哥布林可以說是一個典型, 價值就是對方回復1000lp, 回復1000換算傷害大約就是自己傷害666,(800/1200 = 0.66), 1換1的情況下要給予666lp, 那麼可以見到天使之施的威力有多大</p>
+<p>說起天使的施捨, 不得不提起強欲之壺; 強欲之壺被禁的原因當然可以量化地計出它的價值有2000以上, 但更重要的是它將規則偷偷的改變了... 如果一個卡組有一張強欲之壺不是意味著卡片下限下降三枚嗎? 那直接修改為37好了, 怎麼要用這卡片。</p>
+<p>壓縮卡組是為了combo 可以即時發動, 所以有兩張卡犠牲了即時性來達成無副效果的壓縮, 它們是八汰鳥之骸和強慾之瓶。</p>
+<p>從這個地方可以看出, 犠牲了即時性的陷阱卡往往會比魔法卡強上不少。</p></div>
+
+
+        <script src="https://utteranc.es/client.js"
+        repo="abbychau/blog.abby.md"
+        issue-term="pathname"
+        label="blog comment"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async>
+        </script>
+
+        <div id="permalink" style='word-break: break-all;padding:2em 0 1em 0'>
+            <a href="https://blog.abby.md/posts/realblog_2010-05_15769.htm">Permalink of this blog</a>
+            <a href="https://github.com/abbychau/blog.abby.md/blob/master/./original-data/realblog/2010-05/15769.md">Source</a>
+        </div>
+        
+        <div id="homelink" style='word-break: break-all;padding:1em 0 2em 0;display: none;'>
+            <a href="/">Abby's Archive</a>
+        </div>  
+    </div>
+</body>
+
+</html>

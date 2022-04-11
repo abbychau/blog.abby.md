@@ -1,0 +1,80 @@
+<html>
+
+<head>
+    <title>簽名會</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <link rel="stylesheet" href="https://blog.abby.md/style.css" />
+    <link rel="icon" type="image/png" href="https://blog.abby.md/favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+    
+    <script>
+        function inIframe() {
+            try {
+                return window.self !== window.top;
+            } catch (e) {
+                return true;
+            }
+        }
+
+        function myMarked(str) {
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            $('#content').html(myMarked($('#content').html()))
+            hljs.highlightAll();
+
+            if(!inIframe()){
+                $('#homelink').show()
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div id='article' style='padding:0 15px 10px 10px;font-size: large;font-family: serif;'>
+        <h1 id="subject">簽名會</h1>
+        <div id="date" style='font-size: 9pt;'>2014-07-06</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags"><a href='/tags/日常生活.htm'>日常生活</a></div>
+        <div id="content" style='word-break: break-all;'><p>【明報專訊】第21屆書展 下月舉行，去年「口靚模」空群而出引起爭議，主辦活動的貿易發展局今年封殺口靚模簽名會，以「不接納內容意識不良，或以品味低俗方式宣傳」為由，經新成立的顧問團商議後，拒絕包括周秀娜在內的多項宣傳活動，連形象較清純的「新邦民女」Anjaylia亦未能倖免。周秀娜批評顧問團連書也沒看過便封殺她，是「低能及無聊」，文化評論人梁文道亦認為貿發局做法不智。  </p>
+<p>貿發局組顧問團審議申請  </p>
+<p>書展今屆共收到約130多宗簽名活動申請。貿發局傳媒及公關部發言人張志輝表示，「香港書展文化活動顧問團」大半年前已成立，成員來自文化、出版、教育和傳媒界共13人，昨經過早上開會後，決定拒絕不超過10宗簽名會申請。張志輝拒絕透露顧問團成員名單、審批過程與細節。被問到何謂「內容意識不良」及「品味低俗」，他沒有直接回答，只說﹕「坊間報章寫那些寫真主角是什麼『神』、什麼『迫爆』，是不是品味低俗，大家心知肚明。」  </p>
+<p>未下定義 指「心知肚明」  </p>
+<p>他指出，昨日已開始通知相關寫真集的出版社，著他們在6月30日前更改宣傳活動模式，否則會禁止宣傳及要求出版商改售其他書籍。問及這會否影響言論自由，張志輝否認此說法﹕「書展容許出售第一類書籍，新方式是為保書展健康形象，簽名活動應老少咸宜。」  </p>
+<p>形象清純「邦民女」未倖免  </p>
+<p>周秀娜的經理人Roy表示，原本計劃為新寫真集《Les Vacances d' Amour》推出簽名會回饋粉絲，昨得悉活動申請遭拒後感愕然，批評主辦單位未看過寫真集的內容便以「內容意識不良，或以品味低俗」下封殺令，做法「做作又虛偽」。  </p>
+<p>他說，會透過紅出版發行5本模特兒寫真集，計劃安排10多名寫真集主角舉辦簽名會，結果全部活動申請遭拒絕，當中包括形象較清純健康的Anjaylia（陳嘉寶）。  </p>
+<p>周秀娜昨晚受訪時說，書展單位是次決定，如同數年前大衛像被指不雅，鬧出笑話，她說﹕「這班顧問的評審標準是什麼？未看過就下定論，做法低能，好無聊。」  </p>
+<p>梁文道反對：變相標籤口靚模  </p>
+<p>去年擔任「香港書展大使」的梁文道表示，不知道貿發局成立「文化活動顧問團」，亦不清楚當中有成員名單。他認為貿發局這次做法變相標籤口靚模，審核標準亦不清晰，容易衍生不公問題，他說﹕「內容意識不良或品味低俗是怎樣界定？如果貿發局想定立書展健康形象，大可增加資源推廣新焦點，而不是拒絕某些刊物宣傳。」  </p>
+<hr />
+<p>「心知肚明」...就呢四個字我覺得佢無心打好呢份工  </p></div>
+
+
+        <script src="https://utteranc.es/client.js"
+        repo="abbychau/blog.abby.md"
+        issue-term="pathname"
+        label="blog comment"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async>
+        </script>
+
+        <div id="permalink" style='word-break: break-all;padding:2em 0 1em 0'>
+            <a href="https://blog.abby.md/posts/realblog_2014-07_16207.htm">Permalink of this blog</a>
+            <a href="https://github.com/abbychau/blog.abby.md/blob/master/./original-data/realblog/2014-07/16207.md">Source</a>
+        </div>
+        
+        <div id="homelink" style='word-break: break-all;padding:1em 0 2em 0;display: none;'>
+            <a href="/">Abby's Archive</a>
+        </div>  
+    </div>
+</body>
+
+</html>

@@ -35,7 +35,7 @@ function process($file){
     }
     $content=implode("\n",$ytxt);
     $markdownContent = $Parsedown->text($content);
-    $cleanPath = "_generated/".trim(str_replace(['original-data','/','.md'],['','_','.htm'],$data['path']),"._");
+    $cleanPath = "posts/".trim(str_replace(['original-data','/','.md'],['','_','.htm'],$data['path']),"._");
     $template = file_get_contents('templates/template_article.htm');
     if(isset($data['tags'])){
         if(!is_array($data['tags'])){
@@ -61,7 +61,7 @@ function process($file){
     foreach($tags as $tag){
         $tagToArticles[$tag][]=['title'=>$data['title'],'url'=>$cleanPath];
         $file = sanTag($tag);
-        $strTagLinks[] = "<a href='/_meta/{$file}.htm'>$tag</a>";
+        $strTagLinks[] = "<a href='/tags/{$file}.htm'>$tag</a>";
     }
     $template = str_replace(
         ["{{subject}}","{{date}}","{{tags}}","{{markdown}}","{{paramlink}}","{{source}}"],
@@ -123,13 +123,13 @@ $template = str_replace("{{list-pickup}}",$strPickup,$template);
 file_put_contents("list.htm",$template);
 
 echo "Generating Meta List...\n";
-$files = glob('./_meta/*'); // get all file names
+$files = glob('./tags/*'); // get all file names
 foreach($files as $file){ // iterate files
   if(is_file($file)) {
     unlink($file); // delete file
   }
 }
-$template = file_get_contents('templates/template_meta.htm');
+$template = file_get_contents('templates/template_tags.htm');
 function sanTag($tag){
     // Thanks @Łukasz Rysiak!
     $file = mb_ereg_replace("([^\w\s\d\-_~,;\[\]\(\).])", '', $tag);
@@ -151,14 +151,14 @@ foreach($tagToArticles as $tag=>$list){
 
     $file=sanTag($tag);
     $strSave = str_replace("{{list}}",$_str,$strSave);  
-    file_put_contents("_meta/{$file}.htm",$strSave);
+    file_put_contents("tags/{$file}.htm",$strSave);
     $len=sizeof($list);
-    $metaIndexStr.="<li><a target='main_frame' href='/_meta/{$file}.htm'>$tag</a>($len)</li>";
+    $metaIndexStr.="<li><a target='main_frame' href='/tags/{$file}.htm'>$tag</a>($len)</li>";
 }
 $metaIndexStr.="</ul>";
-$metaIndexTemplate = file_get_contents("templates/template_meta_index.htm");
+$metaIndexTemplate = file_get_contents("templates/template_tags_index.htm");
 $metaIndexStr=str_replace("{{list}}",$metaIndexStr,$metaIndexTemplate);
-file_put_contents("_meta/index.htm",$metaIndexStr);
+file_put_contents("tags/index.htm",$metaIndexStr);
 
 echo "Generating jsonfeed...\n";
 $jsonfeed['version']="https://jsonfeed.org/version/1.1";

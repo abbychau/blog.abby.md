@@ -1,0 +1,90 @@
+<html>
+
+<head>
+    <title>積極</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <link rel="stylesheet" href="https://blog.abby.md/style.css" />
+    <link rel="icon" type="image/png" href="https://blog.abby.md/favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+    
+    <script>
+        function inIframe() {
+            try {
+                return window.self !== window.top;
+            } catch (e) {
+                return true;
+            }
+        }
+
+        function myMarked(str) {
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            $('#content').html(myMarked($('#content').html()))
+            hljs.highlightAll();
+
+            if(!inIframe()){
+                $('#homelink').show()
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div id='article' style='padding:0 15px 10px 10px;font-size: large;font-family: serif;'>
+        <h1 id="subject">積極</h1>
+        <div id="date" style='font-size: 9pt;'>2010-07-13</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags"><a href='/tags/日常生活.htm'>日常生活</a></div>
+        <div id="content" style='word-break: break-all;'><p><span style="font-size: 16px; "><strong><u>甚麼是積極？</u></strong></span>  </p>
+<p>就是單向加點。亦即是轟轟烈烈地投入精力和時間在單一項。  </p>
+<p>從字面意思解，積：累積；極：極限，也就是累積極限的一項。  </p>
+<p>積極的反義詞是消極，也就是把極限的一項消磨掉。當然已學到的事是不能被磨滅的，但消磨掉的方法就是把極限的一項取消，也就是平均加點。  </p>
+<p>從教育方針來看，Pure Maths 絕對是一科積極的學科；而取消Pure Maths 提倡通識科可以說是方針消極化。  </p>
+<p><span class="Apple-style-span" style="font-size: 16px; "><strong><u>積極VS消極</u></strong></span>  </p>
+<p>這就如Emacs vs Vim 一樣是幾乎無法定奪的爭論，但我個人比較喜歡積極。  </p>
+<ol>
+<li>
+<p>積極的人數比消極的人數少  </p>
+</li>
+<li>
+<p>極點一項才能推動社會  </p>
+</li>
+<li>
+<p>在極度消極化的場合，所得知識幾乎沒有價值  </p>
+</li>
+</ol>
+<p>其中第二項最為重要。  </p>
+<p><span style="font-size: 16px; "><u><strong>消極的學校生涯</strong></u></span>  </p>
+<p>在我個人而言，學校生涯總括來說是消極的。但這種消極有存在的意義，因為當基本認知不夠時，確實難以選擇一個單一學科去鑽研；但是，這個選擇的時間似乎太長了。  </p>
+<p><u><strong><span style="font-size: 16px; ">邊際利益的迷思</span></strong></u>  </p>
+<p>(續)  </p></div>
+
+
+        <script src="https://utteranc.es/client.js"
+        repo="abbychau/blog.abby.md"
+        issue-term="pathname"
+        label="blog comment"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async>
+        </script>
+
+        <div id="permalink" style='word-break: break-all;padding:2em 0 1em 0'>
+            <a href="https://blog.abby.md/posts/realblog_2010-07_16564.htm">Permalink of this blog</a>
+            <a href="https://github.com/abbychau/blog.abby.md/blob/master/./original-data/realblog/2010-07/16564.md">Source</a>
+        </div>
+        
+        <div id="homelink" style='word-break: break-all;padding:1em 0 2em 0;display: none;'>
+            <a href="/">Abby's Archive</a>
+        </div>  
+    </div>
+</body>
+
+</html>

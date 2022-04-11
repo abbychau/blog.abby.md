@@ -1,0 +1,85 @@
+<html>
+
+<head>
+    <title>超經典的</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <link rel="stylesheet" href="https://blog.abby.md/style.css" />
+    <link rel="icon" type="image/png" href="https://blog.abby.md/favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+    
+    <script>
+        function inIframe() {
+            try {
+                return window.self !== window.top;
+            } catch (e) {
+                return true;
+            }
+        }
+
+        function myMarked(str) {
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            $('#content').html(myMarked($('#content').html()))
+            hljs.highlightAll();
+
+            if(!inIframe()){
+                $('#homelink').show()
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div id='article' style='padding:0 15px 10px 10px;font-size: large;font-family: serif;'>
+        <h1 id="subject">超經典的</h1>
+        <div id="date" style='font-size: 9pt;'>2010-02-04</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags"><a href='/tags/日常生活.htm'>日常生活</a></div>
+        <div id="content" style='word-break: break-all;'><p>有一個修女到神父那裡懺悔：「神父，請您原諒我，我昨天辱罵了一個男人。」   </p>
+<p>神父：「你罵他什麼？」   </p>
+<p>修女：「我罵他『你媽了個*』。」   </p>
+<p>神父：「你為什麼要罵他呢，告訴我，我會請求上帝原諒你的。」   </p>
+<p>修女：「她摸我的胸部。」   </p>
+<p>（神父把手伸進了修女的胸部）：「是這樣嗎？」   </p>
+<p>修女：「是的。」   </p>
+<p>神父：「即使他摸了你的胸，你也不應該罵他啊。」   </p>
+<p>修女：「可是他又接著往下摸我。」   </p>
+<p>（神父往下摸修女）：「是這樣嗎？」   </p>
+<p>修女：「是的。」   </p>
+<p>神父：「即使他摸了你，你也不應該罵他啊。」   </p>
+<p>修女：「可是他又接著把我摁到地上，把我q j了。」   </p>
+<p>（神父把修女摁到地上，q j了修女......）：「是這樣嗎？」   </p>
+<p>修女：「是的。」   </p>
+<p>神父：「即使他q j了你，你也不應該罵他啊。」   </p>
+<p>修女：「可是完事後他告訴我他有愛滋病。」 ............<br />
+神父：「你媽了個*！」  </p></div>
+
+
+        <script src="https://utteranc.es/client.js"
+        repo="abbychau/blog.abby.md"
+        issue-term="pathname"
+        label="blog comment"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async>
+        </script>
+
+        <div id="permalink" style='word-break: break-all;padding:2em 0 1em 0'>
+            <a href="https://blog.abby.md/posts/realblog_2010-02_14062.htm">Permalink of this blog</a>
+            <a href="https://github.com/abbychau/blog.abby.md/blob/master/./original-data/realblog/2010-02/14062.md">Source</a>
+        </div>
+        
+        <div id="homelink" style='word-break: break-all;padding:1em 0 2em 0;display: none;'>
+            <a href="/">Abby's Archive</a>
+        </div>  
+    </div>
+</body>
+
+</html>

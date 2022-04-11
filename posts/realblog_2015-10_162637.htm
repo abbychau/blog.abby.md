@@ -1,0 +1,81 @@
+<html>
+
+<head>
+    <title>日記</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <link rel="stylesheet" href="https://blog.abby.md/style.css" />
+    <link rel="icon" type="image/png" href="https://blog.abby.md/favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+    
+    <script>
+        function inIframe() {
+            try {
+                return window.self !== window.top;
+            } catch (e) {
+                return true;
+            }
+        }
+
+        function myMarked(str) {
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            $('#content').html(myMarked($('#content').html()))
+            hljs.highlightAll();
+
+            if(!inIframe()){
+                $('#homelink').show()
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div id='article' style='padding:0 15px 10px 10px;font-size: large;font-family: serif;'>
+        <h1 id="subject">日記</h1>
+        <div id="date" style='font-size: 9pt;'>2015-10-01</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags"><a href='/tags/社評.htm'>社評</a></div>
+        <div id="content" style='word-break: break-all;'><p>之所以人愈大愈不想寫，只是因為心虛。</p>
+<p>也有很多事情想清楚後，已經無耐力去寫出來。</p>
+<p>我今天寫寫寫作到底是甚麼？</p>
+<p>寫日記和寫故事很像，卻又很不一樣；</p>
+<p>一樣的地方是記事感，不一性的地方就是代理感。</p>
+<p>代理感是十分美妙的一個感覺，就像隔岸觀火，在安全的地方看像激烈的戰鬥，常常是都市人的享受，一種卑劣的享受。</p>
+<p>而日記就像是脫離這個安全的地帶，脫去手套。</p>
+<p>脫去手套不難，因此公開寫日記的人很多，但脫去手套後能參與多少卻是勇氣和耐力的表現。</p>
+<p>「他人即地獄。」太宰治對現代文學最為深刻的思想觀。</p>
+<p>寫日記要寫出心理和事件上的完整感，要拿出勇氣去剋服的其實只是他人的侵犯。</p>
+<p>比如：沒想過要負起任何負責的留言。</p>
+<p>這是可以預期的事，因為無論你有多清醒，只要有人打算為你的日記回應一句，幾乎都難以不令記事變質。</p>
+<p>即使只是誰人都可以看懂的日記都無法對題了。作為消費者，要知道自己的權益，尤其是權。</p>
+<p>人心其實不難測，但正因為這種幾乎可以預計的人類反應，<span style="font-weight: bold;">最令作為人的人，不快</span>。</p></div>
+
+
+        <script src="https://utteranc.es/client.js"
+        repo="abbychau/blog.abby.md"
+        issue-term="pathname"
+        label="blog comment"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async>
+        </script>
+
+        <div id="permalink" style='word-break: break-all;padding:2em 0 1em 0'>
+            <a href="https://blog.abby.md/posts/realblog_2015-10_162637.htm">Permalink of this blog</a>
+            <a href="https://github.com/abbychau/blog.abby.md/blob/master/./original-data/realblog/2015-10/162637.md">Source</a>
+        </div>
+        
+        <div id="homelink" style='word-break: break-all;padding:1em 0 2em 0;display: none;'>
+            <a href="/">Abby's Archive</a>
+        </div>  
+    </div>
+</body>
+
+</html>

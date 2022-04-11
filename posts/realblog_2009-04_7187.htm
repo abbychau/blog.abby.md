@@ -1,0 +1,83 @@
+<html>
+
+<head>
+    <title>AKB48 - 大声ダイヤモンド</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <link rel="stylesheet" href="https://blog.abby.md/style.css" />
+    <link rel="icon" type="image/png" href="https://blog.abby.md/favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+    
+    <script>
+        function inIframe() {
+            try {
+                return window.self !== window.top;
+            } catch (e) {
+                return true;
+            }
+        }
+
+        function myMarked(str) {
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            $('#content').html(myMarked($('#content').html()))
+            hljs.highlightAll();
+
+            if(!inIframe()){
+                $('#homelink').show()
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div id='article' style='padding:0 15px 10px 10px;font-size: large;font-family: serif;'>
+        <h1 id="subject">AKB48 - 大声ダイヤモンド</h1>
+        <div id="date" style='font-size: 9pt;'>2009-04-10</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags"><a href='/tags/歌曲.htm'>歌曲</a></div>
+        <div id="content" style='word-break: break-all;'><p>歌詞 <a href="http://www.akb48.cn/simple/t3514.html">http://www.akb48.cn/simple/t3514.html</a> (轉載不能)  </p>
+<p>提示, 可以打開HD  </p>
+<p>Live At HHK Hall  </p>
+<p>感想:  </p>
+<p>這次策劃者真的成功了, 比Morning 娘更強勢的組合,<br />
+自從Kaze 介紹AKB48 給我後, 沒有任何時候把她們忘記, 雖說對應族群真的是<strong>AK</strong>i<strong>B</strong>a 一群<br />
+但是, akb48 真的是太優秀了  </p>
+<p>自從<a href="http://www.youtube.com/watch?v=0s5TaytugnU" title="akb48 - 会いたかった aitakatta - full version">会いたかった</a> 之後, 這首&quot;大声ダイヤモンド&quot; 的歌詞風格如出一撤  </p>
+<p>超有爆發力的一首曲子...太無敵了<br />
+評為五星!!  </p>
+<p>教兩個很有趣的日語:<br />
+もやもや <span style="color: rgb(0, 0, 255);">朦朧</span><br />
+eg. 心のもやもや <span style="color: rgb(0, 0, 255);">心裡的朦朧</span>  </p>
+<p>うるうる 流眼淚的擬聲詞<span style="color: rgb(0, 0, 255);"><br />
+</span>eg. 瞳がうるうる <span style="color: rgb(0, 0, 255);">淚汪汪的眼睛</span>  </p>
+<p>實在是太可愛的詞語了, 感覺日本人是活在天堂的  </p></div>
+
+
+        <script src="https://utteranc.es/client.js"
+        repo="abbychau/blog.abby.md"
+        issue-term="pathname"
+        label="blog comment"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async>
+        </script>
+
+        <div id="permalink" style='word-break: break-all;padding:2em 0 1em 0'>
+            <a href="https://blog.abby.md/posts/realblog_2009-04_7187.htm">Permalink of this blog</a>
+            <a href="https://github.com/abbychau/blog.abby.md/blob/master/./original-data/realblog/2009-04/7187.md">Source</a>
+        </div>
+        
+        <div id="homelink" style='word-break: break-all;padding:1em 0 2em 0;display: none;'>
+            <a href="/">Abby's Archive</a>
+        </div>  
+    </div>
+</body>
+
+</html>

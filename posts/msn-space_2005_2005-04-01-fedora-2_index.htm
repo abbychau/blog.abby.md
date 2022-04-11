@@ -1,0 +1,87 @@
+<html>
+
+<head>
+    <title>Fedora (2)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <link rel="stylesheet" href="https://blog.abby.md/style.css" />
+    <link rel="icon" type="image/png" href="https://blog.abby.md/favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+    
+    <script>
+        function inIframe() {
+            try {
+                return window.self !== window.top;
+            } catch (e) {
+                return true;
+            }
+        }
+
+        function myMarked(str) {
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            $('#content').html(myMarked($('#content').html()))
+            hljs.highlightAll();
+
+            if(!inIframe()){
+                $('#homelink').show()
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div id='article' style='padding:0 15px 10px 10px;font-size: large;font-family: serif;'>
+        <h1 id="subject">Fedora (2)</h1>
+        <div id="date" style='font-size: 9pt;'>2005-04-01</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags"><a href='/tags/短評.htm'>短評</a></div>
+        <div id="content" style='word-break: break-all;'><p>現在發覺Fedora 的GUI 愈來愈user friendly,<br />
+甚至, 有開始靠近windows 的趨勢.<br />
+例子如下:</p>
+<p>1. auto-mount<br />
+在windows 之中, 跟本沒有mount drive 的動作,<br />
+可是在linux 裡, 放cd-rom 進cdrom drive 可是要執mount 指令的,<br />
+fedora 會偵察cdrom 的動作, 發現有cdrom 放入時,<br />
+會自動mount......是模仿windows表現(也是方便用家的表現吧)</p>
+<p>2.服務<br />
+服務功能是win nt 的專有功能,<br />
+它可以令電腦在背景執行不和桌面互動的程式.<br />
+我認為&quot;服務&quot;比&quot;啟動&quot;更為先進,<br />
+但在linux 中.....想不到連名字也一樣,<br />
+這很明顯的....模仿windows!</p>
+<p>3.歡迎畫面<br />
+winxp 的歡迎畫面是很創新的,<br />
+它可以列出所有使用者以供用戶選取,<br />
+又一次的....linux 裡的gnome 套件竟有這樣的登入畫面可供選擇,<br />
+嗯! 這是模仿windows!</p>
+<p>其他的....以後有機會再說!</p></div>
+
+
+        <script src="https://utteranc.es/client.js"
+        repo="abbychau/blog.abby.md"
+        issue-term="pathname"
+        label="blog comment"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async>
+        </script>
+
+        <div id="permalink" style='word-break: break-all;padding:2em 0 1em 0'>
+            <a href="https://blog.abby.md/posts/msn-space_2005_2005-04-01-fedora-2_index.htm">Permalink of this blog</a>
+            <a href="https://github.com/abbychau/blog.abby.md/blob/master/./original-data/msn-space/2005/2005-04-01-fedora-2/index.md">Source</a>
+        </div>
+        
+        <div id="homelink" style='word-break: break-all;padding:1em 0 2em 0;display: none;'>
+            <a href="/">Abby's Archive</a>
+        </div>  
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<html>
+
+<head>
+    <title>完全信息遊戲的雜談</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <link rel="stylesheet" href="https://blog.abby.md/style.css" />
+    <link rel="icon" type="image/png" href="https://blog.abby.md/favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+    
+    <script>
+        function inIframe() {
+            try {
+                return window.self !== window.top;
+            } catch (e) {
+                return true;
+            }
+        }
+
+        function myMarked(str) {
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            $('#content').html(myMarked($('#content').html()))
+            hljs.highlightAll();
+
+            if(!inIframe()){
+                $('#homelink').show()
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div id='article' style='padding:0 15px 10px 10px;font-size: large;font-family: serif;'>
+        <h1 id="subject">完全信息遊戲的雜談</h1>
+        <div id="date" style='font-size: 9pt;'>2020-06-21</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags"><a href='/tags/遊藝.htm'>遊藝</a></div>
+        <div id="content" style='word-break: break-all;'><p>最近只在玩圍棋、tft、xb2。<br />
+其中圍棋是最多的，因為可以在付出一定成本後亳無誤差地得知自己的生產力余量。<br />
+當中去觀察對手的貪婪和懦弱也是令我補充到一點點人類深入的氣息。<br />
+玩的主要是13路或者9路，這樣在時限之下要投入的邏輯深度可以少一點。<br />
+很有幸這個遊戲可以陪伴我近乎整個生命。<br />
+Tft 是很像日麻和德樸的遊戲，在不了解對手下有最佳的博奕論最佳的平衡，但卻又忍不住去嘗試收集和利用更多的元信息。在不完全公開信息的情況下，干擾會大到感受不到任何交流。遊玩的目的只在乎打磨自己的玩法。<br />
+而xb2，就是收集打怪看故事和cutsence。每次過場都精美到忍不住screenshot。如果出在ps4 的話我就可以收集到無數wallpaper 了。  </p>
+<p>有人覺得像狼人殺和麻雀這種不完全公開信息的遊戲會比完全信息遊戲有更多的交流。但我想其實是完全公開後，分岐就意味住哲學層面的取態。  </p>
+<p>人們是在交流上，本意可能不是把對方完全了解，也不是自己被代理化地了解。而是希望能告訴對方自己要如何被理解，和自己要選擇理解對方的何個部份。的，近似「名從主人」的交流。    </p>
+<p>先不外延，回到遊戲中，狼人殺的確是一隻很純粹又很不純粹的遊戲。在很長的一段時間，我認為這個在不同版本的規則上已經定下其中一方有利，而積分不可微的遊戲，是有競技性和嚴肅性上有嚴重缺失的。因為只要不聊及玩家狀態，勝負會在最佳版本策略下迅速收儉。有趣的是，版本的調整反而令高等玩家（可以被其他玩家信任他精通版本的最佳策略）無法在同一環境下收束結果而令本來無意義的場外信息成為一切的開端。</p>
+<p>而到現實中，當每個人都在玩德樸和狼人時，如果自身版本不固定，是很難找到人和你玩圍棋的。因為這不像遊戲有明文規則，要說清楚自己的版本，就已經很費力了。</p>
+<p>還不是每個人都能凍結好版本。當說清楚時，「自己不屬於自己」的這個客觀標準轉化為事實標準的過程，會給人不人道的感覺。</p>
+<p>＃雜談</p></div>
+
+
+        <script src="https://utteranc.es/client.js"
+        repo="abbychau/blog.abby.md"
+        issue-term="pathname"
+        label="blog comment"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async>
+        </script>
+
+        <div id="permalink" style='word-break: break-all;padding:2em 0 1em 0'>
+            <a href="https://blog.abby.md/posts/realblog_2020-06_270609.htm">Permalink of this blog</a>
+            <a href="https://github.com/abbychau/blog.abby.md/blob/master/./original-data/realblog/2020-06/270609.md">Source</a>
+        </div>
+        
+        <div id="homelink" style='word-break: break-all;padding:1em 0 2em 0;display: none;'>
+            <a href="/">Abby's Archive</a>
+        </div>  
+    </div>
+</body>
+
+</html>

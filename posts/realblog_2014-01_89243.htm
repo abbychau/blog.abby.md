@@ -1,0 +1,73 @@
+<html>
+
+<head>
+    <title>回覆備份</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <link rel="stylesheet" href="https://blog.abby.md/style.css" />
+    <link rel="icon" type="image/png" href="https://blog.abby.md/favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+    
+    <script>
+        function inIframe() {
+            try {
+                return window.self !== window.top;
+            } catch (e) {
+                return true;
+            }
+        }
+
+        function myMarked(str) {
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            $('#content').html(myMarked($('#content').html()))
+            hljs.highlightAll();
+
+            if(!inIframe()){
+                $('#homelink').show()
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div id='article' style='padding:0 15px 10px 10px;font-size: large;font-family: serif;'>
+        <h1 id="subject">回覆備份</h1>
+        <div id="date" style='font-size: 9pt;'>2014-01-19</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags"><a href='/tags/作品.htm'>作品</a></div>
+        <div id="content" style='word-break: break-all;'><p><a href="http://www.zhihu.com/question/22529857">http://www.zhihu.com/question/22529857</a>  </p>
+<p>他們溝通不是缺少common sense, 而是在修練過程中把common sense 細化而且合理化了。比如說要反駁這句: &quot;說話缺少common sense，說白了，就是情商低。&quot; , 在知識掌握較多的人身上大概會有這樣的想法: &quot;這前項和後項明顯不一致, 你是要說說話沒有了甚麼特定的sense 呢? common 不common 是看對象還是要看語集的; 這個環境下檢定情商的g因素還沒確定又如何說情商高低呢? 這不科學的說法如何取信於人?&quot; 我認為除了其專業之外, 聰明的人對於周邊的世界抱著比其他人大的好奇心和解釋慾望, 久而久之令自己周邊的人無法以比其他人時的思考時間去理解更為精確或者具體的句子, 這導致其他人認為他們溝通能力不佳的錯覺。然後, 和社會脫節這點不具體說明也是無法論證的。  </p>
+<div>  
+</div><div>至於如何改善, 我認為思維方法的低階化而擴展至日常生活是十分優秀的表現, 但這個過程似乎無法在短時間內雙向轉換, 要從一向從口中說出"一包米的質量是 5 kg"的物理學人改為說出"一包米的重量是 5 kg", 中間所需要從每句中檢查出社會中日常用語的列表中間所費的大腦資源是多麼的大可想而知。即使是日常生活如統計型社會科學比如說是心理學的, 要從"-0.56 適度的反向關係"改為說出-0.56 的意思, 這也是十分費神的。電腦科學的更不用說了, 在回答"為甚麼程式那麼慢?"時, 猜度對方的知識不單花時間, 而且更容易引起不快。要說"btree 翻查了70層"、"資料表要file sort"、"存資料硬碟不夠快"、"電腦太舊了", 無論那一層都可能不對啊。要說一個合乎對方水平的答覆十分不容易, 尤其是在距離常識很遠的回覆, 但是那經常是最正確最具體的回答。  
+
+通常怪他們溝通能力差的人, 都只不過是沒有耐性而已。</div></div>
+
+
+        <script src="https://utteranc.es/client.js"
+        repo="abbychau/blog.abby.md"
+        issue-term="pathname"
+        label="blog comment"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async>
+        </script>
+
+        <div id="permalink" style='word-break: break-all;padding:2em 0 1em 0'>
+            <a href="https://blog.abby.md/posts/realblog_2014-01_89243.htm">Permalink of this blog</a>
+            <a href="https://github.com/abbychau/blog.abby.md/blob/master/./original-data/realblog/2014-01/89243.md">Source</a>
+        </div>
+        
+        <div id="homelink" style='word-break: break-all;padding:1em 0 2em 0;display: none;'>
+            <a href="/">Abby's Archive</a>
+        </div>  
+    </div>
+</body>
+
+</html>

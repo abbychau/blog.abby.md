@@ -1,0 +1,89 @@
+<html>
+
+<head>
+    <title>近日記たち</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <link rel="stylesheet" href="https://blog.abby.md/style.css" />
+    <link rel="icon" type="image/png" href="https://blog.abby.md/favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+    
+    <script>
+        function inIframe() {
+            try {
+                return window.self !== window.top;
+            } catch (e) {
+                return true;
+            }
+        }
+
+        function myMarked(str) {
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            $('#content').html(myMarked($('#content').html()))
+            hljs.highlightAll();
+
+            if(!inIframe()){
+                $('#homelink').show()
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div id='article' style='padding:0 15px 10px 10px;font-size: large;font-family: serif;'>
+        <h1 id="subject">近日記たち</h1>
+        <div id="date" style='font-size: 9pt;'>2013-03-31</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags"><a href='/tags/日常生活.htm'>日常生活</a></div>
+        <div id="content" style='word-break: break-all;'><p>- RealForum 的viewforum.php 版面按html5修好了, 也加了CSS 的編輯功能  </p>
+<p>-<br />
+看了童聲童氣, 多謝MEIR 的推薦, 一整場都挺愉快的, 時間不太像演了兩個小時。  </p>
+<p>其中木片琴和馬白林琴的音量十分唔夠;<br />
+p/pp 演奏的部分幾乎無聲, 長笛經常入唔齊;然後定音都有同樣情況, 中間長笛有時會入唔齊;<br />
+不過爵士鼓發揮得幾好, 又夠清楚;<br />
+中間無乜冷場, 無pokemon 是件憾事, 睇完之後食唔到雪糕都係(lol)。  </p>
+<p>- 新DDR絕對不會中伏<br />
+- 食左餐薩莉亞ge Doria 除左鹹左少少真係幾好食<br />
+- 將神仲玩緊  </p>
+<p>-<br />
+近日消費太高, DEA+火鍋+concert+出面食野+新display card, D 錢好似倒水咁...<br />
+要留多D 係屋企先得, 但聽日又要出街玩,<br />
+(仲想玩埋DEA@O@)  </p>
+<p>-右上角隻智慧齒成日頂住下面, 好想移除佢, 唔知要幾錢同埋幾耐呢?  </p>
+<p>-<br />
+講下電腦野, 其實又唔係好關電腦事, 只不過我對呢D 行為ge 觀察都係係電腦ge 產品入面<br />
+普遍黎講, 人類對新ge 事物ge 評價都有一定ge 偏差, 而唔係真實的感受, 或者講自己的感受會被自己所蒙蔽  </p>
+<p>1. Play Store同App Store 入面的評論很多時會出現&quot;新不如舊&quot;的評論, 因為用戶會將升級後所出現的問題歸咎於升級, 而不會考慮舊版本是否也有同樣的情況, 即使他們在舊版本從沒達成觸發條件;<br />
+2. Facebook 或其他SNS 的版面轉變會也很多時出現&quot;新不如舊&quot;的評論, 因為用戶會將不習慣, 所習慣曲線所要求精力(成本)歸咎於更改, 而不會把體驗歸零後再作出評價;<br />
+3. 比起以前的用戶, 現今的用戶傾向要求&quot;Don't make me think&quot; 和要求廠商為使用習慣作出修改; 否則不習慣期所產生的成本直接作為自己的第一評價;<br />
+今天的用戶像是一群被家長竉壞不懂自立的兒童, 絕不為過。</p></div>
+
+
+        <script src="https://utteranc.es/client.js"
+        repo="abbychau/blog.abby.md"
+        issue-term="pathname"
+        label="blog comment"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async>
+        </script>
+
+        <div id="permalink" style='word-break: break-all;padding:2em 0 1em 0'>
+            <a href="https://blog.abby.md/posts/realblog_2013-03_54073.htm">Permalink of this blog</a>
+            <a href="https://github.com/abbychau/blog.abby.md/blob/master/./original-data/realblog/2013-03/54073.md">Source</a>
+        </div>
+        
+        <div id="homelink" style='word-break: break-all;padding:1em 0 2em 0;display: none;'>
+            <a href="/">Abby's Archive</a>
+        </div>  
+    </div>
+</body>
+
+</html>

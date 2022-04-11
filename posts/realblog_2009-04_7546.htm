@@ -1,0 +1,78 @@
+<html>
+
+<head>
+    <title>Creative Accounting 的最大啟示</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <link rel="stylesheet" href="https://blog.abby.md/style.css" />
+    <link rel="icon" type="image/png" href="https://blog.abby.md/favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+    
+    <script>
+        function inIframe() {
+            try {
+                return window.self !== window.top;
+            } catch (e) {
+                return true;
+            }
+        }
+
+        function myMarked(str) {
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            $('#content').html(myMarked($('#content').html()))
+            hljs.highlightAll();
+
+            if(!inIframe()){
+                $('#homelink').show()
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div id='article' style='padding:0 15px 10px 10px;font-size: large;font-family: serif;'>
+        <h1 id="subject">Creative Accounting 的最大啟示</h1>
+        <div id="date" style='font-size: 9pt;'>2009-04-27</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags"><a href='/tags/商界.htm'>商界</a></div>
+        <div id="content" style='word-break: break-all;'><p>請先看看一個帖: <a href="http://www.uwants.com/viewthread.php?tid=7293282">http://www.uwants.com/viewthread.php?tid=7293282</a>  </p>
+<p>今天看過Greatsoup 由INV168的轉帖, 想到既然Creative Accounting 令公司賬目的參考價值的下降同時,<br />
+就一直在想利用Creative Acct. 的方法。  </p>
+<p>看過上面的一個帖子後, 都應該明白Creative Acct. 是行內常用手法, 而今年更是十年難見的&quot;做壞盤數&quot;好時機<br />
+原因是如lulu13775所說:&quot;change the accounting for existing transactions 包括 ↑ assets, ↓ liabilities, or ↓ previous year net income (before closing)&quot;  </p>
+<p>下調上年淨營收是做好數的一個方法. 反之, 做壞數的就應上調上年度營收.<br />
+當然今日調整是很難了, 但是結數時將 asset / expense 轉換等技法還是應該在上年十一月大量施展了<br />
+而用法是將以前所一直背負著的假asset/income 一氣付清.<br />
+lulu13775:&quot;到時由虧轉盈或者出個盈喜, 就不得了, 跑贏大市, 人人話你叻仔叻女.&quot;   </p>
+<p>我認即入帳變遲是理所當然的, 而利潤略低過上年則甚至可以變作甚低於上年。  </p>
+<p>啟示: 今年<strong>年尾十一月</strong>, 應可放心大手買入各間已有<strong>多年歷史</strong>的股票, 然後等著好消息和好業績的出現吧。  </p></div>
+
+
+        <script src="https://utteranc.es/client.js"
+        repo="abbychau/blog.abby.md"
+        issue-term="pathname"
+        label="blog comment"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async>
+        </script>
+
+        <div id="permalink" style='word-break: break-all;padding:2em 0 1em 0'>
+            <a href="https://blog.abby.md/posts/realblog_2009-04_7546.htm">Permalink of this blog</a>
+            <a href="https://github.com/abbychau/blog.abby.md/blob/master/./original-data/realblog/2009-04/7546.md">Source</a>
+        </div>
+        
+        <div id="homelink" style='word-break: break-all;padding:1em 0 2em 0;display: none;'>
+            <a href="/">Abby's Archive</a>
+        </div>  
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+<html>
+
+<head>
+    <title>流水帳日記一份</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <link rel="stylesheet" href="https://blog.abby.md/style.css" />
+    <link rel="icon" type="image/png" href="https://blog.abby.md/favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+    
+    <script>
+        function inIframe() {
+            try {
+                return window.self !== window.top;
+            } catch (e) {
+                return true;
+            }
+        }
+
+        function myMarked(str) {
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            $('#content').html(myMarked($('#content').html()))
+            hljs.highlightAll();
+
+            if(!inIframe()){
+                $('#homelink').show()
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div id='article' style='padding:0 15px 10px 10px;font-size: large;font-family: serif;'>
+        <h1 id="subject">流水帳日記一份</h1>
+        <div id="date" style='font-size: 9pt;'>2013-08-25</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags"><a href='/tags/日常生活.htm'>日常生活</a></div>
+        <div id="content" style='word-break: break-all;'><p>今日起身同東同好湯食薩利亞, 雖然佢地話一直都係咁, 但唔知點解覺得平左好多咁...<br />
+去腦場買左舊電, (係日本唔見左原來果舊)  </p>
+<p>發現:<br />
+PSV二手$980,<br />
+一塊睇上去有10吋ge 畫板: $580  </p>
+<p>其他無咩特別  </p>
+<p>之後同Greatsoup 由深水步行返黎...係深水步ge 一條很小的行人隊道突然發現Mister Christian 表演中<br />
+<a href="http://www.youtube.com/user/misterchristian38">http://www.youtube.com/user/misterchristian38  </a>但停低睇既一個人都無...  </p>
+<p><a href="https://plus.google.com/106054554304935052850/posts/PX1JqnZJe92">https://plus.google.com/106054554304935052850/posts/PX1JqnZJe92</a>  </p>
+<p>返到黎好大雨  </p>
+<p>認識了荷蘭人Jan<br />
+搵到個X-Kizz 舊會員但佢死口唔認...  </p>
+<p>Fix 左rf Viewforum 個scroll<br />
+Fix 左回覆個請稍候keep 住係度<br />
+遊記計埋之前完成左三日</p></div>
+
+
+        <script src="https://utteranc.es/client.js"
+        repo="abbychau/blog.abby.md"
+        issue-term="pathname"
+        label="blog comment"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async>
+        </script>
+
+        <div id="permalink" style='word-break: break-all;padding:2em 0 1em 0'>
+            <a href="https://blog.abby.md/posts/realblog_2013-08_74116.htm">Permalink of this blog</a>
+            <a href="https://github.com/abbychau/blog.abby.md/blob/master/./original-data/realblog/2013-08/74116.md">Source</a>
+        </div>
+        
+        <div id="homelink" style='word-break: break-all;padding:1em 0 2em 0;display: none;'>
+            <a href="/">Abby's Archive</a>
+        </div>  
+    </div>
+</body>
+
+</html>

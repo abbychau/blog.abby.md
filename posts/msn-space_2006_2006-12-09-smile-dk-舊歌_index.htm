@@ -1,0 +1,81 @@
+<html>
+
+<head>
+    <title>Smile.dk 舊歌</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <link rel="stylesheet" href="https://blog.abby.md/style.css" />
+    <link rel="icon" type="image/png" href="https://blog.abby.md/favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+    
+    <script>
+        function inIframe() {
+            try {
+                return window.self !== window.top;
+            } catch (e) {
+                return true;
+            }
+        }
+
+        function myMarked(str) {
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            $('#content').html(myMarked($('#content').html()))
+            hljs.highlightAll();
+
+            if(!inIframe()){
+                $('#homelink').show()
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div id='article' style='padding:0 15px 10px 10px;font-size: large;font-family: serif;'>
+        <h1 id="subject">Smile.dk 舊歌</h1>
+        <div id="date" style='font-size: 9pt;'>2006-12-09</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags"><a href='/tags/butterfly.htm'>butterfly</a>, <a href='/tags/ddr.htm'>ddr</a>, <a href='/tags/smiledk.htm'>smiledk</a>, <a href='/tags/songs.htm'>songs</a>, <a href='/tags/音樂.htm'>音樂</a></div>
+        <div id="content" style='word-break: break-all;'><p> 自從<a href="http://en.wikipedia.org/wiki/Dance_Dance_Revolution">dance dance revolution</a> 係1998 年推出試玩之後...<br />
+我同大部分人一樣, 留低最深刻印象ge 係Smile.dk ge Butterfly<br />
+我諗呢首歌為大部份玩家都留低左好多回憶...</p>
+<p>可能係前排玩番supernova ge 關係又聽到smile.dk ge golden sky,<br />
+我突然想搵smile.dk ge 歌黎聽, 搵到30首左右....<br />
+雖然smile 大部分都係全打Bubblegum dance(可能對唔少人呢個genre/曲風都無咩概念, 所以都係有條wiki link: <a href="http://en.wikipedia.org/wiki/Bubblegum_dance">http://en.wikipedia.org/wiki/Bubblegum_dance</a>)...有唔少人都對呢d 歌不屑一顧<br />
+因為香港無呢種產品ge 關係...但對於我黎講都係好新鮮ge...<br />
+歌詞係就係silly 左d... 但仲有有少少意思ge, 聽起上黎對腦部無咩負擔XDDD</p>
+<p>推介幾首比人聽:<br />
+無接觸過ddr ge 先要聽聽 Boys, Butterfly, Golden Sky 都係Smile ge 名曲...(雖然係bubblegum, 但都算popular)...<br />
+然後有..Dragonfly, Kissy Kissy, Dancing All Alone(Kimono Mix)...呢幾首都好好聽ge</p>
+<p>比較次一d 但都算有特色ge...My Casinova 同Tic Toc...</p>
+<p>反而專輯ge 主打歌, Future Girl 就無咁好聽..比較&quot;行&quot;</p>
+<p><img src="images/smile-dk-1.jpg" alt="" /></p></div>
+
+
+        <script src="https://utteranc.es/client.js"
+        repo="abbychau/blog.abby.md"
+        issue-term="pathname"
+        label="blog comment"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async>
+        </script>
+
+        <div id="permalink" style='word-break: break-all;padding:2em 0 1em 0'>
+            <a href="https://blog.abby.md/posts/msn-space_2006_2006-12-09-smile-dk-舊歌_index.htm">Permalink of this blog</a>
+            <a href="https://github.com/abbychau/blog.abby.md/blob/master/./original-data/msn-space/2006/2006-12-09-smile-dk-舊歌/index.md">Source</a>
+        </div>
+        
+        <div id="homelink" style='word-break: break-all;padding:1em 0 2em 0;display: none;'>
+            <a href="/">Abby's Archive</a>
+        </div>  
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,109 @@
+<html>
+
+<head>
+    <title>F# 學習筆記 1 變數和函數</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <link rel="stylesheet" href="https://blog.abby.md/style.css" />
+    <link rel="icon" type="image/png" href="https://blog.abby.md/favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+    
+    <script>
+        function inIframe() {
+            try {
+                return window.self !== window.top;
+            } catch (e) {
+                return true;
+            }
+        }
+
+        function myMarked(str) {
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            $('#content').html(myMarked($('#content').html()))
+            hljs.highlightAll();
+
+            if(!inIframe()){
+                $('#homelink').show()
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div id='article' style='padding:0 15px 10px 10px;font-size: large;font-family: serif;'>
+        <h1 id="subject">F# 學習筆記 1 變數和函數</h1>
+        <div id="date" style='font-size: 9pt;'>2012-02-11</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags"><a href='/tags/日常生活.htm'>日常生活</a></div>
+        <div id="content" style='word-break: break-all;'><p>F# : 弱型態, 編譯型, Functional</p>
+<pre><code>
+// 開啟一些標準命名空間
+open System
+
+// 簡單計算
+// ---------------------------------------------------------------
+// 這裡是一些簡單的計算。請注意程式碼用
+// '///' 加註註解的方式。將游標置於任何變數參考上方
+// 就可以查看說明文件。
+
+/// 非常簡單的常數整數
+let int1 = 1
+
+/// 第二個非常簡單的常數整數
+let int2 = 2
+
+/// 兩個整數相加
+let int3 = int1 + int2
+
+// 整數的函式
+// ---------------------------------------------------------------
+
+/// 整數的函式
+let f x = 2*x*x - 5*x + 3
+
+/// 簡單計算的結果
+let result = f (int3 + 4)
+
+/// 另一個整數的函式
+let increment x = x + 1
+
+/// 計算整數的階乘
+let rec factorial n = if n=0 then 1 else n * factorial (n-1)
+
+/// 計算兩個整數的最大公因數
+let rec hcf a b =                       // 注意: 2 個參數以空格分隔
+    if a=0 then b
+    elif a&lt;b then hcf a (b-a)           // 注意: 2 個引數以空格分隔
+    else hcf (a-b) b
+    // 注意: 函式引數通常是以空格分隔
+    // 注意: 'let rec' 會定義遞迴函式</code></pre></div>
+
+
+        <script src="https://utteranc.es/client.js"
+        repo="abbychau/blog.abby.md"
+        issue-term="pathname"
+        label="blog comment"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async>
+        </script>
+
+        <div id="permalink" style='word-break: break-all;padding:2em 0 1em 0'>
+            <a href="https://blog.abby.md/posts/realblog_2012-02_31122.htm">Permalink of this blog</a>
+            <a href="https://github.com/abbychau/blog.abby.md/blob/master/./original-data/realblog/2012-02/31122.md">Source</a>
+        </div>
+        
+        <div id="homelink" style='word-break: break-all;padding:1em 0 2em 0;display: none;'>
+            <a href="/">Abby's Archive</a>
+        </div>  
+    </div>
+</body>
+
+</html>

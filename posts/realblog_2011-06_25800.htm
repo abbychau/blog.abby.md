@@ -1,0 +1,80 @@
+<html>
+
+<head>
+    <title>回覆一篇</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <link rel="stylesheet" href="https://blog.abby.md/style.css" />
+    <link rel="icon" type="image/png" href="https://blog.abby.md/favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+    
+    <script>
+        function inIframe() {
+            try {
+                return window.self !== window.top;
+            } catch (e) {
+                return true;
+            }
+        }
+
+        function myMarked(str) {
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            $('#content').html(myMarked($('#content').html()))
+            hljs.highlightAll();
+
+            if(!inIframe()){
+                $('#homelink').show()
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div id='article' style='padding:0 15px 10px 10px;font-size: large;font-family: serif;'>
+        <h1 id="subject">回覆一篇</h1>
+        <div id="date" style='font-size: 9pt;'>2011-06-21</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags"><a href='/tags/日常生活.htm'>日常生活</a></div>
+        <div id="content" style='word-break: break-all;'><p><a href="http://forum.gamer.com.tw/Co.php?bsn=17532&amp;sn=9471&amp;author=dhamdra">http://forum.gamer.com.tw/Co.php?bsn=17532&amp;sn=9471&amp;author=dhamdra</a></p>
+<p>因為鎖文回不了...</p>
+<p><span class="Apple-style-span" style="color: rgb(70, 70, 70); font-family: Arial; font-size: 15px; line-height: 22px; ">總括來說都很正確了, 但有些不太清楚的地方的解釋有點牽強</span></p>
+<div style="font-family: Arial; font-size: 15px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 8px; padding-right: 8px; padding-bottom: 8px; padding-left: 8px; line-height: 150%; color: rgb(70, 70, 70); background-image: none; background-color: white; background-repeat: repeat repeat; "><div> </div><div><font color="#000000"><font size="3" style="font-size: 15px; "><font face="Times New Roman"><font size="3" style="font-size: 15px; "><font face="Arial"><font color="#000000"><font style="background-color: transparent; ">**Pet**</font></font></font></font></font></font>  
+ <font size="3" style="font-size: 15px; "><font face="Times New Roman"><font size="3" style="font-size: 15px; "><font face="Arial"><font color="#000000"><font style="background-color: transparent; ">Mord的靈魂不是召喚出來的, 這才是不入pet 的原因</font></font></font></font></font></font></font></div><div><font color="#000000"><font size="3" style="font-size: 15px; "><font face="Times New Roman"><font size="3" style="font-size: 15px; "><font face="Arial"><font color="#000000"><font style="background-color: transparent; ">  
+ </font></font></font></font></font></font></font></div><div><font color="#000000"><font size="3" style="font-size: 15px; ">**Pusher**</font></font></div><div><font color="#000000"><font size="3" style="font-size: 15px; ">"這類英雄可以快速清兵，或著帶領大量小兵到敵人塔下，幫助推塔。"  
+ 這個我不敢同意, 快速清兵的話, 形象較會是Framer 甚至jungler</font></font></div><div><font color="#000000"><font size="3" style="font-size: 15px; ">Pusher 的意思一來是能夠推線, 不過最重要還是能夠和塔有良好的相性</font></font></div><div><font color="#000000">推塔是講求持久力的, 所以一般是沒有高爆炸性威力的招式也能有很高dps 的人, </font><font color="#000000">一般是坦或者是攻速高的角色</font></div><div><font color="#000000">  
+ </font></div><div><font color="#000000"><font size="3" style="font-size: 15px; "><font face="Times New Roman"><font size="3" style="font-size: 15px; "><font face="Arial"><font color="#000000"><font style="background-color: transparent; ">**Scout**</font></font></font></font></font></font>  
+ 這類英雄的特點在於移動性能而不是觀察性能, 所以</font><font color="#000000"><font size="3" style="font-size: 15px; ">Shaco 不算</font></font></div><div><font color="#000000"><font size="3" style="font-size: 15px; ">  
+ </font></font></div><div><font color="#000000"><font face="Times New Roman"><font size="3" style="font-size: 15px; "><font size="3" style="font-size: 15px; "><font face="Arial"><font color="#000000"><font style="background-color: transparent; ">**Snare**</font></font></font></font>  
+ <font size="3" style="font-size: 15px; "><font face="Arial"><font color="#000000"><font style="background-color: transparent; ">陷阱其實就是最好的翻法, 他們的特點是可以在地圖上放置一些對敵方有害長註物  
+ </font></font></font></font></font></font></font><font color="#000000"><font size="3" style="font-size: 15px; ">gragas和vladimir那兩招slow 也是snare 的一種</font></font></div><div><font color="#000000">  
+ </font></div></div></div>
+
+
+        <script src="https://utteranc.es/client.js"
+        repo="abbychau/blog.abby.md"
+        issue-term="pathname"
+        label="blog comment"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async>
+        </script>
+
+        <div id="permalink" style='word-break: break-all;padding:2em 0 1em 0'>
+            <a href="https://blog.abby.md/posts/realblog_2011-06_25800.htm">Permalink of this blog</a>
+            <a href="https://github.com/abbychau/blog.abby.md/blob/master/./original-data/realblog/2011-06/25800.md">Source</a>
+        </div>
+        
+        <div id="homelink" style='word-break: break-all;padding:1em 0 2em 0;display: none;'>
+            <a href="/">Abby's Archive</a>
+        </div>  
+    </div>
+</body>
+
+</html>

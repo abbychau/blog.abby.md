@@ -1,0 +1,87 @@
+<html>
+
+<head>
+    <title>日記</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <link rel="stylesheet" href="https://blog.abby.md/style.css" />
+    <link rel="icon" type="image/png" href="https://blog.abby.md/favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+    
+    <script>
+        function inIframe() {
+            try {
+                return window.self !== window.top;
+            } catch (e) {
+                return true;
+            }
+        }
+
+        function myMarked(str) {
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            $('#content').html(myMarked($('#content').html()))
+            hljs.highlightAll();
+
+            if(!inIframe()){
+                $('#homelink').show()
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div id='article' style='padding:0 15px 10px 10px;font-size: large;font-family: serif;'>
+        <h1 id="subject">日記</h1>
+        <div id="date" style='font-size: 9pt;'>2013-09-03</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags"><a href='/tags/日常生活.htm'>日常生活</a></div>
+        <div id="content" style='word-break: break-all;'><p>地鐵飯堂蒸雞飯的味道真有難以企及的高度。  </p>
+<p>有心情去說說LOL<br />
+比起現在的玩家我真玩得不算多, 只說這兩年次來連贏最多的英雄好了...  </p>
+<p>下面的都是單排的記錄<br />
+上路是最霸道的, 用慎連勝12場, 那時候的隱分不知道升到甚麼地方去了, 還是單排。(沒人中離也是有運氣)<br />
+即使不說可以全地圖gank, 慎最強的地方莫過於&quot;救隊友一命&quot;, 直接在比數上得益。打的時候通常都會帶傳送, 傳送對慎的用處實在太大了, 初期補兵不足, 放大後回線, 以至後期趕雙戰場等都是很直接能提能能力的技能。<br />
+另外一個通常是閃現。  </p>
+<p>中路記錄最好的Kayle<br />
+一直很愛用Kayle, 混傷Carry 加雙補助招式, 實在OP, 有80% 勝率...直到被Nerf 了, 那就不說了... 最近單中就像猜拳, 比如說 Caitlyn&gt;J4&gt;Ryze&gt;Caitlyn ...在單排時要求不了Jungle 是有點信命的感覺, 贏了也不爽  </p>
+<p>下路<br />
+所謂上中下就是EU 說法, 其實也沒有這樣規定。打ADC 時最好的還是用兩年半以來一直使用的Tristana。在3v3 時試過十多場連勝, 那時候已經完全忘記輸是甚麼感覺了。直到有一場隊友&quot;初&quot;離, 但還是能撐三十多分鐘, 實在太霸道了。<br />
+Tristana 強於兩點: 長程位移和攻擊距離。最近還把E 技buff 到天生的攻擊距離。  </p>
+<p>各路的要點是<br />
+ADC<br />
+在LOL 這遊戲中, 我最看重的是Ashe 這英雄。<br />
+和反應速度比較起來, 站位策略的重要程度實在比其他位置要高得多。而Ashe 這隻沒有保命技能的英雄, 就是一但出錯就必死無疑。即使手持重型武器ADC 還是以保命為先, 站得愈後愈好, 寧願走確信遠路也不要犯險。<br />
+上路<br />
+上路多數是互相打不進的狀態, 所以慢慢打就可以。把精神分配給隊友, 在用GP 和Shen 時, 我可是有幾乎20%時間都在看其他路的。<br />
+中路<br />
+中路最有趣的地方是心理的摶鬥, 盡快了解對手是怎樣的一個人然後預計他的行動, 用遠攻把他迫退。對線期的領先對中路來說比起其他兩路更重要</p></div>
+
+
+        <script src="https://utteranc.es/client.js"
+        repo="abbychau/blog.abby.md"
+        issue-term="pathname"
+        label="blog comment"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async>
+        </script>
+
+        <div id="permalink" style='word-break: break-all;padding:2em 0 1em 0'>
+            <a href="https://blog.abby.md/posts/realblog_2013-09_74639.htm">Permalink of this blog</a>
+            <a href="https://github.com/abbychau/blog.abby.md/blob/master/./original-data/realblog/2013-09/74639.md">Source</a>
+        </div>
+        
+        <div id="homelink" style='word-break: break-all;padding:1em 0 2em 0;display: none;'>
+            <a href="/">Abby's Archive</a>
+        </div>  
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,102 @@
+<html>
+
+<head>
+    <title>.NET 必勝?</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <link rel="stylesheet" href="https://blog.abby.md/style.css" />
+    <link rel="icon" type="image/png" href="https://blog.abby.md/favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+    
+    <script>
+        function inIframe() {
+            try {
+                return window.self !== window.top;
+            } catch (e) {
+                return true;
+            }
+        }
+
+        function myMarked(str) {
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            $('#content').html(myMarked($('#content').html()))
+            hljs.highlightAll();
+
+            if(!inIframe()){
+                $('#homelink').show()
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div id='article' style='padding:0 15px 10px 10px;font-size: large;font-family: serif;'>
+        <h1 id="subject">.NET 必勝?</h1>
+        <div id="date" style='font-size: 9pt;'>2006-08-11</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags"><a href='/tags/電腦和網際網路.htm'>電腦和網際網路</a></div>
+        <div id="content" style='word-break: break-all;'><p>.NET framework 在ms 大力摧谷之下...已經十分流行</p>
+<p>直至vista 的發佈...</p>
+<p>我發覺...這個當初被我認為太冗贅的framework...</p>
+<p>會稱霸win32/64 系統</p>
+<p>本身microsoft 在推行.net 時, 它自己本身發佈的程式也是由c++/mfc 開發的</p>
+<p>加上本身的使用經驗, 令我覺得.net framework 的確也太慢了.</p>
+<p>但vista 竟大量的用了.net...</p>
+<p>當然很多人都覺得它太慢了...</p>
+<p>但當電腦配備&quot;慢慢&quot;的提升, 反而有不少人都在用vista(beta)</p>
+<p>既然作業系統都把framework 載入了記憶體,</p>
+<p>在執行.net 開發的程式也會比以前快了...</p>
+<p>加上最重要的, .net 的開發速度...是我見過眾多的language 中最快的!</p>
+<p>而且它和windows system.io 的連合, 很多低階的功能都可以實現</p>
+<p>這樣的語言如果克服了執行效率的問題,</p>
+<p>我覺得它是必勝的...</p>
+<p>microsoft .net 這一手可能會把自己一手捧起的mfc/vb6 壓沉,</p>
+<p>mfc/vb6 畢竟也是老產品了, 與其被其他公司的產品取締(delphi 已經把自已的產品組成studio, 2005版也推出了)</p>
+<p>還不如自己用.net 把vb 和vc 的人盡可能接過來</p>
+<p>但它的野心不在於此...</p>
+<p>.net 中的aspx 才是microsoft 最想普及的</p>
+<p>apache, mysql, php 的緊密合作,</p>
+<p>把asp 和iis 的市場佔有率一步步的壓下去,</p>
+<p>這現象甚至是世界性的.</p>
+<p>asp 和iis 要出頭的話, 總不能依賴大公司的支持...</p>
+<p>aspx 是asp 出頭的第一步...</p>
+<p>aspx 和其他的.net 產品一樣, 執行效率不及競爭對手,</p>
+<p>但這一年已經慢慢改善了...</p>
+<p>甚至像Windows Live Spaces 這樣大型的服務,</p>
+<p>也可以用aspx 實現了...</p>
+<p>microsoft 的確是有遠見的...</p>
+<p>除著vista 的推出和電腦效能的提升,</p>
+<p>.net framework 的優點會突現, 而缺點會慢慢&quot;消失&quot;...</p>
+<p>有機會再和大家談一談metro...</p>
+<p>加上它, 可能mircosoft 真的獨大了...</p>
+<p>adobe 和linux 兩個高低層的對手還撐得住嗎?</p></div>
+
+
+        <script src="https://utteranc.es/client.js"
+        repo="abbychau/blog.abby.md"
+        issue-term="pathname"
+        label="blog comment"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async>
+        </script>
+
+        <div id="permalink" style='word-break: break-all;padding:2em 0 1em 0'>
+            <a href="https://blog.abby.md/posts/msn-space_2006_2006-08-11-net-必勝_index.htm">Permalink of this blog</a>
+            <a href="https://github.com/abbychau/blog.abby.md/blob/master/./original-data/msn-space/2006/2006-08-11-net-必勝/index.md">Source</a>
+        </div>
+        
+        <div id="homelink" style='word-break: break-all;padding:1em 0 2em 0;display: none;'>
+            <a href="/">Abby's Archive</a>
+        </div>  
+    </div>
+</body>
+
+</html>

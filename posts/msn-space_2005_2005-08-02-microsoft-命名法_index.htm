@@ -1,0 +1,79 @@
+<html>
+
+<head>
+    <title>Microsoft 命名法</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <link rel="stylesheet" href="https://blog.abby.md/style.css" />
+    <link rel="icon" type="image/png" href="https://blog.abby.md/favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+    
+    <script>
+        function inIframe() {
+            try {
+                return window.self !== window.top;
+            } catch (e) {
+                return true;
+            }
+        }
+
+        function myMarked(str) {
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            $('#content').html(myMarked($('#content').html()))
+            hljs.highlightAll();
+
+            if(!inIframe()){
+                $('#homelink').show()
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div id='article' style='padding:0 15px 10px 10px;font-size: large;font-family: serif;'>
+        <h1 id="subject">Microsoft 命名法</h1>
+        <div id="date" style='font-size: 9pt;'>2005-08-02</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags"><a href='/tags/局勢.htm'>局勢</a></div>
+        <div id="content" style='word-break: break-all;'><p>Microsoft 這幾年為產品的命名方法實在是十分奇怪,</p>
+<p>模式是首先取一個名, 接近發放時改名.</p>
+<p>比如: 原來叫windows whislter 的,</p>
+<p>到beta 時改了叫windows xp,</p>
+<p>又, 原來叫windows longhorn 的,</p>
+<p>到了現在beta 了, 改叫windows vista.</p>
+<p>不知道office 12, 到發行時會不會又改名了...</p>
+<p>距離發行還有剛有一年,</p>
+<p>microsoft 那邊已經在網頁準備了不少,</p>
+<p>有興趣的可以參觀一下這個self-guided tour:</p>
+<p><a href="http://www.microsoft.com/technet/windowsvista/evaluate/sgtour.mspx">http://www.microsoft.com/technet/windowsvista/evaluate/sgtour.mspx</a></p>
+<p>很有興趣的啊...那個系統的管理員也叫abby!</p></div>
+
+
+        <script src="https://utteranc.es/client.js"
+        repo="abbychau/blog.abby.md"
+        issue-term="pathname"
+        label="blog comment"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async>
+        </script>
+
+        <div id="permalink" style='word-break: break-all;padding:2em 0 1em 0'>
+            <a href="https://blog.abby.md/posts/msn-space_2005_2005-08-02-microsoft-命名法_index.htm">Permalink of this blog</a>
+            <a href="https://github.com/abbychau/blog.abby.md/blob/master/./original-data/msn-space/2005/2005-08-02-microsoft-命名法/index.md">Source</a>
+        </div>
+        
+        <div id="homelink" style='word-break: break-all;padding:1em 0 2em 0;display: none;'>
+            <a href="/">Abby's Archive</a>
+        </div>  
+    </div>
+</body>
+
+</html>

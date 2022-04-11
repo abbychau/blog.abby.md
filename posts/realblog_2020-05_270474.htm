@@ -1,0 +1,90 @@
+<html>
+
+<head>
+    <title>5. aCore - 正確寫入Buffer 的姿勢 - Volatile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <link rel="stylesheet" href="https://blog.abby.md/style.css" />
+    <link rel="icon" type="image/png" href="https://blog.abby.md/favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+    
+    <script>
+        function inIframe() {
+            try {
+                return window.self !== window.top;
+            } catch (e) {
+                return true;
+            }
+        }
+
+        function myMarked(str) {
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            $('#content').html(myMarked($('#content').html()))
+            hljs.highlightAll();
+
+            if(!inIframe()){
+                $('#homelink').show()
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div id='article' style='padding:0 15px 10px 10px;font-size: large;font-family: serif;'>
+        <h1 id="subject">5. aCore - 正確寫入Buffer 的姿勢 - Volatile</h1>
+        <div id="date" style='font-size: 9pt;'>2020-05-14</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags"><a href='/tags/實務電腦.htm'>實務電腦</a></div>
+        <div id="content" style='word-break: break-all;'><p>這篇文章之前已經打過一次, 但在開發的途中出現 Kernal Secrutiy Check Error</p>
+<p><img src="https://scontent-nrt1-1.xx.fbcdn.net/v/t1.0-9/p720x720/96696319_10158168999813965_8093637269677670400_o.jpg?_nc_cat=100&amp;_nc_sid=110474&amp;_nc_ohc=kxeXhAN5mVkAX8d-dXr&amp;_nc_ht=scontent-nrt1-1.xx&amp;_nc_tp=6&amp;oh=7301c9c365a1fb8a69875a2d3ab69e55&amp;oe=5EE06131" alt="" /></p>
+<p>而且QEMU 好像碰到了閃重啟問題。所以如果可以的話 , 還是建議用整個Linux 來做開發。</p>
+<h2>Volatile</h2>
+<p>在C, C++, Java, C# 中都會看到這個變數標示, 通常我們會標示它給多線程讀取的變數, 但基礎意義上來說 , <code>Volatile</code> 這個字在他們中間卻有很大的分別。以下我都是以C 作為標準。</p>
+<p>可能會有人聯想到Mutex 等臨界區保護的方案 , 但是Volatile 其實只是單純地讓編譯器不要把讀取這個變數時優化掉而已。並無任何的邏輯增減。</p>
+<p>這是用到Volatile, 是因為我們現在要讀取的是VGA Buffer 而不是RAM , 所以編譯器並不知道這種讀寫是有意義的。<br />
+有關具體的優化的例子, 可以看這頁WIKI : <a href="https://zh.wikipedia.org/wiki/Volatile%E5%8F%98%E9%87%8F">https://zh.wikipedia.org/wiki/Volatile%E5%8F%98%E9%87%8F</a></p>
+<p>(我覺得上次(當機前)講得好多了)</p>
+<p>那麼, 在<code>Cargo.toml</code> 加入:</p>
+<pre><code class="language-toml">[dependencies]
+volatile = "0.2.6"</code></pre>
+<p>在<code>vga_buffer.rs</code> 的頂部加入 <code>use volatile::Volatile;</code><br />
+並修改 Buffer 為 :</p>
+<pre><code class="language-Rust">struct Buffer {
+    chars: [[Volatile&lt;ScreenChar&gt;; BUFFER_WIDTH]; BUFFER_HEIGHT],
+}</code></pre>
+<p>再把 <code>fn write_byte</code> 中間的幾句修改成:</p>
+<pre><code class="language-Rust">                self.buffer.chars[row][col].write(ScreenChar {
+                    ascii_character: byte,
+                    color_code: color_code,
+                });</code></pre>
+<p>這樣我們就可以用<code>Volatile</code> 這個Crate 來避開 rustc 的優化了。</p></div>
+
+
+        <script src="https://utteranc.es/client.js"
+        repo="abbychau/blog.abby.md"
+        issue-term="pathname"
+        label="blog comment"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async>
+        </script>
+
+        <div id="permalink" style='word-break: break-all;padding:2em 0 1em 0'>
+            <a href="https://blog.abby.md/posts/realblog_2020-05_270474.htm">Permalink of this blog</a>
+            <a href="https://github.com/abbychau/blog.abby.md/blob/master/./original-data/realblog/2020-05/270474.md">Source</a>
+        </div>
+        
+        <div id="homelink" style='word-break: break-all;padding:1em 0 2em 0;display: none;'>
+            <a href="/">Abby's Archive</a>
+        </div>  
+    </div>
+</body>
+
+</html>

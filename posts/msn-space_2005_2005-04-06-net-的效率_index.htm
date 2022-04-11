@@ -1,0 +1,81 @@
+<html>
+
+<head>
+    <title>.NET 的效率</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <link rel="stylesheet" href="https://blog.abby.md/style.css" />
+    <link rel="icon" type="image/png" href="https://blog.abby.md/favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+    
+    <script>
+        function inIframe() {
+            try {
+                return window.self !== window.top;
+            } catch (e) {
+                return true;
+            }
+        }
+
+        function myMarked(str) {
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            $('#content').html(myMarked($('#content').html()))
+            hljs.highlightAll();
+
+            if(!inIframe()){
+                $('#homelink').show()
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div id='article' style='padding:0 15px 10px 10px;font-size: large;font-family: serif;'>
+        <h1 id="subject">.NET 的效率</h1>
+        <div id="date" style='font-size: 9pt;'>2005-04-06</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags"><a href='/tags/短評.htm'>短評</a></div>
+        <div id="content" style='word-break: break-all;'><p>C++ 配上.NET framework 之後,<br />
+運作效率簡直低得令人咋舌!</p>
+<p>.NET framework 在開發程式上除了佔有高速開發及易用性高之外,<br />
+就是我常說的那句: 高不成, 低不就!<br />
+運行小程式時, 有90% 的記憶體都都給framework 用,<br />
+餘下的才是內核真正在使用的,<br />
+效率太差了...光載入framework 就要15mb...&quot;小&quot;程式還會用嗎?</p>
+<p>.NET framework 的佔用率在上100mb 記憶的程式上看來不太高,<br />
+但這樣的大程式還會貪圖.net framework 的微少便利嗎?</p>
+<p>在今天,我認為 .NET studio 的用途真的不大!<br />
+但如果當電腦配備足夠的強時,<br />
+也許它便能大展拳腳了...<br />
+可能在明年, 電腦內部資源跟本多得用不完,<br />
+殺蟻用龍刀也沒所謂吧! :D</p></div>
+
+
+        <script src="https://utteranc.es/client.js"
+        repo="abbychau/blog.abby.md"
+        issue-term="pathname"
+        label="blog comment"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async>
+        </script>
+
+        <div id="permalink" style='word-break: break-all;padding:2em 0 1em 0'>
+            <a href="https://blog.abby.md/posts/msn-space_2005_2005-04-06-net-的效率_index.htm">Permalink of this blog</a>
+            <a href="https://github.com/abbychau/blog.abby.md/blob/master/./original-data/msn-space/2005/2005-04-06-net-的效率/index.md">Source</a>
+        </div>
+        
+        <div id="homelink" style='word-break: break-all;padding:1em 0 2em 0;display: none;'>
+            <a href="/">Abby's Archive</a>
+        </div>  
+    </div>
+</body>
+
+</html>

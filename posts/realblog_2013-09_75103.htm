@@ -1,0 +1,118 @@
+<html>
+
+<head>
+    <title>再說Daisuke</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <link rel="stylesheet" href="https://blog.abby.md/style.css" />
+    <link rel="icon" type="image/png" href="https://blog.abby.md/favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+    
+    <script>
+        function inIframe() {
+            try {
+                return window.self !== window.top;
+            } catch (e) {
+                return true;
+            }
+        }
+
+        function myMarked(str) {
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            $('#content').html(myMarked($('#content').html()))
+            hljs.highlightAll();
+
+            if(!inIframe()){
+                $('#homelink').show()
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div id='article' style='padding:0 15px 10px 10px;font-size: large;font-family: serif;'>
+        <h1 id="subject">再說Daisuke</h1>
+        <div id="date" style='font-size: 9pt;'>2013-09-13</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags"><a href='/tags/日常生活.htm'>日常生活</a></div>
+        <div id="content" style='word-break: break-all;'><p>我相信每首歌的創作, 除了金錢外, 都是有主觀動機。  </p>
+<p><span style="text-align: justify;">I’m a country girl, </span><br />
+but you’re a super cityboy.<br />
+<span style="text-align: justify;">I’m a natural girl, </span><br />
+<span style="text-align: justify;">but you’re prince for me. </span>  </p>
+<p><span style="text-align: justify;">Everyday wondering how I become your girl. </span><br />
+<span style="text-align: justify;">Everynight, I’m feeling your body in my dreams. </span><br />
+<span style="text-align: justify;">I can’t sleep at all, hello, Morning sun. </span><br />
+<span style="text-align: justify;">My love, my crush, (I) wanna tell you my feeling. </span>  </p>
+<p><span style="text-align: justify;">Please tell me now, how do you feel me? </span><br />
+<span style="text-align: justify;">Please show me now. </span><br />
+<span style="text-align: justify;">I wanna dance with you more. </span><br />
+<span style="text-align: justify;">Right now, I want you’re one for you. </span><br />
+<span style="text-align: justify;">Everytime, everywhere, </span><br />
+<span style="text-align: justify;">I will surely get your honest love. </span><br />
+<span style="text-align: justify;">Daisuke... </span>  </p>
+<p><span style="text-align: justify;">Please tell me now, how do you feel me? </span><br />
+<span style="text-align: justify;">Please show me now. </span><br />
+<span style="text-align: justify;">I wanna dance with you more. </span><br />
+<span style="text-align: justify;">Right now, I want you’re one for you. </span><br />
+<span style="text-align: justify;">Everytime, (everynight,) everywhere, (everywhere,) </span><br />
+<span style="text-align: justify;">I will surely get your honest love. </span><br />
+<span style="text-align: justify;">Daisuke...<br />
+</span><br />
+是對號入坐還是真實, 每字每句都令我感到無比婉惜。</p>
+<div style="top: 0px;"><span style="text-align: justify;">I</span><span style="color: rgb(255, 255, 255); font-family: arial, helvetica, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', Osaka, メイリオ, Meiryo, 'MS Pゴシック', clean, sans-serif; font-size: 13px; line-height: 18px; text-align: justify; background-color: rgb(0, 0, 0);">’m a country girl, </span>  
+<span style="color: rgb(255, 255, 255); font-family: arial, helvetica, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', Osaka, メイリオ, Meiryo, 'MS Pゴシック', clean, sans-serif; font-size: 13px; line-height: 18px; text-align: justify; background-color: rgb(0, 0, 0);">but you’re a super cityboy. </span>  
+<span style="color: rgb(255, 255, 255); font-family: arial, helvetica, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', Osaka, メイリオ, Meiryo, 'MS Pゴシック', clean, sans-serif; font-size: 13px; line-height: 18px; text-align: justify; background-color: rgb(0, 0, 0);">I’m a natural girl, </span>  
+<span style="color: rgb(255, 255, 255); font-family: arial, helvetica, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', Osaka, メイリオ, Meiryo, 'MS Pゴシック', clean, sans-serif; font-size: 13px; line-height: 18px; text-align: justify; background-color: rgb(0, 0, 0);">but you’re prince for me. </span>  
+
+<span style="color: rgb(255, 255, 255); font-family: arial, helvetica, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', Osaka, メイリオ, Meiryo, 'MS Pゴシック', clean, sans-serif; font-size: 13px; line-height: 18px; text-align: justify; background-color: rgb(0, 0, 0);">Everyday wondering how I become your girl. </span>  
+<span style="color: rgb(255, 255, 255); font-family: arial, helvetica, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', Osaka, メイリオ, Meiryo, 'MS Pゴシック', clean, sans-serif; font-size: 13px; line-height: 18px; text-align: justify; background-color: rgb(0, 0, 0);">Everynight, I’m feeling your body in my dreams. </span>  
+<span style="color: rgb(255, 255, 255); font-family: arial, helvetica, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', Osaka, メイリオ, Meiryo, 'MS Pゴシック', clean, sans-serif; font-size: 13px; line-height: 18px; text-align: justify; background-color: rgb(0, 0, 0);">I can’t sleep at all, hello, Morning sun. </span>  
+<span style="color: rgb(255, 255, 255); font-family: arial, helvetica, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', Osaka, メイリオ, Meiryo, 'MS Pゴシック', clean, sans-serif; font-size: 13px; line-height: 18px; text-align: justify; background-color: rgb(0, 0, 0);">My love, my crush, (I) wanna tell you my feeling. </span>  
+
+<span style="color: rgb(255, 255, 255); font-family: arial, helvetica, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', Osaka, メイリオ, Meiryo, 'MS Pゴシック', clean, sans-serif; font-size: 13px; line-height: 18px; text-align: justify; background-color: rgb(0, 0, 0);">Please tell me now, how do you feel me? </span>  
+<span style="color: rgb(255, 255, 255); font-family: arial, helvetica, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', Osaka, メイリオ, Meiryo, 'MS Pゴシック', clean, sans-serif; font-size: 13px; line-height: 18px; text-align: justify; background-color: rgb(0, 0, 0);">Please show me now. </span>  
+<span style="color: rgb(255, 255, 255); font-family: arial, helvetica, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', Osaka, メイリオ, Meiryo, 'MS Pゴシック', clean, sans-serif; font-size: 13px; line-height: 18px; text-align: justify; background-color: rgb(0, 0, 0);">I wanna dance with you more. </span>  
+<span style="color: rgb(255, 255, 255); font-family: arial, helvetica, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', Osaka, メイリオ, Meiryo, 'MS Pゴシック', clean, sans-serif; font-size: 13px; line-height: 18px; text-align: justify; background-color: rgb(0, 0, 0);">Right now, I want you’re one for you. </span>  
+<span style="color: rgb(255, 255, 255); font-family: arial, helvetica, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', Osaka, メイリオ, Meiryo, 'MS Pゴシック', clean, sans-serif; font-size: 13px; line-height: 18px; text-align: justify; background-color: rgb(0, 0, 0);">Everytime, everywhere, </span>  
+<span style="color: rgb(255, 255, 255); font-family: arial, helvetica, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', Osaka, メイリオ, Meiryo, 'MS Pゴシック', clean, sans-serif; font-size: 13px; line-height: 18px; text-align: justify; background-color: rgb(0, 0, 0);">I will surely get your honest love. </span>  
+<span style="color: rgb(255, 255, 255); font-family: arial, helvetica, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', Osaka, メイリオ, Meiryo, 'MS Pゴシック', clean, sans-serif; font-size: 13px; line-height: 18px; text-align: justify; background-color: rgb(0, 0, 0);">Daisuke... </span>  
+
+<span style="color: rgb(255, 255, 255); font-family: arial, helvetica, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', Osaka, メイリオ, Meiryo, 'MS Pゴシック', clean, sans-serif; font-size: 13px; line-height: 18px; text-align: justify; background-color: rgb(0, 0, 0);">Please tell me now, how do you feel me? </span>  
+<span style="color: rgb(255, 255, 255); font-family: arial, helvetica, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', Osaka, メイリオ, Meiryo, 'MS Pゴシック', clean, sans-serif; font-size: 13px; line-height: 18px; text-align: justify; background-color: rgb(0, 0, 0);">Please show me now. </span>  
+<span style="color: rgb(255, 255, 255); font-family: arial, helvetica, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', Osaka, メイリオ, Meiryo, 'MS Pゴシック', clean, sans-serif; font-size: 13px; line-height: 18px; text-align: justify; background-color: rgb(0, 0, 0);">I wanna dance with you more. </span>  
+<span style="color: rgb(255, 255, 255); font-family: arial, helvetica, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', Osaka, メイリオ, Meiryo, 'MS Pゴシック', clean, sans-serif; font-size: 13px; line-height: 18px; text-align: justify; background-color: rgb(0, 0, 0);">Right now, I want you’re one for you. </span>  
+<span style="color: rgb(255, 255, 255); font-family: arial, helvetica, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', Osaka, メイリオ, Meiryo, 'MS Pゴシック', clean, sans-serif; font-size: 13px; line-height: 18px; text-align: justify; background-color: rgb(0, 0, 0);">Everytime, (everynight,) everywhere, (everywhere,) </span>  
+<span style="color: rgb(255, 255, 255); font-family: arial, helvetica, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', Osaka, メイリオ, Meiryo, 'MS Pゴシック', clean, sans-serif; font-size: 13px; line-height: 18px; text-align: justify; background-color: rgb(0, 0, 0);">I will surely get your honest love. </span>  
+<span style="color: rgb(255, 255, 255); font-family: arial, helvetica, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', Osaka, メイリオ, Meiryo, 'MS Pゴシック', clean, sans-serif; font-size: 13px; line-height: 18px; text-align: justify; background-color: rgb(0, 0, 0);">Daisuke...</span>  
+</div></div>
+
+
+        <script src="https://utteranc.es/client.js"
+        repo="abbychau/blog.abby.md"
+        issue-term="pathname"
+        label="blog comment"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async>
+        </script>
+
+        <div id="permalink" style='word-break: break-all;padding:2em 0 1em 0'>
+            <a href="https://blog.abby.md/posts/realblog_2013-09_75103.htm">Permalink of this blog</a>
+            <a href="https://github.com/abbychau/blog.abby.md/blob/master/./original-data/realblog/2013-09/75103.md">Source</a>
+        </div>
+        
+        <div id="homelink" style='word-break: break-all;padding:1em 0 2em 0;display: none;'>
+            <a href="/">Abby's Archive</a>
+        </div>  
+    </div>
+</body>
+
+</html>

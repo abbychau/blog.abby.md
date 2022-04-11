@@ -1,0 +1,237 @@
+<html>
+
+<head>
+    <title>How does nom v.5 work?</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+    <link rel="stylesheet" href="https://blog.abby.md/style.css" />
+    <link rel="icon" type="image/png" href="https://blog.abby.md/favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+    
+    <script>
+        function inIframe() {
+            try {
+                return window.self !== window.top;
+            } catch (e) {
+                return true;
+            }
+        }
+
+        function myMarked(str) {
+            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
+            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
+            return marked(str, { gfm: true, breaks: true });
+        }
+        $(document).ready(function () {
+            $('#content').html(myMarked($('#content').html()))
+            hljs.highlightAll();
+
+            if(!inIframe()){
+                $('#homelink').show()
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div id='article' style='padding:0 15px 10px 10px;font-size: large;font-family: serif;'>
+        <h1 id="subject">How does nom v.5 work?</h1>
+        <div id="date" style='font-size: 9pt;'>2019-05-17</div>
+        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags"><a href='/tags/nom.htm'>nom</a>, <a href='/tags/rust.htm'>Rust</a>, <a href='/tags/parser.htm'>parser</a>, <a href='/tags/json.htm'>json</a></div>
+        <div id="content" style='word-break: break-all;'><h2>What is nom?</h2>
+<p><code>nom</code> is a parser combinators library written in Rust. Its goal is to provide tools to build safe parsers without compromising the speed or memory consumption. To that end, it uses extensively Rust's strong typing and memory safety to produce fast and correct parsers, and provides functions, macros and traits to abstract most of the error prone plumbing.</p>
+<h2>Why this passage?</h2>
+<p><code>nom</code> version 5 is going through a very large change to the lexical syntax to be used. The old way will not work any more. So this passage will tell and explain the new way.</p>
+<h2>Hello Color</h2>
+<p>This is a hello world example for parser that we are going to parse Hex color like <code>#2F14DF</code>.</p>
+<pre><code class="language-Rust">extern crate nom;
+use nom::{
+  IResult,
+  bytes::complete::{tag, take_while_m_n},
+  combinator::map_res,
+  sequence::tuple
+};
+
+#[derive(Debug,PartialEq)]
+pub struct Color {
+  pub red:   u8,
+  pub green: u8,
+  pub blue:  u8,
+}
+
+fn from_hex(input: &amp;str) -&gt; Result&lt;u8, std::num::ParseIntError&gt; {
+  u8::from_str_radix(input, 16)
+}
+
+fn is_hex_digit(c: char) -&gt; bool {
+  c.is_digit(16)
+}
+
+fn hex_primary(input: &amp;str) -&gt; IResult&lt;&amp;str, u8&gt; {
+  map_res(
+    take_while_m_n(2, 2, is_hex_digit),
+    from_hex
+  )(input)
+}
+
+fn hex_color(input: &amp;str) -&gt; IResult&lt;&amp;str, Color&gt; {
+  let (input, _) = tag("#")(input)?;
+  let (input, (red, green, blue)) = tuple((hex_primary, hex_primary, hex_primary))(input)?;
+
+  Ok((input, Color { red, green, blue }))
+}
+
+fn main() {}
+
+#[test]
+fn parse_color() {
+  assert_eq!(hex_color("#2F14DF"), Ok(("", Color {
+    red: 47,
+    green: 20,
+    blue: 223,
+  })));
+}</code></pre>
+<p>The combinator is writting in a very functional way.</p>
+<pre><code class="language-Rust">let (input, _) = tag("#")(input)?;
+let (input, (red, green, blue)) = tuple((hex_primary, hex_primary, hex_primary))(input)?;
+
+Ok((input, Color { red, green, blue }))</code></pre>
+<p>That, <code>tag("#")</code>, <code>tuple((hex_primary, hex_primary, hex_primary))</code> are functions.</p>
+<h2>Parse Json</h2>
+<p>Then we come to the real world. They provided a very efficient Json parser as an example of nom.</p>
+<p>Please find the example <a href="https://github.com/Geal/nom/blob/master/examples/json.rs">here</a>.</p>
+<p>Revision, this is the defination or state-machine of Json.</p>
+<pre><code class="language-Rust">pub enum JsonValue {
+  Str(String),
+  Boolean(bool),
+  Num(f64),
+  Array(Vec&lt;JsonValue&gt;),
+  Object(HashMap&lt;String, JsonValue&gt;),
+}</code></pre>
+<p>The following are lexical elements:</p>
+<pre><code class="language-Rust">fn sp&lt;'a, E: ParseError&lt;&amp;'a str&gt;&gt;(i: &amp;'a str) -&gt;IResult&lt;&amp;'a str, &amp;'a str, E&gt; {
+  let chars = " \t\r\n";
+
+  take_while(move |c| chars.contains(c))(i)
+}</code></pre>
+<p>Space should be obvious.</p>
+<pre><code class="language-Rust">fn float&lt;'a, E: ParseError&lt;&amp;'a str&gt;&gt;(i: &amp;'a str) -&gt;IResult&lt;&amp;'a str, f64, E&gt; {
+  flat_map!(i, recognize_float, parse_to!(f64))
+}</code></pre>
+<p>nom provided features <code>recognize_float</code> and <code>parse_to</code> to do it automatically.</p>
+<pre><code class="language-Rust">fn parse_str&lt;'a, E: ParseError&lt;&amp;'a str&gt;&gt;(i: &amp;'a str) -&gt;IResult&lt;&amp;'a str, &amp;'a str, E&gt; {
+    escaped!(i, call!(alphanumeric), '\\', one_of!("\"n\\"))
+}</code></pre>
+<p><code>call!()</code> is a macro to call a named function as callback. It can also take in argument like below.</p>
+<pre><code class="language-Rust">  fn take_wrapper(input: &amp;[u8], i: u8) -&gt; IResult&lt;&amp;[u8], &amp;[u8]&gt; { take!(input, i * 10) }
+
+  // will make a parser taking 20 bytes
+  named!(parser, call!(take_wrapper, 2));</code></pre>
+<p>For <code>one_of!()</code>:</p>
+<pre><code class="language-Rust">named!(simple&lt;char&gt;, one_of!(&amp;b"abc"[..]));
+assert_eq!(simple(b"a123"), Ok((&amp;b"123"[..], 'a')));
+
+named!(a_or_b&lt;&amp;str, char&gt;, one_of!("ab汉"));
+assert_eq!(a_or_b("汉jiosfe"), Ok(("jiosfe", '汉')));</code></pre>
+<p>This following code will extract string lexical elements by <code>{"..."}</code>. We can see that delimiters actually helps programmer to write parsers.</p>
+<pre><code class="language-Rust">fn string&lt;'a, E: ParseError&lt;&amp;'a str&gt;&gt;(i: &amp;'a str) -&gt;IResult&lt;&amp;'a str, &amp;'a str, E&gt; {
+  let (i, _) = char('\"')(i)?;
+  context("string", terminated(parse_str, char('\"')))(i)
+}</code></pre>
+<p>Boolean is a simple tag.</p>
+<pre><code class="language-Rust">fn boolean&lt;'a, E: ParseError&lt;&amp;'a str&gt;&gt;(input: &amp;'a str) -&gt;IResult&lt;&amp;'a str, bool, E&gt; {
+  alt( (
+      |i| tag("false")(i).map(|(i,_)| (i, false)),
+      |i| tag("true")(i).map(|(i,_)| (i, true))
+  ))(input)
+
+}</code></pre>
+<pre><code class="language-Rust">fn array&lt;'a, E: ParseError&lt;&amp;'a str&gt;&gt;(i: &amp;'a str) -&gt;IResult&lt;&amp;'a str, Vec&lt;JsonValue&gt;, E&gt; {
+  let (i, _) = char('[')(i)?;
+
+  context(
+    "array",
+    terminated(
+      |i| separated_listc(i, preceded(sp, char(',')), value),
+      preceded(sp, char(']')))
+     )(i)
+}
+fn key_value&lt;'a, E: ParseError&lt;&amp;'a str&gt;&gt;(i: &amp;'a str) -&gt;IResult&lt;&amp;'a str, (&amp;'a str, JsonValue), E&gt; {
+  separated_pair!(i, preceded!(sp, string), preceded!(sp, char!(':')), value)
+}</code></pre>
+<p><code>preceded</code> is a tool to check if defined something is following.</p>
+<pre><code class="language-Rust">named!(parser&lt;&amp;str, &amp;str&gt;, preceded!(char!('-'), alpha1));
+
+assert_eq!(parser("-abc"), Ok(("", "abc")));
+assert_eq!(parser("abc"), Err(Err::Error(("abc", ErrorKind::Char))));
+assert_eq!(parser("-123"), Err(Err::Error(("123", ErrorKind::Alpha))));</code></pre>
+<p><code>separated_list</code> is a string <code>split</code> in native Rust (or other languages).</p>
+<pre><code class="language-Rust">fn hash&lt;'a, E: ParseError&lt;&amp;'a str&gt;&gt;(i: &amp;'a str) -&gt;IResult&lt;&amp;'a str, HashMap&lt;String, JsonValue&gt;, E&gt; {
+  let (i, _) = char('{')(i)?;
+  context(
+    "map",
+    terminated(
+      |i| map!(i,
+        separated_list!(preceded!(sp, char!(',')), key_value),
+        |tuple_vec| tuple_vec
+          .into_iter()
+          .map(|(k, v)| (String::from(k), v))
+          .collect()
+      ),
+      preceded(sp, char('}')))
+     )(i)
+}</code></pre>
+<p><code>terminated()!</code> returns the result of its first parser if both succeed</p>
+<pre><code class="language-Rust">named!(parser&lt;&amp;str, &amp;str&gt;, terminated!(alpha1, char!(';')));
+
+assert_eq!(parser("abc;"), Ok(("", "abc")));
+assert_eq!(parser("abc,"), Err(Err::Error((",", ErrorKind::Char))));
+assert_eq!(parser("123;"), Err(Err::Error(("123;", ErrorKind::Alpha))));</code></pre>
+<p>and it also takes the third parameter which is a callback like the second parameter in nom 4.3.</p>
+<pre><code class="language-Rust">map!(i,
+    separated_list!(preceded!(sp, char!(',')), key_value),
+    |tuple_vec| tuple_vec
+        .into_iter()
+        .map(|(k, v)| (String::from(k), v))
+        .collect()
+)</code></pre>
+<p>At the end:</p>
+<pre><code class="language-Rust">fn value&lt;'a, E: ParseError&lt;&amp;'a str&gt;&gt;(i: &amp;'a str) -&gt;IResult&lt;&amp;'a str, JsonValue, E&gt; {
+  preceded!(i,
+    sp,
+    alt!(
+      hash    =&gt; { |h| JsonValue::Object(h)            } |
+      array   =&gt; { |v| JsonValue::Array(v)             } |
+      string  =&gt; { |s| JsonValue::Str(String::from(s)) } |
+      float   =&gt; { |f| JsonValue::Num(f)               } |
+      boolean =&gt; { |b| JsonValue::Boolean(b)           }
+    ))
+}</code></pre>
+<p><code>alt</code> try a list of parsers and return the result of the first successful one.</p></div>
+
+
+        <script src="https://utteranc.es/client.js"
+        repo="abbychau/blog.abby.md"
+        issue-term="pathname"
+        label="blog comment"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async>
+        </script>
+
+        <div id="permalink" style='word-break: break-all;padding:2em 0 1em 0'>
+            <a href="https://blog.abby.md/posts/hexo_How-does-nom-work.htm">Permalink of this blog</a>
+            <a href="https://github.com/abbychau/blog.abby.md/blob/master/./original-data/hexo/How-does-nom-work.md">Source</a>
+        </div>
+        
+        <div id="homelink" style='word-break: break-all;padding:1em 0 2em 0;display: none;'>
+            <a href="/">Abby's Archive</a>
+        </div>  
+    </div>
+</body>
+
+</html>
