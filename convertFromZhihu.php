@@ -30,7 +30,7 @@ function process($filename){
         return;
     }
 
-    $cleanPath = "pages/answers/".str_replace(['/','.txt','zhihu','original-data','.','txt','answer'],'',$filename).".htm";
+    $cleanPath = "_generated_pages/answers/".str_replace(['/','.txt','zhihu','original-data','.','txt','answer'],'',$filename).".htm";
     if($dateLine[0]=="o"){
         echo "o";
         $dateLine=substr($dateLine,1);
@@ -55,23 +55,23 @@ function process($filename){
     // $out=['meta'=>$data,'content'=>$content,'markdown'=>$markdownContent,'generated_path'=>$cleanPath];
     // return $out;
 }
-$template = file_get_contents("./templates/template_tags.htm");
+$template = file_get_contents("./templates/template_meta.htm");
 
 $strIndexList = "<ol>".implode("\n",$indexList)."</ol>";
-<<<<<<< HEAD
 file_put_contents("_generated_pages/list.htm",
     str_replace(["{{tag}}","{{content}}","{{listMixdown}}","main_frame"],["Q&A",$strIndexList,"","main_frame2"],$template)
 );
 $strIndexListSafe = "<ol>".implode("\n",$indexListSafe)."</ol>";
 file_put_contents("_generated_pages/list_safe.htm",
-    str_replace(["{{tag}}","{{content}}","{{listMixdown}}","main_frame"],["Q&A",$strIndexListSafe,"","main_frame2"],$template)
-=======
-file_put_contents("pages/list.htm",
-    str_replace(["{{tag}}","{{list}}","main_frame"],["Q&A",$strIndexList,"main_frame2"],$template)
+    str_replace(["{{tag}}","{{content}}","{{listMixdown}}","main_frame"],["Q&A","從左邊選",$strIndexListSafe,"main_frame2"],$template)
 );
-$strIndexListSafe = "<ol>".implode("\n",$indexListSafe)."</ol>";
-file_put_contents("pages/list_safe.htm",
-    str_replace(["{{tag}}","{{list}}","main_frame"],["Q&A",$strIndexListSafe,"main_frame2"],$template)
->>>>>>> 2f9c64d3d169d1be58c1de59648ffcb731b973b7
-);
+
+foreach(glob("./_generated_pages/answers/*") as $filename){
+    //replace {{listMixdown}} with $strIndexListSafe in the file
+    $content = file_get_contents($filename);
+    $content = str_replace("{{listMixdown}}",$strIndexListSafe,$content);
+    //echo $filename."\n";
+    file_put_contents($filename,$content);
+}
+
 file_put_contents("zhihu_dump.json",json_encode($stores,JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT));

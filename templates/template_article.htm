@@ -12,13 +12,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked@3.0.7/marked.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
-<<<<<<< HEAD
     <script src="/script.js"></script>
   </head>
 
   <body>
     <div id="docList">
-      <div style="padding: 5px">
+      <div>
         {{listMixdown}}
       </div>
     </div>
@@ -39,43 +38,6 @@
 
       <script
         src="https://utteranc.es/client.js"
-=======
-    
-    <script>
-        function inIframe() {
-            try {
-                return window.self !== window.top;
-            } catch (e) {
-                return true;
-            }
-        }
-
-        function myMarked(str) {
-            str = str.replace(/\{% youtube (.+?) %\}/g, '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/$1" "frameborder="0"></iframe>');
-            str = str.replace(/\{% ghcode (.+?) (.+?) (.+?) %\}/g, '$1#L$2-L$3');
-            return marked(str, { gfm: true, breaks: true });
-        }
-        $(document).ready(function () {
-            $('#content').html(myMarked($('#content').html()))
-            hljs.highlightAll();
-
-            if(!inIframe()){
-                $('#homelink').show()
-            }
-        })
-    </script>
-</head>
-
-<body>
-    <div id='article' style='padding:0 15px 10px 10px;font-size: large;font-family: serif;'>
-        <h1 id="subject">{{subject}}</h1>
-        <div id="date" style='font-size: 9pt;'>{{date}}</div>
-        <div style='font-size: 9pt; border-bottom:1px solid #444; padding-bottom:1em' id="tags">{{tags}}</div>
-        <div id="content" style='word-break: break-all;'>{{markdown}}</div>
-
-
-        <script src="https://utteranc.es/client.js"
->>>>>>> 2f9c64d3d169d1be58c1de59648ffcb731b973b7
         repo="abbychau/blog.abby.md"
         issue-term="pathname"
         label="blog comment"
@@ -96,10 +58,5 @@
         <a href="/">Abby's Archive</a>
       </div>
     </div>
-<<<<<<< HEAD
   </body>
-=======
-</body>
-
->>>>>>> 2f9c64d3d169d1be58c1de59648ffcb731b973b7
 </html>

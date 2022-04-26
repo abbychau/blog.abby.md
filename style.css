@@ -22,6 +22,9 @@
     left: 0;
 
 }
+#docList div{
+    padding:8px;
+}
 /* only when orientation is in portrait mode */
 @media all and (orientation:portrait) {
     #info {
