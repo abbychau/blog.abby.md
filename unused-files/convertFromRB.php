@@ -73,6 +73,6 @@ foreach($store as $v){
     $list.="$head &gt; <a onclick=\"go('{$v['path']}')\">{$title}</a><br />";
 }
 $template = file_get_contents('template.htm');
-$template = str_replace("{{list}}",$list,$template);
+$template = str_replace("{{content}}",$list,$template);
 file_put_contents("index.htm",$template);
 

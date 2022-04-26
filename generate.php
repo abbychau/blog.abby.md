@@ -36,7 +36,7 @@ function process($file){
     $content=implode("\n",$ytxt);
     $markdownContent = $Parsedown->text($content);
     $cleanPath = "_generated/".trim(str_replace(['original-data','/','.md'],['','_','.htm'],$data['path']),"._");
-    $template = file_get_contents('templates/template_article.htm');
+    $articleTemplate = file_get_contents('templates/template_article.htm');
     if(isset($data['tags'])){
         if(!is_array($data['tags'])){
             $data['tags'] = [$data['tags']];
@@ -59,24 +59,24 @@ function process($file){
     }
     $strTagLinks=[];
     foreach($tags as $tag){
-        $tagToArticles[$tag][]=['title'=>$data['title'],'url'=>$cleanPath];
+        $tagToArticles[$tag][]=['title'=>$data['title'],'url'=>"/".$cleanPath];
         $file = sanTag($tag);
         $strTagLinks[] = "<a href='/_meta/{$file}.htm'>$tag</a>";
     }
-    $template = str_replace(
+    $mixdownContent = str_replace(
         ["{{subject}}","{{date}}","{{tags}}","{{markdown}}","{{paramlink}}","{{source}}"],
         [
             $data['title'],$data['date'],implode(", ",$strTagLinks),$markdownContent,
             "https://blog.abby.md/{$cleanPath}",
             "https://github.com/abbychau/blog.abby.md/blob/master/{$data['path']}"
         ],
-        $template
+        $articleTemplate
     );
     if($data['title']==""){
         echo $data['path'];
         exit;
     }
-    file_put_contents($cleanPath,$template);
+    file_put_contents($cleanPath, $mixdownContent);
     $store[]=['meta'=>$data,'content'=>$content,'markdown'=>$markdownContent,'generated_path'=>$cleanPath];
 }
 echo "Loading Files...\n";
@@ -91,6 +91,12 @@ foreach(glob("./original-data/msn-space/*/*") as $v){
     process($file);
 }
 foreach(glob("./original-data/realblog/*/*") as $v){
+    // $txt=file_get_contents($v);
+    // //strip tags
+    // $txt = str_replace(["<p>","</p>","<br>","<br/>","<br />","<tr>","</tr>","<div>","</div>"],"\n",$txt);
+    // $txt = strip_tags($txt);
+    // echo $v . "\n";
+    // file_put_contents($v,$txt);
     process($v);
 }
 usort($store,function($a,$b){
@@ -108,19 +114,18 @@ foreach($store as $v){
         $head = "$sub07<br />";
     }
     $title=$v['meta']['title']?$v['meta']['title']:'untitled';
-    $strArchive.="$head &gt; <a href='{$v['generated_path']}' target='main_frame'>{$title}</a><br />\n";
+    $strArchive.="$head &gt; <a href='/{$v['generated_path']}'>{$title}</a><br />\n";
 }
 foreach($tagToArticles['pick-up'] as $v){
-    $strPickup.="&gt; <a href='{$v['url']}' target='main_frame'>{$v['title']}</a><br />\n";
+    $strPickup.="&gt; <a href='{$v['url']}'>{$v['title']}</a><br />\n";
 }
 $template = file_get_contents('templates/template_list.htm');
-$template = str_replace("{{list-archive}}",$strArchive,$template);
-$template = str_replace("{{list-pickup}}",$strPickup,$template);
+$listMixdown = str_replace(["{{list-archive}}","{{list-pickup}}"],[$strArchive,$strPickup],$template);
 // echo "Compressing...\n";
 // $parser = Factory::constructSmallest();
 // $compressedHtml = $parser->compress($template);
 
-file_put_contents("list.htm",$template);
+//file_put_contents("list.htm",$listMixdown);
 
 echo "Generating Meta List...\n";
 $files = glob('./_meta/*'); // get all file names
@@ -150,15 +155,24 @@ foreach($tagToArticles as $tag=>$list){
     $_str.="</ul>";
 
     $file=sanTag($tag);
-    $strSave = str_replace("{{list}}",$_str,$strSave);  
+    $strSave = str_replace(["{{content}}","{{listMixdown}}"],[$_str,$listMixdown],$strSave);  
     file_put_contents("_meta/{$file}.htm",$strSave);
     $len=sizeof($list);
     $metaIndexStr.="<li><a target='main_frame' href='/_meta/{$file}.htm'>$tag</a>($len)</li>";
 }
 $metaIndexStr.="</ul>";
 $metaIndexTemplate = file_get_contents("templates/template_meta_index.htm");
-$metaIndexStr=str_replace("{{list}}",$metaIndexStr,$metaIndexTemplate);
-file_put_contents("_meta/index.htm",$metaIndexStr);
+$tagMixdown=str_replace(["{{content}}","{{listMixdown}}"],[$metaIndexStr,$listMixdown],$metaIndexTemplate);
+file_put_contents("_meta/index.htm",$tagMixdown);
+
+// Replace {{#documents}} in _generated folder
+// foreach file in _generated folder
+foreach(glob("./_generated/*") as $file){
+    $content = file_get_contents($file);
+    $content = str_replace("{{listMixdown}}",$listMixdown,$content);
+
+    file_put_contents($file,$content);
+}
 
 echo "Generating jsonfeed...\n";
 $jsonfeed['version']="https://jsonfeed.org/version/1.1";

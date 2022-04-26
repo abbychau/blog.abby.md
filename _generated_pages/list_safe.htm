@@ -1,30 +1,30 @@
 <html>
-
-<head>
+  <head>
     <title>Q&A</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <BASE target="main_frame2">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="https://blog.abby.md/style.css" />
-    <link rel="icon" type="image/png" href="https://blog.abby.md/favicon.png" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css"
+    />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+    <script src="/script.js"></script>
+  </head>
 
-    <script>
-        $(document).ready(function(){ 
-            $('a').on('click', function(e){
-                window.parent.history.pushState({}, $(this).text(), "#"+$(this).attr('href'));
-            })
-        });
-    </script>
-</head>
-
-<body>
-<h1>Q&A</h1>
-<ol><li><a href='/_generated_pages/answers/105330743.htm'>如何準確理解或翻譯 meta- 這個詞頭？</a></li>
+  <body>
+    <div id="docList">
+      <h1>Q&A</h1>
+      <a target="_self" href="/_meta/index.htm">回到主選單</a>
+      <div style="padding: 5px"></div>
+    </div>
+    <div id="article" style="padding: 0 15px 10px 10px">
+      
+      <ol><li><a href='/_generated_pages/answers/105330743.htm'>如何準確理解或翻譯 meta- 這個詞頭？</a></li>
 <li><a href='/_generated_pages/answers/106094779.htm'>為何要自主開發遊戲引擎？</a></li>
 <li><a href='/_generated_pages/answers/107966950.htm'>如何評價まらしぃ（觸手猴）的鋼琴水平？</a></li>
 <li><a href='/_generated_pages/answers/109287003.htm'>什麽時候你覺得自己腦子不夠用，為什麽？</a></li>
@@ -83,6 +83,6 @@
 <li><a href='/_generated_pages/answers/955401483.htm'>如果用兩個字 來形容生活  你想說什麽？</a></li>
 <li><a href='/_generated_pages/answers/955405234.htm'>《吹響吧，上低音號》中這是什麽樂器？</a></li>
 <li><a href='/_generated_pages/answers/962414577.htm'>五年之後的前端會是什麽樣？</a></li></ol>
-</body>
-
+    </div>
+  </body>
 </html>

@@ -2,7 +2,26 @@
 #info {
     display: none;
 }
+#article{
+    padding: 0 15px 10px 10px;
+    height: 100vh;
+    position: fixed;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    word-break: break-all;
+    width: calc(75vw - 30px);
+    right: 0;
+    top: 0;
+}
+#docList {
+    height: 100vh;
+    position: fixed;
+    overflow-y: scroll;
+    width: 25vw;
+    top: 0;
+    left: 0;
 
+}
 /* only when orientation is in portrait mode */
 @media all and (orientation:portrait) {
     #info {

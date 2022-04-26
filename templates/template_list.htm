@@ -1,30 +1,5 @@
-<html>
-
-<head>
-    <title>Abby's Archive List</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <BASE target="main_frame">
-
-    <link rel="stylesheet" href="https://blog.abby.md/style.css" />
-    <link rel="icon" type="image/png" href="https://blog.abby.md/favicon.png" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
-
-    <script>
-        $(document).ready(function(){ 
-            $('a').on('click', function(e){
-                window.parent.history.pushState({}, $(this).text(), "#"+$(this).attr('href'));
-            })
-        });
-    </script>
-</head>
-
-<body>
-<a href='whoami.htm' target='main_frame'>Who Am I</a> | <a href='_meta/index.htm' target='_self'>分類</a> | 
-<a href='_generated_pages/index_safe.htm' target='main_frame'>Q&amp;A</a> | 
+<a href='https://abby.md' target='_blank'>Who Am I</a> | <a href='/_meta/index.htm'>分類</a> | 
+<a href='/_generated_pages/index_safe.htm' target='_blank'>Q&amp;A</a> | 
 <a href='https://github.com/abbychau/blog.abby.md/tree/master/original-data/blog' target='_blank'>寫</a>
 
 <hr />
@@ -33,6 +8,3 @@ Pick-ups<br />
 <br />
 Archive<br />
 {{list-archive}}
-</body>
-
-</html>

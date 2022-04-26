@@ -1,18 +1,31 @@
 <html><head>
 <title>Abby's Archive</title>
-<link rel="icon" type="image/png" href="https://blog.abby.md/favicon.png" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/style.css" />
+<link rel="icon" type="image/png" href="/favicon.png" />
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-$(document).ready(function () {
-    if (window.location.hash) {
-        var hash = window.location.hash.substring(1); //Puts hash in variable, and removes the # character
-        $("#main_frame").attr('src',hash);
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+<script src="/script.js"></script>
+<style>
+    
+    div a:hover {
+        color:white
     }
-})
-</script>
+</style>
 </head>
-<frameset cols="300,*">
-    <frame src="list.htm" />
-    <frame src="whoami.htm" name='main_frame' id='main_frame' scrolling="yes" />
-</frameset>
+<body>
+    <!--vertical center the following div-->
+
+    <div style="margin: 0 auto; font-size:3em;margin-top:30vh; width:fit-content">
+        <a href="/_meta/index.htm">Abby's Archive</a><br />
+        <br />
+        <a href="https://abby.md" target="_blank">README</a><br /><br />
+
+        <div class="github-card" data-github="abbychau" data-width="400" data-height="150" data-theme="default"></div>
+        <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
+    </div>
+
+
+</body>
 </html>

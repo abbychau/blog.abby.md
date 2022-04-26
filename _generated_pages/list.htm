@@ -1,30 +1,30 @@
 <html>
-
-<head>
+  <head>
     <title>Q&A</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <BASE target="main_frame2">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="https://blog.abby.md/style.css" />
-    <link rel="icon" type="image/png" href="https://blog.abby.md/favicon.png" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css"
+    />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+    <script src="/script.js"></script>
+  </head>
 
-    <script>
-        $(document).ready(function(){ 
-            $('a').on('click', function(e){
-                window.parent.history.pushState({}, $(this).text(), "#"+$(this).attr('href'));
-            })
-        });
-    </script>
-</head>
-
-<body>
-<h1>Q&A</h1>
-<ol><li><a href='/_generated_pages/answers/1001016777.htm'>從一讀到一億需要讀多少個漢字？</a></li>
+  <body>
+    <div id="docList">
+      <h1>Q&A</h1>
+      <a target="_self" href="/_meta/index.htm">回到主選單</a>
+      <div style="padding: 5px"></div>
+    </div>
+    <div id="article" style="padding: 0 15px 10px 10px">
+      
+      <ol><li><a href='/_generated_pages/answers/1001016777.htm'>從一讀到一億需要讀多少個漢字？</a></li>
 <li><a href='/_generated_pages/answers/100610766.htm'>《魔獸》電影會不會拿下史上最高票房？</a></li>
 <li><a href='/_generated_pages/answers/100892873.htm'>如何評價 Swift 語言？</a></li>
 <li><a href='/_generated_pages/answers/101036115.htm'>APPLE官網為什麽保留著2012年款13英寸的MacBook Pro 售賣,因為很出色嗎?</a></li>
@@ -1577,6 +1577,6 @@
 <li><a href='/_generated_pages/answers/992017262.htm'>高中畢業，現在學PHP ，java之類靠譜嗎？</a></li>
 <li><a href='/_generated_pages/answers/99432595.htm'>如何看待MSI SKT四連敗，哪里出現了問題？</a></li>
 <li><a href='/_generated_pages/answers/997088699.htm'>為什麽物理科普讀物讀起來津津有味，計算機科普卻很枯燥且很少見？</a></li></ol>
-</body>
-
+    </div>
+  </body>
 </html>
