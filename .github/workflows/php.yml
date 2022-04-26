@@ -28,7 +28,7 @@ jobs:
 
     - name: Install dependencies and genrate blog
       run: |
-        composer install --prefer-dist --no-progress
+        composer install --prefer-dist --no-progress --ignore-platform-reqs
         php generate.php
       
     - name: Commit and push

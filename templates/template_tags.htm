@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <title>{{tag}}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+    <script src="/script.js"></script>
+  </head>
+
+<<<<<<< HEAD:templates/template_meta.htm
+  <body>
+    <div id="docList">
+      <h1>{{tag}}</h1>
+      <a target="_self" href="/_meta/index.htm">回到主選單</a>
+      <div style="padding: 5px">{{listMixdown}}</div>
+    </div>
+    <div id="article" style="padding: 0 15px 10px 10px">
+      
+      {{content}}
+    </div>
+  </body>
+</html>
+=======
+    <script>
+        $(document).ready(function(){ 
+            $('a').on('click', function(e){
+                window.parent.history.pushState({}, $(this).text(), "#"+$(this).attr('href'));
+            })
+        });
+    </script>
+</head>
+
+<body>
+<h1>{{tag}}</h1>
+<ul><li><a href="/list.htm">..</a></li></ul>
+
+{{list}}
+</body>
+
+</html>
+>>>>>>> 2f9c64d3d169d1be58c1de59648ffcb731b973b7:templates/template_tags.htm

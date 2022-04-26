@@ -35,8 +35,13 @@ function process($file){
     }
     $content=implode("\n",$ytxt);
     $markdownContent = $Parsedown->text($content);
+<<<<<<< HEAD
     $cleanPath = "_generated/".trim(str_replace(['original-data','/','.md'],['','_','.htm'],$data['path']),"._");
     $articleTemplate = file_get_contents('templates/template_article.htm');
+=======
+    $cleanPath = "posts/".trim(str_replace(['original-data','/','.md'],['','_','.htm'],$data['path']),"._");
+    $template = file_get_contents('templates/template_article.htm');
+>>>>>>> 2f9c64d3d169d1be58c1de59648ffcb731b973b7
     if(isset($data['tags'])){
         if(!is_array($data['tags'])){
             $data['tags'] = [$data['tags']];
@@ -61,7 +66,7 @@ function process($file){
     foreach($tags as $tag){
         $tagToArticles[$tag][]=['title'=>$data['title'],'url'=>"/".$cleanPath];
         $file = sanTag($tag);
-        $strTagLinks[] = "<a href='/_meta/{$file}.htm'>$tag</a>";
+        $strTagLinks[] = "<a href='/tags/{$file}.htm'>$tag</a>";
     }
     $mixdownContent = str_replace(
         ["{{subject}}","{{date}}","{{tags}}","{{markdown}}","{{paramlink}}","{{source}}"],
@@ -128,13 +133,13 @@ $listMixdown = str_replace(["{{list-archive}}","{{list-pickup}}"],[$strArchive,$
 //file_put_contents("list.htm",$listMixdown);
 
 echo "Generating Meta List...\n";
-$files = glob('./_meta/*'); // get all file names
+$files = glob('./tags/*'); // get all file names
 foreach($files as $file){ // iterate files
   if(is_file($file)) {
     unlink($file); // delete file
   }
 }
-$template = file_get_contents('templates/template_meta.htm');
+$template = file_get_contents('templates/template_tags.htm');
 function sanTag($tag){
     // Thanks @Łukasz Rysiak!
     $file = mb_ereg_replace("([^\w\s\d\-_~,;\[\]\(\).])", '', $tag);
@@ -155,12 +160,18 @@ foreach($tagToArticles as $tag=>$list){
     $_str.="</ul>";
 
     $file=sanTag($tag);
+<<<<<<< HEAD
     $strSave = str_replace(["{{content}}","{{listMixdown}}"],[$_str,$listMixdown],$strSave);  
     file_put_contents("_meta/{$file}.htm",$strSave);
+=======
+    $strSave = str_replace("{{list}}",$_str,$strSave);  
+    file_put_contents("tags/{$file}.htm",$strSave);
+>>>>>>> 2f9c64d3d169d1be58c1de59648ffcb731b973b7
     $len=sizeof($list);
-    $metaIndexStr.="<li><a target='main_frame' href='/_meta/{$file}.htm'>$tag</a>($len)</li>";
+    $metaIndexStr.="<li><a target='main_frame' href='/tags/{$file}.htm'>$tag</a>($len)</li>";
 }
 $metaIndexStr.="</ul>";
+<<<<<<< HEAD
 $metaIndexTemplate = file_get_contents("templates/template_meta_index.htm");
 $tagMixdown=str_replace(["{{content}}","{{listMixdown}}"],[$metaIndexStr,$listMixdown],$metaIndexTemplate);
 file_put_contents("_meta/index.htm",$tagMixdown);
@@ -173,6 +184,11 @@ foreach(glob("./_generated/*") as $file){
 
     file_put_contents($file,$content);
 }
+=======
+$metaIndexTemplate = file_get_contents("templates/template_tags_index.htm");
+$metaIndexStr=str_replace("{{list}}",$metaIndexStr,$metaIndexTemplate);
+file_put_contents("tags/index.htm",$metaIndexStr);
+>>>>>>> 2f9c64d3d169d1be58c1de59648ffcb731b973b7
 
 echo "Generating jsonfeed...\n";
 $jsonfeed['version']="https://jsonfeed.org/version/1.1";
